@@ -1,0 +1,377 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img "Azulzinha" [ref=e6]
+          - list [ref=e7]:
+            - listitem [ref=e8]:
+              - link "Para sua empresa" [ref=e9] [cursor=pointer]:
+                - /url: "#"
+                - text: Para sua empresa
+                - img [ref=e10]
+            - listitem [ref=e12]:
+              - link "Para você" [ref=e13] [cursor=pointer]:
+                - /url: "#"
+                - text: Para você
+                - img [ref=e14]
+            - listitem [ref=e16]:
+              - link "Blog" [active] [ref=e17] [cursor=pointer]:
+                - /url: "#"
+                - text: Blog
+                - img [ref=e18]
+            - listitem [ref=e20]:
+              - link "Ajuda" [ref=e21] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e22]:
+          - link "Buscar" [ref=e23] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e24]
+            - generic [ref=e27]: Buscar
+          - link "Portal de Acesso" [ref=e28] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e29]
+            - text: Portal de Acesso
+          - link "Peça já sua azulzinha" [ref=e32] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e37]:
+      - heading "Com azulzinha você pode muito mais." [level=1] [ref=e38]
+      - paragraph [ref=e39]: Gestão simplificada, segurança, mais vendas e pagamentos rápidos com a azulzinha.
+      - list [ref=e40]:
+        - listitem [ref=e41]:
+          - img [ref=e42]
+          - generic [ref=e44]: Receba suas vendas no crédito em 1 dia útil
+        - listitem [ref=e45]:
+          - img [ref=e46]
+          - generic [ref=e48]: Aceite as principais bandeiras e carteiras digitais
+        - listitem [ref=e49]:
+          - img [ref=e50]
+          - generic [ref=e52]: Acompanhe seus recebimentos em tempo real
+      - link "Peça sua azulzinha" [ref=e53] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e55]:
+      - heading "Transforme o dia a dia do seu negócio com a azulzinha" [level=2] [ref=e56]
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - img "Link de Pagamento" [ref=e60]
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - heading "Link de Pagamento" [level=3] [ref=e63]
+              - paragraph [ref=e64]: Lucre muito mais pela internet, redes sociais e aplicativos de mensagens com links seguros e ilimitados.
+            - link "Saiba mais" [ref=e65] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e66]
+        - generic [ref=e68]:
+          - img "Pix por aproximação" [ref=e70]
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - heading "Pix por aproximação" [level=3] [ref=e73]
+              - paragraph [ref=e74]: Agora é só aproximar e pagar via carteira digital ou pelo App do banco.
+            - link "Saiba mais" [ref=e75] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e76]
+        - generic [ref=e78]:
+          - img "App azulzinha aproxima" [ref=e80]
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - heading "App azulzinha aproxima" [level=3] [ref=e83]
+              - paragraph [ref=e84]: Controle suas vendas, antecipe recebíveis, crie links de pagamento e muito mais.
+            - link "Saiba mais" [ref=e85] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e86]
+        - generic [ref=e88]:
+          - img "Recarga e telefonia" [ref=e90]
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - heading "Recarga e telefonia" [level=3] [ref=e93]
+              - paragraph [ref=e94]: Habilite o serviço sem custo na sua maquininha e tenha uma oportunidade extra de receita.
+            - link "Saiba mais" [ref=e95] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e96]
+        - generic [ref=e98]:
+          - img "azulzinha Lotérica Pro" [ref=e100]
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - heading "azulzinha Lotérica Pro" [level=3] [ref=e103]
+              - paragraph [ref=e104]: Ofereça o serviço de conveniência e receba jogos, boletos e contas com os cartões Elo, Visa e Mastercard.
+            - link "Saiba mais" [ref=e105] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e106]
+        - generic [ref=e108]:
+          - img "Pagamento Parcial" [ref=e110]
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - heading "Pagamento Parcial" [level=3] [ref=e113]
+              - paragraph [ref=e114]: "Facilite para o cliente: aceite pagamentos em partes, com flexibilidade e controle total."
+            - link "Saiba mais" [ref=e115] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e116]
+        - generic [ref=e118]:
+          - img "IPVA Licenciamento e multas" [ref=e120]
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - heading "IPVA Licenciamento e multas" [level=3] [ref=e123]
+              - paragraph [ref=e124]: Você pode consultar e parcelar licenciamento, multas, IPVA e muito mais em até 12 vezes.
+            - link "Saiba mais" [ref=e125] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e126]
+        - generic [ref=e128]:
+          - img "Fale com a Zuli!" [ref=e130]
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - heading "Fale com a Zuli!" [level=3] [ref=e133]
+              - paragraph [ref=e134]: Da contratação ao suporte, a Zuli ajuda você a resolver tudo de forma rápida e sem complicação.
+            - link "Saiba mais" [ref=e135] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e136]
+      - generic [ref=e138]:
+        - button "Rolar para a esquerda" [ref=e139] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Rolar para a direita" [ref=e142] [cursor=pointer]:
+          - img [ref=e143]
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - heading "Com azulzinha você tem mais possibilidades para crescer" [level=2] [ref=e149]
+          - paragraph [ref=e150]: Empreenda com as soluções CAIXA em parceria com a Fiserv, líder global em tecnologias de pagamentos e serviços financeiros.
+        - img "Possibilidades com azulzinha" [ref=e152]
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - heading "Venda em qualquer lugar" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Soluções para lojas físicas e venda online.
+        - generic [ref=e157]:
+          - heading "Impulsione seus resultados" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Serviços agregados para impulsionar suas vendas.
+        - generic [ref=e160]:
+          - heading "Negócios sempre protegidos" [level=3] [ref=e161]
+          - paragraph [ref=e162]: Plataformas robustas e seguras para grandes comércios.
+        - generic [ref=e163]:
+          - heading "Controle total do seu negócio" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Ferramentas completas de gestão em tempo real.
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - heading "Escolha a azulzinha ideal para o seu negócio" [level=2] [ref=e168]
+        - link "Peça a sua azulzinha" [ref=e169] [cursor=pointer]:
+          - /url: "#"
+          - text: Peça a sua azulzinha
+          - img [ref=e170]
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - img "Clover Flex" [ref=e175]
+          - generic [ref=e176]:
+            - heading "Clover Flex" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Receba pagamentos e gerencie seu negócio com flexibilidade e tenha todos os recursos na palma da mão com um checkout rápido e prático.
+            - link "Saiba mais" [ref=e179] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e180]
+        - generic [ref=e182]:
+          - img "Clover Mini" [ref=e184]
+          - generic [ref=e185]:
+            - heading "Clover Mini" [level=3] [ref=e186]
+            - paragraph [ref=e187]: Aceite uma variedade de meios de pagamento, tenha uma visão completa do negócio
+            - link "Saiba mais" [ref=e188] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e189]
+        - generic [ref=e191]:
+          - img "azulzinha smart" [ref=e193]
+          - generic [ref=e194]:
+            - heading "azulzinha smart" [level=3] [ref=e195]
+            - paragraph [ref=e196]: Nossa azulzinha mais rápida, moderna, eficiente e com muito mais funcionalidades para multiplicar seu sucesso.
+            - link "Saiba mais" [ref=e197] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e198]
+        - generic [ref=e200]:
+          - img "azulzinha pro" [ref=e202]
+          - generic [ref=e203]:
+            - heading "azulzinha pro" [level=3] [ref=e204]
+            - paragraph [ref=e205]: Nossa azulzinha mais prática e sem fio, ideal para levar até o cliente e agilizar o atendimento.
+            - link "Saiba mais" [ref=e206] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e207]
+        - generic [ref=e209]:
+          - img "azulzinha TEF" [ref=e211]
+          - generic [ref=e212]:
+            - heading "azulzinha TEF" [level=3] [ref=e213]
+            - paragraph [ref=e214]: Integre suas vendas para uma experiência de compra ágil, conciliação segura e gestão eficaz do seu negócio.
+            - link "Saiba mais" [ref=e215] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e216]
+        - generic [ref=e218]:
+          - img "azulzinha aproxima" [ref=e220]
+          - generic [ref=e221]:
+            - heading "azulzinha aproxima" [level=3] [ref=e222]
+            - paragraph [ref=e223]: Instale o App e venda muito mais por aproximação, carteiras digitais e Pix no seu celular ou tablet.
+            - link "Saiba mais" [ref=e224] [cursor=pointer]:
+              - /url: "#"
+              - text: Saiba mais
+              - img [ref=e225]
+      - generic [ref=e227]:
+        - button "Rolar para a esquerda" [ref=e228] [cursor=pointer]:
+          - img [ref=e229]
+        - button "Rolar para a direita" [ref=e231] [cursor=pointer]:
+          - img [ref=e232]
+    - generic [ref=e235]:
+      - generic [ref=e236]:
+        - heading "Tenha muito mais tranquilidade para transformar o seu comércio e impulsionar as vendas com agilidade e segurança" [level=2] [ref=e238]
+        - img "Benefícios azulzinha" [ref=e240]
+      - generic [ref=e241]:
+        - paragraph [ref=e243]: Trabalhe com as principais bandeiras, vouchers e carteiras digitais.
+        - paragraph [ref=e245]: Receba suas vendas em até 1 dia útil.
+        - paragraph [ref=e247]: Aceite pagamentos com débito, crédito, aproximação e QR Code.
+        - paragraph [ref=e249]: Transforme celulares em maquininhas.
+        - paragraph [ref=e251]: Integre, centralize e concilie as vendas num lugar só.
+        - paragraph [ref=e253]: Controle suas vendas de forma simples e rápida.
+      - generic [ref=e254]:
+        - img "Bandeira 1" [ref=e255]
+        - img "Bandeira 2" [ref=e256]
+        - img "Bandeira 3" [ref=e257]
+        - img "Bandeira 4" [ref=e258]
+        - img "Bandeira 5" [ref=e259]
+        - img "Bandeira 6" [ref=e260]
+        - img "Bandeira 7" [ref=e261]
+        - img "Bandeira 8" [ref=e262]
+      - link "Consulte todas as bandeiras" [ref=e264] [cursor=pointer]:
+        - /url: "#"
+        - text: Consulte todas as bandeiras
+        - img [ref=e265]
+    - generic [ref=e268]:
+      - heading "Histórias reais de quem já é azulzinha" [level=2] [ref=e269]
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - paragraph [ref=e273]: “Minha querida azulzinha é a verdadeira heroína do dia a dia! Sempre pronta, ágil e eficiente, facilita o meu trabalho e a vida dos meus clientes.
+          - generic [ref=e274]:
+            - paragraph [ref=e275]: Claudinei Pires
+            - paragraph [ref=e276]: Utilar
+        - generic [ref=e277]:
+          - paragraph [ref=e278]: “A azulzinha é prática, rápida e nunca me deu dor de cabeça. O atendimento sempre foi ótimo nas raras vezes que precisei. A bateria dura o dia todo, perfeita para o comércio. Recomendo sem medo!
+          - generic [ref=e279]:
+            - paragraph [ref=e280]: Maria José Rolim Pinheiro
+            - paragraph [ref=e281]: Esfiharia Serra da Bragança
+        - generic [ref=e282]:
+          - paragraph [ref=e283]: “A azulzinha é fácil de usar e agiliza os pagamentos, o que é essencial no nosso dia a dia. O atendimento sempre foi rápido e eficiente. Mesmo sem minha presença, a equipe consegue operar com autonomia. Recomendo com confiança!
+          - generic [ref=e284]:
+            - paragraph [ref=e285]: Viviane Aparecida de Oliveira
+            - paragraph [ref=e286]: Padaria Okinawa
+      - generic [ref=e287]:
+        - button "Anterior" [ref=e288]:
+          - img [ref=e289]
+        - button "Próximo" [ref=e291]:
+          - img [ref=e292]
+    - generic [ref=e297]:
+      - generic [ref=e298]:
+        - heading "Com azulzinha da CAIXA você pode muito mais!" [level=2] [ref=e299]
+        - paragraph [ref=e300]: Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.
+        - button "Peça já a sua" [ref=e302] [cursor=pointer]
+      - img "Azulzinha CTA" [ref=e304]
+    - generic [ref=e305]:
+      - generic [ref=e308]:
+        - generic [ref=e309]:
+          - generic [ref=e310]:
+            - heading "Para sua Empresa" [level=4] [ref=e311]
+            - list [ref=e312]:
+              - listitem [ref=e313]:
+                - link "Maquininhas" [ref=e314] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e315]:
+                - link "Vendas Online" [ref=e316] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e317]:
+                - link "Gestão" [ref=e318] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e319]:
+            - heading "Para sua Lotérica" [level=4] [ref=e320]
+            - list [ref=e321]:
+              - listitem [ref=e322]:
+                - link "Serviços de Conveniência" [ref=e323] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e324]:
+            - heading "Para sua MEI" [level=4] [ref=e325]
+            - list [ref=e326]:
+              - listitem [ref=e327]:
+                - link "App CAIXA Tem" [ref=e328] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e329]:
+            - heading "Para Você" [level=4] [ref=e330]
+            - list [ref=e331]:
+              - listitem [ref=e332]:
+                - link "Serviços de Conveniência" [ref=e333] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - heading "Conteúdo" [level=4] [ref=e336]
+            - list [ref=e337]:
+              - listitem [ref=e338]:
+                - link "Blog da azulzinha" [ref=e339] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e340]:
+            - heading "Suporte" [level=4] [ref=e341]
+            - list [ref=e342]:
+              - listitem [ref=e343]:
+                - link "Central de Ajuda" [ref=e344] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e345]:
+                - link "Taxas" [ref=e346] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e347]:
+            - heading "Avisos Legais" [level=4] [ref=e348]
+            - list [ref=e349]:
+              - listitem [ref=e350]:
+                - link "Contrato de Credenciamento azulzinha" [ref=e351] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e352]:
+                - link "Contrato de Credenciamento CAIXA Tem" [ref=e353] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e354]:
+                - link "Política de Privacidade" [ref=e355] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e356]:
+                - link "Política de Cookies" [ref=e357] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e358]:
+                - link "LGPD" [ref=e359] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - img "Zuli" [ref=e363]
+              - generic [ref=e364]: Fale com a Zuli pelo WhatsApp
+            - generic [ref=e365]:
+              - img [ref=e366]
+              - generic [ref=e368]: (11) 94147-3336
+          - generic [ref=e369]:
+            - heading "CENTRAL DE RELACIONAMENTO" [level=4] [ref=e370]
+            - paragraph [ref=e371]: 3003 5365
+            - paragraph [ref=e372]: Capital e Grande São Paulo
+            - paragraph [ref=e373]: 0800 729 5365
+            - paragraph [ref=e374]: Demais localidades
+            - paragraph [ref=e375]: Segunda a Domingo das 08h00 às 22h00 (exceto feriados)
+          - generic [ref=e376]:
+            - heading "AZULZINHA NO CAIXA TEM" [level=4] [ref=e377]
+            - paragraph [ref=e378]: Atendimento somente via chatbot pelo App CAIXA Tem
+          - generic [ref=e379]:
+            - heading "OUVIDORIA" [level=4] [ref=e380]
+            - paragraph [ref=e381]: 0800 727 4655
+            - paragraph [ref=e382]: Segunda a Sexta das 09h00 às 18h00 (exceto feriados)
+      - generic [ref=e385]:
+        - img "CAIXA Cartões" [ref=e386]
+        - paragraph [ref=e387]: "© 2025 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os direitos reservados. SAC Fiserv (24h): 0800 770 6207"
+        - img "Fiserv" [ref=e388]
+        - button "Zuli Dúvidas?" [ref=e389] [cursor=pointer]:
+          - img "Zuli" [ref=e390]
+          - text: Dúvidas?
+  - button "Open Next.js Dev Tools" [ref=e396] [cursor=pointer]:
+    - img [ref=e397]
+  - alert [ref=e400]

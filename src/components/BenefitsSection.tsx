@@ -1,0 +1,143 @@
+import Image from "next/image";
+import { asset } from "@/lib/assets";
+
+const cards = [
+  {
+    icon: asset("/images/icon-small-bandeiras.svg"),
+    text: "Trabalhe com as principais bandeiras, vouchers e carteiras digitais.",
+  },
+  {
+    icon: asset("/images/icon-small-receba.svg"),
+    text: "Receba suas vendas em até 1 dia útil.",
+  },
+  {
+    icon: asset("/images/icon-small-pagamentos.svg"),
+    text: "Aceite pagamentos com débito, crédito, aproximação e QR Code.",
+  },
+  {
+    icon: asset("/images/icon-small-celular.svg"),
+    text: "Transforme celulares em maquininhas.",
+  },
+  {
+    icon: asset("/images/icon-small-integre.svg"),
+    text: "Integre, centralize e concilie as vendas num lugar só.",
+  },
+  {
+    icon: asset("/images/icon-small-controle.svg"),
+    text: "Controle suas vendas de forma simples e rápida.",
+  },
+];
+
+const brandLogos = Array.from({ length: 8 }, (_, i) => ({
+  src: asset(`/images/brand-${i + 1}.png`),
+  alt: `Bandeira ${i + 1}`,
+}));
+
+function ArrowIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="shrink-0"
+    >
+      <path
+        d="M3.33334 8H12.6667"
+        stroke="#FC8F01"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 3.33337L12.6667 8.00004L8 12.6667"
+        stroke="#FC8F01"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function SmallCard({ icon, text }: { icon: string; text: string }) {
+  return (
+    <div
+      className="flex items-center gap-3 rounded-[12px] bg-white p-4 shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
+    >
+      <Image
+        src={icon}
+        alt=""
+        width={24}
+        height={24}
+        className="shrink-0 w-6 h-6"
+        unoptimized
+      />
+      <p className="text-[16px] leading-[1.4] text-black">{text}</p>
+    </div>
+  );
+}
+
+export default function BenefitsSection() {
+  return (
+    <section className="w-full bg-[#F5F5F5]">
+      <div className="max-w-[1440px] mx-auto px-[100px] py-16">
+        {/* Top row: Text left + Image right */}
+        <div className="flex items-stretch gap-10">
+          {/* Left side - Text */}
+          <div className="w-1/2 flex flex-col justify-center">
+            <h2 className="text-[28px] font-bold leading-[1.3] text-[#006CAD]">
+              Tenha{" "}
+              <span className="text-[#FC8F01]">muito mais tranquilidade</span>{" "}
+              para transformar o seu comércio e impulsionar as vendas com
+              agilidade e segurança
+            </h2>
+          </div>
+
+          {/* Right side - Image */}
+          <div className="relative w-1/2 h-[400px] rounded-r-[20px] overflow-hidden">
+            <Image
+              src={asset("/images/benefits-bg.png")}
+              alt="Benefícios azulzinha"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Cards grid - 3 columns x 2 rows */}
+        <div className="mt-10 grid grid-cols-3 gap-4">
+          {cards.map((card) => (
+            <SmallCard key={card.text} icon={card.icon} text={card.text} />
+          ))}
+        </div>
+
+        {/* Brand logos */}
+        <div className="mt-10 flex items-center gap-6">
+          {brandLogos.map((brand) => (
+            <Image
+              key={brand.src}
+              src={brand.src}
+              alt={brand.alt}
+              width={56}
+              height={40}
+              className="object-contain"
+            />
+          ))}
+        </div>
+
+        {/* Button */}
+        <div className="mt-6">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-[6px] border border-[#006CAD] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
+          >
+            Consulte todas as bandeiras
+            <ArrowIcon />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

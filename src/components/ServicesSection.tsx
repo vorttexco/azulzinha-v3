@@ -222,15 +222,15 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="bg-white py-20 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-[60px]">
-        <h2 className="text-[38px] font-normal leading-[1.3] text-[#006CAD] text-center max-w-[718px] px-4">
+    <section className="bg-white py-14 lg:py-20 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 lg:gap-[60px]">
+        <h2 className="text-[26px] lg:text-[38px] font-normal leading-[1.2] lg:leading-[1.3] text-[#006CAD] text-center max-w-[718px] px-[46px] lg:px-4">
           Transforme o dia a dia do seu negócio com a azulzinha
         </h2>
 
         <div
           ref={scrollRef}
-          className="w-full overflow-x-auto pl-[100px] pr-6 flex items-stretch gap-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="w-full overflow-x-auto pl-[30px] lg:pl-[100px] pr-6 flex items-stretch gap-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {cards.map((card) => (
             <ServiceCardComponent key={card.title} card={card} />

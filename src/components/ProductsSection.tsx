@@ -118,10 +118,10 @@ export default function ProductsSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-[100px] text-center">
+    <section className="w-full bg-white py-14 lg:py-16 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] text-center">
         {/* Header */}
-        <h2 className="text-[38px] font-bold leading-[1.3] text-[#006CAD]">
+        <h2 className="text-[26px] lg:text-[38px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
           Escolha a azulzinha ideal para o seu{" "}
           <span className="text-[#FC8F01]">negócio</span>
         </h2>
@@ -137,7 +137,7 @@ export default function ProductsSection() {
       {/* Carousel */}
       <div
         ref={scrollRef}
-        className="max-w-[1440px] mx-auto mt-10 pl-[100px] pr-6 pb-4 flex items-stretch gap-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        className="max-w-[1440px] mx-auto mt-10 pl-[30px] lg:pl-[100px] pr-6 pb-4 flex items-stretch gap-6 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {products.map((product) => (
           <div key={product.name} className="shrink-0 w-[220px] flex flex-col">
@@ -174,7 +174,7 @@ export default function ProductsSection() {
       </div>
 
       {/* Scroll arrows */}
-      <div className="max-w-[1440px] mx-auto px-[100px] mt-8 flex items-center gap-3 justify-center">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] mt-8 flex items-center gap-3 justify-center">
         <ScrollArrow direction="left" onClick={() => scroll("left")} />
         <ScrollArrow direction="right" onClick={() => scroll("right")} />
       </div>

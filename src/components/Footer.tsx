@@ -66,8 +66,8 @@ export default function Footer() {
       <div className="w-full h-px bg-[#E1E1E1]" />
 
       {/* Main footer content */}
-      <div className="max-w-[1440px] mx-auto px-[100px] py-12">
-        <div className="flex gap-12">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-8 lg:py-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Column 1 - Link groups (stacked vertically) */}
           <div className="flex flex-col gap-6 flex-1">
             {linkGroups1.map((group) => (
@@ -80,7 +80,7 @@ export default function Footer() {
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-base text-[#717171] hover:underline"
+                        className="text-sm lg:text-base text-[#717171] hover:underline"
                       >
                         {link}
                       </a>
@@ -103,7 +103,7 @@ export default function Footer() {
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-base text-[#717171] hover:underline"
+                        className="text-sm lg:text-base text-[#717171] hover:underline"
                       >
                         {link}
                       </a>
@@ -126,53 +126,53 @@ export default function Footer() {
                   height={40}
                   className="rounded-full"
                 />
-                <span className="text-base text-[#717171]">
+                <span className="text-sm lg:text-base text-[#717171]">
                   Fale com a Zuli pelo WhatsApp
                 </span>
               </div>
               <div className="flex items-center gap-2 ml-[52px]">
                 <WhatsAppIcon />
-                <span className="text-base text-[#717171]">(11) 94147-3336</span>
+                <span className="text-sm lg:text-base text-[#717171]">(11) 94147-3336</span>
               </div>
             </div>
 
             {/* Central de Relacionamento */}
             <div className="flex flex-col gap-1">
-              <h4 className="text-base font-normal text-[#006CAD]">
+              <h4 className="text-sm lg:text-base font-normal text-[#006CAD]">
                 CENTRAL DE RELACIONAMENTO
               </h4>
-              <p className="text-base text-[#717171] font-semibold">3003 5365</p>
-              <p className="text-base text-[#717171]">
+              <p className="text-sm lg:text-base text-[#717171] font-semibold">3003 5365</p>
+              <p className="text-sm lg:text-base text-[#717171]">
                 Capital e Grande São Paulo
               </p>
-              <p className="text-base text-[#717171] font-semibold">
+              <p className="text-sm lg:text-base text-[#717171] font-semibold">
                 0800 729 5365
               </p>
-              <p className="text-base text-[#717171]">Demais localidades</p>
-              <p className="text-base text-[#717171] text-sm mt-1">
+              <p className="text-sm lg:text-base text-[#717171]">Demais localidades</p>
+              <p className="text-sm text-[#717171] mt-1">
                 Segunda a Domingo das 08h00 às 22h00 (exceto feriados)
               </p>
             </div>
 
             {/* Azulzinha no CAIXA Tem */}
             <div className="flex flex-col gap-1">
-              <h4 className="text-base font-normal text-[#006CAD]">
+              <h4 className="text-sm lg:text-base font-normal text-[#006CAD]">
                 AZULZINHA NO CAIXA TEM
               </h4>
-              <p className="text-base text-[#717171]">
+              <p className="text-sm lg:text-base text-[#717171]">
                 Atendimento somente via chatbot pelo App CAIXA Tem
               </p>
             </div>
 
             {/* Ouvidoria */}
             <div className="flex flex-col gap-1">
-              <h4 className="text-base font-normal text-[#006CAD]">
+              <h4 className="text-sm lg:text-base font-normal text-[#006CAD]">
                 OUVIDORIA
               </h4>
-              <p className="text-base text-[#717171] font-semibold">
+              <p className="text-sm lg:text-base text-[#717171] font-semibold">
                 0800 727 4655
               </p>
-              <p className="text-base text-[#717171] text-sm">
+              <p className="text-sm text-[#717171]">
                 Segunda a Sexta das 09h00 às 18h00 (exceto feriados)
               </p>
             </div>
@@ -184,8 +184,8 @@ export default function Footer() {
       <div className="w-full h-px bg-[#E1E1E1]" />
 
       {/* Bottom bar */}
-      <div className="max-w-[1440px] mx-auto px-[100px] py-6">
-        <div className="flex items-center justify-between gap-6">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
           {/* Caixa Cartoes logo */}
           <Image
             src={asset("/images/footer-caixa-logo.png")}
@@ -196,31 +196,33 @@ export default function Footer() {
           />
 
           {/* Copyright text */}
-          <p className="text-sm text-[#717171] flex-1 text-center">
+          <p className="text-xs lg:text-sm text-[#717171] flex-1 text-center">
             © 2025 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
-            direitos reservados. SAC Fiserv (24h): 0800 770 6207
+            direitos reservados.{"\n"}SAC Fiserv (24h): 0800 770 6207
           </p>
 
-          {/* Fiserv logo */}
-          <Image
-            src={asset("/images/footer-fiserv-logo.png")}
-            alt="Fiserv"
-            width={100}
-            height={32}
-            className="object-contain shrink-0"
-          />
-
-          {/* Dúvidas button */}
-          <button className="flex items-center gap-2 border border-[#006CAD] text-[#006CAD] rounded-full px-4 py-2 text-sm font-medium hover:bg-[#006CAD]/5 transition-colors cursor-pointer shrink-0">
+          {/* Fiserv logo + Dúvidas */}
+          <div className="flex items-center gap-4 lg:gap-6">
             <Image
-              src={asset("/images/footer-zuli.png")}
-              alt="Zuli"
-              width={24}
-              height={24}
-              className="rounded-full"
+              src={asset("/images/footer-fiserv-logo.png")}
+              alt="Fiserv"
+              width={100}
+              height={32}
+              className="object-contain shrink-0"
             />
-            Dúvidas?
-          </button>
+
+            {/* Dúvidas button */}
+            <button className="flex items-center gap-2 border border-[#006CAD] text-[#006CAD] rounded-full px-4 py-2 text-sm font-medium hover:bg-[#006CAD]/5 transition-colors cursor-pointer shrink-0">
+              <Image
+                src={asset("/images/footer-zuli.png")}
+                alt="Zuli"
+                width={24}
+                height={24}
+                className="rounded-full"
+              />
+              Dúvidas?
+            </button>
+          </div>
         </div>
       </div>
     </footer>

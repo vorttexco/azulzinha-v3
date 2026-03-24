@@ -82,12 +82,12 @@ function SmallCard({ icon, text }: { icon: string; text: string }) {
 export default function BenefitsSection() {
   return (
     <section className="w-full bg-[#F5F5F5]">
-      <div className="max-w-[1440px] mx-auto px-[100px] py-16">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
         {/* Top row: Text left + Image right */}
-        <div className="flex items-stretch gap-10">
+        <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
-          <div className="w-1/2 flex flex-col justify-center">
-            <h2 className="text-[28px] font-bold leading-[1.3] text-[#006CAD]">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+            <h2 className="text-[26px] lg:text-[28px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
               Tenha{" "}
               <span className="text-[#FC8F01]">muito mais tranquilidade</span>{" "}
               para transformar o seu comércio e impulsionar as vendas com
@@ -96,7 +96,7 @@ export default function BenefitsSection() {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-1/2 h-[400px] rounded-r-[20px] overflow-hidden">
+          <div className="relative w-full lg:w-1/2 h-[250px] lg:h-[400px] rounded-[12px] lg:rounded-r-[20px] overflow-hidden">
             <Image
               src={asset("/images/benefits-bg.png")}
               alt="Benefícios azulzinha"
@@ -106,15 +106,15 @@ export default function BenefitsSection() {
           </div>
         </div>
 
-        {/* Cards grid - 3 columns x 2 rows */}
-        <div className="mt-10 grid grid-cols-3 gap-4">
+        {/* Cards grid */}
+        <div className="mt-6 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4">
           {cards.map((card) => (
             <SmallCard key={card.text} icon={card.icon} text={card.text} />
           ))}
         </div>
 
         {/* Brand logos */}
-        <div className="mt-10 flex items-center gap-6">
+        <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center gap-4 lg:gap-6">
           {brandLogos.map((brand) => (
             <Image
               key={brand.src}

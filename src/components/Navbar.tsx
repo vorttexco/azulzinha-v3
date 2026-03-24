@@ -173,7 +173,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile header bar */}
-      <div className="flex lg:hidden h-full items-center justify-between px-[22px]">
+      <div className="flex lg:hidden h-full items-center justify-between px-[30px]">
         <Image
           src={asset("/images/logo-azulzinha.png")}
           alt="Azulzinha"
@@ -184,7 +184,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex items-center justify-center w-[51px] h-[51px]"
+          className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
           aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
           {mobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}

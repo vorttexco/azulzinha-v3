@@ -26,25 +26,25 @@ const cards = [
 
 export default function PossibilitiesSection() {
   return (
-    <section className="w-full bg-[#F5F5F5] py-16">
-      <div className="max-w-[1440px] mx-auto px-[100px]">
+    <section className="w-full bg-[#F5F5F5] py-14 lg:py-16">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
         {/* Top row: Text left + Image right */}
-        <div className="flex items-stretch gap-10">
+        <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
-          <div className="w-1/2 flex flex-col justify-center gap-4">
-            <h2 className="text-[28px] font-bold leading-[1.3] text-[#006CAD]">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4">
+            <h2 className="text-[26px] lg:text-[28px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
               Com azulzinha você tem mais possibilidades para{" "}
               <span className="text-[#FC8F01]">crescer</span>
             </h2>
 
-            <p className="text-[18px] leading-[1.4] text-black">
+            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Empreenda com as soluções CAIXA em parceria com a Fiserv, líder
               global em tecnologias de pagamentos e serviços financeiros.
             </p>
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-1/2 h-[400px] rounded-r-[20px] overflow-hidden">
+          <div className="relative w-full lg:w-1/2 h-[250px] lg:h-[400px] rounded-[12px] lg:rounded-r-[20px] overflow-hidden">
             <Image
               src={asset("/images/possibilities-bg.png")}
               alt="Possibilidades com azulzinha"
@@ -54,8 +54,8 @@ export default function PossibilitiesSection() {
           </div>
         </div>
 
-        {/* Bottom row: 4 cards in a single row */}
-        <div className="grid grid-cols-4 gap-6 mt-10">
+        {/* Bottom row: 4 cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 lg:mt-10">
           {cards.map((card) => (
             <div
               key={card.title}
@@ -72,7 +72,7 @@ export default function PossibilitiesSection() {
               <h3 className="text-[16px] leading-[1.4] text-[#006CAD] font-normal">
                 {card.title}
               </h3>
-              <p className="text-[16px] leading-[1.4] text-black">
+              <p className="text-[14px] lg:text-[16px] leading-[1.4] text-black">
                 {card.description}
               </p>
             </div>

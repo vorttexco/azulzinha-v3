@@ -64,8 +64,13 @@ export default function ServicesSection() {
               const s = variantStyles[card.variant];
               return (
                 <div key={card.title} className={`shrink-0 w-[294px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg}`}>
-                  <div className="relative h-[162px] w-full overflow-hidden">
-                    <Image src={card.image} alt={card.title} fill className="object-cover" sizes="294px" />
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      className="object-cover"
+                      fill
+                    />
                   </div>
                   <div className="p-5 flex flex-col gap-6">
                     <div className="flex flex-col gap-2">

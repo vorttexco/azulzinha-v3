@@ -41,11 +41,15 @@ export default function ServicesSection() {
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    setDotCount(emblaApi.scrollSnapList().length);
-    emblaApi.on("select", onSelect);
-    return () => { emblaApi.off("select", onSelect); };
-  }, [emblaApi, onSelect]);
+  if (!emblaApi) return;
+  setDotCount(emblaApi.scrollSnapList().length);
+  emblaApi.on("select", onSelect);
+  emblaApi.on("reInit", onSelect); // <-- isso
+  return () => {
+    emblaApi.off("select", onSelect);
+    emblaApi.off("reInit", onSelect);
+  };
+}, [emblaApi, onSelect]);
 
   return (
     <section className="bg-white py-14 lg:py-20 overflow-hidden">

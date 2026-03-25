@@ -55,7 +55,7 @@ export default function ServicesSection() {
     <section className="bg-white py-14 lg:py-20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 lg:gap-[60px]">
         <h2 className="text-[26px] lg:text-[38px] font-normal leading-[1.2] lg:leading-[1.3] text-[#006CAD] text-center max-w-[718px] px-[46px] lg:px-4">
-          Transforme o dia a dia do seu negócio com a azulzinha
+          Transforme o dia a dia do <span className="text-laranja">seu negócio</span> com a azulzinha
         </h2>
 
         <div className="w-full overflow-hidden" ref={emblaRef}>

@@ -50,7 +50,7 @@ function OrangeArrow() {
 }
 
 export default function ProductsSection() {
-  const autoplay = useRef(Autoplay({ delay: 1500, stopOnInteraction: true, stopOnMouseEnter: true }));
+  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef] = useEmblaCarousel(
     { align: "start", containScroll: "trimSnaps" },
     [autoplay.current, WheelGesturesPlugin()]

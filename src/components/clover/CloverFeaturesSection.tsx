@@ -133,9 +133,8 @@ export default function CloverFeaturesSection() {
 
                 {/* Content */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-[300px]" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-[300px]" : "max-h-0"
+                    }`}
                 >
                   <ul className="pb-[32px] list-disc list-inside flex flex-col gap-0">
                     {feature.items.map((item) => (

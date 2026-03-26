@@ -92,10 +92,10 @@ export default function CloverVideoSection() {
             {sidebarVideos.map((video) => (
               <div
                 key={video.title}
-                className="flex items-center gap-4 bg-azul rounded-[12px] p-3 lg:p-4 cursor-pointer hover:opacity-90 transition-opacity flex-1"
+                className="group/card flex items-center gap-4 bg-white hover:bg-azul rounded-[12px] p-3 lg:p-4 cursor-pointer transition-colors duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
               >
                 <VideoThumbnailIcon />
-                <p className="text-[14px] lg:text-[16px] font-bold leading-[1.4] text-white">
+                <p className="text-[14px] lg:text-[16px] font-bold leading-[1.4] text-azul group-hover/card:text-white transition-colors duration-200">
                   {video.title}
                 </p>
               </div>

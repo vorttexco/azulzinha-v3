@@ -28,18 +28,23 @@ export default function PossibilitiesSection() {
   return (
     <section className="w-full bg-[#F5F5F5] py-14 lg:py-16">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
-        {/* Top row: Text left + Image right */}
+
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4">
-            <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-left">
-              Com azulzinha você tem mais possibilidades para {" "}
+          <div className="w-full lg:w-1/2 flex flex-col  gap-4">
+            <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-left pt-4">
+              Com azulzinha você tem mais
+              <br className="hidden lg:block" />
+              possibilidades para{" "}
               <span className="text-[#FC8F01]">crescer</span>
             </h2>
 
-            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
-              Empreenda com as soluções CAIXA em parceria com a Fiserv, líder
-              global em tecnologias de pagamentos e serviços financeiros.
+            <p className="font-normal text-[18px] leading-[140%] tracking-normal text-black">
+              Empreenda com as soluções CAIXA em parceria
+              <br className="hidden lg:block" />
+              com a Fiserv, líder global em tecnologias de
+              <br className="hidden lg:block" />
+              pagamentos e serviços financeiros.
             </p>
           </div>
 
@@ -54,12 +59,12 @@ export default function PossibilitiesSection() {
           </div>
         </div>
 
-        {/* Bottom row: 4 cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 lg:mt-10">
+        {/* Bottom row: 4 cards — negative margin sobe sobre a imagem no desktop */}
+        <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 lg:-mt-24">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="bg-white rounded-[12px] p-5 flex flex-col gap-3 shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
+              className="bg-white rounded-[12px] w-[288px] h-[244px] pr-[40px] pl-[32px] py-0 flex flex-col justify-center gap-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
             >
               <Image
                 src={card.icon}

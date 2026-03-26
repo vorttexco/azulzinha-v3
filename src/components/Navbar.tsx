@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 const navLinks = [
   { label: "Para sua empresa", hasDropdown: true },
@@ -96,19 +97,7 @@ function CloseIcon() {
   );
 }
 
-function DropdownArrowMobile() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M7 10L12 15L17 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+// use shared ArrowIcon (rotated) where needed
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -221,7 +210,9 @@ export default function Navbar() {
                   className="flex items-center justify-between py-[16px] border-b border-white/30 font-sans text-[18px] text-white"
                 >
                   {link.label}
-                  {link.hasDropdown && <DropdownArrowMobile />}
+                  {link.hasDropdown && (
+                    <ArrowIcon width={24} height={24} stroke="#fff" strokeWidth={1.5} className="transform rotate-90" />
+                  )}
                 </a>
               ))}
             </div>

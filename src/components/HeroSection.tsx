@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 const checkItems = [
   "Receba suas vendas no crédito em 1 dia útil",
@@ -7,26 +8,7 @@ const checkItems = [
   "Acompanhe seus recebimentos em tempo real",
 ];
 
-function CheckIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="shrink-0"
-    >
-      <path
-        d="M16.6667 5L7.50001 14.1667L3.33334 10"
-        stroke="#FC8F01"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+// using shared ArrowIcon component
 
 export default function HeroSection() {
   return (
@@ -47,7 +29,14 @@ export default function HeroSection() {
 
       {/* Left overlay */}
       <div
-        className="absolute inset-0 opacity-90 bg-[linear-gradient(91deg,rgba(0,39,94,1)_44%,rgba(1,61,145,0)_96%)]"
+        className="absolute opacity-90"
+        style={{
+          width: 1200,
+          height: 628,
+          top: -14,
+          left: -38,
+          background: "linear-gradient(90.48deg, #00275E 44.2%, rgba(1, 61, 145, 0) 96.01%)",
+        }}
       />
 
       {/* Content */}
@@ -70,7 +59,7 @@ export default function HeroSection() {
             <ul className="flex flex-col gap-2 pr-[70px] lg:pr-0 lg:mt-6">
               {checkItems.map((item) => (
                 <li key={item} className="flex items-start gap-2 lg:items-center lg:gap-4">
-                  <CheckIcon />
+                  <ArrowIcon width={20} height={20} />
                   <span className="text-[15px] lg:text-[16px] leading-[1.4] text-white">
                     {item}
                   </span>

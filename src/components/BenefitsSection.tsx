@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 const cards = [
   {
@@ -33,33 +34,6 @@ const brandLogos = Array.from({ length: 8 }, (_, i) => ({
   alt: `Bandeira ${i + 1}`,
 }));
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="shrink-0"
-    >
-      <path
-        d="M3.33334 8H12.6667"
-        stroke="#FC8F01"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 3.33337L12.6667 8.00004L8 12.6667"
-        stroke="#FC8F01"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function SmallCard({ icon, text }: { icon: string; text: string }) {
   return (

@@ -40,14 +40,7 @@ const products = [
   },
 ];
 
-function OrangeArrow() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
-      <path d="M3.33334 8H12.6667" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 export default function ProductsSection() {
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }));
@@ -64,7 +57,7 @@ export default function ProductsSection() {
         </h2>
         <a href="#" className="mt-4 inline-flex items-center gap-2 rounded-[6px] border border-[#006CAD] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
           Peça a sua azulzinha
-          <OrangeArrow />
+          <ArrowIcon />
         </a>
       </div>
 
@@ -80,7 +73,7 @@ export default function ProductsSection() {
                 <p className="text-[14px] leading-[1.5] text-black">{product.description}</p>
                 <a href="#" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#006CAD] cursor-pointer hover:opacity-80 transition-opacity">
                   Saiba mais
-                  <OrangeArrow />
+                  <ArrowIcon />
                 </a>
               </div>
             </div>

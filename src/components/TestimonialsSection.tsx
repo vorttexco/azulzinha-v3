@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
     if (!emblaApi) return;
     setScrollSnaps(emblaApi.scrollSnapList());
     onSelect();
-    emblaApi.on("select", onSelect).on("reinit", onSelect);
+    emblaApi.on("select", onSelect).on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
   const handleDotClick = useCallback(

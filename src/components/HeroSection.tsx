@@ -2,15 +2,31 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/icons/ArrowIcon";
 
-const checkItems = [
+const defaultCheckItems = [
   "Receba suas vendas no crédito em 1 dia útil",
   "Aceite as principais bandeiras e carteiras digitais",
   "Acompanhe seus recebimentos em tempo real",
 ];
 
-// using shared ArrowIcon component
+interface HeroSectionProps {
+  title?: string;
+  description?: string;
+  checkItems?: string[];
+  buttonText?: string;
+  buttonHref?: string;
+  backgroundImage?: string;
+  highlightWord?: string;
+}
 
-export default function HeroSection() {
+export default function HeroSection({
+  title = "Com azulzinha você pode muito mais.",
+  description = "Gestão simplificada, segurança, mais vendas e pagamentos rápidos com a azulzinha.",
+  checkItems = defaultCheckItems,
+  buttonText = "Peça sua azulzinha",
+  buttonHref = "#",
+  backgroundImage = "/images/hero-bg.png",
+  highlightWord = "1 dia útil",
+}: HeroSectionProps = {}) {
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
       {/* Background gradient */}
@@ -20,7 +36,7 @@ export default function HeroSection() {
 
       {/* Background image */}
       <Image
-        src={asset("/images/hero-bg.png")}
+        src={asset(backgroundImage)}
         alt=""
         fill
         className="object-cover"
@@ -47,39 +63,40 @@ export default function HeroSection() {
             {/* Title + Description */}
             <div className="flex flex-col gap-3 lg:gap-0">
               <h1 className="text-[26px] lg:text-[38px] font-bold leading-[1.3] text-white">
-                Com azulzinha você pode muito mais.
+                {title}
               </h1>
 
               <p className="text-[16px] lg:text-[18px] leading-[1.4] text-white lg:mt-4">
-                Gestão simplificada, segurança, mais vendas e pagamentos rápidos com
-                a azulzinha.
+                {description}
               </p>
             </div>
 
-            <ul className="flex flex-col gap-2 pr-[70px] lg:pr-0 lg:mt-6">
-              {checkItems.map((item) => (
-                <li key={item} className="flex items-start gap-2 lg:items-center lg:gap-4">
-                  <ArrowIcon width={20} height={20} />
-                  <span className="text-[15px] lg:text-[16px] leading-[1.4] text-white">
-                    {item.includes("1 dia útil") ? (
-                      <>
-                        {item.replace("1 dia útil", "").trim()} {" "}
-                        <span className="text-laranja">1 dia útil</span>
-                      </>
-                    ) : (
-                      item
-                    )}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {checkItems.length > 0 && (
+              <ul className="flex flex-col gap-2 pr-[70px] lg:pr-0 lg:mt-6">
+                {checkItems.map((item) => (
+                  <li key={item} className="flex items-start gap-2 lg:items-center lg:gap-4">
+                    <ArrowIcon width={20} height={20} />
+                    <span className="text-[15px] lg:text-[16px] leading-[1.4] text-white">
+                      {highlightWord && item.includes(highlightWord) ? (
+                        <>
+                          {item.replace(highlightWord, "").trim()}{" "}
+                          <span className="text-laranja">{highlightWord}</span>
+                        </>
+                      ) : (
+                        item
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <a
-            href="#"
+            href={buttonHref}
             className="self-start rounded-[6px] px-[17px] py-[10px] text-[15.8px] lg:text-[16px] text-white text-center cursor-pointer bg-linear-to-b from-laranja-claro to-laranja lg:mt-12"
           >
-            Peça sua azulzinha
+            {buttonText}
           </a>
         </div>
       </div>

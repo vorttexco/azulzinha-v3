@@ -121,16 +121,17 @@ function OrangeBullet() {
 
 function ProductCard({ product }: { product: CloverProduct }) {
   return (
-    <div className="flex-1 bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col">
-      {/* Product image */}
-      <div className="relative w-full h-[280px] lg:h-[320px] bg-[#F7F7F7]">
+    <div className="flex-1 bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col mt-[140px] lg:mt-[160px]">
+      {/* Product image - flutua acima do card com margem negativa */}
+      <div className="relative w-full h-[280px] lg:h-[320px] -mt-[140px] lg:-mt-[160px] pointer-events-none">
         <Image
           src={asset(product.image)}
           alt={product.name}
           fill
-          className="object-contain object-bottom p-6"
+          className="object-contain object-bottom"
         />
       </div>
+
 
       {/* Content */}
       <div className="flex flex-col gap-6 p-6 lg:p-8 flex-1">
@@ -210,7 +211,7 @@ export default function CloverComparisonSection() {
           Compare e escolha a sua Clover
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[31px] justify-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[31px] justify-center items-end overflow-visible">
           {products.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}

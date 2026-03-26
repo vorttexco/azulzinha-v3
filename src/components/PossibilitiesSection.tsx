@@ -32,8 +32,8 @@ export default function PossibilitiesSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center gap-4">
-            <h2 className="text-[26px] lg:text-[28px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
-              Com azulzinha você tem mais possibilidades para{" "}
+            <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-left">
+              Com azulzinha você tem mais possibilidades para {" "}
               <span className="text-[#FC8F01]">crescer</span>
             </h2>
 

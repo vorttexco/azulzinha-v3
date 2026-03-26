@@ -1,43 +1,31 @@
-import React from "react";
+interface ArrowIconProps {
+    width?: number;
+    height?: number;
+    color?: string;
+    className?: string;
+}
 
-type Props = {
-  width?: number;
-  height?: number;
-  stroke?: string;
-  strokeWidth?: number;
-  className?: string;
+const ArrowIcon = ({
+    width = 22,
+    height = 16,
+    color = "#FC8F01",
+    className,
+}: ArrowIconProps) => {
+    return (
+        <svg
+            width={width}
+            height={height}
+            viewBox="0 0 22 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+        >
+            <path
+                d="M13.75 16L12.123 14.4242L17.6 9.1206L0 9.1206L0 6.90137L17.6 6.90137L12.1 1.57547L13.727 0L22 8.01115L13.75 16Z"
+                fill={color}
+            />
+        </svg>
+    );
 };
 
-export default function ArrowIcon({
-  width = 16,
-  height = 16,
-  stroke = "#FC8F01",
-  strokeWidth = 2,
-  className,
-}: Props) {
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        d="M3.33334 8H12.6667"
-        stroke={stroke}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 3.33334L12.6667 8L8 12.6667"
-        stroke={stroke}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+export default ArrowIcon;

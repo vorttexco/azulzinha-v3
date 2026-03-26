@@ -61,7 +61,14 @@ export default function HeroSection() {
                 <li key={item} className="flex items-start gap-2 lg:items-center lg:gap-4">
                   <ArrowIcon width={20} height={20} />
                   <span className="text-[15px] lg:text-[16px] leading-[1.4] text-white">
-                    {item}
+                    {item.includes("1 dia útil") ? (
+                      <>
+                        {item.replace("1 dia útil", "").trim()} {" "}
+                        <span className="text-laranja">1 dia útil</span>
+                      </>
+                    ) : (
+                      item
+                    )}
                   </span>
                 </li>
               ))}

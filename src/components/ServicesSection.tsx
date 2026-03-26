@@ -21,8 +21,8 @@ const cards = [
 ];
 
 const variantStyles: Record<CardVariant, { bg: string; title: string; text: string; link: string }> = {
-  default:  { bg: "bg-white", title: "text-[#006CAD]", text: "text-[#333333]", link: "text-[#006CAD]" },
-  variant2: { bg: "bg-gradient-to-br from-[#005A8C] to-[#003B5C]", title: "text-white", text: "text-white/90", link: "text-white" },
+  default: { bg: "bg-white", title: "text-[#006CAD]", text: "text-[#333333]", link: "text-[#006CAD]" },
+  variant2: { bg: "bg-[linear-gradient(0deg,#006CAD_8.16%,#038DE1_96.88%)]", title: "text-white", text: "text-white/90", link: "text-white" },
   variant3: { bg: "bg-[#004080]", title: "text-white", text: "text-white/90", link: "text-white" },
 };
 
@@ -41,20 +41,20 @@ export default function ServicesSection() {
   }, [emblaApi]);
 
   useEffect(() => {
-  if (!emblaApi) return;
-  setDotCount(emblaApi.scrollSnapList().length);
-  emblaApi.on("select", onSelect);
-  emblaApi.on("reInit", onSelect); // <-- isso
-  return () => {
-    emblaApi.off("select", onSelect);
-    emblaApi.off("reInit", onSelect);
-  };
-}, [emblaApi, onSelect]);
+    if (!emblaApi) return;
+    setDotCount(emblaApi.scrollSnapList().length);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect); // <-- isso
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   return (
     <section className="bg-white py-14 lg:py-20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 lg:gap-[60px]">
-        <h2 className="text-[26px] lg:text-[38px] font-normal leading-[1.2] lg:leading-[1.3] text-[#006CAD] text-center max-w-[718px] px-[46px] lg:px-4">
+        <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-center max-w-[718px] px-[46px] lg:px-4">
           Transforme o dia a dia do <span className="text-laranja">seu negócio</span> com a azulzinha
         </h2>
 
@@ -63,7 +63,7 @@ export default function ServicesSection() {
             {cards.map((card) => {
               const s = variantStyles[card.variant];
               return (
-                <div key={card.title} className={`shrink-0 w-[294px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg}`}>
+                <div key={card.title} className={`shrink-0 w-[294px] h-[343px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg}`}>
                   <div className="relative w-full h-48">
                     <Image
                       src={card.image}
@@ -99,8 +99,8 @@ export default function ServicesSection() {
               aria-label={`Ir para ${i + 1}`}
               className="transition-all duration-300 rounded-full cursor-pointer"
               style={{
-                width: i === activeDot ? "32px" : "10px",
-                height: "10px",
+                width: i === activeDot ? "28px" : "6px",
+                height: "6px",
                 backgroundColor: i === activeDot ? "#FC8F01" : "#D9D9D9",
               }}
             />

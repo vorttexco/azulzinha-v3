@@ -74,10 +74,10 @@ export default function ServicesSection() {
                   </div>
                   <div className="p-5 flex flex-col justify-between h-[calc(343px-162px)]">
                     <div className="flex flex-col gap-2">
-                      <h3 className={`text-lg font-normal ${s.title}`}>{card.title}</h3>
-                      <p className={`text-sm leading-[1.4] ${s.text}`}>{card.description}</p>
+                      <h3 className={`card-title ${s.title}`}>{card.title}</h3>
+                      <p className={`card-text ${s.text}`}>{card.description}</p>
                     </div>
-                    <a href="#" className={`inline-flex items-center gap-2 text-sm leading-[1.4] font-normal hover:opacity-80 transition-opacity ${s.link}`}>
+                    <a href="#" className={`card-link inline-flex items-center gap-2 hover:opacity-80 transition-opacity ${s.link}`}>
                       Saiba mais
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M4.16667 10H15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

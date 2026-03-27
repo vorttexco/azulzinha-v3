@@ -69,9 +69,9 @@ export default function ProductsSection() {
                 <Image src={product.image} alt={product.name} fill className="object-contain object-bottom" />
               </div>
               <div className="bg-white rounded-[12px] p-5 flex flex-col gap-3 mt-2 flex-1 shadow-[0_4px_10px_rgba(0,0,0,0.08)]">
-                <h3 className="text-[18px] font-normal leading-[1.4] tracking-[0%] text-[#006CAD]">{product.name}</h3>
+                <h3 className="card-title text-[#006CAD]">{product.name}</h3>
                 <p className="card-text text-black">{product.description}</p>
-                <a href="#" className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#006CAD] cursor-pointer hover:opacity-80 transition-opacity">
+                <a href="#" className="card-link inline-flex items-center gap-2 text-[#006CAD] cursor-pointer hover:opacity-80 transition-opacity">
                   Saiba mais
                   <ArrowIcon />
                 </a>

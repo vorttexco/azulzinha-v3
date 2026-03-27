@@ -93,7 +93,7 @@ export default function PossibilitiesSection() {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-full lg:w-169 h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-5">
+          <div className="relative w-full lg:w-169 h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-11">
             <Image
               src={asset("/images/hero-banner-3.png")}
               alt="Possibilidades com azulzinha"
@@ -104,7 +104,7 @@ export default function PossibilitiesSection() {
         </div>
 
         {/* Cards */}
-        <div className="relative z-10 mt-6 lg:-mt-24">
+        <div className="relative z-10 mt-6 lg:-mt-22">
           {/* Desktop grid */}
           <div className="hidden lg:grid grid-cols-4 gap-6">
             {cards.map((card) => (

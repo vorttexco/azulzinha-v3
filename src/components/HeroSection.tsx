@@ -39,7 +39,7 @@ export default function HeroSection({
         src={asset(backgroundImage)}
         alt=""
         fill
-        className="object-cover"
+        className="object-cover object-[center_25%]"
         priority
       />
 

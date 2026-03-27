@@ -29,10 +29,11 @@ const variantStyles: Record<CardVariant, { bg: string; title: string; text: stri
 export default function ServicesSection() {
   const autoplay = useRef(Autoplay({ delay: 1500, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "start", containScroll: "trimSnaps" },
+    { align: "center", containScroll: "trimSnaps" },
     [autoplay.current, WheelGesturesPlugin()]
   );
   const [activeDot, setActiveDot] = useState(0);
+  const [dotCount, setDotCount] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -41,11 +42,16 @@ export default function ServicesSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
+    const update = () => {
+      setDotCount(emblaApi.scrollSnapList().length);
+      onSelect();
+    };
+    update();
     emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect); // <-- isso
+    emblaApi.on("reInit", update);
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
+      emblaApi.off("reInit", update);
     };
   }, [emblaApi, onSelect]);
 
@@ -61,14 +67,13 @@ export default function ServicesSection() {
             {cards.map((card) => {
               const s = variantStyles[card.variant];
               return (
-                <div key={card.title} className={`shrink-0 w-[calc(100vw-75px)] lg:w-73.5 h-85.75 rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] last:mr-7.5 lg:last:mr-25 ${s.bg}`}>
-                  <div className="relative w-full h-[162px]">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      className="object-cover"
-                      fill
-                    />
+                <div key={card.title} className={`shrink-0 w-[294px] h-[343px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg} last:mr-7.5`}>
+                  <div className="relative w-full h-[162px]">  <Image
+                    src={card.image}
+                    alt={card.title}
+                    className="object-cover"
+                    fill
+                  />
                   </div>
                   <div className="p-5 flex flex-col justify-between h-[calc(343px-162px)]">
                     <div className="flex flex-col gap-2">
@@ -90,7 +95,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="flex items-center gap-2">
-          {cards.map((_, i) => (
+          {Array.from({ length: dotCount }).map((_, i) => (
             <button
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}

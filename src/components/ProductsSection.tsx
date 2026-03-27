@@ -44,7 +44,7 @@ const products = [
 export default function ProductsSection() {
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef] = useEmblaCarousel(
-    { align: "start", containScroll: "trimSnaps" },
+    { align: "center", containScroll: "trimSnaps" },
     [autoplay.current, WheelGesturesPlugin()]
   );
 

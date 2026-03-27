@@ -50,7 +50,7 @@ function Card({ icon, title, description }: { icon: string; title: string; descr
 }
 
 export default function PossibilitiesSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
   const onSelect = useCallback(() => {
@@ -93,7 +93,7 @@ export default function PossibilitiesSection() {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-full lg:w-169 h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-11">
+          <div className="relative w-full lg:w-169 h-64 lg:h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-11">
             <Image
               src={asset("/images/hero-banner-3.png")}
               alt="Possibilidades com azulzinha"
@@ -114,7 +114,7 @@ export default function PossibilitiesSection() {
 
           {/* Mobile carousel */}
           <div className="lg:hidden overflow-hidden -mx-7.5" ref={emblaRef}>
-            <div className="flex gap-3 pl-7.5 mr-7.5">
+            <div className="flex gap-3">
               {cards.map((card) => (
                 <div key={card.title} className="shrink-0 w-[calc(100vw-75px)]">
                   <Card icon={card.icon} title={card.title} description={card.description} />

@@ -97,7 +97,7 @@ export default function AproximaSection() {
         </div>
 
         {/* Mobile carousel */}
-        <div className="lg:hidden overflow-hidden -mx-[30px]" ref={emblaRef}>
+        <div className="lg:hidden overflow-hidden -mx-[30px] select-none" ref={emblaRef}>
           <div className="flex gap-6 pl-[30px]">
             {cards.map((card) => (
               <div key={card.title} className="shrink-0 w-[288px]">

@@ -110,7 +110,7 @@ export default function ProductFeaturesSection() {
         </div>
 
         {/* Mobile carousel */}
-        <div className="lg:hidden overflow-hidden -mx-[30px]" ref={emblaRef}>
+        <div className="lg:hidden overflow-hidden -mx-[30px] select-none" ref={emblaRef}>
           <div className="flex gap-6 pl-[30px]">
             {products.map((product) => (
               <div key={product.title} className="shrink-0 w-[294px]">

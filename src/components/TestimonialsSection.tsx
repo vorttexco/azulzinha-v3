@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
         </h2>
 
         <div className="mt-8 lg:mt-[60px]">
-          <div className="overflow-hidden" ref={emblaRef} style={{ padding: "20px 0", margin: "-20px 0" }}>
+          <div className="overflow-hidden select-none" ref={emblaRef} style={{ padding: "20px 0", margin: "-20px 0" }}>
             <div className="flex">
               {testimonials.map((testimonial, index) => (
                 <div

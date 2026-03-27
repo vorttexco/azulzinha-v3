@@ -88,7 +88,7 @@ export default function PaymentMethodsSection() {
           </div>
 
           {/* Mobile carousel */}
-          <div className="lg:hidden w-full overflow-hidden -mx-[30px]" ref={emblaRef}>
+          <div className="lg:hidden w-full overflow-hidden -mx-[30px] select-none" ref={emblaRef}>
             <div className="flex gap-6 pl-[30px]">
               {cardComponents.map((card, i) => (
                 <div key={i} className="shrink-0 w-[328px]">

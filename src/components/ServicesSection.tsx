@@ -62,7 +62,7 @@ export default function ServicesSection() {
           Transforme o dia a dia do <span className="text-laranja">seu negócio</span> com a azulzinha
         </h2>
 
-        <div className="w-full overflow-hidden py-4" ref={emblaRef}>
+        <div className="w-full overflow-hidden py-4 select-none" ref={emblaRef}>
           <div className="flex pl-[30px] lg:pl-[100px] gap-6">
             {cards.map((card) => {
               const s = variantStyles[card.variant];

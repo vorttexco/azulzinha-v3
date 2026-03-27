@@ -60,7 +60,7 @@ export default function ProductsSection() {
         </a>
       </div>
 
-      <div className="max-w-[1440px] mx-auto w-full overflow-hidden mt-10" ref={emblaRef}>
+      <div className="max-w-[1440px] mx-auto w-full overflow-hidden mt-10 select-none" ref={emblaRef}>
         <div className="flex pl-[30px] lg:pl-[100px] pb-4 gap-6 items-end">
           {products.map((product) => (
             <div key={product.name} className="shrink-0 w-[294px] flex flex-col last:mr-7.5 lg:last:mr-25">

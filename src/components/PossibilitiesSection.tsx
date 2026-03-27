@@ -113,7 +113,7 @@ export default function PossibilitiesSection() {
           </div>
 
           {/* Mobile carousel */}
-          <div className="lg:hidden overflow-hidden -mx-7.5" ref={emblaRef}>
+          <div className="lg:hidden overflow-hidden -mx-7.5 select-none" ref={emblaRef}>
             <div className="flex gap-3">
               {cards.map((card) => (
                 <div key={card.title} className="shrink-0 w-[calc(100vw-75px)]">

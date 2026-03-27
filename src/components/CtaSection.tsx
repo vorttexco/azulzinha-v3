@@ -21,16 +21,14 @@ export default function CtaSection({
       className="w-full py-14 lg:py-20 bg-linear-to-b from-white from-50% to-[#F7F7F7]"
     >
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
-        <div
-          className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px] flex flex-col lg:flex-row items-stretch bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)]"
-        >
+        <div className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px] flex flex-col lg:flex-row items-stretch bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] p-[30px] gap-6 lg:p-0 lg:gap-0">
           {/* Image - shown first on mobile (top), right side on desktop */}
-          <div className="relative w-full h-[260px] lg:hidden">
+          <div className="relative w-[309px] h-[206px] mx-auto lg:hidden">
             <Image
               src={asset(image)}
               alt={imageAlt}
               fill
-              className="object-cover object-center rounded-t-[8px]"
+              className="object-cover object-center rounded-[8px]"
             />
           </div>
 

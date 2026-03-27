@@ -103,4 +103,16 @@
     leading-trim: none;
     letter-spacing: 0%;
   }
+  
+::-webkit-scrollbar {
+  width: 6px;
+  margin-left: 10px;
 }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 102, 102, 0.2);
+  border-radius: 10px;
+}
+}
+
+

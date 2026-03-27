@@ -105,44 +105,47 @@ export default function VideoSection({
                 className="object-cover"
               />
             </div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,27,33,0.8)_0%,rgba(0,27,33,0.3)_40%,transparent_70%)] z-10" />
+            <div className="absolute  inset-0 bg-[linear-gradient(359.87deg,#00275E_20.33%,rgba(1,61,145,0)_53.44%),linear-gradient(0deg,rgba(0,41,97,0.2),rgba(0,41,97,0.2))] z-10" />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
               <PlayIcon />
             </div>
             <div className="absolute bottom-0 left-0 right-0 z-20 p-6 lg:p-8">
-              <p className="text-[16px] lg:text-[20px] font-normal leading-[1.4] text-white">
+              <p className="text-[20px] lg:text-[26px] font-normal leading-[1.4] text-white">
                 {mainVideoTitle}
               </p>
             </div>
           </div>
 
           {/* Sidebar video list */}
-          <div className={`flex flex-col gap-3 lg:gap-4 ${sidebarWidth} lg:h-[480px]`}>
-            {videos.map((video, index) => (
-              <div
-                key={`${video.title}-${index}`}
-                className="group/card flex items-center gap-4 bg-white hover:bg-azul rounded-[12px] p-3 lg:p-4 cursor-pointer transition-colors duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
-              >
-                {hasThumbnails && video.thumbnail ? (
-                  <div className="w-[120px] h-[80px] rounded-[8px] overflow-hidden relative shrink-0">
-                    <Image
-                      src={asset(video.thumbnail)}
-                      alt={video.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <SmallPlayIcon />
-                  </div>
-                ) : (
-                  <VideoThumbnailIcon />
-                )}
-                <p className="text-[14px] lg:text-[16px] font-bold leading-[1.4] text-azul group-hover/card:text-white transition-colors duration-200">
-                  {video.title}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+          <div className="relative lg:w-[380px]">
+
+            <div className="absolute bottom-0 left-0 right-0 h-10 bg-[linear-gradient(to_top,rgb(244,244,244)_0%,rgba(244,244,244,0.8)_40%,transparent_100%)] z-10 pointer-events-none" />
+            <div className={`flex flex-col gap-3 lg:gap-4 ${sidebarWidth} lg:h-[480px] overflow-y-auto scrollbar-hide pr-2`}>
+              {videos.map((video, index) => (
+                <div
+                  key={`${video.title}-${index}`}
+                  className="group/card flex items-center gap-4 bg-white rounded-[12px] p-3 lg:p-4 cursor-pointer duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)]"
+                >
+                  {hasThumbnails && video.thumbnail ? (
+                    <div className="w-[120px] h-[80px] rounded-[8px] overflow-hidden relative shrink-0">
+                      <Image
+                        src={asset(video.thumbnail)}
+                        alt={video.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <SmallPlayIcon />
+                    </div>
+                  ) : (
+                    <VideoThumbnailIcon />
+                  )}
+                  <p className="text-[18px] leading-[1.4] text-black group-hover/card:text-white transition-colors duration-200">
+                    {video.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div></div>
 
         {/* YouTube CTA */}
         <div className="flex flex-col items-center gap-4 mt-10 lg:mt-[49px]">

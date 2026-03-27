@@ -33,10 +33,11 @@ export default function PossibilitiesSection() {
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col  gap-4">
             <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-left pt-4">
-              Com azulzinha você tem mais
+              Com azulzinha você
               <br className="hidden lg:block" />
-              possibilidades para{" "}
-              <span className="text-[#FC8F01]">crescer</span>
+              tem mais possibilidades
+              <br className="hidden lg:block" />
+              para <span className="text-[#FC8F01]">crescer</span>
             </h2>
 
             <p className="font-normal text-[18px] leading-[140%] tracking-normal text-black">
@@ -49,9 +50,9 @@ export default function PossibilitiesSection() {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-full lg:w-1/2 h-[250px] lg:h-[400px] rounded-[12px] lg:rounded-r-[20px] overflow-hidden">
+          <div className="relative w-full lg:w-169 h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-5">
             <Image
-              src={asset("/images/possibilities-bg.png")}
+              src={asset("/images/hero-banner-3.png")}
               alt="Possibilidades com azulzinha"
               fill
               className="object-cover"

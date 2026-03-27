@@ -29,12 +29,6 @@ const testimonials = [
     author: "Viviane Aparecida de Oliveira",
     business: "Padaria Okinawa",
   },
-  {
-    quote:
-      "O suporte da Azulzinha é excelente, sempre fui muito bem atendida. A maquininha é rápida, funciona bem com o sinal e nunca me deixou na mão. Já recomendei para vários clientes porque confio de verdade no serviço.",
-    author: "Maria Betânia T Dantas",
-    business: "Loja 2 Irmãos",
-  },
 ];
 
 function ScrollDots({
@@ -125,19 +119,7 @@ export default function TestimonialsSection() {
                   style={{ opacity: index === selectedIndex ? 1 : 0.2 }}
                 >
                   <div
-                    className="bg-white rounded-xl flex flex-col justify-between shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
-                    style={{
-                      width: "534px",
-                      height: "326px",
-                      paddingTop: "60px",
-                      paddingRight: "40px",
-                      paddingBottom: "40px",
-                      paddingLeft: "40px",
-                      gap: "16px",
-                      borderRadius: "12px",
-                      opacity: 1,
-                      textAlign: "center",
-                    }}
+                    className="bg-white rounded-xl flex flex-col justify-between shadow-[0_4px_10px_rgba(0,0,0,0.08)] w-full min-h-81.5 pt-10 lg:pt-15 px-5 lg:px-10 pb-10 gap-4 text-center"
                   >
                     <p className="font-normal text-[16px] leading-[180%] tracking-normal text-center italic text-black">
                       &ldquo;{testimonial.quote}&rdquo;

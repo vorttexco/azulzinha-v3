@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
 
 const cards = [
   {
@@ -24,7 +28,46 @@ const cards = [
   },
 ];
 
+function Card({ icon, title, description }: { icon: string; title: string; description: string }) {
+  return (
+    <div className="bg-white rounded-xl h-61 pr-10 pl-8 py-0 flex flex-col justify-center gap-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.08)]">
+      <Image
+        src={icon}
+        alt=""
+        width={40}
+        height={40}
+        className="w-10 h-10"
+        unoptimized
+      />
+      <h3 className="text-[16px] leading-[1.4] text-azul font-normal">
+        {title}
+      </h3>
+      <p className="text-[14px] lg:text-[16px] leading-[1.4] text-black">
+        {description}
+      </p>
+    </div>
+  );
+}
+
 export default function PossibilitiesSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [activeDot, setActiveDot] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setActiveDot(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
   return (
     <section className="w-full bg-[#F5F5F5] py-14 lg:py-16">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
@@ -60,28 +103,41 @@ export default function PossibilitiesSection() {
           </div>
         </div>
 
-        {/* Bottom row: 4 cards — negative margin sobe sobre a imagem no desktop */}
-        <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-6 lg:-mt-24">
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              className="bg-white rounded-[12px] w-[288px] h-[244px] pr-[40px] pl-[32px] py-0 flex flex-col justify-center gap-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
-            >
-              <Image
-                src={card.icon}
-                alt=""
-                width={40}
-                height={40}
-                className="w-10 h-10"
-                unoptimized
-              />
-              <h3 className="text-[16px] leading-[1.4] text-[#006CAD] font-normal">
-                {card.title}
-              </h3>
-              <p className="text-[14px] lg:text-[16px] leading-[1.4] text-black">
-                {card.description}
-              </p>
+        {/* Cards */}
+        <div className="relative z-10 mt-6 lg:-mt-24">
+          {/* Desktop grid */}
+          <div className="hidden lg:grid grid-cols-4 gap-6">
+            {cards.map((card) => (
+              <Card key={card.title} icon={card.icon} title={card.title} description={card.description} />
+            ))}
+          </div>
+
+          {/* Mobile carousel */}
+          <div className="lg:hidden overflow-hidden -mx-7.5" ref={emblaRef}>
+            <div className="flex gap-3 pl-7.5 mr-7.5">
+              {cards.map((card) => (
+                <div key={card.title} className="shrink-0 w-[calc(100vw-75px)]">
+                  <Card icon={card.icon} title={card.title} description={card.description} />
+                </div>
+              ))}
             </div>
+          </div>
+        </div>
+
+        {/* Dots - mobile only */}
+        <div className="lg:hidden mt-4 flex items-center justify-center gap-2">
+          {cards.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => emblaApi?.scrollTo(i)}
+              aria-label={`Ir para ${i + 1}`}
+              className="transition-all duration-300 rounded-full cursor-pointer"
+              style={{
+                width: i === activeDot ? "28px" : "6px",
+                height: "6px",
+                backgroundColor: i === activeDot ? "#FC8F01" : "#D9D9D9",
+              }}
+            />
           ))}
         </div>
       </div>

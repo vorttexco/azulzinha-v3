@@ -154,7 +154,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <a
             href="#"
-            className="flex items-center justify-center w-[168px] h-[36px] rounded-[6px] font-sans text-[14px] text-white hover:opacity-90 transition-opacity bg-linear-to-b from-laranja-claro to-laranja"
+            className="btn-laranja"
           >
             Peça já sua azulzinha
           </a>
@@ -187,7 +187,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <a
               href="#"
-              className="flex items-center justify-center rounded-[6px] py-[10px] font-sans text-[15.8px] text-white bg-linear-to-b from-laranja-claro to-laranja"
+              className="btn-laranja"
             >
               Peça sua azulzinha
             </a>

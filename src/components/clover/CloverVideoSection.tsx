@@ -110,7 +110,7 @@ export default function CloverVideoSection() {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[14px] text-white cursor-pointer bg-linear-to-b from-laranja-claro to-laranja"
+            className="btn-laranja inline-flex items-center gap-2"
           >
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
               <path

@@ -94,7 +94,7 @@ export default function HeroSection({
 
           <a
             href={buttonHref}
-            className="self-start rounded-[6px] px-[17px] py-[10px] text-[15.8px] lg:text-[16px] text-white text-center cursor-pointer bg-linear-to-b from-laranja-claro to-laranja lg:mt-12"
+            className="btn-laranja self-start lg:mt-12"
           >
             {buttonText}
           </a>

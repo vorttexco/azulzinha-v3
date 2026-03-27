@@ -36,7 +36,7 @@ export default function CtaSection({
 
           {/* Text content */}
           <div className="flex flex-col justify-center gap-4 lg:gap-6 p-6 lg:pl-16 lg:pr-8 w-full lg:w-1/2 lg:shrink-0 lg:py-0 lg:h-[490px]">
-            <h2 className="text-[22px] lg:text-[28px] font-bold text-white leading-[1.3]">
+            <h2 className="section-title text-white text-left">
               {title}
             </h2>
             <p className="text-[16px] lg:text-[18px] text-white leading-[1.4]">
@@ -44,7 +44,7 @@ export default function CtaSection({
             </p>
             <div>
               <button
-                className="text-white font-semibold cursor-pointer bg-linear-to-b from-laranja-claro to-laranja rounded-[6px] px-[17px] py-[10px]"
+                className="btn-laranja"
               >
                 {buttonText}
               </button>

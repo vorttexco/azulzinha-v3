@@ -194,7 +194,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
         {/* CTA Button */}
         <a
           href="#"
-          className="self-start rounded-[6px] px-[17px] py-[10px] text-[16px] text-white text-center cursor-pointer bg-linear-to-b from-laranja-claro to-laranja mt-auto"
+          className="btn-laranja self-start mt-auto"
         >
           {product.ctaText}
         </a>

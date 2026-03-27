@@ -58,6 +58,22 @@
     }
   }
 
+  .btn-laranja {
+    background-image: linear-gradient(to bottom, var(--color-laranja-claro), var(--color-laranja));
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 10px 17px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    transition: opacity 0.2s;
+  }
+
+  .btn-laranja:hover {
+    opacity: 0.9;
+  }
+
   .card-title {
     font-family: var(--font-caixa);
     font-weight: 400;

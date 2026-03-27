@@ -61,7 +61,7 @@ export default function BenefitsSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
-            <h2 className="section-title text-[32px] text-left text-azul">
+            <h2 className="section-title text-left text-azul">
               Tenha{" "}
               <span className="text-[#FC8F01]">muito mais tranquilidade</span>{" "}
               para transformar o seu comércio e impulsionar as vendas com

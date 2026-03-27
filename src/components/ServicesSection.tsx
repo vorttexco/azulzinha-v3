@@ -54,7 +54,7 @@ export default function ServicesSection() {
   return (
     <section className="bg-white py-14 lg:py-20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 lg:gap-[40px]">
-        <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-center max-w-[718px] px-[46px] lg:px-4">
+        <h2 className="section-title max-w-[718px] px-[46px] lg:px-4">
           Transforme o dia a dia do <span className="text-laranja">seu negócio</span> com a azulzinha
         </h2>
 

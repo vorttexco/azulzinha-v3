@@ -48,6 +48,14 @@
     leading-trim: none;
     letter-spacing: 0%;
     text-align: center;
+    color: var(--color-azul);
+  }
+
+  @media (max-width: 767px) {
+    .section-title {
+      font-size: 26px;
+      line-height: 120%;
+    }
   }
 
   .card-title {

@@ -32,10 +32,10 @@ export default function PossibilitiesSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col  gap-4">
-            <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-left pt-4">
-              Com azulzinha você
+            <h2 className="section-title text-left pt-4">
+              Com azulzinha você {" "}
               <br className="hidden lg:block" />
-              tem mais possibilidades
+              tem mais possibilidades {" "}
               <br className="hidden lg:block" />
               para <span className="text-[#FC8F01]">crescer</span>
             </h2>

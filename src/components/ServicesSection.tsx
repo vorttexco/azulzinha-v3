@@ -64,7 +64,7 @@ export default function ServicesSection() {
               const s = variantStyles[card.variant];
               return (
                 <div key={card.title} className={`shrink-0 w-[294px] h-[343px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg}`}>
-                  <div className="relative w-full h-48">
+                  <div className="relative w-full h-[162px]">
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -74,8 +74,8 @@ export default function ServicesSection() {
                   </div>
                   <div className="p-5 flex flex-col gap-6">
                     <div className="flex flex-col gap-2">
-                      <h3 className={`text-lg font-semibold ${s.title}`}>{card.title}</h3>
-                      <p className={`text-base leading-[1.4] ${s.text}`}>{card.description}</p>
+                      <h3 className={`text-lg font-normal ${s.title}`}>{card.title}</h3>
+                      <p className={`text-sm leading-[1.4] ${s.text}`}>{card.description}</p>
                     </div>
                     <a href="#" className={`inline-flex items-center gap-2 text-sm font-semibold hover:opacity-80 transition-opacity ${s.link}`}>
                       Saiba mais

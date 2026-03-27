@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <section className="bg-white py-14 lg:py-20 overflow-hidden">
+    <section className="bg-white pt-14 lg:py-20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <h2 className="text-[38px] font-normal leading-[1.3] tracking-[0%] text-[#006CAD] text-center px-[30px] lg:px-4">
           <span className="text-[#FC8F01]">Histórias</span> reais de quem já é

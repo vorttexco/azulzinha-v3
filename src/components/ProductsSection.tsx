@@ -61,9 +61,9 @@ export default function ProductsSection() {
       </div>
 
       <div className="max-w-[1440px] mx-auto w-full overflow-hidden mt-10" ref={emblaRef}>
-        <div className="flex pl-[30px] lg:pl-[100px] mr-7.5 lg:mr-0 pb-4 gap-6 items-end">
+        <div className="flex pl-[30px] lg:pl-[100px] pb-4 gap-6 items-end">
           {products.map((product) => (
-            <div key={product.name} className="shrink-0 w-[294px] flex flex-col">
+            <div key={product.name} className="shrink-0 w-[294px] flex flex-col last:mr-7.5 lg:last:mr-25">
 
 
               <div className="relative h-[280px] w-full flex items-end justify-center z-10 mb-[-120px]">

@@ -33,7 +33,6 @@ export default function ServicesSection() {
     [autoplay.current, WheelGesturesPlugin()]
   );
   const [activeDot, setActiveDot] = useState(0);
-  const [dotCount, setDotCount] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -42,7 +41,6 @@ export default function ServicesSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    setDotCount(emblaApi.scrollSnapList().length);
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect); // <-- isso
     return () => {
@@ -59,11 +57,11 @@ export default function ServicesSection() {
         </h2>
 
         <div className="w-full overflow-hidden py-4" ref={emblaRef}>
-          <div className="flex pl-[30px] lg:pl-[100px] pr-6 gap-6">
+          <div className="flex pl-[30px] lg:pl-[100px] gap-6">
             {cards.map((card) => {
               const s = variantStyles[card.variant];
               return (
-                <div key={card.title} className={`shrink-0 w-[294px] h-[343px] rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] ${s.bg}`}>
+                <div key={card.title} className={`shrink-0 w-[calc(100vw-75px)] lg:w-73.5 h-85.75 rounded-xl overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] last:mr-7.5 lg:last:mr-25 ${s.bg}`}>
                   <div className="relative w-full h-[162px]">
                     <Image
                       src={card.image}
@@ -92,7 +90,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="flex items-center gap-2">
-          {Array.from({ length: dotCount }).map((_, i) => (
+          {cards.map((_, i) => (
             <button
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}

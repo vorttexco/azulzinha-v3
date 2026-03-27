@@ -47,7 +47,7 @@ export default function HeroSection({
       <div className="absolute inset-0 opacity-90 bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center pl-[30px] pr-[60px] py-[56px] lg:px-[100px] lg:py-0 max-w-[1440px] mx-auto">
+      <div className="relative z-10  min-h-[491px] lg:h-[581px] flex items-center pl-[30px] pr-[60px] py-[56px] lg:px-[100px] lg:py-0 max-w-[1440px] mx-auto">
         <div className="max-w-[463px] flex flex-col gap-8 lg:gap-0">
           {/* Title + Description + Check items */}
           <div className="flex flex-col gap-4 lg:gap-0">

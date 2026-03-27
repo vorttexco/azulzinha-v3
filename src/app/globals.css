@@ -39,6 +39,17 @@
 }
 
 @layer components {
+  .section-title {
+    font-family: var(--font-caixa);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38px;
+    line-height: 130%;
+    leading-trim: none;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
   .card-title {
     font-family: var(--font-caixa);
     font-weight: 400;

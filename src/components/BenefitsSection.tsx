@@ -61,7 +61,7 @@ export default function BenefitsSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-[26px] lg:text-[28px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
+            <h2 className="section-title text-[32px] text-left text-azul">
               Tenha{" "}
               <span className="text-[#FC8F01]">muito mais tranquilidade</span>{" "}
               para transformar o seu comércio e impulsionar as vendas com
@@ -88,7 +88,7 @@ export default function BenefitsSection() {
         </div>
 
         {/* Brand logos */}
-        <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center gap-4 lg:gap-6">
+        <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-6">
           {brandLogos.map((brand) => (
             <Image
               key={brand.src}
@@ -102,10 +102,11 @@ export default function BenefitsSection() {
         </div>
 
         {/* Button */}
-        <div className="mt-6">
+        <div className="mt-6 flex justify-center">
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-[6px] border border-[#006CAD] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
+            className="inline-flex items-center gap-2 rounded-[6px] 
+             px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
           >
             Consulte todas as bandeiras
             <ArrowIcon />

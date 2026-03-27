@@ -6,6 +6,7 @@ import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
+import ArrowIcon from "@/components/icons/ArrowIcon";
 
 const products = [
   {
@@ -40,8 +41,6 @@ const products = [
   },
 ];
 
-import ArrowIcon from "@/components/icons/ArrowIcon";
-
 export default function ProductsSection() {
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef] = useEmblaCarousel(
@@ -52,34 +51,44 @@ export default function ProductsSection() {
   return (
     <section className="w-full bg-white py-14 lg:py-16 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] text-center">
-        <h2 className="text-[26px] lg:text-[38px] font-bold leading-[1.2] lg:leading-[1.3] text-[#006CAD]">
+        <h2 className="section-title text-azul">
           Escolha a azulzinha ideal para o seu <span className="text-[#FC8F01]">negócio</span>
         </h2>
-        <a href="#" className="mt-4 inline-flex items-center gap-2 rounded-[6px] border border-[#006CAD] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
+        <a href="#" className="mt-4 inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
           Peça a sua azulzinha
           <ArrowIcon />
         </a>
       </div>
 
       <div className="max-w-[1440px] mx-auto w-full overflow-hidden mt-10" ref={emblaRef}>
-        <div className="flex pl-[30px] lg:pl-[100px] pr-6 pb-4 gap-6 items-stretch">
+        <div className="flex pl-[30px] lg:pl-[100px] pr-6 pb-4 gap-6 items-end">
           {products.map((product) => (
-            <div key={product.name} className="shrink-0 w-[220px] flex flex-col">
-              <div className="relative h-[220px] w-full flex items-end justify-center">
+            <div key={product.name} className="shrink-0 w-[294px] flex flex-col">
+
+
+              <div className="relative h-[280px] w-full flex items-end justify-center z-10 mb-[-120px]">
                 <Image src={product.image} alt={product.name} fill className="object-contain object-bottom" />
               </div>
-              <div className="bg-white rounded-[12px] p-5 flex flex-col gap-3 mt-2 flex-1 shadow-[0_4px_10px_rgba(0,0,0,0.08)]">
-                <h3 className="card-title text-[#006CAD]">{product.name}</h3>
-                <p className="card-text text-black">{product.description}</p>
-                <a href="#" className="card-link inline-flex items-center gap-2 text-[#006CAD] cursor-pointer hover:opacity-80 transition-opacity">
+
+              <div className="bg-white rounded-[12px] px-5 pt-[140px] pb-5 flex flex-col h-[321px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]">
+                <div>
+                  <h3 className="card-title text-[#006CAD]">{product.name}</h3>
+                  <p className="card-text text-black mt-2">{product.description}</p>
+                </div>
+
+                <a
+                  href="#"
+                  className="card-link inline-flex items-center gap-2 text-azul cursor-pointer hover:opacity-80 transition-opacity mt-auto"
+                >
                   Saiba mais
                   <ArrowIcon />
                 </a>
               </div>
+
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 }

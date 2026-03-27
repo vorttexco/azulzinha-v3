@@ -44,16 +44,7 @@ export default function HeroSection({
       />
 
       {/* Left overlay */}
-      <div
-        className="absolute opacity-90"
-        style={{
-          width: 1200,
-          height: 628,
-          top: -14,
-          left: -38,
-          background: "linear-gradient(90.48deg, #00275E 44.2%, rgba(1, 61, 145, 0) 96.01%)",
-        }}
-      />
+      <div className="absolute inset-0 opacity-90 bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center pl-[30px] pr-[60px] py-[56px] lg:px-[100px] lg:py-0 max-w-[1440px] mx-auto">

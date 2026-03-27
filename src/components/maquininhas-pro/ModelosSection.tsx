@@ -70,7 +70,7 @@ function FloatCard({
 
 export default function ModelosSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
+    align: "center",
     containScroll: "trimSnaps",
   });
   const [activeDot, setActiveDot] = useState(0);

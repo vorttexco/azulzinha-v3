@@ -11,22 +11,22 @@ export default function AutonomiaSection() {
             <h2 className="section-title text-azul lg:text-left!">
               Mais autonomia para o seu negócio com a azulzinha pro
             </h2>
-            <div className="flex flex-col gap-4 text-[18px] font-normal leading-[1.4] text-black">
-              <p>
+            <ul className="flex flex-col gap-4 text-[18px] font-normal leading-[1.4] text-black list-disc pl-5">
+              <li>
                 A azulzinha pro é a famosa maquininha sem fio que é sinônimo de
                 praticidade, mobilidade e rapidez nas vendas.
-              </p>
-              <p>
+              </li>
+              <li>
                 Ideal para quem precisa levar a maquininha até o cliente ou mesmo
                 para estabelecimentos que prezam por um atendimento mais rápido,
                 principalmente em horários de pico de movimento.
-              </p>
-              <p>
+              </li>
+              <li>
                 Uma solução segura da CAIXA, que aceita todas as opções de
                 pagamento e que conta ainda com uma interface intuitiva e fácil
                 de usar.
-              </p>
-            </div>
+              </li>
+            </ul>
           </div>
 
           {/* Right: Image */}

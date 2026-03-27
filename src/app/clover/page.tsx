@@ -5,7 +5,7 @@ import CloverFeaturesSection from "@/components/clover/CloverFeaturesSection";
 import CloverComparisonSection from "@/components/clover/CloverComparisonSection";
 import CloverAppsSection from "@/components/clover/CloverAppsSection";
 import CloverFullImageSection from "@/components/clover/CloverFullImageSection";
-import CloverVideoSection from "@/components/clover/CloverVideoSection";
+import VideoSection from "@/components/VideoSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -25,7 +25,7 @@ export default function CloverPage() {
       <CloverComparisonSection />
       <CloverAppsSection />
       <CloverFullImageSection />
-      <CloverVideoSection />
+      <VideoSection />
       <CtaSection
         title="Descubra o poder do mundo Clover com a azulzinha"
         description="Preencha o formulário e receba uma oferta sob medida com as soluções da Clover e as condições exclusivas que só a CAIXA tem para o seu negócio."

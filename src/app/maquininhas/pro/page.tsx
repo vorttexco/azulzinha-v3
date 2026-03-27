@@ -1,0 +1,59 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AutonomiaSection from "@/components/maquininhas-pro/AutonomiaSection";
+import VantagensSection from "@/components/maquininhas-pro/VantagensSection";
+import ModelosSection from "@/components/maquininhas-pro/ModelosSection";
+import VideoSection from "@/components/VideoSection";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
+
+export default function MaquininhasProPage() {
+  return (
+    <main>
+      <Navbar />
+      <HeroSection
+        title="azulzinha pro"
+        description="Nossa azulzinha mais prática e sem fio, ideal para levar até o cliente e agilizar o atendimento."
+        checkItems={[]}
+        buttonText="Conheça"
+        backgroundImage="/images/maquininhas-pro/hero-bg.png"
+      />
+      <AutonomiaSection />
+      <VantagensSection />
+      <ModelosSection />
+      <VideoSection
+        title="Assista aos vídeos sobre o funcionamento da azulzinha pro"
+        mainVideoImage="/images/maquininhas-pro/video-main.png"
+        mainVideoTitle="Como fazer vendas no débito e crédito"
+        backgroundColor="bg-[#F7F7F7]"
+        sidebarWidth="lg:w-[380px]"
+        videos={[
+          {
+            title: "Como fazer vendas no débito e crédito",
+            thumbnail: "/images/maquininhas-pro/video-thumb-1.png",
+          },
+          {
+            title: "Como fazer vendas parceladas",
+            thumbnail: "/images/maquininhas-pro/video-thumb-2.png",
+          },
+          {
+            title: "Como conectar sua azulzinha pro no Wi-fi",
+            thumbnail: "/images/maquininhas-pro/video-thumb-3.png",
+          },
+          {
+            title: "Como fazer vendas parceladas",
+            thumbnail: "/images/maquininhas-pro/video-thumb-4.png",
+          },
+        ]}
+      />
+      <CtaSection
+        title="Dúvidas?"
+        description="Acesse nossa página de ajuda para obter mais informações sobre a azulzinha"
+        buttonText="Clique aqui"
+        image="/images/maquininhas-pro/cta-photo.png"
+        imageAlt="Dúvidas azulzinha"
+      />
+      <Footer />
+    </main>
+  );
+}

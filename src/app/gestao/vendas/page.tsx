@@ -31,9 +31,11 @@ export default function GestaoVendasPage() {
       />
       <FeatureSection
         title="Portal da Azulzinha"
-        paragraphs={[
-          "O Portal da azulzinha promove informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento sobre as operações efetuadas com cartões.",
-          "Controle suas vendas em um único lugar.",
+        paragraphs={[]}
+        listItems={[
+          "Tenha uma visão clara das suas vendas e pagamentos",
+          "Receba suas vendas de forma antecipada",
+          "Gerencie o seu negócio com um simples acesso",
         ]}
         image="/images/gestao-de-vendas/laptop_azulzinha1.png"
         imageAlt="Portal da Azulzinha"

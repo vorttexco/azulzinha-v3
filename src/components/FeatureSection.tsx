@@ -13,6 +13,7 @@ interface FeatureSectionProps {
   imageHeightMobile?: string;
   cardWidth?: string;
   cardHeight?: string;
+  listItems?: string[];
   bgColor?: string;
   reverse?: boolean;
   buttonText?: string;
@@ -21,7 +22,7 @@ interface FeatureSectionProps {
 
 export default function FeatureSection({
   title,
-  paragraphs,
+  paragraphs = [],
   image,
   imageAlt,
   imageClassName = "object-contain",
@@ -31,6 +32,7 @@ export default function FeatureSection({
   imageHeightMobile,
   cardWidth = "605px",
   cardHeight = "334px",
+  listItems,
   bgColor = "bg-white",
   reverse = false,
   buttonText,
@@ -53,6 +55,16 @@ export default function FeatureSection({
                 {p}
               </p>
             ))}
+            {listItems && (
+              <ul className="flex flex-col gap-2">
+                {listItems.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[16px] lg:text-[18px] leading-[1.4] text-black">
+                    <span className="size-2 rounded-full bg-black shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           {/* Button on desktop only */}

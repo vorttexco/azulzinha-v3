@@ -1,0 +1,48 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import FeatureSection from "@/components/FeatureSection";
+import Footer from "@/components/Footer";
+
+export default function GestaoVendasPage() {
+    return (
+        <main>
+            <Navbar />
+            <HeroSection
+                title="Gestão de Vendas"
+                description="No App ou no Portal, gerencie seu negócio e solicite mais serviços com apenas um clique."
+                checkItems={[]}
+                buttonText="Conheça"
+                backgroundImage="/images/hero-backgrounds/portal-azulzinha.png"
+            />
+            <FeatureSection
+                title="Portal da azulzinha: gestão completa do seu negócio"
+                paragraphs={[]}
+                listItems={[
+                    "Tenha uma visão clara das suas vendas e pagamentos",
+                    "Receba suas vendas de forma antecipada",
+                    "Gerencie o seu negócio com um simples acesso",
+                ]}
+                image="/images/portal-azulzinha/bg-portal.png"
+                imageAlt="Aplicativo da Azulzinha"
+                imageWidth="911px"
+                imageHeight="471px"
+                buttonText="Assista ao vídeo"
+                buttonHref="#" />
+            <FeatureSection
+                title="Cuide das suas vendas no Portal da azulzinha em tempo real"
+                paragraphs={[
+                    "No nosso novo Portal você encontra diversas informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento.",
+                ]}
+                image="/images/portal-azulzinha/mockup-desktop.png"
+                imageAlt="Portal da Azulzinha"
+                imageWidth="736px"
+                imageHeight="532px"
+                cardWidth="605px"
+                cardHeight="334px"
+                bgColor="bg-cinza-claro"
+                reverse
+            />
+            <Footer />
+        </main>
+    );
+}

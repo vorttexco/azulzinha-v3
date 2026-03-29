@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import FeatureSection from "@/components/FeatureSection";
+import FeatureSection from "@/components/shared/FeatureSection";
 import Footer from "@/components/Footer";
 
 export default function GestaoVendasPage() {

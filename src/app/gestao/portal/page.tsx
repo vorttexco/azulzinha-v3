@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import FeatureSection from "@/components/FeatureSection";
+import FeatureSection from "@/components/shared/FeatureSection";
+import BenefitsSection from "@/components/shared/BenefitsSection";
 import Footer from "@/components/Footer";
 
 export default function GestaoVendasPage() {
@@ -41,6 +42,18 @@ export default function GestaoVendasPage() {
                 cardHeight="334px"
                 bgColor="bg-cinza-claro"
                 reverse
+            />
+
+            <BenefitsSection
+                title="Vantagens de usar o Portal da azulzinha"
+                textColor="text-azul"
+                items={[
+                    { icon: "/images/portal-azulzinha/portal1.png", text: "Administre todas as suas vendas" },
+                    { icon: "/images/portal-azulzinha/portal2.png", text: "Consulte taxas e tarifas" },
+                    { icon: "/images/portal-azulzinha/portal3.png", text: "Antecipe recebíveis" },
+                    { icon: "/images/portal-azulzinha/portal4.png", text: "Consulte seus recebimentos futuros" },
+                    { icon: "/images/portal-azulzinha/portal5.png", text: "Abra e acompanhe solicitações" },
+                ]}
             />
             <Footer />
         </main>

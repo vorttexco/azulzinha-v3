@@ -55,54 +55,14 @@ export default function CloverDiscoverSection() {
         </div>
 
         {/* Right - Product image */}
-        {/* Right - Product image */}
-        <div className="relative w-full lg:w-[621px] h-[300px] lg:h-[508px]">
-          <div className="relative w-full h-full bg-white rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] overflow-hidden">
+        <div className="relative w-full lg:w-[621px] h-[269px] lg:h-[508px]">
+          <div className="relative w-full h-full bg-white rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] overflow-visible">
             <Image
               src={asset("/images/clover/clover-machines.png")}
               alt="Clover Flex e Clover Mini"
               fill
-              className="object-contain p-6"
+              className="object-contain translate-x-4 p-1"
             />
-
-            <svg
-              className="absolute inset-0 w-full h-full"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="xMidYMid meet"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Clover Mini — texto → linha → bolinha */}
-              <text
-                x="22"
-                y="24"
-                fontSize="4.2"
-                fill="#006CAD"
-                fontFamily="inherit"
-                dominantBaseline="middle"
-                textAnchor="end"
-              >
-                Clover Mini
-              </text>
-              <line x1="22.5" y1="24" x2="33" y2="24" stroke="#006CAD" strokeWidth="0.15" />
-              <circle cx="34" cy="24" r="1.4" fill="white" stroke="#006CAD" strokeWidth="0.15" />
-              <circle cx="34" cy="24" r="0.5" fill="#006CAD" />
-
-              {/* Clover Flex — bolinha → linha → texto */}
-              <circle cx="46" cy="68" r="1.4" fill="white" stroke="#006CAD" strokeWidth="0.15" />
-              <circle cx="46" cy="68" r="0.5" fill="#006CAD" />
-              <line x1="47.4" y1="68" x2="57" y2="68" stroke="#006CAD" strokeWidth="0.15" />
-              <text
-                x="58"
-                y="68"
-                fontSize="4.2"
-                fill="#006CAD"
-                fontFamily="inherit"
-                dominantBaseline="middle"
-                textAnchor="start"
-              >
-                Clover Flex
-              </text>
-            </svg>
           </div>
         </div>
       </div>

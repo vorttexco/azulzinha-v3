@@ -4,7 +4,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  author: string;
+  business: string;
+}
+
+const defaultTestimonials: Testimonial[] = [
   {
     quote:
       "O suporte da Azulzinha é excelente, sempre fui muito bem atendida. A maquininha é rápida, funciona bem com o sinal e nunca me deixou na mão. Já recomendei para vários clientes porque confio de verdade no serviço.",
@@ -31,6 +37,10 @@ const testimonials = [
   },
 ];
 
+interface TestimonialsSectionProps {
+  testimonials?: Testimonial[];
+}
+
 function ScrollDots({
   count,
   active,
@@ -47,19 +57,18 @@ function ScrollDots({
           key={i}
           onClick={() => onDotClick(i)}
           aria-label={`Ir para ${i + 1}`}
-          className="transition-all duration-300 rounded-full cursor-pointer"
-          style={{
-            width: i === active ? "28px" : "6px",
-            height: "6px",
-            backgroundColor: i === active ? "#FC8F01" : "#D9D9D9",
-          }}
+          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${
+            i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+          }`}
         />
       ))}
     </div>
   );
 }
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({
+  testimonials = defaultTestimonials,
+}: TestimonialsSectionProps = {}) {
   const autoplayRef = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
@@ -110,7 +119,7 @@ export default function TestimonialsSection() {
         </h2>
 
         <div className="mt-8 lg:mt-[60px]">
-          <div className="overflow-hidden select-none" ref={emblaRef} style={{ padding: "20px 0", margin: "-20px 0" }}>
+          <div className="overflow-hidden select-none py-5 -my-5" ref={emblaRef}>
             <div className="flex">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -124,7 +133,7 @@ export default function TestimonialsSection() {
                     <p className="font-normal text-[16px] leading-[180%] tracking-normal text-center italic text-black">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
-                    <div style={{ marginTop: 0 }}>
+                    <div className="mt-0">
                       <p className="font-normal text-[#006CAD] text-[20px] leading-[180%] tracking-normal text-center">
                         {testimonial.author}
                       </p>

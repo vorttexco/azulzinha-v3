@@ -6,7 +6,7 @@ import VrBenefitsSection from "@/components/azulzinha-aproxima/VrBenefitsSection
 import ProductFeaturesSection from "@/components/azulzinha-aproxima/ProductFeaturesSection";
 import HabilitarSection from "@/components/azulzinha-aproxima/HabilitarSection";
 import CtaSection from "@/components/CtaSection";
-import FaqSection from "@/components/azulzinha-aproxima/FaqSection";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 
 export default function AzulzinhaAproximaPage() {

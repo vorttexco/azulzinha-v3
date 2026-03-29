@@ -20,10 +20,10 @@ export default function CtaSection({
     <section
       className="w-full py-14 lg:py-20 bg-linear-to-b from-white from-50% to-[#F7F7F7]"
     >
-      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
+      <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">
         <div className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px] flex flex-col lg:flex-row items-stretch bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] p-[30px] gap-6 lg:p-0 lg:gap-0">
           {/* Image - shown first on mobile (top), right side on desktop */}
-          <div className="relative w-[309px] h-[206px] mx-auto lg:hidden">
+          <div className="relative w-[255px] h-[205px] md:w-[420px] md:h-[320px] mx-auto lg:hidden shrink-0">
             <Image
               src={asset(image)}
               alt={imageAlt}
@@ -33,7 +33,7 @@ export default function CtaSection({
           </div>
 
           {/* Text content */}
-          <div className="flex flex-col justify-center gap-4 lg:gap-6 p-6 lg:pl-16 lg:pr-8 w-full lg:w-1/2 lg:shrink-0 lg:py-0 lg:h-[490px]">
+          <div className="flex flex-col justify-center gap-4 lg:gap-6  lg:pl-16 lg:pr-8 w-full lg:w-1/2 lg:shrink-0 lg:py-0 lg:h-[490px]">
             <h2 className="section-title text-white text-left">
               {title}
             </h2>

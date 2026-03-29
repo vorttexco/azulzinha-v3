@@ -26,7 +26,6 @@ export default function MaquininhasProPage() {
         mainVideoImage="/images/maquininhas-pro/video-main.png"
         mainVideoTitle="Como fazer vendas no débito e crédito"
         backgroundColor="bg-[#F7F7F7]"
-        sidebarWidth="lg:w-[380px]"
         videos={[
           {
             title: "Como fazer vendas no débito e crédito",

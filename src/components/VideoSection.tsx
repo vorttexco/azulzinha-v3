@@ -48,7 +48,7 @@ function SmallPlayIcon() {
 
 function VideoThumbnailIcon() {
   return (
-    <div className="w-[72px] h-[72px] rounded-[10px] bg-[linear-gradient(135deg,#006CAD_0%,#012B71_100%)] flex items-center justify-center shrink-0 overflow-hidden relative">
+    <div className="w-[120px] h-[80px] rounded-[10px] bg-[linear-gradient(135deg,#006CAD_0%,#012B71_100%)] flex items-center justify-center shrink-0 overflow-hidden relative">
       <svg
         width="72"
         height="72"
@@ -83,7 +83,7 @@ export default function VideoSection({
   videos = defaultVideos,
   youtubeText = "Se inscreva no nosso canal do Youtube",
   backgroundColor = "bg-[#F7F7F7]",
-  sidebarWidth = "lg:w-[494px]",
+  sidebarWidth = "lg:w-[402px]",
 }: VideoSectionProps) {
   const hasThumbnails = videos.some((v) => v.thumbnail);
 
@@ -117,14 +117,14 @@ export default function VideoSection({
           </div>
 
           {/* Sidebar video list */}
-          <div className="relative lg:w-[380px]">
+          <div className="relative lg:w-[402px]">
 
             <div className="absolute bottom-0 left-0 right-0 h-10 bg-[linear-gradient(to_top,rgb(244,244,244)_0%,rgba(244,244,244,0.8)_40%,transparent_100%)] z-10 pointer-events-none" />
             <div className={`flex flex-col gap-3 lg:gap-4 ${sidebarWidth} lg:h-[480px] overflow-y-auto scrollbar-hide pr-2`}>
               {videos.map((video, index) => (
                 <div
                   key={`${video.title}-${index}`}
-                  className="group/card flex items-center gap-4 bg-white rounded-[12px] p-3 lg:p-4 cursor-pointer duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)]"
+                  className="group/card lg:w-[380px] flex items-center gap-4 bg-white rounded-[12px] p-3 lg:p-4 cursor-pointer duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)]"
                 >
                   {hasThumbnails && video.thumbnail ? (
                     <div className="w-[120px] h-[80px] rounded-[8px] overflow-hidden relative shrink-0">

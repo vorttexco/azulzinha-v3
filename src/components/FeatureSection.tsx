@@ -11,7 +11,10 @@ interface FeatureSectionProps {
   imageHeight?: string;
   imageWidthMobile?: string;
   imageHeightMobile?: string;
+  cardWidth?: string;
+  cardHeight?: string;
   bgColor?: string;
+  reverse?: boolean;
   buttonText?: string;
   buttonHref?: string;
 }
@@ -26,7 +29,10 @@ export default function FeatureSection({
   imageHeight,
   imageWidthMobile,
   imageHeightMobile,
+  cardWidth = "605px",
+  cardHeight = "334px",
   bgColor = "bg-white",
+  reverse = false,
   buttonText,
   buttonHref = "#",
 }: FeatureSectionProps) {
@@ -35,15 +41,15 @@ export default function FeatureSection({
 
   return (
     <section className={bgColor}>
-      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-[110px] flex flex-col lg:flex-row lg:justify-between lg:items-center gap-10 lg:gap-[78px]">
+      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 py-14 lg:py-27.5 flex flex-col lg:justify-between lg:items-center gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
         {/* Text content - always on top (mobile) / left (desktop) */}
-        <div className="flex flex-col gap-6 lg:w-[537px] shrink-0">
+        <div className="flex flex-col gap-6 lg:w-134.25 shrink-0">
           <div className="flex flex-col gap-4">
-            <h2 className="section-title text-azul">
+            <h2 className="section-title text-azul text-center lg:text-left">
               {title}
             </h2>
             {paragraphs.map((p, i) => (
-              <p key={i} className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
+              <p key={i} className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center lg:text-left">
                 {p}
               </p>
             ))}
@@ -60,7 +66,10 @@ export default function FeatureSection({
         {/* Image + mobile button wrapper */}
         <div className="flex flex-col gap-6 lg:gap-0 w-full max-w-xl self-center lg:w-auto">
           {/* Image */}
-          <div className="relative w-full lg:w-151.25 h-67.5 lg:h-83.5 flex items-center justify-center">
+          <div
+            className="relative w-full h-67.5 lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
+            style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
+          >
             <div className="relative w-full h-full bg-white rounded-[20px] shadow-[0px_4px_10px_0px_#00000014]" />
 
             {/* Mobile image size */}

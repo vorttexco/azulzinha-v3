@@ -20,7 +20,7 @@ export default function GestaoVendasPage() {
           "O App da azulzinha é um canal online que oferece informações para você realizar a gestão do seu negócio quando e onde quiser.",
           "Gestão das suas vendas de forma simples, rápida e segura.",
         ]}
-        image="/images/gestao-de-vendas/gestao-discover.png"
+        image="/images/gestao-de-vendas/celular-3.png"
         imageAlt="Aplicativo da Azulzinha"
         imageWidth="333px"
         imageHeight="592px"
@@ -28,6 +28,23 @@ export default function GestaoVendasPage() {
         imageHeightMobile="380px"
         buttonText="Saiba mais"
         buttonHref="#"
+      />
+      <FeatureSection
+        title="Portal da Azulzinha"
+        paragraphs={[
+          "O Portal da azulzinha promove informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento sobre as operações efetuadas com cartões.",
+          "Controle suas vendas em um único lugar.",
+        ]}
+        image="/images/gestao-de-vendas/laptop_azulzinha1.png"
+        imageAlt="Portal da Azulzinha"
+        imageWidth="702px"
+        imageHeight="438px"
+        cardWidth="605px"
+        cardHeight="422px"
+        buttonText="Saiba mais"
+        buttonHref="#"
+        bgColor="bg-cinza-claro"
+        reverse
       />
       <Footer />
     </main>

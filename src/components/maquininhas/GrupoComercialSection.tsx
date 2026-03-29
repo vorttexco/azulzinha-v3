@@ -24,12 +24,12 @@ const benefits = [
 export default function GrupoComercialSection() {
   return (
     <section className="w-full bg-white">
-      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pb-14 lg:pb-20">
+      <div className="max-w-[1440px] mx-auto p-[30px] lg:px-[100px] pb-14 lg:pb-20">
         <div className="flex flex-col items-center gap-[30px] lg:gap-[60px]">
           {/* Title + Description */}
           <div className="flex flex-col items-stretch gap-6 max-w-[952px]">
-            <h2 className="section-title text-azul">
-              Grupo Comercial da azulzinha: garanta as melhores condições para os
+            <h2 className="text-[26px] lg:text-[38px] font-normal leading-[1.3] text-center text-azul">
+              <span className="text-laranja"> Grupo Comercial </span> da azulzinha: garanta as melhores condições para os
               seus estabelecimentos
             </h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center">
@@ -66,8 +66,8 @@ export default function GrupoComercialSection() {
 
           {/* Footer text */}
           <div className="flex flex-col items-stretch gap-4 max-w-[923px] text-center">
-            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
-              Fale com seu gerente PJ CAIXA para conhecer as regras e condições
+            <p className="text-[20px] leading-[1.4] text-azul">
+              Fale com seu gerente PJ CAIXA <span className="text-[20px] lg:text-[18px] leading-[1.4] text-black">para conhecer as regras e condições</span>
             </p>
             <p className="text-[14px] leading-[1.4] text-cinza">
               *Verifique as condições de isenção para o seu perfil.

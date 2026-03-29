@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
 
 const features = [
   {
@@ -19,6 +23,125 @@ const features = [
     label: "Pix",
   },
 ];
+
+const flags = [
+  { src: "/images/maquininhas/flag-elo.png", alt: "Elo" },
+  { src: "/images/maquininhas/flag-mastercard.png", alt: "Mastercard" },
+  { src: "/images/maquininhas/flag-visa.png", alt: "Visa" },
+  { src: "/images/maquininhas/flag-ticket.png", alt: "Ticket" },
+  { src: "/images/maquininhas/flag-alelo.png", alt: "Alelo" },
+  { src: "/images/maquininhas/flag-amex.png", alt: "Amex" },
+  { src: "/images/maquininhas/flag-hiper.png", alt: "Hiper" },
+  { src: "/images/maquininhas/flag-hipercard.png", alt: "Hipercard" },
+  { src: "/images/maquininhas/flag-pluxee.png", alt: "Pluxee" },
+  { src: "/images/maquininhas/flag-vr.png", alt: "VR" },
+];
+
+// Group flags into pages of 6 (3x2 grid per slide)
+const flagPages: (typeof flags)[] = [];
+for (let i = 0; i < flags.length; i += 6) {
+  flagPages.push(flags.slice(i, i + 6));
+}
+
+function FlagCard({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="flex items-center justify-center border border-[#F4F4F4] rounded-[12px] p-4 h-[88px]">
+      <div className="relative w-full h-full">
+        <Image
+          src={asset(src)}
+          alt={alt}
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+  );
+}
+
+function FlagCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start" });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect).on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  return (
+    <div className="w-full flex flex-col items-center gap-6">
+      <div className="overflow-hidden w-full" ref={emblaRef}>
+        <div className="flex">
+          {flagPages.map((page, pageIndex) => (
+            <div key={pageIndex} className="flex-[0_0_100%] min-w-0">
+              <div className="grid grid-cols-3 gap-3">
+                {page.map((flag) => (
+                  <FlagCard key={flag.alt} src={flag.src} alt={flag.alt} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation arrows */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={scrollPrev}
+          disabled={!canScrollPrev}
+          aria-label="Anterior"
+          className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${canScrollPrev
+            ? "bg-azul text-white"
+            : "bg-[#D9D9D9] text-white cursor-not-allowed"
+            }`}
+        >
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+            <path d="M7 1L1 7L7 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        {/* Dots */}
+        <div className="flex gap-2">
+          {flagPages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => emblaApi?.scrollTo(i)}
+              aria-label={`Página ${i + 1}`}
+              className={`rounded-full transition-all duration-300 h-[6px] ${i === selectedIndex ? "w-7 bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+                }`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={scrollNext}
+          disabled={!canScrollNext}
+          aria-label="Próximo"
+          className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${canScrollNext
+            ? "bg-azul text-white"
+            : "bg-[#D9D9D9] text-white cursor-not-allowed"
+            }`}
+        >
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+            <path d="M1 1L7 7L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function AzulzinhaIdealSection() {
   return (
@@ -65,7 +188,9 @@ export default function AzulzinhaIdealSection() {
             <h2 className="section-title text-azul">
               E a mais variada rede de bandeiras e carteiras digitais
             </h2>
-            <div className="flex flex-col items-center gap-4 w-full max-w-[1070px]">
+
+            {/* Desktop: static images */}
+            <div className="hidden lg:flex flex-col items-center gap-4 w-full max-w-[1070px]">
               <Image
                 src={asset("/images/maquininhas/bandeiras-1.png")}
                 alt="Bandeiras aceitas linha 1"
@@ -87,6 +212,11 @@ export default function AzulzinhaIdealSection() {
                 height={146}
                 className="w-full h-auto object-contain"
               />
+            </div>
+
+            {/* Mobile: carousel */}
+            <div className="lg:hidden w-full">
+              <FlagCarousel />
             </div>
           </div>
         </div>

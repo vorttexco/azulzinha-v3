@@ -12,6 +12,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-clover-flex.png",
     href: "/clover",
+    imageContained: false,
   },
   {
     name: "Clover Mini",
@@ -23,6 +24,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-clover-mini.png",
     href: "/clover",
+    imageContained: true,
   },
   {
     name: "azulzinha pro",
@@ -34,6 +36,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-pro.png",
     href: "/maquininhas/pro",
+    imageContained: false,
   },
   {
     name: "azulzinha aproxima",
@@ -45,6 +48,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-aproxima.png",
     href: "/azulzinha-aproxima",
+    imageContained: false,
   },
   {
     name: "azulzinha smart",
@@ -57,6 +61,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-smart.png",
     href: "/azulzinhasmart",
+    imageContained: false,
   },
   {
     name: "azulzinha TEF",
@@ -69,41 +74,35 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-tef.png",
     href: "/maquininhas/tef",
+    imageContained: false,
   },
 ];
 
 export default function MaquininhaIdealSection() {
   return (
-    <section className="w-full bg-white">
-      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pb-14 lg:pb-20">
-        {/* Section Title */}
-        <h2 className="section-title text-azul mb-8 lg:mb-[60px]">
-          A maquininha ideal para seu negócio
-        </h2>
+    <section className="w-full">
+      {/* Section Title */}
+      <div className="bg-white w-full">
+        <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pt-14 lg:pt-20 pb-8 lg:pb-[60px]">
+          <h2 className="section-title text-azul">
+            A maquininha ideal para seu negócio
+          </h2>
+        </div>
+      </div>
 
-        {/* Product Cards */}
-        <div className="flex flex-col gap-10 lg:gap-[60px]">
-          {products.map((product, index) => {
-            const isReversed = index % 2 !== 0;
-            return (
+      {/* Product Rows */}
+      {products.map((product, index) => {
+        // Even index: white bg, image on right; Odd index: gray bg, image on left
+        const isEven = index % 2 === 0;
+        const bgClass = isEven ? "bg-white" : "bg-[#F4F4F4]";
+
+        return (
+          <div key={product.name} className={`w-full ${bgClass}`}>
+            <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20">
               <div
-                key={product.name}
-                className={`flex flex-col ${
-                  isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
-                } items-center gap-8 lg:gap-[78px]`}
+                className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-10 lg:gap-[78px]`}
               >
-                {/* Product Image */}
-                <div className="relative w-full lg:w-1/2 h-[250px] lg:h-[400px] flex items-center justify-center">
-                  <div className="relative w-[200px] lg:w-[300px] h-full">
-                    <Image
-                      src={asset(product.image)}
-                      alt={product.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
                 {/* Text Content */}
                 <div className="w-full lg:w-1/2 flex flex-col gap-6">
                   <div className="flex flex-col gap-4">
@@ -130,11 +129,30 @@ export default function MaquininhaIdealSection() {
                     Comece agora
                   </a>
                 </div>
+
+                {/* Product Image with rectangle card */}
+                <div className="w-full lg:w-1/2 flex items-center justify-center">
+                  <div
+                    className={`relative w-[330px] h-[183px] lg:h-[334px] lg:w-[605px] bg-white rounded-[20px] shadow-[0px_4px_10px_0px_#00000014] flex items-center justify-center overflow-visible`}
+                  >
+                    <div
+                      className={`relative w-[254px] lg:w-[466px] lg:h-[372px] h-[202px] border-none rounded-[10px] flex items-center justify-center ${product.imageContained ? "overflow-visible" : "overflow-visible"
+                        }`}
+                    >
+                      <Image
+                        src={asset(product.image)}
+                        alt={product.name}
+                        fill
+                        className={product.imageContained ? "object-contain object-bottom" : "object-contain"}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </div>
+          </div>
+        );
+      })}
     </section>
   );
 }

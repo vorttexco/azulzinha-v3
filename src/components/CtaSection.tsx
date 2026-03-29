@@ -22,14 +22,17 @@ export default function CtaSection({
     >
       <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">
         <div className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px] flex flex-col lg:flex-row items-stretch bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] p-[30px] gap-6 lg:p-0 lg:gap-0">
-          {/* Image - shown first on mobile (top), right side on desktop */}
-          <div className="relative w-[255px] h-[205px] md:w-[420px] md:h-[320px] mx-auto lg:hidden shrink-0">
-            <Image
-              src={asset(image)}
-              alt={imageAlt}
-              fill
-              className="object-cover object-center rounded-[8px]"
-            />
+
+          {/* Imagem mobile */}
+          <div className="w-full lg:hidden shrink-0">
+            <div className="relative w-full h-[205px]">
+              <Image
+                src={asset(image)}
+                alt={imageAlt}
+                fill
+                className="object-cover object-center rounded-[8px]"
+              />
+            </div>
           </div>
 
           {/* Text content */}

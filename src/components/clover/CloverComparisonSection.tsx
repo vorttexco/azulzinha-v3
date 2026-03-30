@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
 
 interface ProductFeature {
   title: string;
@@ -137,9 +141,34 @@ function ArrowIcon() {
   );
 }
 
+function ScrollDots({
+  count,
+  active,
+  onDotClick,
+}: {
+  count: number;
+  active: number;
+  onDotClick: (i: number) => void;
+}) {
+  return (
+    <div className="flex items-center justify-center gap-2 mt-8">
+      {Array.from({ length: count }).map((_, i) => (
+        <button
+          key={i}
+          onClick={() => onDotClick(i)}
+          aria-label={`Ir para ${i + 1}`}
+          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${
+            i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ProductCard({ product }: { product: CloverProduct }) {
   return (
-    <div className="flex-1 bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col mt-[140px] lg:mt-[160px]">
+    <div className="h-full lg:h-[1286px] lg:w-[605px] bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col mt-[140px] lg:mt-[160px]">
       {/* Product image - flutua acima do card com margem negativa */}
       <div className="relative w-full h-[280px] lg:h-[320px] -mt-[140px] lg:-mt-[160px] pointer-events-none">
         <Image
@@ -149,7 +178,6 @@ function ProductCard({ product }: { product: CloverProduct }) {
           className="object-contain object-bottom"
         />
       </div>
-
 
       {/* Content */}
       <div className="flex flex-col gap-6 p-6 lg:p-8 flex-1">
@@ -161,11 +189,12 @@ function ProductCard({ product }: { product: CloverProduct }) {
           <p className="text-[14px] lg:text-[16px] leading-[1.5] text-black">
             {product.description}
           </p>
+          <div className="w-[493px] border-t border-[#E6E6E6]" />
         </div>
 
         {/* Why Choose - Features */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-[18px]  leading-[1.4] text-black">
+          <h4 className="text-[18px] leading-[1.4] text-black">
             {product.whyChooseTitle}
           </h4>
           <div className="flex flex-col gap-3">
@@ -179,7 +208,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
                   className="shrink-0"
                 />
                 <div>
-                  <span className="text-[16px]  text-black">
+                  <span className="text-[16px] text-black">
                     {feature.title}
                   </span>
                   <br />
@@ -194,7 +223,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
 
         {/* Ficha Técnica - always visible */}
         <div className="border-t border-[#E2E2E2] pt-6">
-          <h4 className="text-[18px]  leading-[1.4] text-black mb-4">
+          <h4 className="text-[18px] leading-[1.4] text-black mb-4">
             Ficha Técnica
           </h4>
           <div className="flex flex-col gap-3">
@@ -202,9 +231,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
               <div key={spec.label} className="flex items-start gap-3">
                 <ArrowIcon />
                 <div>
-                  <span className="text-[16px] text-black">
-                    {spec.label}
-                  </span>
+                  <span className="text-[16px] text-black">{spec.label}</span>
                   <br />
                   <span className="text-[16px] leading-[1.5] text-cinza">
                     {spec.value}
@@ -216,10 +243,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
         </div>
 
         {/* CTA Button */}
-        <a
-          href="#"
-          className="btn-laranja self-start mt-auto"
-        >
+        <a href="#" className="btn-laranja self-start mt-auto">
           {product.ctaText}
         </a>
       </div>
@@ -228,6 +252,29 @@ function ProductCard({ product }: { product: CloverProduct }) {
 }
 
 export default function CloverComparisonSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start", containScroll: false });
+  const [activeDot, setActiveDot] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setActiveDot(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    onSelect();
+    emblaApi.on("select", onSelect).on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const handleDotClick = useCallback(
+    (i: number) => {
+      emblaApi?.scrollTo(i);
+    },
+    [emblaApi]
+  );
+
   return (
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
@@ -235,10 +282,32 @@ export default function CloverComparisonSection() {
           Compare e escolha a sua Clover
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[31px] justify-center items-end overflow-visible">
+        {/* Desktop: lado a lado */}
+        <div className="hidden lg:flex flex-row gap-[31px] justify-center items-stretch overflow-visible">
           {products.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}
+        </div>
+
+        {/* Mobile: carousel */}
+        <div className="lg:hidden">
+          <div className="overflow-hidden py-[160px] -my-[160px]" ref={emblaRef}>
+            <div className="flex items-stretch">
+              {products.map((product) => (
+                <div
+                  key={product.name}
+                  className="flex-[0_0_88%] min-w-0 px-3 flex flex-col"
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <ScrollDots
+            count={scrollSnaps.length || products.length}
+            active={activeDot}
+            onDotClick={handleDotClick}
+          />
         </div>
       </div>
     </section>

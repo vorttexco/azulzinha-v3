@@ -4,6 +4,7 @@ import { asset } from "@/lib/assets";
 interface ProductFeature {
   title: string;
   description: string;
+  icon: string;
 }
 
 interface ProductSpec {
@@ -32,29 +33,35 @@ const products: CloverProduct[] = [
       {
         title: "Segura",
         description: "Criptografia de ponta a ponta para proteger seus dados",
+        icon: "/images/clover/icon-segura.svg",
       },
       {
         title: "Completa",
         description:
           "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento",
+        icon: "/images/clover/icon-completa.svg",
       },
       {
         title: "Sempre conectada",
         description:
           "Wi-Fi, 4G, 3G e 2G para um sinal estável onde você estiver",
+        icon: "/images/clover/icon-conectada.svg",
       },
       {
         title: "Mobilidade sem preocupação",
         description:
           "Bateria de longa duração e recarga prática via base ou USB-C",
+        icon: "/images/clover/icon-mobilidade.svg",
       },
       {
         title: "Mais comodidade",
         description: "Impressão de recibos e envio digital por SMS ou e-mail",
+        icon: "/images/clover/icon-comodidade.svg",
       },
       {
         title: "Rápida e confiável",
         description: "Processador Qualcomm Snapdragon™ e mais memória",
+        icon: "/images/clover/icon-rapida.svg",
       },
     ],
     specs: [
@@ -79,24 +86,29 @@ const products: CloverProduct[] = [
       {
         title: "Segura",
         description: "Criptografia de ponta a ponta para proteger seus dados",
+        icon: "/images/clover/icon-segura.svg",
       },
       {
         title: "Completa",
         description:
           "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento",
+        icon: "/images/clover/icon-completa.svg",
       },
       {
         title: "Sempre conectada",
         description:
           "Wi-Fi, 4G, 3G e 2G para um sinal estável onde você estiver",
+        icon: "/images/clover/icon-conectada.svg",
       },
       {
         title: "Mais comodidade",
         description: "Impressão de recibos e envio digital por SMS ou e-mail",
+        icon: "/images/clover/icon-comodidade.svg",
       },
       {
         title: "Rápida e confiável",
         description: "Processador Qualcomm Snapdragon™ e mais memória",
+        icon: "/images/clover/icon-rapida.svg",
       },
     ],
     specs: [
@@ -113,9 +125,15 @@ const products: CloverProduct[] = [
   },
 ];
 
-function OrangeBullet() {
+function ArrowIcon() {
   return (
-    <div className="w-[8px] h-[8px] rounded-full bg-laranja mt-[6px] shrink-0" />
+    <Image
+      src={asset("/images/clover/icon-arrow.svg")}
+      alt=""
+      width={16}
+      height={16}
+      className="mt-[3px] shrink-0"
+    />
   );
 }
 
@@ -137,7 +155,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
       <div className="flex flex-col gap-6 p-6 lg:p-8 flex-1">
         {/* Name + Description */}
         <div className="flex flex-col gap-3">
-          <h3 className="text-[22px] lg:text-[24px] font-bold leading-[1.3] text-azul">
+          <h3 className="text-[22px] lg:text-[26px] leading-[1.3] text-azul">
             {product.name}
           </h3>
           <p className="text-[14px] lg:text-[16px] leading-[1.5] text-black">
@@ -147,19 +165,25 @@ function ProductCard({ product }: { product: CloverProduct }) {
 
         {/* Why Choose - Features */}
         <div className="flex flex-col gap-4">
-          <h4 className="text-[16px] font-bold leading-[1.4] text-black">
+          <h4 className="text-[18px]  leading-[1.4] text-black">
             {product.whyChooseTitle}
           </h4>
           <div className="flex flex-col gap-3">
             {product.features.map((feature) => (
               <div key={feature.title} className="flex items-start gap-3">
-                <OrangeBullet />
+                <Image
+                  src={asset(feature.icon)}
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="shrink-0"
+                />
                 <div>
-                  <span className="text-[14px] font-bold text-black">
+                  <span className="text-[16px]  text-black">
                     {feature.title}
                   </span>
                   <br />
-                  <span className="text-[14px] leading-[1.5] text-cinza">
+                  <span className="text-[16px] leading-[1.5] text-cinza">
                     {feature.description}
                   </span>
                 </div>
@@ -170,19 +194,19 @@ function ProductCard({ product }: { product: CloverProduct }) {
 
         {/* Ficha Técnica - always visible */}
         <div className="border-t border-[#E2E2E2] pt-6">
-          <h4 className="text-[16px] font-bold leading-[1.4] text-black mb-4">
+          <h4 className="text-[18px]  leading-[1.4] text-black mb-4">
             Ficha Técnica
           </h4>
           <div className="flex flex-col gap-3">
             {product.specs.map((spec) => (
               <div key={spec.label} className="flex items-start gap-3">
-                <OrangeBullet />
+                <ArrowIcon />
                 <div>
-                  <span className="text-[14px] font-bold text-black">
+                  <span className="text-[16px] text-black">
                     {spec.label}
                   </span>
                   <br />
-                  <span className="text-[14px] leading-[1.5] text-cinza">
+                  <span className="text-[16px] leading-[1.5] text-cinza">
                     {spec.value}
                   </span>
                 </div>

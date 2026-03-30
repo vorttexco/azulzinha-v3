@@ -88,7 +88,7 @@ export default function BenefitsSection() {
         </div>
 
         {/* Brand logos */}
-        <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-6">
+        <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-12">
           {brandLogos.map((brand) => (
             <Image
               key={brand.src}

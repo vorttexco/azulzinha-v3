@@ -12,6 +12,7 @@ import BandeirasSection from "@/components/azulzinha-smart/BandeirasSection";
 import VideoPlanetaSection from "@/components/azulzinha-smart/VideoPlanetaSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+import BlueCta from "@/components/shared/BlueCta";
 
 export default function AzulzinhaSmartPage() {
   return (
@@ -33,6 +34,13 @@ export default function AzulzinhaSmartPage() {
       />
       <IntegradorasSection />
       <FuncoesSection />
+      {/* Blue CTA */}
+      <BlueCta
+        title="Sua azulzinha smart acabou de chegar?"
+        buttonText="Leia o manual"
+        icon="/images/azulzinha-smart/book-icon.png"
+        iconAlt="Manual"
+      />
       <VantagensSmartSection />
       <ImprevistoSection />
       <MetodosPagamentoSection />

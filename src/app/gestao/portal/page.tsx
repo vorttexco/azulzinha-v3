@@ -3,6 +3,7 @@ import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
 import BenefitsSection from "@/components/shared/BenefitsSection";
 import Footer from "@/components/shared/Footer";
+import BlueCta from "@/components/shared/BlueCta";
 
 export default function GestaoVendasPage() {
     return (
@@ -54,6 +55,12 @@ export default function GestaoVendasPage() {
                     { icon: "/images/portal-azulzinha/portal4.png", text: "Consulte seus recebimentos futuros" },
                     { icon: "/images/portal-azulzinha/portal5.png", text: "Abra e acompanhe solicitações" },
                 ]}
+            />
+            <BlueCta
+                title="Sua azulzinha smart acabou de chegar?"
+                buttonText="Leia o manual"
+                icon="/images/azulzinha-smart/book-icon.png"
+                iconAlt="Manual"
             />
             <Footer />
         </main>

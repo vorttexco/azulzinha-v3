@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
-import BlueCta from "@/components/shared/BlueCta";
 
 const features = [
   {
@@ -77,14 +76,6 @@ export default function FuncoesSection() {
               </div>
             </div>
           </div>
-
-          {/* Blue CTA */}
-          <BlueCta
-            title="Sua azulzinha smart acabou de chegar?"
-            buttonText="Leia o manual"
-            icon="/images/azulzinha-smart/book-icon.png"
-            iconAlt="Manual"
-          />
         </div>
       </div>
     </section>

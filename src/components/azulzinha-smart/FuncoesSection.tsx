@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import BlueCta from "@/components/shared/BlueCta";
 
 const features = [
   {
@@ -24,16 +25,6 @@ const features = [
   },
 ];
 
-function WaveIcon() {
-  return (
-    <svg width="73" height="52" viewBox="0 0 73 52" fill="none">
-      <path
-        d="M0 52C0 52 15 35 36.5 35C58 35 73 52 73 52V0H0V52Z"
-        fill="white"
-      />
-    </svg>
-  );
-}
 
 export default function FuncoesSection() {
   return (
@@ -88,15 +79,12 @@ export default function FuncoesSection() {
           </div>
 
           {/* Blue CTA */}
-          <div className="w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-[12px] lg:rounded-[30px] p-8 lg:py-12 flex flex-col items-center gap-6 relative overflow-hidden">
-            <WaveIcon />
-            <h3 className="text-[22px] lg:text-[22px] leading-[1.3] text-white text-center">
-              Sua azulzinha smart acabou de chegar?
-            </h3>
-            <button className="btn-laranja">
-              Leia o manual
-            </button>
-          </div>
+          <BlueCta
+            title="Sua azulzinha smart acabou de chegar?"
+            buttonText="Leia o manual"
+            icon="/images/azulzinha-smart/book-icon.png"
+            iconAlt="Manual"
+          />
         </div>
       </div>
     </section>

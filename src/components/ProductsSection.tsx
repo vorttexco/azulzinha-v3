@@ -6,7 +6,7 @@ import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
-import ArrowIcon from "@/components/icons/ArrowIcon";
+import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const products = [
   {

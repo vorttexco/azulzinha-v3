@@ -1,11 +1,11 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import AutonomiaSection from "@/components/maquininhas-pro/AutonomiaSection";
-import VantagensSection from "@/components/VantagensSection";
+import VantagensSection from "@/components/shared/VantagensSection";
 import ModelosSection from "@/components/maquininhas-pro/ModelosSection";
-import VideoSection from "@/components/VideoSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+import VideoSection from "@/components/shared/VideoSection";
+import CtaSection from "@/components/shared/CtaSection";
+import Footer from "@/components/shared/Footer";
 
 export default function MaquininhasProPage() {
   return (

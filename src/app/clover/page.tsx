@@ -1,13 +1,13 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import CloverDiscoverSection from "@/components/clover/CloverDiscoverSection";
 import CloverFeaturesSection from "@/components/clover/CloverFeaturesSection";
 import CloverComparisonSection from "@/components/clover/CloverComparisonSection";
 import CloverAppsSection from "@/components/clover/CloverAppsSection";
 import CloverFullImageSection from "@/components/clover/CloverFullImageSection";
-import VideoSection from "@/components/VideoSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+import VideoSection from "@/components/shared/VideoSection";
+import CtaSection from "@/components/shared/CtaSection";
+import Footer from "@/components/shared/Footer";
 
 export default function CloverPage() {
   return (

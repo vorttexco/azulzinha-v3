@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
-import ArrowIcon from "@/components/icons/ArrowIcon";
+import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const navLinks = [
   { label: "Para sua empresa", hasDropdown: true },

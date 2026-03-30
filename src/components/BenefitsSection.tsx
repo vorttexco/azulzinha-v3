@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
-import ArrowIcon from "@/components/icons/ArrowIcon";
+import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const cards = [
   {

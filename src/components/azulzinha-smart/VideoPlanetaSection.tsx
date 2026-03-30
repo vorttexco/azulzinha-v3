@@ -1,4 +1,4 @@
-import SimpleVideoSection from "@/components/SimpleVideoSection";
+import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 
 export default function VideoPlanetaSection() {
   return (

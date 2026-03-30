@@ -1,6 +1,6 @@
 "use client";
 
-import Accordion, { AccordionItem } from "@/components/Accordion";
+import Accordion, { AccordionItem } from "@/components/shared/Accordion";
 
 const faqItems: AccordionItem[] = [
   {

@@ -1,13 +1,13 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import AproximaSection from "@/components/azulzinha-aproxima/AproximaSection";
 import PaymentMethodsSection from "@/components/azulzinha-aproxima/PaymentMethodsSection";
 import VrBenefitsSection from "@/components/azulzinha-aproxima/VrBenefitsSection";
 import ProductFeaturesSection from "@/components/azulzinha-aproxima/ProductFeaturesSection";
 import HabilitarSection from "@/components/azulzinha-aproxima/HabilitarSection";
-import CtaSection from "@/components/CtaSection";
-import FaqSection from "@/components/FaqSection";
-import Footer from "@/components/Footer";
+import CtaSection from "@/components/shared/CtaSection";
+import FaqSection from "@/components/shared/FaqSection";
+import Footer from "@/components/shared/Footer";
 
 export default function AzulzinhaAproximaPage() {
   return (

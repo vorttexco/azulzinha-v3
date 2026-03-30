@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import TefSection from "@/components/maquininhas-tef/TefSection";
-import VantagensSection from "@/components/VantagensSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+import VantagensSection from "@/components/shared/VantagensSection";
+import CtaSection from "@/components/shared/CtaSection";
+import Footer from "@/components/shared/Footer";
 
 export default function MaquininhasTefPage() {
   return (

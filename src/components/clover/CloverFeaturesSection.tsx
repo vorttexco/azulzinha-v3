@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { asset } from "@/lib/assets";
-import Accordion, { AccordionItem } from "@/components/Accordion";
+import Accordion, { AccordionItem } from "@/components/shared/Accordion";
 
 const features: AccordionItem[] = [
   {

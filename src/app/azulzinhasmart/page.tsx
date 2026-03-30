@@ -1,8 +1,8 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import SimplifiqueSection from "@/components/azulzinha-smart/SimplifiqueSection";
 import ExploreSection from "@/components/azulzinha-smart/ExploreSection";
-import SimpleVideoSection from "@/components/SimpleVideoSection";
+import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 import IntegradorasSection from "@/components/azulzinha-smart/IntegradorasSection";
 import FuncoesSection from "@/components/azulzinha-smart/FuncoesSection";
 import VantagensSmartSection from "@/components/azulzinha-smart/VantagensSmartSection";
@@ -10,8 +10,8 @@ import ImprevistoSection from "@/components/azulzinha-smart/ImprevistoSection";
 import MetodosPagamentoSection from "@/components/azulzinha-smart/MetodosPagamentoSection";
 import BandeirasSection from "@/components/azulzinha-smart/BandeirasSection";
 import VideoPlanetaSection from "@/components/azulzinha-smart/VideoPlanetaSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+import CtaSection from "@/components/shared/CtaSection";
+import Footer from "@/components/shared/Footer";
 
 export default function AzulzinhaSmartPage() {
   return (

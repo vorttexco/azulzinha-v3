@@ -1,14 +1,14 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/shared/Navbar";
+import HeroSection from "@/components/shared/HeroSection";
 import TodasMaquinasSection from "@/components/maquininhas/TodasMaquinasSection";
-import SimpleVideoSection from "@/components/SimpleVideoSection";
+import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 import AzulzinhaIdealSection from "@/components/maquininhas/AzulzinhaIdealSection";
 import MaquininhaIdealSection from "@/components/maquininhas/MaquininhaIdealSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import TestimonialsSection from "@/components/shared/TestimonialsSection";
 import GrupoComercialSection from "@/components/maquininhas/GrupoComercialSection";
-import FaqSection from "@/components/FaqSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+import FaqSection from "@/components/shared/FaqSection";
+import CtaSection from "@/components/shared/CtaSection";
+import Footer from "@/components/shared/Footer";
 
 export default function MaquininhasPage() {
   return (

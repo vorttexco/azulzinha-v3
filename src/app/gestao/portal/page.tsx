@@ -4,14 +4,16 @@ import FeatureSection from "@/components/shared/FeatureSection";
 import BenefitsSection from "@/components/shared/BenefitsSection";
 import Footer from "@/components/shared/Footer";
 import BlueCta from "@/components/shared/BlueCta";
+import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
+import PortalFaqSection from "@/components/gestao-portal/PortalFaqSection";
 
-export default function GestaoVendasPage() {
+export default function PortalPage() {
     return (
         <main>
             <Navbar />
             <HeroSection
-                title="Gestão de Vendas"
-                description="No App ou no Portal, gerencie seu negócio e solicite mais serviços com apenas um clique."
+                title="Portal da azulzinha"
+                description="Faça a gestão completa do seu negócio com um simples acesso no computador."
                 checkItems={[]}
                 buttonText="Conheça"
                 backgroundImage="/images/hero-backgrounds/portal-azulzinha.png"
@@ -61,7 +63,15 @@ export default function GestaoVendasPage() {
                 buttonText="Leia o manual"
                 icon="/images/azulzinha-smart/book-icon.png"
                 iconAlt="Manual"
+                sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
             />
+            <SimpleVideoSection
+                title=""
+                description=""
+                thumbnail="/images/portal-azulzinha/bg-portal.png"
+            />
+
+            <PortalFaqSection />
             <Footer />
         </main>
     );

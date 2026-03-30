@@ -8,6 +8,7 @@ interface BlueCtaProps {
   buttonHref?: string;
   icon?: string;
   iconAlt?: string;
+  sectionClassName?: string;
 }
 
 export default function BlueCta({
@@ -17,9 +18,10 @@ export default function BlueCta({
   buttonHref = "#",
   icon,
   iconAlt = "",
+  sectionClassName = "",
 }: BlueCtaProps) {
   return (
-    <section className="w-full py-14 lg:py-20">
+    <section className={`w-full py-14 lg:py-20 ${sectionClassName}`}>
       <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">
         <div className="w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] p-8 lg:py-12 flex flex-col items-center gap-6 relative overflow-hidden">
           {icon && (

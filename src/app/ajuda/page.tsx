@@ -4,6 +4,8 @@ import FeatureSection from "@/components/shared/FeatureSection";
 import VideoSection from "@/components/shared/VideoSection";
 import Footer from "@/components/shared/Footer";
 import HelpFaqSection from "@/components/help/HelpFaqSection";
+import faqData from "@/app/ajuda/faqData";
+import regulatoryFaqData from "@/app/ajuda/regulatoryFaqData";
 
 export default function AjudaPage() {
     return (
@@ -29,7 +31,8 @@ export default function AjudaPage() {
                 imageBorderRadius="rounded-[30px]"
             />
             <VideoSection />
-            <HelpFaqSection />
+            <HelpFaqSection faqData={faqData} />
+            <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />
             <Footer />
         </main>
     );

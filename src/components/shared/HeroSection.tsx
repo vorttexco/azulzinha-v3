@@ -29,7 +29,6 @@ export default function HeroSection({
   backgroundImage = "/images/hero-bg.png",
   highlightWord = "1 dia útil",
   productImage,
-  overlayImage,
 }: HeroSectionProps = {}) {
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -46,16 +45,6 @@ export default function HeroSection({
         className="object-cover object-[center_25%]"
         priority
       />
-
-      {/* Optional overlay image */}
-      {overlayImage && (
-        <Image
-          src={asset(overlayImage)}
-          alt=""
-          fill
-          className="object-cover opacity-80"
-        />
-      )}
 
       {/* Left overlay */}
       <div className="absolute inset-0 opacity-90 bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]" />

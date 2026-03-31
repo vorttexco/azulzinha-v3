@@ -2,7 +2,7 @@ import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import BandeirasSection from "@/components/bandeiras-vouchers/BandeirasSection";
 import BlueCta from "@/components/shared/BlueCta";
-import ComoAceitarSection from "@/components/bandeiras-vouchers/ComoAceitarSection";
+import FeatureSection from "@/components/shared/FeatureSection";
 import FaqBandeirasSection from "@/components/bandeiras-vouchers/FaqBandeirasSection";
 import Footer from "@/components/shared/Footer";
 
@@ -15,8 +15,7 @@ export default function BandeirasVouchers() {
         description="Conte com a maior rede de aceitação do mercado para oferecer ao seu cliente."
         checkItems={[]}
         buttonText="Conheça"
-        backgroundImage="/images/bandeiras-vouchers/hero-bg-72b5d7.png"
-        overlayImage="/images/bandeiras-vouchers/bandeiras-voucher-overlay.png"
+        backgroundImage="/images/hero-backgrounds/bandeiras-vouchers.png"
       />
       <BandeirasSection />
       <BlueCta
@@ -26,7 +25,22 @@ export default function BandeirasVouchers() {
         iconAlt="VR Benefícios"
         sectionClassName="bg-[#FAFAFA]"
       />
-      <ComoAceitarSection />
+      <FeatureSection
+        title="Como aceitar os principais vouchers de benefícios na azulzinha"
+        paragraphs={[
+          "Quer aceitar os principais vouchers do mercado? A azulzinha da CAIXA também já vem pronta para você diversificar as experiências de pagamento para seus clientes!",
+          "Basta credenciar seu estabelecimento diretamente com cada bandeira que você quer aceitar.",
+          "Selecione abaixo as bandeiras que você pode habilitar na azulzinha e siga o passo a passo de cada uma para fazer a solicitação.",
+        ]}
+        image="/images/bandeiras-vouchers/maquina-24d507.png"
+        imageAlt="Ilustração como aceitar vouchers"
+        imageWidth="723px"
+        imageHeight="489px"
+        cardWidth="605px"
+        cardHeight="398px"
+        cardBorderRadius="rounded-[10px]"
+        bgColor="bg-white"
+      />
       <FaqBandeirasSection />
       <Footer />
     </main>

@@ -18,6 +18,9 @@ interface FeatureSectionProps {
   reverse?: boolean;
   buttonText?: string;
   buttonHref?: string;
+  cardBorderRadius?: string;
+  imageBorderRadius?: string;
+  hideCard?: boolean;
 }
 
 export default function FeatureSection({
@@ -37,6 +40,9 @@ export default function FeatureSection({
   reverse = false,
   buttonText,
   buttonHref = "#",
+  cardBorderRadius = "rounded-[20px]",
+  imageBorderRadius = "",
+  hideCard = false,
 }: FeatureSectionProps) {
   const hasCustomSize = imageWidth && imageHeight;
   const hasCustomSizeMobile = imageWidthMobile && imageHeightMobile;
@@ -82,12 +88,12 @@ export default function FeatureSection({
             className="relative w-full h-67.5 lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
             style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
           >
-            <div className="relative w-full h-full bg-white rounded-[20px] shadow-[0px_4px_10px_0px_#00000014]" />
+            {!hideCard && <div className={`relative w-full h-full bg-white ${cardBorderRadius} shadow-[0px_4px_10px_0px_#00000014]`} />}
 
             {/* Mobile image size */}
             {hasCustomSizeMobile ? (
               <div
-                className="absolute z-10 lg:hidden"
+                className={`absolute z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}
                 style={{ width: imageWidthMobile, height: imageHeightMobile }}
               >
                 <Image
@@ -98,7 +104,7 @@ export default function FeatureSection({
                 />
               </div>
             ) : (
-              <div className="absolute inset-0 z-10 lg:hidden">
+              <div className={`absolute inset-0 z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}>
                 <Image
                   src={asset(image)}
                   alt={imageAlt}
@@ -111,7 +117,7 @@ export default function FeatureSection({
             {/* Desktop image size */}
             {hasCustomSize ? (
               <div
-                className="absolute z-10 hidden lg:block"
+                className={`absolute z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}
                 style={{ width: imageWidth, height: imageHeight }}
               >
                 <Image
@@ -122,7 +128,7 @@ export default function FeatureSection({
                 />
               </div>
             ) : (
-              <div className="absolute inset-0 z-10 hidden lg:block">
+              <div className={`absolute inset-0 z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}>
                 <Image
                   src={asset(image)}
                   alt={imageAlt}

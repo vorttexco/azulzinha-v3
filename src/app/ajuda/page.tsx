@@ -3,6 +3,7 @@ import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
 import VideoSection from "@/components/shared/VideoSection";
 import Footer from "@/components/shared/Footer";
+import HelpFaqSection from "@/components/help/HelpFaqSection";
 
 export default function AjudaPage() {
     return (
@@ -28,6 +29,7 @@ export default function AjudaPage() {
                 imageBorderRadius="rounded-[30px]"
             />
             <VideoSection />
+            <HelpFaqSection />
             <Footer />
         </main>
     );

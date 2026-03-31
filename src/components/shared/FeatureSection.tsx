@@ -88,7 +88,7 @@ export default function FeatureSection({
             className="relative w-full h-67.5 lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
             style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
           >
-            {!hideCard && <div className={`relative w-full h-full bg-white ${cardBorderRadius} shadow-[0px_4px_10px_0px_#00000014]`} />}
+            <div className={`relative w-full h-full bg-white ${cardBorderRadius} shadow-[0px_4px_10px_0px_#00000014]`} />
 
             {/* Mobile image size */}
             {hasCustomSizeMobile ? (

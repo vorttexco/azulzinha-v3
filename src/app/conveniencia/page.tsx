@@ -22,7 +22,7 @@ export default function Lotericas() {
                 checkItems={[]}
                 buttonText="Saiba mais"
                 backgroundImage="/images/hero-backgrounds/lotericas.png"
-                logoImage="/images/lotericas/lotericalogo.png"
+                logoImage="/images/conveniencia/lotericalogo.png"
                 logoWidth={196}
                 logoHeight={51}
             />
@@ -43,7 +43,7 @@ export default function Lotericas() {
                     "No débito ou no crédito, seja qual for o seu banco, agora você já pode usar seu cartão para apostar nas Loterias CAIXA e resolver todos os compromissos do mês num único lugar.",
                     "Com o novo Serviço de Conveniência*, os cartões das bandeiras Elo, Mastercard e Visa agora são aceitos em toda a rede Lotérica do Brasil.",
                 ]}
-                image="/images/lotericas/lotericas-feature.png"
+                image="/images/conveniencia/lotericas-feature.png"
                 imageAlt="Serviço de Conveniência Lotéricas"
                 cardWidth="605px"
                 cardHeight="398px"
@@ -65,7 +65,7 @@ export default function Lotericas() {
                     "Demais convênios",
                     "Boletos variados*",
                 ]}
-                image="/images/lotericas/lotericas-feature2.png"
+                image="/images/conveniencia/lotericas-feature2.png"
                 imageAlt="Concentre as contas do mês na Lotérica"
                 cardWidth="605px"
                 cardHeight="398px"
@@ -82,10 +82,10 @@ export default function Lotericas() {
                     <h2 className="section-title text-azul text-center">Benefícios do Serviço de Conveniência</h2>
                     <div className="flex flex-wrap justify-center gap-7.5">
                         {[
-                            { icon: "/images/lotericas/1.png", title: "Comodidade", desc: "Aproveite que sempre tem uma Lotérica por perto que aceita seu cartão" },
-                            { icon: "/images/lotericas/2.png", title: "Segurança", desc: "Você não precisa mais levar dinheiro em espécie, só o cartão" },
-                            { icon: "/images/lotericas/3.png", title: "Agilidade", desc: "Ganhe tempo pagando tudo que você precisa de uma só vez" },
-                            { icon: "/images/lotericas/4.png", title: "Praticidade", desc: "Simplifique a organização financeira concentrando os pagamentos no crédito" },
+                            { icon: "/images/conveniencia/1.png", title: "Comodidade", desc: "Aproveite que sempre tem uma Lotérica por perto que aceita seu cartão" },
+                            { icon: "/images/conveniencia/2.png", title: "Segurança", desc: "Você não precisa mais levar dinheiro em espécie, só o cartão" },
+                            { icon: "/images/conveniencia/3.png", title: "Agilidade", desc: "Ganhe tempo pagando tudo que você precisa de uma só vez" },
+                            { icon: "/images/conveniencia/4.png", title: "Praticidade", desc: "Simplifique a organização financeira concentrando os pagamentos no crédito" },
                         ].map((card) => (
                             <div key={card.title} className="flex flex-col items-center justify-center gap-4 p-6 border border-[#F1F1F1] rounded-[30px] shadow-[0px_4px_10px_0px_#00000014] w-71.75 h-71.75 shrink-0">
                                 <div className="relative w-12 h-12 shrink-0">
@@ -101,7 +101,7 @@ export default function Lotericas() {
 
             {/* Atendimento */}
             <section className="bg-white">
-                <div className="max-w-360 mx-auto px-7.5 lg:px-25   flex flex-col items-center gap-6">
+                <div className="max-w-360 mx-auto px-7.5 lg:px-25  flex flex-col items-center gap-6">
                     <h2 className="section-title text-azul text-center">
                         É cliente da Lotérica e precisa de atendimento?
                     </h2>

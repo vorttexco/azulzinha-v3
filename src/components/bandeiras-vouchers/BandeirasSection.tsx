@@ -5,9 +5,9 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 const logos = [
-  { src: "/images/bandeiras-vouchers/logo-01.png", w: 92, h: 29 },
-  { src: "/images/bandeiras-vouchers/logo-02-3d529c.png", w: 76, h: 47 },
-  { src: "/images/bandeiras-vouchers/logo-03.png", w: 95, h: 31 },
+  { src: "/images/bandeiras-vouchers/elo.png", w: 92, h: 29 },
+  { src: "/images/bandeiras-vouchers/mastercard.png", w: 76, h: 47 },
+  { src: "/images/bandeiras-vouchers/visa.png", w: 95, h: 31 },
   { src: "/images/bandeiras-vouchers/logo-04.png", w: 71, h: 71 },
   { src: "/images/bandeiras-vouchers/logo-05-741b6d.png", w: 68, h: 70 },
   { src: "/images/bandeiras-vouchers/logo-06.png", w: 93, h: 61 },

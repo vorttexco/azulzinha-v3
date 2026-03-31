@@ -18,6 +18,9 @@ interface HeroSectionProps {
   highlightWord?: string;
   productImage?: string;
   overlayImage?: string;
+  logoImage?: string;
+  logoWidth?: number;
+  logoHeight?: number;
 }
 
 export default function HeroSection({
@@ -29,6 +32,9 @@ export default function HeroSection({
   backgroundImage = "/images/hero-bg.png",
   highlightWord = "1 dia útil",
   productImage,
+  logoImage,
+  logoWidth = 196,
+  logoHeight = 51,
 }: HeroSectionProps = {}) {
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -56,6 +62,15 @@ export default function HeroSection({
           <div className="flex flex-col gap-4 lg:gap-0">
             {/* Title + Description */}
             <div className="flex flex-col gap-3 lg:gap-0">
+              {logoImage && (
+                <Image
+                  src={asset(logoImage)}
+                  alt=""
+                  width={logoWidth}
+                  height={logoHeight}
+                  className="object-contain mb-3"
+                />
+              )}
               <h1 className="text-[26px] lg:text-[38px] font-bold leading-[1.3] text-white">
                 {title}
               </h1>

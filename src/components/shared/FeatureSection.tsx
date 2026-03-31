@@ -21,6 +21,7 @@ interface FeatureSectionProps {
   cardBorderRadius?: string;
   imageBorderRadius?: string;
   hideCard?: boolean;
+  paddingClassName?: string;
 }
 
 export default function FeatureSection({
@@ -28,7 +29,7 @@ export default function FeatureSection({
   paragraphs = [],
   image,
   imageAlt,
-  imageClassName = "object-contain",
+  imageClassName = "object-cover",
   imageWidth,
   imageHeight,
   imageWidthMobile,
@@ -43,14 +44,16 @@ export default function FeatureSection({
   cardBorderRadius = "rounded-[20px]",
   imageBorderRadius = "",
   hideCard = false,
+  paddingClassName = "py-14 lg:py-27.5",
 }: FeatureSectionProps) {
   const hasCustomSize = imageWidth && imageHeight;
   const hasCustomSizeMobile = imageWidthMobile && imageHeightMobile;
+  const roundedClass = imageBorderRadius || cardBorderRadius;
 
   return (
     <section className={bgColor}>
-      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 py-14 lg:py-27.5 flex flex-col lg:justify-between lg:items-center gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
-        {/* Text content - always on top (mobile) / left (desktop) */}
+      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 ${paddingClassName} flex flex-col lg:justify-between lg:items-center gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
+        {/* Text content */}
         <div className="flex flex-col gap-6 lg:w-134.25 shrink-0">
           <div className="flex flex-col gap-4">
             <h2 className="section-title text-azul text-center lg:text-left">
@@ -73,7 +76,6 @@ export default function FeatureSection({
             )}
           </div>
 
-          {/* Button on desktop only */}
           {buttonText && (
             <a href={buttonHref} className="btn-laranja self-start hidden lg:inline-flex">
               {buttonText}
@@ -83,18 +85,14 @@ export default function FeatureSection({
 
         {/* Image + mobile button wrapper */}
         <div className="flex flex-col gap-6 lg:gap-0 w-full max-w-xl self-center lg:w-auto">
-          {/* Image */}
           <div
-            className="relative w-full h-67.5 lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
+            className="relative w-full lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
             style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
           >
-            <div className={`relative w-full h-full bg-white ${cardBorderRadius} shadow-[0px_4px_10px_0px_#00000014]`} />
-
-            {/* Mobile image size */}
-            {hasCustomSizeMobile ? (
-              <div
-                className={`absolute z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}
-                style={{ width: imageWidthMobile, height: imageHeightMobile }}
+            {hideCard ? (
+              /* No card — image fills container with border radius */
+              <div className={`relative w-full aspect-3/2 lg:aspect-auto lg:w-(--card-w) lg:h-(--card-h) overflow-hidden ${roundedClass}`}
+                style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
               >
                 <Image
                   src={asset(image)}
@@ -104,42 +102,41 @@ export default function FeatureSection({
                 />
               </div>
             ) : (
-              <div className={`absolute inset-0 z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}>
-                <Image
-                  src={asset(image)}
-                  alt={imageAlt}
-                  fill
-                  className={imageClassName}
-                />
-              </div>
-            )}
+              <>
+                {/* White card with shadow */}
+                <div className={`relative w-full h-67.5 lg:w-full lg:h-full bg-white ${cardBorderRadius} shadow-[0px_4px_10px_0px_#00000014]`} />
 
-            {/* Desktop image size */}
-            {hasCustomSize ? (
-              <div
-                className={`absolute z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}
-                style={{ width: imageWidth, height: imageHeight }}
-              >
-                <Image
-                  src={asset(image)}
-                  alt={imageAlt}
-                  fill
-                  className={imageClassName}
-                />
-              </div>
-            ) : (
-              <div className={`absolute inset-0 z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}>
-                <Image
-                  src={asset(image)}
-                  alt={imageAlt}
-                  fill
-                  className={imageClassName}
-                />
-              </div>
+                {/* Mobile image */}
+                {hasCustomSizeMobile ? (
+                  <div
+                    className={`absolute z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}
+                    style={{ width: imageWidthMobile, height: imageHeightMobile }}
+                  >
+                    <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
+                  </div>
+                ) : (
+                  <div className={`absolute inset-0 z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}>
+                    <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
+                  </div>
+                )}
+
+                {/* Desktop image */}
+                {hasCustomSize ? (
+                  <div
+                    className={`absolute z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}
+                    style={{ width: imageWidth, height: imageHeight }}
+                  >
+                    <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
+                  </div>
+                ) : (
+                  <div className={`absolute inset-0 z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}>
+                    <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
+                  </div>
+                )}
+              </>
             )}
           </div>
 
-          {/* Button on mobile only - below image */}
           {buttonText && (
             <a href={buttonHref} className="btn-laranja self-center lg:hidden">
               {buttonText}

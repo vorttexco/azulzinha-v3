@@ -29,6 +29,7 @@ export default function AjudaPage() {
                 image="/images/aplicativo_da_caixa.png"
                 imageAlt="Aplicativo da CAIXA"
                 imageBorderRadius="rounded-[30px]"
+                hideCard
             />
             <VideoSection />
             <HelpFaqSection faqData={faqData} />

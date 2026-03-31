@@ -3,7 +3,7 @@ import HeroSection from "@/components/shared/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import PossibilitiesSection from "@/components/PossibilitiesSection";
 import ProductsSection from "@/components/ProductsSection";
-import BenefitsSection from "@/components/BenefitsSection";
+import BenefitsShowcaseSection from "@/components/shared/BenefitsShowcaseSection";
 import TestimonialsSection from "@/components/shared/TestimonialsSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
@@ -16,7 +16,7 @@ export default function Home() {
       <ServicesSection />
       <PossibilitiesSection />
       <ProductsSection />
-      <BenefitsSection />
+      <BenefitsShowcaseSection />
       <TestimonialsSection />
       <CtaSection />
       <Footer />

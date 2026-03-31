@@ -5,6 +5,9 @@ interface CtaSectionProps {
   title?: string;
   description?: string;
   buttonText?: string;
+  buttonHref?: string;
+  button2Text?: string;
+  button2Href?: string;
   image?: string;
   imageAlt?: string;
 }
@@ -13,6 +16,9 @@ export default function CtaSection({
   title = "Com azulzinha da CAIXA você pode muito mais!",
   description = "Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.",
   buttonText = "Peça já a sua",
+  buttonHref = "#",
+  button2Text,
+  button2Href = "#",
   image = "/images/cta-photo.png",
   imageAlt = "Azulzinha CTA",
 }: CtaSectionProps = {}) {
@@ -40,15 +46,26 @@ export default function CtaSection({
             <h2 className="section-title text-white text-left">
               {title}
             </h2>
-            <p className="text-[16px] lg:text-[18px] text-white leading-[1.4]">
-              {description}
-            </p>
-            <div>
-              <button
-                className="btn-laranja"
+            {description && (
+              <p className="text-[16px] lg:text-[18px] text-white leading-[1.4]">
+                {description}
+              </p>
+            )}
+            <div className={`flex ${button2Text ? "flex-col lg:flex-row gap-4 lg:gap-6" : ""}`}>
+              <a
+                href={buttonHref}
+                className="btn-laranja text-center"
               >
                 {buttonText}
-              </button>
+              </a>
+              {button2Text && (
+                <a
+                  href={button2Href}
+                  className="bg-[linear-gradient(180deg,#FFF_0%,#D7E4E7_100%)] text-azul rounded-[6px] px-[17px] py-[10px] text-[16px] font-normal text-center cursor-pointer hover:opacity-90 transition-opacity"
+                >
+                  {button2Text}
+                </a>
+              )}
             </div>
           </div>
 

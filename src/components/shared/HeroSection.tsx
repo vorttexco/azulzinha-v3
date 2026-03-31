@@ -16,6 +16,7 @@ interface HeroSectionProps {
   buttonHref?: string;
   backgroundImage?: string;
   highlightWord?: string;
+  productImage?: string;
 }
 
 export default function HeroSection({
@@ -26,6 +27,7 @@ export default function HeroSection({
   buttonHref = "#",
   backgroundImage = "/images/hero-bg.png",
   highlightWord = "1 dia útil",
+  productImage,
 }: HeroSectionProps = {}) {
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -83,12 +85,26 @@ export default function HeroSection({
             )}
           </div>
 
-          <a
-            href={buttonHref}
-            className="btn-laranja self-start lg:mt-12"
-          >
-            {buttonText}
-          </a>
+          {buttonText && (
+            <a
+              href={buttonHref}
+              className="btn-laranja self-start lg:mt-12"
+            >
+              {buttonText}
+            </a>
+          )}
+
+          {productImage && (
+            <div className="mt-4 lg:mt-6">
+              <Image
+                src={asset(productImage)}
+                alt="Produtos Azulzinha"
+                width={539}
+                height={207}
+                className="object-contain"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

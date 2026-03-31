@@ -32,10 +32,11 @@ export default function RecargaTelefone() {
           hideCard
           bgColor="bg-transparent"
           paddingClassName="pt-14 lg:pt-27.5 pb-6 lg:pb-10"
+          itemsAlign="start"
         />
 
         {/* Cards */}
-        <div className="relative z-10 -mt-15 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
+        <div className="relative z-10 -mt-20 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
           {[
             { icon: "/images/recarga-telefone/1.png", text: "Sem custos adicionais" },
             { icon: "/images/recarga-telefone/2.png", text: "Mais uma oportunidade de venda e aumento de receita" },

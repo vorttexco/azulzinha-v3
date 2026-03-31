@@ -22,6 +22,7 @@ interface FeatureSectionProps {
   imageBorderRadius?: string;
   hideCard?: boolean;
   paddingClassName?: string;
+  itemsAlign?: "center" | "start";
 }
 
 export default function FeatureSection({
@@ -45,6 +46,7 @@ export default function FeatureSection({
   imageBorderRadius = "",
   hideCard = false,
   paddingClassName = "py-14 lg:py-27.5",
+  itemsAlign = "center",
 }: FeatureSectionProps) {
   const hasCustomSize = imageWidth && imageHeight;
   const hasCustomSizeMobile = imageWidthMobile && imageHeightMobile;
@@ -52,7 +54,7 @@ export default function FeatureSection({
 
   return (
     <section className={bgColor}>
-      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 ${paddingClassName} flex flex-col lg:justify-between lg:items-center gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
+      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 ${paddingClassName} flex flex-col lg:justify-between lg:items-${itemsAlign} gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
         {/* Text content */}
         <div className="flex flex-col gap-6 lg:w-134.25 shrink-0">
           <div className="flex flex-col gap-4">

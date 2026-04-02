@@ -4,7 +4,7 @@ import CloverDiscoverSection from "@/components/clover/CloverDiscoverSection";
 import CloverFeaturesSection from "@/components/clover/CloverFeaturesSection";
 import CloverComparisonSection from "@/components/clover/CloverComparisonSection";
 import CloverAppsSection from "@/components/clover/CloverAppsSection";
-import CloverFullImageSection from "@/components/clover/CloverFullImageSection";
+import FullImageSection from "@/components/shared/FullImageSection";
 import VideoSection from "@/components/shared/VideoSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
@@ -24,7 +24,7 @@ export default function CloverPage() {
       <CloverFeaturesSection />
       <CloverComparisonSection />
       <CloverAppsSection />
-      <CloverFullImageSection />
+      <FullImageSection />
       <VideoSection />
       <CtaSection
         title="Descubra o poder do mundo Clover com a azulzinha"

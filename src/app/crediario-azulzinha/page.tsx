@@ -3,7 +3,7 @@ import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
 import BandeirasCrediarioSection from "@/components/crediario-azulzinha/BandeirasCrediarioSection";
 import BeneficiosCrediarioSection from "@/components/crediario-azulzinha/BeneficiosCrediarioSection";
-import ComoFazerSection from "@/components/crediario-azulzinha/ComoFazerSection";
+import StepsCarouselSection from "@/components/shared/StepsCarouselSection";
 import CtaSection from "@/components/shared/CtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import CardsCarouselSection, { CarouselCard } from "@/components/shared/CardsCarouselSection";
@@ -128,7 +128,7 @@ export default function CrediarioAzulzinha() {
 
       <BeneficiosCrediarioSection />
 
-      <ComoFazerSection />
+      <StepsCarouselSection />
 
       <CtaSection
         title="Com a azulzinha da CAIXA você pode muito mais!"

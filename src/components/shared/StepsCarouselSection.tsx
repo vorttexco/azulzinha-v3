@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
@@ -31,6 +31,8 @@ interface StepsCarouselSectionProps {
   steps?: StepItem[];
   bgClassName?: string;
   cardMode?: "overlay" | "inline";
+  headerContent?: ReactNode;
+  paddingClassName?: string;
 }
 
 export default function StepsCarouselSection({
@@ -39,6 +41,8 @@ export default function StepsCarouselSection({
   steps = defaultSteps,
   bgClassName = "bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]",
   cardMode = "overlay",
+  headerContent,
+  paddingClassName = "pb-14 lg:pb-20",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -68,16 +72,22 @@ export default function StepsCarouselSection({
 
   return (
     <section className={bgClassName}>
-      <div className="max-w-[1440px] mx-auto pb-14 lg:pb-20">
+      <div className={`max-w-[1440px] mx-auto ${paddingClassName}`}>
         {/* Header */}
-        <div className="flex flex-col gap-4 px-[30px] lg:px-[100px] mb-8 lg:mb-[60px]">
-          <h2 className="section-title text-azul text-left">
-            {title}
-          </h2>
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
-            {description}
-          </p>
-        </div>
+        {headerContent ? (
+          <div className="px-[30px] lg:px-[100px] mb-8 lg:mb-[60px]">
+            {headerContent}
+          </div>
+        ) : title ? (
+          <div className="flex flex-col gap-4 px-[30px] lg:px-[100px] mb-8 lg:mb-[60px]">
+            <h2 className="section-title text-azul text-left">
+              {title}
+            </h2>
+            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
+              {description}
+            </p>
+          </div>
+        ) : null}
 
         {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>

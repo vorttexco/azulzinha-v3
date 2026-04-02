@@ -1,7 +1,7 @@
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
-import BeneficiosPixSection from "@/components/pix-azulzinha/BeneficiosPixSection";
+import BeneficiosGridSection from "@/components/shared/BeneficiosGridSection";
 import BancosSection from "@/components/pix-azulzinha/BancosSection";
 import CtaSection from "@/components/shared/CtaSection";
 import StepsTimelineSection from "@/components/shared/StepsTimelineSection";
@@ -116,7 +116,7 @@ export default function PixAzulzinha() {
         buttonText="Veja como habilitar"
       />
 
-      <BeneficiosPixSection />
+      <BeneficiosGridSection />
 
       <BancosSection />
 

@@ -1,6 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
+import CardsCarouselSection from "@/components/shared/CardsCarouselSection";
 import PossibilitiesSection from "@/components/PossibilitiesSection";
 import ProductsSection from "@/components/ProductsSection";
 import BenefitsShowcaseSection from "@/components/shared/BenefitsShowcaseSection";
@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <ServicesSection />
+      <CardsCarouselSection />
       <PossibilitiesSection />
       <ProductsSection />
       <BenefitsShowcaseSection />

@@ -32,11 +32,15 @@ const defaultFaqItems: AccordionItem[] = [
 interface FaqSectionProps {
   title?: string;
   items?: AccordionItem[];
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 export default function FaqSection({
   title = "Saiba tudo sobre azulzinha aproxima",
   items = defaultFaqItems,
+  buttonText,
+  buttonHref = "#",
 }: FaqSectionProps = {}) {
   return (
     <section className="bg-[#F4F4F4]">
@@ -57,6 +61,14 @@ export default function FaqSection({
             />
           ))}
         </div>
+
+        {buttonText && (
+          <div className="flex justify-center mt-8 lg:mt-[60px]">
+            <a href={buttonHref} className="btn-laranja">
+              {buttonText}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
+interface StoreBadge {
+  image: string;
+  href: string;
+  alt: string;
+}
+
 interface FeatureSectionProps {
   title: string;
   paragraphs: string[];
@@ -23,6 +29,7 @@ interface FeatureSectionProps {
   hideCard?: boolean;
   paddingClassName?: string;
   itemsAlign?: "center" | "start";
+  storeBadges?: StoreBadge[];
 }
 
 export default function FeatureSection({
@@ -47,6 +54,7 @@ export default function FeatureSection({
   hideCard = false,
   paddingClassName = "py-14 lg:py-27.5",
   itemsAlign = "center",
+  storeBadges,
 }: FeatureSectionProps) {
   const hasCustomSize = imageWidth && imageHeight;
   const hasCustomSizeMobile = imageWidthMobile && imageHeightMobile;
@@ -77,6 +85,22 @@ export default function FeatureSection({
               </ul>
             )}
           </div>
+
+          {storeBadges && storeBadges.length > 0 && (
+            <div className="flex items-center gap-4 justify-center lg:justify-start">
+              {storeBadges.map((badge, i) => (
+                <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={asset(badge.image)}
+                    alt={badge.alt}
+                    width={188}
+                    height={56}
+                    className="h-14 w-auto"
+                  />
+                </a>
+              ))}
+            </div>
+          )}
 
           {buttonText && (
             <a href={buttonHref} className="btn-laranja self-start hidden lg:inline-flex">

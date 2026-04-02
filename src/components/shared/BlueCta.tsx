@@ -1,14 +1,23 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
+interface StoreBadge {
+  image: string;
+  href: string;
+  alt: string;
+}
+
 interface BlueCtaProps {
   title: string;
   description?: string;
-  buttonText: string;
+  buttonText?: string;
   buttonHref?: string;
   icon?: string;
   iconAlt?: string;
   sectionClassName?: string;
+  featureImage?: string;
+  featureImageAlt?: string;
+  storeBadges?: StoreBadge[];
 }
 
 export default function BlueCta({
@@ -19,27 +28,84 @@ export default function BlueCta({
   icon,
   iconAlt = "",
   sectionClassName = "",
+  featureImage,
+  featureImageAlt = "",
+  storeBadges,
 }: BlueCtaProps) {
+  const hasFeatureLayout = featureImage || storeBadges;
+
   return (
     <section className={`w-full py-14 lg:py-20 ${sectionClassName}`}>
       <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">
-        <div className="w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] p-8 lg:py-12 flex flex-col items-center gap-6 relative overflow-hidden">
-          {icon && (
-            <Image src={asset(icon)} alt={iconAlt} width={64} height={64} className="object-contain" />
+        <div className={`w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] relative overflow-hidden ${hasFeatureLayout ? "flex flex-col lg:flex-row items-center lg:items-stretch" : "p-8 lg:py-12 flex flex-col items-center gap-6"}`}>
+          {hasFeatureLayout ? (
+            <>
+              <div className="flex flex-col gap-6 justify-center p-8 lg:p-12 lg:w-1/2">
+                <p className="text-white text-[22px] lg:text-[38px] font-normal leading-[130%]">
+                  {title}
+                </p>
+                {description && (
+                  <p className="text-white text-[15px] lg:text-[18px] leading-relaxed">
+                    {description}
+                  </p>
+                )}
+                {storeBadges && storeBadges.length > 0 && (
+                  <div className="flex items-center gap-4">
+                    {storeBadges.map((badge, i) => (
+                      <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          src={asset(badge.image)}
+                          alt={badge.alt}
+                          width={188}
+                          height={56}
+                          className="h-14 w-auto"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {buttonText && (
+                  <a href={buttonHref} className="btn-laranja self-start">
+                    {buttonText}
+                  </a>
+                )}
+              </div>
+              {featureImage && (
+                <div className="relative lg:w-1/2 h-[250px] lg:h-auto flex items-end justify-center">
+                  <div className="absolute bottom-0 right-8 lg:right-12 w-[80%] h-[85%] bg-azul rounded-t-[20px] shadow-[0px_4px_10px_0px_#00000014]" />
+                  <div className="relative z-10 w-[60%] lg:w-[55%] h-full">
+                    <Image
+                      src={asset(featureImage)}
+                      alt={featureImageAlt}
+                      fill
+                      className="object-contain object-bottom"
+                    />
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {icon && (
+                <Image src={asset(icon)} alt={iconAlt} width={64} height={64} className="object-contain" />
+              )}
+              <div className="flex flex-col items-center gap-2 text-center">
+                <p className="text-white text-[22px] font-normal leading-[130%] tracking-normal">
+                  {title}
+                </p>
+                {description && (
+                  <p className="text-white text-[15px] lg:text-[18px] leading-relaxed">
+                    {description}
+                  </p>
+                )}
+              </div>
+              {buttonText && (
+                <a href={buttonHref} className="btn-laranja">
+                  {buttonText}
+                </a>
+              )}
+            </>
           )}
-          <div className="flex flex-col items-center gap-2 text-center">
-            <p className="text-white text-[22px] font-normal leading-[130%] tracking-normal">
-              {title}
-            </p>
-            {description && (
-              <p className="text-white text-[15px] lg:text-[18px] leading-relaxed">
-                {description}
-              </p>
-            )}
-          </div>
-          <a href={buttonHref} className="btn-laranja">
-            {buttonText}
-          </a>
         </div>
       </div>
     </section>

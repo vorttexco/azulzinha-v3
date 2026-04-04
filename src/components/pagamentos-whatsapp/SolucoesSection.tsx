@@ -49,16 +49,9 @@ export default function SolucoesSection({
               href={card.href}
               className="shrink-0 w-[330px] lg:w-auto lg:flex-1 h-[320px] rounded-[10px] overflow-hidden relative group"
             >
-              {/* Background image */}
-              <Image
-                src={asset(card.image)}
-                alt={card.title}
-                fill
-                className="object-cover"
-              />
 
-              {/* Blue gradient base */}
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,#006CAD_8.16%,#038DE1_96.88%)]" />
+
+
 
               {/* Image on top of gradient */}
               <Image
@@ -69,7 +62,7 @@ export default function SolucoesSection({
               />
 
               {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(-1deg,#003D91_34%,rgba(1,61,145,0)_81%)] opacity-80" />
+              <div className="absolute inset-0 bg-[linear-gradient(-1deg,#003D91_10%,rgba(1,61,145,0)_55%)] opacity-70" />
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-2">

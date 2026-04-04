@@ -3,17 +3,78 @@ import HeroSection from "@/components/shared/HeroSection";
 import VantagensParciaisSection from "@/components/pagamento-parcial/VantagensParciaisSection";
 import FeatureSection from "@/components/shared/FeatureSection";
 import FullImageSection from "@/components/shared/FullImageSection";
-import StepsCarouselSection from "@/components/shared/StepsCarouselSection";
+import HabilitarCarouselSection from "@/components/pagamento-parcial/HabilitarCarouselSection";
 import ServicosRelacionadosSection from "@/components/pagamento-parcial/ServicosRelacionadosSection";
 import Footer from "@/components/shared/Footer";
 
 const habilitarSteps = [
-  { number: 1, text: "No menu principal, selecione a opção \"Serviços\"", image: "/images/pagamento-parcial/device-1.png" },
-  { number: 2, text: "Entre as opções de lista, selecione \"Pagamento Parcial\"", image: "/images/pagamento-parcial/device-2.png" },
-  { number: 3, text: "O sistema pedirá uma senha administrativa em uma nova tela", image: "/images/pagamento-parcial/device-3.png" },
-  { number: 4, text: "Ao digitar a senha confirme se quer habilitar a funcionalidade", image: "/images/pagamento-parcial/device-4.png" },
-  { number: 5, text: "Na tela seguinte, o sistema informará \"Funcionalidade Habilitada\"", image: "/images/pagamento-parcial/device-5.png" },
-  { number: 6, text: "Aguarda a emissão do comprovante de confirmação e boas vendas!", image: "/images/pagamento-parcial/device-6.png" },
+  {
+    number: 1,
+    title: "Menu principal",
+    content: (
+      <div className="flex flex-col gap-1">
+        <span>0 &nbsp;- Pix</span>
+        <span>1 &nbsp;- Crédito</span>
+        <span>2 &nbsp;- Débito</span>
+        <span>3 &nbsp;- Voucher</span>
+        <span>4 &nbsp;- Antecipação</span>
+        <span className="bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)] text-white px-4 py-2 pr-10 rounded-md w-fit">5 &nbsp;- Serviços</span>
+      </div>
+    ),
+    description: "No menu principal, selecione a opção \"Serviços\"",
+  },
+  {
+    number: 2,
+    title: "Serviços",
+    content: (
+      <div className="flex flex-col gap-1">
+        <span>0 &nbsp;- Ekko</span>
+        <span>1 &nbsp;- E-vale Ultragáz</span>
+        <span>2 &nbsp;- Recarga Celular</span>
+        <span>3 &nbsp;- RodOil Mais</span>
+        <span>4 &nbsp;- Pagar Débitos</span>
+        <span className="bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)] text-white px-4 py-2 rounded-md w-fit">5 &nbsp;- Pagamento Parcial</span>
+      </div>
+    ),
+    description: "Entre as opções de lista, selecione \"Pagamento Parcial\"",
+  },
+  {
+    number: 3,
+    title: "Pagamento Parcial",
+    content: (
+      <div className="flex flex-col items-center gap-3 pt-4">
+        <span>Digite a senha do supervisor&quot;</span>
+        <div className="bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)] text-white pb-1.5 pt-3 px-10  rounded-md text-center tracking-[4px]">******</div>
+      </div>
+    ),
+    description: "O sistema pedirá uma senha administrativa em uma nova tela",
+  },
+  {
+    number: 4,
+    title: "Pagamento Parcial",
+    content: (
+      <div className="flex flex-col items-center gap-3 pt-4 text-azul text-center font-normal">
+        <span>Deseja que a funcionalidade permaneça habilitada?</span>
+        <div className="bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)] text-white px-10 py-2 rounded font-normal">12 - Não</div>
+      </div>
+    ),
+    description: "Ao digitar a senha confirme se quer habilitar a funcionalidade",
+  },
+  {
+    number: 5,
+    title: "Pagamento Parcial",
+    content: (
+      <div className="flex items-center justify-center pt-6">
+        <span className=" text-azul font-normal text-center">Funcionalidade Habilitada</span>
+      </div>
+    ),
+    description: "Na tela seguinte, o sistema informará \"Funcionalidade Habilitada\"",
+  },
+  {
+    type: "image" as const,
+    image: "/images/pagamento-parcial/logo-credenciada.png",
+    description: "Aguarda a emissão do comprovante de confirmação e boas vendas!",
+  },
 ];
 
 export default function PagamentoParcial() {
@@ -26,7 +87,7 @@ export default function PagamentoParcial() {
         description="Facilite as condições do cliente na hora de pagar e incremente suas receitas."
         checkItems={[]}
         buttonText="Peça sua azulzinha"
-        backgroundImage="/images/pagamento-parcial/hero-bg-72b5d7.png"
+        backgroundImage="/images/pagamento-parcial/hero-bg.png"
       />
 
       <VantagensParciaisSection />
@@ -42,7 +103,7 @@ export default function PagamentoParcial() {
         cardWidth="605px"
         cardHeight="398px"
         imageClassName="object-contain"
-        paddingClassName="pb-14 lg:pb-[200px]"
+        paddingClassName="pb-14 pt-14 lg:pb-[200px]"
         bgColor="bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]"
       />
 
@@ -53,13 +114,7 @@ export default function PagamentoParcial() {
         heightDesktop="lg:h-[604px]"
       />
 
-      <StepsCarouselSection
-        title="Como habilitar o serviço"
-        description="Se você já vende com azulzinha, é preciso que ela esteja com atualização em dia do software. Para ter certeza que você está na última versão, basta deixar a sua maquininha conectada durante a noite e ela atualizará automaticamente."
-        steps={habilitarSteps}
-        bgClassName="bg-white"
-        cardMode="inline"
-      />
+      <HabilitarCarouselSection steps={habilitarSteps} />
 
       <ServicosRelacionadosSection />
 

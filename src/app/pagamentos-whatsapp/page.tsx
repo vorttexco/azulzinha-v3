@@ -220,8 +220,8 @@ export default function PagamentosWhatsApp() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/pagamentos-whatsapp/badge-google-play.png", href: "#", alt: "Google Play" },
-          { image: "/images/pagamentos-whatsapp/badge-app-store.png", href: "#", alt: "App Store" },
+          { image: "/images/android.png", href: "https://play.google.com", alt: "Google Play" },
+          { image: "/images/apple.png", href: "https://apps.apple.com", alt: "App Store" },
         ]}
       />
 

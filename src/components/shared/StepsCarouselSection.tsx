@@ -40,13 +40,13 @@ export default function StepsCarouselSection({
   description = "Sua azulzinha já vem pronta para aceitar cartões de crédito. Siga o passo a passo para acessar o simulador e fazer sua primeira transação:",
   steps = defaultSteps,
   bgClassName = "bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]",
-  cardMode = "overlay",
+
   headerContent,
   paddingClassName = "pb-14 lg:pb-20",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "start", containScroll: "trimSnaps" },
+    { align: "center", containScroll: "trimSnaps" },
     [wheelGestures.current]
   );
 
@@ -93,45 +93,29 @@ export default function StepsCarouselSection({
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex pl-[30px] lg:pl-[100px] gap-6 items-end pt-16 pb-4">
             {steps.map((step) =>
-              cardMode === "overlay" ? (
-                <div
-                  key={step.number}
-                  className="shrink-0 w-[287px] h-[520px] relative last:mr-[30px] lg:last:mr-[100px]"
-                >
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10">
-                    <Image
-                      src={asset(step.image)}
-                      alt={`Passo ${step.number}`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="absolute bottom-0 w-full h-[345px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col pt-[148px] pr-6 pl-4 pb-6 gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003D91]">
-                      <span className="text-[16px] leading-[1.4] text-white">{step.number}</span>
-                    </div>
-                    <p className="text-[18px] leading-[1.4] text-azul">{step.text}</p>
-                  </div>
+
+              <div
+                key={step.number}
+                className="shrink-0 w-[287px] h-[520px] relative last:mr-[30px] lg:last:mr-[100px]"
+              >
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10">
+                  <Image
+                    src={asset(step.image)}
+                    alt={`Passo ${step.number}`}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-              ) : (
-                <div
-                  key={step.number}
-                  className="shrink-0 w-[287px] flex flex-col last:mr-[30px] lg:last:mr-[100px]"
-                >
-                  <div className="relative w-full h-[341px] rounded-[30px] overflow-hidden border border-[#F1F1F1] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)]">
-                    <Image
-                      src={asset(step.image)}
-                      alt={`Passo ${step.number}`}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute top-5 left-5 flex items-center justify-center w-8 h-8 rounded-full bg-laranja z-10">
-                      <span className="text-[16px] leading-[1.4] text-white">{step.number}</span>
-                    </div>
+                <div className="absolute bottom-0 w-full h-[345px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col pt-[148px] pr-6 pl-4 pb-6 gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003D91]">
+                    <span className="text-[16px] leading-[1.4] text-white">{step.number}</span>
                   </div>
-                  <p className="mt-6 text-[16px] lg:text-[18px] leading-[1.4] text-black">{step.text}</p>
+                  <p className="text-[18px] leading-[1.4] text-azul">{step.text}</p>
                 </div>
-              )
+              </div>
+
+
+
             )}
           </div>
         </div>

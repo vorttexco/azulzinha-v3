@@ -91,14 +91,14 @@ export default function StepsCarouselSection({
 
         {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex pl-[30px] lg:pl-[100px] gap-6 items-end pb-4">
+          <div className="flex pl-[30px] lg:pl-[100px] gap-6 items-end pt-16 pb-4">
             {steps.map((step) =>
               cardMode === "overlay" ? (
                 <div
                   key={step.number}
                   className="shrink-0 w-[287px] h-[520px] relative last:mr-[30px] lg:last:mr-[100px]"
                 >
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10">
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10">
                     <Image
                       src={asset(step.image)}
                       alt={`Passo ${step.number}`}
@@ -106,7 +106,7 @@ export default function StepsCarouselSection({
                       className="object-contain"
                     />
                   </div>
-                  <div className="absolute bottom-0 w-full h-[315px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col justify-end p-6 gap-3">
+                  <div className="absolute bottom-0 w-full h-[345px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col pt-[148px] pr-6 pl-4 pb-6 gap-3">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003D91]">
                       <span className="text-[16px] leading-[1.4] text-white">{step.number}</span>
                     </div>
@@ -143,9 +143,8 @@ export default function StepsCarouselSection({
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
               aria-label={`Ir para ${i + 1}`}
-              className={`rounded-full transition-all duration-300 cursor-pointer h-[6px] ${
-                i === selectedIndex ? "w-7 bg-laranja" : "w-[6px] bg-[#D9D9D9]"
-              }`}
+              className={`rounded-full transition-all duration-300 cursor-pointer h-[6px] ${i === selectedIndex ? "w-7 bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+                }`}
             />
           ))}
         </div>

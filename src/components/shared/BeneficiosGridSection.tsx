@@ -76,7 +76,7 @@ export default function BeneficiosGridSection({
               {row.map((item, i) => (
                 <div
                   key={i}
-                  className={`w-full ${row.length < 3 ? "lg:w-[397px]" : "lg:flex-1"} bg-white rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-8 lg:pt-8 lg:pb-0 lg:pl-8 lg:pr-10`}
+                  className={`w-full ${row.length < 3 ? "lg:w-[397px]" : "lg:flex-1"} bg-white rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-8 lg:pt-8  lg:pl-8 lg:pr-10`}
                 >
                   <div className="flex flex-col gap-6">
                     <Image

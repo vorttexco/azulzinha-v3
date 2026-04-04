@@ -93,24 +93,42 @@ const faqItems = [
   },
 ];
 
-function StepHeader({ stepNumber, stepTitle, sectionTitle, subtitle }: {
+function StepHeader({ stepNumber, stepTitle, sectionTitle, subtitle, subtitleAfterStep }: {
   stepNumber: number;
   stepTitle: string;
   sectionTitle: string;
   subtitle: string;
+  subtitleAfterStep?: boolean;
 }) {
-  return (
-    <div className="flex flex-col items-center gap-4 text-center">
-      <div className="w-[49px] h-[49px] rounded-full bg-laranja flex items-center justify-center">
+  const stepIndicator = (
+    <div className="flex items-center gap-4">
+      <div className="w-[49px] h-[49px] shrink-0 rounded-full bg-laranja flex items-center justify-center">
         <span className="text-[26px] text-white">{stepNumber}</span>
       </div>
-      <p className="text-[22px] lg:text-[26px] leading-[1.3] text-azul">
+      <p className="text-[22px] lg:text-[26px] leading-[1.3] text-azul text-left">
         {stepTitle}
       </p>
-      {sectionTitle && <h2 className="section-title text-azul">{sectionTitle}</h2>}
-      <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
-        {subtitle}
-      </p>
+    </div>
+  );
+
+  const subtitleEl = (
+    <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
+      {subtitle}
+    </p>
+  );
+
+  return (
+    <div className="flex flex-col items-center text-center gap-15">
+      <div className="flex flex-col items-center gap-4">
+        {sectionTitle && <h2 className="section-title text-azul">{sectionTitle}</h2>}
+        {!subtitleAfterStep && subtitleEl}
+      </div>
+      {subtitleAfterStep ? (
+        <div className="flex flex-col items-center gap-6">
+          {stepIndicator}
+          {subtitleEl}
+        </div>
+      ) : stepIndicator}
     </div>
   );
 }
@@ -143,6 +161,8 @@ export default function PagamentosWhatsApp() {
         imageHeight="528px"
       />
 
+      <div className="h-22.5" />
+
       <BeneficiosGridSection
         beneficios={beneficios}
         buttonText=""
@@ -158,6 +178,7 @@ export default function PagamentosWhatsApp() {
         steps={stepsAtivar}
         bgClassName="bg-white"
         paddingClassName="py-14 lg:py-20"
+
         headerContent={
           <StepHeader
             stepNumber={1}
@@ -178,6 +199,7 @@ export default function PagamentosWhatsApp() {
             stepTitle="Faça a sua primeira venda e envie a cobrança"
             sectionTitle=""
             subtitle="Depois de configurar a Fiserv, veja como vender e receber um pagamento direto na sua conversa."
+            subtitleAfterStep
           />
         }
       />

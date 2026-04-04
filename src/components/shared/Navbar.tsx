@@ -6,10 +6,10 @@ import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const navLinks = [
-  { label: "Para sua empresa", hasDropdown: true },
-  { label: "Para você", hasDropdown: true },
-  { label: "Blog", hasDropdown: false },
-  { label: "Ajuda", hasDropdown: false },
+  { label: "Para sua empresa", hasDropdown: true, href: "#" },
+  { label: "Para você", hasDropdown: true, href: "#" },
+  { label: "Blog", hasDropdown: false, href: "/blog" },
+  { label: "Ajuda", hasDropdown: false, href: "/ajuda" },
 ];
 
 function NavSeparator() {
@@ -120,7 +120,7 @@ export default function Navbar() {
             {navLinks.map((link, index) => (
               <li key={link.label} className="flex items-center gap-6">
                 <a
-                  href="#"
+                  href={link.href}
                   className="flex items-center font-sans text-[16px] text-white text-center hover:opacity-80 transition-opacity"
                 >
                   {link.label}
@@ -206,7 +206,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  href="#"
+                  href={link.href}
                   className="flex items-center justify-between py-[16px] border-b border-white/30 font-sans text-[18px] text-white"
                 >
                   {link.label}

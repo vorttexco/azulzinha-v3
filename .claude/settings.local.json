@@ -3,7 +3,8 @@
     "allow": [
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/044d47ad-51e3-4b89-936e-7d5e688c4b2c\" -o hero-vendas-online.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ddbff560-b974-4a7a-adcd-d18e2b291a26\" -o feature-1a.png)",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f6010b75-ae93-416c-bbe0-1afffdc39b88\" -o feature-1b.png)"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f6010b75-ae93-416c-bbe0-1afffdc39b88\" -o feature-1b.png)",
+      "Bash(npx next:*)"
     ]
   }
 }

@@ -10,6 +10,8 @@ import ImprevistoSection from "@/components/azulzinha-smart/ImprevistoSection";
 import MetodosPagamentoSection from "@/components/azulzinha-smart/MetodosPagamentoSection";
 import BandeirasSection from "@/components/azulzinha-smart/BandeirasSection";
 import VideoPlanetaSection from "@/components/azulzinha-smart/VideoPlanetaSection";
+import CategorizedSection from "@/components/shared/CategorizedSection";
+import appsData from "@/app/azulzinhasmart/appsData";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
 import BlueCta from "@/components/shared/BlueCta";
@@ -26,6 +28,13 @@ export default function AzulzinhaSmartPage() {
         backgroundImage="/images/azulzinha-smart/hero-bg.png"
       />
       <SimplifiqueSection />
+      <CategorizedSection
+        variant="cardlist"
+        data={appsData}
+        title="Explore novas opções de aplicativos para otimizar e expandir seu negócio"
+        subtitle="Escolha o aplicativo ideal para seu negócio e contrate com facilidade"
+        searchPlaceholder="Buscar pelo nome"
+      />
       <ExploreSection />
       <SimpleVideoSection
         title="Tudo o que você precisa saber antes de ter a sua"

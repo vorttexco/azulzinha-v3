@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
+import { title } from "process";
 
 // ── FAQ Types ──
 export interface FaqItem {
@@ -136,7 +137,7 @@ function FaqContent({ category, search }: { category: FaqCategory; search: strin
 
 function AppCard({ item }: { item: CardItem }) {
     return (
-        <div className="relative rounded-xl border border-[#F1F1F1] shadow-[0px_4px_10px_0px_#00000014] bg-white p-6 flex flex-col">
+        <div className="relative rounded-[10px] overflow-hidden border border-[#F1F1F1] shadow-[0px_4px_10px_0px_#00000014] bg-white p-6 flex flex-col h-[309px] opacity-100">
             {item.link && (
                 <a
                     href={item.link}
@@ -192,25 +193,99 @@ function CardListContent({ category, sortOrder, search }: { category: CardCatego
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filtered.map((item, i) => (
-                <AppCard key={i} item={item} />
-            ))}
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6 overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6 overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-auto pr-6
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-auto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div>
+                        </div>
+                        <div> overflow-y-a overflow-y-auto pr-6uto pr-6
+                        </div>
+                        <div className="gr overflow-y-auto pr-6 overflow-y-auto pr-6id grid-cols-1 md:grid-cols-2 gap-6">
+                        </div>
+                        {filtered.map((item, i) => (
+            </div>
+                    <AppCard key={i} item={item} />
+                </div>
+                ))}
+            </div>
         </div>
     );
-}
+} overflow - y - auto pr - 6 overflow - y - auto pr - 6
 
 // ── Category Sidebar ──
 
-function CategorySidebar({
-    categories,
+function CategorySidebar({ overflow-y - auto pr - 6
+categories,
     activeIndex,
     onSelect,
 }: {
-    categories: { label: string }[];
+    overflow - y - auto pr - 6 overflow - y - auto pr - 6
+    categories: { label: string } [];
     activeIndex: number;
     onSelect: (index: number) => void;
 }) {
+    overflow - y - auto pr - 6 overflow - y - auto pr - 6
     return (
         <aside className="md:w-72 shrink-0">
             <p className="text-gray-700 text-[18px] font-normal leading-[140%] tracking-normal mb-3">Categorias:</p>
@@ -222,49 +297,49 @@ function CategorySidebar({
                             className={`w-full text-left px-4 py-3 rounded-lg text-[14px] font-normal leading-[140%] tracking-normal transition-colors shadow-[0px_4px_10px_0px_#00000014] ${activeIndex === i
                                 ? "bg-azul text-white"
                                 : "bg-white text-gray-700 hover:bg-gray-50"
-                                }`}
+                                }`} overflow-y-aut overflow-y-auto pr-6 overflow-y-auto pr-6 overflow-y-auto pr-6o pr-6
                         >
                             {cat.label}
                         </button>
                     </li>
                 ))}
-            </ul>
+            </ul> overflow-y-auto pr-6 overflow-y-auto pr-6
         </aside>
     );
 }
-
+overflow - y - auto pr - 6 overflow - y - auto pr - 6 overflo overflow - y - auto pr - 6w - y - auto pr - 6
 // ── Main Component (Discriminated Union) ──
 
 type CategorizedSectionProps =
-    | {
-        variant: "faq";
-        data: FaqCategory[];
-        title?: string;
-        subtitle?: string;
-        searchPlaceholder?: string;
-    }
+    | { overflow - y - auto pr - 6
+variant: "faq";
+data: FaqCategory[];
+title ?: string;
+subtitle ?: string; overflow - y - auto pr - 6 ov overflow - y - auto pr - 6 overflow - y - auto pr - 6erflow - y - auto pr - 6
+searchPlaceholder ?: string;
+    } overflow - y - auto pr - 6 overflow - y - auto pr - 6
     | {
         variant: "cardlist";
         data: CardCategory[];
-        title?: string;
-        subtitle?: string;
-        searchPlaceholder?: string;
+        title?: string; overflow- y - auto pr - 6
+subtitle ?: string;
+searchPlaceholder ?: string;
     };
 
 export default function CategorizedSection(props: CategorizedSectionProps) {
     const { variant, data, title, subtitle, searchPlaceholder } = props;
     const [activeCategory, setActiveCategory] = useState(0);
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState(""); overflow - y - auto pr - 6
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
     const current = data[activeCategory];
 
     return (
         <section className="py-12 px-4">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-[1113px] mx-auto h-[1113px] overflow-hidden">
                 <h2 className="section-title text-azul text-center mb-4">
                     {title ?? (variant === "faq" ? "Dúvidas frequentes" : "")}
-                </h2>
+                </h2> overflow-y-auto pr-6 overflow-y-auto pr-6
 
                 {subtitle && (
                     <p className="text-center text-gray-600 text-[16px] lg:text-[18px] leading-[1.4] mb-8">
@@ -272,29 +347,29 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
                     </p>
                 )}
 
-                <div className={`flex justify-center ${subtitle ? "mb-10" : "mb-10 mt-4"}`}>
+                <div className={`flex justify-cent overflow-y-auto pr-6er ${subtitle ? "mb-10" : "mb-10 mt-4"}`}>
                     <div className="flex items-center gap-4 w-full max-w-125">
                         <input
                             type="text"
-                            placeholder={searchPlaceholder ?? "O que você procura?"}
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className="flex-1 px-4 py-3 text-gray-600 text-[14px] outline-none bg-white border border-gray-200 rounded-lg shadow-sm"
-                        />
+                            placeholder={searchPla overflow-y-auto pr-6ceholder ?? "O que você procura?"}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="flex-1 px-4 py-3 text-gray-600 text-[14px] outline-none bg-white border border-gray-200 rounded-lg shadow-sm"
+                        /> overflow-y-auto pr-6 overflow-y-auto pr-6
                         <button className="shrink-0 text-white font-semibold px-6 py-3 text-[14px] rounded-lg bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)]">
                             Pesquisar
                         </button>
-                    </div>
+                    </div> overflow-y-auto pr-6 ov overflow-y-auto pr-6erflow-y-auto pr-6
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-8">
-                    <CategorySidebar
+                <div className="flex flex-col md:flex-row gap-8 h-full">
+                    <CategorySidebar overflow-y-au overflow-y-auto pr-6to pr-6
                         categories={data}
                         activeIndex={activeCategory}
                         onSelect={setActiveCategory}
                     />
 
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 overflow-y-auto pr-6 overflow-y-auto pr-6">
                         <div className="flex items-center justify-between mb-5">
                             <h3 className="text-azul text-[28px] font-normal leading-[140%] tracking-normal">
                                 {current.label}

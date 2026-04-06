@@ -1,7 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import SimplifiqueSection from "@/components/azulzinha-smart/SimplifiqueSection";
-import ExploreSection from "@/components/azulzinha-smart/ExploreSection";
 import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 import IntegradorasSection from "@/components/azulzinha-smart/IntegradorasSection";
 import FuncoesSection from "@/components/azulzinha-smart/FuncoesSection";
@@ -35,7 +34,7 @@ export default function AzulzinhaSmartPage() {
         subtitle="Escolha o aplicativo ideal para seu negócio e contrate com facilidade"
         searchPlaceholder="Buscar pelo nome"
       />
-      <ExploreSection />
+
       <SimpleVideoSection
         title="Tudo o que você precisa saber antes de ter a sua"
         description="Assista ao vídeo para conhecer as vantagens da azulzinha smart e começar a centralizar suas vendas e gerenciar seu negócio de forma mais simples e inteligente que nunca!"

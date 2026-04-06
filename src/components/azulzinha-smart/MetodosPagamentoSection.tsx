@@ -3,11 +3,11 @@ import { asset } from "@/lib/assets";
 
 const methods = [
   {
-    icon: "/images/azulzinha-smart/icon-cartao.png",
+    icon: "/images/azulzinha-smart/icon-visao.png",
     title: "Cartão com chip",
   },
   {
-    icon: "/images/azulzinha-smart/icon-wireless.png",
+    icon: "/images/azulzinha-smart/icon-aproximacao.png",
     title: "Aproximação",
   },
   {
@@ -34,14 +34,14 @@ export default function MetodosPagamentoSection() {
             tradicionais às mais recentes.
           </p>
 
-          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          <div className="w-full flex flex-wrap justify-center gap-4 lg:grid lg:grid-cols-4 lg:gap-6">
             {methods.map((method) => (
               <div
                 key={method.title}
-                className="flex flex-col items-center justify-center gap-4 bg-white rounded-[30px] border border-[#F1F1F1] shadow-[0_4px_10px_rgba(0,0,0,0.08)] h-[285px]"
+                className="w-[330px] lg:w-auto h-[285px] pt-[67px] pr-[8px] pb-[85px] pl-[8px] lg:p-0 flex flex-col items-center justify-center gap-[10px] lg:gap-4 bg-white rounded-[30px] border border-[#F1F1F1] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
               >
                 <div className="relative w-[94px] h-[94px]">
-                  <div className="absolute inset-0 bg-laranja rounded-[12px] translate-x-1 translate-y-1" />
+                  <div className="absolute inset-0 rounded-[12px] translate-x-1 translate-y-1" />
                   <Image
                     src={asset(method.icon)}
                     alt=""

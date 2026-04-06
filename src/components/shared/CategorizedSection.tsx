@@ -281,17 +281,9 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
                             onChange={(e) => setSearch(e.target.value)}
                             className="flex-1 px-4 py-3 text-gray-600 text-[14px] outline-none bg-white border border-gray-200 rounded-lg shadow-sm"
                         />
-                        {variant === "faq" ? (
-                            <button className="shrink-0 text-white font-semibold px-6 py-3 text-[14px] rounded-lg bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)]">
-                                Pesquisar
-                            </button>
-                        ) : (
-                            <span className="shrink-0 text-gray-400">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16ZM19 19l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-                        )}
+                        <button className="shrink-0 text-white font-semibold px-6 py-3 text-[14px] rounded-lg bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)]">
+                            Pesquisar
+                        </button>
                     </div>
                 </div>
 

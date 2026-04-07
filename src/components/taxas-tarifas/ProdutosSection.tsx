@@ -145,8 +145,8 @@ export default function ProdutosSection() {
                           src={asset(feature.icon)}
                           alt=""
                           width={18}
-                          height={18}
-                          className="shrink-0 mt-0.5"
+                          height={20}
+                          className="shrink-0 mt-0.5 w-[20px] h-auto object-contain"
                         />
                         <span className="text-[16px] leading-[1.4] text-cinza">
                           {feature.text}

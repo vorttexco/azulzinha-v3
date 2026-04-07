@@ -50,7 +50,7 @@ export default function TabelaIsencaoSection() {
             <div className="grid [grid-template-columns:200px_repeat(8,_minmax(0,1fr))] gap-0">
               <div />
               <div className="col-span-4 border border-[#BFBFBF] rounded-lg h-14 flex items-center justify-center px-4 pr-6 mr-1 text-center text-[14px] lg:text-[16px] text-black">
-                azulzinha <strong className="font-bold">SEM</strong> antecipação
+                azulzinha SEM antecipação
               </div>
               <div className="col-span-4 bg-laranja rounded-lg mr-1 h-14 flex items-center justify-center px-4 text-center text-[14px] lg:text-[16px] text-white font-bold">
                 azulzinha COM* antecipação

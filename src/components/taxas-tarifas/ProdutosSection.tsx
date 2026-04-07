@@ -71,7 +71,7 @@ const products: ProductCard[] = [
 
 export default function ProdutosSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "start", containScroll: "trimSnaps" },
+    { align: "center", containScroll: "trimSnaps" },
     [WheelGesturesPlugin()]
   );
   const [activeDot, setActiveDot] = useState(0);
@@ -109,8 +109,8 @@ export default function ProdutosSection() {
           </p>
         </div>
 
-        <div className="w-full overflow-hidden py-4 select-none" ref={emblaRef}>
-          <div className="flex pl-7.5 lg:pl-25 gap-6">
+        <div className="w-full overflow-visible py-4 select-none" ref={emblaRef}>
+          <div className="flex px-7.5 lg:px-25 gap-6 justify-center">
             {products.map((product) => (
               <div
                 key={product.name}

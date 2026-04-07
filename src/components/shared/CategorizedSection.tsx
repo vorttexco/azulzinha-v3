@@ -214,7 +214,7 @@ function CategorySidebar({
     return (
         <aside className="md:w-72 shrink-0">
             <p className="text-gray-700 text-[18px] font-normal leading-[140%] tracking-normal mb-3">Categorias:</p>
-            <ul className="space-y-2">
+            <ul className="space-y-2 max-h-250 overflow-y-auto px-2 pt-2 -mx-2">
                 {categories.map((cat, i) => (
                     <li key={i}>
                         <button
@@ -228,6 +228,8 @@ function CategorySidebar({
                         </button>
                     </li>
                 ))}
+                <li className="h-25" />
+                <li className="sticky bottom-0 left-0 right-0 h-25 -mt-25 bg-[linear-gradient(0deg,rgba(255,255,255,1)_35%,rgba(255,255,255,0)_81%)] pointer-events-none list-none" />
             </ul>
         </aside>
     );
@@ -318,11 +320,17 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
                             )}
                         </div>
 
-                        {variant === "faq" ? (
-                            <FaqContent category={current as FaqCategory} search={search} />
-                        ) : (
-                            <CardListContent category={current as CardCategory} sortOrder={sortOrder} search={search} />
-                        )}
+                        <div className="relative">
+                            <div className="max-h-250 overflow-y-auto px-2 pt-2 -mx-2">
+                                {variant === "faq" ? (
+                                    <FaqContent category={current as FaqCategory} search={search} />
+                                ) : (
+                                    <CardListContent category={current as CardCategory} sortOrder={sortOrder} search={search} />
+                                )}
+                                <div className="h-25" />
+                                <div className="sticky bottom-0 left-0 right-0 h-25 -mt-25 bg-[linear-gradient(0deg,rgba(255,255,255,1)_35%,rgba(255,255,255,0)_81%)] pointer-events-none" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

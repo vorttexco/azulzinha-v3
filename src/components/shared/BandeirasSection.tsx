@@ -4,7 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
-const logos = [
+export interface LogoItem {
+  src: string;
+  w: number;
+  h: number;
+}
+
+export interface IconCardItem {
+  icon: string;
+  text: string;
+}
+
+const defaultLogos: LogoItem[] = [
   { src: "/images/bandeiras-vouchers/elo.png", w: 92, h: 29 },
   { src: "/images/bandeiras-vouchers/mastercard.png", w: 76, h: 47 },
   { src: "/images/bandeiras-vouchers/visa.png", w: 95, h: 31 },
@@ -25,7 +36,7 @@ const logos = [
   { src: "/images/bandeiras-vouchers/logo-18.png", w: 85, h: 32 },
 ];
 
-function LogoCard({ src, w, h }: { src: string; w: number; h: number }) {
+function LogoCard({ src, w, h }: LogoItem) {
   return (
     <div className="flex items-center justify-center bg-white border border-[#F1F1F1] rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] h-[120px] lg:h-[140px]">
       <Image
@@ -39,39 +50,77 @@ function LogoCard({ src, w, h }: { src: string; w: number; h: number }) {
   );
 }
 
-export default function BandeirasSection() {
+function IconCard({ icon, text }: IconCardItem) {
+  return (
+    <div className="flex flex-col gap-6 bg-white rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-8 lg:pr-10">
+      <Image
+        src={asset(icon)}
+        alt=""
+        width={42}
+        height={42}
+        className="shrink-0 w-[42px] h-[42px]"
+        unoptimized
+      />
+      <p className="text-[16px] leading-[1.4] text-azul">{text}</p>
+    </div>
+  );
+}
+
+interface BandeirasSectionProps {
+  title?: string;
+  description?: string;
+  logos?: LogoItem[];
+  iconCards?: IconCardItem[];
+  bgColor?: string;
+  gridClassName?: string;
+  collapsedClassName?: string;
+  fadeClassName?: string;
+}
+
+export default function BandeirasSection({
+  title = "A azulzinha da CAIXA já vem com uma grande rede de aceitação",
+  description = "A azulzinha da CAIXA aceita as principais bandeiras nacionais, regionais e internacionais, além dos principais vouchers do mercado. Quando você recebe a sua azulzinha, muitas de nossas bandeiras já vêm habilitadas automaticamente. Confira a rede de aceitação completa que já vem instalada com a sua azulzinha e conte para os seus clientes!",
+  logos,
+  iconCards,
+  bgColor = "bg-[#FAFAFA]",
+  gridClassName = "grid-cols-2 lg:grid-cols-6",
+  collapsedClassName = "max-h-[268px] lg:max-h-[300px]",
+  fadeClassName = "bg-[linear-gradient(0deg,#FAFAFA_62%,rgba(250,250,250,0)_100%)]",
+}: BandeirasSectionProps) {
   const [expanded, setExpanded] = useState(false);
+  const isIconMode = !!iconCards;
 
   return (
-    <section className="bg-[#FAFAFA]">
+    <section className={bgColor}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 flex flex-col items-center gap-[30px] lg:gap-[60px]">
         {/* Title + Description */}
         <div className="flex flex-col gap-4">
           <h2 className="section-title text-azul">
-            A azulzinha da CAIXA já vem com uma grande rede de aceitação
+            {title}
           </h2>
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center">
-            A azulzinha da CAIXA aceita as principais bandeiras nacionais, regionais e internacionais, além dos principais vouchers do mercado.
-            {" "}Quando você recebe a sua azulzinha, muitas de nossas bandeiras já vêm habilitadas automaticamente.
-            {" "}Confira a rede de aceitação completa que já vem instalada com a sua azulzinha e conte para os seus clientes!
-          </p>
+          {description && (
+            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center">
+              {description}
+            </p>
+          )}
         </div>
 
-        {/* Logo Grid */}
+        {/* Grid */}
         <div className="relative w-full max-w-[1240px]">
           <div
-            className={`grid grid-cols-2 lg:grid-cols-6 gap-4 transition-all duration-500 overflow-hidden ${
-              expanded ? "max-h-[2000px]" : "max-h-[268px] lg:max-h-[300px]"
+            className={`grid ${gridClassName} gap-4 transition-all duration-500 overflow-hidden ${
+              expanded ? "max-h-[2000px]" : collapsedClassName
             }`}
           >
-            {logos.map((logo, i) => (
-              <LogoCard key={i} src={logo.src} w={logo.w} h={logo.h} />
-            ))}
+            {isIconMode
+              ? iconCards!.map((item, i) => <IconCard key={i} {...item} />)
+              : (logos || defaultLogos).map((item, i) => <LogoCard key={i} {...item} />)
+            }
           </div>
 
           {/* Gradient fade overlay */}
           {!expanded && (
-            <div className="absolute bottom-0 left-0 right-0 h-[98px] bg-[linear-gradient(0deg,#FAFAFA_62%,rgba(250,250,250,0)_100%)] pointer-events-none" />
+            <div className={`absolute bottom-0 left-0 right-0 h-[98px] ${fadeClassName} pointer-events-none`} />
           )}
         </div>
 

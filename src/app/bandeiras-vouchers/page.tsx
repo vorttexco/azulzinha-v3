@@ -1,6 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
-import BandeirasSection from "@/components/bandeiras-vouchers/BandeirasSection";
+import BandeirasSection from "@/components/shared/BandeirasSection";
 import BlueCta from "@/components/shared/BlueCta";
 import FeatureSection from "@/components/shared/FeatureSection";
 import FaqBandeirasSection from "@/components/bandeiras-vouchers/FaqBandeirasSection";

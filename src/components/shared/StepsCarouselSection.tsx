@@ -33,6 +33,9 @@ interface StepsCarouselSectionProps {
   cardMode?: "overlay" | "inline";
   headerContent?: ReactNode;
   paddingClassName?: string;
+  bottomTitle?: string;
+  bottomButtonText?: string;
+  bottomButtonHref?: string;
 }
 
 export default function StepsCarouselSection({
@@ -43,6 +46,9 @@ export default function StepsCarouselSection({
 
   headerContent,
   paddingClassName = "pb-14 lg:pb-20",
+  bottomTitle,
+  bottomButtonText,
+  bottomButtonHref = "#",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -132,6 +138,20 @@ export default function StepsCarouselSection({
             />
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        {(bottomTitle || bottomButtonText) && (
+          <div className="flex flex-col items-center gap-6 mt-10 lg:mt-[60px] px-[30px] lg:px-[100px]">
+            {bottomTitle && (
+              <h2 className="section-title text-azul">{bottomTitle}</h2>
+            )}
+            {bottomButtonText && (
+              <a href={bottomButtonHref} className="btn-laranja">
+                {bottomButtonText}
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

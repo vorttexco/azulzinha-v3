@@ -137,17 +137,18 @@ export default function ProdutosSection() {
                     {product.description}
                   </p>
 
-                  {/* Features list */}
                   <div className="flex flex-col gap-5 flex-1">
                     {product.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <Image
-                          src={asset(feature.icon)}
-                          alt=""
-                          width={18}
-                          height={20}
-                          className="shrink-0 mt-0.5 w-[20px] h-auto object-contain"
-                        />
+                      <div key={i} className="grid grid-cols-[20px_1fr] gap-3">
+                        <div className="relative w-5 aspect-square">
+                          <Image
+                            src={asset(feature.icon)}
+                            alt=""
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+
                         <span className="text-[16px] leading-[1.4] text-cinza">
                           {feature.text}
                         </span>

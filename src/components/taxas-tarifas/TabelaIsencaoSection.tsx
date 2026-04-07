@@ -49,10 +49,10 @@ export default function TabelaIsencaoSection() {
             {/* Main header */}
             <div className="grid [grid-template-columns:200px_repeat(8,_minmax(0,1fr))] gap-0">
               <div />
-              <div className="col-span-4 border border-[#BFBFBF] rounded-l-lg rounded-tl-lg py-3 px-4 pr-6 text-center text-[14px] lg:text-[16px] text-black">
+              <div className="col-span-4 border border-[#BFBFBF] rounded-lg py-3 px-4 pr-6 mr-1 text-center text-[14px] lg:text-[16px] text-black">
                 azulzinha <strong className="font-bold">SEM</strong> antecipação
               </div>
-              <div className="col-span-4 bg-laranja rounded-r-lg rounded-tr-lg rounded-tl-lg rounded-tr-lg mr-1 py-3 px-4 text-center text-[14px] lg:text-[16px] text-white font-bold">
+              <div className="col-span-4 bg-laranja rounded-lg mr-1 py-3 px-4 text-center text-[14px] lg:text-[16px] text-white font-bold">
                 azulzinha COM* antecipação
               </div>
             </div>
@@ -62,28 +62,28 @@ export default function TabelaIsencaoSection() {
               <div className="border border-[#BFBFBF] rounded-lg py-3 px-4 mr-2 text-center text-[13px] lg:text-[14px] text-azul">
                 Faturamento / Mês
               </div>
-              <div className="bg-laranja rounded-l-lg rounded-tl-lg rounded-tr-lg mr-1 py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Número de máquinas
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Smart
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Pro
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 TEF
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Número de máquinas
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Smart
               </div>
-              <div className="bg-laranja rounded-tl-lg rounded-tr-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg mr-1 rounded-none py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 Pro
               </div>
-              <div className="bg-laranja rounded-r-lg rounded-tr-lg py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
+              <div className="bg-laranja rounded-t-lg rounded-tr-lg py-3 px-2 text-center text-[13px] lg:text-[14px] text-white">
                 TEF
               </div>
             </div>

@@ -26,6 +26,7 @@
 - `/suaazulzinha` - Sua Azulzinha
 - `/blog` - Blog
 - `/blog/[slug]` - Post do Blog
+- `/taxas-tarifas` - Taxas e Tarifas
 
 ----------------------------------------------------------------
 

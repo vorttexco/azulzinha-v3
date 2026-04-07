@@ -2,9 +2,10 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 interface BeneficioItem {
-  icon: string;
+  icon?: string;
   title: string;
   description: string;
+  note?: string;
 }
 
 const defaultBeneficios: BeneficioItem[] = [
@@ -46,6 +47,8 @@ const defaultBeneficios: BeneficioItem[] = [
 ];
 
 interface BeneficiosGridSectionProps {
+  title?: string;
+  subtitle?: string;
   beneficios?: BeneficioItem[];
   buttonText?: string;
   buttonHref?: string;
@@ -54,6 +57,8 @@ interface BeneficiosGridSectionProps {
 }
 
 export default function BeneficiosGridSection({
+  title,
+  subtitle,
   beneficios = defaultBeneficios,
   buttonText = "Peça sua Azulzinha",
   buttonHref = "#",
@@ -68,24 +73,36 @@ export default function BeneficiosGridSection({
 
   return (
     <section className={bgColor}>
-      <div className={`max-w-[1440px] mx-auto px-[30px] lg:px-[100px] ${paddingClassName} flex flex-col items-center gap-[30px] lg:gap-[60px]`}>
+      <div className={`max-w-360 mx-auto px-7.5 lg:px-25 ${paddingClassName} flex flex-col items-center gap-7.5 lg:gap-15`}>
+        {title && (
+          <div className="flex flex-col items-center gap-4">
+            <h2 className="section-title text-azul">{title}</h2>
+            {subtitle && (
+              <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[564px]">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        )}
         {/* Cards grid */}
-        <div className="w-full flex flex-col gap-[30px] lg:gap-6">
+        <div className="w-full flex flex-col gap-7.5 lg:gap-6">
           {rows.map((row, rowIdx) => (
-            <div key={rowIdx} className="flex flex-col lg:flex-row gap-[30px] lg:gap-6">
+            <div key={rowIdx} className="flex flex-col lg:flex-row gap-7.5 lg:gap-6">
               {row.map((item, i) => (
                 <div
                   key={i}
-                  className={`w-full ${row.length < 3 ? "lg:w-[397px]" : "lg:flex-1"} bg-white rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-8 lg:pt-8  lg:pl-8 lg:pr-10`}
+                  className={`w-full ${row.length < 3 ? "lg:w-99.25" : "lg:flex-1"} bg-white rounded-xl shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-8 lg:pt-8 lg:pl-8 lg:pr-10`}
                 >
                   <div className="flex flex-col gap-6">
-                    <Image
-                      src={asset(item.icon)}
-                      alt=""
-                      width={42}
-                      height={40}
-                      className="shrink-0"
-                    />
+                    {item.icon && (
+                      <Image
+                        src={asset(item.icon)}
+                        alt=""
+                        width={42}
+                        height={40}
+                        className="shrink-0"
+                      />
+                    )}
                     <div className="flex flex-col gap-2">
                       <h3 className="text-[16px] font-normal leading-[1.4] text-azul">
                         {item.title}
@@ -93,6 +110,11 @@ export default function BeneficiosGridSection({
                       <p className="text-[14px] leading-[1.4] text-black">
                         {item.description}
                       </p>
+                      {item.note && (
+                        <p className="text-[14px] leading-[1.4] text-cinza">
+                          {item.note}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

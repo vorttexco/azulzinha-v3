@@ -4,7 +4,23 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/044d47ad-51e3-4b89-936e-7d5e688c4b2c\" -o hero-vendas-online.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ddbff560-b974-4a7a-adcd-d18e2b291a26\" -o feature-1a.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f6010b75-ae93-416c-bbe0-1afffdc39b88\" -o feature-1b.png)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/6abe63e7-2444-47a5-9428-9137a4cd028f\" -o maquininha-smart.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/2ef77246-ad13-47ac-9716-eb78ac112bc3\" -o maquininha-pro.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/9a56e4e9-5bf5-4ccf-9070-4253fc4f711a\" -o maquininha-tef.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/16bbebd7-c809-4b1a-b97c-914d359bb2cc\" -o icon-benefit-1.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/33de7e6d-16b9-41df-b1bc-94c6e6b3cb9d\" -o icon-benefit-2.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/6e09f5a3-4100-4af3-9c11-0961301c2c97\" -o icon-benefit-3.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/caf97138-459d-4e29-9132-6bf2a582d277\" -o icon-benefit-4.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/c8bba08d-29dc-4a97-903a-079274e044b6\" -o icon-benefit-5.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/e97456e0-6f9c-4676-8a77-25077cb32f27\" -o cta-image.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/c93fcefa-df3c-42e3-a1ce-4609f6a81daf\" -o hero-bg.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/dde7d90c-27f1-43ad-bd21-2c4cdf412b1a\" -o icon-smart-1.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/705c2c8f-6d5f-4117-a632-e532f65ee52a\" -o icon-smart-2.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0f46659a-504e-48a8-981e-8d14d1810fbc\" -o icon-smart-3.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/a9029b78-372b-4518-b134-313f510056b4\" -o icon-smart-4.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/900cbcbe-23e5-4a7c-974b-cc25f4cbcab6\" -o icon-smart-5.png)"
     ]
   }
 }

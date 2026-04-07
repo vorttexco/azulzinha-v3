@@ -27,7 +27,7 @@ const products: ProductCard[] = [
     image: "/images/taxas-tarifas/maquininha-smart.png",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-1.svg", text: "Compatível com Apps de PDV móvel;" },
-      { icon: "/images/taxas-tarifas/icon-smart-2.svg", text: "Controle de estoque;" },
+      { icon: "/images/taxas-tarifas/icon-smart2.svg", text: "Controle de estoque;" },
       { icon: "/images/taxas-tarifas/icon-smart-3.svg", text: "Gestão de fluxo de caixa;" },
       { icon: "/images/taxas-tarifas/icon-smart-4.svg", text: "Pagamento portátil NFC, Chip & PIN;" },
       { icon: "/images/taxas-tarifas/icon-smart-5.svg", text: "Wi-Fi & Bluetooth;" },

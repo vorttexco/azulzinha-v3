@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { useCallback, useEffect, useState } from "react";
 import { asset } from "@/lib/assets";
 
@@ -69,13 +68,77 @@ const products: ProductCard[] = [
   },
 ];
 
-export default function ProdutosSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "center", containScroll: "trimSnaps" },
-    [WheelGesturesPlugin()]
+function ProductCard({ product }: { product: ProductCard }) {
+  return (
+    <div className="flex flex-col justify-end items-center -gap-[91px]">
+      {/* Product image floating above */}
+      <div className="relative h-[280px] lg:h-[320px] -mb-[140px] z-10 pointer-events-none">
+        <Image
+          src={asset(product.image)}
+          alt={product.name}
+          width={172}
+          height={338}
+          className="h-full w-auto object-contain"
+        />
+      </div>
+
+      {/* Card */}
+      <div className="w-full bg-white rounded-xl shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] pt-[140px] pb-8 px-8 flex flex-col flex-1">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[22px] leading-[1.4] text-azul">
+            {product.name}
+          </h3>
+          <p className="text-[16px] leading-[1.4] text-black">
+            {product.description}
+          </p>
+
+          <div className="flex flex-col gap-5 flex-1">
+            {product.features.map((feature, i) => (
+              <div key={i} className="grid grid-cols-[20px_1fr] gap-3">
+                <div className="relative w-5 aspect-square">
+                  <Image
+                    src={asset(feature.icon)}
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                <span className="text-[16px] leading-[1.4] text-cinza">
+                  {feature.text}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Link */}
+          <a
+            href={product.href}
+            className="inline-flex items-center gap-1.5 text-[14px] leading-[1.3] text-azul hover:opacity-80 transition-opacity"
+          >
+            Saiba mais
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+              <path
+                d="M8 1L12 5M12 5L8 9M12 5H1"
+                stroke="#006CAD"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
   );
+}
+
+export default function ProdutosSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "center",
+    containScroll: "trimSnaps",
+  });
   const [activeDot, setActiveDot] = useState(0);
-  const [dotCount, setDotCount] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -84,117 +147,64 @@ export default function ProdutosSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    const update = () => {
-      setDotCount(emblaApi.scrollSnapList().length);
-      onSelect();
-    };
-    update();
     emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", update);
+    emblaApi.on("reInit", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", update);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="bg-white py-14 lg:py-20 overflow-hidden">
-      <div className="max-w-360 mx-auto flex flex-col items-center gap-6 lg:gap-10">
-        <div className="flex flex-col items-center gap-4 px-7.5 lg:px-25">
-          <h2 className="section-title text-azul">
-            Alavanque seu negócio com a maquininha da CAIXA
-          </h2>
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[666px]">
-            Escolha a azulzinha ideal para você
-          </p>
+    <section className="bg-white py-14 lg:py-20">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
+        <div className="flex flex-col items-center gap-6 lg:gap-10 mb-10 lg:mb-14">
+          <div className="flex flex-col items-center gap-4">
+            <h2 className="section-title text-azul">
+              Alavanque seu negócio com a maquininha da CAIXA
+            </h2>
+            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[666px]">
+              Escolha a azulzinha ideal para você
+            </p>
+          </div>
         </div>
 
-        <div className="w-full overflow-visible py-4 select-none" ref={emblaRef}>
-          <div className="flex px-7.5 lg:px-25 gap-6 justify-center">
+        {/* Desktop grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-6">
+          {products.map((product) => (
+            <div key={product.name} className="flex-1">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile carousel */}
+        <div className="lg:hidden overflow-hidden -mx-[30px] select-none" ref={emblaRef}>
+          <div className="flex gap-6 pl-[30px]">
             {products.map((product) => (
-              <div
-                key={product.name}
-                className="shrink-0 w-[280px] lg:w-[319px] bg-white rounded-xl shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col last:mr-7.5"
-              >
-                {/* Product image */}
-                <div className="flex items-center justify-center h-[250px] lg:h-[300px] px-8 pt-6">
-                  <div className="relative w-[150px] h-full">
-                    <Image
-                      src={asset(product.image)}
-                      alt={product.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col gap-4 px-8 pb-8 flex-1">
-                  <h3 className="text-[22px] leading-[1.4] text-azul">
-                    {product.name}
-                  </h3>
-                  <p className="text-[16px] leading-[1.4] text-black">
-                    {product.description}
-                  </p>
-
-                  <div className="flex flex-col gap-5 flex-1">
-                    {product.features.map((feature, i) => (
-                      <div key={i} className="grid grid-cols-[20px_1fr] gap-3">
-                        <div className="relative w-5 aspect-square">
-                          <Image
-                            src={asset(feature.icon)}
-                            alt=""
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-
-                        <span className="text-[16px] leading-[1.4] text-cinza">
-                          {feature.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Link */}
-                  <a
-                    href={product.href}
-                    className="inline-flex items-center gap-1.5 text-[14px] leading-[1.3] text-azul hover:opacity-80 transition-opacity"
-                  >
-                    Saiba mais
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
-                      <path
-                        d="M8 1L12 5M12 5L8 9M12 5H1"
-                        stroke="#006CAD"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
-                </div>
+              <div key={product.name} className="shrink-0 w-[280px]">
+                <ProductCard product={product} />
               </div>
             ))}
           </div>
         </div>
 
-        {dotCount > 1 && (
-          <div className="flex items-center gap-2">
-            {Array.from({ length: dotCount }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => emblaApi?.scrollTo(i)}
-                aria-label={`Ir para ${i + 1}`}
-                className="transition-all duration-300 rounded-full cursor-pointer"
-                style={{
-                  width: i === activeDot ? "28px" : "6px",
-                  height: "6px",
-                  backgroundColor: i === activeDot ? "#FC8F01" : "#D9D9D9",
-                }}
-              />
-            ))}
-          </div>
-        )}
+        {/* Dots - mobile only */}
+        <div className="lg:hidden mt-6 flex items-center justify-center gap-2">
+          {products.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => emblaApi?.scrollTo(i)}
+              aria-label={`Ir para ${i + 1}`}
+              className="transition-all duration-300 rounded-full cursor-pointer"
+              style={{
+                width: i === activeDot ? "28px" : "6px",
+                height: "6px",
+                backgroundColor: i === activeDot ? "#FC8F01" : "#D9D9D9",
+              }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

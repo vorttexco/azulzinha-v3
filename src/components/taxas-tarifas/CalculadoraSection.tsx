@@ -1,23 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import ArrowIcon from "@/components/shared/ArrowIcon";
 
-const tiposPagamento = ["Débito", "Crédito à vista", "Crédito 2x a 6x", "Crédito 7x a 12x"];
-const tiposRecebimento = ["À vista", "Em 1 dia útil", "Em 30 dias"];
+const tiposPagamento = ["Débito", "Crédito"];
+const parcelasOpcoes = ["À vista", "Parcelado em 2x", "Parcelado em 3x", "Parcelado em 4x", "Parcelado em 5x", "Parcelado em 6x", "Parcelado em 7x", "Parcelado em 8x", "Parcelado em 9x", "Parcelado em 10x", "Parcelado em 11x", "Parcelado em 12x"];
 
-const taxas: Record<string, Record<string, number>> = {
-  "Débito": { "À vista": 0.81, "Em 1 dia útil": 0.95, "Em 30 dias": 0.81 },
-  "Crédito à vista": { "À vista": 1.27, "Em 1 dia útil": 1.45, "Em 30 dias": 1.27 },
-  "Crédito 2x a 6x": { "À vista": 1.48, "Em 1 dia útil": 1.65, "Em 30 dias": 1.48 },
-  "Crédito 7x a 12x": { "À vista": 1.92, "Em 1 dia útil": 2.10, "Em 30 dias": 1.92 },
+const getTaxRate = (tipoPagamento: string, parcela: string): number => {
+  const parcelaNum = parseInt(parcela.split(" ")[2]) || 0;
+
+  if (tipoPagamento === "Débito") {
+    return 0.81;
+  }
+
+  if (parcela === "À vista") {
+    return 1.27;
+  }
+
+  if (parcelaNum >= 2 && parcelaNum <= 6) {
+    return 1.48;
+  }
+
+  if (parcelaNum >= 7) {
+    return 1.92;
+  }
+
+  return 1.27;
 };
 
 export default function CalculadoraSection() {
   const [tipoPagamento, setTipoPagamento] = useState(0);
-  const [tipoRecebimento, setTipoRecebimento] = useState(0);
+  const [parcela, setParcela] = useState(0);
   const [valorVenda, setValorVenda] = useState("");
 
-  const taxa = taxas[tiposPagamento[tipoPagamento]][tiposRecebimento[tipoRecebimento]];
+  const isDebito = tiposPagamento[tipoPagamento] === "Débito";
+  const taxa = getTaxRate(tiposPagamento[tipoPagamento], parcelasOpcoes[parcela]);
   const valor = parseFloat(valorVenda.replace(",", ".")) || 0;
   const valorRecebido = valor > 0 ? valor - (valor * taxa) / 100 : 0;
 
@@ -25,6 +42,14 @@ export default function CalculadoraSection() {
     current === 0 ? total - 1 : current - 1;
   const cycleNext = (current: number, total: number) =>
     current === total - 1 ? 0 : current + 1;
+
+  // Reset parcela to 0 when switching to Débito
+  const handleTipoPagamento = (newIndex: number) => {
+    setTipoPagamento(newIndex);
+    if (tiposPagamento[newIndex] === "Débito") {
+      setParcela(0);
+    }
+  };
 
   return (
     <section className="bg-[#F7F7F7]">
@@ -49,16 +74,16 @@ export default function CalculadoraSection() {
               </span>
               <div className="flex gap-2">
                 <button
-                  onClick={() => setTipoPagamento(cyclePrev(tipoPagamento, tiposPagamento.length))}
-                  className="bg-[#d9d9d9] rounded-lg w-[29px] h-8 flex items-center justify-center cursor-pointer"
+                  onClick={() => handleTipoPagamento(cyclePrev(tipoPagamento, tiposPagamento.length))}
+                  className="w-[29px] h-[32px] bg-[#D9D9D9]  rounded-lg flex items-center justify-center cursor-pointer"
                 >
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M9 5L5 1L1 5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <ArrowIcon width={14} height={10} color="#000" stroke="#000" strokeWidth={1} className="rotate-180" />
                 </button>
                 <button
-                  onClick={() => setTipoPagamento(cycleNext(tipoPagamento, tiposPagamento.length))}
-                  className="bg-[#d9d9d9] rounded-lg w-[29px] h-8 flex items-center justify-center cursor-pointer"
+                  onClick={() => handleTipoPagamento(cycleNext(tipoPagamento, tiposPagamento.length))}
+                  className="w-[29px] h-[32px] bg-[#D9D9D9] rounded-lg flex items-center justify-center cursor-pointer"
                 >
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <ArrowIcon width={14} height={10} color="#000" stroke="#000" strokeWidth={1} />
                 </button>
               </div>
             </div>
@@ -75,23 +100,25 @@ export default function CalculadoraSection() {
               />
             </div>
 
-            {/* Tipo de recebimento */}
-            <div className="bg-white border border-[#b8b8b8] rounded-lg flex items-center justify-between px-4 h-16">
-              <span className="text-[16px] text-[#aaa]">
-                {tiposRecebimento[tipoRecebimento]}
+            {/* Parcela */}
+            <div className={`bg-white border rounded-lg flex items-center justify-between px-4 h-16 ${isDebito ? "border-[#d9d9d9] opacity-50 pointer-events-none" : "border-[#b8b8b8]"}`}>
+              <span className={`text-[16px] ${isDebito ? "text-[#aaa]" : "text-cinza"}`}>
+                {parcelasOpcoes[parcela]}
               </span>
               <div className="flex gap-2">
                 <button
-                  onClick={() => setTipoRecebimento(cyclePrev(tipoRecebimento, tiposRecebimento.length))}
-                  className="bg-[#d9d9d9] rounded-lg w-[29px] h-8 flex items-center justify-center cursor-pointer"
+                  onClick={() => setParcela(cyclePrev(parcela, parcelasOpcoes.length))}
+                  disabled={isDebito}
+                  className="w-[29px] h-[32px] bg-[#D9D9D9] rounded-lg flex items-center justify-center cursor-pointer"
                 >
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M9 5L5 1L1 5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <ArrowIcon width={14} height={10} color={isDebito ? "#999" : "#333"} stroke={isDebito ? "#999" : "#333"} strokeWidth={1} className="rotate-180" />
                 </button>
                 <button
-                  onClick={() => setTipoRecebimento(cycleNext(tipoRecebimento, tiposRecebimento.length))}
-                  className="bg-[#d9d9d9] rounded-lg w-[29px] h-8 flex items-center justify-center cursor-pointer"
+                  onClick={() => setParcela(cycleNext(parcela, parcelasOpcoes.length))}
+                  disabled={isDebito}
+                  className="w-[29px] h-[32px] bg-[#D9D9D9] rounded-lg flex items-center justify-center cursor-pointer"
                 >
-                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <ArrowIcon width={14} height={10} color={isDebito ? "#999" : "#333"} stroke={isDebito ? "#999" : "#333"} strokeWidth={1} />
                 </button>
               </div>
             </div>

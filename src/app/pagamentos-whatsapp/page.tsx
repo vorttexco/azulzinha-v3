@@ -5,7 +5,7 @@ import BeneficiosGridSection from "@/components/shared/BeneficiosGridSection";
 import BlueCta from "@/components/shared/BlueCta";
 import StepsCarouselSection, { StepItem } from "@/components/shared/StepsCarouselSection";
 import FaqSection from "@/components/shared/FaqSection";
-import SolucoesSection from "@/components/pagamentos-whatsapp/SolucoesSection";
+import SolucoesSection from "@/components/shared/SolucoesSection";
 import Footer from "@/components/shared/Footer";
 
 const beneficios = [

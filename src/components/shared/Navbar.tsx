@@ -153,7 +153,7 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <a
-            href="#"
+            href="/peca-azulzinha"
             className="btn-laranja"
           >
             Peça já sua azulzinha
@@ -186,7 +186,7 @@ export default function Navbar() {
           <div className="flex flex-col px-[24px] pt-[24px] gap-[12px]">
             {/* CTA Button */}
             <a
-              href="#"
+              href="/peca-azulzinha"
               className="btn-laranja"
             >
               Peça sua azulzinha

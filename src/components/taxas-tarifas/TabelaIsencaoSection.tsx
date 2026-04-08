@@ -131,7 +131,7 @@ export default function TabelaIsencaoSection() {
           </p>
         </div>
 
-        <a href="#" className="btn-laranja">
+        <a href="/peca-azulzinha" className="btn-laranja">
           Peça a sua azulzinha
         </a>
       </div>

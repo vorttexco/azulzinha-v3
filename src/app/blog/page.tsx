@@ -19,6 +19,7 @@ export default function BlogPage() {
       <CtaSection
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça já a sua azulzinha"
+        buttonHref="/peca-azulzinha"
       />
       <Footer />
     </main>

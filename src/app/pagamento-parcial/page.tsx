@@ -87,6 +87,7 @@ export default function PagamentoParcial() {
         description="Facilite as condições do cliente na hora de pagar e incremente suas receitas."
         checkItems={[]}
         buttonText="Peça sua azulzinha"
+        buttonHref="/peca-azulzinha"
         backgroundImage="/images/pagamento-parcial/hero-bg.png"
       />
 

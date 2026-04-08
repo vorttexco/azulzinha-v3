@@ -107,6 +107,7 @@ export default function LinkPagamento() {
       <BlueCta
         title="O Link de Pagamento é uma ferramenta exclusiva para clientes azulzinha. Ainda não tem a maquininha da CAIXA?"
         buttonText="Peça já a sua"
+        buttonHref="/peca-azulzinha"
         sectionClassName="bg-white"
       />
 
@@ -120,8 +121,7 @@ export default function LinkPagamento() {
         bgClassName="bg-white"
         paddingClassName="py-14 lg:py-20"
         bottomTitle="Comece a vender no digital!"
-        bottomButtonText="Peça já a sua"
-        headerContent={
+        bottomButtonText="Peça já a sua"        bottomButtonHref="/peca-azulzinha"        headerContent={
           <div className="flex flex-col items-center gap-4 max-w-[850px] mx-auto text-center">
             <h2 className="section-title text-azul">
               Já é cliente azulzinha? Veja como é fácil criar um Link de Pagamento pelo aplicativo

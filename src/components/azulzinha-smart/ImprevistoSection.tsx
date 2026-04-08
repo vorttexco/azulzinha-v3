@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
@@ -26,9 +27,9 @@ export default function ImprevistoSection() {
               smart já vem com uma solução de pagamento no próprio terminal para
               casos de imprevistos e indisponibilidade da automação.
             </p>
-            <button className="btn-laranja">
+            <Link href="/peca-azulzinha" className="btn-laranja text-center">
               Peça sua azulzinha
-            </button>
+            </Link>
           </div>
         </div>
       </div>

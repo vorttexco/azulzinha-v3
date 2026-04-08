@@ -54,7 +54,7 @@ export default function ProductsSection() {
         <h2 className="section-title text-azul">
           Escolha a azulzinha ideal para o seu <span className="text-[#FC8F01]">negócio</span>
         </h2>
-        <a href="#" className="mt-4 inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
+        <a href="/peca-azulzinha" className="mt-4 inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
           Peça a sua azulzinha
           <ArrowIcon />
         </a>

@@ -37,6 +37,7 @@ export default function MaquininhasPage() {
         title="Com a azulzinha da CAIXA você pode muito mais!"
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça já a sua azulzinha"
+        buttonHref="/peca-azulzinha"
         image="/images/maquininhas/cta-bg.png"
         imageAlt="Azulzinha maquininhas CTA"
       />

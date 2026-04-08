@@ -58,6 +58,7 @@ export default function AzulzinhaSmartPage() {
         title="Este modelo de maquininha tem tudo a ver com o seu negócio?"
         description=""
         buttonText="Peça já sua azulzinha"
+        buttonHref="/peca-azulzinha"
         image="/images/azulzinha-smart/cta-market-bg.png"
         imageAlt="Azulzinha Smart CTA"
       />

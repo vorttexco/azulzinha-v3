@@ -81,6 +81,7 @@ export default function TaxasTarifasPage() {
         bgColor="bg-white"
         paddingClassName="py-14 lg:py-20"
         buttonText="Peça a sua azulzinha"
+        buttonHref="/peca-azulzinha"
         beneficios={[
           {
             icon: "/images/taxas-tarifas/icon-benefit-1.svg",
@@ -131,6 +132,7 @@ export default function TaxasTarifasPage() {
         title="Com a azulzinha da CAIXA você pode muito mais!"
         description="Receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça a sua azulzinha"
+        buttonHref="/peca-azulzinha"
         image="/images/taxas-tarifas/cta-image.png"
         imageAlt="Mulher empreendedora com azulzinha"
       />

@@ -155,6 +155,7 @@ export default function PixAzulzinha() {
         title="Com a azulzinha da CAIXA você pode muito mais!"
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio. As melhores taxas e condições estão aqui."
         buttonText="Peça já a sua azulzinha"
+        buttonHref="/peca-azulzinha"
         image="/images/pix-azulzinha/cta-bg.png"
         imageAlt="Mercado com azulzinha"
       />

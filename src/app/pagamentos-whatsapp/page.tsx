@@ -171,6 +171,7 @@ export default function PagamentosWhatsApp() {
       <BlueCta
         title="Ainda não tem sua azulzinha?"
         buttonText="Peça já a sua"
+        buttonHref="/peca-azulzinha"
         sectionClassName="bg-[linear-gradient(180deg,#FFFFFF_0%,#F7F7F7_100%)]"
       />
 

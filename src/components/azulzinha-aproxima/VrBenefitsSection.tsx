@@ -60,7 +60,7 @@ export default function VrBenefitsSection() {
           </div>
 
           {/* CTA */}
-          <a href="#" className="btn-laranja">
+          <a href="/peca-azulzinha" className="btn-laranja">
             Peça a sua
           </a>
         </div>

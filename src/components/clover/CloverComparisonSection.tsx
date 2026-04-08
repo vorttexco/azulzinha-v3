@@ -157,9 +157,8 @@ function ScrollDots({
           key={i}
           onClick={() => onDotClick(i)}
           aria-label={`Ir para ${i + 1}`}
-          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${
-            i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
-          }`}
+          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+            }`}
         />
       ))}
     </div>
@@ -243,7 +242,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
         </div>
 
         {/* CTA Button */}
-        <a href="#" className="btn-laranja self-start mt-auto">
+        <a href="/peca-azulzinha" className="btn-laranja self-start mt-auto">
           {product.ctaText}
         </a>
       </div>

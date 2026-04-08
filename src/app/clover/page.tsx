@@ -18,6 +18,7 @@ export default function CloverPage() {
         description="Praticidade na gestão e uma experiência de compra que encanta seus clientes"
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#clover-discover"
         backgroundImage="/images/clover/hero-bg-1f8314.png"
       />
       <CloverDiscoverSection />
@@ -30,6 +31,7 @@ export default function CloverPage() {
         title="Descubra o poder do mundo Clover com a azulzinha"
         description="Preencha o formulário e receba uma oferta sob medida com as soluções da Clover e as condições exclusivas que só a CAIXA tem para o seu negócio."
         buttonText="Peça a sua Clover"
+        buttonHref="/peca-azulzinha"
         image="/images/clover/cta-photo.png"
         imageAlt="Clover CTA"
       />

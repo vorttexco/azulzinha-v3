@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <HeroSection />
+      <HeroSection buttonHref="/peca-azulzinha" />
       <CardsCarouselSection />
       <PossibilitiesSection />
       <ProductsSection />

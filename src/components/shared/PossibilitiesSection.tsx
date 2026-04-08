@@ -3,36 +3,71 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, ReactNode } from "react";
 
-const cards = [
+export interface PossibilityCard {
+  icon: string;
+  title: string;
+  description?: string;
+}
+
+const defaultCards: PossibilityCard[] = [
   {
-    icon: asset("/images/icon-big-vendas.svg"),
+    icon: "/images/icon-big-vendas.svg",
     title: "Venda em qualquer lugar",
     description: "Soluções para lojas físicas e venda online.",
   },
   {
-    icon: asset("/images/icon-big-resultados.svg"),
+    icon: "/images/icon-big-resultados.svg",
     title: "Impulsione seus resultados",
     description: "Serviços agregados para impulsionar suas vendas.",
   },
   {
-    icon: asset("/images/icon-big-protecao.svg"),
+    icon: "/images/icon-big-protecao.svg",
     title: "Negócios sempre protegidos",
     description: "Plataformas robustas e seguras para grandes comércios.",
   },
   {
-    icon: asset("/images/icon-big-controle.svg"),
+    icon: "/images/icon-big-controle.svg",
     title: "Controle total do seu negócio",
     description: "Ferramentas completas de gestão em tempo real.",
   },
 ];
 
-function Card({ icon, title, description }: { icon: string; title: string; description: string }) {
+const defaultTitle = (
+  <>
+    Com azulzinha você{" "}
+    <br className="hidden lg:block" />
+    tem mais possibilidades{" "}
+    <br className="hidden lg:block" />
+    para <span className="text-[#FC8F01]">crescer</span>
+  </>
+);
+
+const defaultDescription = (
+  <>
+    Empreenda com as soluções CAIXA em parceria
+    <br className="hidden lg:block" />
+    com a Fiserv, líder global em tecnologias de
+    <br className="hidden lg:block" />
+    pagamentos e serviços financeiros.
+  </>
+);
+
+interface PossibilitiesSectionProps {
+  title?: ReactNode;
+  description?: ReactNode;
+  image?: string;
+  imageAlt?: string;
+  cards?: PossibilityCard[];
+  bgColor?: string;
+}
+
+function Card({ icon, title, description }: PossibilityCard) {
   return (
     <div className="bg-white rounded-xl h-61 pr-10 pl-8 py-0 flex flex-col justify-center gap-2.5 shadow-[0_4px_10px_rgba(0,0,0,0.08)]">
       <Image
-        src={icon}
+        src={asset(icon)}
         alt=""
         width={40}
         height={40}
@@ -42,14 +77,23 @@ function Card({ icon, title, description }: { icon: string; title: string; descr
       <h3 className="text-[16px] leading-[1.4] text-azul font-normal">
         {title}
       </h3>
-      <p className="text-[14px] lg:text-[16px] leading-[1.4] text-black">
-        {description}
-      </p>
+      {description && (
+        <p className="text-[14px] lg:text-[16px] leading-[1.4] text-black">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
 
-export default function PossibilitiesSection() {
+export default function PossibilitiesSection({
+  title = defaultTitle,
+  description = defaultDescription,
+  image = "/images/hero-banner-3.png",
+  imageAlt = "Possibilidades com azulzinha",
+  cards = defaultCards,
+  bgColor = "bg-[#F5F5F5]",
+}: PossibilitiesSectionProps = {}) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
@@ -69,34 +113,26 @@ export default function PossibilitiesSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="w-full bg-[#F5F5F5] py-14 lg:py-16">
+    <section className={`w-full ${bgColor} py-14 lg:py-16`}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
 
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className="w-full lg:w-1/2 flex flex-col  gap-4">
             <h2 className="section-title text-left pt-4">
-              Com azulzinha você {" "}
-              <br className="hidden lg:block" />
-              tem mais possibilidades {" "}
-              <br className="hidden lg:block" />
-              para <span className="text-[#FC8F01]">crescer</span>
+              {title}
             </h2>
 
             <p className="font-normal text-[18px] leading-[140%] tracking-normal text-black">
-              Empreenda com as soluções CAIXA em parceria
-              <br className="hidden lg:block" />
-              com a Fiserv, líder global em tecnologias de
-              <br className="hidden lg:block" />
-              pagamentos e serviços financeiros.
+              {description}
             </p>
           </div>
 
           {/* Right side - Image */}
           <div className="relative w-full lg:w-169 h-64 lg:h-106.5 rounded-xl lg:rounded-r-[20px] overflow-hidden lg:translate-x-11">
             <Image
-              src={asset("/images/hero-banner-3.png")}
-              alt="Possibilidades com azulzinha"
+              src={asset(image)}
+              alt={imageAlt}
               fill
               className="object-cover"
             />

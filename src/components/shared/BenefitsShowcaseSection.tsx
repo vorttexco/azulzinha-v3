@@ -141,7 +141,7 @@ export default function BenefitsShowcaseSection({
 
         {/* Brand logos */}
         {showBrandLogos && (
-          <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-12">
+          <div className="mt-6 lg:mt-10 flex flex-wrap justify-center gap-6 lg:gap-12 lg:justify-center lg:flex-nowrap">
             {brandLogos.map((brand) => (
               <div key={brand.src} className="flex items-center justify-center">
                 <Image

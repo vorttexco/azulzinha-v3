@@ -1,13 +1,105 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 const inputClass =
   "w-full border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-black placeholder-[#999] outline-none focus:border-azul";
 
+// Funções de formatação
+const formatCNPJ = (value: string) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{2})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1/$2")
+    .replace(/(\d{4})(\d)/, "$1-$2")
+    .slice(0, 18);
+};
+
+const formatCelular = (value: string) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .slice(0, 15);
+};
+
+const formatCEP = (value: string) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .slice(0, 9);
+};
+
+const formatCNAE = (value: string) => {
+  return value.replace(/\D/g, "").slice(0, 7);
+};
+
+const formSchema = z.object({
+  cnpj: z
+    .string()
+    .regex(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/, {
+      message: "CNPJ Inválido, verifique as informações inseridas",
+    }),
+  cnae: z
+    .string()
+    .regex(/^\d{7}$/, {
+      message: "CNAE é obrigatório",
+    }),
+  nome: z
+    .string()
+    .min(1, "Dados Inválidos, verifique as informações inseridas"),
+  email: z
+    .string()
+    .email("E-mail Inválido, verifique as informações inseridas"),
+  celular: z
+    .string()
+    .regex(/^\(\d{2}\) \d{5}-\d{4}$/, {
+      message: "Número de Telefone Inválido, verifique as informações inseridas",
+    }),
+  cep: z
+    .string()
+    .regex(/^\d{5}-\d{3}$/, {
+      message: "CEP Inválido",
+    }),
+  faturamento: z
+    .string()
+    .min(1, "Faturamento é obrigatório"),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
 export default function FormSection() {
-  const [isMei, setIsMei] = useState<boolean | null>(null);
-  const [accepted, setAccepted] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  // Criar handlers que formata e registra ao mesmo tempo
+  const createMaskedRegister = (
+    fieldName: keyof FormData,
+    formatter: (value: string) => string
+  ) => {
+    const baseRegister = register(fieldName);
+    return {
+      ...baseRegister,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        const formatted = formatter(e.target.value);
+        e.target.value = formatted;
+        baseRegister.onChange(e);
+      },
+    };
+  };
+
+  const onSubmit = (data: FormData) => {
+    console.log("Formulário válido:", data);
+    // Aqui você enviaria os dados para o servidor
+  };
 
   return (
     <section className="bg-white py-14 lg:py-20">
@@ -20,86 +112,128 @@ export default function FormSection() {
             sua empresa e tirar todas as suas dúvidas.
           </p>
 
-          <form className="flex flex-col gap-6 pt-10">
-            {/* Você é MEI? */}
-            <div className="flex items-center gap-4">
-              <span className="text-[18px] text-black">Você é MEI?</span>
-              <label className="flex items-center gap-1 cursor-pointer text-[18px] text-black">
-                <input
-                  type="radio"
-                  name="mei"
-                  value="sim"
-                  checked={isMei === true}
-                  onChange={() => setIsMei(true)}
-                  className="accent-azul"
-                />
-                Sim
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer text-[18px] text-black">
-                <input
-                  type="radio"
-                  name="mei"
-                  value="nao"
-                  checked={isMei === false}
-                  onChange={() => setIsMei(false)}
-                  className="accent-azul"
-                />
-                Não
-              </label>
-            </div>
-
+          <form className="flex flex-col gap-6 pt-10" onSubmit={handleSubmit(onSubmit)}>
             {/* CNPJ + CNAE */}
             <div className="flex flex-col lg:flex-row gap-4">
-              <input type="text" placeholder="CNPJ" className={inputClass} />
-              <input type="text" placeholder="CNAE" className={inputClass} />
+              <div className="w-full lg:flex-1">
+                <input
+                  {...createMaskedRegister("cnpj", formatCNPJ)}
+                  type="text"
+                  placeholder="CNPJ"
+                  className={inputClass}
+                  maxLength={18}
+                />
+                {errors.cnpj && (
+                  <p className="text-laranja text-[14px] mt-2">{errors.cnpj.message}</p>
+                )}
+              </div>
+              <div className="w-full lg:flex-1">
+                <input
+                  {...createMaskedRegister("cnae", formatCNAE)}
+                  type="text"
+                  placeholder="CNAE"
+                  className={inputClass}
+                  maxLength={7}
+                />
+                {errors.cnae && (
+                  <p className="text-laranja text-[14px] mt-2">{errors.cnae.message}</p>
+                )}
+              </div>
             </div>
 
             {/* Nome de contato */}
-            <input type="text" placeholder="Nome de contato" className={inputClass} />
+            <div>
+              <input
+                {...register("nome")}
+                type="text"
+                placeholder="Nome de contato"
+                className={inputClass}
+              />
+              {errors.nome && (
+                <p className="text-laranja text-[14px] mt-2">{errors.nome.message}</p>
+              )}
+            </div>
 
             {/* E-mail */}
-            <input type="email" placeholder="E-mail" className={inputClass} />
+            <div>
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="E-mail"
+                className={inputClass}
+              />
+              {errors.email && (
+                <p className="text-laranja text-[14px] mt-2">{errors.email.message}</p>
+              )}
+            </div>
 
             {/* Celular de contato */}
-            <input type="tel" placeholder="Celular de contato" className={inputClass} />
+            <div>
+              <input
+                {...createMaskedRegister("celular", formatCelular)}
+                type="tel"
+                placeholder="Celular de contato"
+                className={inputClass}
+                maxLength={15}
+              />
+              {errors.celular && (
+                <p className="text-laranja text-[14px] mt-2">{errors.celular.message}</p>
+              )}
+            </div>
 
             {/* CEP */}
-            <input type="text" placeholder="CEP" className={inputClass} />
+            <div>
+              <input
+                {...createMaskedRegister("cep", formatCEP)}
+                type="text"
+                placeholder="CEP"
+                className={inputClass}
+                maxLength={9}
+              />
+              {errors.cep && (
+                <p className="text-laranja text-[14px] mt-2">{errors.cep.message}</p>
+              )}
+            </div>
 
             {/* Faturamento mensal em cartão */}
-            <div className="relative">
-              <select
-                defaultValue=""
-                className="w-full appearance-none border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-[#999] outline-none focus:border-azul bg-white"
-              >
-                <option value="" disabled>
-                  Faturamento mensal em cartão
-                </option>
-                <option value="ate5k">Até R$ 5.000</option>
-                <option value="5k-20k">R$ 5.000 – R$ 20.000</option>
-                <option value="20k-50k">R$ 20.000 – R$ 50.000</option>
-                <option value="50k-100k">R$ 50.000 – R$ 100.000</option>
-                <option value="acima100k">Acima de R$ 100.000</option>
-              </select>
-              <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-[28px] h-[28px] rounded-full bg-azul flex items-center justify-center">
-                <svg width="12" height="8" viewBox="0 0 12 6" fill="none">
-                  <path
-                    d="M1 1L6 6L11 1"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            <div>
+              <div className="relative">
+                <select
+                  {...register("faturamento")}
+                  defaultValue=""
+                  className="w-full appearance-none border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-[#999] outline-none focus:border-azul bg-white"
+                >
+                  <option value="" disabled>
+                    Faturamento mensal em cartão
+                  </option>
+                  <option value="ate10k">Até R$10.000</option>
+                  <option value="10k-30k">Entre R$10.000 e R$30.000</option>
+                  <option value="30k-80k">Entre R$30.000 e R$80.000</option>
+                  <option value="80k-250k">Entre R$80.000 e R$250.000</option>
+                  <option value="acima250k">Acima de R$250.000</option>
+                </select>
+                <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-[28px] h-[28px] rounded-full bg-azul flex items-center justify-center">
+                  <svg width="12" height="8" viewBox="0 0 12 6" fill="none">
+                    <path
+                      d="M1 1L6 6L11 1"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
               </div>
+              {errors.faturamento && (
+                <p className="text-laranja text-[14px] mt-2">{errors.faturamento.message}</p>
+              )}
             </div>
 
             {/* Checkbox */}
             <label className="flex items-start gap-3 cursor-pointer pt-[37px]">
               <input
                 type="checkbox"
-                checked={accepted}
-                onChange={(e) => setAccepted(e.target.checked)}
+                required
                 className="mt-[2px] accent-azul shrink-0"
               />
               <span className="text-[14px] leading-[1.5] text-black">

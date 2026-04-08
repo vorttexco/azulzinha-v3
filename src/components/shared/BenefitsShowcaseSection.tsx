@@ -153,7 +153,7 @@ export default function BenefitsShowcaseSection({
         {showLink && (
           <div className="mt-6 flex justify-center">
             <a
-              href="#"
+              href="/bandeiras-vouchers"
               className="inline-flex items-center gap-2 rounded-[6px]
                px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
             >

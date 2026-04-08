@@ -21,6 +21,7 @@ interface HeroSectionProps {
   logoImage?: string;
   logoWidth?: number;
   logoHeight?: number;
+  inputPlaceholder?: string;
 }
 
 export default function HeroSection({
@@ -35,6 +36,7 @@ export default function HeroSection({
   logoImage,
   logoWidth = 196,
   logoHeight = 51,
+  inputPlaceholder,
 }: HeroSectionProps = {}) {
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -101,10 +103,18 @@ export default function HeroSection({
             )}
           </div>
 
+          {inputPlaceholder && (
+            <input
+              type="text"
+              placeholder={inputPlaceholder}
+              className="bg-white rounded-md px-[23px] py-[17px] text-[16px] text-[#B8B8B8] placeholder:text-[#B8B8B8] outline-none w-full max-w-[302px] lg:mt-6"
+            />
+          )}
+
           {buttonText && (
             <a
               href={buttonHref}
-              className="btn-laranja self-start lg:mt-12"
+              className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
             >
               {buttonText}
             </a>

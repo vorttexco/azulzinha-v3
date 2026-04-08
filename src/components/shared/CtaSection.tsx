@@ -10,6 +10,7 @@ interface CtaSectionProps {
   button2Href?: string;
   image?: string;
   imageAlt?: string;
+  inputPlaceholder?: string;
 }
 
 export default function CtaSection({
@@ -21,6 +22,7 @@ export default function CtaSection({
   button2Href = "#",
   image = "/images/cta-photo.png",
   imageAlt = "Azulzinha CTA",
+  inputPlaceholder,
 }: CtaSectionProps = {}) {
   return (
     <section
@@ -50,6 +52,13 @@ export default function CtaSection({
               <p className="text-[16px] lg:text-[18px] text-white leading-[1.4]">
                 {description}
               </p>
+            )}
+            {inputPlaceholder && (
+              <input
+                type="text"
+                placeholder={inputPlaceholder}
+                className="bg-white rounded-md px-[23px] py-[17px] text-[16px] text-[#B8B8B8] placeholder:text-[#B8B8B8] outline-none w-full max-w-[302px]"
+              />
             )}
             <div className={`flex ${button2Text ? "flex-col lg:flex-row gap-4 lg:gap-6" : ""}`}>
               <a

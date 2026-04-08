@@ -18,7 +18,7 @@ export default function Home() {
       <ProductsSection />
       <BenefitsShowcaseSection />
       <TestimonialsSection />
-      <CtaSection />
+      <CtaSection buttonHref="/peca-azulzinha" />
       <Footer />
     </main>
   );

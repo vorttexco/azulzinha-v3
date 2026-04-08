@@ -4,6 +4,7 @@ import FeatureSection from "@/components/shared/FeatureSection";
 import VideoSection from "@/components/shared/VideoSection";
 import Footer from "@/components/shared/Footer";
 import HelpFaqSection from "@/components/help/HelpFaqSection";
+import HelpCtaSection from "@/components/help/HelpCtaSection";
 import faqData from "@/app/ajuda/faqData";
 import regulatoryFaqData from "@/app/ajuda/regulatoryFaqData";
 
@@ -34,6 +35,7 @@ export default function AjudaPage() {
             <VideoSection />
             <HelpFaqSection faqData={faqData} />
             <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />
+            <HelpCtaSection />
             <Footer />
         </main>
     );

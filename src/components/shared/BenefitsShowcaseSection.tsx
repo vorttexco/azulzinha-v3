@@ -30,10 +30,16 @@ const defaultCards = [
   },
 ];
 
-const brandLogos = Array.from({ length: 8 }, (_, i) => ({
-  src: asset(`/images/brand-${i + 1}.png`),
-  alt: `Bandeira ${i + 1}`,
-}));
+const brandLogos = [
+  { src: asset("/images/bandeiras-vouchers/elo.png"), alt: "ELO" },
+  { src: asset("/images/bandeiras-vouchers/mastercard.png"), alt: "Mastercard" },
+  { src: asset("/images/bandeiras-vouchers/visa.png"), alt: "Visa" },
+  { src: asset("/images/bandeiras-vouchers/hipercard.png"), alt: "Bandeira 04" },
+  { src: asset("/images/bandeiras-vouchers/logo-04.png"), alt: "Bandeira 05" },
+  { src: asset("/images/bandeiras-vouchers/logo-06.png"), alt: "Bandeira 06" },
+  { src: asset("/images/bandeiras-vouchers/logo-09.png"), alt: "Bandeira 07" },
+  { src: asset("/images/bandeiras-vouchers/hiper.png"), alt: "Bandeira 08" },
+];
 
 const defaultTitle = (
   <>
@@ -137,14 +143,15 @@ export default function BenefitsShowcaseSection({
         {showBrandLogos && (
           <div className="mt-6 lg:mt-10 grid grid-cols-4 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-12">
             {brandLogos.map((brand) => (
-              <Image
-                key={brand.src}
-                src={brand.src}
-                alt={brand.alt}
-                width={56}
-                height={40}
-                className="object-contain"
-              />
+              <div key={brand.src} className="flex items-center justify-center">
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={65}
+                  height={65}
+                  className="object-contain w-[65px] h-auto"
+                />
+              </div>
             ))}
           </div>
         )}

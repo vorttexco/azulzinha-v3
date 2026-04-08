@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
@@ -108,13 +109,15 @@ export default function Navbar() {
       <div className="hidden lg:flex max-w-[1440px] mx-auto h-full items-center justify-between px-[100px]">
         {/* Left side */}
         <div className="flex items-center gap-12">
-          <Image
-            src={asset("/images/logo-azulzinha.png")}
-            alt="Azulzinha"
-            width={127}
-            height={55}
-            priority
-          />
+          <Link href="/">
+            <Image
+              src={asset("/images/logo-azulzinha.png")}
+              alt="Azulzinha"
+              width={127}
+              height={55}
+              priority
+            />
+          </Link>
 
           <ul className="flex items-center gap-6">
             {navLinks.map((link, index) => (
@@ -163,13 +166,15 @@ export default function Navbar() {
 
       {/* Mobile header bar */}
       <div className="flex lg:hidden h-full items-center justify-between px-[30px]">
-        <Image
-          src={asset("/images/logo-azulzinha.png")}
-          alt="Azulzinha"
-          width={127}
-          height={55}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src={asset("/images/logo-azulzinha.png")}
+            alt="Azulzinha"
+            width={127}
+            height={55}
+            priority
+          />
+        </Link>
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

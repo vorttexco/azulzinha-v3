@@ -66,19 +66,24 @@ interface BenefitsSectionProps {
   showLink?: boolean;
   linkText?: string;
   bgColor?: string;
+  cardClassName?: string;
+  iconClassName?: string;
+  cardsGridClassName?: string;
+  sectionClassName?: string;
+  contentClassName?: string;
 }
 
-function SmallCard({ icon, text, title }: CardItem) {
+function SmallCard({ icon, text, title, cardClassName, iconClassName }: CardItem & { cardClassName?: string; iconClassName?: string }) {
   return (
     <div
-      className="flex items-center gap-3 rounded-[12px] bg-white p-4 shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
+      className={cardClassName || "flex items-center gap-3 rounded-[12px] bg-white p-4 shadow-[0_4px_10px_rgba(0,0,0,0.08)]"}
     >
       <Image
         src={icon.startsWith("/") ? asset(icon) : icon}
         alt=""
         width={24}
         height={24}
-        className="shrink-0 w-6 h-6"
+        className={iconClassName || "shrink-0 w-6 h-6"}
         unoptimized
       />
       {title ? (
@@ -103,14 +108,19 @@ export default function BenefitsShowcaseSection({
   showLink = true,
   linkText = "Consulte todas as bandeiras",
   bgColor = "bg-[#F5F5F5]",
+  cardClassName,
+  iconClassName,
+  cardsGridClassName,
+  sectionClassName,
+  contentClassName,
 }: BenefitsSectionProps) {
   return (
-    <section className={`w-full ${bgColor}`}>
+    <section className={`w-full ${bgColor} ${sectionClassName || ''}`}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
         {/* Top row: Text left + Image right */}
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <div className={contentClassName || "w-full lg:w-1/2 flex flex-col justify-center"}>
             <h2 className="section-title text-left text-azul">
               {title}
             </h2>
@@ -133,9 +143,9 @@ export default function BenefitsShowcaseSection({
         </div>
 
         {/* Cards grid */}
-        <div className="mt-6 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className={cardsGridClassName || "mt-6 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4"}>
           {cards.map((card) => (
-            <SmallCard key={card.text} icon={card.icon} text={card.text} title={card.title} />
+            <SmallCard key={card.text} icon={card.icon} text={card.text} title={card.title} cardClassName={cardClassName} iconClassName={iconClassName} />
           ))}
         </div>
 

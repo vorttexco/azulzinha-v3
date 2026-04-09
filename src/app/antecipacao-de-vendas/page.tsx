@@ -37,7 +37,7 @@ export default function AntecipacaoDeVendas() {
       />
       <ModosSection />
       <BenefitsShowcaseSection
-        title="Vantagens da antecipação Caixa"
+        title={<span>Vantagens da <br /> antecipação Caixa</span>}
         description="Com a solução de antecipação da CAIXA, você tem flexibilidade para escolher quando receber, total transparência nas taxas e agilidade para manter o caixa do seu negócio sempre saudável."
         image="/images/antecipacao-de-vendas/vantagens-bg.png"
         imageAlt="Vantagens da antecipação"
@@ -45,12 +45,19 @@ export default function AntecipacaoDeVendas() {
         showBrandLogos={false}
         showLink={false}
         bgColor="bg-[#F4F4F4]"
+        cardClassName="flex flex-col items-start gap-[24px] rounded-[12px] bg-white pt-[32px] pr-[40px] pl-[32px] pb-[32px] h-[244px] w-[397px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
+        iconClassName="shrink-0 w-[43.69px] h-[44.67px]"
+        cardsGridClassName="mt-6 lg:-mt-[110px] grid grid-cols-1 lg:grid-cols-3 gap-4 relative z-10"
+        sectionClassName="h-[756px]"
+        contentClassName="w-full lg:w-1/2 flex flex-col pb-[110px]"
       />
       <CtaSection
         title="Contrate agora mesmo pelo App ou Portal da azulzinha"
         description=""
         buttonText="App da azulzinha"
         button2Text="Portal da Azulzinha"
+        buttonHref="/gestao/app"
+        button2Href="/gestao/portal"
         image="/images/antecipacao-de-vendas/cta-photo.png"
         imageAlt="CTA Antecipação de Vendas"
       />

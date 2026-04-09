@@ -32,14 +32,14 @@ function Card({ icon, title, description }: { icon: string; title: string; descr
   return (
     <div className="bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] px-8 py-8 flex flex-col gap-4 h-[244px]">
       <Image src={asset(icon)} alt="" width={52} height={52} className="w-[52px] h-[52px] object-contain" />
-      <h3 className="text-[16px] font-bold leading-[1.4] text-azul">{title}</h3>
+      <h3 className="text-[16px] font-normal leading-[1.4] text-azul">{title}</h3>
       <p className="text-[14px] font-normal leading-[1.4] text-black">{description}</p>
     </div>
   );
 }
 
 export default function AproximaSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
   const onSelect = useCallback(() => {
@@ -72,7 +72,7 @@ export default function AproximaSection() {
                 Receber uma venda está mais fácil do que nunca: você só precisa de um celular!
               </p>
               <p>
-                Baixe gratuitamente o aplicativo <em>azulzinha aproxima</em> e venda por aproximação e muito mais.
+                Baixe gratuitamente o aplicativo azulzinha aproxima e venda por aproximação e muito mais.
               </p>
             </div>
           </div>

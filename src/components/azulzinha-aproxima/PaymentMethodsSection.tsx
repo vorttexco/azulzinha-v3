@@ -41,14 +41,15 @@ function CardCarteiras() {
       <h3 className="text-[22px] font-normal leading-[1.3] text-azul text-center">
         Receba por carteiras digitais (QR Code)
       </h3>
-      <Image src={asset("/images/azulzinha-aproxima/logos-carteiras.png")} alt="Carteiras digitais" width={224} height={70} className="object-contain" />
       <Image src={asset("/images/azulzinha-aproxima/phone-carteiras.png")} alt="Pagamento por QR Code" width={310} height={234} className="object-contain" />
+      <Image src={asset("/images/azulzinha-aproxima/logos-carteiras.png")} alt="Carteiras digitais" width={224} height={70} className="object-contain" />
+
     </div>
   );
 }
 
 export default function PaymentMethodsSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
   const onSelect = useCallback(() => {

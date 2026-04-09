@@ -77,7 +77,7 @@ function FloatCard({
 }
 
 export default function ProductFeaturesSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
   const onSelect = useCallback(() => {

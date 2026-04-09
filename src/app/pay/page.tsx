@@ -93,7 +93,7 @@ export default function AzulzinhaPay() {
         checkItems={[]}
         inputPlaceholder="Digite seu CPF aqui"
         buttonText="Cadastrar gratuitamente"
-        backgroundImage="/images/cliente-loterica/hero-bg-pessoa-72b5d7.png"
+        backgroundImage="/images/pagamentos-whatsapp/hero-bg.png"
       />
 
       <BeneficiosGridSection
@@ -106,12 +106,13 @@ export default function AzulzinhaPay() {
       <VantagensPaySection />
 
       <StepsCarouselSection
-        title="Passo a passo para habilitar a azulzinha no seu App CAIXA Tem"
+        title={<>Passo a passo para habilitar a azulzinha no<br /> seu App CAIXA Tem</>}
         description=""
         steps={passoSteps}
         bgClassName="bg-white"
         paddingClassName="py-14 lg:py-20"
         bottomButtonText="Consulte seus débitos"
+        titleAlign="center"
       />
 
       <FeatureSection
@@ -126,6 +127,7 @@ export default function AzulzinhaPay() {
         buttonText="Consultar débitos"
         hideCard
         cardBorderRadius="rounded-[30px]"
+        reverse
       />
 
       <SeguraConfiavelSection />

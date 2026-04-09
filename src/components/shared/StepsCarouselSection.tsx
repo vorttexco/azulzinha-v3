@@ -26,7 +26,7 @@ const defaultSteps: StepItem[] = [
 ];
 
 interface StepsCarouselSectionProps {
-  title?: string;
+  title?: string | ReactNode;
   description?: string;
   steps?: StepItem[];
   bgClassName?: string;
@@ -36,6 +36,7 @@ interface StepsCarouselSectionProps {
   bottomTitle?: string;
   bottomButtonText?: string;
   bottomButtonHref?: string;
+  titleAlign?: "left" | "center" | "right";
 }
 
 export default function StepsCarouselSection({
@@ -49,10 +50,11 @@ export default function StepsCarouselSection({
   bottomTitle,
   bottomButtonText,
   bottomButtonHref = "#",
+  titleAlign = "left",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "center", containScroll: "trimSnaps" },
+    { align: "center", containScroll: "keepSnaps" },
     [wheelGestures.current]
   );
 
@@ -86,7 +88,7 @@ export default function StepsCarouselSection({
           </div>
         ) : title ? (
           <div className="flex flex-col gap-4 px-[30px] lg:px-[100px] mb-8 lg:mb-[60px]">
-            <h2 className="section-title text-azul text-left">
+            <h2 className={`section-title text-azul text-${titleAlign}`}>
               {title}
             </h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">

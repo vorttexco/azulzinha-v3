@@ -1,6 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
+
+const formatCPF = (value: string) =>
+  value
+    .replace(/\D/g, "")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d{1,2})/, "$1-$2")
+    .slice(0, 14);
 
 const defaultCheckItems = [
   "Receba suas vendas no crédito em 1 dia útil",
@@ -22,6 +33,7 @@ interface HeroSectionProps {
   logoWidth?: number;
   logoHeight?: number;
   inputPlaceholder?: string;
+  cpfMask?: boolean;
 }
 
 export default function HeroSection({
@@ -37,7 +49,10 @@ export default function HeroSection({
   logoWidth = 196,
   logoHeight = 51,
   inputPlaceholder,
+  cpfMask = false,
 }: HeroSectionProps = {}) {
+  const [cpfValue, setCpfValue] = useState("");
+
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
       {/* Background gradient */}
@@ -107,6 +122,9 @@ export default function HeroSection({
             <input
               type="text"
               placeholder={inputPlaceholder}
+              value={cpfMask ? cpfValue : undefined}
+              onChange={cpfMask ? (e) => setCpfValue(formatCPF(e.target.value)) : undefined}
+              maxLength={cpfMask ? 14 : undefined}
               className="bg-white rounded-md px-[23px] py-[17px] text-[16px] text-[#B8B8B8] placeholder:text-[#B8B8B8] outline-none w-full max-w-[302px] lg:mt-6"
             />
           )}

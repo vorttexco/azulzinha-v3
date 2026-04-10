@@ -332,12 +332,12 @@ export default function GestaoAppPage() {
         featureImageAlt="App da azulzinha"
         storeBadges={[
           {
-            image: "/images/app-azulzinha/android.png",
+            image: "/images/android.png",
             href: "https://play.google.com",
             alt: "Disponível no Google Play",
           },
           {
-            image: "/images/app-azulzinha/apple.png",
+            image: "/images/apple.png",
             href: "https://apps.apple.com",
             alt: "Disponível na App Store",
           },

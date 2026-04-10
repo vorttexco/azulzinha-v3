@@ -114,7 +114,7 @@ export default function StepsCarouselSection({
                     className="object-contain"
                   />
                 </div>
-                <div className="absolute bottom-0 w-full h-[345px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col pt-[148px] pr-6 pl-4 pb-6 gap-3">
+                <div className="absolute bottom-0 w-full h-[400px] bg-white rounded-[10px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col pt-[148px] pr-6 pl-4 pb-6 gap-3">
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003D91]">
                     <span className="text-[16px] leading-[1.4] text-white">{step.number}</span>
                   </div>

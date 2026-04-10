@@ -1,5 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+
+const formatCPF = (value: string) =>
+  value
+    .replace(/\D/g, "")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d{1,2})/, "$1-$2")
+    .slice(0, 14);
 
 interface CtaSectionProps {
   title?: string;
@@ -11,6 +22,7 @@ interface CtaSectionProps {
   image?: string;
   imageAlt?: string;
   inputPlaceholder?: string;
+  cpfMask?: boolean;
 }
 
 export default function CtaSection({
@@ -23,7 +35,10 @@ export default function CtaSection({
   image = "/images/cta-photo.png",
   imageAlt = "Azulzinha CTA",
   inputPlaceholder,
+  cpfMask = false,
 }: CtaSectionProps = {}) {
+  const [cpfValue, setCpfValue] = useState("");
+
   return (
     <section
       className="w-full py-14 lg:py-20 bg-linear-to-b from-white from-50% to-[#F7F7F7]"
@@ -57,6 +72,9 @@ export default function CtaSection({
               <input
                 type="text"
                 placeholder={inputPlaceholder}
+                value={cpfMask ? cpfValue : undefined}
+                onChange={cpfMask ? (e) => setCpfValue(formatCPF(e.target.value)) : undefined}
+                maxLength={cpfMask ? 14 : undefined}
                 className="bg-white rounded-md px-[23px] py-[17px] text-[16px] text-[#B8B8B8] placeholder:text-[#B8B8B8] outline-none w-full max-w-[302px]"
               />
             )}

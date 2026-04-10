@@ -202,7 +202,7 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
   return (
     <div className="flex flex-col">
       <h3
-        className={`font-sans text-[18px] leading-[1.4] ${titleColorClass}`}
+        className={`text-[18px] leading-[1.4] ${titleColorClass}`}
       >
         {column.title}
       </h3>
@@ -212,7 +212,7 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
           <li key={item.label}>
             <Link
               href={item.href}
-              className="font-sans text-[14px] leading-[1.4] text-black hover:text-azul transition-colors"
+              className="text-[14px] leading-[1.4] text-black hover:text-azul transition-colors"
             >
               {item.label}
             </Link>
@@ -222,7 +222,7 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
       {column.footerLink && (
         <Link
           href={column.footerLink.href}
-          className="flex items-center gap-[10px] mt-[14px] font-sans text-[14px] leading-[1.4] text-azul hover:opacity-80 transition-opacity"
+          className="flex items-center gap-[10px] mt-[14px] text-[14px] leading-[1.4] text-azul hover:opacity-80 transition-opacity"
         >
           {column.footerLink.label}
           <ArrowIcon width={12} height={9} color="#006CAD" />
@@ -294,7 +294,7 @@ export default function Navbar() {
                     >
                       <Link
                         href={link.href}
-                        className="flex items-center font-sans text-[16px] text-white text-center hover:opacity-80 transition-opacity h-full"
+                        className="flex items-center text-[16px] text-white text-center hover:opacity-80 transition-opacity h-full"
                       >
                         {link.label}
                       </Link>
@@ -360,13 +360,13 @@ export default function Navbar() {
               className="flex items-center gap-4 border-b border-white pb-0.5 hover:opacity-80 transition-opacity"
             >
               <SearchIcon />
-              <span className="font-sans text-[14px] text-white">Buscar</span>
+              <span className="text-[14px] text-white">Buscar</span>
             </a>
 
             {/* Portal de Acesso */}
             <a
               href="#"
-              className="flex items-center gap-1.5 font-sans text-[14px] text-white hover:opacity-80 transition-opacity"
+              className="flex items-center gap-1.5 text-[14px] text-white hover:opacity-80 transition-opacity"
             >
               <PortalIcon />
               Portal de Acesso
@@ -420,7 +420,7 @@ export default function Navbar() {
             {/* Portal de Acesso */}
             <a
               href="#"
-              className="flex items-center justify-center gap-[8px] rounded-[6px] py-[10px] font-sans text-[14px] text-[#006CAD] bg-linear-to-b from-white to-[#E3E3E3]"
+              className="flex items-center justify-center gap-[8px] rounded-[6px] py-[10px] text-[14px] text-azul bg-linear-to-b from-white to-[#E3E3E3]"
             >
               <PortalIconMobile />
               Acesse o Portal
@@ -435,7 +435,7 @@ export default function Navbar() {
                       key={link.label}
                       href={link.href}
                       onClick={closeMobileMenu}
-                      className="flex items-center justify-between py-[16px] border-b border-white font-sans text-[18px] text-white"
+                      className="flex items-center justify-between py-[16px] border-b border-white text-[18px] text-white"
                     >
                       {link.label}
                     </Link>
@@ -456,7 +456,7 @@ export default function Navbar() {
                     <button
                       type="button"
                       onClick={() => toggleExpand(link.label)}
-                      className="w-full flex items-center justify-between py-[16px] font-sans text-[18px] text-white text-left"
+                      className="w-full flex items-center justify-between py-[16px] text-[18px] text-white text-left"
                       aria-expanded={isExpanded}
                     >
                       <span>{link.label}</span>
@@ -486,7 +486,7 @@ export default function Navbar() {
                               <button
                                 type="button"
                                 onClick={() => toggleExpand(subKey)}
-                                className="w-full flex items-center justify-between py-[12px] font-sans text-[14px] text-white text-left"
+                                className="w-full flex items-center justify-between py-[12px] text-[14px] text-white text-left"
                                 aria-expanded={subExpanded}
                               >
                                 <span>{col.title}</span>
@@ -504,7 +504,7 @@ export default function Navbar() {
                                       key={item.label}
                                       href={item.href}
                                       onClick={closeMobileMenu}
-                                      className="block pl-[24px] py-[8px] font-sans text-[14px] text-white"
+                                      className="block pl-[24px] py-[8px] text-[14px] text-white"
                                     >
                                       {item.label}
                                     </Link>
@@ -513,7 +513,7 @@ export default function Navbar() {
                                     <Link
                                       href={col.footerLink.href}
                                       onClick={closeMobileMenu}
-                                      className="block pl-[24px] py-[8px] font-sans text-[14px] text-laranja"
+                                      className="block pl-[24px] py-[8px] text-[14px] text-laranja"
                                     >
                                       {col.footerLink.label}
                                     </Link>

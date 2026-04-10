@@ -92,6 +92,7 @@ export default function AzulzinhaPay() {
         description="Uma solução da Caixa, garantia de segurança e confiabilidade."
         checkItems={[]}
         inputPlaceholder="Digite seu CPF aqui"
+        cpfMask
         buttonText="Cadastrar gratuitamente"
         backgroundImage="/images/pagamentos-whatsapp/hero-bg.png"
       />
@@ -136,6 +137,7 @@ export default function AzulzinhaPay() {
         title="A azulzinha pay é a sua nova forma de pagar débitos veiculares!"
         description="Cadastre-se grátis e pague seus débitos em minutos."
         inputPlaceholder="Digite seu CPF aqui"
+        cpfMask
         buttonText="Cadastrar"
         image="/images/pay/cta-market.png"
         imageAlt="Azulzinha Pay"

@@ -14,7 +14,7 @@ const comAzulzinhaItems = [
   { icon: "/images/mei/icon-qrcode.png", text: "QR Code" },
   { icon: "/images/mei/icon-gestao.png", text: "Gestão facilitada" },
   { icon: "/images/mei/icon-suporte.png", text: "Suporte 100% digital" },
-  { icon: "/images/mei/icon-aproximacao.svg", text: "Pagamentos por aproximação" },
+  { icon: "/images/mei/icon-aproximacao.png", text: "Pagamentos por aproximação" },
 ];
 
 const ativacaoSteps: StepItem[] = [
@@ -94,24 +94,23 @@ export default function ParaSuaMei() {
       <Navbar />
 
       <HeroSection
-        title="Agora tem azulzinha no App CAIXA Tem!"
+        title={<>Agora tem <br /> azulzinha no App CAIXA Tem!</>}
         description="Receba pagamentos no WhatsApp com a mesma tecnologia da sua maquininha."
         checkItems={[]}
         buttonText="Saiba como"
-        backgroundImage="/images/cliente-loterica/hero-bg-pessoa-72b5d7.png"
-        logoImage="/images/mei/caixa-tem-logo.svg"
-        logoWidth={200}
-        logoHeight={56}
+        backgroundImage="/images/mei/hero.png"
+
       />
 
       <SimpleVideoSection
         title="Tudo 100% digital para você vender mais"
-        description="Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo. Assista ao vídeo e saiba como ter sua azulzinha!"
+        description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
+        </>}
         thumbnail="/images/mei/tudo-100-main.png"
       />
 
       <BenefitsSection
-        title="Com a azulzinha no seu celular você pode muito mais! Conheça as funcionalidades disponíveis:"
+        title={<>Com a azulzinha no seu celular você pode muito mais! <br /> Conheça as funcionalidades disponíveis:</>}
         textColor="text-azul"
         items={comAzulzinhaItems}
       />
@@ -125,6 +124,8 @@ export default function ParaSuaMei() {
         steps={ativacaoSteps}
         bgClassName="bg-white"
         paddingClassName="pt-14 lg:pt-20"
+        cardHeight="h-[470px]"
+        imageTopOffset="-top-24"
         headerContent={
           <div className="flex flex-col gap-8 lg:gap-[60px]">
             <h2 className="section-title text-azul text-center">
@@ -144,6 +145,8 @@ export default function ParaSuaMei() {
         steps={identificacaoSteps}
         bgClassName="bg-white"
         paddingClassName="pt-8 lg:pt-12 pb-14 lg:pb-20"
+        cardHeight="h-[470px]"
+        imageTopOffset="-top-24"
         headerContent={
           <div className="flex items-center gap-4">
             <div className="w-[49px] h-[49px] rounded-full bg-laranja flex items-center justify-center shrink-0">

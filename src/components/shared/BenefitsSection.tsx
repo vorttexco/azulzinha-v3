@@ -7,7 +7,7 @@ interface BenefitItem {
 }
 
 interface BenefitsSectionProps {
-  title: string;
+  title: string | React.ReactNode;
   items: BenefitItem[];
   textColor?: string;
   bgColor?: string;
@@ -30,7 +30,7 @@ export default function BenefitsSection({
           {items.map((item) => (
             <div
               key={item.text}
-              className="flex flex-col gap-4 bg-white rounded-[10px] p-6 shadow-[0px_4px_10px_0px_#00000014] lg:h-39"
+              className="flex flex-col gap-[10px] bg-white rounded-[12px] pt-[32px] pr-[40px] pb-[32px] pl-[32px] shadow-[0px_4px_10px_0px_#00000014] w-[397px] h-[197px]"
             >
               <Image
                 src={asset(item.icon)}

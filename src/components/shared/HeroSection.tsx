@@ -20,7 +20,7 @@ const defaultCheckItems = [
 ];
 
 interface HeroSectionProps {
-  title?: string;
+  title?: string | React.ReactNode;
   description?: string;
   checkItems?: string[];
   buttonText?: string;

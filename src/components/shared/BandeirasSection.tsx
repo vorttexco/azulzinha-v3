@@ -38,7 +38,7 @@ const defaultLogos: LogoItem[] = [
 
 function LogoCard({ src, w, h }: LogoItem) {
   return (
-    <div className="flex items-center justify-center bg-white border border-[#F1F1F1] rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] h-[120px] lg:h-[140px]">
+    <div className="flex items-center justify-center bg-white border border-[#F1F1F1] rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] h-[130px] w-[157.5px] lg:w-[193px] transform -rotate-[0.32deg]">
       <Image
         src={asset(src)}
         alt=""
@@ -108,9 +108,8 @@ export default function BandeirasSection({
         {/* Grid */}
         <div className="relative w-full max-w-[1240px]">
           <div
-            className={`grid ${gridClassName} gap-4 transition-all duration-500 overflow-hidden ${
-              expanded ? "max-h-[2000px]" : collapsedClassName
-            }`}
+            className={`grid ${gridClassName} gap-4 transition-all duration-500 overflow-hidden ${expanded ? "max-h-[2000px]" : collapsedClassName
+              }`}
           >
             {isIconMode
               ? iconCards!.map((item, i) => <IconCard key={i} {...item} />)

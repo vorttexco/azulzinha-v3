@@ -37,6 +37,9 @@ interface StepsCarouselSectionProps {
   bottomButtonText?: string;
   bottomButtonHref?: string;
   titleAlign?: "left" | "center" | "right";
+  cardWidth?: string;
+  cardHeight?: string;
+  imageTopOffset?: string;
 }
 
 export default function StepsCarouselSection({
@@ -51,6 +54,9 @@ export default function StepsCarouselSection({
   bottomButtonText,
   bottomButtonHref = "#",
   titleAlign = "left",
+  cardWidth = "w-[287px]",
+  cardHeight = "h-[520px]",
+  imageTopOffset = "-top-10",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -104,9 +110,9 @@ export default function StepsCarouselSection({
 
               <div
                 key={step.number}
-                className="shrink-0 w-[287px] h-[520px] relative last:mr-[30px] lg:last:mr-[100px]"
+                className={`shrink-0 ${cardWidth} ${cardHeight} relative last:mr-[30px] lg:last:mr-[100px]`}
               >
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10">
+                <div className={`absolute ${imageTopOffset} left-1/2 -translate-x-1/2 w-[201px] h-[358px] z-10`}>
                   <Image
                     src={asset(step.image)}
                     alt={`Passo ${step.number}`}

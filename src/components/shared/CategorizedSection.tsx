@@ -135,21 +135,63 @@ function FaqContent({ category, search }: { category: FaqCategory; search: strin
 // ── CardList Content ──
 
 function AppCard({ item }: { item: CardItem }) {
+    const [expanded, setExpanded] = useState(false);
+
+    // Parse description to extract main text and contact info
+    const parseDescription = (desc: string) => {
+        const lines = desc.split("\n");
+        const mainLines: string[] = [];
+        const contactInfo: { type: "telefone" | "email"; label: string; values: string[] }[] = [];
+
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith("Telefone:")) {
+                const value = trimmed.replace("Telefone:", "").trim();
+                if (value) {
+                    const existing = contactInfo.find(c => c.type === "telefone");
+                    if (existing) {
+                        existing.values.push(value);
+                    } else {
+                        contactInfo.push({ type: "telefone", label: "Telefone:", values: [value] });
+                    }
+                }
+            } else if (trimmed.startsWith("Email:")) {
+                const value = trimmed.replace("Email:", "").trim();
+                if (value) {
+                    const existing = contactInfo.find(c => c.type === "email");
+                    if (existing) {
+                        existing.values.push(value);
+                    } else {
+                        contactInfo.push({ type: "email", label: "Email:", values: [value] });
+                    }
+                }
+            } else if (trimmed && !trimmed.startsWith("*")) {
+                mainLines.push(trimmed);
+            }
+        }
+
+        return { main: mainLines.join("\n"), contactInfo };
+    };
+
+    const { main, contactInfo } = parseDescription(item.description);
+
     return (
         <div className="relative rounded-xl border border-[#F1F1F1] shadow-[0px_4px_10px_0px_#00000014] bg-white p-6 flex flex-col">
-            {item.link && (
-                <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute top-4 right-4 shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-azul"
-                >
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <button
+                onClick={() => setExpanded(!expanded)}
+                className="absolute top-4 right-4 shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-azul hover:bg-azul/90 transition-colors"
+            >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    {expanded ? (
                         <rect x="0" y="5" width="12" height="2" rx="1" fill="white" />
-                        <rect x="5" y="0" width="2" height="12" rx="1" fill="white" />
-                    </svg>
-                </a>
-            )}
+                    ) : (
+                        <>
+                            <rect x="0" y="5" width="12" height="2" rx="1" fill="white" />
+                            <rect x="5" y="0" width="2" height="12" rx="1" fill="white" />
+                        </>
+                    )}
+                </svg>
+            </button>
             {item.logo && (
                 <div className="h-16 flex items-center mb-4">
                     <Image src={item.logo} alt={item.title} width={120} height={64} className="object-contain max-h-16" />
@@ -158,9 +200,44 @@ function AppCard({ item }: { item: CardItem }) {
             <h4 className="text-gray-800 text-[18px] font-normal leading-[140%] mb-2">
                 {item.title}
             </h4>
-            <p className="text-gray-600 text-[14px] font-normal leading-[140%] line-clamp-5">
-                {item.description}
+            <p className={`text-gray-600 text-[14px] font-normal leading-[140%] ${expanded ? "" : "line-clamp-5"}`}>
+                {main}
             </p>
+
+            {expanded && contactInfo.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-[#F1F1F1] space-y-3">
+                    {contactInfo.map((info, idx) => (
+                        <div key={idx}>
+                            <p className="text-gray-600 text-[13px] font-normal mb-1">{info.label}</p>
+                            {info.type === "telefone" ? (
+                                <div className="space-y-1">
+                                    {info.values.map((tel, tidx) => (
+                                        <a
+                                            key={tidx}
+                                            href={`tel:${tel.replace(/\D/g, "")}`}
+                                            className="text-laranja text-[14px] font-normal hover:underline block"
+                                        >
+                                            {tel}
+                                        </a>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="space-y-1">
+                                    {info.values.map((email, eidx) => (
+                                        <a
+                                            key={eidx}
+                                            href={`mailto:${email}`}
+                                            className="text-laranja text-[14px] font-normal hover:underline block"
+                                        >
+                                            {email}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

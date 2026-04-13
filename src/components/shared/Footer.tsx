@@ -1,5 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import { asset } from "@/lib/assets";
+
+// Mapeamento de links para suas respectivas rotas
+const linkRoutes: Record<string, string> = {
+  "Maquininhas": "/maquininhas",
+  "Vendas Online": "/vendas-online",
+  "Gestão": "/gestao",
+  "Serviços de Conveniência": "/servicos-conveniencia",
+  "App CAIXA Tem": "/caixa-tem",
+  "Blog da azulzinha": "/blog",
+  "Central de Ajuda": "/central-ajuda",
+  "Taxas": "/taxas",
+  "Contrato de Credenciamento azulzinha": "/contrato-credenciamento",
+  "Contrato de Credenciamento CAIXA Tem": "/contrato-caixa-tem",
+  "Política de Privacidade": "/politica-privacidade",
+  "Política de Cookies": "/politica-cookies",
+  "LGPD": "/lgpd",
+};
 
 const linkGroups1 = [
   {
@@ -78,12 +96,12 @@ export default function Footer() {
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
                     <li key={link}>
-                      <a
-                        href="#"
+                      <Link
+                        href={linkRoutes[link] || "#"}
                         className="text-sm lg:text-base text-[#717171] hover:underline"
                       >
                         {link}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -101,12 +119,12 @@ export default function Footer() {
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
                     <li key={link}>
-                      <a
-                        href="#"
+                      <Link
+                        href={linkRoutes[link] || "#"}
                         className="text-sm lg:text-base text-[#717171] hover:underline"
                       >
                         {link}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

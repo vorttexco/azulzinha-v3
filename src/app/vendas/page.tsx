@@ -31,7 +31,7 @@ const comoFuncionaSteps = [
 
 function ComoFuncionaSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
+    align: "center",
     containScroll: "trimSnaps",
   });
   const [activeDot, setActiveDot] = useState(0);
@@ -58,30 +58,15 @@ function ComoFuncionaSection() {
           Como funciona?
         </h2>
 
-        {/* Desktop grid */}
-        <div className="hidden lg:grid grid-cols-3 gap-6">
-          {comoFuncionaSteps.map((step) => (
-            <div
-              key={step.number}
-              className="bg-white rounded-[10px] shadow-[0px_4px_10px_0px_#00000014] p-6 flex flex-col gap-4"
-            >
-              <div className="w-8 h-8 rounded-full bg-azul flex items-center justify-center text-white text-[16px]">
-                {step.number}
-              </div>
-              <p className="text-azul text-[18px] leading-[1.4]">{step.text}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile carousel */}
-        <div className="lg:hidden overflow-hidden -mx-7.5" ref={emblaRef}>
-          <div className="flex gap-3">
+        {/* Carousel */}
+        <div className="overflow-hidden -mx-7.5 lg:-mx-25" ref={emblaRef}>
+          <div className="flex gap-3 pl-7.5 lg:pl-25">
             {comoFuncionaSteps.map((step) => (
               <div
                 key={step.number}
-                className="shrink-0 w-[calc(100vw-75px)]"
+                className="shrink-0 "
               >
-                <div className="bg-white rounded-[10px] shadow-[0px_4px_10px_0px_#00000014] p-6 flex flex-col gap-4 h-[230px]">
+                <div className="bg-white rounded-[10px] shadow-[0px_4px_10px_0px_#00000014] p-6 flex flex-col gap-4 w-[287px] h-[230px] ">
                   <div className="w-8 h-8 rounded-full bg-azul flex items-center justify-center text-white text-[16px]">
                     {step.number}
                   </div>
@@ -94,8 +79,8 @@ function ComoFuncionaSection() {
           </div>
         </div>
 
-        {/* Dots - mobile only */}
-        <div className="lg:hidden mt-4 flex items-center justify-center gap-2">
+        {/* Dots */}
+        <div className="mt-4 flex items-center justify-center gap-2">
           {comoFuncionaSteps.map((_, i) => (
             <button
               key={i}
@@ -124,7 +109,7 @@ export default function GestaoVendasPage() {
         description="Conheça soluções para vender muito mais na internet, redes sociais e aplicativos de mensagem."
         checkItems={[]}
         buttonText="Confira"
-        backgroundImage="/images/vendas-online/hero-vendas-online.png"
+        backgroundImage="/images/vendas-online/hero-bg.png"
       />
 
       {/* Amplie suas vendas online */}
@@ -134,7 +119,7 @@ export default function GestaoVendasPage() {
           "As vendas online são uma ótima oportunidade para ampliar um negócio. Na CAIXA, você tem a oferta de soluções digitais seguras e ágeis para começar a vender na internet. E você nem precisa de um e-commerce para isso: é só optar pela solução de Link de Pagamentos, por exemplo.",
           "Agora, se você já tem um site ou aplicativo para divulgar sua loja, a solução de e-commerce da CAIXA é a escolha certa para a garantia de um alto desempenho na aprovação das vendas, além de segurança para pagamentos recorrentes.",
         ]}
-        image="/images/vendas-online/feature-1a.png"
+        image="/images/vendas-online/feature-1.png"
         imageAlt="Vendas Online"
         cardWidth="605px"
         cardHeight="398px"
@@ -247,7 +232,7 @@ export default function GestaoVendasPage() {
         />
 
         {/* Cards with bullet lists */}
-        <div className="relative z-10 -mt-20 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
+        <div className="relative z-10 lg:-mt-20 sm:mt-0 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
           {[
             {
               icon: "/images/vendas-online/icon-link-pagamento.png",
@@ -271,7 +256,7 @@ export default function GestaoVendasPage() {
           ].map((card) => (
             <div
               key={card.title}
-              className="flex flex-col gap-3 bg-white rounded-[10px] shadow-[0px_4px_10px_0px_#00000014] p-6 lg:w-151.25 shrink-0"
+              className="flex flex-col gap-3 bg-white rounded-[10px] shadow-[0px_4px_10px_0px_#00000014] lg:p-10 p-8 lg:w-151.25 shrink-0"
             >
               <div className="relative w-12 h-12 shrink-0">
                 <Image
@@ -288,7 +273,7 @@ export default function GestaoVendasPage() {
                 {card.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-[18px] leading-[1.4] text-black"
+                    className="flex items-start gap-3 lg:text-[18px] text-[16px] leading-[1.4] text-black"
                   >
                     <span className="size-2 rounded-full bg-black shrink-0 mt-2" />
                     {item}

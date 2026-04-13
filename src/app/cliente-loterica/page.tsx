@@ -44,7 +44,7 @@ export default function ClienteLoterica() {
         description="Aumente seu faturamento recebendo boletos, jogos e contas com qualquer cartão no TFL ou com a azulzinha pro."
         checkItems={[]}
         buttonText="Saiba mais"
-        backgroundImage="/images/cliente-loterica/hero-bg-pessoa-72b5d7.png"
+        backgroundImage="/images/cliente-loterica/hero-bg.png"
       />
 
       <NoDebitoSection />
@@ -82,6 +82,7 @@ export default function ClienteLoterica() {
         description="No Conexão Parceiros, aceite o &ldquo;Termo de Credenciamento azulzinha Serviço de Conveniência&rdquo; e acesse a cartilha e o vídeo com o passo a passo de ativação."
         buttonText="Ir para o Conexão Parceiros"
         sectionClassName="bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]"
+        contentClassName="!px-[100px]"
       />
 
       <Footer />

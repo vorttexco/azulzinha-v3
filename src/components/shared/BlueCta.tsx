@@ -17,6 +17,8 @@ interface BlueCtaProps {
   icon?: string;
   iconAlt?: string;
   sectionClassName?: string;
+  containerClassName?: string;
+  contentClassName?: string;
   featureImage?: string;
   featureImageAlt?: string;
   storeBadges?: StoreBadge[];
@@ -30,6 +32,8 @@ export default function BlueCta({
   icon,
   iconAlt = "",
   sectionClassName = "",
+  containerClassName = "",
+  contentClassName = "",
   featureImage,
   featureImageAlt = "",
   storeBadges,
@@ -39,14 +43,14 @@ export default function BlueCta({
 
   return (
     <section className={`w-full py-14 lg:py-20 ${sectionClassName}`}>
-      <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">
+      <div className={`max-w-[1440px] mx-auto px-[28px] lg:px-[100px] ${containerClassName}`}>
         <div className={`w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] relative overflow-hidden ${
           hasFeatureLayout
             ? "flex flex-col lg:flex-row items-center lg:items-stretch"
             : isCenteredBadges
               ? "flex flex-col items-center gap-6 p-8 lg:py-14 lg:px-[100px]"
               : "p-8 lg:py-12 flex flex-col items-center gap-6"
-        }`}>
+        } ${contentClassName}`}>
           {hasFeatureLayout ? (
             <>
               <div className="flex flex-col gap-6 justify-center p-8 lg:p-12 lg:w-1/2">
@@ -130,7 +134,7 @@ export default function BlueCta({
                 <Image src={asset(icon)} alt={iconAlt} width={64} height={64} className="object-contain" />
               )}
               <div className="flex flex-col items-center gap-2 text-center">
-                <p className="text-white text-[22px] font-normal leading-[130%] tracking-normal">
+                <p className="text-white text-[22px] font-normal leading-[130%] tracking-normal whitespace-pre-line">
                   {title}
                 </p>
                 {description && (

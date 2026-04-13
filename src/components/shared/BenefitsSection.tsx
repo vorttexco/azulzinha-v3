@@ -26,11 +26,11 @@ export default function BenefitsSection({
           {title}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <div
               key={item.text}
-              className="flex flex-col gap-[10px] bg-white rounded-[12px] pt-[32px] pr-[40px] pb-[32px] pl-[32px] shadow-[0px_4px_10px_0px_#00000014] w-[397px] h-[197px]"
+              className="flex flex-col gap-[10px] bg-white rounded-[12px] pt-[32px] pr-[40px] pb-[32px] pl-[32px] shadow-[0px_4px_10px_0px_#00000014]"
             >
               <Image
                 src={asset(item.icon)}

@@ -22,6 +22,7 @@ interface BlueCtaProps {
   featureImage?: string;
   featureImageAlt?: string;
   storeBadges?: StoreBadge[];
+  reverseOnMobile?: boolean;
 }
 
 export default function BlueCta({
@@ -37,6 +38,7 @@ export default function BlueCta({
   featureImage,
   featureImageAlt = "",
   storeBadges,
+  reverseOnMobile = false,
 }: BlueCtaProps) {
   const hasFeatureLayout = !!featureImage;
   const isCenteredBadges = !featureImage && !!storeBadges?.length;
@@ -44,16 +46,15 @@ export default function BlueCta({
   return (
     <section className={`w-full py-14 lg:py-20 ${sectionClassName}`}>
       <div className={`max-w-[1440px] mx-auto px-[28px] lg:px-[100px] ${containerClassName}`}>
-        <div className={`w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] relative overflow-hidden ${
-          hasFeatureLayout
-            ? "flex flex-col lg:flex-row items-center lg:items-stretch"
-            : isCenteredBadges
-              ? "flex flex-col items-center gap-6 p-8 lg:py-14 lg:px-[100px]"
-              : "p-8 lg:py-12 flex flex-col items-center gap-6"
-        } ${contentClassName}`}>
+        <div className={`w-full bg-[linear-gradient(130deg,rgba(0,108,173,1)_5%,rgba(1,43,113,1)_100%)] rounded-xl lg:rounded-[30px] relative overflow-hidden ${hasFeatureLayout
+          ? `flex ${reverseOnMobile ? "flex-col-reverse" : "flex-col"} lg:flex-row items-center lg:items-stretch`
+          : isCenteredBadges
+            ? "flex flex-col items-center gap-6 p-8 lg:py-14 lg:px-[100px]"
+            : "p-8 lg:py-12 flex flex-col items-center gap-6"
+          } ${contentClassName}`}>
           {hasFeatureLayout ? (
             <>
-              <div className="flex flex-col gap-6 justify-center p-8 lg:p-12 lg:w-1/2">
+              <div className="flex flex-col gap-6 justify-center px-8 pb-8 pt-4 lg:p-12 lg:w-1/2">
                 <p className="text-white text-[22px] lg:text-[38px] font-normal leading-[130%]">
                   {title}
                 </p>
@@ -63,7 +64,7 @@ export default function BlueCta({
                   </p>
                 )}
                 {storeBadges && storeBadges.length > 0 && (
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     {storeBadges.map((badge, i) => (
                       <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer">
                         <Image
@@ -84,14 +85,15 @@ export default function BlueCta({
                 )}
               </div>
               {featureImage && (
-                <div className="relative lg:w-1/2 h-[250px] lg:h-auto flex items-end justify-center">
-                  <div className="absolute bottom-0 right-8 lg:right-12 w-[80%] h-[85%] bg-azul rounded-t-[20px] shadow-[0px_4px_10px_0px_#00000014]" />
-                  <div className="relative z-10 w-[60%] lg:w-[55%] h-full">
+                <div className="relative w-full h-[260px] lg:h-auto lg:min-h-[340px] lg:w-1/2 flex items-center justify-center">
+                  <div className="absolute w-[270px] h-[209px] lg:w-[90%] lg:h-[72%] bg-azul rounded-[20px] shadow-[0px_4px_10px_0px_#00000014] top-[30px] lg:top-1/2 left-1/2 -translate-x-1/2 lg:-translate-y-1/2" />
+                  <div className="absolute z-10 w-[203px] h-[209px] lg:w-[75%] lg:h-[95%] top-[30px] lg:top-1/2 left-1/2 -translate-x-1/2 lg:-translate-y-1/2">
                     <Image
                       src={asset(featureImage)}
                       alt={featureImageAlt}
-                      fill
-                      className="object-contain object-bottom"
+                      width={442}
+                      height={455}
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </div>

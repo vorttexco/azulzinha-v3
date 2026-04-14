@@ -20,7 +20,7 @@ const phoneScreens = [
 
 function PhoneCarouselSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
+    align: "center",
     containScroll: "trimSnaps",
   });
   const [activeDot, setActiveDot] = useState(0);
@@ -135,7 +135,8 @@ function PhoneCarouselSection() {
         </div>
 
         {/* Text below carousel */}
-        <div className="mt-10 lg:mt-14 max-w-[964px]">
+        <div className="mt-10 lg:mt-14  text-center flex flex-col items-center px-25
+        ">
           <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
             Além de cuidar do seu caixa e obter relatórios de vendas, com apenas
             alguns cliques você pode antecipar recebíveis, pedir novas bobinas ou
@@ -330,6 +331,7 @@ export default function GestaoAppPage() {
         sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
         featureImage="/images/app-azulzinha/celular-app.png"
         featureImageAlt="App da azulzinha"
+        reverseOnMobile
         storeBadges={[
           {
             image: "/images/android.png",

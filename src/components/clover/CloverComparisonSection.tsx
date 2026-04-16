@@ -31,7 +31,7 @@ const products: CloverProduct[] = [
     name: "Clover Flex",
     image: "/images/product-clover-flex.png",
     description:
-      "Receba pagamentos e gerencie seu negócio com flexibilidade e tenha todos os recursos na palma da mão com um checkout rápido e prático.",
+      "No balcão, na mesa ou em qualquer lugar, atenda seus clientes com mais rapidez e conveniência com a Clover Flex, uma solução móvel completa de pagamentos com impressora integrada.",
     whyChooseTitle: "Por que escolher a Clover Flex?",
     features: [
       {
@@ -110,20 +110,20 @@ const products: CloverProduct[] = [
         icon: "/images/clover/icon-comodidade.svg",
       },
       {
-        title: "Rápida e confiável",
-        description: "Processador Qualcomm Snapdragon™ e mais memória",
+        title: "Compacta e poderosa",
+        description: "Compacta e poderosa: Desempenho de ponta com processador Qualcomm 660.",
         icon: "/images/clover/icon-rapida.svg",
       },
     ],
     specs: [
-      { label: "Tela", value: 'Colorida e sensível ao toque (3,99")' },
+      { label: "Tela touch", value: 'Tela de 8” sensível ao toque para autoatendimento e conferência da compra;' },
       {
         label: "Câmera",
         value: "Leitura de código de barras e QR Code (1D/2D)",
       },
       { label: "Segurança", value: "Proteção total com criptografia" },
-      { label: "Acessório", value: "Capa de silicone para maior durabilidade" },
-      { label: "Carregamento", value: "Recarga de bateria por indução" },
+      { label: "Fonte de alimentação", value: "Cabo." },
+
     ],
     ctaText: "Peça a sua Clover Mini",
   },
@@ -134,7 +134,7 @@ function ArrowIcon() {
     <Image
       src={asset("/images/clover/icon-arrow.svg")}
       alt=""
-      width={16}
+      width={18}
       height={16}
       className="mt-[3px] shrink-0"
     />
@@ -179,7 +179,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-6 p-6 lg:p-8 flex-1">
+      <div className="flex flex-col gap-6 p-6 lg:p-14 flex-1">
         {/* Name + Description */}
         <div className="flex flex-col gap-3">
           <h3 className="text-[22px] lg:text-[26px] leading-[1.3] text-azul">
@@ -196,13 +196,13 @@ function ProductCard({ product }: { product: CloverProduct }) {
           <h4 className="text-[18px] leading-[1.4] text-black">
             {product.whyChooseTitle}
           </h4>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             {product.features.map((feature) => (
-              <div key={feature.title} className="flex items-start gap-3">
+              <div key={feature.title} className="flex items-center gap-3">
                 <Image
                   src={asset(feature.icon)}
                   alt=""
-                  width={24}
+                  width={19}
                   height={24}
                   className="shrink-0"
                 />
@@ -227,7 +227,7 @@ function ProductCard({ product }: { product: CloverProduct }) {
           </h4>
           <div className="flex flex-col gap-3">
             {product.specs.map((spec) => (
-              <div key={spec.label} className="flex items-start gap-3">
+              <div key={spec.label} className="flex items-center gap-3">
                 <ArrowIcon />
                 <div>
                   <span className="text-[16px] text-black">{spec.label}</span>

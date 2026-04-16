@@ -28,7 +28,7 @@ export default function TefSection() {
             </div>
             {/* Button - desktop only (below text) */}
             <a href="#" className="btn-laranja hidden lg:inline-block">
-              Comece agora
+              Baixe o manual
             </a>
           </div>
 
@@ -48,7 +48,7 @@ export default function TefSection() {
 
           {/* Button - mobile only (below image) */}
           <a href="#" className="btn-laranja lg:hidden">
-            Comece agora
+            Baixe o manual
           </a>
         </div>
       </div>

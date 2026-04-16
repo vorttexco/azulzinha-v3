@@ -18,7 +18,7 @@ export default function MaquininhasPage() {
         title="Com a azulzinha, maquininha da CAIXA, você pode muito mais!"
         description="Conheça as nossas opções de aluguel"
         checkItems={[]}
-        buttonText="Conheça"
+        buttonText="Saiba mais"
         backgroundImage="/images/maquininhas/hero-bg.png"
       />
       <TodasMaquinasSection />

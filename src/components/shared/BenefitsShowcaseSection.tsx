@@ -71,6 +71,7 @@ interface BenefitsSectionProps {
   cardsGridClassName?: string;
   sectionClassName?: string;
   contentClassName?: string;
+  titleClassName?: string;
 }
 
 function SmallCard({ icon, text, title, cardClassName, iconClassName }: CardItem & { cardClassName?: string; iconClassName?: string }) {
@@ -113,6 +114,7 @@ export default function BenefitsShowcaseSection({
   cardsGridClassName,
   sectionClassName,
   contentClassName,
+  titleClassName = "text-[26px] lg:text-[32px] font-normal leading-[1.3] text-left text-azul",
 }: BenefitsSectionProps) {
   return (
     <section className={`w-full ${bgColor} ${sectionClassName || ''}`}>
@@ -121,7 +123,7 @@ export default function BenefitsShowcaseSection({
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
           {/* Left side - Text */}
           <div className={contentClassName || "w-full lg:w-1/2 flex flex-col justify-center"}>
-            <h2 className="section-title text-left text-azul">
+            <h2 className={titleClassName}>
               {title}
             </h2>
             {description && (

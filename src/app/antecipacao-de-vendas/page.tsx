@@ -45,11 +45,12 @@ export default function AntecipacaoDeVendas() {
         showBrandLogos={false}
         showLink={false}
         bgColor="bg-[#F4F4F4]"
-        cardClassName="flex flex-col items-start gap-[24px] rounded-[12px] bg-white pt-[32px] pr-[40px] pl-[32px] pb-[32px] h-[244px] w-[397px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
+        cardClassName="flex flex-col items-start gap-[24px] rounded-[12px] bg-white pt-[32px] pr-[40px] pl-[32px] pb-[32px] w-full lg:h-[244px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
         iconClassName="shrink-0 w-[43.69px] h-[44.67px]"
         cardsGridClassName="mt-6 lg:-mt-[110px] grid grid-cols-1 lg:grid-cols-3 gap-4 relative z-10"
-        sectionClassName="h-[756px]"
-        contentClassName="w-full lg:w-1/2 flex flex-col pb-[110px]"
+        sectionClassName="lg:h-[756px]"
+        contentClassName="w-full lg:w-1/2 flex flex-col lg:pb-[110px]"
+        titleClassName="section-title text-left text-azul"
       />
       <CtaSection
         title="Contrate agora mesmo pelo App ou Portal da azulzinha"

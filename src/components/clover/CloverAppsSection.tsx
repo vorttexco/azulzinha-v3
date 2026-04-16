@@ -28,7 +28,19 @@ interface AppCategory {
   apps: App[];
 }
 
-const tabs = [
+interface SingleCard {
+  title: string;
+  description: string;
+  benefits: { label: string; text: string }[];
+}
+
+interface Tab {
+  label: string;
+  categories?: AppCategory[];
+  singleCard?: SingleCard;
+}
+
+const tabs: Tab[] = [
   {
     label: "Aplicativos gratuitos",
     categories: [
@@ -310,16 +322,25 @@ const tabs = [
   },
   {
     label: "Automações comerciais",
-    categories: [
-      {
-        name: "Automações disponíveis",
-        apps: [
-          { name: "Automação" },
-          { name: "Integração ERP" },
-          { name: "PDV Completo" },
-        ],
-      },
-    ] as AppCategory[],
+    singleCard: {
+      title: "App Market",
+      description:
+        "Personalize sua experiência com a loja de aplicativos Clover, feita para simplificar sua operação.",
+      benefits: [
+        {
+          label: "Variedade",
+          text: "Apps para gerenciamento, estoque, relatórios, e mais;",
+        },
+        {
+          label: "Setores específicos",
+          text: "Categorias como e-commerce, alimentação, eventos e serviços;",
+        },
+        {
+          label: "Facilidade",
+          text: "Tudo que seu negócio precisa em um único lugar.",
+        },
+      ],
+    },
   },
 ];
 
@@ -383,37 +404,64 @@ export default function CloverAppsSection() {
           </div>
 
           {/* Categories Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[30px]">
-            {tabs[activeTab].categories.map((category) => (
-              <div key={category.name} className="flex flex-col gap-3">
-                <h3 className="text-[14px] lg:text-[16px] font-normal leading-[1.4] text-black">
-                  {category.name}
-                </h3>
-                <div className="flex flex-col gap-2">
-                  {category.apps.map((app) => (
-                    <div
-                      key={app.name}
-                      onClick={() => app.modal && setSelectedModal(app.modal)}
-                      className={`flex items-center justify-between gap-3 bg-white rounded-[10px] px-4 py-3 shadow-[0_2px_6px_rgba(0,0,0,0.06)] ${app.comingSoon ? "opacity-60" : ""} ${app.modal ? "cursor-pointer" : ""}`}
-                    >
-                      <span
-                        className={`text-[14px] leading-[1.4] ${app.comingSoon ? "text-[#B2B2B2]" : "text-black"
-                          }`}
+          {tabs[activeTab].categories && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[30px]">
+              {tabs[activeTab].categories!.map((category) => (
+                <div key={category.name} className="flex flex-col gap-3">
+                  <h3 className="text-[14px] lg:text-[16px] font-normal leading-[1.4] text-black">
+                    {category.name}
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    {category.apps.map((app) => (
+                      <div
+                        key={app.name}
+                        onClick={() => app.modal && setSelectedModal(app.modal)}
+                        className={`flex items-center justify-between gap-3 bg-white rounded-[10px] px-4 py-3 shadow-[0_2px_6px_rgba(0,0,0,0.06)] ${app.comingSoon ? "opacity-60" : ""} ${app.modal ? "cursor-pointer" : ""}`}
                       >
-                        {app.name}
-                        {app.comingSoon && (
-                          <span className="text-[12px] text-[#B2B2B2] ml-1">
-                            (Em breve)
-                          </span>
-                        )}
-                      </span>
-                      <PlusIcon disabled={app.comingSoon} />
-                    </div>
-                  ))}
+                        <span
+                          className={`text-[14px] leading-[1.4] ${app.comingSoon ? "text-[#B2B2B2]" : "text-black"
+                            }`}
+                        >
+                          {app.name}
+                          {app.comingSoon && (
+                            <span className="text-[12px] text-[#B2B2B2] ml-1">
+                              (Em breve)
+                            </span>
+                          )}
+                        </span>
+                        <PlusIcon disabled={app.comingSoon} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Single Card (App Market) */}
+          {tabs[activeTab].singleCard && (
+            <div className="flex justify-center">
+              <div className="w-[730px] max-w-full h-[379px] bg-white rounded-[10px] border border-[#F1F1F1] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-6 flex flex-col gap-6">
+                <h3 className="text-[26px] font-normal leading-[1.4] text-black">
+                  {tabs[activeTab].singleCard!.title}
+                </h3>
+                <p className="text-[14px] font-normal leading-[1.4] text-[#666666]">
+                  {tabs[activeTab].singleCard!.description}
+                </p>
+                <div className="flex flex-col gap-1">
+                  <p className="text-[14px] font-normal text-[#666666]">Benefícios</p>
+                  <ul className="flex flex-col gap-1">
+                    {tabs[activeTab].singleCard!.benefits.map((b) => (
+                      <li key={b.label} className="text-[14px] text-[#666666] leading-normal">
+                        <span className="font-normal text-[#666666]">• {b.label}: </span>
+                        {b.text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* App Detail Modal */}

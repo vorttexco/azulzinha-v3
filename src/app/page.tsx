@@ -12,7 +12,12 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <HeroSection buttonHref="/peca-azulzinha" />
+      <HeroSection
+        buttonHref="/peca-azulzinha"
+        checkItems={[]}
+        description={<>Aceite benefícios e diversos<br />meios de pagamento!</>}
+        buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br /> azulzinha pro e no App azulzinha aproxima</>}
+      />
       <CardsCarouselSection />
       <PossibilitiesSection />
       <ProductsSection />

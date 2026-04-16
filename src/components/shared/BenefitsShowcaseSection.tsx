@@ -5,19 +5,19 @@ import { ReactNode } from "react";
 
 const defaultCards = [
   {
-    icon: asset("/images/icon-small-bandeiras.svg"),
+    icon: asset("/images/icon-small-controle.svg"),
     text: "Trabalhe com as principais bandeiras, vouchers e carteiras digitais.",
   },
   {
     icon: asset("/images/icon-small-receba.svg"),
-    text: "Receba suas vendas em até 1 dia útil.",
+    text: "Receba suas vendas em até 2 dias úteis.",
   },
   {
     icon: asset("/images/icon-small-pagamentos.svg"),
     text: "Aceite pagamentos com débito, crédito, aproximação e QR Code.",
   },
   {
-    icon: asset("/images/icon-small-celular.svg"),
+    icon: asset("/images/icon-small-pagamentos.svg"),
     text: "Transforme celulares em maquininhas.",
   },
   {
@@ -83,7 +83,7 @@ function SmallCard({ icon, text, title, cardClassName, iconClassName }: CardItem
         alt=""
         width={24}
         height={24}
-        className={iconClassName || "shrink-0 w-6 h-6"}
+        className={iconClassName || "shrink-0 w-8 h-8"}
         unoptimized
       />
       {title ? (

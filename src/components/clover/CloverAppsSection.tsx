@@ -1,10 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+interface AppModal {
+  title: string;
+  description: string;
+  benefits: { label: string; text: string }[];
+  image?: string;
+}
 
 interface App {
   name: string;
   comingSoon?: boolean;
+  modal?: AppModal;
 }
 
 interface AppCategory {
@@ -19,7 +33,28 @@ const tabs = [
       {
         name: "Gestão de clientes e equipes",
         apps: [
-          { name: "Clientes" },
+          {
+            name: "Clientes",
+            modal: {
+              title: "Clientes",
+              description:
+                "Organize dados dos seus clientes e acompanhe transações com praticidade.",
+              benefits: [
+                {
+                  label: "Cadastro simples",
+                  text: "Envio de comprovantes por SMS ou e-mail;",
+                },
+                {
+                  label: "Histórico automático",
+                  text: "Vinculação de cartões às compras realizadas;",
+                },
+                {
+                  label: "Acompanhamento eficiente",
+                  text: "Vincule cartões e monitore as transações de cada cliente.",
+                },
+              ],
+            },
+          },
           { name: "Notas" },
           { name: "Turnos" },
           { name: "Gestão de funcionários" },
@@ -72,9 +107,8 @@ const tabs = [
 function PlusIcon({ disabled }: { disabled?: boolean }) {
   return (
     <div
-      className={`w-[28px] h-[28px] rounded-full flex items-center justify-center shrink-0 ${
-        disabled ? "bg-[#B2B2B2]" : "bg-azul"
-      }`}
+      className={`w-[28px] h-[28px] rounded-full flex items-center justify-center shrink-0 ${disabled ? "bg-[#B2B2B2]" : "bg-azul"
+        }`}
     >
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
         <path
@@ -90,6 +124,7 @@ function PlusIcon({ disabled }: { disabled?: boolean }) {
 
 export default function CloverAppsSection() {
   const [activeTab, setActiveTab] = useState(0);
+  const [selectedModal, setSelectedModal] = useState<AppModal | null>(null);
 
   return (
     <section className="bg-[#F4F4F4]">
@@ -99,16 +134,15 @@ export default function CloverAppsSection() {
         </h2>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-8 lg:mb-10">
+        <div className="flex justify-center gap-40 mb-8 lg:mb-10">
           {tabs.map((tab, index) => (
             <button
               key={tab.label}
               onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 rounded-full text-[14px] lg:text-[16px] font-normal cursor-pointer transition-colors ${
-                activeTab === index
-                  ? "bg-azul text-white"
-                  : "bg-white text-black"
-              }`}
+              className={`px-6 py-3 text-[14px] lg:text-[16px] font-normal cursor-pointer transition-colors border-b ${activeTab === index
+                ? "text-azul border-azul"
+                : "text-black border-transparent"
+                }`}
             >
               {tab.label}
             </button>
@@ -126,14 +160,12 @@ export default function CloverAppsSection() {
                 {category.apps.map((app) => (
                   <div
                     key={app.name}
-                    className={`flex items-center justify-between gap-3 bg-white rounded-[10px] px-4 py-3 shadow-[0_2px_6px_rgba(0,0,0,0.06)] ${
-                      app.comingSoon ? "opacity-60" : ""
-                    }`}
+                    onClick={() => app.modal && setSelectedModal(app.modal)}
+                    className={`flex items-center justify-between gap-3 bg-white rounded-[10px] px-4 py-3 shadow-[0_2px_6px_rgba(0,0,0,0.06)] ${app.comingSoon ? "opacity-60" : ""} ${app.modal ? "cursor-pointer" : ""}`}
                   >
                     <span
-                      className={`text-[14px] leading-[1.4] ${
-                        app.comingSoon ? "text-[#B2B2B2]" : "text-black"
-                      }`}
+                      className={`text-[14px] leading-[1.4] ${app.comingSoon ? "text-[#B2B2B2]" : "text-black"
+                        }`}
                     >
                       {app.name}
                       {app.comingSoon && (
@@ -150,6 +182,31 @@ export default function CloverAppsSection() {
           ))}
         </div>
       </div>
+
+      {/* App Detail Modal */}
+      <Dialog open={!!selectedModal} onOpenChange={(open) => !open && setSelectedModal(null)}>
+        <DialogContent className="w-217.5 h-135.75 max-w-[calc(100%-2rem)] rounded-[10px] border border-[#E0E0E0] p-8 gap-6 flex flex-col">
+          <DialogHeader>
+            <DialogTitle className="text-[26px] font-normal leading-[1.4] text-black">
+              {selectedModal?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-[14px] font-normal leading-[1.4] text-[#555]">
+            {selectedModal?.description}
+          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-[14px] font-semibold text-black">Benefícios</p>
+            <ul className="flex flex-col gap-1">
+              {selectedModal?.benefits.map((b) => (
+                <li key={b.label} className="text-[14px] text-[#555] leading-normal">
+                  <span className="font-semibold text-black">{b.label}: </span>
+                  {b.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

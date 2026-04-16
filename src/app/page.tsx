@@ -15,6 +15,8 @@ export default function Home() {
       <HeroSection
         buttonHref="/peca-azulzinha"
         checkItems={[]}
+        textColor="text-azul"
+        showOverlay={false}
         description={<>Aceite benefícios e diversos<br />meios de pagamento!</>}
         buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br /> azulzinha pro e no App azulzinha aproxima</>}
       />

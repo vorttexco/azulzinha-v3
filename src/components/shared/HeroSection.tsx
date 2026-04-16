@@ -35,6 +35,8 @@ interface HeroSectionProps {
   logoHeight?: number;
   inputPlaceholder?: string;
   cpfMask?: boolean;
+  textColor?: string;
+  showOverlay?: boolean;
 }
 
 export default function HeroSection({
@@ -52,6 +54,8 @@ export default function HeroSection({
   logoHeight = 51,
   inputPlaceholder,
   cpfMask = false,
+  textColor = "text-white",
+  showOverlay = true,
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
 
@@ -59,7 +63,7 @@ export default function HeroSection({
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
       {/* Background gradient */}
       <div
-        className="absolute inset-0 "
+        className="absolute inset-0 bg-[linear-gradient(-44deg,#006CAD_5%,#012B71_100%)]"
       />
 
       {/* Background image */}
@@ -72,7 +76,9 @@ export default function HeroSection({
       />
 
       {/* Left overlay */}
-      <div className="absolute inset-0  " />
+      {showOverlay && (
+        <div className="absolute inset-0 z-[1] opacity-90 bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]" />
+      )}
 
       {/* Content */}
       <div className="relative z-10  min-h-[491px] lg:h-[581px] flex items-center pl-[30px] pr-[60px] py-[56px] lg:px-[100px] lg:py-0 max-w-[1440px] mx-auto">
@@ -90,11 +96,11 @@ export default function HeroSection({
                   className="object-contain mb-3"
                 />
               )}
-              <h1 className="text-[26px] lg:text-[38px] font-bold leading-[1.3] text-azul">
+              <h1 className={`text-[26px] lg:text-[38px] font-bold leading-[1.3] ${textColor}`}>
                 {title}
               </h1>
 
-              <p className="text-[16px] lg:text-[18px] leading-[1.4] text-azul lg:mt-4">
+              <p className={`text-[16px] lg:text-[18px] font-normal leading-[1.4] ${textColor} lg:mt-4`}>
                 {description}
               </p>
             </div>
@@ -104,7 +110,7 @@ export default function HeroSection({
                 {checkItems.map((item) => (
                   <li key={item} className="flex items-start gap-2 lg:items-center lg:gap-4">
                     <ArrowIcon width={20} height={20} />
-                    <span className="text-[15px] lg:text-[16px] leading-[1.4] text-white">
+                    <span className={`text-[15px] lg:text-[16px] leading-[1.4] ${textColor}`}>
                       {highlightWord && item.includes(highlightWord) ? (
                         <>
                           {item.replace(highlightWord, "").trim()}{" "}

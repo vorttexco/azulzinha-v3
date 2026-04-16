@@ -98,21 +98,6 @@ function NavSeparator() {
   );
 }
 
-function SearchIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="7" cy="7" r="5.5" stroke="#FC8F01" strokeWidth="1.5" />
-      <path d="M11 11L14.5 14.5" stroke="#FC8F01" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function PortalIcon() {
   return (
     <svg
@@ -354,15 +339,6 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-6">
-            {/* Search */}
-            <a
-              href="#"
-              className="flex items-center gap-4 border-b border-white pb-0.5 hover:opacity-80 transition-opacity"
-            >
-              <SearchIcon />
-              <span className="text-[14px] text-white">Buscar</span>
-            </a>
-
             {/* Portal de Acesso */}
             <a
               href="#"

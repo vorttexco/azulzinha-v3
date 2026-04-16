@@ -123,20 +123,19 @@ export default function IntegradorasSection() {
                 }`}
             >
               {integradoras.map((item, i) => {
-                const cardClass = "w-[157.5px] lg:w-[193px] h-[130px] rounded-[12px] border border-[#F1F1F1] bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-2 p-4 -rotate-[0.32deg]";
+                const cardClass = "w-[157.5px] lg:w-[193px] h-[130px] rounded-[12px] border border-[#F1F1F1] bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] flex flex-col items-center justify-end gap-4 p-4 -rotate-[0.32deg]";
                 const content = (
                   <>
                     {item.logo && (
-                      <div className="relative w-full h-[45px] shrink-0">
-                        <Image
-                          src={asset(`/images/azulzinha-smart/${item.logo}`)}
-                          alt={item.name}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
+                      <Image
+                        src={asset(`/images/azulzinha-smart/${item.logo}`)}
+                        alt={item.name}
+                        width={150}
+                        height={60}
+                        className="w-[120px] h-auto max-h-[45px] px-4 object-contain shrink-0"
+                      />
                     )}
-                    <span className="font-['CAIXA_Std'] text-[14px] leading-[130%] text-center text-[#666666]">
+                    <span className="font-['CAIXA_Std'] text-[14px] pt-2 leading-[130%] text-center text-[#666666]">
                       {item.name}
                     </span>
                   </>

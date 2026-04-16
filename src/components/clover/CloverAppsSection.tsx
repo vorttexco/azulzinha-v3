@@ -455,7 +455,7 @@ export default function CloverAppsSection() {
           <h2 className="section-title text-azul mb-8 lg:mb-[60px]">
             Contrate aplicativos de automação <br />feitos para o seu negócio
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 place-items-center max-w-[900px] mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-6 place-items-center max-w-[260px] lg:max-w-[900px] mx-auto">
             {automationCards.map((card) => (
               <div
                 key={card.name}

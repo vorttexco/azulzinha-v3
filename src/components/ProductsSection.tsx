@@ -11,33 +11,43 @@ import ArrowIcon from "@/components/shared/ArrowIcon";
 const products = [
   {
     name: "Clover Flex",
-    description: "Receba pagamentos e gerencie seu negócio com flexibilidade e tenha todos os recursos na palma da mão com um checkout rápido e prático.",
+    description: "Para atender no balcão, na mesa ou em qualquer lugar",
     image: asset("/images/product-clover-flex.png"),
+    href: "https://azulzinhadacaixa.com.br/clover",
   },
   {
     name: "Clover Mini",
-    description: "Aceite uma variedade de meios de pagamento, tenha uma visão completa do negócio",
+    description: "Para ter um PDV perfeito para qualquer espaço",
     image: asset("/images/product-clover-mini.png"),
+    href: "https://azulzinhadacaixa.com.br/clover",
   },
   {
     name: "azulzinha smart",
-    description: "Nossa azulzinha mais rápida, moderna, eficiente e com muito mais funcionalidades para multiplicar seu sucesso.",
+    description: "Para centralizar e simplificar a gestão financeira",
     image: asset("/images/product-smart.png"),
+    href: "https://azulzinhadacaixa.com.br/azulzinhasmart",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/azulzinhasmart.pdf",
   },
   {
     name: "azulzinha pro",
-    description: "Nossa azulzinha mais prática e sem fio, ideal para levar até o cliente e agilizar o atendimento.",
+    description: "Para levar a maquininha até o cliente",
     image: asset("/images/product-pro.png"),
+    href: "https://azulzinhadacaixa.com.br/maquininhas/pro",
+    manualHref: "https://azulzinhadacaixa.com.br/maquininhas/pro;param=manual-section",
   },
   {
     name: "azulzinha TEF",
-    description: "Integre suas vendas para uma experiência de compra ágil, conciliação segura e gestão eficaz do seu negócio.",
+    description: "Para negócios com grande volume de transações",
     image: asset("/images/product-tef.png"),
+    href: "https://azulzinhadacaixa.com.br/maquininhas/tef",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/LO_Manual_Azulzinha_Tef_Lane_3000_23_MARC_23_v1.pdf",
   },
   {
     name: "azulzinha aproxima",
-    description: "Instale o App e venda muito mais por aproximação, carteiras digitais e Pix no seu celular ou tablet.",
+    description: "Para transformar um celular ou tablet em maquininha",
     image: asset("/images/product-aproxima.png"),
+    href: "https://azulzinhadacaixa.com.br/azulzinha-aproxima",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/manual_azulzinha_aproxima.pdf",
   },
 ];
 
@@ -54,7 +64,7 @@ export default function ProductsSection() {
         <h2 className="section-title text-azul">
           Escolha a azulzinha ideal para o seu <span className="text-[#FC8F01]">negócio</span>
         </h2>
-        <a href="/peca-azulzinha" className="mt-4 inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
+        <a href="/maquininhas" className="mt-4 inline-flex items-center gap-2 rounded-[6px] px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors">
           Peça a sua azulzinha
           <ArrowIcon />
         </a>
@@ -76,13 +86,27 @@ export default function ProductsSection() {
                   <p className="card-text text-black mt-2">{product.description}</p>
                 </div>
 
-                <a
-                  href="#"
-                  className="card-link inline-flex items-center gap-2 text-azul cursor-pointer hover:opacity-80 transition-opacity mt-auto"
-                >
-                  Saiba mais
-                  <ArrowIcon />
-                </a>
+                <div className="mt-auto flex flex-col gap-2">
+                  {product.manualHref && (
+                    <a
+                      href={product.manualHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card-link inline-flex items-center gap-2 text-azul cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                      Baixe o manual
+                      <ArrowIcon />
+                    </a>
+                  )}
+                  <a
+                    href={product.href}
+                    className="card-link inline-flex items-center gap-2 text-azul cursor-pointer hover:opacity-80 transition-opacity"
+                  >
+                    Saiba mais
+                    <ArrowIcon />
+                  </a>
+
+                </div>
               </div>
 
             </div>

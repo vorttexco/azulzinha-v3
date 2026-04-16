@@ -15,6 +15,9 @@ interface AppModal {
   description: string;
   benefits: { label: string; text: string }[];
   image?: string;
+  imageClassName?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 interface App {
@@ -68,6 +71,7 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-clientes.png",
+              imageClassName: "w-[385px] h-[255px] rounded-lg",
             },
           },
           {
@@ -109,6 +113,7 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-turnos.png",
+              imageClassName: "w-[385px] h-[255px] rounded-lg",
             },
           },
           {
@@ -163,6 +168,7 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-financas.png",
+              imageClassName: "w-[385px] h-[368px] rounded-lg",
             },
           },
           { name: "Link de pagamentos", comingSoon: true },
@@ -212,6 +218,8 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-transacoes.png",
+              imageClassName: "w-[385px] h-[255px] rounded-lg object-contain",
+
             },
           },
           {
@@ -231,6 +239,7 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-vendas.png",
+              imageClassName: "w-[385px] h-[255px] rounded-lg",
             },
           },
           {
@@ -254,6 +263,7 @@ const tabs: Tab[] = [
                 },
               ],
               image: "/images/clover/tela-relatorios.png",
+              imageClassName: "w-[385px] h-[255px] rounded-lg",
             },
           },
           { name: "Fluxo de caixa" },
@@ -491,9 +501,9 @@ export default function CloverAppsSection() {
                 <Image
                   src={asset(selectedModal.image)}
                   alt={selectedModal.title}
-                  width={385}
-                  height={255}
-                  className="w-[385px] h-[255px] rounded-lg"
+                  width={selectedModal.imageWidth || 385}
+                  height={selectedModal.imageHeight || 255}
+                  className={selectedModal.imageClassName || "rounded-lg"}
                 />
               </div>
             )}

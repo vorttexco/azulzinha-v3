@@ -50,6 +50,7 @@ export default function MaquininhasProPage() {
         title="Dúvidas?"
         description="Acesse nossa página de ajuda para obter mais informações sobre a azulzinha"
         buttonText="Clique aqui"
+        buttonHref="/ajuda"
         image="/images/maquininhas-pro/cta-photo.png"
         imageAlt="Dúvidas azulzinha"
       />

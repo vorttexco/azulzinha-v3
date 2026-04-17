@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 interface VideoItem {
   title: string;
   thumbnail?: string;
+  videoSrc?: string;
 }
 
 interface VideoSectionProps {
@@ -17,6 +19,7 @@ interface VideoSectionProps {
   backgroundColor?: string;
   sidebarWidth?: string;
   href?: string;
+  mainVideoSrc?: string;
 }
 
 function PlayIcon() {
@@ -71,10 +74,11 @@ function VideoThumbnailIcon() {
 }
 
 const defaultVideos: VideoItem[] = [
-  { title: "Como funciona a automação comercial?" },
-  { title: "Como aproveitar o Portal Clover?" },
-  { title: "Como gerenciar suas vendas na Clover?" },
-  { title: "Como acessar seu relatório de vendas?" },
+  { title: "Como funciona a automação comercial?", videoSrc: "https://azulzinhadacaixa.com.br/midias/Fiserv_azulzinha_Automacao_Comercial_V3.mp4" },
+  { title: "Como aproveitar o Portal Clover?", videoSrc: "https://azulzinhadacaixa.com.br/midias/video-clover-dashboard.mp4" },
+  { title: "Como gerenciar suas vendas na Clover?", videoSrc: "https://azulzinhadacaixa.com.br/midias/video-transacoes.mp4" },
+  { title: "Como acessar seu relatório de vendas?", videoSrc: "https://azulzinhadacaixa.com.br/midias/video-relatorios.mp4" },
+  { title: "Como gerenciar seus funcionários?", videoSrc: "https://azulzinhadacaixa.com.br/midias/video-Funcionarios.mp4" },
 ];
 
 export default function VideoSection({
@@ -86,8 +90,10 @@ export default function VideoSection({
   backgroundColor = "bg-[#F7F7F7]",
   sidebarWidth = "lg:w-[402px]",
   href = "#",
+  mainVideoSrc = "https://azulzinhadacaixa.com.br/midias/Fiserv_azulzinha_Automacao_Comercial_V3.mp4",
 }: VideoSectionProps) {
   const hasThumbnails = videos.some((v) => v.thumbnail);
+  const [activeVideo, setActiveVideo] = useState<{ src: string; title: string } | null>(null);
 
   return (
     <section className={backgroundColor}>
@@ -99,23 +105,38 @@ export default function VideoSection({
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-[24px]">
           {/* Main video */}
           <div className="relative w-full lg:flex-1 h-[250px] lg:h-[480px] rounded-[16px] overflow-hidden cursor-pointer group">
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={asset(mainVideoImage)}
-                alt={mainVideoTitle}
-                fill
-                className="object-cover"
+            {activeVideo ? (
+              <video
+                key={activeVideo.src}
+                src={activeVideo.src}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
               />
-            </div>
-            <div className="absolute  inset-0 bg-[linear-gradient(359.87deg,#00275E_20.33%,rgba(1,61,145,0)_53.44%),linear-gradient(0deg,rgba(0,41,97,0.2),rgba(0,41,97,0.2))] z-10" />
-            <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <PlayIcon />
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 z-20 p-6 lg:p-8">
-              <p className="text-[20px] lg:text-[26px] font-normal leading-[1.4] text-white">
-                {mainVideoTitle}
-              </p>
-            </div>
+            ) : (
+              <>
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={asset(mainVideoImage)}
+                    alt={mainVideoTitle}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-[linear-gradient(359.87deg,#00275E_20.33%,rgba(1,61,145,0)_53.44%),linear-gradient(0deg,rgba(0,41,97,0.2),rgba(0,41,97,0.2))] z-10" />
+                <div
+                  className="absolute inset-0 z-20 flex items-center justify-center"
+                  onClick={() => setActiveVideo({ src: mainVideoSrc, title: mainVideoTitle })}
+                >
+                  <PlayIcon />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 z-20 p-6 lg:p-8">
+                  <p className="text-[20px] lg:text-[26px] font-normal leading-[1.4] text-white">
+                    {mainVideoTitle}
+                  </p>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Sidebar video list */}
@@ -126,6 +147,7 @@ export default function VideoSection({
               {videos.map((video, index) => (
                 <div
                   key={`${video.title}-${index}`}
+                  onClick={() => video.videoSrc && setActiveVideo({ src: video.videoSrc, title: video.title })}
                   className="group/card lg:w-[380px] flex items-center gap-4 bg-white rounded-[12px] p-3 lg:p-4 cursor-pointer duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)]"
                 >
                   {hasThumbnails && video.thumbnail ? (

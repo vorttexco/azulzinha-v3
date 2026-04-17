@@ -12,18 +12,21 @@ const modelos = [
     image: "/images/maquininhas-pro/ingenico-move-5000.png",
     imageWidth: 277,
     imageHeight: 324,
+    manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_Move_5000_24_Fev_2023_V6.pdf",
   },
   {
     name: "Newland SP 930",
     image: "/images/maquininhas-pro/newland-sp930.png",
     imageWidth: 147,
     imageHeight: 295,
+    manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_SP_930_18.03.24.pdf",
   },
   {
     name: "Verifone C680",
     image: "/images/maquininhas-pro/verifone-c680.png",
     imageWidth: 149,
     imageHeight: 302,
+    manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_C680_24_Fev_2023_V5.pdf",
   },
 ];
 
@@ -32,11 +35,13 @@ function FloatCard({
   image,
   imageWidth,
   imageHeight,
+  manualHref,
 }: {
   name: string;
   image: string;
   imageWidth: number;
   imageHeight: number;
+  manualHref: string;
 }) {
   return (
     <div className="flex flex-col justify-end items-center -gap-[91px]">
@@ -57,10 +62,12 @@ function FloatCard({
           {name}
         </h3>
         <a
-          href="#"
+          href={manualHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-[14px] font-normal leading-[1.4] text-azul"
         >
-          Baixa o manual
+          Baixe o manual
           <ArrowIcon width={16} height={12} color="#FC8F01" />
         </a>
       </div>
@@ -94,7 +101,7 @@ export default function ModelosSection() {
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
         <h2 className="section-title text-azul mb-6 lg:mb-[60px]">
-          Sua azulzinha pro chegou
+          Sua azulzinha pro chegou?
         </h2>
 
         {/* Desktop grid */}

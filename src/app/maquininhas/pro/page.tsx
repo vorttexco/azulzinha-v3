@@ -16,6 +16,7 @@ export default function MaquininhasProPage() {
         description="Nossa azulzinha mais prática e sem fio, ideal para levar até o cliente e agilizar o atendimento."
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#autonomia-pro"
         backgroundImage="/images/maquininhas-pro/hero-bg.png"
       />
       <AutonomiaSection />

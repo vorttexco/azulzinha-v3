@@ -3,7 +3,7 @@ import { asset } from "@/lib/assets";
 
 export default function AutonomiaSection() {
   return (
-    <section className="bg-white">
+    <section id="autonomia-pro" className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-[110px] px-[30px] lg:px-[100px]">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-[78px]">
           {/* Left: Text content */}

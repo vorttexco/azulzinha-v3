@@ -93,8 +93,8 @@ export default function HeroSection({
       {/* Left overlay */}
       {showOverlay && (
         <div className={`absolute inset-0 z-1 opacity-90 ${overlayColor === "white"
-            ? "bg-[linear-gradient(90.48deg,#ffffff_30%,rgba(255,255,255,0)_65%)] lg:bg-[linear-gradient(90.48deg,#ffffff_15%,rgba(255,255,255,0)_50%)]"
-            : "bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
+          ? "bg-[linear-gradient(90.48deg,#ffffff_45%,rgba(255,255,255,0)_65%)] lg:bg-[linear-gradient(90.48deg,#ffffff_15%,rgba(255,255,255,0)_50%)]"
+          : "bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
           }`} />
       )}
 
@@ -114,11 +114,11 @@ export default function HeroSection({
                   className="object-contain mb-3"
                 />
               )}
-              <h1 className={`text-[26px] lg:text-[38px] font-bold leading-[1.3] ${textColor}`}>
+              <h1 className={`text-[22px] lg:text-[38px] font-bold leading-[1.3] pr-12 ${textColor}`}>
                 {title}
               </h1>
 
-              <p className={`text-[16px] lg:text-[18px] font-normal leading-[1.4] ${textColor} lg:mt-4`}>
+              <p className={`text-[14px] lg:text-[18px] font-normal leading-[1.4] ${textColor} lg:mt-4`}>
                 {description}
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function HeroSection({
           )}
 
           {buttonSubtext && (
-            <p className="text-[14px] font-normal leading-[1.4] text-[#666666] mt-3 lg:mt-12">
+            <p className="text-[12px] font-normal leading-[1.4] pr-20 text-[#666666] mt-3 lg:mt-12">
               {buttonSubtext}
             </p>
           )}

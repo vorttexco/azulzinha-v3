@@ -76,7 +76,7 @@ const products: CloverProduct[] = [
       },
       { label: "Segurança", value: "Proteção total com criptografia;" },
       { label: "Acessório", value: "Capa de silicone para maior durabilidade;" },
-      { label: "Carregamento", value: "recarga de bateria por indução." },
+      { label: "Carregamento", value: "Recarga de bateria por indução." },
     ],
     ctaText: "Peça a sua Clover Flex",
   },
@@ -89,41 +89,40 @@ const products: CloverProduct[] = [
     features: [
       {
         title: "Segura",
-        description: "Criptografia de ponta a ponta para proteger seus dados",
+        description: "Criptografia de ponta a ponta para proteger seus dados e transações;",
         icon: "/images/clover/icon-segura.svg",
       },
       {
         title: "Completa",
         description:
-          "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento",
+          "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento;",
         icon: "/images/clover/icon-completa.svg",
       },
       {
         title: "Sempre conectada",
         description:
-          "Wi-Fi, 4G, 3G e 2G para um sinal estável onde você estiver",
+          "Wi-Fi, 4G e internet via cabo de rede para estabilidade total;",
         icon: "/images/clover/icon-conectada.svg",
       },
       {
         title: "Mais comodidade",
-        description: "Impressão de recibos e envio digital por SMS ou e-mail",
+        description: "Impressão de recibos e envio digital por SMS ou e-mail;",
         icon: "/images/clover/icon-comodidade.svg",
       },
       {
         title: "Compacta e poderosa",
-        description: "Compacta e poderosa: Desempenho de ponta com processador Qualcomm 660.",
+        description: "Desempenho de ponta com processador Qualcomm 660.",
         icon: "/images/clover/icon-rapida.svg",
       },
     ],
     specs: [
-      { label: "Tela touch", value: 'Tela de 8” sensível ao toque para autoatendimento e conferência da compra;' },
+      { label: "Tela touch", value: 'Tela de 8" sensível ao toque para autoatendimento e conferência da compra;' },
       {
         label: "Câmera",
-        value: "Leitura de código de barras e QR Code (1D/2D)",
+        value: "Leitura de código de barras e QR Code (1D/2D);",
       },
-      { label: "Segurança", value: "Proteção total com criptografia" },
+      { label: "Segurança", value: "Proteção total com criptografia;" },
       { label: "Fonte de alimentação", value: "Cabo." },
-
     ],
     ctaText: "Peça a sua Clover Mini",
   },

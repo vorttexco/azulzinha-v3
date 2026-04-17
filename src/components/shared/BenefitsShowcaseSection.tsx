@@ -117,7 +117,7 @@ export default function BenefitsShowcaseSection({
   titleClassName = "text-[26px] lg:text-[32px] font-normal leading-[1.3] text-left text-azul",
 }: BenefitsSectionProps) {
   return (
-    <section className={`w-full ${bgColor} ${sectionClassName || ''}`}>
+    <section className={`w-full overflow-hidden ${bgColor} ${sectionClassName || ''}`}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
         {/* Top row: Text left + Image right */}
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">

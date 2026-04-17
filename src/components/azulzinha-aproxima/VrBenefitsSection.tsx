@@ -12,10 +12,10 @@ function PlayIcon() {
 }
 
 const categories = [
-  { icon: "/images/azulzinha-aproxima/icon-alimentacao.svg", label: "Alimentação" },
-  { icon: "/images/azulzinha-aproxima/icon-homeoffice.svg", label: "Home office" },
-  { icon: "/images/azulzinha-aproxima/icon-refeicao.svg", label: "Refeição" },
-  { icon: "/images/azulzinha-aproxima/icon-mobilidade.svg", label: "Mobilidade" },
+  { icon: "/images/azulzinha-aproxima/icon-alimentacao.png", label: "Alimentação" },
+  { icon: "/images/azulzinha-aproxima/icon-homeoffice.png", label: "Home office" },
+  { icon: "/images/azulzinha-aproxima/icon-refeicao.png", label: "Refeição" },
+  { icon: "/images/azulzinha-aproxima/icon-mobilidade.png", label: "Mobilidade" },
 ];
 
 export default function VrBenefitsSection() {
@@ -53,7 +53,7 @@ export default function VrBenefitsSection() {
           <div className="grid grid-cols-2 lg:flex lg:flex-row gap-6 lg:gap-8">
             {categories.map((cat) => (
               <div key={cat.label} className="flex flex-col items-center gap-2">
-                <Image src={asset(cat.icon)} alt="" width={42} height={35} className="w-[42px] h-[35px] object-contain" unoptimized />
+                <Image src={asset(cat.icon)} alt="" width={60} height={50} className="w-[60px] h-[50px] object-contain" unoptimized />
                 <span className="text-[18px] font-normal leading-[1.4] text-black text-center">{cat.label}</span>
               </div>
             ))}

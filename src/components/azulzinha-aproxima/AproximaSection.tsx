@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 const cards = [
   {
     icon: "/images/azulzinha-aproxima/icon-nfc.png",
     title: "Em todo lugar",
-    description: "Venda mais e onde quiser com tudo pelo App azulzinha aproxima.",
+    description: <>Venda mais e onde quiser com tudo pelo App <strong>azulzinha aproxima</strong>.</>,
   },
   {
     icon: "/images/azulzinha-aproxima/icon-zero-aluguel.png",
@@ -19,7 +19,7 @@ const cards = [
   {
     icon: "/images/azulzinha-aproxima/icon-celular.png",
     title: "No celular ou tablet",
-    description: "Basta ter tecnologia de aproximação e Android versão 9 ou superior.",
+    description: "Basta ter tecnologia de aproximação e Android versão 12 ou superior.",
   },
   {
     icon: "/images/azulzinha-aproxima/icon-vendas.png",
@@ -28,7 +28,7 @@ const cards = [
   },
 ];
 
-function Card({ icon, title, description }: { icon: string; title: string; description: string }) {
+function Card({ icon, title, description }: { icon: string; title: string; description: React.ReactNode }) {
   return (
     <div className="bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] px-8 py-8 flex flex-col gap-4 h-[244px]">
       <Image src={asset(icon)} alt="" width={52} height={52} className="w-[52px] h-[52px] object-contain" />
@@ -71,8 +71,8 @@ export default function AproximaSection() {
               <p className="mb-4">
                 Receber uma venda está mais fácil do que nunca: você só precisa de um celular!
               </p>
-              <p>
-                <strong>Baixe gratuitamente o aplicativo <span className="text-laranja">azulzinha aproxima</span> e venda por aproximação e muito mais.</strong>
+              <p className="text-cinza font-semibold">
+                Baixe gratuitamente o aplicativo <span className="text-azul">azulzinha aproxima</span> e venda por aproximação e muito mais.
               </p>
             </div>
           </div>

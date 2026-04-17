@@ -16,7 +16,7 @@ export default function Home() {
         buttonHref="/peca-azulzinha"
         checkItems={[]}
         textColor="text-azul"
-        showOverlay={false}
+        overlayColor="white"
         description={<>Aceite benefícios e diversos<br />meios de pagamento!</>}
         buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br /> azulzinha pro e no App azulzinha aproxima</>}
       />

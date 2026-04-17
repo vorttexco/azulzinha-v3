@@ -13,6 +13,7 @@ export default function BlogPage() {
         description="Fique por dentro das dicas, tutoriais, tendências de mercado e novidades da maquininha da CAIXA."
         checkItems={[]}
         buttonText="Veja mais"
+        buttonHref="#blog-destaques"
         backgroundImage="/images/blog/hero-bg.png"
       />
       <BlogContent />

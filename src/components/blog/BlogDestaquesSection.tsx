@@ -11,7 +11,7 @@ export default function BlogDestaquesSection({ posts }: BlogDestaquesSectionProp
   const sidePosts = posts.slice(1, 3);
 
   return (
-    <section className="relative bg-white">
+    <section id="blog-destaques" className="relative bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pb-14 lg:pb-20">
         <h2 className="text-[26px] lg:text-[38px] leading-[1.2] lg:leading-[1.3] text-laranja mb-6">
           Destaques

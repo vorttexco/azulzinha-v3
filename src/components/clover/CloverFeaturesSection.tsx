@@ -6,7 +6,36 @@ import Accordion, { AccordionItem } from "@/components/shared/Accordion";
 
 const features: AccordionItem[] = [
   {
-    title: "Interface simplificada",
+    title: "Integração simplificada",
+    content: (
+      <ul className="list-disc list-inside flex flex-col gap-0">
+        <li className="text-[14px] leading-[1.4] text-[#666]">Ferramentas que facilitam a integração;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Documentação completa e estruturada;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Suporte rápido e remoto para automação comercial.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Diversidade de pagamentos",
+    content: (
+      <ul className="list-disc list-inside flex flex-col gap-0">
+        <li className="text-[14px] leading-[1.4] text-[#666]">Mais de 240 bandeiras com a solução SiTef;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Recebimento em dinheiro;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Venda por aproximação.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Design e inovação",
+    content: (
+      <ul className="list-disc list-inside flex flex-col gap-0">
+        <li className="text-[14px] leading-[1.4] text-[#666]">Diversidade de funções, incluindo autoatendimento;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Padronização da sua frente de caixa.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Interface e navegação intuitiva",
     content: (
       <ul className="list-disc list-inside flex flex-col gap-0">
         <li className="text-[14px] leading-[1.4] text-[#666]">Usabilidade Android;</li>
@@ -16,42 +45,13 @@ const features: AccordionItem[] = [
     ),
   },
   {
-    title: "Diversidade de pagamentos",
-    content: (
-      <ul className="list-disc list-inside flex flex-col gap-0">
-        <li className="text-[14px] leading-[1.4] text-[#666]">Aceita Pix, QR Code, cartões;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Carteiras digitais;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Link de pagamento.</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Design e inovação",
-    content: (
-      <ul className="list-disc list-inside flex flex-col gap-0">
-        <li className="text-[14px] leading-[1.4] text-[#666]">Design moderno e compacto;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Tecnologia de ponta;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Tela touchscreen intuitiva.</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interface e navegação intuitiva",
-    content: (
-      <ul className="list-disc list-inside flex flex-col gap-0">
-        <li className="text-[14px] leading-[1.4] text-[#666]">Menu simplificado;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Navegação rápida;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Fácil configuração.</li>
-      </ul>
-    ),
-  },
-  {
     title: "Gestão do negócio",
     content: (
       <ul className="list-disc list-inside flex flex-col gap-0">
-        <li className="text-[14px] leading-[1.4] text-[#666]">Relatórios em tempo real;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Controle de vendas;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Gestão de estoque.</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Cadastro de clientes;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Cadastro de funcionários e controle de turnos;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Gestão de fluxo de caixa;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Portal para acompanhamento das transações online.</li>
       </ul>
     ),
   },
@@ -59,9 +59,8 @@ const features: AccordionItem[] = [
     title: "Acesso remoto",
     content: (
       <ul className="list-disc list-inside flex flex-col gap-0">
-        <li className="text-[14px] leading-[1.4] text-[#666]">Gerencie de qualquer lugar;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Dashboard online;</li>
-        <li className="text-[14px] leading-[1.4] text-[#666]">Notificações em tempo real.</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Controle de ferramentas a distância;</li>
+        <li className="text-[14px] leading-[1.4] text-[#666]">Suporte remoto dedicado e sempre disponível.</li>
       </ul>
     ),
   },

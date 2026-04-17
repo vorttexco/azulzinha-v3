@@ -19,11 +19,11 @@ const empresaColumns: DropdownColumn[] = [
     title: "Maquininhas",
     titleColor: "azul",
     items: [
-      { label: "Clover", href: "/clover" },
       { label: "azulzinha pro", href: "/maquininhas/pro" },
       { label: "azulzinha aproxima", href: "/azulzinha-aproxima" },
       { label: "azulzinha smart", href: "/azulzinhasmart" },
       { label: "azulzinha TEF", href: "/maquininhas/tef" },
+      { label: "Clover", href: "/clover" },
     ],
     footerLink: { label: "Todos os modelos", href: "/maquininhas" },
   },
@@ -37,6 +37,7 @@ const empresaColumns: DropdownColumn[] = [
       { label: "Pagamento Parcial", href: "/pagamento-parcial" },
       { label: "Pix", href: "/pix-azulzinha" },
       { label: "Recarga", href: "/recarga-telefone" },
+      { label: "Revenda de Gás", href: "https://azulzinhadacaixa.com.br/programa-gas-do-povo" },
     ],
   },
   {
@@ -267,9 +268,8 @@ export default function Navbar() {
                 return (
                   <Fragment key={link.label}>
                     <li
-                      className={`relative h-full flex items-center ${
-                        link.hasDropdown && isOpen ? "z-50" : ""
-                      }`}
+                      className={`relative h-full flex items-center ${link.hasDropdown && isOpen ? "z-50" : ""
+                        }`}
                       onMouseEnter={() =>
                         setOpenMenu(link.hasDropdown ? link.label : null)
                       }
@@ -287,9 +287,8 @@ export default function Navbar() {
                       {/* Orange highlight bar at bottom of menu item */}
                       {link.hasDropdown && (
                         <div
-                          className={`pointer-events-none absolute bottom-0 left-0 right-0 h-[3px] bg-laranja transition-opacity duration-200 ${
-                            isOpen ? "opacity-100" : "opacity-0"
-                          }`}
+                          className={`pointer-events-none absolute bottom-0 left-0 right-0 h-[3px] bg-laranja transition-opacity duration-200 ${isOpen ? "opacity-100" : "opacity-0"
+                            }`}
                           aria-hidden="true"
                         />
                       )}
@@ -297,11 +296,10 @@ export default function Navbar() {
                       {/* Dropdown curtain */}
                       {link.hasDropdown && (
                         <div
-                          className={`absolute top-full left-0 overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
-                            isOpen
-                              ? "max-h-[700px] opacity-100"
-                              : "max-h-0 opacity-0 pointer-events-none"
-                          }`}
+                          className={`absolute top-full left-0 overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${isOpen
+                            ? "max-h-[700px] opacity-100"
+                            : "max-h-0 opacity-0 pointer-events-none"
+                            }`}
                           aria-hidden={!isOpen}
                         >
                           {link.label === "Para sua empresa" ? (
@@ -341,7 +339,9 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             {/* Portal de Acesso */}
             <a
-              href="#"
+              href="https://portal.azulzinhadacaixa.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[14px] text-white hover:opacity-80 transition-opacity"
             >
               <PortalIcon />
@@ -437,9 +437,8 @@ export default function Navbar() {
                     >
                       <span>{link.label}</span>
                       <ChevronDownIcon
-                        className={`transition-transform duration-200 ${
-                          isExpanded ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-200 ${isExpanded ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 
@@ -467,9 +466,8 @@ export default function Navbar() {
                               >
                                 <span>{col.title}</span>
                                 <ChevronDownIcon
-                                  className={`transition-transform duration-200 ${
-                                    subExpanded ? "rotate-180" : ""
-                                  }`}
+                                  className={`transition-transform duration-200 ${subExpanded ? "rotate-180" : ""
+                                    }`}
                                 />
                               </button>
 

@@ -36,47 +36,47 @@ const products: CloverProduct[] = [
     features: [
       {
         title: "Segura",
-        description: "Criptografia de ponta a ponta para proteger seus dados",
+        description: "Criptografia de ponta a ponta para proteger seus dados;",
         icon: "/images/clover/icon-segura.svg",
       },
       {
         title: "Completa",
         description:
-          "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento",
+          "Aceita Pix, QR Code, cartões (chip, tarja e aproximação), carteiras digitais e link de pagamento;",
         icon: "/images/clover/icon-completa.svg",
       },
       {
         title: "Sempre conectada",
         description:
-          "Wi-Fi, 4G, 3G e 2G para um sinal estável onde você estiver",
+          "Wi-Fi, 4G, 3G e 2G para um sinal estável onde você estiver;",
         icon: "/images/clover/icon-conectada.svg",
       },
       {
         title: "Mobilidade sem preocupação",
         description:
-          "Bateria de longa duração e recarga prática via base ou USB-C",
+          "Bateria de longa duração e recarga prática via base ou USB-C;",
         icon: "/images/clover/icon-mobilidade.svg",
       },
       {
         title: "Mais comodidade",
-        description: "Impressão de recibos e envio digital por SMS ou e-mail",
+        description: "Impressão de recibos e envio digital por SMS ou e-mail;",
         icon: "/images/clover/icon-comodidade.svg",
       },
       {
         title: "Rápida e confiável",
-        description: "Processador Qualcomm Snapdragon™ e mais memória",
+        description: "Processador Qualcomm Snapdragon™ e mais memória.",
         icon: "/images/clover/icon-rapida.svg",
       },
     ],
     specs: [
-      { label: "Tela", value: 'Colorida e sensível ao toque (5,99")' },
+      { label: "Tela", value: 'Colorida e sensível ao toque (5,99");' },
       {
         label: "Câmera",
-        value: "Leitura de código de barras e QR Code (1D/2D)",
+        value: "Leitura de código de barras e QR Code (1D/2D);",
       },
-      { label: "Segurança", value: "Proteção total com criptografia" },
-      { label: "Acessório", value: "Capa de silicone para maior durabilidade" },
-      { label: "Carregamento", value: "Recarga de bateria por indução" },
+      { label: "Segurança", value: "Proteção total com criptografia;" },
+      { label: "Acessório", value: "Capa de silicone para maior durabilidade;" },
+      { label: "Carregamento", value: "recarga de bateria por indução." },
     ],
     ctaText: "Peça a sua Clover Flex",
   },

@@ -42,7 +42,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  title = "Com a azulzinha,eu posso fazer parte do programa Gás do Povo!.",
+  title = "Com a azulzinha,eu posso fazer parte do programa Gás do Povo!",
   description = "Aceite benefícios e diversos meios de pagamento!",
   checkItems = defaultCheckItems,
   buttonText = "Saiba mais",
@@ -92,11 +92,10 @@ export default function HeroSection({
 
       {/* Left overlay */}
       {showOverlay && (
-        <div className={`absolute inset-0 z-1 opacity-90 ${
-          overlayColor === "white"
+        <div className={`absolute inset-0 z-1 opacity-90 ${overlayColor === "white"
             ? "bg-[linear-gradient(90.48deg,#ffffff_30%,rgba(255,255,255,0)_65%)] lg:bg-[linear-gradient(90.48deg,#ffffff_15%,rgba(255,255,255,0)_50%)]"
             : "bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
-        }`} />
+          }`} />
       )}
 
       {/* Content */}

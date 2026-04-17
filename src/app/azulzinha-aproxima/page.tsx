@@ -18,6 +18,7 @@ export default function AzulzinhaAproximaPage() {
         description="Instale o App e venda muito mais por aproximação, carteiras digitais e Pix no seu celular ou tablet."
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#aproxima"
         backgroundImage="/images/azulzinha-aproxima/hero-bg.png"
       />
       <AproximaSection />

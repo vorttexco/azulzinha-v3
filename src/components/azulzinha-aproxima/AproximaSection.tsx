@@ -58,7 +58,7 @@ export default function AproximaSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="bg-[#F4F4F4]">
+    <section id="aproxima" className="bg-[#F4F4F4]">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-[110px] px-[30px] lg:px-[100px]">
         {/* Top: Text + Image */}
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-[78px] mb-8 lg:mb-[78px]">
@@ -72,7 +72,7 @@ export default function AproximaSection() {
                 Receber uma venda está mais fácil do que nunca: você só precisa de um celular!
               </p>
               <p>
-                Baixe gratuitamente o aplicativo azulzinha aproxima e venda por aproximação e muito mais.
+                <strong>Baixe gratuitamente o aplicativo <span className="text-laranja">azulzinha aproxima</span> e venda por aproximação e muito mais.</strong>
               </p>
             </div>
           </div>

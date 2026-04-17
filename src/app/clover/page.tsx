@@ -26,7 +26,7 @@ export default function CloverPage() {
       <CloverComparisonSection />
       <CloverAppsSection />
       <FullImageSection />
-      <VideoSection />
+      <VideoSection href="https://www.youtube.com/@azulzinhadaCAIXA" />
       <CtaSection
         title="Descubra o poder do mundo Clover com a azulzinha"
         description="Preencha o formulário e receba uma oferta sob medida com as soluções da Clover e as condições exclusivas que só a CAIXA tem para o seu negócio."

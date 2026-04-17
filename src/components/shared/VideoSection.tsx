@@ -16,6 +16,7 @@ interface VideoSectionProps {
   youtubeText?: string;
   backgroundColor?: string;
   sidebarWidth?: string;
+  href?: string;
 }
 
 function PlayIcon() {
@@ -84,6 +85,7 @@ export default function VideoSection({
   youtubeText = "Se inscreva no nosso canal do Youtube",
   backgroundColor = "bg-[#F7F7F7]",
   sidebarWidth = "lg:w-[402px]",
+  href = "#",
 }: VideoSectionProps) {
   const hasThumbnails = videos.some((v) => v.thumbnail);
 
@@ -153,7 +155,7 @@ export default function VideoSection({
             {youtubeText}
           </p>
           <a
-            href="#"
+            href={href}
             className="btn-laranja inline-flex items-center gap-2"
           >
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">

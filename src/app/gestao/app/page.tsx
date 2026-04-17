@@ -24,7 +24,6 @@ function PhoneCarouselSection() {
     containScroll: "trimSnaps",
   });
   const [activeDot, setActiveDot] = useState(0);
-  const [dotCount, setDotCount] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -33,32 +32,27 @@ function PhoneCarouselSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    const update = () => {
-      setDotCount(emblaApi.scrollSnapList().length);
-      onSelect();
-    };
-    update();
     emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", update);
+    emblaApi.on("reInit", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", update);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
 
   return (
     <section className="bg-white">
-      <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
+      <div className="max-w-[1440px] flex flex-col items-start mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
         <h2 className="section-title text-azul mb-6 lg:mb-8">
           Gerencie suas vendas de qualquer lugar
         </h2>
-        <div className="flex flex-col items-center gap-6 lg:gap-8">
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[745px]">
+        <div className="flex flex-col items-start gap-6 lg:gap-8">
+          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-left max-w-[745px]">
             O App da azulzinha da CAIXA é um canal exclusivo para facilitar o
             agitado dia a dia de milhares de brasileiros, empreendedores como
             você.
           </p>
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[745px]">
+          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-left max-w-[745px]">
             Baixando o App, você gerencia todas as vendas realizadas através da
             sua azulzinha, quando e de onde quiser, por meio do seu celular.
           </p>
@@ -88,13 +82,10 @@ function PhoneCarouselSection() {
         </div>
 
         {/* Mobile carousel */}
-        <div className="lg:hidden overflow-hidden -mx-7.5 mt-8 pt-[220px]" ref={emblaRef}>
-          <div className="flex gap-4">
+        <div className="lg:hidden w-full overflow-hidden -mx-7.5 mt-8 pt-55 select-none" ref={emblaRef}>
+          <div className="flex gap-4 pl-7.5">
             {phoneScreens.map((screen) => (
-              <div
-                key={screen.label}
-                className="shrink-0 max-w-[287px] w-[calc(100vw-100px)]"
-              >
+              <div key={screen.label} className="shrink-0 w-72.5">
                 <div className="relative w-full h-[247px]">
                   {/* Phone image — overflows above */}
                   <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full h-[427px] z-10">
@@ -118,8 +109,8 @@ function PhoneCarouselSection() {
         </div>
 
         {/* Dots - mobile only */}
-        <div className="lg:hidden mt-4 flex items-center justify-center gap-2">
-          {Array.from({ length: dotCount }).map((_, i) => (
+        <div className="lg:hidden w-full mt-6 flex items-center justify-center gap-2">
+          {phoneScreens.map((_, i) => (
             <button
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
@@ -135,8 +126,7 @@ function PhoneCarouselSection() {
         </div>
 
         {/* Text below carousel */}
-        <div className="mt-10 lg:mt-14  text-center flex flex-col items-center px-25
-        ">
+        <div className="mt-10 lg:mt-14 text-left flex flex-col items-start lg:w-2/3">
           <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
             Além de cuidar do seu caixa e obter relatórios de vendas, com apenas
             alguns cliques você pode antecipar recebíveis, pedir novas bobinas ou

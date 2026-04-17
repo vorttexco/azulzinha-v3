@@ -27,6 +27,7 @@ interface HeroSectionProps {
   buttonHref?: string;
   buttonSubtext?: string;
   backgroundImage?: string;
+  mobileBackgroundImage?: string;
   highlightWord?: string;
   productImage?: string;
   overlayImage?: string;
@@ -37,6 +38,7 @@ interface HeroSectionProps {
   cpfMask?: boolean;
   textColor?: string;
   showOverlay?: boolean;
+  overlayColor?: "blue" | "white";
 }
 
 export default function HeroSection({
@@ -47,6 +49,7 @@ export default function HeroSection({
   buttonHref = "#",
   buttonSubtext,
   backgroundImage = "/images/hero-bg.png",
+  mobileBackgroundImage,
   highlightWord = "1 dia útil",
   productImage,
   logoImage,
@@ -56,6 +59,7 @@ export default function HeroSection({
   cpfMask = false,
   textColor = "text-white",
   showOverlay = true,
+  overlayColor = "blue",
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
 
@@ -66,18 +70,33 @@ export default function HeroSection({
         className="absolute inset-0 bg-[linear-gradient(-44deg,#006CAD_5%,#012B71_100%)]"
       />
 
-      {/* Background image */}
+      {/* Background image — desktop (always shown) */}
       <Image
         src={asset(backgroundImage)}
         alt=""
         fill
-        className="object-cover object-[center_25%]"
+        className={`object-cover object-[center_25%] ${mobileBackgroundImage ? "hidden lg:block" : ""}`}
         priority
       />
 
+      {/* Background image — mobile only (when provided) */}
+      {mobileBackgroundImage && (
+        <Image
+          src={asset(mobileBackgroundImage)}
+          alt=""
+          fill
+          className="object-cover object-right lg:hidden"
+          priority
+        />
+      )}
+
       {/* Left overlay */}
       {showOverlay && (
-        <div className="absolute inset-0 z-[1] opacity-90 bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]" />
+        <div className={`absolute inset-0 z-1 opacity-90 ${
+          overlayColor === "white"
+            ? "bg-[linear-gradient(90.48deg,#ffffff_30%,rgba(255,255,255,0)_65%)] lg:bg-[linear-gradient(90.48deg,#ffffff_15%,rgba(255,255,255,0)_50%)]"
+            : "bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
+        }`} />
       )}
 
       {/* Content */}

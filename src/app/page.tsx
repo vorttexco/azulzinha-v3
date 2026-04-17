@@ -17,8 +17,9 @@ export default function Home() {
         checkItems={[]}
         textColor="text-azul"
         overlayColor="white"
+        mobileBackgroundImage="/images/hero-gas-home_mobile.png"
         description={<>Aceite benefícios e diversos<br />meios de pagamento!</>}
-        buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br /> azulzinha pro e no App azulzinha aproxima</>}
+        buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br className="hidden lg:block" /> azulzinha pro e no App azulzinha aproxima</>}
       />
       <CardsCarouselSection />
       <PossibilitiesSection />

@@ -30,6 +30,7 @@ export default function AzulzinhaAproximaPage() {
         title="Já habilitou azulzinha aproxima?"
         description=""
         buttonText="Leia o manual"
+        buttonHref="/peca-azulzinha"
         image="/images/azulzinha-aproxima/cta-photo.png"
         imageAlt="Azulzinha aproxima CTA"
       />

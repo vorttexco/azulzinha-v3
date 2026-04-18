@@ -2,60 +2,51 @@ import Image from "next/image";
 import Link from "next/link";
 import { asset } from "@/lib/assets";
 
-// Mapeamento de links para suas respectivas rotas
-const linkRoutes: Record<string, string> = {
-  "Maquininhas": "/maquininhas",
-  "Vendas Online": "/vendas",
-  "Gestão": "/gestao/gestao-vendas",
-  "Serviços de Conveniência": "/cliente-loterica",
-  "Serviços de Conveniência ": "/conveniencia",
-  "App CAIXA Tem": "/mei",
-  "Blog da azulzinha": "/blog",
-  "Central de Ajuda": "/ajuda",
-  "Taxas": "/taxas-tarifas",
-  "Contrato de Credenciamento azulzinha": "https://azulzinhadacaixa.com.br/midias/Fiserv_Contrato_de_Adesao_e_Credenciamento_4_RTD_SP.pdf",
-  "Contrato de Credenciamento CAIXA Tem": "https://azulzinhadacaixa.com.br/midias/termo-condicoes-complementares-CAIXA_Tem.pdf",
-  "Política de Privacidade": "/politica-privacidade",
-  "Política de Cookies": "/politica-cookies",
-  "LGPD": "/lgpd",
-};
+type FooterLink = { label: string; href: string };
 
-const linkGroups1 = [
+const linkGroups1: { title: string; links: FooterLink[] }[] = [
   {
     title: "Para sua Empresa",
-    links: ["Maquininhas", "Vendas Online", "Gestão"],
+    links: [
+      { label: "Maquininhas", href: "/maquininhas" },
+      { label: "Vendas Online", href: "/vendas-online" },
+      { label: "Gestão", href: "/gestao" },
+    ],
   },
   {
     title: "Para sua Lotérica",
-    links: ["Serviços de Conveniência"],
+    links: [{ label: "Serviço de Conveniência", href: "/lotericas" }],
   },
   {
     title: "Para sua MEI",
-    links: ["App CAIXA Tem"],
+    links: [{ label: "App CAIXA Tem", href: "/azulzinha-caixa-tem" }],
   },
   {
     title: "Para Você",
-    links: ["Serviços de Conveniência "],
+    links: [{ label: "Serviço de Conveniência", href: "/cliente-loterica" }],
   },
 ];
 
-const linkGroups2 = [
+const linkGroups2: { title: string; links: FooterLink[] }[] = [
   {
     title: "Conteúdo",
-    links: ["Blog da azulzinha"],
+    links: [{ label: "Blog da azulzinha", href: "/blog" }],
   },
   {
     title: "Suporte",
-    links: ["Central de Ajuda", "Taxas"],
+    links: [
+      { label: "Central de Ajuda", href: "/ajuda" },
+      { label: "Taxas", href: "/maquinas-e-taxas" },
+    ],
   },
   {
     title: "Avisos Legais",
     links: [
-      "Contrato de Credenciamento azulzinha",
-      "Contrato de Credenciamento CAIXA Tem",
-      "Política de Privacidade",
-      "Política de Cookies",
-      "LGPD",
+      { label: "Contrato de Credenciamento azulzinha", href: "https://azulzinhadacaixa.com.br/midias/Fiserv_Contrato_de_Adesao_e_Credenciamento_4_RTD_SP.pdf" },
+      { label: "Contrato de Credenciamento CAIXA Tem", href: "https://azulzinhadacaixa.com.br/midias/termo-condicoes-complementares-CAIXA_Tem.pdf" },
+      { label: "Política de Privacidade", href: "/politica-privacidade" },
+      { label: "Política de Cookies", href: "/politica-cookies" },
+      { label: "LGPD", href: "/lgpd" },
     ],
   },
 ];
@@ -79,12 +70,12 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <Link
-                        href={linkRoutes[link] || "#"}
+                        href={link.href}
                         className="text-sm  text-[#717171] hover:underline"
                       >
-                        {link}
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -102,12 +93,12 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <Link
-                        href={linkRoutes[link] || "#"}
+                        href={link.href}
                         className="text-sm  text-[#717171] hover:underline"
                       >
-                        {link}
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -210,12 +201,12 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <Link
-                        href={linkRoutes[link] || "#"}
+                        href={link.href}
                         className="text-sm text-[#717171] hover:underline"
                       >
-                        {link}
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -233,12 +224,12 @@ export default function Footer() {
                 </h4>
                 <ul className="flex flex-col gap-2">
                   {group.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <Link
-                        href={linkRoutes[link] || "#"}
+                        href={link.href}
                         className="text-sm text-[#717171] hover:underline"
                       >
-                        {link}
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -330,7 +321,7 @@ export default function Footer() {
 
           {/* Copyright text */}
           <p className="text-xs lg:text-sm text-[#717171] flex-1 text-center">
-            © 2024 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
+            © 2026 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
             direitos reservados.<br />SAC Fiserv (24h): 0800 770 6207
           </p>
 

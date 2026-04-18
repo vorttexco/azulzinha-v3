@@ -15,7 +15,7 @@ const servicos = [
   {
     icon: "/images/pagamento-parcial/icon-recargas.png",
     title: "Recargas",
-    href: "/recarga-telefone",
+    href: "/recarga-de-celulares",
   },
 ];
 

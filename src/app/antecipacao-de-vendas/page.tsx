@@ -57,8 +57,8 @@ export default function AntecipacaoDeVendas() {
         description=""
         buttonText="App da azulzinha"
         button2Text="Portal da Azulzinha"
-        buttonHref="/gestao/app"
-        button2Href="/gestao/portal"
+        buttonHref="/app"
+        button2Href="/portal"
         image="/images/antecipacao-de-vendas/cta-photo.png"
         imageAlt="CTA Antecipação de Vendas"
       />

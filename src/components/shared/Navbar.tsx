@@ -6,7 +6,7 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
-type DropdownItem = { label: string; href: string };
+type DropdownItem = { label: string; href: string; external?: boolean };
 type DropdownColumn = {
   title: string;
   titleColor: "azul" | "laranja";
@@ -28,15 +28,29 @@ const empresaColumns: DropdownColumn[] = [
     footerLink: { label: "Todos os modelos", href: "/maquininhas" },
   },
   {
+    title: "Gestão",
+    titleColor: "azul",
+    items: [
+      { label: "App da azulzinha", href: "/app" },
+      { label: "Portal da azulzinha", href: "/portal" },
+    ],
+    footerLink: { label: "Todas as soluções", href: "/gestao" },
+  },
+  {
+    title: "Para sua Lotérica",
+    titleColor: "laranja",
+    items: [{ label: "Serviços de Conveniência", href: "/lotericas" }],
+  },
+  {
     title: "Serviços",
     titleColor: "azul",
     items: [
-      { label: "Antecipação de Vendas", href: "/antecipacao-de-vendas" },
+      { label: "Antecipação de vendas", href: "/antecipacao-de-vendas" },
       { label: "Bandeiras e Vouchers", href: "/bandeiras-vouchers" },
       { label: "Crediário", href: "/crediario-azulzinha" },
       { label: "Pagamento Parcial", href: "/pagamento-parcial" },
       { label: "Pix", href: "/pix-azulzinha" },
-      { label: "Recarga", href: "/recarga-telefone" },
+      { label: "Recarga", href: "/recarga-de-celulares" },
       { label: "Revenda de Gás", href: "https://azulzinhadacaixa.com.br/programa-gas-do-povo" },
     ],
   },
@@ -45,28 +59,14 @@ const empresaColumns: DropdownColumn[] = [
     titleColor: "azul",
     items: [
       { label: "Link de Pagamento", href: "/link-pagamento" },
-      { label: "Pagamentos por WhatsApp", href: "/pagamentos-whatsapp" },
+      { label: "Pagamento por WhatsApp", href: "/pagamentos-whatsapp" },
     ],
-    footerLink: { label: "Todas as soluções", href: "/vendas" },
-  },
-  {
-    title: "Gestão",
-    titleColor: "azul",
-    items: [
-      { label: "App da azulzinha", href: "/gestao/app" },
-      { label: "Portal da azulzinha", href: "/gestao/portal" },
-    ],
-    footerLink: { label: "Todas as soluções", href: "/gestao/gestao-vendas" },
-  },
-  {
-    title: "Para sua Lotérica",
-    titleColor: "laranja",
-    items: [{ label: "Serviço de Conveniência", href: "/cliente-loterica" }],
+    footerLink: { label: "Todas as soluções", href: "/vendas-online" },
   },
   {
     title: "Para sua MEI",
     titleColor: "laranja",
-    items: [{ label: "App CAIXA Tem", href: "/mei" }],
+    items: [{ label: "App CAIXA Tem", href: "/azulzinha-caixa-tem" }],
   },
 ];
 
@@ -74,12 +74,12 @@ const voceColumns: DropdownColumn[] = [
   {
     title: "Serviços",
     titleColor: "azul",
-    items: [{ label: "azulzinha pay", href: "/pay" }],
+    items: [{ label: "azulzinha pay", href: "https://www.azulzinhapay.com.br/", external: true }],
   },
   {
     title: "Lotéricas",
     titleColor: "azul",
-    items: [{ label: "Serviço de Conveniência", href: "/conveniencia" }],
+    items: [{ label: "Serviços de Conveniência", href: "/cliente-loterica" }],
   },
 ];
 
@@ -182,6 +182,37 @@ function ChevronDownIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function DropdownItemLink({
+  item,
+  className,
+  children,
+  onClick,
+}: {
+  item: DropdownItem;
+  className?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) {
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={item.href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 function DropdownColumnView({ column }: { column: DropdownColumn }) {
   const titleColorClass =
     column.titleColor === "azul" ? "text-azul" : "text-laranja";
@@ -196,23 +227,23 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
       <ul className="flex flex-col gap-[8px]">
         {column.items.map((item) => (
           <li key={item.label}>
-            <Link
-              href={item.href}
+            <DropdownItemLink
+              item={item}
               className="text-[14px] leading-[1.4] text-black hover:text-azul transition-colors"
             >
               {item.label}
-            </Link>
+            </DropdownItemLink>
           </li>
         ))}
       </ul>
       {column.footerLink && (
-        <Link
-          href={column.footerLink.href}
+        <DropdownItemLink
+          item={column.footerLink}
           className="flex items-center gap-[10px] mt-[14px] text-[14px] leading-[1.4] text-azul hover:opacity-80 transition-opacity"
         >
           {column.footerLink.label}
           <ArrowIcon width={12} height={9} color="#006CAD" />
-        </Link>
+        </DropdownItemLink>
       )}
     </div>
   );
@@ -395,7 +426,9 @@ export default function Navbar() {
 
             {/* Portal de Acesso */}
             <a
-              href="#"
+              href="https://portal.azulzinhadacaixa.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-[8px] rounded-[6px] py-[10px] text-[14px] text-azul bg-linear-to-b from-white to-[#E3E3E3]"
             >
               <PortalIconMobile />
@@ -474,23 +507,23 @@ export default function Navbar() {
                               {subExpanded && (
                                 <div className="flex flex-col pb-[8px]">
                                   {col.items.map((item) => (
-                                    <Link
+                                    <DropdownItemLink
                                       key={item.label}
-                                      href={item.href}
+                                      item={item}
                                       onClick={closeMobileMenu}
                                       className="block pl-[24px] py-[8px] text-[14px] text-white"
                                     >
                                       {item.label}
-                                    </Link>
+                                    </DropdownItemLink>
                                   ))}
                                   {col.footerLink && (
-                                    <Link
-                                      href={col.footerLink.href}
+                                    <DropdownItemLink
+                                      item={col.footerLink}
                                       onClick={closeMobileMenu}
                                       className="block pl-[24px] py-[8px] text-[14px] text-laranja"
                                     >
                                       {col.footerLink.label}
-                                    </Link>
+                                    </DropdownItemLink>
                                   )}
                                 </div>
                               )}

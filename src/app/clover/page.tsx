@@ -9,6 +9,29 @@ import VideoSection from "@/components/shared/VideoSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
 
+const cloverVideos = [
+  {
+    title: "Como funciona a automação comercial?",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/Fiserv_azulzinha_Automacao_Comercial_V3.mp4",
+  },
+  {
+    title: "Como aproveitar o Portal Clover?",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/video-clover-dashboard.mp4",
+  },
+  {
+    title: "Como gerenciar suas vendas na Clover?",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/video-transacoes.mp4",
+  },
+  {
+    title: "Como acessar seu relatório de vendas?",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/video-relatorios.mp4",
+  },
+  {
+    title: "Como gerenciar sua equipe na Clover?",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/video-Funcionarios.mp4",
+  },
+];
+
 export default function CloverPage() {
   return (
     <main>
@@ -18,7 +41,7 @@ export default function CloverPage() {
         description="Praticidade na gestão e uma experiência de compra que encanta seus clientes"
         checkItems={[]}
         buttonText="Conheça"
-        buttonHref="#clover-discover"
+        buttonHref="#dobra"
         backgroundImage="/images/clover/hero-bg-1f8314.png"
       />
       <CloverDiscoverSection />
@@ -26,7 +49,10 @@ export default function CloverPage() {
       <CloverComparisonSection />
       <CloverAppsSection />
       <FullImageSection />
-      <VideoSection href="https://www.youtube.com/@azulzinhadaCAIXA" />
+      <VideoSection
+        videos={cloverVideos}
+        href="https://www.youtube.com/@azulzinhadaCAIXA"
+      />
       <CtaSection
         title="Descubra o poder do mundo Clover com a azulzinha"
         description="Preencha o formulário e receba uma oferta sob medida com as soluções da Clover e as condições exclusivas que só a CAIXA tem para o seu negócio."

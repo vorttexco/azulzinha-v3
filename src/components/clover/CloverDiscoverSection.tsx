@@ -21,7 +21,7 @@ const features = [
 
 export default function CloverDiscoverSection() {
   return (
-    <section id="clover-discover" className="bg-white">
+    <section id="dobra" className="bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-[110px] flex flex-col lg:flex-row lg:justify-between lg:items-center gap-10 lg:gap-[78px]">
         {/* Left content */}
         <div className="flex flex-col gap-6 lg:w-[537px] shrink-0">

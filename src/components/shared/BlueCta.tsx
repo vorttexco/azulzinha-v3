@@ -14,6 +14,7 @@ interface BlueCtaProps {
   description?: string;
   buttonText?: string;
   buttonHref?: string;
+  buttonTarget?: string;
   icon?: string;
   iconAlt?: string;
   sectionClassName?: string;
@@ -30,6 +31,7 @@ export default function BlueCta({
   description,
   buttonText,
   buttonHref = "#",
+  buttonTarget,
   icon,
   iconAlt = "",
   sectionClassName = "",
@@ -40,6 +42,7 @@ export default function BlueCta({
   storeBadges,
   reverseOnMobile = false,
 }: BlueCtaProps) {
+  const buttonRel = buttonTarget === "_blank" ? "noopener noreferrer" : undefined;
   const hasFeatureLayout = !!featureImage;
   const isCenteredBadges = !featureImage && !!storeBadges?.length;
 
@@ -79,7 +82,7 @@ export default function BlueCta({
                   </div>
                 )}
                 {buttonText && (
-                  <a href={buttonHref} className="btn-laranja self-start">
+                  <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja self-start">
                     {buttonText}
                   </a>
                 )}
@@ -125,7 +128,7 @@ export default function BlueCta({
                 ))}
               </div>
               {buttonText && (
-                <a href={buttonHref} className="btn-laranja">
+                <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja">
                   {buttonText}
                 </a>
               )}
@@ -146,7 +149,7 @@ export default function BlueCta({
                 )}
               </div>
               {buttonText && (
-                <a href={buttonHref} className="btn-laranja">
+                <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja">
                   {buttonText}
                 </a>
               )}

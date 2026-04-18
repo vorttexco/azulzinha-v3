@@ -3,7 +3,7 @@ import { asset } from "@/lib/assets";
 
 export default function SimplifiqueSection() {
   return (
-    <section className="w-full bg-[#F4F4F4]">
+    <section id="conteudo" className="w-full bg-[#F4F4F4]">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
           {/* Text */}

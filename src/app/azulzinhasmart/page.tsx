@@ -14,6 +14,7 @@ import appsData from "@/app/azulzinhasmart/appsData";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
 import BlueCta from "@/components/shared/BlueCta";
+import EMaisSection from "@/components/azulzinha-smart/EMaisSection";
 
 export default function AzulzinhaSmartPage() {
   return (
@@ -24,6 +25,7 @@ export default function AzulzinhaSmartPage() {
         description="Nossa azulzinha mais rápida, moderna, eficiente e com muito mais funcionalidades para multiplicar seu sucesso."
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#conteudo"
         backgroundImage="/images/azulzinha-smart/hero-bg.png"
       />
       <SimplifiqueSection />
@@ -46,6 +48,8 @@ export default function AzulzinhaSmartPage() {
       <BlueCta
         title="Sua azulzinha smart acabou de chegar?"
         buttonText="Leia o manual"
+        buttonHref="https://azulzinhadacaixa.com.br/midias/azulzinhasmart.pdf"
+        buttonTarget="_blank"
         icon="/images/azulzinha-smart/book-icon.png"
         iconAlt="Manual"
       />
@@ -54,6 +58,7 @@ export default function AzulzinhaSmartPage() {
       <MetodosPagamentoSection />
       <BandeirasSection />
       <VideoPlanetaSection />
+      <EMaisSection />
       <CtaSection
         title="Este modelo de maquininha tem tudo a ver com o seu negócio?"
         description=""

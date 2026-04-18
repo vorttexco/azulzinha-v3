@@ -28,7 +28,7 @@ export default function ImprevistoSection() {
               casos de imprevistos e indisponibilidade da automação.
             </p>
             <Link href="/peca-azulzinha" className="btn-laranja text-center">
-              Peça sua azulzinha
+              Peça já a sua azulzinha
             </Link>
           </div>
         </div>

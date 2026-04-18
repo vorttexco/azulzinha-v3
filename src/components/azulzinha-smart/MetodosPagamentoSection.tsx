@@ -4,7 +4,7 @@ import { asset } from "@/lib/assets";
 const methods = [
   {
     icon: "/images/azulzinha-smart/icon-visao.png",
-    title: "Cartão com chip",
+    title: "Cartão",
   },
   {
     icon: "/images/azulzinha-smart/icon-aproximacao.png",

@@ -9,7 +9,7 @@ interface StoreBadge {
 
 interface FeatureSectionProps {
   title: string;
-  paragraphs: string[];
+  paragraphs: React.ReactNode[];
   image: string;
   imageAlt: string;
   imageClassName?: string;

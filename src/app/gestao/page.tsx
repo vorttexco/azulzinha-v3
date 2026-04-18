@@ -12,13 +12,17 @@ export default function GestaoVendasPage() {
         description="No App ou no Portal, gerencie seu negócio e solicite mais serviços com apenas um clique."
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#dobra"
         backgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
       />
+      <div id="dobra" />
       <FeatureSection
         title="Aplicativo da Azulzinha"
         paragraphs={[
           "O App da azulzinha é um canal online que oferece informações para você realizar a gestão do seu negócio quando e onde quiser.",
-          "Gestão das suas vendas de forma simples, rápida e segura.",
+          <span key="destaque" className="text-laranja font-bold">
+            Gestão das suas vendas de forma simples, rápida e segura.
+          </span>,
         ]}
         image="/images/gestao-de-vendas/celular-3.png"
         imageAlt="Aplicativo da Azulzinha"
@@ -27,15 +31,15 @@ export default function GestaoVendasPage() {
         imageWidthMobile="240px"
         imageHeightMobile="380px"
         buttonText="Saiba mais"
-        buttonHref="#"
+        buttonHref="/app"
       />
       <FeatureSection
         title="Portal da Azulzinha"
-        paragraphs={[]}
-        listItems={[
-          "Tenha uma visão clara das suas vendas e pagamentos",
-          "Receba suas vendas de forma antecipada",
-          "Gerencie o seu negócio com um simples acesso",
+        paragraphs={[
+          "O Portal da azulzinha promove informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento sobre as operações efetuadas com cartões.",
+          <span key="destaque" className="text-laranja font-bold">
+            Controle suas vendas em um único lugar.
+          </span>,
         ]}
         image="/images/gestao-de-vendas/laptop_azulzinha1.png"
         imageAlt="Portal da Azulzinha"
@@ -44,7 +48,7 @@ export default function GestaoVendasPage() {
         cardWidth="605px"
         cardHeight="422px"
         buttonText="Saiba mais"
-        buttonHref="#"
+        buttonHref="/portal"
         bgColor="bg-cinza-claro"
         reverse
       />

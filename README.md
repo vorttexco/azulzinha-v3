@@ -27,14 +27,16 @@
 - `/blog` - Blog
 - `/blog/[slug]` - Post do Blog
 - `/taxas-tarifas` - Taxas e Tarifas
-- `/link-pagamento` - Link de Pagamento
-- `/cliente-loterica` - Para sua Lotérica
-- `/mei` - Para sua MEI
+- Link de pagamento
+- Para sua lotérica
+- Para sua MEI
+- Azulzinha Pay
 
 ----------------------------------------------------------------
 
 ## Pendentes
 
-- Azulzinha Pay
+
+
 - Resultado de busca
 

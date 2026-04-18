@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { asset } from "@/lib/assets";
 
 function PlayIcon() {
@@ -19,7 +20,7 @@ function PlayIcon() {
 
 interface SimpleVideoSectionProps {
   title: string;
-  description: string;
+  description: ReactNode;
   thumbnail: string;
   className?: string;
 }

@@ -4,10 +4,10 @@ const nextConfig: NextConfig = {
   ...(process.env.STATIC_EXPORT === "true"
     ? {
         output: "export" as const,
-        basePath: "/azulzinha/v2",
-        assetPrefix: "/azulzinha/v2/",
+        basePath: "/azulzinha",
+        assetPrefix: "/azulzinha/",
         env: {
-          NEXT_PUBLIC_BASE_PATH: "/azulzinha/v2",
+          NEXT_PUBLIC_BASE_PATH: "/azulzinha",
         },
       }
     : {}),

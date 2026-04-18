@@ -25,7 +25,7 @@ interface HeroSectionProps {
   checkItems?: string[];
   buttonText?: string;
   buttonHref?: string;
-  buttonSubtext?: string;
+  buttonSubtext?: string | React.ReactNode;
   backgroundImage?: string;
   mobileBackgroundImage?: string;
   highlightWord?: string;

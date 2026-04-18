@@ -8,19 +8,19 @@ import { useCallback, useEffect, useState } from "react";
 const features = [
   {
     icon: "/images/maquininhas/icon-cartao.png",
-    label: "Visão consolidada",
+    label: "Taxas competitivas",
   },
   {
     icon: "/images/maquininhas/icon-wireless.png",
-    label: "Aproximação",
+    label: "Venda no crediário",
   },
   {
     icon: "/images/maquininhas/icon-qr-code.png",
-    label: "QR Code",
+    label: "Aceita a modalidade Pix",
   },
   {
     icon: "/images/maquininhas/icon-pix.png",
-    label: "Pix",
+    label: "Gestão de vendas no aplicativo",
   },
 ];
 
@@ -32,7 +32,6 @@ const flags = [
   { src: "/images/maquininhas/flag-alelo.png", alt: "Alelo" },
   { src: "/images/maquininhas/flag-amex.png", alt: "Amex" },
   { src: "/images/maquininhas/flag-hiper.png", alt: "Hiper" },
-  { src: "/images/maquininhas/flag-hipercard.png", alt: "Hipercard" },
   { src: "/images/maquininhas/flag-pluxee.png", alt: "Pluxee" },
   { src: "/images/maquininhas/flag-vr.png", alt: "VR" },
 ];
@@ -182,6 +181,10 @@ export default function AzulzinhaIdealSection() {
               </div>
             ))}
           </div>
+
+          <a href="#ancora" className="btn-laranja">
+            Conheça os modelos
+          </a>
 
           {/* Bandeiras */}
           <div className="flex flex-col items-center gap-6 lg:gap-10 w-full">

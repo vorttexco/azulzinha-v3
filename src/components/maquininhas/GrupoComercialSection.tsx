@@ -29,7 +29,7 @@ export default function GrupoComercialSection() {
           {/* Title + Description */}
           <div className="flex flex-col items-stretch gap-6 max-w-[952px]">
             <h2 className="text-[26px] lg:text-[38px] font-normal leading-[1.3] text-center text-azul">
-              <span className="text-laranja"> Grupo Comercial </span> da azulzinha: garanta as melhores condições para os
+              <span className="text-laranja font-bold"> Grupo Comercial </span> da azulzinha: garanta as melhores condições para os
               seus estabelecimentos
             </h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center">

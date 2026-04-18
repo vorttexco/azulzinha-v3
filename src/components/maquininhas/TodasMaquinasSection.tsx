@@ -3,7 +3,7 @@ import { asset } from "@/lib/assets";
 
 export default function TodasMaquinasSection() {
   return (
-    <section className="w-full bg-[#F4F4F4] lg:bg-white">
+    <section id="dobra" className="w-full bg-[#F4F4F4] lg:bg-white">
       <div className="max-w-[1440px] mx-auto px-0 lg:px-[100px] py-14 lg:py-[110px]">
         <div className="relative w-full max-w-[1107px] mx-auto h-[160px] lg:h-[343px] overflow-hidden lg:overflow-visible">
           {/* Decorative shapes */}

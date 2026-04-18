@@ -98,7 +98,7 @@ export default function ModelosSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="bg-white">
+    <section id="manual-section" className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
         <h2 className="section-title text-azul mb-6 lg:mb-[60px]">
           Sua azulzinha pro chegou?

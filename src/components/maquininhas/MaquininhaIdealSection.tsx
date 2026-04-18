@@ -1,7 +1,17 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
-const products = [
+interface Product {
+  name: string;
+  subtitle: string;
+  features: string[];
+  image: string;
+  href: string;
+  imageContained: boolean;
+  manualHref?: string;
+}
+
+const products: Product[] = [
   {
     name: "Clover Flex",
     subtitle: "Para atender no balcão, na mesa ou em qualquer lugar",
@@ -36,6 +46,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-pro.png",
     href: "/maquininhas/pro",
+    manualHref: "/maquininhas/pro#manual-section",
     imageContained: false,
   },
   {
@@ -48,6 +59,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-aproxima.png",
     href: "/azulzinha-aproxima",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/manual_azulzinha_aproxima.pdf",
     imageContained: false,
   },
   {
@@ -61,6 +73,7 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-smart.png",
     href: "/azulzinhasmart",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/azulzinhasmart.pdf",
     imageContained: false,
   },
   {
@@ -74,13 +87,14 @@ const products = [
     ],
     image: "/images/maquininhas/product-azulzinha-tef.png",
     href: "/maquininhas/tef",
+    manualHref: "https://azulzinhadacaixa.com.br/midias/LO_Manual_Azulzinha_Tef_Lane_3000_23_MARC_23_v1.pdf",
     imageContained: false,
   },
 ];
 
 export default function MaquininhaIdealSection() {
   return (
-    <section className="w-full">
+    <section id="ancora" className="w-full">
       {/* Section Title */}
       <div className="bg-white w-full">
         <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pt-14 lg:pt-20 pb-8 lg:pb-[60px]">
@@ -125,9 +139,21 @@ export default function MaquininhaIdealSection() {
                     ))}
                   </ul>
 
-                  <a href={product.href} className="btn-laranja self-start">
-                    Comece agora
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-4 items-start">
+                    <a href={product.href} className="btn-laranja">
+                      Saiba mais
+                    </a>
+                    {product.manualHref && (
+                      <a
+                        href={product.manualHref}
+                        target={product.manualHref.startsWith("http") ? "_blank" : undefined}
+                        rel={product.manualHref.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="btn-laranja"
+                      >
+                        Baixe o manual
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 {/* Product Image with rectangle card */}

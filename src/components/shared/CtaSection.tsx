@@ -17,6 +17,7 @@ interface CtaSectionProps {
   description?: string;
   buttonText?: string;
   buttonHref?: string;
+  buttonTarget?: string;
   button2Text?: string;
   button2Href?: string;
   image?: string;
@@ -30,6 +31,7 @@ export default function CtaSection({
   description = "Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.",
   buttonText = "Peça já a sua",
   buttonHref = "#",
+  buttonTarget,
   button2Text,
   button2Href = "#",
   image = "/images/cta-photo.png",
@@ -81,6 +83,8 @@ export default function CtaSection({
             <div className={`flex ${button2Text ? "flex-col lg:flex-row gap-4 lg:gap-6" : ""}`}>
               <a
                 href={buttonHref}
+                target={buttonTarget}
+                rel={buttonTarget === "_blank" ? "noopener noreferrer" : undefined}
                 className="btn-laranja text-center"
               >
                 {buttonText}

@@ -2,35 +2,34 @@
 
 import Image from "next/image";
 import { asset } from "@/lib/assets";
-import ArrowIcon from "@/components/shared/ArrowIcon";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
 const products = [
   {
     title: "Comprovantes",
-    description: "Receba automaticamente todos os comprovantes de transações aprovadas.",
+    description: "Envie por SMS, e-mail ou até WhatsApp o comprovante de qualquer venda realizada.",
     image: "/images/azulzinha-aproxima/phone-comprovantes.png",
     imageWidth: 289,
     imageHeight: 301,
   },
   {
     title: "Estorno",
-    description: "Visualize o relatório parcial e total de vendas do dia.",
+    description: "Você pode fazer o estorno de uma transação realizada no mesmo dia, utilizando o mesmo meio de pagamento.",
     image: "/images/azulzinha-aproxima/phone-estorno.png",
     imageWidth: 199,
     imageHeight: 327,
   },
   {
     title: "Comprovante automático",
-    description: "Envie por SMS, e-mail ou até WhatsApp o comprovante de qualquer venda realizada.",
+    description: "Receba automaticamente todos os comprovantes de transações aprovadas.",
     image: "/images/azulzinha-aproxima/phone-comprovante-auto.png",
     imageWidth: 179,
     imageHeight: 294,
   },
   {
     title: "Relatório",
-    description: "Você pode fazer o estorno de uma transação realizada no mesmo dia, utilizando o mesmo meio de pagamento.",
+    description: "Visualize o relatório parcial e total de vendas do dia.",
     image: "/images/azulzinha-aproxima/phone-relatorio.png",
     imageWidth: 151,
     imageHeight: 279,
@@ -66,11 +65,7 @@ function FloatCard({
       {/* Card */}
       <div className="w-full bg-white rounded-[12px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] pt-[140px] pb-6 px-6 flex flex-col gap-2">
         <h3 className="text-[18px] font-normal leading-[1.4] text-azul">{title}</h3>
-        <p className="text-[14px] font-normal leading-[1.4] text-black h-[80px]">{description}</p>
-        <a href="#" className="inline-flex items-center gap-2 text-[14px] font-normal leading-[1.4] text-azul">
-          Saiba mais
-          <ArrowIcon width={16} height={12} color="#FC8F01" />
-        </a>
+        <p className="text-[14px] font-normal leading-[1.4] text-black">{description}</p>
       </div>
     </div>
   );
@@ -99,7 +94,7 @@ export default function ProductFeaturesSection() {
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
         <h2 className="section-title text-azul mb-6 lg:mb-[60px]">
-          Escolha a azulzinha ideal para o seu negócio
+          Aproveite para gerenciar o seu negócio
         </h2>
 
         {/* Desktop grid */}

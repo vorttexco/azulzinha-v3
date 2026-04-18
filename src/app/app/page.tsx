@@ -43,7 +43,7 @@ function PhoneCarouselSection() {
   return (
     <section className="bg-white">
       <div className="max-w-[1440px] flex flex-col items-start mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
-        <h2 className="section-title text-azul mb-6 lg:mb-8">
+        <h2 className="section-title text-azul text-left mb-6 lg:mb-8">
           Gerencie suas vendas de qualquer lugar
         </h2>
         <div className="flex flex-col items-start gap-6 lg:gap-8">
@@ -201,8 +201,10 @@ export default function GestaoAppPage() {
         description="Controle suas vendas, antecipe recebíveis, crie links de pagamento e muito mais"
         checkItems={[]}
         buttonText="Conheça o app"
+        buttonHref="#dobra"
         backgroundImage="/images/app-azulzinha/app-hero.png"
       />
+      <div id="dobra" />
       <FeatureSection
         title="Aplicativo da azulzinha"
         paragraphs={[
@@ -315,6 +317,19 @@ export default function GestaoAppPage() {
         </div>
       </section>
 
+      {/* Contribua com avaliação */}
+      <section className="bg-cinza-claro">
+        <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px] flex flex-col items-center">
+          <h2 className="section-title text-azul mb-4 lg:mb-6">
+            Que tal contribuir com a sua avaliação também?
+          </h2>
+          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[921px]">
+            Conte-nos sobre sua experiência escrevendo uma avaliação na loja de
+            aplicativos, é simples e rápido!
+          </p>
+        </div>
+      </section>
+
       {/* BlueCta with app image */}
       <BlueCta
         title="Baixe agora para começar a usar o App da azulzinha."
@@ -335,22 +350,6 @@ export default function GestaoAppPage() {
           },
         ]}
       />
-
-      {/* Contribua com avaliação */}
-      <section className="bg-cinza-claro">
-        <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px] flex flex-col items-center">
-          <h2 className="section-title text-azul mb-4 lg:mb-6">
-            Que tal contribuir com a sua avaliação também?
-          </h2>
-          <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[921px]">
-            Conte-nos sobre sua experiência escrevendo uma avaliação na loja de
-            aplicativos, é simples e rápido!
-          </p>
-          <a href="#" className="btn-laranja mt-8">
-            Avaliar App da azulzinha
-          </a>
-        </div>
-      </section>
 
       <Footer />
     </main>

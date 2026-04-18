@@ -178,6 +178,8 @@ export default function VideoSection({
           </p>
           <a
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-laranja inline-flex items-center gap-2"
           >
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">

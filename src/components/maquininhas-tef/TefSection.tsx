@@ -3,7 +3,7 @@ import { asset } from "@/lib/assets";
 
 export default function TefSection() {
   return (
-    <section className="w-full bg-white">
+    <section id="manual-section" className="w-full bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-[110px]">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-[78px] lg:justify-between">
           {/* Text content */}
@@ -27,7 +27,12 @@ export default function TefSection() {
               </p>
             </div>
             {/* Button - desktop only (below text) */}
-            <a href="#" className="btn-laranja hidden lg:inline-block">
+            <a
+              href="https://azulzinhadacaixa.com.br/midias/LO_Manual_Azulzinha_Tef_Lane_3000_23_MARC_23_v1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-laranja hidden lg:inline-block"
+            >
               Baixe o manual
             </a>
           </div>
@@ -47,7 +52,12 @@ export default function TefSection() {
           </div>
 
           {/* Button - mobile only (below image) */}
-          <a href="#" className="btn-laranja lg:hidden">
+          <a
+            href="https://azulzinhadacaixa.com.br/midias/LO_Manual_Azulzinha_Tef_Lane_3000_23_MARC_23_v1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-laranja lg:hidden"
+          >
             Baixe o manual
           </a>
         </div>

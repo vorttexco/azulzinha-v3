@@ -32,7 +32,9 @@ export default function AjudaPage() {
                 imageBorderRadius="rounded-[30px]"
                 hideCard
             />
-            <VideoSection />
+            <div id="videos">
+                <VideoSection />
+            </div>
             <HelpFaqSection faqData={faqData} />
             <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />
             <HelpCtaSection />

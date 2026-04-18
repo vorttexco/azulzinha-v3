@@ -40,10 +40,6 @@ export default function MaquininhasProPage() {
             title: "Como conectar sua azulzinha pro no Wi-fi",
             thumbnail: "/images/maquininhas-pro/video-thumb-3.png",
           },
-          {
-            title: "Como fazer vendas parceladas",
-            thumbnail: "/images/maquininhas-pro/video-thumb-4.png",
-          },
         ]}
       />
       <CtaSection

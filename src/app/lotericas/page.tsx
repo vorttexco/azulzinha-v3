@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import BenefitsSection from "@/components/shared/BenefitsSection";
@@ -6,6 +7,7 @@ import BlueCta from "@/components/shared/BlueCta";
 import Footer from "@/components/shared/Footer";
 import NoDebitoSection from "@/components/cliente-loterica/NoDebitoSection";
 import AproveiteCondicoesSection from "@/components/cliente-loterica/AproveiteCondicoesSection";
+import { asset } from "@/lib/assets";
 
 const beneficiosItems = [
   { icon: "/images/portal-azulzinha/portal1.png", text: "Não há cobrança de aluguel ou taxa para você, Lotérico" },
@@ -40,13 +42,15 @@ export default function ClienteLoterica() {
       <Navbar />
 
       <HeroSection
-        title="Fature ainda mais com a azulzinha Lotérica pro de Vendas"
+        title="Fature ainda mais com a azulzinha Lotérica pro"
         description="Aumente seu faturamento recebendo boletos, jogos e contas com qualquer cartão no TFL ou com a azulzinha pro."
         checkItems={[]}
         buttonText="Saiba mais"
+        buttonHref="#dobra"
         backgroundImage="/images/cliente-loterica/hero-bg.png"
       />
 
+      <div id="dobra" />
       <NoDebitoSection />
 
       <BenefitsSection
@@ -68,10 +72,17 @@ export default function ClienteLoterica() {
 
       <section className="bg-white">
         <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 flex flex-col items-center gap-[30px] lg:gap-[60px]">
+          <Image
+            src={asset("/images/conveniencia/lotericalogo.png")}
+            alt="azulzinha Lotérica"
+            width={220}
+            height={60}
+            className="object-contain h-auto w-auto max-h-[60px]"
+          />
           <h2 className="section-title text-azul max-w-[876px]">
             Quer saber como pagar suas contas na Lotérica?
           </h2>
-          <a href="#" className="btn-laranja">
+          <a href="/cliente-loterica" className="btn-laranja">
             Clique aqui
           </a>
         </div>
@@ -81,6 +92,8 @@ export default function ClienteLoterica() {
         title="Habilite o Serviço de Conveniência"
         description="No Conexão Parceiros, aceite o &ldquo;Termo de Credenciamento azulzinha Serviço de Conveniência&rdquo; e acesse a cartilha e o vídeo com o passo a passo de ativação."
         buttonText="Ir para o Conexão Parceiros"
+        buttonHref="https://www.parceiros.caixa.gov.br/"
+        buttonTarget="_blank"
         sectionClassName="bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]"
         contentClassName="!px-[100px]"
       />

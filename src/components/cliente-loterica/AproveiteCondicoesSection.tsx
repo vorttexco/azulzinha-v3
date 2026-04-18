@@ -46,7 +46,15 @@ export default function AproveiteCondicoesSection() {
         </div>
 
         <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[605px]">
-          Contrate já pelo <span className="text-laranja">App</span>, <span className="text-laranja">Portal</span> ou Central de Atendimento da azulzinha!
+          Contrate já pelo{" "}
+          <a href="/app" className="text-laranja">
+            App
+          </a>
+          ,{" "}
+          <a href="/portal" className="text-laranja">
+            Portal
+          </a>{" "}
+          ou Central de Atendimento da azulzinha!
         </p>
       </div>
     </section>

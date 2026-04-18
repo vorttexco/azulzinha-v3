@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
@@ -62,6 +64,9 @@ export default function HeroSection({
   overlayColor = "blue",
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
+  const pathname = usePathname();
+  const isInPageAnchor =
+    buttonHref.startsWith("#") && buttonHref.length > 1;
 
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -155,14 +160,23 @@ export default function HeroSection({
             />
           )}
 
-          {buttonText && (
-            <a
-              href={buttonHref}
-              className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
-            >
-              {buttonText}
-            </a>
-          )}
+          {buttonText &&
+            (isInPageAnchor ? (
+              <Link
+                href={`${pathname}${buttonHref}`}
+                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
+                scroll
+              >
+                {buttonText}
+              </Link>
+            ) : (
+              <a
+                href={buttonHref}
+                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
+              >
+                {buttonText}
+              </a>
+            ))}
 
           {buttonSubtext && (
             <p className="text-[12px] font-normal leading-[1.4] pr-20 text-[#666666] mt-3 lg:mt-12">

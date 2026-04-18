@@ -11,6 +11,7 @@ interface BenefitsSectionProps {
   items: BenefitItem[];
   textColor?: string;
   bgColor?: string;
+  centerLastRow?: boolean;
 }
 
 export default function BenefitsSection({
@@ -18,7 +19,11 @@ export default function BenefitsSection({
   items,
   textColor = "text-black",
   bgColor = "bg-white",
+  centerLastRow = false,
 }: BenefitsSectionProps) {
+  const gridClass = centerLastRow
+    ? "lg:grid-cols-6 [&>div]:lg:col-span-2 [&>div:nth-child(4)]:lg:col-start-2"
+    : "lg:grid-cols-3";
   return (
     <section className={bgColor}>
       <div className="max-w-360 mx-auto py-14 lg:pb-27.5 px-7.5 lg:px-25">
@@ -26,7 +31,7 @@ export default function BenefitsSection({
           {title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${gridClass}`}>
           {items.map((item) => (
             <div
               key={item.text}

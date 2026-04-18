@@ -64,7 +64,7 @@ export default function Accordion({
 
           <div
             className={`overflow-hidden transition-all duration-300 ${
-              openIndex === index ? "max-h-[500px]" : "max-h-0"
+              openIndex === index ? "max-h-[1500px]" : "max-h-0"
             }`}
           >
             <div className={`pb-[32px] ${contentClassName}`}>{item.content}</div>

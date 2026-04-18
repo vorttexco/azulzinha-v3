@@ -15,9 +15,11 @@ export default function PortalPage() {
                 title="Portal da azulzinha"
                 description="Faça a gestão completa do seu negócio com um simples acesso no computador."
                 checkItems={[]}
-                buttonText="Conheça"
+                buttonText="Saiba mais"
+                buttonHref="#dobraportal"
                 backgroundImage="/images/hero-backgrounds/portal-azulzinha.png"
             />
+            <div id="dobraportal" />
             <FeatureSection
                 title="Portal da azulzinha: gestão completa do seu negócio"
                 paragraphs={[]}
@@ -31,7 +33,7 @@ export default function PortalPage() {
                 imageWidth="911px"
                 imageHeight="471px"
                 buttonText="Assista ao vídeo"
-                buttonHref="#" />
+                buttonHref="#video-portal" />
             <FeatureSection
                 title="Cuide das suas vendas no Portal da azulzinha em tempo real"
                 paragraphs={[
@@ -50,6 +52,7 @@ export default function PortalPage() {
             <BenefitsSection
                 title="Vantagens de usar o Portal da azulzinha"
                 textColor="text-azul"
+                centerLastRow
                 items={[
                     { icon: "/images/portal-azulzinha/portal1.png", text: "Administre todas as suas vendas" },
                     { icon: "/images/portal-azulzinha/portal2.png", text: "Consulte taxas e tarifas" },
@@ -65,6 +68,7 @@ export default function PortalPage() {
                 iconAlt="Manual"
                 sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
             />
+            <div id="video-portal" />
             <SimpleVideoSection
                 title=""
                 description=""

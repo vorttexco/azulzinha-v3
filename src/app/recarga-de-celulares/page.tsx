@@ -14,9 +14,13 @@ export default function RecargaTelefone() {
         title="Recarga de Telefonia"
         description="Habilite o serviço sem custo na sua maquininha e tenha uma oportunidade extra de receita."
         checkItems={[]}
-        buttonText="Conheça"
+        buttonText="Veja como"
+        buttonHref="#dobra"
         backgroundImage="/images/hero-backgrounds/recarga-telefone.png"
       />
+
+      <div id="dobra" />
+
       {/* Feature + Cards no mesmo bloco com gradiente */}
       <div className="bg-linear-to-t from-[#F2F2F2] to-white">
         <FeatureSection
@@ -57,6 +61,7 @@ export default function RecargaTelefone() {
       <BlueCta
         title="Conheça também as soluções para vendas online da azulzinha"
         buttonText="Saiba mais"
+        buttonHref="/vendas-online"
       />
       <Footer />
     </main>

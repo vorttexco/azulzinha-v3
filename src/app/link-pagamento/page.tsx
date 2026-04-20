@@ -160,8 +160,8 @@ export default function LinkPagamento() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
-          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
+          { image: "/images/android.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
+          { image: "/images/apple.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
         ]}
       />
 

@@ -126,6 +126,158 @@ const faqItems = [
       </p>
     ),
   },
+  {
+    title: "O que preciso fazer para transacionar com Pix na azulzinha?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Para transacionar com Pix na azulzinha, cadastre sua chave e credenciais na CAIXA e, depois, cadastre a mesma chave no App da azulzinha ou diretamente no POS (maquininha).
+      </p>
+    ),
+  },
+  {
+    title: 'O "Client ID" e "Client Secret" são a mesma coisa que "Usuário" e "Senha"?',
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Sim. Na jornada, &ldquo;Usuário&rdquo; e &ldquo;Senha&rdquo; correspondem ao &ldquo;Client ID&rdquo; e &ldquo;Client Secret&rdquo;.
+      </p>
+    ),
+  },
+  {
+    title: "A chave aleatória é a mesma coisa que chave única?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Sim.
+      </p>
+    ),
+  },
+  {
+    title: "Posso repetir a mesma chave para PSPs diferentes?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Não, a chave é única. Caso necessário, solicite a portabilidade da chave para outro PSP ou crie uma nova. Para usar uma chave Pix em um POS concorrente, cadastre outra chave junto ao seu PSP. Não utilize a mesma chave Pix para o POS e para demais transferências de valores. Associe uma chave Pix em seu PSP para utilização exclusiva com a azulzinha. Após a conclusão do cadastro no PSP, utilize um dos canais disponíveis (app ou POS) para cadastrar essa chave.
+      </p>
+    ),
+  },
+  {
+    title: "Posso usar uma chave já cadastrada em um POS concorrente?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Não. A chave é única; para usar a azulzinha, cadastre uma nova chave junto ao seu PSP.
+      </p>
+    ),
+  },
+  {
+    title: "Todos os PSPs funcionam para transacionar Pix na azulzinha?",
+    content: (
+      <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black flex flex-col gap-3">
+        <p>A azulzinha é multi-PSPs. A lista* de PSPs disponíveis pode ser consultada no App da azulzinha, no POS ou no site. Confira também abaixo:</p>
+        <ul className="list-disc pl-6 flex flex-col gap-1">
+          <li>CAIXA</li>
+          <li>Ailos</li>
+          <li>Banco do Brasil</li>
+          <li>Banco Triângulo</li>
+          <li>Banrisul</li>
+          <li>Bradesco</li>
+          <li>Cresol</li>
+          <li>Efí Bank</li>
+          <li>Itaú</li>
+          <li>PicPay</li>
+          <li>Quero-Quero Pag</li>
+          <li>Santander</li>
+          <li>Senff</li>
+        </ul>
+        <p className="text-[14px] text-[#666666]">*Lista sujeita à atualização.</p>
+      </div>
+    ),
+  },
+  {
+    title: "O cadastro da chave é instantâneo no App da azulzinha?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Sim. O cadastro é realizado de forma online, mas os PSPs podem aplicar um período de sincronismo.
+      </p>
+    ),
+  },
+  {
+    title: "Por que o cadastro de chave no POS solicita validação em duas etapas?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Por segurança, é solicitada a confirmação do token enviado para o e-mail ou telefone cadastrados no credenciamento. Se os dados estiverem incorretos, entre em contato conosco pelos nossos canais de atendimento para atualizar seus dados cadastrais.
+      </p>
+    ),
+  },
+  {
+    title: "Se houver falha na vinculação do cadastro, quais erros podem ser apresentados?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Podem ser exibidos erros como: &ldquo;Não Autorizado&rdquo;, &ldquo;MA&rdquo; (erro de chave Pix), &ldquo;ZA&rdquo; (erro de credenciais Pix) e &ldquo;BL&rdquo; (credencial não enviada pelo PSP).
+      </p>
+    ),
+  },
+  {
+    title: "Realizei o cadastro corretamente e não consigo transacionar. O que devo fazer?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Se o erro for MA, ZA, BL ou 03, revise os dados cadastrados da chave e das credenciais Pix.
+      </p>
+    ),
+  },
+  {
+    title: "O que fazer se a transação foi confirmada no app do PSP, mas não foi gerado o CV (comprovante de venda) no POS?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        A transação só é efetivada após a geração do CV, assim como ocorre nas transações convencionais de débito e crédito. Caso a confirmação ocorra apenas no app do pagador, sem a geração do CV no POS, a transação será automaticamente desfeita, conforme regra do Banco Central. Nessa situação, o produto ou serviço não deve ser entregue ao pagador.
+      </p>
+    ),
+  },
+  {
+    title: "Estou com dúvida se a transação foi efetivada.",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Para garantir a confirmação da transação, antes de entregar o produto ou serviço, acesse o menu de reimpressão e verifique a última transação realizada.
+      </p>
+    ),
+  },
+  {
+    title: "Estou com dificuldades para localizar o valor transferido.",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Em caso de dificuldade para localizar um valor transferido, consulte o relatório disponível na azulzinha ou no app para confirmar se a transação foi realizada. Também é possível verificar diretamente no app do PSP recebedor. Caso haja qualquer dificuldade com o valor transferido, entre em contato diretamente com o PSP responsável pela liquidação.
+      </p>
+    ),
+  },
+  {
+    title: "A azulzinha cobra pela utilização do Pix?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Não há cobrança de valor adicional para habilitar o serviço de Pix no seu POS da azulzinha, porém, recomenda-se exercer o acordo comercial diretamente com seu PSP/gerente para fechar o valor da taxa que estará associada à transação de Pix.
+      </p>
+    ),
+  },
+  {
+    title: "Como transacionar com Pix Saque e Pix Troco?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Para utilizar Pix Saque e Pix Troco na azulzinha, contrate o serviço de Agente de Saque e/ou Troco junto ao PSP e confirme se ele está apto a operar com a azulzinha.
+      </p>
+    ),
+  },
+  {
+    title: "O que fazer em caso de fraude, roubo, furto ou golpe?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Em situações como essa, recomendamos seguir os passos a seguir para garantir a apuração adequada do caso. Primeiro, registre um Boletim de Ocorrência (BO) junto à autoridade policial. Depois, registre uma reclamação junto ao seu PSP e à azulzinha, informando todos os dados, comprovantes e documentos relacionados ao caso, incluindo o BO. Em caso de indício de crime, o PSP deverá avaliar a situação e realizar a devolução dos valores, conforme a regulamentação aplicável. Por fim, caso o PSP não caracterize o ocorrido como crime, procure o Procon ou o Poder Judiciário da sua região.
+      </p>
+    ),
+  },
+  {
+    title: "Posso usar a mesma chave Pix das transferências no POS?",
+    content: (
+      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        Não. A chave é única; utilize uma chave exclusiva para o POS da azulzinha, conforme explicado anteriormente.
+      </p>
+    ),
+  },
 ];
 
 export default function PixAzulzinha() {
@@ -258,6 +410,7 @@ export default function PixAzulzinha() {
         title="Perguntas frequentes"
         items={faqItems}
         buttonText="Ver todas perguntas"
+        initialCount={5}
       />
 
       <Footer />

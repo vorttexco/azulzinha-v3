@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Accordion, { AccordionItem } from "@/components/shared/Accordion";
 
 const defaultFaqItems: AccordionItem[] = [
@@ -34,6 +35,7 @@ interface FaqSectionProps {
   items?: AccordionItem[];
   buttonText?: string;
   buttonHref?: string;
+  initialCount?: number;
 }
 
 export default function FaqSection({
@@ -41,7 +43,12 @@ export default function FaqSection({
   items = defaultFaqItems,
   buttonText,
   buttonHref = "#",
+  initialCount,
 }: FaqSectionProps = {}) {
+  const [showAll, setShowAll] = useState(false);
+  const isCollapsible = initialCount !== undefined && items.length > initialCount;
+  const visibleItems = isCollapsible && !showAll ? items.slice(0, initialCount) : items;
+
   return (
     <section className="bg-[#F4F4F4]">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 px-[30px] lg:px-[100px]">
@@ -50,7 +57,7 @@ export default function FaqSection({
         </h2>
 
         <div className="flex flex-col gap-6 max-w-[1070px] mx-auto">
-          {items.map((item, index) => (
+          {visibleItems.map((item, index) => (
             <Accordion
               key={index}
               items={[item]}
@@ -62,11 +69,17 @@ export default function FaqSection({
           ))}
         </div>
 
-        {buttonText && (
+        {(buttonText || isCollapsible) && (
           <div className="flex justify-center mt-8 lg:mt-[60px]">
-            <a href={buttonHref} className="btn-laranja">
-              {buttonText}
-            </a>
+            {isCollapsible ? (
+              <button onClick={() => setShowAll(v => !v)} className="btn-laranja">
+                {showAll ? "Ver menos perguntas" : buttonText ?? "Ver todas perguntas"}
+              </button>
+            ) : (
+              <a href={buttonHref} className="btn-laranja">
+                {buttonText}
+              </a>
+            )}
           </div>
         )}
       </div>

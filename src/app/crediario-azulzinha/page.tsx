@@ -14,7 +14,7 @@ const faqItems = [
     title: "O que é o Crediário da azulzinha da CAIXA?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        O Crediário permite que você realize vendas parceladas em até 48 vezes, enquanto recebe o valor total da venda à vista. É uma solução ideal para aumentar o ticket médio e facilitar compras de maior valor para seus clientes.
+        O Crediário permite que você realize vendas parceladas em até 48 vezes, enquanto recebe o valor total da venda à vista. Assim, seus clientes podem pagar de forma acessível, e você garante o recebimento imediato, com uma única taxa aplicada.
       </p>
     ),
   },
@@ -22,31 +22,41 @@ const faqItems = [
     title: "Como funcionam as taxas e o número de parcelas?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        As taxas e o número de parcelas disponíveis variam de acordo com o banco emissor de cada cartão de crédito. Você pode simular as condições diretamente na sua azulzinha antes de finalizar a venda.
+        As taxas e a quantidade de parcelas podem variar de acordo com o banco emissor do cartão do cliente. Consulte as condições no simulador da sua azulzinha.
       </p>
     ),
   },
   {
     title: "Quais as vantagens do Crediário para o meu negócio?",
     content: (
-      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Com o Crediário você recebe o valor total da venda à vista, aumenta o ticket médio, facilita compras de maior valor e não precisa se preocupar com inadimplência.
-      </p>
+      <ul className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black flex flex-col gap-2 list-disc pl-5">
+        <li>Recebimento garantido: Receba o valor integral da venda, independentemente do número de parcelas escolhidas pelo cliente;</li>
+        <li>Vendas maiores: Permita que seus clientes comprem valores mais altos com parcelas que cabem no bolso;</li>
+        <li>Inadimplência zero:Sem análise de crédito ou complicações; as parcelas são cobradas diretamente na fatura do cliente;</li>
+        <li>Crédito para sua loja: Antecipe seus recebíveis e melhore o fluxo de caixa;</li>
+        <li>Gestão centralizada: Controle suas vendas e recebimentos futuros direto no App e no Portal da azulzinha.</li>
+      </ul>
     ),
   },
   {
     title: "Como faço uma venda parcelada no Crediário?",
     content: (
-      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Basta digitar o valor da venda, selecionar a opção &quot;Venda digitada&quot;, escolher &quot;Crediário&quot;, definir o número de parcelas e inserir os dados do cartão do cliente.
-      </p>
+      <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black flex flex-col gap-3">
+        <p>Sua azulzinha já vem pronta para aceitar cartões de crédito. Para realizar uma venda no Crediário, siga estes passos:</p>
+        <ol className="list-decimal pl-5 flex flex-col gap-2">
+          <li>Insira o valor da compra na maquininha;</li>
+          <li>Selecione a opção &ldquo;Crediário&rdquo;;</li>
+          <li>Use o simulador para ajudar o cliente a escolher o número de parcelas;</li>
+          <li>Confirme a venda e entregue o comprovante ao cliente.</li>
+        </ol>
+      </div>
     ),
   },
   {
     title: "Preciso realizar uma análise de crédito para oferecer o Crediário?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Não. As parcelas são cobradas diretamente na fatura do cartão de crédito do cliente, sem necessidade de análise de crédito por parte do estabelecimento.
+        Não. O Crediário da azulzinha não exige análise de crédito. As parcelas serão cobradas diretamente na fatura do cartão do cliente.
       </p>
     ),
   },
@@ -54,7 +64,7 @@ const faqItems = [
     title: "Como posso antecipar meus recebíveis de vendas parceladas?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Você pode antecipar seus recebíveis diretamente pelo App ou Portal da azulzinha, com condições especiais para vendas realizadas no Crediário.
+        No App ou no Portal da azulzinha, você pode acessar as opções de antecipação de recebíveis e escolher a melhor condição para impulsionar seu fluxo de caixa.
       </p>
     ),
   },
@@ -66,30 +76,35 @@ const highlightCards: CarouselCard[] = [
     description: "Soluções digitais para vender na internet. Link de pagamento, E-commerce, Pagamentos por WhatsApp",
     image: "/images/crediario-azulzinha/highlight-venda-online.png",
     variant: "default",
+    href: "/vendas-online",
   },
   {
     title: "Serviços",
     description: "Soluções integradas. Antecipação de Vendas, Pix, Pagamento Parcial, Recarga de Telefonia",
     image: "/images/crediario-azulzinha/highlight-servicos.png",
     variant: "variant2",
+    href: "/antecipacao-de-vendas",
   },
   {
     title: "Gestão de venda",
     description: "Ferramentas da azulzinha. App da azulzinha, E-commerce, Portal da azulzinha",
     image: "/images/crediario-azulzinha/highlight-gestao.png",
     variant: "default",
+    href: "/gestao",
   },
   {
     title: "Suporte",
     description: "Canais de atendimento. WhatsApp, Central de Relacionamento, Página de Ajuda",
     image: "/images/crediario-azulzinha/highlight-suporte.png",
     variant: "variant3",
+    href: "/ajuda",
   },
   {
     title: "Blog Azulzinha",
     description: "Conteúdos úteis para impulsionar sua estratégia de vendas. Blog da azulzinha",
     image: "/images/crediario-azulzinha/highlight-blog.png",
     variant: "default",
+    href: "/blog",
   },
 ];
 
@@ -103,8 +118,11 @@ export default function CrediarioAzulzinha() {
         description="Ofereça parcelamentos em até 48x no crédito e receba à vista"
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#conheça"
         backgroundImage="/images/crediario-azulzinha/hero-bg.png"
       />
+
+      <div id="conheça" />
 
       <FeatureSection
         title="Venda a prazo, receba à vista e aumente seu faturamento"
@@ -114,6 +132,7 @@ export default function CrediarioAzulzinha() {
         image="/images/crediario-azulzinha/crediario-tela.png"
         imageAlt="Tela do crediário na azulzinha"
         buttonText="Siga o passo a passo"
+        buttonHref="#beneficios-section"
         cardWidth="605px"
         cardHeight="398px"
         imageWidth="292px"
@@ -128,7 +147,17 @@ export default function CrediarioAzulzinha() {
 
       <BeneficiosCrediarioSection />
 
-      <StepsCarouselSection />
+      <StepsCarouselSection
+        headerContent={
+          <div className="flex flex-col gap-4">
+            <p className=" section-title text-left tracking-widest text-azul uppercase">Tutorial</p>
+            <h2 className="section-title text-azul text-left">Como fazer uma venda no Crediário</h2>
+            <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
+              Sua azulzinha já vem pronta para aceitar cartões de crédito. Siga o passo a passo para acessar o simulador e fazer sua primeira transação:
+            </p>
+          </div>
+        }
+      />
 
       <CtaSection
         title="Com a azulzinha da CAIXA você pode muito mais!"

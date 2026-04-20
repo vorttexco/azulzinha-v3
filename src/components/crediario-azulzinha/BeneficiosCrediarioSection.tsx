@@ -79,7 +79,7 @@ export default function BeneficiosCrediarioSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="bg-white">
+    <section id="beneficios-section" className="bg-white">
       <div className="max-w-[1440px] mx-auto py-14 lg:py-20 lg:px-[100px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 px-[30px] lg:px-0 mb-8 lg:mb-[60px]">
@@ -141,12 +141,18 @@ export default function BeneficiosCrediarioSection() {
                 key={i}
                 onClick={() => emblaApi?.scrollTo(i)}
                 aria-label={`Ir para ${i + 1}`}
-                className={`rounded-full transition-all duration-300 cursor-pointer h-[6px] ${
-                  i === selectedIndex ? "w-7 bg-laranja" : "w-[6px] bg-[#D9D9D9]"
-                }`}
+                className={`rounded-full transition-all duration-300 cursor-pointer h-[6px] ${i === selectedIndex ? "w-7 bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+                  }`}
               />
             ))}
           </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-8 lg:mt-15 px-7.5 lg:px-0">
+          <a href="/peca-azulzinha" className="btn-laranja">
+            Ainda não tem sua azulzinha? Peça já
+          </a>
         </div>
       </div>
     </section>

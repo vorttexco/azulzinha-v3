@@ -16,12 +16,12 @@ const defaultSteps: StepItem[] = [
   { number: 1, text: "Digite o valor da venda e toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-1.png" },
   { number: 2, text: "Selecione a opção 5: 'Venda digitada' como forma de pagamento.", image: "/images/crediario-azulzinha/step-2.png" },
   { number: 3, text: "Escolha 'Crediário' para acessar o simulador.", image: "/images/crediario-azulzinha/step-3.png" },
-  { number: 4, text: "Na tela de Simulação de Crediário, escolha o número de parcelas e toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-4.png" },
+  { number: 4, text: "Na tela de Simulação de Crediário, escolha o número de parcelas e toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-6.png" },
   { number: 5, text: "Insira o número e a data de vencimento do cartão.", image: "/images/crediario-azulzinha/step-5.png" },
-  { number: 6, text: "Digite o código de segurança (CVC) que está no verso do cartão e toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-6.png" },
-  { number: 7, text: "Confira os dados na tela de confirmação e toque em 'Sim' para avançar.", image: "/images/crediario-azulzinha/step-7.png" },
+  { number: 6, text: "Digite o código de segurança (CVC) que está no verso do cartão e toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-4.png" },
+  { number: 7, text: "Confira os dados na tela de confirmação e toque em 'Sim' para avançar.", image: "/images/crediario-azulzinha/step-9.png" },
   { number: 8, text: "Um resumo das condições de parcelamento aparecerá. Toque em 'Continuar'.", image: "/images/crediario-azulzinha/step-8.png" },
-  { number: 9, text: "Na tela de simulações, toque na opção desejada para finalizar a compra.", image: "/images/crediario-azulzinha/step-9.png" },
+  { number: 9, text: "Na tela de simulações, toque na opção desejada para finalizar a compra.", image: "/images/crediario-azulzinha/step-7.png" },
   { number: 10, text: "Pronto! O crediário foi realizado com sucesso. Compartilhe o comprovante.", image: "/images/crediario-azulzinha/step-10.png" },
 ];
 

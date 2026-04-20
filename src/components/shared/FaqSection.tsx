@@ -56,7 +56,7 @@ export default function FaqSection({
               items={[item]}
               defaultOpenIndex={index === 0 ? 0 : null}
               className="bg-white rounded-[20px] px-8 lg:px-10"
-              titleClassName="text-[20px] lg:text-[26px] font-normal leading-[1.1] text-black"
+              titleClassName="text-[20px] lg:text-[26px] font-normal leading-[1.1] text-black text-left"
               showDividers={false}
             />
           ))}

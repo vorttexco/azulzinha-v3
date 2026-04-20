@@ -62,24 +62,37 @@ const faqItems = [
   {
     title: "Sou cliente azulzinha, como faço para receber pagamentos pelo WhatsApp?",
     content: (
-      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Para habilitar a função de pagamentos no WhatsApp, você precisa selecionar a Fiserv como &quot;parceiro de pagamentos&quot;. Siga o passo a passo: Abra o WhatsApp Business e acesse a opção &quot;Cobrança&quot; no menu; Selecione &quot;Começar&quot; e escolha a Fiserv como parceira de pagamentos; Aceite os Termos de Serviço e conecte sua conta Fiserv com seu CPF ou CNPJ; Confirme a conexão inserindo o código enviado via SMS; Após conectar a conta, aguarde a ativação e acompanhe o status no menu &quot;Pedidos&quot;.
-      </p>
+      <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        <p className="mb-2">Para habilitar a função de pagamentos no WhatsApp, você precisa selecionar a Fiserv como &quot;parceiro de pagamentos&quot;.</p>
+        <p className="mb-2">Siga o passo a passo:</p>
+        <ul className="list-disc pl-5 flex flex-col gap-1">
+          <li>Abra o WhatsApp Business e acesse a opção &quot;Cobrança&quot; no menu;</li>
+          <li>Selecione &quot;Começar&quot; e escolha a Fiserv como parceira de pagamentos;</li>
+          <li>Aceite os Termos de Serviço e conecte sua conta Fiserv com seu CPF ou CNPJ;</li>
+          <li>Confirme a conexão inserindo o código enviado via SMS;</li>
+          <li>Após conectar a conta, aguarde a ativação e acompanhe o status no menu &quot;Pedidos&quot;.</li>
+        </ul>
+      </div>
     ),
   },
   {
     title: "Depois de ativar a função de pagamentos, como fazer uma cobrança no WhatsApp?",
     content: (
-      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        No chat do WhatsApp, clique no clipe de papel e selecione &quot;Cobrar cliente&quot;. Adicione os itens da venda com nome, preço e quantidade. Confira as informações e clique em &quot;Enviar cobrança&quot;. Seu cliente receberá a cobrança diretamente na conversa.
-      </p>
+      <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        <p className="mb-2">Siga o passo a passo para enviar um pagamento para o seu cliente:</p>
+        <ul className="list-disc pl-5 flex flex-col gap-1">
+          <li>No chat do WhatsApp Business, clique no clipe de papel e selecione &quot;Cobrar cliente&quot;;</li>
+          <li>Adicione os itens da venda e envie a cobrança;</li>
+          <li>Seu cliente receberá a cobrança diretamente na conversa e pode pagar no débito ou no crédito.</li>
+        </ul>
+      </div>
     ),
   },
   {
     title: "Como gerenciar minhas vendas pelo WhatsApp no App da azulzinha?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Baixe o App da azulzinha para Android ou iOS. Nele você pode visualizar e controlar suas vendas de forma simples e eficiente, com relatórios personalizados e serviços exclusivos.
+        No aplicativo da azulzinha você consegue visualizar e gerenciar os recebimentos, comprovantes e relatórios de todas as suas vendas no WhatsApp, junto com as vendas da maquininha.
       </p>
     ),
   },
@@ -87,7 +100,7 @@ const faqItems = [
     title: "Existe alguma taxa associada à ativação do serviço?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições e taxas vigentes junto à equipe comercial da azulzinha ou acesse as informações no App da azulzinha.
+        Nenhuma taxa será cobrada do cliente azulzinha pela habilitação de pagamentos no WhatsApp.
       </p>
     ),
   },
@@ -142,9 +155,12 @@ export default function PagamentosWhatsApp() {
         title="Pagamentos por WhatsApp"
         description="Receba pagamentos no WhatsApp com a mesma tecnologia da sua maquininha."
         checkItems={[]}
-        buttonText="Confira"
+        buttonText="Saiba como"
+        buttonHref="#dobrawpp1"
         backgroundImage="/images/pagamentos-whatsapp/hero-bg.png"
       />
+
+      <div id="dobrawpp1" />
 
       <FeatureSection
         title="A azulzinha está no WhatsApp, assim como os brasileiros!"
@@ -164,13 +180,15 @@ export default function PagamentosWhatsApp() {
       <div className="h-22.5" />
 
       <BeneficiosGridSection
+        title="Explore as vantagens de vender no aplicativo mais usado do Brasil"
+        subtitle="Ative os pagamentos e ganhe um poderoso aliado para sua estratégia de vendas"
         beneficios={beneficios}
         buttonText=""
       />
 
       <BlueCta
         title="Ainda não tem sua azulzinha?"
-        buttonText="Peça já a sua"
+        buttonText="Peça agora mesmo"
         buttonHref="/peca-azulzinha"
         sectionClassName="bg-[linear-gradient(180deg,#FFFFFF_0%,#F7F7F7_100%)]"
       />
@@ -221,8 +239,8 @@ export default function PagamentosWhatsApp() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/android.png", href: "https://play.google.com", alt: "Google Play" },
-          { image: "/images/apple.png", href: "https://apps.apple.com", alt: "App Store" },
+          { image: "/images/android.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
+          { image: "/images/apple.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
         ]}
       />
 

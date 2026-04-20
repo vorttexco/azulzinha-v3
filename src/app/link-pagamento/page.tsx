@@ -45,7 +45,7 @@ const faqItems = [
     title: "O Link de Pagamento está disponível para todos os tipos de negócios?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições junto à equipe comercial da azulzinha.
+        O link de pagamento pode não estar disponível para todos os clientes. Para verificar se essa opção está liberada para o seu estabelecimento, entre em contato com seu gerente CAIXA.
       </p>
     ),
   },
@@ -53,7 +53,7 @@ const faqItems = [
     title: "Existe um limite diário de valor para o uso do Link de Pagamento?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições junto à equipe comercial da azulzinha.
+        Não existe um limite diário de valor para as suas vendas com o Link de Pagamento da azulzinha. Além disso, a quantidade de links que você pode gerar por dia também é ilimitada. Aproveite!
       </p>
     ),
   },
@@ -61,7 +61,7 @@ const faqItems = [
     title: "Quais são as medidas de segurança para proteger as vendas feitas através do Link de Pagamento?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições junto à equipe comercial da azulzinha.
+        O Link de Pagamento funciona em ambiente protegido 100% PCI compliance e possui ferramentas de segurança que apoiam na análise de risco da transação (autenticação 3ds e antifraude).
       </p>
     ),
   },
@@ -69,16 +69,22 @@ const faqItems = [
     title: "Preciso tomar outras precauções de segurança na hora de vender com o Link de Pagamento?",
     content: (
       <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições junto à equipe comercial da azulzinha.
+        Sim, pois nas transações feitas através do Link de Pagamento ou digitadas, não há validação por senha, como ocorre nas transações com cartão físico. Se o cliente contestar a compra, o lojista pode não receber o pagamento.
       </p>
     ),
   },
   {
     title: "Como posso aumentar a minha segurança nas vendas com Link de Pagamento?",
     content: (
-      <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
-        Consulte as condições junto à equipe comercial da azulzinha.
-      </p>
+      <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black">
+        <p className="mb-2">Para aumentar a segurança das suas vendas, recomendamos algumas práticas:</p>
+        <ul className="list-disc pl-5 flex flex-col gap-1">
+          <li>Registre e monitore suas vendas, observando padrões de compra fora do comum;</li>
+          <li>Fique atento a pedidos urgentes e a clientes que utilizam vários cartões de crédito diferentes;</li>
+          <li>Fique atento a pedidos de quantidades elevadas do mesmo produto ou entregas em um único endereço;</li>
+          <li>Considere estabelecer um responsável pela gestão e geração dos Links de Pagamento no seu estabelecimento.</li>
+        </ul>
+      </div>
     ),
   },
 ];
@@ -92,7 +98,8 @@ export default function LinkPagamento() {
         title="Link de Pagamento"
         description="Lucre muito mais pela internet, redes sociais e aplicativos de mensagens com links seguros e ilimitados."
         checkItems={[]}
-        buttonText="Conheça"
+        buttonText="Confira"
+        buttonHref="#dobra"
         backgroundImage="/images/link-pagamento/hero-bg.png"
       />
 
@@ -104,8 +111,10 @@ export default function LinkPagamento() {
         paddingClassName="py-14 lg:py-20"
       />
 
+      <div id="dobra" />
+
       <BlueCta
-        title="O Link de Pagamento é uma ferramenta exclusiva para clientes azulzinha. Ainda não tem a maquininha da CAIXA?"
+        title={"O Link de Pagamento é uma ferramenta exclusiva para clientes azulzinha.\nAinda não tem a maquininha da CAIXA?"}
         buttonText="Peça já a sua"
         buttonHref="/peca-azulzinha"
         sectionClassName="bg-white"
@@ -151,8 +160,8 @@ export default function LinkPagamento() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/link-pagamento/google-play.png", href: "#", alt: "Google Play" },
-          { image: "/images/link-pagamento/app-store.png", href: "#", alt: "App Store" },
+          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
+          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
         ]}
       />
 

@@ -52,6 +52,7 @@ interface BeneficiosGridSectionProps {
   beneficios?: BeneficioItem[];
   buttonText?: string;
   buttonHref?: string;
+  buttonCaption?: string;
   bgColor?: string;
   paddingClassName?: string;
 }
@@ -62,6 +63,7 @@ export default function BeneficiosGridSection({
   beneficios = defaultBeneficios,
   buttonText = "Peça sua Azulzinha",
   buttonHref = "#",
+  buttonCaption,
   bgColor = "bg-white",
   paddingClassName = "pb-14 lg:pb-20",
 }: BeneficiosGridSectionProps) {
@@ -124,9 +126,16 @@ export default function BeneficiosGridSection({
         </div>
 
         {buttonText && (
-          <a href={buttonHref} className="btn-laranja">
-            {buttonText}
-          </a>
+          <div className="flex flex-col items-center gap-4">
+            {buttonCaption && (
+              <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[564px]">
+                {buttonCaption}
+              </p>
+            )}
+            <a href={buttonHref} className="btn-laranja">
+              {buttonText}
+            </a>
+          </div>
         )}
       </div>
     </section>

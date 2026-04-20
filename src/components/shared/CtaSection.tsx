@@ -13,6 +13,7 @@ const formatCPF = (value: string) =>
     .slice(0, 14);
 
 interface CtaSectionProps {
+  eyebrow?: string;
   title?: string;
   description?: string;
   buttonText?: string;
@@ -27,6 +28,7 @@ interface CtaSectionProps {
 }
 
 export default function CtaSection({
+  eyebrow,
   title = "Com azulzinha da CAIXA você pode muito mais!",
   description = "Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.",
   buttonText = "Peça já a sua",
@@ -62,6 +64,11 @@ export default function CtaSection({
 
           {/* Text content */}
           <div className="flex flex-col justify-center gap-4 lg:gap-6  lg:pl-16 lg:pr-8 w-full lg:w-1/2 lg:shrink-0 lg:py-0 lg:h-[490px]">
+            {eyebrow && (
+              <p className="text-[14px] lg:text-[16px] font-normal uppercase tracking-wider text-white/80">
+                {eyebrow}
+              </p>
+            )}
             <h2 className="section-title text-white text-left">
               {title}
             </h2>

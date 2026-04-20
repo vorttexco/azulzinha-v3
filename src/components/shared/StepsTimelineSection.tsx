@@ -41,30 +41,21 @@ export default function StepsTimelineSection({
         {/* Content: Steps + Phone Mockup */}
         <div className="flex flex-col lg:flex-row lg:justify-center gap-[30px] lg:gap-10">
           {/* Timeline steps */}
-          <div className="flex flex-col gap-0 lg:max-w-[658px]">
+          <div className="flex flex-col gap-4 lg:max-w-[658px]">
             {steps.map((step, index) => (
               <div key={step.number} className="flex items-start gap-6">
-                {/* Timeline column */}
-                <div className="flex flex-col items-center shrink-0">
-                  {/* Circle */}
-                  <div
-                    className={`w-[38px] h-[38px] rounded-full flex items-center justify-center shrink-0 ${
-                      index === 0
-                        ? "bg-azul"
-                        : "border-2 border-[#D5D5D5] bg-transparent"
-                    }`}
-                  >
-                    <span
-                      className={`text-[14px] font-bold ${
-                        index === 0 ? "text-white" : "text-[#D5D5D5]"
-                      }`}
-                    >
-                      {step.number}
-                    </span>
-                  </div>
-                  {/* Connector line */}
-                  {index < steps.length - 1 && (
-                    <div className="w-[2px] h-[40px] bg-[#D5D5D5]" />
+                {/* Circle indicator */}
+                <div
+                  className={`w-[38px] h-[38px] rounded-full flex items-center justify-center shrink-0 ${
+                    index === 0
+                      ? "bg-azul"
+                      : "border-2 border-[#D5D5D5] bg-transparent"
+                  }`}
+                >
+                  {index === 0 && (
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.711657 5.76206L5.2411 10.2915L15.3065 0.72935" stroke="white" strokeWidth="2" />
+                    </svg>
                   )}
                 </div>
 

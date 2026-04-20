@@ -191,6 +191,19 @@ export default function PixAzulzinha() {
         steps={stepsApp}
         phoneImage="/images/pix-azulzinha/phone-mockup-1.png"
         footnote={chaveCaixaFootnote}
+        stepImages={[
+          "/images/pix-azulzinha/APP01.png",
+          "/images/pix-azulzinha/APP02.png",
+          "/images/pix-azulzinha/APP03.png",
+          "/images/pix-azulzinha/APP04.png",
+          "/images/pix-azulzinha/APP05.png",
+          "/images/pix-azulzinha/APP06.png",
+          "/images/pix-azulzinha/APP07.png",
+          "/images/pix-azulzinha/APP08.png",
+          "/images/pix-azulzinha/APP09.png",
+          "/images/pix-azulzinha/APP11.png",
+          "/images/pix-azulzinha/APP12.png",
+        ]}
       />
 
       <div id="anchor-maq" />
@@ -201,6 +214,20 @@ export default function PixAzulzinha() {
         phoneImage="/images/pix-azulzinha/phone-mockup-2.png"
         bgColor="bg-[#F4F4F4]"
         footnote={chaveCaixaFootnote}
+        stepImages={[
+          "/images/pix-azulzinha/maquina1.png",
+          "/images/pix-azulzinha/maquina2.png",
+          "/images/pix-azulzinha/maquina3.png",
+          "/images/pix-azulzinha/maquina4.png",
+          "/images/pix-azulzinha/maquina5.png",
+          "/images/pix-azulzinha/maquina6.png",
+          "/images/pix-azulzinha/maquina7.png",
+          "/images/pix-azulzinha/maquina8.png",
+          "/images/pix-azulzinha/maquina9.png",
+          "/images/pix-azulzinha/maquina10.png",
+          "/images/pix-azulzinha/maquina11.png",
+          "/images/pix-azulzinha/maquina12.png",
+        ]}
       />
 
       <StepsTimelineSection
@@ -209,6 +236,13 @@ export default function PixAzulzinha() {
         steps={stepsTransacao}
         phoneImage="/images/pix-azulzinha/phone-mockup-3.png"
         footnote="Se o comprovante não for impresso, ocorrerá a devolução dos valores - desfazimento da transação."
+        stepImages={[
+          "/images/pix-azulzinha/maquinaTwo1.png",
+          "/images/pix-azulzinha/maquinaTwo2.png",
+          "/images/pix-azulzinha/maquinaTwo3.png",
+          "/images/pix-azulzinha/maquinaTwo4.png",
+          "/images/pix-azulzinha/maquinaTwo5.png",
+        ]}
       />
 
       <CtaSection

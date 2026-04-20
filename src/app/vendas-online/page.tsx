@@ -108,9 +108,12 @@ export default function GestaoVendasPage() {
         title="Vendas Online"
         description="Conheça soluções para vender muito mais na internet, redes sociais e aplicativos de mensagem."
         checkItems={[]}
-        buttonText="Confira"
+        buttonText="Veja todas"
+        buttonHref="#dobra"
         backgroundImage="/images/vendas-online/hero-bg.png"
       />
+
+      <div id="dobra" />
 
       {/* Amplie suas vendas online */}
       <FeatureSection
@@ -216,7 +219,7 @@ export default function GestaoVendasPage() {
       {/* Pagamentos Online - E-commerce */}
       <div className="bg-cinza-claro">
         <FeatureSection
-          title="Pagamentos Online"
+          title="E-COMMERCE"
           paragraphs={[
             "Aceite os principais meios de pagamento por meio de soluções inovadoras que tornam o pagamento online cada vez mais simples e seguro.",
           ]}
@@ -290,6 +293,7 @@ export default function GestaoVendasPage() {
           "Habilite o Link de Pagamento na sua\nazulzinha através do aplicativo"
         }
         buttonText="App da Azulzinha"
+        buttonHref="/app"
         sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
       />
 

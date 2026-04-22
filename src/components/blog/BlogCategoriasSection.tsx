@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPost, BlogCardLarge, BlogCardSmall } from "./BlogCard";
+import { BlogPost, BlogCardLarge, BlogCardSmall } from "@/components/shared/BlogCard";
 
 const CATEGORIES = [
   "Gestão financeira",

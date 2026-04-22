@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { BlogPost } from "./BlogCard";
+import { BlogPost } from "@/components/shared/BlogCard";
 import PostContent from "./PostContent";
 import PostCtaSection from "./PostCtaSection";
 import PostUltimasSection from "./PostUltimasSection";

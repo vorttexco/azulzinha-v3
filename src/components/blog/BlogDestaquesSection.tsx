@@ -1,4 +1,4 @@
-import { BlogPost, BlogCardLarge, BlogCardSmall } from "./BlogCard";
+import { BlogPost, BlogCardLarge, BlogCardSmall } from "@/components/shared/BlogCard";
 
 interface BlogDestaquesSectionProps {
   posts: BlogPost[];

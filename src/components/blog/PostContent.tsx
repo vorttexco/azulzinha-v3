@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import { useState } from "react";
-import { BlogPost } from "./BlogCard";
+import { BlogPost } from "@/components/shared/BlogCard";
 
 function getPostBanner(post: BlogPost): { src: string; alt: string } {
   const banner = post.content.find((c) => c.type === "banner");

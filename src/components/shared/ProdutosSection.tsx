@@ -10,15 +10,16 @@ interface FeatureItem {
   text: string;
 }
 
-interface ProductCard {
+export interface ProdutosSectionCard {
   name: string;
   description: string;
   image: string;
   features: FeatureItem[];
   href: string;
+  hrefLabel?: string;
 }
 
-const products: ProductCard[] = [
+const defaultProducts: ProdutosSectionCard[] = [
   {
     name: "azulzinha smart",
     description:
@@ -68,7 +69,7 @@ const products: ProductCard[] = [
   },
 ];
 
-function ProductCard({ product }: { product: ProductCard }) {
+function ProductCard({ product }: { product: ProdutosSectionCard }) {
   return (
     <div className="flex flex-col justify-end items-center -gap-[91px]">
       {/* Product image floating above */}
@@ -116,7 +117,7 @@ function ProductCard({ product }: { product: ProductCard }) {
             href={product.href}
             className="inline-flex items-center gap-1.5 text-[14px] leading-[1.3] text-azul hover:opacity-80 transition-opacity"
           >
-            Saiba mais
+            {product.hrefLabel ?? "Saiba mais"}
             <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
               <path
                 d="M8 1L12 5M12 5L8 9M12 5H1"
@@ -133,7 +134,21 @@ function ProductCard({ product }: { product: ProductCard }) {
   );
 }
 
-export default function ProdutosSection() {
+interface ProdutosSectionProps {
+  title?: string;
+  subtitle?: string;
+  products?: ProdutosSectionCard[];
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+export default function ProdutosSection({
+  title = "Alavanque seu negócio com a maquininha da CAIXA",
+  subtitle = "Escolha a azulzinha ideal para você",
+  products = defaultProducts,
+  buttonText,
+  buttonHref = "#",
+}: ProdutosSectionProps = {}) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     containScroll: "trimSnaps",
@@ -160,11 +175,9 @@ export default function ProdutosSection() {
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
         <div className="flex flex-col items-center gap-6 lg:gap-10 mb-10 lg:mb-14">
           <div className="flex flex-col items-center gap-4">
-            <h2 className="section-title text-azul">
-              Alavanque seu negócio com a maquininha da CAIXA
-            </h2>
+            <h2 className="section-title text-azul">{title}</h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center max-w-[666px]">
-              Escolha a azulzinha ideal para você
+              {subtitle}
             </p>
           </div>
         </div>
@@ -205,6 +218,14 @@ export default function ProdutosSection() {
             />
           ))}
         </div>
+
+        {buttonText && (
+          <div className="mt-10 lg:mt-14 flex justify-center">
+            <a href={buttonHref} className="btn-laranja">
+              {buttonText}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

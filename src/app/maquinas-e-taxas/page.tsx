@@ -4,7 +4,7 @@ import FeatureSection from "@/components/shared/FeatureSection";
 import BeneficiosGridSection from "@/components/shared/BeneficiosGridSection";
 import TabelaIsencaoSection from "@/components/taxas-tarifas/TabelaIsencaoSection";
 import CalculadoraSection from "@/components/taxas-tarifas/CalculadoraSection";
-import ProdutosSection from "@/components/taxas-tarifas/ProdutosSection";
+import ProdutosSection from "@/components/shared/ProdutosSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
 

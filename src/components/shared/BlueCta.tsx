@@ -138,8 +138,8 @@ export default function BlueCta({
               {icon && (
                 <Image src={asset(icon)} alt={iconAlt} width={64} height={64} className="object-contain" />
               )}
-              <div className="flex flex-col items-center gap-2 text-center">
-                <p className="text-white text-[22px] font-normal leading-[130%] tracking-normal whitespace-pre-line">
+              <div className="flex flex-col items-center gap-4 text-center max-w-[1000px]">
+                <p className="text-white text-[22px] lg:text-[38px] font-normal leading-[130%] tracking-normal whitespace-pre-line">
                   {title}
                 </p>
                 {description && (

@@ -38,3 +38,14 @@
 - Para autoplay, usar `Autoplay` de `embla-carousel-autoplay`
 - Padrão de referência: `src/components/ProductsSection.tsx` (home)
 - Layout do carousel: `overflow-hidden` no container, `flex pl-[30px] lg:pl-[100px] gap-6` nos items, `shrink-0` em cada item
+
+## Arquivos de Configuração (`src/lib/`)
+
+URLs, constantes e helpers compartilhados ficam centralizados em `src/lib/`. Sempre que um valor for usado em mais de um lugar (ou representar uma URL de produção), adicionar ao arquivo apropriado em vez de hard-coded nos componentes.
+
+- **`src/lib/assets.ts`** — helper `asset(path)` que prefixa `NEXT_PUBLIC_BASE_PATH` em caminhos relativos. Usar para imagens servidas pelo próprio site (em `public/images/...`).
+- **`src/lib/social.ts`** — constante `SOCIAL_LINKS` com Instagram, Facebook, LinkedIn, YouTube e WhatsApp. Nunca duplicar essas URLs em componentes; importar de `@/lib/social`.
+- **`src/lib/blog.ts`** — `BLOG_MEDIA_BASE_URL` (`https://azulzinhadacaixa.com.br/blogmidias`) e helper `blogMediaUrl(filename)`. Imagens dos posts do blog (cards e banner do post) moram nesse domínio remoto; o JSON em `public/assets/post.json` guarda apenas o nome do arquivo. Não usar `asset()` para imagens de blog — a URL já é absoluta.
+- **`src/lib/categories.ts`** — categorias do blog derivadas dos posts.
+
+Regra geral: se for URL absoluta de produção (blog, social, etc.), criar/estender um arquivo em `src/lib/` seguindo o padrão de `social.ts` e `blog.ts`.

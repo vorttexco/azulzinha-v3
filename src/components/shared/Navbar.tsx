@@ -345,7 +345,7 @@ export default function Navbar() {
                           aria-hidden={!isOpen}
                         >
                           {link.label === "Para sua empresa" ? (
-                            <div className="bg-white rounded-b-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[778px] px-[54px] pt-[32px] pb-[36px]">
+                            <div className="bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[778px] px-[54px] pt-[32px] pb-[36px]">
                               <div className="grid grid-cols-3 gap-x-[58px] gap-y-[42px]">
                                 {empresaColumns.map((col) => (
                                   <DropdownColumnView
@@ -356,7 +356,7 @@ export default function Navbar() {
                               </div>
                             </div>
                           ) : (
-                            <div className="bg-white rounded-b-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[300px] px-[54px] pt-[32px] pb-[36px]">
+                            <div className="bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[300px] px-[54px] pt-[32px] pb-[36px]">
                               <div className="flex flex-col gap-[40px]">
                                 {voceColumns.map((col) => (
                                   <DropdownColumnView
@@ -378,7 +378,7 @@ export default function Navbar() {
               {/* Sliding orange hover bar */}
               <span
                 aria-hidden="true"
-                className={`pointer-events-none absolute bottom-0 h-[3px] bg-laranja transition-all duration-300 ease-out ${barStyle.visible ? "opacity-100" : "opacity-0"}`}
+                className={`pointer-events-none absolute bottom-0 h-[3px] bg-laranja z-[51] transition-all duration-300 ease-out ${barStyle.visible ? "opacity-100" : "opacity-0"}`}
                 style={{
                   transform: `translateX(${barStyle.left}px)`,
                   width: `${barStyle.width}px`,

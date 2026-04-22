@@ -19,7 +19,7 @@ function getPostBanner(post: BlogPost): { src: string; alt: string } {
 function getPostHtml(post: BlogPost): string {
   const texto = post.content.find((c) => c.type === "texto");
   if (texto && typeof texto.data === "string") {
-    return texto.data;
+    return texto.data.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, "");
   }
   return "";
 }

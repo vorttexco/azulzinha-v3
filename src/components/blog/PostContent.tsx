@@ -19,7 +19,12 @@ function getPostBanner(post: BlogPost): { src: string; alt: string } {
 function getPostHtml(post: BlogPost): string {
   const texto = post.content.find((c) => c.type === "texto");
   if (texto && typeof texto.data === "string") {
-    return texto.data.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, "");
+    return texto.data
+      .replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, "")
+      .replace(
+        /(<h2\b[^>]*>\s*)(\p{Ll})/gu,
+        (_m, prefix, char) => prefix + char.toUpperCase()
+      );
   }
   return "";
 }

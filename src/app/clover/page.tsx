@@ -8,6 +8,7 @@ import FullImageSection from "@/components/shared/FullImageSection";
 import VideoSection from "@/components/shared/VideoSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 const cloverVideos = [
   {
@@ -51,7 +52,7 @@ export default function CloverPage() {
       <FullImageSection />
       <VideoSection
         videos={cloverVideos}
-        href="https://www.youtube.com/@azulzinhadaCAIXA"
+        href={SOCIAL_LINKS.youtube}
       />
       <CtaSection
         title="Descubra o poder do mundo Clover com a azulzinha"

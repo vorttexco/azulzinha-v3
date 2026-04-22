@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 import { asset } from "@/lib/assets";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 type CardVariant = "default" | "variant2" | "variant3";
 
@@ -33,7 +34,7 @@ const defaultCards: CarouselCard[] = [
     image: "/images/card-zuli.png",
     variant: "variant2",
     ctaText: "Fale comigo",
-    href: "https://api.whatsapp.com/send/?phone=5511941473336",
+    href: SOCIAL_LINKS.whatsappApi,
   },
   {
     title: "Clover da azulzinha",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { asset } from "@/lib/assets";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 type FooterLink = { label: string; href: string };
 
@@ -122,9 +123,9 @@ export default function Footer() {
                 <span className="text-sm font-normal text-azul">
                   Fale com a Zuli pelo WhatsApp
                 </span>
-                <a href="https://wa.me/5511941473336" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
                   <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} className="shrink-0" unoptimized />
-                  <span className="text-sm text-[#717171]">(11) 94147-3336</span>
+                  <span className="text-sm text-[#717171]">{SOCIAL_LINKS.whatsappPhone}</span>
                 </a>
               </div>
             </div>
@@ -172,16 +173,16 @@ export default function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
-              <a href=" https://www.instagram.com/azulzinhadacaixa/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/instagram-icon.png")} alt="Instagram" width={20} height={20} unoptimized />
               </a>
-              <a href="https://www.facebook.com/azulzinhadacaixa" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/facebook-icon.png")} alt="Facebook" width={20} height={20} unoptimized />
               </a>
-              <a href="https://www.linkedin.com/company/azulzinhadacaixa" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/linkedin-icon.png")} alt="LinkedIn" width={20} height={20} unoptimized />
               </a>
-              <a href="https://www.youtube.com/@azulzinhadaCAIXA" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/youtube-icon.png")} alt="YouTube" width={20} height={20} unoptimized />
               </a>
             </div>
@@ -256,7 +257,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 ml-[52px]">
                 <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} unoptimized />
-                <a href="https://wa.me/5511941473336" target="_blank" rel="noopener noreferrer" className="text-sm text-[#717171] hover:underline">(11) 94147-3336</a>
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm text-[#717171] hover:underline">{SOCIAL_LINKS.whatsappPhone}</a>
               </div>
             </div>
 

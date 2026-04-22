@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 const sidebarVideos = [
   { title: "Como funciona a automação comercial?" },
@@ -109,7 +110,9 @@ export default function CloverVideoSection() {
             Se inscreva no nosso canal do Youtube
           </p>
           <a
-            href="#"
+            href={SOCIAL_LINKS.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-laranja inline-flex items-center gap-2"
           >
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">

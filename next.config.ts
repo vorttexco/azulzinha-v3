@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
         output: "export" as const,
         basePath: "/azulzinha",
         assetPrefix: "/azulzinha/",
+        trailingSlash: true,
         env: {
           NEXT_PUBLIC_BASE_PATH: "/azulzinha",
         },

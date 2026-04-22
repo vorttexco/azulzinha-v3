@@ -1,26 +1,5 @@
 @import "tailwindcss" source("../");
 
-@font-face {
-  font-family: "CAIXA Std";
-  src: url("/font/CAIXAStd-Regular.3f7b49f340a2089c.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CAIXA Std";
-  src: url("/font/CAIXAStd-Bold.08a9e4052cc96d15.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CAIXA Std";
-  src: url("/font/CAIXAStd-Italic.c25f8cc0d1172722.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-
 @theme {
   --color-azul: #006CAD;
   --color-azul-escuro: #012B71;
@@ -28,7 +7,6 @@
   --color-laranja-claro: #EDAC39;
   --color-cinza: #717171;
   --color-cinza-claro: #F5F5F5;
-  --font-caixa: "CAIXA Std", system-ui, -apple-system, sans-serif;
 }
 
 @keyframes fadeIn {

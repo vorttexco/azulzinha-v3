@@ -135,7 +135,7 @@ export default function IntegradorasSection() {
                         className="w-[120px] h-auto max-h-[45px] px-4 object-contain shrink-0"
                       />
                     )}
-                    <span className="font-['CAIXA_Std'] text-[14px] pt-2 leading-[130%] text-center text-[#666666]">
+                    <span className="text-[14px] pt-2 leading-[130%] text-center text-[#666666]">
                       {item.name}
                     </span>
                   </>

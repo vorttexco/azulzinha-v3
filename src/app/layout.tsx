@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const caixaFont = localFont({
+  src: [
+    { path: "./fonts/CAIXAStd-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/CAIXAStd-Bold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/CAIXAStd-Italic.ttf", weight: "400", style: "italic" },
+  ],
+  variable: "--font-caixa",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "azulzinha - Maquininha de Cartão da CAIXA",
@@ -13,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="pt-BR" className={`scroll-smooth ${caixaFont.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

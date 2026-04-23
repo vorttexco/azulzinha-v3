@@ -235,6 +235,7 @@ export default function ParaSuaMei() {
         description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
         </>}
         thumbnail="/images/mei/tudo-100-main.png"
+        videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
       />
 
       <BenefitsSection

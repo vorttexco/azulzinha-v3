@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { asset } from "@/lib/assets";
@@ -22,6 +25,7 @@ interface SimpleVideoSectionProps {
   title: string;
   description: ReactNode;
   thumbnail: string;
+  videoSrc?: string;
   className?: string;
 }
 
@@ -29,8 +33,11 @@ export default function SimpleVideoSection({
   title,
   description,
   thumbnail,
+  videoSrc,
   className = "bg-white",
 }: SimpleVideoSectionProps) {
+  const [playing, setPlaying] = useState(false);
+
   return (
     <section className={`w-full ${className}`}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
@@ -42,19 +49,32 @@ export default function SimpleVideoSection({
             {description}
           </p>
 
-          {/* Video Thumbnail */}
-          <div className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden cursor-pointer group">
-            <Image
-              src={asset(thumbnail)}
-              alt={title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,52,99,1)] lg:shadow-[inset_0_0_100px_rgba(0,52,99,1)]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <PlayIcon />
-            </div>
+          <div className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden">
+            {playing && videoSrc ? (
+              <video
+                src={videoSrc}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div
+                className="w-full h-full cursor-pointer group"
+                onClick={() => videoSrc && setPlaying(true)}
+              >
+                <Image
+                  src={asset(thumbnail)}
+                  alt={title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,52,99,1)] lg:shadow-[inset_0_0_100px_rgba(0,52,99,1)]" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PlayIcon />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

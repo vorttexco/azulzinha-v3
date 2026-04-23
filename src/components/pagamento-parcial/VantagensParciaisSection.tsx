@@ -23,7 +23,7 @@ const vantagens = [
 
 export default function VantagensParciaisSection() {
   return (
-    <section className="bg-white">
+    <section id="vantagens-parciais" className="bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20">
         <h2 className="section-title text-azul text-left mb-8 lg:mb-[60px]">
           Vantagens do Pagamento Parcial para sua loja
@@ -40,8 +40,8 @@ export default function VantagensParciaisSection() {
                   <Image
                     src={asset(v.icon)}
                     alt=""
-                    width={91}
-                    height={91}
+                    width={41}
+                    height={41}
                     className="object-contain"
                   />
                 </div>

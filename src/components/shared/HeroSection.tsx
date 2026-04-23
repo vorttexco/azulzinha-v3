@@ -41,6 +41,7 @@ interface HeroSectionProps {
   textColor?: string;
   showOverlay?: boolean;
   overlayColor?: "blue" | "white";
+  mobileImageClassName?: string;
 }
 
 export default function HeroSection({
@@ -62,6 +63,7 @@ export default function HeroSection({
   textColor = "text-white",
   showOverlay = true,
   overlayColor = "blue",
+  mobileImageClassName = "object-right",
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
   const pathname = usePathname();
@@ -90,7 +92,7 @@ export default function HeroSection({
           src={asset(mobileBackgroundImage)}
           alt=""
           fill
-          className="object-cover object-right lg:hidden"
+          className={`object-cover lg:hidden ${mobileImageClassName}`}
           priority
         />
       )}

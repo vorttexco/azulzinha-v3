@@ -40,6 +40,7 @@ interface StepsCarouselSectionProps {
   cardWidth?: string;
   cardHeight?: string;
   imageTopOffset?: string;
+  carouselPaddingTop?: string;
 }
 
 export default function StepsCarouselSection({
@@ -57,6 +58,7 @@ export default function StepsCarouselSection({
   cardWidth = "w-[287px]",
   cardHeight = "h-[520px]",
   imageTopOffset = "-top-10",
+  carouselPaddingTop = "pt-16",
 }: StepsCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -105,7 +107,7 @@ export default function StepsCarouselSection({
 
         {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex pl-[30px] lg:pl-[100px] gap-6 items-end pt-16 pb-4">
+          <div className={`flex pl-[30px] lg:pl-[100px] gap-6 items-end ${carouselPaddingTop} pb-4`}>
             {steps.map((step) =>
 
               <div

@@ -33,7 +33,7 @@ interface HabilitarCarouselSectionProps {
 
 export default function HabilitarCarouselSection({
   title = "Como habilitar o serviço",
-  subtitle = "Se você já vende com azulzinha, é preciso que ela esteja com atualização em dia do software. Para ter certeza que você está na última versão, basta deixar a sua maquininha conectada durante a noite e ela atualizará automaticamente.",
+  subtitle = "Se você já vende com azulzinha, é preciso que ela esteja com atualização em dia do software. Para ter certeza que você está na última versão, basta deixar a sua maquininha conectada durante a noite e ela atualizará automaticamente.\n\nGarantindo a atualização, é só seguir o passo a passo abaixo:",
   steps,
 }: HabilitarCarouselSectionProps) {
   const wheelGestures = useRef(WheelGesturesPlugin());
@@ -68,7 +68,7 @@ export default function HabilitarCarouselSection({
         {/* Header */}
         <div className="px-[30px] lg:px-[100px] mb-8 lg:mb-[60px] text-left">
           <h2 className="section-title text-azul text-left">{title}</h2>
-          <p className="mt-4 text-[16px] lg:text-[18px] leading-[1.4] text-black">
+          <p className="mt-4 text-[16px] lg:text-[18px] leading-[1.4] text-black whitespace-pre-line">
             {subtitle}
           </p>
         </div>

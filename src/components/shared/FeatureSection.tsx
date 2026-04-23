@@ -15,6 +15,9 @@ interface FeatureSectionProps {
   imageClassName?: string;
   imageWidth?: string;
   imageHeight?: string;
+  imagePaddingClass?: string;
+  imageCaptionTitle?: string;
+  imageCaptionClass?: string;
   imageWidthMobile?: string;
   imageHeightMobile?: string;
   cardWidth?: string;
@@ -38,6 +41,9 @@ export default function FeatureSection({
   image,
   imageAlt,
   imageClassName = "object-cover",
+  imagePaddingClass = "",
+  imageCaptionTitle,
+  imageCaptionClass = "text-cinza text-[16px] lg:text-[18px] mb-4 text-center lg:text-left",
   imageWidth,
   imageHeight,
   imageWidthMobile,
@@ -111,6 +117,11 @@ export default function FeatureSection({
 
         {/* Image + mobile button wrapper */}
         <div className="flex flex-col gap-6 lg:gap-0 w-full max-w-xl self-center lg:w-auto">
+          {imageCaptionTitle && (
+            <div className="w-full max-w-xl self-center lg:self-start">
+              <div className={imageCaptionClass}>{imageCaptionTitle}</div>
+            </div>
+          )}
           <div
             className="relative w-full lg:w-(--card-w) lg:h-(--card-h) flex items-center justify-center"
             style={{ '--card-w': cardWidth, '--card-h': cardHeight } as React.CSSProperties}
@@ -135,13 +146,13 @@ export default function FeatureSection({
                 {/* Mobile image */}
                 {hasCustomSizeMobile ? (
                   <div
-                    className={`absolute z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}
+                    className={`absolute z-10 lg:hidden overflow-hidden ${imageBorderRadius} ${imagePaddingClass}`}
                     style={{ width: imageWidthMobile, height: imageHeightMobile }}
                   >
                     <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
                   </div>
                 ) : (
-                  <div className={`absolute inset-0 z-10 lg:hidden overflow-hidden ${imageBorderRadius}`}>
+                  <div className={`absolute inset-0 z-10 lg:hidden overflow-hidden ${imageBorderRadius} ${imagePaddingClass}`}>
                     <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
                   </div>
                 )}
@@ -149,13 +160,13 @@ export default function FeatureSection({
                 {/* Desktop image */}
                 {hasCustomSize ? (
                   <div
-                    className={`absolute z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}
+                    className={`absolute z-10 hidden lg:block overflow-hidden ${imageBorderRadius} ${imagePaddingClass}`}
                     style={{ width: imageWidth, height: imageHeight }}
                   >
                     <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
                   </div>
                 ) : (
-                  <div className={`absolute inset-0 z-10 hidden lg:block overflow-hidden ${imageBorderRadius}`}>
+                  <div className={`absolute inset-0 z-10 hidden lg:block overflow-hidden ${imageBorderRadius} ${imagePaddingClass}`}>
                     <Image src={asset(image)} alt={imageAlt} fill className={imageClassName} />
                   </div>
                 )}

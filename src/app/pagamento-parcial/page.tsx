@@ -99,12 +99,14 @@ export default function PagamentoParcial() {
           "O Pagamento Parcial é um serviço que pode fazer toda a diferença na redução de negativas no pagamento presencial em seu negócio, pois permite ao cliente Visa ou Elo pagar uma parte da compra com o cartão e acertar a diferença com outro meio de pagamento.",
           "Ao passar pelo caixa, basta que o cliente confirme na própria azulzinha como deseja complementar o pagamento para o operador, que pode ser de diversas formas: em dinheiro, outro cartão de crédito ou débito e transferências bancárias.",
         ]}
-        image="/images/pagamento-parcial/maquinas-parcial.png"
+        image="/images/pagamento-parcial/maquina-parcial.png"
         imageAlt="Maquininhas com Pagamento Parcial"
         cardWidth="605px"
         cardHeight="398px"
         imageClassName="object-contain"
         paddingClassName="pb-14 pt-14 lg:pb-[200px]"
+        imageCaptionTitle="Como funciona na hora de pagar"
+        imageCaptionClass="text-cinza text-[16px] lg:text-[18px] mb-4 text-center"
         bgColor="bg-[linear-gradient(180deg,#FFFFFF_8%,#F7F7F7_100%)]"
       />
 

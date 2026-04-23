@@ -1,7 +1,7 @@
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
-import VideoSection from "@/components/shared/VideoSection";
+import AjudaVideoSection from "@/components/ajuda/AjudaVideoSection";
 import Footer from "@/components/shared/Footer";
 import HelpFaqSection from "@/components/help/HelpFaqSection";
 import HelpCtaSection from "@/components/help/HelpCtaSection";
@@ -33,7 +33,7 @@ export default function AjudaPage() {
                 hideCard
             />
             <div id="videos">
-                <VideoSection />
+                <AjudaVideoSection />
             </div>
             <HelpFaqSection faqData={faqData} />
             <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />

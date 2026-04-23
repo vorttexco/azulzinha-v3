@@ -42,6 +42,9 @@ interface HeroSectionProps {
   showOverlay?: boolean;
   overlayColor?: "blue" | "white";
   mobileImageClassName?: string;
+  buttonLogoImage?: string;
+  buttonLogoWidth?: number;
+  buttonLogoHeight?: number;
 }
 
 export default function HeroSection({
@@ -64,6 +67,9 @@ export default function HeroSection({
   showOverlay = true,
   overlayColor = "blue",
   mobileImageClassName = "object-right",
+  buttonLogoImage,
+  buttonLogoWidth = 196,
+  buttonLogoHeight = 51,
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
   const pathname = usePathname();
@@ -162,11 +168,21 @@ export default function HeroSection({
             />
           )}
 
+          {buttonLogoImage && (
+            <Image
+              src={asset(buttonLogoImage)}
+              alt=""
+              width={buttonLogoWidth}
+              height={buttonLogoHeight}
+              className="object-contain lg:mt-12"
+            />
+          )}
+
           {buttonText &&
             (isInPageAnchor ? (
               <Link
                 href={`${pathname}${buttonHref}`}
-                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
+                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
                 scroll
               >
                 {buttonText}
@@ -174,7 +190,7 @@ export default function HeroSection({
             ) : (
               <a
                 href={buttonHref}
-                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : "lg:mt-12"}`}
+                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
               >
                 {buttonText}
               </a>

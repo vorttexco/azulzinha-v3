@@ -225,14 +225,18 @@ export default function ParaSuaMei() {
       <Navbar />
 
       <HeroSection
-        title={<>Agora tem <br /> azulzinha no App CAIXA Tem!</>}
+        title={<>Agora tem <br /> azulzinha no <span className="text-[#a3ca37]">App CAIXA Tem!</span></>}
         description="Receba pagamentos no WhatsApp com a mesma tecnologia da sua maquininha."
         checkItems={[]}
         buttonText="Saiba como"
+        buttonHref="#saiba-como"
         backgroundImage="/images/mei/hero.png"
-
+        buttonLogoImage="/images/mei/caixa-tem.svg"
+        buttonLogoWidth={168}
+        buttonLogoHeight={51}
       />
 
+      <div id="saiba-como">
       <SimpleVideoSection
         title="Tudo 100% digital para você vender mais"
         description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
@@ -240,10 +244,12 @@ export default function ParaSuaMei() {
         thumbnail="/images/mei/tudo-100-main.png"
         videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
       />
+      </div>
 
       <BenefitsSection
         title={<>Com a azulzinha no seu celular você pode muito mais! <br /> Conheça as funcionalidades disponíveis:</>}
         textColor="text-azul"
+        centerLastRow={true}
         items={comAzulzinhaItems}
       />
 

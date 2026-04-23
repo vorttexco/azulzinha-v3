@@ -29,22 +29,37 @@ const defaultLogos: LogoItem[] = [
   { src: "/images/bandeiras-vouchers/logo-11.png", w: 96, h: 58 },
   { src: "/images/bandeiras-vouchers/logo-12-1c4001.png", w: 91, h: 47 },
   { src: "/images/bandeiras-vouchers/logo-13-30d4fc.png", w: 77, h: 65 },
-  { src: "/images/bandeiras-vouchers/logo-14.svg", w: 104, h: 33 },
+  { src: "/images/bandeiras-vouchers/logo-14.png", w: 104, h: 33 },
   { src: "/images/bandeiras-vouchers/logo-15.png", w: 128, h: 51 },
   { src: "/images/bandeiras-vouchers/logo-16.png", w: 93, h: 53 },
   { src: "/images/bandeiras-vouchers/logo-17.png", w: 122, h: 44 },
   { src: "/images/bandeiras-vouchers/logo-18.png", w: 85, h: 32 },
+  { src: "/images/bandeiras-vouchers/logo-19.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-20.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-21.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-22.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-23.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-24.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-25.png", w: 55, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-26.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-27.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-28.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-29.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-30.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-31.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-32.png", w: 100, h: 50 },
+  { src: "/images/bandeiras-vouchers/logo-33.png", w: 60, h: 60 },
 ];
 
 function LogoCard({ src, w, h }: LogoItem) {
   return (
-    <div className="flex items-center justify-center bg-white border border-[#F1F1F1] rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] h-[130px] w-[157.5px] lg:w-[193px] transform -rotate-[0.32deg]">
+    <div className="flex items-center justify-center bg-white border border-[#F1F1F1] rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] h-[100px] lg:h-[130px] w-full">
       <Image
         src={asset(src)}
         alt=""
         width={w}
         height={h}
-        className="object-contain"
+        className="object-contain max-w-[75%] max-h-[70%]"
       />
     </div>
   );
@@ -75,6 +90,7 @@ interface BandeirasSectionProps {
   gridClassName?: string;
   collapsedClassName?: string;
   fadeClassName?: string;
+  footnote?: string;
 }
 
 export default function BandeirasSection({
@@ -83,9 +99,10 @@ export default function BandeirasSection({
   logos,
   iconCards,
   bgColor = "bg-[#FAFAFA]",
-  gridClassName = "grid-cols-2 lg:grid-cols-6",
-  collapsedClassName = "max-h-[268px] lg:max-h-[300px]",
+  gridClassName = "grid-cols-3 md:grid-cols-4 lg:grid-cols-6",
+  collapsedClassName = "max-h-[232px] lg:max-h-[300px]",
   fadeClassName = "bg-[linear-gradient(0deg,#FAFAFA_62%,rgba(250,250,250,0)_100%)]",
+  footnote,
 }: BandeirasSectionProps) {
   const [expanded, setExpanded] = useState(false);
   const isIconMode = !!iconCards;
@@ -130,6 +147,12 @@ export default function BandeirasSection({
         >
           {expanded ? "Ver menos" : "Ver todas"}
         </button>
+
+        {footnote && (
+          <p className="text-[14px] font-normal leading-[1.4] text-[#7A7A7A] text-center max-w-[800px]">
+            {footnote}
+          </p>
+        )}
       </div>
     </section>
   );

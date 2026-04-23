@@ -250,6 +250,7 @@ export default function ParaSuaMei() {
       <BandeirasSection
         title="A azulzinha aceita as bandeiras, vouchers e carteiras digitais favoritas do seu cliente*"
         description="Venda de maneira conveniente, sem a maquininha, e receba o dinheiro diretamente em sua conta digital MEI."
+        footnote="*Bandeira American Express disponível via Link de Pagamento, VR Benefícios por meio de QR Code. Para azulzinha aproxima, utilizando a bandeira Visa, o limite das transações é de R$200, mas pode variar conforme banco emissor."
       />
 
       <StepsCarouselSection

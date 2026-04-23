@@ -36,10 +36,13 @@ const identificacaoSteps: StepItem[] = [
 ];
 
 const videos = [
-  { title: "Agora tem azulzinha no App CAIXA Tem!", thumbnail: "/images/mei/video-thumb.png" },
-  { title: "Como gerar um Link de Pagamento no App CAIXA Tem?", thumbnail: "/images/mei/video-thumb.png" },
-  { title: "Como fazer uma venda com QR Code no App CAIXA Tem?", thumbnail: "/images/mei/video-thumb.png" },
-  { title: "Como fazer uma venda por aproximação no App CAIXA Tem?", thumbnail: "/images/mei/video-thumb.png" },
+  { title: "Como gerar um Link de Pagamento no App CAIXA Tem?", videoSrc: "/midias/caixa-tem-vendas-link-pagamento.mp4" },
+  { title: "Como fazer uma venda com QR Code no App CAIXA Tem?", videoSrc: "/midias/caixa-tem-vendas-qr-code.mp4" },
+  { title: "Como fazer uma venda por aproximação no App CAIXA Tem?", videoSrc: "/midias/caixa-tem-vendas-aproximacao.mp4" },
+  { title: "Como usar o atendimento pelo chatbot?", videoSrc: "/midias/caixa-tem-chatbot.mp4" },
+  { title: "Como consultar seus recebimentos?", videoSrc: "/midias/caixa-tem-consultar-recebimentos.mp4" },
+  { title: "Como consultar suas vendas?", videoSrc: "/midias/caixa-tem-consultar-vendas.mp4" },
+  { title: "Como ver as taxas e tarifas?", videoSrc: "/midias/caixa-tem-taxas-tarifas.mp4" },
 ];
 
 const p = "text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black";
@@ -293,8 +296,8 @@ export default function ParaSuaMei() {
         description={"Não se esqueça: para ter a azulzinha,\nvocê precisa ter a Conta Digital MEI"}
         sectionClassName="bg-white"
         storeBadges={[
-          { image: "/images/link-pagamento/google-play.png", href: "#", alt: "Google Play", width: 235, height: 91 },
-          { image: "/images/link-pagamento/app-store.png", href: "#", alt: "App Store", width: 235, height: 70 },
+          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR", alt: "Google Play", width: 235, height: 91 },
+          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/caixa-tem/id1485424267", alt: "App Store", width: 235, height: 70 },
         ]}
       />
 
@@ -302,13 +305,13 @@ export default function ParaSuaMei() {
         title="Assista aos nossos tutoriais"
         mainVideoImage="/images/mei/video-main.png"
         mainVideoTitle="Agora tem azulzinha no App CAIXA Tem!"
+        mainVideoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
         videos={videos}
       />
 
       <FaqSection
         title="Tire suas dúvidas sobre o App CAIXA Tem!"
         items={faqItems}
-        buttonText="Ver todas perguntas"
       />
 
       <Footer />

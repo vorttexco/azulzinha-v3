@@ -4,6 +4,7 @@ import VantagensParciaisSection from "@/components/pagamento-parcial/VantagensPa
 import FeatureSection from "@/components/shared/FeatureSection";
 import FullImageSection from "@/components/shared/FullImageSection";
 import HabilitarCarouselSection from "@/components/pagamento-parcial/HabilitarCarouselSection";
+import BlueCta from "@/components/shared/BlueCta";
 import ServicosRelacionadosSection from "@/components/pagamento-parcial/ServicosRelacionadosSection";
 import Footer from "@/components/shared/Footer";
 
@@ -118,6 +119,13 @@ export default function PagamentoParcial() {
       />
 
       <HabilitarCarouselSection steps={habilitarSteps} />
+
+      <BlueCta
+        title="Saiba mais sobre Pagamento Parcial com azulzinha"
+        description="Para saber todos os detalhes de como funciona o serviço de Pagamento Parcial na azulzinha, visite a nossa seção com as principais perguntas e respostas."
+        buttonText="Ir para Ajuda"
+        buttonHref="/ajuda"
+      />
 
       <ServicosRelacionadosSection />
 

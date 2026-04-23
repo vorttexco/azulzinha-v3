@@ -247,12 +247,20 @@ export default function ParaSuaMei() {
         items={comAzulzinhaItems}
       />
 
+      <div className="bg-white flex justify-center pb-14 lg:pb-20">
+        <a href="#passo-a-passo" className="btn-laranja">
+          Veja como é fácil ter sua azulzinha
+        </a>
+      </div>
+
       <BandeirasSection
         title="A azulzinha aceita as bandeiras, vouchers e carteiras digitais favoritas do seu cliente*"
         description="Venda de maneira conveniente, sem a maquininha, e receba o dinheiro diretamente em sua conta digital MEI."
         footnote="*Bandeira American Express disponível via Link de Pagamento, VR Benefícios por meio de QR Code. Para azulzinha aproxima, utilizando a bandeira Visa, o limite das transações é de R$200, mas pode variar conforme banco emissor."
+        bgColor="bg-linear-to-b from-white to-[#FAFAFA]"
       />
 
+      <div id="passo-a-passo">
       <StepsCarouselSection
         steps={ativacaoSteps}
         bgClassName="bg-white"
@@ -291,6 +299,7 @@ export default function ParaSuaMei() {
           </div>
         }
       />
+      </div>
 
       <BlueCta
         title="Ainda não tem o App CAIXA Tem? Baixe o seu agora!"

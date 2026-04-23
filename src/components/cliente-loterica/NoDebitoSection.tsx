@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 
 const bandeiras = [
   { src: "/images/cliente-loterica/bandeira-elo.png", alt: "Elo", width: 96, height: 30 },
@@ -42,33 +43,14 @@ export default function NoDebitoSection() {
           </p>
         </div>
 
-        {/* Main image with play overlay */}
-        <div className="relative w-full max-w-[1070px] aspect-[1070/547] rounded-[20px] lg:rounded-[30px] overflow-hidden">
-          <Image
-            src={asset("/images/cliente-loterica/no-debito-main.png")}
-            alt=""
-            fill
-            className="object-cover"
+        <div className="w-full">
+          <SimpleVideoSection
+            title=""
+            description={<> </>}
+            thumbnail="/images/cliente-loterica/no-debito-main.png"
+            videoSrc="/midias/Loterica-Avare_v07.mp4"
+            className="bg-white py-0"
           />
-          <div className="absolute inset-0 bg-[#01367B]/40" />
-          <button
-            type="button"
-            aria-label="Reproduzir vídeo"
-            className="absolute inset-0 flex items-center justify-center cursor-pointer"
-          >
-            <div className="w-[60px] h-[60px] lg:w-[79px] lg:h-[79px] rounded-full bg-white flex items-center justify-center shadow-md">
-              <svg
-                width="22"
-                height="26"
-                viewBox="0 0 22 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-1"
-              >
-                <path d="M21 11.268a2 2 0 0 1 0 3.464L3 25.124A2 2 0 0 1 0 23.392V2.608A2 2 0 0 1 3 .876z" fill="#006CAD" />
-              </svg>
-            </div>
-          </button>
         </div>
 
         {/* 4 pill cards */}

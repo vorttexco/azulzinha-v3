@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
@@ -254,6 +254,26 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
 
+  const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
+  const [barStyle, setBarStyle] = useState<{ left: number; width: number; visible: boolean }>({
+    left: 0,
+    width: 0,
+    visible: false,
+  });
+
+  const handleItemEnter = (index: number, link: (typeof navLinks)[number]) => {
+    const el = itemRefs.current[index];
+    if (el) {
+      setBarStyle({ left: el.offsetLeft, width: el.offsetWidth, visible: true });
+    }
+    setOpenMenu(link.hasDropdown ? link.label : null);
+  };
+
+  const handleNavLeave = () => {
+    setBarStyle((prev) => ({ ...prev, visible: false }));
+    setOpenMenu(null);
+  };
+
   const toggleExpand = (key: string) => {
     setExpandedItems((prev) => {
       const next = new Set(prev);
@@ -293,20 +313,20 @@ export default function Navbar() {
               />
             </Link>
 
-            <ul className="flex items-center gap-6 h-full">
+            <ul
+              className="relative flex items-center gap-6 h-full"
+              onMouseLeave={handleNavLeave}
+            >
               {navLinks.map((link, index) => {
                 const isOpen = openMenu === link.label;
                 return (
                   <Fragment key={link.label}>
                     <li
-                      className={`relative h-full flex items-center ${link.hasDropdown && isOpen ? "z-50" : ""
-                        }`}
-                      onMouseEnter={() =>
-                        setOpenMenu(link.hasDropdown ? link.label : null)
-                      }
-                      onMouseLeave={() => {
-                        if (link.hasDropdown) setOpenMenu(null);
+                      ref={(el) => {
+                        itemRefs.current[index] = el;
                       }}
+                      className={`relative h-full flex items-center ${link.hasDropdown && isOpen ? "z-50" : ""}`}
+                      onMouseEnter={() => handleItemEnter(index, link)}
                     >
                       <Link
                         href={link.href}
@@ -314,15 +334,6 @@ export default function Navbar() {
                       >
                         {link.label}
                       </Link>
-
-                      {/* Orange highlight bar at bottom of menu item */}
-                      {link.hasDropdown && (
-                        <div
-                          className={`pointer-events-none absolute bottom-0 left-0 right-0 h-[3px] bg-laranja transition-opacity duration-200 ${isOpen ? "opacity-100" : "opacity-0"
-                            }`}
-                          aria-hidden="true"
-                        />
-                      )}
 
                       {/* Dropdown curtain */}
                       {link.hasDropdown && (
@@ -334,7 +345,7 @@ export default function Navbar() {
                           aria-hidden={!isOpen}
                         >
                           {link.label === "Para sua empresa" ? (
-                            <div className="bg-white rounded-b-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[778px] px-[54px] pt-[32px] pb-[36px]">
+                            <div className="bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[778px] px-[54px] pt-[32px] pb-[36px]">
                               <div className="grid grid-cols-3 gap-x-[58px] gap-y-[42px]">
                                 {empresaColumns.map((col) => (
                                   <DropdownColumnView
@@ -345,7 +356,7 @@ export default function Navbar() {
                               </div>
                             </div>
                           ) : (
-                            <div className="bg-white rounded-b-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[300px] px-[54px] pt-[32px] pb-[36px]">
+                            <div className="bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[300px] px-[54px] pt-[32px] pb-[36px]">
                               <div className="flex flex-col gap-[40px]">
                                 {voceColumns.map((col) => (
                                   <DropdownColumnView
@@ -363,6 +374,16 @@ export default function Navbar() {
                   </Fragment>
                 );
               })}
+
+              {/* Sliding orange hover bar */}
+              <span
+                aria-hidden="true"
+                className={`pointer-events-none absolute bottom-0 h-[3px] bg-laranja z-[51] transition-all duration-300 ease-out ${barStyle.visible ? "opacity-100" : "opacity-0"}`}
+                style={{
+                  transform: `translateX(${barStyle.left}px)`,
+                  width: `${barStyle.width}px`,
+                }}
+              />
             </ul>
           </div>
 

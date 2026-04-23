@@ -1,20 +1,22 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BlogPost } from "@/components/shared/BlogCard";
+import type { BlogPost } from "@/components/shared/BlogCard";
 import SearchBarSection from "@/components/shared/SearchBarSection";
-import BlogDestaquesSection from "./BlogDestaquesSection";
-import BlogCategoriasSection from "./BlogCategoriasSection";
 import BlogUltimasSection from "@/components/shared/BlogUltimasSection";
 import CategoryFilterModal from "@/components/shared/CategoryFilterModal";
-import { getCategoriesFromPosts } from "@/lib/categories";
+import { categoryMatches, getCategoriesFromPosts } from "@/lib/categories";
 
-export default function BlogContent() {
+interface BlogSearchContentProps {
+  q: string;
+  category: string;
+}
+
+export default function BlogSearchContent({ q, category }: BlogSearchContentProps) {
   const router = useRouter();
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("Gestão financeira");
+  const [searchQuery, setSearchQuery] = useState(q);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -24,17 +26,24 @@ export default function BlogContent() {
       .catch(() => setPosts([]));
   }, []);
 
-  const destaques = useMemo(
-    () => posts.filter((p) => p.type === "destaque"),
-    [posts]
-  );
-
-  const allNonDestaques = useMemo(
-    () => posts.filter((p) => p.type !== "destaque"),
-    [posts]
-  );
+  useEffect(() => {
+    setSearchQuery(q);
+  }, [q]);
 
   const categories = useMemo(() => getCategoriesFromPosts(posts), [posts]);
+
+  const filteredPosts = useMemo(() => {
+    const term = q.trim().toLowerCase();
+    return posts.filter((p) => {
+      const matchesQuery =
+        !term ||
+        p.title.toLowerCase().includes(term) ||
+        p.description.toLowerCase().includes(term) ||
+        p.category.some((c) => c.toLowerCase().includes(term));
+      const matchesCategory = !category || categoryMatches(p.category, category);
+      return matchesQuery && matchesCategory;
+    });
+  }, [posts, q, category]);
 
   const buildUrl = (nextQ: string, nextCategory: string) => {
     const params = new URLSearchParams();
@@ -45,14 +54,18 @@ export default function BlogContent() {
   };
 
   const handleSearch = () => {
-    if (searchQuery.trim()) {
-      router.push(buildUrl(searchQuery, ""));
-    }
+    router.push(buildUrl(searchQuery, category));
   };
 
   const handleCategoryConfirm = (nextCategory: string) => {
     router.push(buildUrl(searchQuery, nextCategory));
   };
+
+  const resultsTitle = q
+    ? `Resultados para "${q}"`
+    : category
+      ? `Resultados em "${category}"`
+      : "Resultados";
 
   return (
     <>
@@ -61,18 +74,20 @@ export default function BlogContent() {
         onSearchChange={setSearchQuery}
         onSearch={handleSearch}
         onFilterClick={() => setModalOpen(true)}
+        filterActive={!!category}
       />
-      <BlogDestaquesSection posts={destaques} />
-      <BlogCategoriasSection
-        posts={posts}
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
+      <BlogUltimasSection
+        posts={filteredPosts}
+        title={resultsTitle}
+        pageSize={9}
+        loadMoreLabel="Carregar mais"
+        resetKey={`${q}|${category}`}
       />
-      <BlogUltimasSection posts={allNonDestaques} />
       <CategoryFilterModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         categories={categories}
+        initialCategory={category}
         onConfirm={handleCategoryConfirm}
       />
     </>

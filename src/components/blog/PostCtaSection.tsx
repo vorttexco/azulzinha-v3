@@ -1,3 +1,5 @@
+import { SOCIAL_LINKS } from "@/lib/social";
+
 function InstagramIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,19 +46,39 @@ export default function PostCtaSection() {
             Navegue pelo site e siga nossas redes sociais
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="#" className="flex items-center gap-2 btn-laranja text-[16px]">
+            <a
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 btn-laranja text-[16px]"
+            >
               <InstagramIcon />
               Instagram
             </a>
-            <a href="#" className="flex items-center gap-2 btn-laranja text-[16px]">
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 btn-laranja text-[16px]"
+            >
               <FacebookIcon />
               Facebook
             </a>
-            <a href="#" className="flex items-center gap-2 btn-laranja text-[16px]">
+            <a
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 btn-laranja text-[16px]"
+            >
               <LinkedinIcon />
               Linkedin
             </a>
-            <a href="#" className="flex items-center gap-2 btn-laranja text-[16px]">
+            <a
+              href={SOCIAL_LINKS.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 btn-laranja text-[16px]"
+            >
               <YoutubeIcon />
               Youtube
             </a>

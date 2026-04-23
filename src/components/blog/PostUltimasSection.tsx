@@ -1,4 +1,4 @@
-import { BlogPost, BlogCardSmall } from "./BlogCard";
+import { BlogPost, BlogCardSmall } from "@/components/shared/BlogCard";
 
 interface PostUltimasSectionProps {
   posts: BlogPost[];

@@ -1,25 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { asset } from "@/lib/assets";
+import { blogMediaUrl } from "@/lib/blog";
 import { useState } from "react";
-import { BlogPost } from "./BlogCard";
+import { BlogPost } from "@/components/shared/BlogCard";
 
 function getPostBanner(post: BlogPost): { src: string; alt: string } {
   const banner = post.content.find((c) => c.type === "banner");
   if (banner && typeof banner.data === "object") {
     return {
-      src: `/assets/${banner.data.src || post.postId + ".jpg"}`,
+      src: blogMediaUrl(banner.data.src || `${post.postId}.jpg`),
       alt: banner.data.altImg || post.altImg,
     };
   }
-  return { src: `/assets/${post.postId}.jpg`, alt: post.altImg };
+  return { src: blogMediaUrl(`${post.postId}.jpg`), alt: post.altImg };
 }
 
 function getPostHtml(post: BlogPost): string {
   const texto = post.content.find((c) => c.type === "texto");
   if (texto && typeof texto.data === "string") {
-    return texto.data;
+    return texto.data
+      .replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, "")
+      .replace(
+        /(<h2\b[^>]*>\s*)(\p{Ll})/gu,
+        (_m, prefix, char) => prefix + char.toUpperCase()
+      );
   }
   return "";
 }
@@ -60,7 +65,7 @@ export default function PostContent({ post }: PostContentProps) {
               <ImagePlaceholder />
             ) : (
               <Image
-                src={asset(banner.src)}
+                src={banner.src}
                 alt={banner.alt}
                 fill
                 className="object-cover"

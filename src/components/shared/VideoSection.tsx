@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 interface VideoItem {
   title: string;
@@ -89,7 +90,7 @@ export default function VideoSection({
   youtubeText = "Se inscreva no nosso canal do Youtube",
   backgroundColor = "bg-[#F7F7F7]",
   sidebarWidth = "lg:w-[402px]",
-  href = "#",
+  href = SOCIAL_LINKS.youtube,
   mainVideoSrc = "https://azulzinhadacaixa.com.br/midias/Fiserv_azulzinha_Automacao_Comercial_V3.mp4",
 }: VideoSectionProps) {
   const hasThumbnails = videos.some((v) => v.thumbnail);

@@ -1,9 +1,11 @@
 "use client";
 
-interface BlogSearchSectionProps {
+interface SearchBarSectionProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onSearch: () => void;
+  onFilterClick?: () => void;
+  filterActive?: boolean;
 }
 
 function SearchIcon() {
@@ -15,11 +17,21 @@ function SearchIcon() {
   );
 }
 
-export default function BlogSearchSection({
+function FilterIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 5h18M6 12h12M10 19h4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export default function SearchBarSection({
   searchQuery,
   onSearchChange,
   onSearch,
-}: BlogSearchSectionProps) {
+  onFilterClick,
+  filterActive = false,
+}: SearchBarSectionProps) {
   return (
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-10">
@@ -36,11 +48,17 @@ export default function BlogSearchSection({
           </div>
           <div className="flex items-center gap-3">
             <button
-              onClick={onSearch}
-              className="flex items-center justify-center w-[56px] h-[56px] rounded-[6px] bg-linear-to-b from-laranja-claro to-laranja cursor-pointer"
-              aria-label="Pesquisar"
+              onClick={onFilterClick ?? onSearch}
+              className="relative flex items-center justify-center w-[56px] h-[56px] rounded-[6px] bg-linear-to-b from-laranja-claro to-laranja cursor-pointer"
+              aria-label={onFilterClick ? "Filtrar por categoria" : "Pesquisar"}
             >
-              <SearchIcon />
+              {onFilterClick ? <FilterIcon /> : <SearchIcon />}
+              {onFilterClick && filterActive && (
+                <span
+                  aria-label="Filtro ativo"
+                  className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-red-600 border border-white"
+                />
+              )}
             </button>
             <button
               onClick={onSearch}

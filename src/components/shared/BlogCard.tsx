@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { asset } from "@/lib/assets";
+import { blogMediaUrl } from "@/lib/blog";
 import { useState } from "react";
 
 export interface BlogPost {
@@ -20,9 +20,9 @@ export interface BlogPost {
 function getPostImage(post: BlogPost): string {
   const banner = post.content.find((c) => c.type === "banner");
   if (banner && typeof banner.data === "object" && banner.data.src) {
-    return `/assets/${banner.data.src}`;
+    return blogMediaUrl(banner.data.src);
   }
-  return `/assets/${post.postId}.jpg`;
+  return blogMediaUrl(`${post.postId}.jpg`);
 }
 
 function ImagePlaceholder() {
@@ -64,7 +64,7 @@ export function BlogCardLarge({ post }: BlogCardLargeProps) {
     <a href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
       <div className="relative w-full h-[192px] lg:h-[510px] rounded-[30px] overflow-hidden">
         <BlogImage
-          src={asset(getPostImage(post))}
+          src={getPostImage(post)}
           alt={post.altImg}
           className="object-cover"
         />
@@ -90,7 +90,7 @@ export function BlogCardSmall({ post }: BlogCardSmallProps) {
     <a href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
       <div className="relative w-full h-[192px] lg:h-[237px] rounded-[30px] overflow-hidden">
         <BlogImage
-          src={asset(getPostImage(post))}
+          src={getPostImage(post)}
           alt={post.altImg}
           className="object-cover"
         />

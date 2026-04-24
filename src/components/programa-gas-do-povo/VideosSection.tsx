@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
@@ -21,16 +24,18 @@ const videos = [
   {
     title: "Como aceitar o Programa Gás do Povo com a azulzinha aproxima",
     thumbnail: "/images/programa-gas-do-povo/video-1-thumb.png",
-    href: "#",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/aproxima-gas-do-povo.mp4",
   },
   {
     title: "Como aceitar o Programa Gás do Povo com a azulzinha",
     thumbnail: "/images/programa-gas-do-povo/video-2-thumb.png",
-    href: "#",
+    videoSrc: "https://azulzinhadacaixa.com.br/midias/azulzinha-smart-gas-do-povo.mp4",
   },
 ];
 
 export default function VideosSection() {
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+
   return (
     <section className="w-full bg-white py-14 lg:py-20">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] flex flex-col items-center gap-10 lg:gap-14">
@@ -39,26 +44,37 @@ export default function VideosSection() {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 w-full">
-          {videos.map((video) => (
+          {videos.map((video, index) => (
             <div key={video.title} className="flex flex-col gap-4 lg:gap-6">
               <h3 className="text-[20px] lg:text-[24px] leading-[1.3] text-azul text-center">
                 {video.title}
               </h3>
-              <a
-                href={video.href}
-                className="relative w-full aspect-[16/9] rounded-[12px] overflow-hidden cursor-pointer group block"
-              >
-                <Image
-                  src={asset(video.thumbnail)}
-                  alt={video.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <PlayIcon />
-                </div>
-              </a>
+              <div className="relative w-full aspect-[16/9] rounded-[12px] overflow-hidden">
+                {playingIndex === index ? (
+                  <video
+                    src={video.videoSrc}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full cursor-pointer group"
+                    onClick={() => setPlayingIndex(index)}
+                  >
+                    <Image
+                      src={asset(video.thumbnail)}
+                      alt={video.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <PlayIcon />
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

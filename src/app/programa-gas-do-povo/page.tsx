@@ -3,6 +3,7 @@ import HeroSection from "@/components/shared/HeroSection";
 import HighlightsSection from "@/components/programa-gas-do-povo/HighlightsSection";
 import VantagensSection from "@/components/programa-gas-do-povo/VantagensSection";
 import BlueCta from "@/components/shared/BlueCta";
+import CtaSection from "@/components/shared/CtaSection";
 import ProdutosSection, { ProdutosSectionCard } from "@/components/shared/ProdutosSection";
 import VideosSection from "@/components/programa-gas-do-povo/VideosSection";
 import Footer from "@/components/shared/Footer";
@@ -96,13 +97,13 @@ export default function ProgramaGasDoPovoPage() {
 
       <VideosSection />
 
-      <BlueCta
+      <CtaSection
         title="Com a azulzinha da CAIXA você pode muito mais!"
         description="Fale com seu Gerente PJ CAIXA ou preencha o formulário para receber uma oferta para seu negócio."
         buttonText="Peça já a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        featureImage="/images/programa-gas-do-povo/cta-formulario.png"
-        featureImageAlt="Maquininha azulzinha sobre bancada"
+        image="/images/programa-gas-do-povo/cta-formulario.png"
+        imageAlt="Maquininha azulzinha sobre bancada"
       />
 
       <Footer />

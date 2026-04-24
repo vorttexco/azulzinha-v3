@@ -51,7 +51,7 @@ const empresaColumns: DropdownColumn[] = [
       { label: "Pagamento Parcial", href: "/pagamento-parcial" },
       { label: "Pix", href: "/pix-azulzinha" },
       { label: "Recarga", href: "/recarga-de-celulares" },
-      { label: "Revenda de Gás", href: "https://azulzinhadacaixa.com.br/programa-gas-do-povo" },
+      { label: "Revenda de Gás", href: "/programa-gas-do-povo" },
     ],
   },
   {

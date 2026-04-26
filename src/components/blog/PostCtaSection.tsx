@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
 
 function InstagramIcon() {
@@ -11,11 +13,7 @@ function InstagramIcon() {
 }
 
 function FacebookIcon() {
-  return (
-    <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7.148 20V10.877h3.065l.459-3.563H7.148V5.05c0-1.031.286-1.734 1.765-1.734L10.8.015V.068C10.8.03 10.455 0 9.736 0H9.8c-.882 0-2.652.352-2.652 3.268v2.046H4v3.563h3.148V20z" fill="white" />
-    </svg>
-  );
+  return <Image src={asset("/images/blog/facebook.svg")} alt="Facebook" width={10} height={20} unoptimized />;
 }
 
 function LinkedinIcon() {

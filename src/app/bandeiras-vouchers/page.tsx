@@ -4,6 +4,8 @@ import BandeirasSection from "@/components/shared/BandeirasSection";
 import BlueCta from "@/components/shared/BlueCta";
 import FeatureSection from "@/components/shared/FeatureSection";
 import FaqBandeirasSection from "@/components/bandeiras-vouchers/FaqBandeirasSection";
+import SuaMaquininhaSection from "@/components/bandeiras-vouchers/SuaMaquininhaSection";
+import MaquininhasSection from "@/components/bandeiras-vouchers/MaquininhasSection";
 import Footer from "@/components/shared/Footer";
 
 export default function BandeirasVouchers() {
@@ -45,6 +47,8 @@ export default function BandeirasVouchers() {
         bgColor="bg-white"
       />
       <FaqBandeirasSection />
+      <SuaMaquininhaSection />
+      <MaquininhasSection />
       <Footer />
     </main>
   );

@@ -33,6 +33,7 @@ interface FeatureSectionProps {
   paddingClassName?: string;
   itemsAlign?: "center" | "start";
   storeBadges?: StoreBadge[];
+  id?: string;
 }
 
 export default function FeatureSection({
@@ -61,13 +62,14 @@ export default function FeatureSection({
   paddingClassName = "py-14 lg:py-27.5",
   itemsAlign = "center",
   storeBadges,
+  id,
 }: FeatureSectionProps) {
   const hasCustomSize = imageWidth && imageHeight;
   const hasCustomSizeMobile = imageWidthMobile && imageHeightMobile;
   const roundedClass = imageBorderRadius || cardBorderRadius;
 
   return (
-    <section className={bgColor}>
+    <section id={id} className={bgColor}>
       <div className={`max-w-360 mx-auto px-7.5 lg:px-25 ${paddingClassName} flex flex-col lg:justify-between lg:items-${itemsAlign} gap-10 lg:gap-19.5 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
         {/* Text content */}
         <div className="flex flex-col gap-6 lg:w-134.25 shrink-0">

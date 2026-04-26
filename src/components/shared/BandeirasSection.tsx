@@ -108,7 +108,7 @@ export default function BandeirasSection({
   const isIconMode = !!iconCards;
 
   return (
-    <section className={bgColor}>
+    <section id="bandeiras" className={bgColor}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 flex flex-col items-center gap-[30px] lg:gap-[60px]">
         {/* Title + Description */}
         <div className="flex flex-col gap-4">

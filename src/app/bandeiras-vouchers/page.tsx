@@ -15,22 +15,25 @@ export default function BandeirasVouchers() {
         description="Conte com a maior rede de aceitação do mercado para oferecer ao seu cliente."
         checkItems={[]}
         buttonText="Conheça"
+        buttonHref="#bandeiras"
         backgroundImage="/images/hero-backgrounds/bandeiras-vouchers.png"
       />
       <BandeirasSection />
       <BlueCta
         title="Novidade! Você sabia que já pode receber pagamentos com VR Benefícios na sua azulzinha?"
-        buttonText="Baixe o manual"
-        icon="/images/bandeiras-vouchers/logo-vr-cta.png"
+        buttonText="Saiba como"
+        buttonHref="#saiba-sobre-bandeiras"
+        icon="/images/bandeiras-vouchers/logo-vr.png"
         iconAlt="VR Benefícios"
         sectionClassName="bg-[#FAFAFA]"
       />
       <FeatureSection
+        id="saiba-sobre-bandeiras"
         title="Como aceitar os principais vouchers de benefícios na azulzinha"
         paragraphs={[
           "Quer aceitar os principais vouchers do mercado? A azulzinha da CAIXA também já vem pronta para você diversificar as experiências de pagamento para seus clientes!",
           "Basta credenciar seu estabelecimento diretamente com cada bandeira que você quer aceitar.",
-          "Selecione abaixo as bandeiras que você pode habilitar na azulzinha e siga o passo a passo de cada uma para fazer a solicitação.",
+          <strong key="bold-vouchers">Selecione abaixo as bandeiras que você pode habilitar na azulzinha e siga o passo a passo de cada uma para fazer a solicitação.</strong>,
         ]}
         image="/images/bandeiras-vouchers/maquina-24d507.png"
         imageAlt="Ilustração como aceitar vouchers"

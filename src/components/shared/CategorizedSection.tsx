@@ -101,32 +101,52 @@ function SubCategoryAccordion({ sub, defaultOpen = false }: { sub: FaqSubCategor
 
 // ── FAQ Content ──
 
-function FaqContent({ category, search }: { category: FaqCategory; search: string }) {
-    const filtered = useMemo(() => {
-        if (!search.trim()) return category.subCategories;
-        const term = search.toLowerCase();
-        return category.subCategories
-            .map((sub) => ({
-                ...sub,
-                items: sub.items.filter((item) =>
-                    item.question.toLowerCase().includes(term)
-                ),
-            }))
-            .filter((sub) => sub.items.length > 0);
-    }, [category.subCategories, search]);
-
+function FaqContent({ category }: { category: FaqCategory }) {
     if (category.subCategories.length === 0) {
         return <p className="text-gray-500 text-[14px]">Conteúdo em breve.</p>;
     }
+    return (
+        <div className="space-y-3">
+            {category.subCategories.map((sub, i) => (
+                <SubCategoryAccordion key={i} sub={sub} defaultOpen={i === 0} />
+            ))}
+        </div>
+    );
+}
 
-    if (filtered.length === 0) {
+function FaqSearchResults({ data, search }: { data: FaqCategory[]; search: string }) {
+    const results = useMemo(() => {
+        const term = search.toLowerCase();
+        return data
+            .map((cat) => ({
+                label: cat.label,
+                subCategories: cat.subCategories
+                    .map((sub) => ({
+                        ...sub,
+                        items: sub.items.filter((item) =>
+                            item.question.toLowerCase().includes(term)
+                        ),
+                    }))
+                    .filter((sub) => sub.items.length > 0),
+            }))
+            .filter((cat) => cat.subCategories.length > 0);
+    }, [data, search]);
+
+    if (results.length === 0) {
         return <p className="text-gray-500 text-[14px]">Nenhum resultado encontrado.</p>;
     }
 
     return (
-        <div className="space-y-3">
-            {filtered.map((sub, i) => (
-                <SubCategoryAccordion key={i} sub={sub} defaultOpen={i === 0} />
+        <div className="space-y-8">
+            {results.map((cat, ci) => (
+                <div key={ci}>
+                    <p className="text-azul text-[14px] font-semibold uppercase tracking-wider mb-3">{cat.label}</p>
+                    <div className="space-y-3">
+                        {cat.subCategories.map((sub, si) => (
+                            <SubCategoryAccordion key={si} sub={sub} defaultOpen={ci === 0 && si === 0} />
+                        ))}
+                    </div>
+                </div>
             ))}
         </div>
     );
@@ -242,36 +262,60 @@ function AppCard({ item }: { item: CardItem }) {
     );
 }
 
-function CardListContent({ category, sortOrder, search }: { category: CardCategory; sortOrder: "asc" | "desc"; search: string }) {
-    const filtered = useMemo(() => {
-        let items = category.items;
-        if (search.trim()) {
-            const term = search.toLowerCase();
-            items = items.filter(
-                (item) =>
-                    item.title.toLowerCase().includes(term) ||
-                    item.description.toLowerCase().includes(term)
-            );
-        }
-        return [...items].sort((a, b) =>
-            sortOrder === "asc"
-                ? a.title.localeCompare(b.title)
-                : b.title.localeCompare(a.title)
+function CardListContent({ category, sortOrder }: { category: CardCategory; sortOrder: "asc" | "desc" }) {
+    const sorted = useMemo(() => {
+        return [...category.items].sort((a, b) =>
+            sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
         );
-    }, [category.items, search, sortOrder]);
+    }, [category.items, sortOrder]);
 
-    if (filtered.length === 0 && !search.trim()) {
+    if (sorted.length === 0) {
         return <p className="text-gray-500 text-[14px]">Conteúdo em breve.</p>;
-    }
-
-    if (filtered.length === 0) {
-        return <p className="text-gray-500 text-[14px]">Nenhum resultado encontrado.</p>;
     }
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filtered.map((item, i) => (
+            {sorted.map((item, i) => (
                 <AppCard key={i} item={item} />
+            ))}
+        </div>
+    );
+}
+
+function CardSearchResults({ data, search, sortOrder }: { data: CardCategory[]; search: string; sortOrder: "asc" | "desc" }) {
+    const results = useMemo(() => {
+        const term = search.toLowerCase();
+        return data
+            .map((cat) => ({
+                label: cat.label,
+                items: [...cat.items]
+                    .filter(
+                        (item) =>
+                            item.title.toLowerCase().includes(term) ||
+                            item.description.toLowerCase().includes(term)
+                    )
+                    .sort((a, b) =>
+                        sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
+                    ),
+            }))
+            .filter((cat) => cat.items.length > 0);
+    }, [data, search, sortOrder]);
+
+    if (results.length === 0) {
+        return <p className="text-gray-500 text-[14px]">Nenhum resultado encontrado.</p>;
+    }
+
+    return (
+        <div className="space-y-8">
+            {results.map((cat, ci) => (
+                <div key={ci}>
+                    <p className="text-azul text-[14px] font-semibold uppercase tracking-wider mb-3">{cat.label}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {cat.items.map((item, i) => (
+                            <AppCard key={i} item={item} />
+                        ))}
+                    </div>
+                </div>
             ))}
         </div>
     );
@@ -337,6 +381,7 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
     const current = data[activeCategory];
+    const isSearching = search.trim().length > 0;
 
     return (
         <section className="py-12 px-4">
@@ -376,7 +421,7 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
                     <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-5">
                             <h3 className="text-azul text-[28px] font-normal leading-[140%] tracking-normal">
-                                {current.label}
+                                {isSearching ? `Resultados para "${search}"` : current.label}
                             </h3>
                             {variant === "cardlist" && (
                                 <div className="flex items-center gap-2 text-gray-500 text-[14px]">
@@ -399,10 +444,18 @@ export default function CategorizedSection(props: CategorizedSectionProps) {
 
                         <div className="relative">
                             <div className="max-h-250 overflow-y-auto px-2 pt-2 -mx-2">
-                                {variant === "faq" ? (
-                                    <FaqContent category={current as FaqCategory} search={search} />
+                                {isSearching ? (
+                                    variant === "faq" ? (
+                                        <FaqSearchResults data={data as FaqCategory[]} search={search} />
+                                    ) : (
+                                        <CardSearchResults data={data as CardCategory[]} search={search} sortOrder={sortOrder} />
+                                    )
                                 ) : (
-                                    <CardListContent category={current as CardCategory} sortOrder={sortOrder} search={search} />
+                                    variant === "faq" ? (
+                                        <FaqContent category={current as FaqCategory} />
+                                    ) : (
+                                        <CardListContent category={current as CardCategory} sortOrder={sortOrder} />
+                                    )
                                 )}
                                 <div className="h-25" />
                                 <div className="sticky bottom-0 left-0 right-0 h-25 -mt-25 bg-[linear-gradient(0deg,rgba(255,255,255,1)_35%,rgba(255,255,255,0)_81%)] pointer-events-none" />

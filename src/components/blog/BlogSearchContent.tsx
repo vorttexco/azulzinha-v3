@@ -61,6 +61,11 @@ export default function BlogSearchContent({ q, category }: BlogSearchContentProp
     router.push(buildUrl(searchQuery, nextCategory));
   };
 
+  const handleClear = () => {
+    setSearchQuery("");
+    router.push("/blog");
+  };
+
   const resultsTitle = q
     ? `Resultados para "${q}"`
     : category
@@ -75,6 +80,7 @@ export default function BlogSearchContent({ q, category }: BlogSearchContentProp
         onSearch={handleSearch}
         onFilterClick={() => setModalOpen(true)}
         filterActive={!!category}
+        onClear={handleClear}
       />
       <div id="blog-destaques">
         <BlogUltimasSection

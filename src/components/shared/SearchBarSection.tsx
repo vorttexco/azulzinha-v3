@@ -6,6 +6,7 @@ interface SearchBarSectionProps {
   onSearch: () => void;
   onFilterClick?: () => void;
   filterActive?: boolean;
+  onClear?: () => void;
 }
 
 function SearchIcon() {
@@ -13,6 +14,14 @@ function SearchIcon() {
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="7" cy="7" r="5.5" stroke="white" strokeWidth="1.5" />
       <path d="M11 11L14.5 14.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ClearIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 4L12 12M4 12L12 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -31,6 +40,7 @@ export default function SearchBarSection({
   onSearch,
   onFilterClick,
   filterActive = false,
+  onClear,
 }: SearchBarSectionProps) {
   return (
     <section className="bg-white">
@@ -43,8 +53,18 @@ export default function SearchBarSection({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && onSearch()}
-              className="w-full h-full rounded-[8px] border border-[#B8B8B8] px-6 text-[16px] leading-[1.4] text-black placeholder:text-[#B8B8B8] outline-none focus:border-azul"
+              className="w-full h-full rounded-[8px] border border-[#B8B8B8] pl-6 pr-12 text-[16px] leading-[1.4] text-black placeholder:text-[#B8B8B8] outline-none focus:border-azul"
             />
+            {onClear && searchQuery && (
+              <button
+                type="button"
+                onClick={onClear}
+                aria-label="Limpar busca"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#B8B8B8] hover:text-azul transition-colors cursor-pointer p-1"
+              >
+                <ClearIcon />
+              </button>
+            )}
           </div>
           <div className="flex items-center gap-3">
             <button

@@ -30,16 +30,7 @@ const defaultCards = [
   },
 ];
 
-const brandLogos = [
-  { src: asset("/images/bandeiras-vouchers/elo.png"), alt: "ELO" },
-  { src: asset("/images/bandeiras-vouchers/mastercard.png"), alt: "Mastercard" },
-  { src: asset("/images/bandeiras-vouchers/visa.png"), alt: "Visa" },
-  { src: asset("/images/bandeiras-vouchers/hipercard.png"), alt: "Bandeira 04" },
-  { src: asset("/images/bandeiras-vouchers/logo-04.png"), alt: "Bandeira 05" },
-  { src: asset("/images/bandeiras-vouchers/logo-06.png"), alt: "Bandeira 06" },
-  { src: asset("/images/bandeiras-vouchers/logo-09.png"), alt: "Bandeira 07" },
-  { src: asset("/images/bandeiras-vouchers/hiper.png"), alt: "Bandeira 08" },
-];
+
 
 const defaultTitle = (
   <>
@@ -105,9 +96,8 @@ export default function BenefitsShowcaseSection({
   image = "/images/benefits-bg.png",
   imageAlt = "Benefícios azulzinha",
   cards = defaultCards,
-  showBrandLogos = true,
   showLink = true,
-  linkText = "Consulte todas as bandeiras",
+  linkText = "Peça a sua azulzinha",
   bgColor = "bg-[#F5F5F5]",
   cardClassName,
   iconClassName,
@@ -151,28 +141,13 @@ export default function BenefitsShowcaseSection({
           ))}
         </div>
 
-        {/* Brand logos */}
-        {showBrandLogos && (
-          <div className="mt-6 lg:mt-10 flex flex-wrap justify-center gap-6 lg:gap-12 lg:justify-center lg:flex-nowrap">
-            {brandLogos.map((brand) => (
-              <div key={brand.src} className="flex items-center justify-center">
-                <Image
-                  src={brand.src}
-                  alt={brand.alt}
-                  width={65}
-                  height={65}
-                  className="object-contain w-[65px] h-auto"
-                />
-              </div>
-            ))}
-          </div>
-        )}
+
 
         {/* Button */}
         {showLink && (
           <div className="mt-6 flex justify-center">
             <a
-              href="/bandeiras-vouchers"
+              href="/maquininhas"
               className="inline-flex items-center gap-2 rounded-[6px]
                px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
             >

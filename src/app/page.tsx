@@ -4,6 +4,7 @@ import CardsCarouselSection from "@/components/shared/CardsCarouselSection";
 import PossibilitiesSection from "@/components/shared/PossibilitiesSection";
 import ProductsSection from "@/components/ProductsSection";
 import BenefitsShowcaseSection from "@/components/shared/BenefitsShowcaseSection";
+import BandeirasHomeSection from "@/components/home/BandeirasHomeSection";
 import TestimonialsSection from "@/components/shared/TestimonialsSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
@@ -30,6 +31,7 @@ export default function Home() {
         cardsGridClassName="lg:-mt-[60px] grid grid-cols-1 lg:grid-cols-3 gap-4 relative z-10"
         contentClassName="w-full lg:w-1/2 flex flex-col justify-center lg:pb-[60px]"
       />
+      <BandeirasHomeSection />
       <TestimonialsSection />
       <CtaSection buttonHref="/peca-azulzinha" />
       <Footer />

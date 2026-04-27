@@ -3,6 +3,7 @@
 import { Fragment, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
@@ -160,6 +161,24 @@ function CloseIcon() {
   );
 }
 
+function SearchIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M14.7549 15.9992L9.15512 10.3995C8.7107 10.755 8.19961 11.0365 7.62186 11.2439C7.04411 11.4513 6.42933 11.555 5.77751 11.555C4.16277 11.555 2.79616 10.9958 1.6777 9.87731C0.559233 8.75885 0 7.39224 0 5.77751C0 4.16277 0.559233 2.79616 1.6777 1.6777C2.79616 0.559233 4.16277 0 5.77751 0C7.39224 0 8.75885 0.559233 9.87731 1.6777C10.9958 2.79616 11.555 4.16277 11.555 5.77751C11.555 6.42933 11.4513 7.04411 11.2439 7.62186C11.0365 8.19961 10.755 8.7107 10.3995 9.15512L15.9992 14.7549L14.7549 15.9992ZM5.77751 9.77732C6.88856 9.77732 7.83296 9.38845 8.61071 8.61071C9.38845 7.83296 9.77732 6.88856 9.77732 5.77751C9.77732 4.66645 9.38845 3.72205 8.61071 2.94431C7.83296 2.16656 6.88856 1.77769 5.77751 1.77769C4.66645 1.77769 3.72205 2.16656 2.94431 2.94431C2.16656 3.72205 1.77769 4.66645 1.77769 5.77751C1.77769 6.88856 2.16656 7.83296 2.94431 8.61071C3.72205 9.38845 4.66645 9.77732 5.77751 9.77732Z"
+        fill="#FC8F01"
+      />
+    </svg>
+  );
+}
+
 function ChevronDownIcon({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -250,9 +269,11 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
 }
 
 export default function Navbar() {
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [searchQuery, setSearchQuery] = useState("");
 
   const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
   const [barStyle, setBarStyle] = useState<{ left: number; width: number; visible: boolean }>({
@@ -296,11 +317,20 @@ export default function Navbar() {
     }
   };
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    router.push(`/blog?q=${encodeURIComponent(q)}`);
+    setSearchQuery("");
+    closeMobileMenu();
+  };
+
   return (
     <nav className="w-full bg-[#006CAD] relative z-30">
       {/* Desktop */}
       <div className="hidden lg:block">
-        <div className="max-w-[1440px] mx-auto h-[79px] flex items-center justify-between px-[100px]">
+        <div className="max-w-[1440px] mx-auto h-[79px] flex items-center justify-between px-[40px]">
           {/* Left side */}
           <div className="flex items-center gap-12 h-full">
             <Link href="/">
@@ -389,6 +419,28 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-6">
+            {/* Search */}
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex items-center gap-2 w-[160px] border-b border-white pb-1"
+              role="search"
+            >
+              <button
+                type="submit"
+                aria-label="Buscar"
+                className="shrink-0 flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                <SearchIcon />
+              </button>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar"
+                className="w-full bg-transparent text-[14px] leading-[1.6] text-white placeholder:text-white outline-none"
+              />
+            </form>
+
             {/* Portal de Acesso */}
             <a
               href="https://portal.azulzinhadacaixa.com.br"
@@ -436,6 +488,28 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-[79px] z-50 bg-[#006CAD] overflow-y-auto">
           <div className="flex flex-col px-[24px] pt-[24px] pb-[40px] gap-[12px]">
+            {/* Search */}
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex items-center gap-2 border-b border-white pb-2"
+              role="search"
+            >
+              <button
+                type="submit"
+                aria-label="Buscar"
+                className="shrink-0 flex items-center justify-center cursor-pointer"
+              >
+                <SearchIcon />
+              </button>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar"
+                className="w-full bg-transparent text-[16px] leading-[1.6] text-white placeholder:text-white outline-none"
+              />
+            </form>
+
             {/* CTA Button */}
             <Link
               href="/peca-azulzinha"

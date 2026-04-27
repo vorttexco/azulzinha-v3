@@ -322,7 +322,7 @@ export default function Footer() {
 
           {/* Copyright text */}
           <p className="text-xs lg:text-sm text-[#717171] flex-1 text-center">
-            © 2026 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
+            © 2024 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
             direitos reservados.<br />SAC Fiserv (24h): 0800 770 6207
           </p>
 
@@ -337,7 +337,12 @@ export default function Footer() {
             />
 
             {/* Dúvidas button */}
-            <button className="flex items-center gap-2 border border-[#006CAD] text-[#006CAD] rounded-full px-4 py-2 text-sm font-medium hover:bg-[#006CAD]/5 transition-colors cursor-pointer shrink-0">
+            <a
+              href={SOCIAL_LINKS.whatsappApi}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border border-azul text-azul rounded-full px-4 py-2 text-sm font-medium hover:bg-azul/5 transition-colors shrink-0"
+            >
               <Image
                 src={asset("/images/footer-zuli.png")}
                 alt="Zuli"
@@ -346,7 +351,7 @@ export default function Footer() {
                 className="rounded-full"
               />
               Dúvidas?
-            </button>
+            </a>
           </div>
         </div>
       </div>

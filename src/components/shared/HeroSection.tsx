@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
@@ -73,6 +73,9 @@ export default function HeroSection({
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+  const queryPrefix = queryString ? `?${queryString}` : "";
   const isInPageAnchor =
     buttonHref.startsWith("#") && buttonHref.length > 1;
 
@@ -181,7 +184,7 @@ export default function HeroSection({
           {buttonText &&
             (isInPageAnchor ? (
               <Link
-                href={`${pathname}${buttonHref}`}
+                href={`${pathname}${queryPrefix}${buttonHref}`}
                 className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
                 scroll
               >

@@ -76,13 +76,15 @@ export default function BlogSearchContent({ q, category }: BlogSearchContentProp
         onFilterClick={() => setModalOpen(true)}
         filterActive={!!category}
       />
-      <BlogUltimasSection
-        posts={filteredPosts}
-        title={resultsTitle}
-        pageSize={9}
-        loadMoreLabel="Carregar mais"
-        resetKey={`${q}|${category}`}
-      />
+      <div id="blog-destaques">
+        <BlogUltimasSection
+          posts={filteredPosts}
+          title={resultsTitle}
+          pageSize={9}
+          loadMoreLabel="Carregar mais"
+          resetKey={`${q}|${category}`}
+        />
+      </div>
       <CategoryFilterModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}

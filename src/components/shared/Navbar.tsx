@@ -438,6 +438,7 @@ export default function Navbar() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar"
                 className="w-full bg-transparent text-[14px] leading-[1.6] text-white placeholder:text-white outline-none"
+                suppressHydrationWarning
               />
             </form>
 
@@ -507,6 +508,7 @@ export default function Navbar() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar"
                 className="w-full bg-transparent text-[16px] leading-[1.6] text-white placeholder:text-white outline-none"
+                suppressHydrationWarning
               />
             </form>
 

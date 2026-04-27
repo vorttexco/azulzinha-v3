@@ -1,11 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
+
+function HeroAnchorLink({
+  pathname,
+  buttonHref,
+  buttonText,
+  className,
+}: {
+  pathname: string;
+  buttonHref: string;
+  buttonText: string;
+  className: string;
+}) {
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+  const queryPrefix = queryString ? `?${queryString}` : "";
+  return (
+    <Link href={`${pathname}${queryPrefix}${buttonHref}`} className={className} scroll>
+      {buttonText}
+    </Link>
+  );
+}
 
 const formatCPF = (value: string) =>
   value
@@ -73,9 +94,6 @@ export default function HeroSection({
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const queryString = searchParams.toString();
-  const queryPrefix = queryString ? `?${queryString}` : "";
   const isInPageAnchor =
     buttonHref.startsWith("#") && buttonHref.length > 1;
 
@@ -183,13 +201,24 @@ export default function HeroSection({
 
           {buttonText &&
             (isInPageAnchor ? (
-              <Link
-                href={`${pathname}${queryPrefix}${buttonHref}`}
-                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
-                scroll
+              <Suspense
+                fallback={
+                  <Link
+                    href={`${pathname}${buttonHref}`}
+                    className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
+                    scroll
+                  >
+                    {buttonText}
+                  </Link>
+                }
               >
-                {buttonText}
-              </Link>
+                <HeroAnchorLink
+                  pathname={pathname}
+                  buttonHref={buttonHref}
+                  buttonText={buttonText}
+                  className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
+                />
+              </Suspense>
             ) : (
               <a
                 href={buttonHref}

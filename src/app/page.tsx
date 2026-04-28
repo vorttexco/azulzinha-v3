@@ -18,12 +18,9 @@ export default function Home() {
       <HeroSection
         buttonHref="/peca-azulzinha"
         checkItems={[]}
-        textColor="text-azul"
-        overlayColor="white"
-        mobileBackgroundImage="/images/hero-gas-home_mobile.png"
-        mobileImageClassName="object-right sm:object-[right_top]"
-        description={<>Aceite benefícios e diversos<br />meios de pagamento!</>}
-        buttonSubtext={<>Funcionalidade disponível na azulzinha smart,<br className="hidden lg:block" /> azulzinha pro e no App azulzinha aproxima</>}
+        backgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
+        title="Com a azulzinha, maquininha da CAIXA, você pode muito mais!"
+        description={<>Conheça as nossas opções de aluguel!</>}
       />
       <CardsCarouselSection />
       <PossibilitiesSection />

@@ -487,8 +487,26 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[79px] z-50 bg-[#006CAD] overflow-y-auto">
-          <div className="flex flex-col px-[24px] pt-[24px] pb-[40px] gap-[12px]">
+        <div className="lg:hidden fixed inset-0 z-50 bg-[#006CAD] flex flex-col">
+          <div className="flex h-[79px] items-center justify-between px-[30px] shrink-0">
+            <Link href="/" onClick={closeMobileMenu}>
+              <Image
+                src={asset("/images/logo-azulzinha.png")}
+                alt="Azulzinha"
+                width={127}
+                height={55}
+                priority
+              />
+            </Link>
+            <button
+              onClick={closeMobileMenu}
+              className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
+              aria-label="Fechar menu"
+            >
+              <CloseIcon />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto overscroll-contain flex flex-col px-[24px] pt-[24px] pb-[40px] gap-[12px]">
             {/* Search */}
             <form
               onSubmit={handleSearchSubmit}

@@ -13,6 +13,8 @@ export default function SuaAzulzinhaPage() {
                 checkItems={[]}
                 buttonText=""
                 backgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
+                mobileBackgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
+                mobileImageClassName="object-[70%_25%]"
                 productImage="/images/produtos.png"
             />
             <FormSection />

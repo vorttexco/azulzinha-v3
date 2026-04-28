@@ -17,7 +17,9 @@ export default function MaquininhasProPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#autonomia-pro"
-        backgroundImage="/images/maquininhas-pro/hero-bg.png"
+        backgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        mobileImageClassName="object-[70%_25%]"
       />
       <AutonomiaSection />
       <VantagensSection />

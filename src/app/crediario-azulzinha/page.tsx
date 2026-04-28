@@ -120,6 +120,8 @@ export default function CrediarioAzulzinha() {
         buttonText="Conheça"
         buttonHref="#conheça"
         backgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        mobileImageClassName="object-[70%_25%]"
       />
 
       <div id="conheça" />

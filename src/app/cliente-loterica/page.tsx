@@ -22,6 +22,8 @@ export default function Lotericas() {
                 checkItems={[]}
                 buttonText="Saiba mais"
                 backgroundImage="/images/hero-backgrounds/lotericas.png"
+                mobileBackgroundImage="/images/hero-backgrounds/lotericas.png"
+                mobileImageClassName="object-[60%_20%]"
                 logoImage="/images/conveniencia/lotericalogo.png"
                 logoWidth={196}
                 logoHeight={51}

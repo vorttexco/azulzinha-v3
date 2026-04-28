@@ -128,7 +128,7 @@ export default function HeroSection({
       {showOverlay && (
         <div className={`absolute inset-0 z-1 opacity-90 ${overlayColor === "white"
           ? "bg-[linear-gradient(90.48deg,#ffffff_45%,rgba(255,255,255,0)_65%)] lg:bg-[linear-gradient(90.48deg,#ffffff_15%,rgba(255,255,255,0)_50%)]"
-          : "bg-[linear-gradient(90.48deg,#00275E_50%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
+          : "bg-[linear-gradient(90.48deg,#00275E_35%,rgba(1,61,145,0)_96%)] lg:bg-[linear-gradient(90.48deg,#00275E_25%,rgba(1,61,145,0)_75%)]"
           }`} />
       )}
 

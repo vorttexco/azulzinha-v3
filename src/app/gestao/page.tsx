@@ -9,10 +9,12 @@ export default function GestaoVendasPage() {
       <Navbar />
       <HeroSection
         title="Gestão de Vendas"
-        description="No App ou no Portal, gerencie seu negócio e solicite mais serviços com apenas um clique."
+        description={<>No App ou no Portal, gerencie seu negócio<br />e solicite mais serviços com apenas um clique.</>}
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#dobra"
+        mobileBackgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
+        mobileImageClassName="object-[40%_25%]"
         backgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
       />
       <div id="dobra" />

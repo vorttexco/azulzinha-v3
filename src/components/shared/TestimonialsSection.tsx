@@ -57,9 +57,8 @@ function ScrollDots({
           key={i}
           onClick={() => onDotClick(i)}
           aria-label={`Ir para ${i + 1}`}
-          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${
-            i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
-          }`}
+          className={`transition-all duration-300 rounded-full cursor-pointer h-[6px] ${i === active ? "w-[28px] bg-laranja" : "w-[6px] bg-[#D9D9D9]"
+            }`}
         />
       ))}
     </div>
@@ -78,7 +77,7 @@ export default function TestimonialsSection({
       loop: true,
       align: "center",
       containScroll: false,
-      watchDrag: false, // optional: disable drag if you want zero interruption
+      dragFree: true
     },
     [autoplayRef.current]
   );

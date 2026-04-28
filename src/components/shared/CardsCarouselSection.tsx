@@ -21,6 +21,14 @@ export interface CarouselCard {
 
 const defaultCards: CarouselCard[] = [
   {
+    title: "Gás do Povo",
+    description: "Com a azulzinha, eu posso fazer parte do programa Gás do Povo!",
+    image: "/images/home-carousel.png",
+    variant: "variant2",
+    ctaText: "Saiba mais",
+    href: "/programa-gas-do-povo",
+  },
+  {
     title: "Pix aprovado?",
     description: "A impressão é a confirmação! A venda só é considerada válida quando o comprovante é impresso",
     image: "/images/card-link-pagamento.png",
@@ -105,7 +113,7 @@ export default function CardsCarouselSection({
 }: CardsCarouselSectionProps) {
   const autoplay = useRef(Autoplay({ delay: 1500, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "center", containScroll: "trimSnaps" },
+    { align: "center", dragFree: true },
     [autoplay.current, WheelGesturesPlugin()]
   );
   const [activeDot, setActiveDot] = useState(0);

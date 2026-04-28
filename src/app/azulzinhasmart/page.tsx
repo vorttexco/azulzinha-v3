@@ -27,6 +27,8 @@ export default function AzulzinhaSmartPage() {
         buttonText="Conheça"
         buttonHref="#conteudo"
         backgroundImage="/images/azulzinha-smart/hero-bg.png"
+        mobileBackgroundImage="/images/azulzinha-smart/hero-bg.png"
+        mobileImageClassName="object-[70%_25%]"
       />
       <SimplifiqueSection />
       <CategorizedSection

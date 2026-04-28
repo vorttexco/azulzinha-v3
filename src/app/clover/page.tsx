@@ -44,6 +44,8 @@ export default function CloverPage() {
         buttonText="Conheça"
         buttonHref="#dobra"
         backgroundImage="/images/clover/hero-bg-1f8314.png"
+        mobileBackgroundImage="/images/clover/hero-bg-1f8314.png"
+        mobileImageClassName="object-[60%_25%]"
       />
       <CloverDiscoverSection />
       <CloverFeaturesSection />

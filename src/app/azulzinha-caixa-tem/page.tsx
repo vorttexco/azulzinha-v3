@@ -231,19 +231,21 @@ export default function ParaSuaMei() {
         buttonText="Saiba como"
         buttonHref="#saiba-como"
         backgroundImage="/images/mei/hero.png"
+        mobileBackgroundImage="/images/mei/hero.png"
+        mobileImageClassName="object-[65%_25%]"
         buttonLogoImage="/images/mei/caixa-tem.svg"
         buttonLogoWidth={168}
         buttonLogoHeight={51}
       />
 
       <div id="saiba-como">
-      <SimpleVideoSection
-        title="Tudo 100% digital para você vender mais"
-        description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
-        </>}
-        thumbnail="/images/mei/tudo-100-main.png"
-        videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
-      />
+        <SimpleVideoSection
+          title="Tudo 100% digital para você vender mais"
+          description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
+          </>}
+          thumbnail="/images/mei/tudo-100-main.png"
+          videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
+        />
       </div>
 
       <BenefitsSection
@@ -267,44 +269,44 @@ export default function ParaSuaMei() {
       />
 
       <div id="passo-a-passo">
-      <StepsCarouselSection
-        steps={ativacaoSteps}
-        bgClassName="bg-white"
-        paddingClassName="pt-14 lg:pt-20"
-        cardHeight="h-[470px]"
-        imageTopOffset="-top-24"
-        carouselPaddingTop="pt-28"
-        headerContent={
-          <div className="flex flex-col gap-8 lg:gap-[60px]">
-            <h2 className="section-title text-azul text-center">
-              Passo a passo para habilitar a azulzinha no seu App CAIXA Tem
-            </h2>
+        <StepsCarouselSection
+          steps={ativacaoSteps}
+          bgClassName="bg-white"
+          paddingClassName="pt-14 lg:pt-20"
+          cardHeight="h-[470px]"
+          imageTopOffset="-top-24"
+          carouselPaddingTop="pt-28"
+          headerContent={
+            <div className="flex flex-col gap-8 lg:gap-[60px]">
+              <h2 className="section-title text-azul text-center">
+                Passo a passo para habilitar a azulzinha no seu App CAIXA Tem
+              </h2>
+              <div className="flex items-center gap-4">
+                <div className="w-[49px] h-[49px] rounded-full bg-laranja flex items-center justify-center shrink-0">
+                  <span className="text-[26px] text-white">1</span>
+                </div>
+                <span className="text-[20px] lg:text-[26px] text-azul">Ativação</span>
+              </div>
+            </div>
+          }
+        />
+
+        <StepsCarouselSection
+          steps={identificacaoSteps}
+          bgClassName="bg-white"
+          paddingClassName="pt-8 lg:pt-12 pb-14 lg:pb-20"
+          cardHeight="h-[470px]"
+          imageTopOffset="-top-24"
+          carouselPaddingTop="pt-28"
+          headerContent={
             <div className="flex items-center gap-4">
               <div className="w-[49px] h-[49px] rounded-full bg-laranja flex items-center justify-center shrink-0">
-                <span className="text-[26px] text-white">1</span>
+                <span className="text-[26px] text-white">2</span>
               </div>
-              <span className="text-[20px] lg:text-[26px] text-azul">Ativação</span>
+              <span className="text-[20px] lg:text-[26px] text-azul">Identificação</span>
             </div>
-          </div>
-        }
-      />
-
-      <StepsCarouselSection
-        steps={identificacaoSteps}
-        bgClassName="bg-white"
-        paddingClassName="pt-8 lg:pt-12 pb-14 lg:pb-20"
-        cardHeight="h-[470px]"
-        imageTopOffset="-top-24"
-        carouselPaddingTop="pt-28"
-        headerContent={
-          <div className="flex items-center gap-4">
-            <div className="w-[49px] h-[49px] rounded-full bg-laranja flex items-center justify-center shrink-0">
-              <span className="text-[26px] text-white">2</span>
-            </div>
-            <span className="text-[20px] lg:text-[26px] text-azul">Identificação</span>
-          </div>
-        }
-      />
+          }
+        />
       </div>
 
       <BlueCta

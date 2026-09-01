@@ -16,6 +16,7 @@ export const APP_CATEGORIES = [
   "Comércio",
   "Delivery",
   "Direito",
+  "Distribuidora de Gás de Cozinha",
   "Distribuidores de Produtos",
   "Estacionamentos",
   "Eventos, Feiras e Shows",
@@ -139,7 +140,7 @@ function AppCard({ item }: { item: CardItem }) {
       )}
       <h4 className="text-gray-800 text-[18px] font-normal leading-[140%] mb-2">{item.title}</h4>
       <p
-        className={`text-gray-600 text-[14px] font-normal leading-[140%] ${expanded ? "" : "line-clamp-5"}`}
+        className={`text-gray-600 text-[14px] font-normal leading-[140%] whitespace-pre-line ${expanded ? "" : "line-clamp-5"}`}
       >
         {main}
       </p>

@@ -287,7 +287,7 @@ export default function PixAzulzinha() {
 
       <HeroSection
         title="Pix"
-        description="Receba transferências 24 horas direto na sua azulzinha e fature ainda mais."
+        description="Receba pagamentos 24h direto na sua azulzinha e venda ainda mais."
         checkItems={[]}
         buttonText="Habilite já"
         buttonHref="#habilita"

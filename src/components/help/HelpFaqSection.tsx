@@ -1,10 +1,10 @@
 "use client";
 
-import CategorizedSection from "@/components/shared/CategorizedSection";
-import type { FaqCategory } from "@/components/shared/CategorizedSection";
+import CategorizedFaqSection from "@/components/shared/CategorizedFaqSection";
+import type { FaqCategory } from "@/components/shared/CategorizedFaqSection";
 
-export type { FaqItem, FaqSubCategory, FaqCategory } from "@/components/shared/CategorizedSection";
+export type { FaqItem, FaqSubCategory, FaqCategory } from "@/components/shared/CategorizedFaqSection";
 
 export default function HelpFaqSection({ faqData, title = "Dúvidas frequentes" }: { faqData: FaqCategory[]; title?: string }) {
-    return <CategorizedSection variant="faq" data={faqData} title={title} />;
+    return <CategorizedFaqSection data={faqData} title={title} />;
 }

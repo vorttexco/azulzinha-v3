@@ -1,4 +1,4 @@
-import { CardCategory } from "@/components/shared/CategorizedSection";
+import { CardCategory } from "@/components/shared/CategorizedCardsSection";
 import { asset } from "@/lib/assets";
 
 const logo = (name: string) => asset(`/images/azulzinha-smart/logo/${name}.png`);

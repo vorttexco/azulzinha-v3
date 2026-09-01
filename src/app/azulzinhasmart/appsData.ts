@@ -1,168 +1,853 @@
-import { CardCategory } from "@/components/shared/CategorizedCardsSection";
-import { asset } from "@/lib/assets";
+import { CardItem } from "@/components/shared/CategorizedCardsSection";
 
-const logo = (name: string) => asset(`/images/azulzinha-smart/logo/${name}.png`);
-
-const appsData: CardCategory[] = [
-    {
-        label: "Todos os apps",
-        items: [
-            { title: "A00s", logo: logo("logo-a00s"), description: "O App A00s funciona como PDV móvel, mas também como check out remoto, tanto para comércio, como para bares e restaurantes. Atende pequenos comércios, que pode usar apenas o terminal, como o médio e grande que pode trabalhar interligado com outras soluções.\n\nTelefone: (54) 3242-7901\nEmail: suporte@a00s.com" },
-            { title: "A2D Ticket", logo: logo("logo-a2d-ticket"), description: "O A2D Ticket é um aplicativo de venda e gestão de ingressos digitais, desenvolvido pela A2D Soluções LTDA. A solução oferece uma plataforma completa para eventos, permitindo a criação, venda, acompanhamento e validação de ingressos de forma digital, com controle em tempo real das vendas e dos repasses financeiros.\n\nTelefone: (35) 99251-2002" },
-            { title: "Alpino", logo: logo("logo-alpino"), description: "O Alpino Smart é uma solução completa oferecida pela Alpino Comércio de Hardware e Serviços LTDA para auxiliar pequenas e médias empresas na emissão de NFC-e (Nota Fiscal de Consumidor Eletrônica). Com total conformidade com as normativas vigentes, o Alpino Smart já realiza a vinculação obrigatória do comprovante de pagamento à NFC-e. Oferecemos uma solução pronta para uso, com todos os produtos já cadastrados, e proporcionamos suporte multi-canais 24 horas, todos os dias da semana. Você também terá acesso a um ambiente web completo, onde poderá visualizar todas as notas emitidas.\n\nTelefone: (54) 98116-5431\nEmail: fabio@alpinotecnologia.com.br" },
-            { title: "Anota Ai Smart PDV",  logo: logo("logo-new-choice"), description: "A gestão de frente de loja ficará mais simples e rápida. Utilizando o dinamismo e praticidade de um POS DIGITAL será possível ter acesso às principais funções de um estabelecimento como compra, venda, controle de estoque, relatórios, identificação dos clientes e funcionários, impressão por setor, e muito mais! Além de todas as operações disponíveis, o SMART PDV conta com um sistema de retaguarda próprio, 100% na nuvem, que tornará possível acompanhar o dia a dia do estabelecimento, em tempo real, a partir de qualquer equipamento conectado à internet.\n\nTelefone: (21) 2430-3005\nEmail: hilario@newchoice.com.br, rodrigo@newchoice.com.br" },
-            { title: "Apliper Pagoo", logo: logo("logo-apliper"), description: "O Apliper Pagoo é um App para capturar o pagamento emitido pela automação desktop. Ao emitir uma NFC-e, o PDV gera uma requisição de pagamento e o App recebe esta requisição, processa o pagamento e retorna para o PDV (aprovada ou negada). O foco do App é atender as empresas que necessitam se adequar à legislação (obrigatoriedade de vincular o pagamento via cartão à NFC-e), além de novos clientes prospectados.\n\nTelefone: (54) 98129-1616" },
-            { title: "APOS Skytef", logo: logo("logo-skytef"), description: "O APOS Skytef é um navegador Web para POS que realiza vendas por meio de diversas formas de pagamento. Com o APOS Skytef você pode customizar sua solução de pagamento (logomarca, cores, mensagens, etc.). A solução possui uma versão Multi PV (múltiplos pontos de venda) para clientes que necessitam cobrar valores em vários estabelecimentos (MultiEC), creditando suas vendas para cada um dos estabelecimentos cadastrados, cada qual em sua conta. Tudo isso em uma única maquininha!\n\nTelefone: (11) 2175-9500, (11) 4550-1450" },
-            { title: "Argo Sistemas", logo: logo("logo-argo"), description: "A solução Argo cobre todas as áreas vitais na operação de postos de gasolina. Os módulos do sistema foram pensados de forma inteligente, com a finalidade de integrar os dados, otimizando tempo e gerando informações essenciais para tomadas de decisão assertivas.\n\nTelefone: (54) 3771-3300\nEmail: tef@argosistemas.com" },
-            { title: "Arpag", logo: logo("logo-arpag"), description: "Você sofre com erros de digitação na hora da venda e acaba perdendo dinheiro? Precisa de mais agilidade nos pagamentos recebidos via Pix? E o seu TEF, está ficando pesado no bolso? A Arpa já tem uma solução para essas e outras situações do seu negócio - conheça o App Arpag, o integrador de PDV e SMART POS que facilita sua rotina, garante cobranças corretas e te deixa dentro das normas fiscais!\n\nTelefone: (49) 99960-6336" },
-            { title: "B2 Sistemas", logo: logo("logo-b2"), description: "Integração com sistema Queen para recebimento integrado na maquininha.\n\nTelefone: (65) 3326-2299, (65) 99983-6549\nEmail: suporte@b2sistemas.com.br, desenvolvimento@b2sistemas.com.br, heli@b2sistemas.com.br" },
-            { title: "Bar Fácil", logo: logo("logo-barfacil"), description: "O Bar Fácil é um App voltado para bares e eventos que atua como uma solução de ponto de venda (POS) Android, facilitando o gerenciamento de transações e operações de vendas.\n\nTelefone: (48) 99813-0006\nEmail: luan.correa@agpsolucoes.com.br" },
-            { title: "BitBar", logo: logo("logo-bitbar"), description: "O Bit Bar é um sistema de gestão focado em Bares e Restaurantes.\n\nFuncionalidades: Cadastro de produtos, Cardápio digital, Delivery, Comanda, Controle financeiro, Integração com balança, Controle de estoque, Integração com iFood.\n\nTelefone: (51) 99400-7054" },
-            { title: "Bitbyte", logo: logo("logo-bitbyte"), description: "A receita para o crescimento do seu negócio! Agilize o atendimento de seus clientes, reduza custos, evite desperdícios, melhore a lucratividade do seu negócio e automatize a apuração de informações estratégicas.\n\nTelefone: (11) 94177-4424\nEmail: seliu@bitbyte.com.br" },
-            { title: "Brajan Sistemas", logo: logo("logo-brajan"), description: "App para atendimento de restaurante com controle de mesa e loja em geral.\n\nTelefone: (27) 3383-7100\nEmail: rodrigozr@brajan.com.br" },
-            { title: "Cash Driver", logo: logo("logo-idez"), description: "O Cash Driver é uma ferramenta que utiliza a tecnologia móvel (smartphone ou tablet) para acompanhar e otimizar o processo logístico de entrega. Seu ciclo tem início pela conferência dos produtos carregados (saída), prestação de contas \"ponto a ponto\" e conferência de entrada, tornando o processo mais ágil, prático e seguro. Além disso, o sistema memoriza a rota feita pelo motorista e também alerta para paradas extras programadas (almoço, depósitos bancários e descanso obrigatório) e não programadas (abastecimento, troca de pneu, acidentes e outros).\n\nTelefone: (11) 99981-2505, (11) 2959-5011\nEmail: douglas@linkedby.com.br, marcelo.zorub@linkedby.com.br" },
-            { title: "CH Sistemas", logo: logo("logo-chsistemas"), description: "Simplifique as suas operações de vendas com emissão de documentos fiscais, TEF (Transferência Eletrônica de Fundos), controle de abertura e fechamento de caixa e Pix (QR Code) para receber pagamentos diretamente no App, eliminando a necessidade de conferir o extrato bancário para confirmar as transações. Simples, prático e ágil, com uma interface amigável!\n\nTelefone: (49) 98847-0587, (49) 99975-3863\nEmail: desenvolvimento@chsistemas.com.br, comercial@chsistemas.com.br" },
-            { title: "Chef Mio", logo: logo("logo-chefmio"), description: "Atendimento presencial rápido e eficiente com App de garçom, cardápio digital para mesas através de QR Code, sistema de caixa rápido, mesas e comandas individuais. Automatize o atendimento de delivery e potencialize suas vendas com pedidos delivery por telefone, cardápio digital sem taxas de comissão e integração com WhatsApp. Gestão completa com controle de caixa, financeiro e estoque além de módulo fiscal.\n\nTelefone: (28) 99992-1882\nEmail: renan@chefmio.com.br" },
-            { title: "CISS", logo: logo("logo-ciss"), description: "Com o App CISS é possível consultar informações sobre os produtos, emitir pedidos, gerar comandas, finalizar a venda e imprimir o documento fiscal de qualquer lugar da loja, ou até mesmo fora dela.\n\nTelefone: (46) 99127-4596" },
-            { title: "Closmaq", logo: logo("logo-losmaq"), description: "Software para gestão de mesa, balcão, entrega, ingressos, fichas e vendas no geral.\n\nTelefone: (32) 98852-5146\nEmail: david@closmaq.com.br" },
-            { title: "Código UP", logo: logo("logo-codigoup"), description: "O Código UP é uma ferramenta completa com vários módulos: Cadastro Completo de Produtos, Controle Completo de Estoque, Emissão de NF-e, NFC-e, MDF-e, CT-e, Controle de Ordens de Serviço com emissão de NF-e dos produtos e NFS-e dos serviços, Controle financeiro completo, Controle de Boletos e muito mais.\n\nTelefone: (32) 98803-0537" },
-            { title: "Comanda Alterdata", logo: logo("logo-comanda-alterdata"), description: "O Comanda Alterdata é um aplicativo de lançamento de pedidos e vendas desenvolvido pela ALTERDATA Tecnologia em Informática LTDA. Ele é um aplicativo complementar e dependente do Alterdata SPICE, suíte completa de gestão voltada para restaurantes, bares, lanchonetes, cafeterias e estabelecimentos de food service. O app permite que garçons e atendentes registrem pedidos diretamente pelo dispositivo móvel, com integração em tempo real ao sistema SPICE, trazendo mais agilidade no atendimento e maior controle operacional.\n\nTelefone: (21) 99253-1415\nEmail: adm@alterdata.com.br" },
-            { title: "COMPSIS", logo: logo("logo-compsis"), description: "App que faz o controle operacional e de cobranças em praças de pedágio.\n\nTelefone: (12) 99789-4721\nEmail: jessilin.rodrigues@compsisnet.com.br, carlos.doria@compsis.com.br" },
-            { title: "Compu Forte Sistemas", logo: logo("logo-compuforte"), description: "App para venda de fichas em eventos, bares e restaurantes.\n\n*Lembrando que para rodar o App precisa do retaguarda da Compu Forte Sistemas.\n\nTelefone: (31) 99201-1599, (31) 2555-6970\nEmail: gustavohpr@gmail.com" },
-            { title: "Compumate Pay", logo: logo("logo-compumate"), description: "O sistema Compumate Pay é uma ferramenta que ajuda na realização das vendas com simplicidade e agilidade, tendo tudo na máquina de cartão. A POS Smart é uma maquininha que realizará a transação eletrônica com os cartões e no mesmo equipamento sairá a impressão do Cupom Fiscal (NFC-e) junto com o comprovante de pagamento. Essa tecnologia que avançou dentro do conceito de ponto de venda contribui para o seu negócio de diversas maneiras.\n\nTelefone: (51) 98608-0294\nEmail: fernando@compumate.com.br, ricardo@compumate.com.br" },
-            { title: "Compusoft", logo: logo("logo-compusoft"), description: "App integrado ao sistema de gestão de postos de combustíveis Posto Forte, o App permite que seja faturado os abastecimentos realizados nas bombas do posto, além de venda de produtos e controle da loja de conveniência.\n\nTelefone: (18) 3271-1057\nEmail: yudi@pratikapdv.com" },
-            { title: "Connect Posto - POS", logo: logo("logo-techposto"), description: "O Connect Posto - POS é um App de vendas de combustíveis do Connect Posto.\n\nTelefone: (66) 3439-5931\nEmail: marcosdi@opcaovirtual.com.br, luciangela@opcaovirtual.com.br" },
-            { title: "Consfor", logo: logo("logo-consfor"), description: "App para venda de tickets de estacionamento em eventos.\n\nTelefone: (14) 99152-7385\nEmail: consforsistemas2@gmail.com, aroldo@consfor.com.br" },
-            { title: "Datamais Garçom", logo: logo("logo-datamais"), description: "O App Datamais Garçom é destinado à automação da força de vendas em eventos, bares, restaurantes, cafeterias, pizzarias e similares. O App é parte de uma solução para gestão de estabelecimentos comerciais do segmento de refeição fora de casa e entretenimento. O App é capaz de imprimir tickets ou comandar pedidos para preparação, bem como efetuar a cobrança em cartões e Pix.\n\nTelefone: (47) 99176-2109\nEmail: marcelo@datamais.com.br, hugoeyng@datamais.com.br" },
-            { title: "Datanis Sistemas", logo: logo("logo-datanis"), description: "Apps para gerenciamento de vendas externas, controle de estoque, Smart POS (Terminal TEF integrado ao sistema).\n\nTelefone: (49) 99960-6336" },
-            { title: "DigiSat", logo: logo("logo-digisat"), description: "O App PDV Mobile 2.0 permite registrar vendas de produtos para consumidor final, com emissão de NFC-e, CF-e SAT ou Registro de Venda para empresas MEI.\n\nTelefone: (49) 99922-7119" },
-            { title: "DribionPay", logo: logo("logo-dribion"), description: "App totalmente integrado com nosso sistema para impulsionar vendas.\n\nTelefone: (43) 99126-9471, (43) 3524-3344\nEmail: bruno@dribion.com, marco.antonio@dribion.com" },
-            { title: "Droid PDV", logo: logo("logo-droidpdv"), description: "Droid PDV é uma solução de frente de caixa, para lojistas que precisam de uma ferramenta rápida e simples para registrar as suas vendas. O Droid PDV possui menus, botões e telas intuitivas para o fluxo de venda. Conectado a um SAT Fiscal ou configurado para cupom NFCe, o Droid PDV emite cupons fiscais de acordo com a legislação vigente, capturando CPF do cliente e, gerando automaticamente os arquivos da Nota Fiscal Paulista.\n\nTelefone: (11) 97655-1650" },
-            { title: "EAPOS", logo: logo("logo-easy"), description: "O EAPOS é um App para dispositivos móveis que veio para revolucionar o atendimento e o controle no segmento de food service, oferecendo funcionalidades como Comandas, Mapa de contas, Pagamentos, Comprovante de venda e Cupom fiscal.\n\nEmail: claudio@easyassist.com.br" },
-            { title: "easy", logo: logo("logo-easy"), description: "Facilite suas transações comerciais com o EASY, o App de integração de TEF que garante segurança, agilidade e eficiência nas suas operações de pagamento eletrônico. Com ele você terá integração com os módulos de venda dos sistemas Easy Cloud e Easy 3.\n\nTelefone: (51) 99186-9950\nEmail: rafael@3rsistemas.com.br" },
-            { title: "ElPay", logo: logo("logo-elpay"), description: "Projetado para tornar o processo de receber pagamentos uma experiência sem complicações, o App ELPay oferece uma interface intuitiva e fácil de usar. Desenvolvido para máquinas de cartões Android, você pode aceitar pagamentos com cartões de crédito, débito e Pix de forma rápida e segura. Com uma integração rápida e simples, o ELPay garante uma experiência de transação fluida, com menor custo. Transforme sua operação de caixa com o ELPay. Simplifique o processo de pagamentos para você e seus clientes.\n\nTelefone: (54) 99971-2433, (54) 3364-1588\nEmail: vendas@elinfo.com.br" },
-            { title: "EPOC", logo: logo("logo-epoc"), description: "O EPOC é um PDV completo para restaurantes, com frente de caixa, gestão de pedidos e controle de vendas e estoque. Suporta operações por mesas, comanda, autoatendimento e PDV móvel. Integração com NFC-e, SAT, impressoras e KDS, garantindo eficiência no atendimento. Funciona offline para mais segurança e confiabilidade.\n\nTelefone: (11) 3892-8272\nEmail: elisson.osorio@epoc.tech" },
-            { title: "EQuatro Pay", logo: logo("logo-e4quattropay"), description: "APP para gestão empresarial, com Consulta de produtos, faturamento, recebimento, dashboard e acompanhamento de vendas.\n\nTelefone: (11) 98492-5057\nEmail: ribeiro@e4sistemas.com.br" },
-            { title: "ErgonPDV", logo: logo("logo-ergon"), description: "App desenvolvido para auxiliar as equipes de vendas de um comércio ou distribuidora melhorar a sua eficiência e aumentar a produtividade, permite aos vendedores realizar orçamentos, pedidos e recebimento diretamente da SmartPOS.\n\nTelefone: (11) 93297-9032\nEmail: elbes@ergontech.com.br, william@ergontech.com.br, adevaldo@ergontech.com.br" },
-            { title: "eVogar", logo: logo("logo-vogar"), description: "Emitir notas fiscais, cupons e gerenciamento financeiro.\n\nTelefone: (51) 3051-1015, (51) 99514-8906\nEmail: suporte2@vogar.com.br" },
-            { title: "Eyemobile", logo: logo("logo-eyemobile"), description: "Sistema PDV direcionado para a jornada de venda em estabelecimentos, além do controle de estoque e de caixa. Todas as funcionalidades estão inclusas em um App compatível com as principais POS Digitais do mercado. O software é aderente à estabelecimentos que desejam ter agilidade nos atendimentos, reduzir suas filas, ter mobilidade e otimizar a experiência de venda, como, por exemplo, restaurantes, bares, casas noturnas e show e festivais de modo geral.\n\nTelefone: (48) 99698-2609\nEmail: fabiano.alvarenga@eyemobile.com.br" },
-            { title: "Fire Sistemas", logo: logo("logo-firesistemas"), description: "O App Fire Vendas proporciona agilidade e eficiência para Restaurantes. Os garçons podem abrir mesas, lançar pedidos, solicitar contas e emitir cupons fiscais diretamente de seus dispositivos móveis.\n\nTelefone: (65) 3223-2000, (65) 99989-1555" },
-            { title: "Gdoor Zucchetti", logo: logo("logo-gdoor"), description: "O PDV Móvel é um App que visa mobilidade e permite a emissão de NFC-e através do seu dispositivo mobile. Ele se conecta diretamente ao sistema retaguarda (necessário para funcionamento) e sincroniza as vendas emitidas instantaneamente. Com esse sistema você consegue: Emitir NFC-e, Pagar via integração com o ZPOS, Selecionar e cadastrar clientes, Visualizar a listagem das vendas feitas pelo dispositivo, Aplicar descontos nos itens e no total, Ler de código de barras do produto pela câmera do dispositivo e Trabalhar com produto pesado.\n\n*Obs: É necessário o uso de um sistema retaguarda da Gdoor Zucchetti para o funcionamento do App.\n\nTelefone: (49) 99992-2766\nEmail: luis.lima@gdoor.com.br" },
-            { title: "GFood", logo: logo("logo-gfood"), description: "Sistema de gestão para bares e restaurantes que integra atendimento presencial, delivery, comandas, mesas, cardápio digital, autoatendimento e gestão operacional completa.\n\nTelefone: (49) 3441-3105" },
-            { title: "Idez", logo: logo("logo-idez"), description: "Somos uma plataforma de soluções financeiras B2B para você plugar ao seu negócio e gerar novas fontes de receita.\n\nIntegração com PDV, Emissão e impressão de NFC-e, Fluxo de venda e pagamento.\n\nTelefone: (51) 98414-1318\nEmail: analise@idezsistemas.com.br" },
-            { title: "Infinite POS", logo: logo("logo-infinite"), description: "O Infinite POS é um PDV (Ponto de venda) móvel que traz uma nova forma de vendas para postos de combustíveis. Com o Infinite POS você será capaz de efetuar a venda de abastecimentos, produtos e emitir NFC-e diretamente da máquina de cartão, isso entre muitas outras funcionalidades já disponíveis que trará grande agilidade e comodidade para seus clientes.\n\nTelefone: (38) 99977-2886\nEmail: matheus@infinitetecnologia.com.br, patrick@infinitetecnologia.com.br" },
-            { title: "Infosoft", logo: logo("logo-infosoft"), description: "O infosoft - ipay é um App que permite o recebimento de valores via cartão de crédito, débito ou Pix. Clientes que utilizam os produtos infosoft como imedic, ijury, ilife ou icommerce podem usufruir desta facilidade o que deixa o processo de vendas integrado e mais seguro.\n\nTelefone: (51) 98182-4661" },
-            { title: "JF System", logo: logo("logo-jfsystem"), description: "App de integração com softwares do Grupo JF System.\n\nTelefone: (53) 99995-4466\nEmail: juliana@jfsystem.com.br" },
-            { title: "JR Restaurante", logo: logo("logo-jrsistemas"), description: "Aplicativo para uso do garçom: Permite fazer lançamentos de produtos em mesas, Efetuar pagamento e fechamento da mesa, Transferência de produtos entre mesas e etc.\n\nTelefone: (47) 99944-2415\nEmail: anderson@jrpdv.com.br, nathan@jrpdv.com.br" },
-            { title: "Jump Serviços", logo: logo("logo-jump"), description: "Gerencie a distância, opere pelo App e tenha seu estacionamento ou lava-rápido na palma da mão! Atendemos perfeitamente tanto estacionamento, valet quanto lava-rápido ou estéticas automotivas. Uma ferramenta completa para controlar a entrada e saída dos seus clientes do estacionamento e lava-rápido sem necessidade de Internet! O App operacional foi desenvolvido para smartphone ou tablet (Android), trabalha com cartões QR Code, impressora portável bluetooth, além de ter outros recursos que possibilitam maior eficiência e agilidade no controle dos clientes. O sistema permite que você controle as faturas dos mensalistas em dia e atrasados ou da gestão de convênios pós-pago tanto do seu estacionamento ou lava-rápido.\n\nEmail: rafael.haeusler@jumptecnologia.com, gustavo.cabral@jumptecnologia.com" },
-            { title: "Lion Pay", logo: logo("logo-lion"), description: "O Lion Pay é uma solução de automação comercial desenvolvida para atender às necessidades do comércio no estado de Mato Grosso. Com ele, você pode gerenciar vendas e operações de forma integrada, otimizando processos e garantindo eficiência no atendimento, tudo adaptado às demandas locais e às particularidades do mercado regional.\n\nTelefone: (66) 99639-8290\nEmail: joabe@liontecnologia.com.br" },
-            { title: "Maistre", logo: logo("logo-maistre"), description: "App para recebimento de doações via cartão.\n\nTelefone: (51) 99226-8522, (51) 3029-6747\nEmail: domingos@maistre.com.br, vinycio@maistre.com.br" },
-            { title: "Master Key", logo: logo("logo-masterkeyfull"), description: "Master Key Smart TEF é uma solução que trabalha de forma Integrada ao Master Key, sistema de gestão e automação comercial. Foi desenvolvido para potencializar a gestão e o resultado das empresas de forma simples e segura. O Master Key é um sistema completo que permite realizar vendas, controlar estoque, financeiro, lucratividade, fazer a emissão de boletos, Notas Fiscais, NECe/SAT e etc. Principais Recursos: Controle de Vendas, Emissão de Notas Fiscais, NFC-e/SAT se adequando a legislação do TEF. Homologado em todos os estados do Brasil.\n\nTelefone: (51) 3748-1792, (51) 98281-5151" },
-            { title: "Master Key Smart PDV", logo: logo("logo-masterkeyfull"), description: "A solução Smart PDV Master Key transforma seu terminal em um PDV móvel. O Smart PDV Master Key facilita a operação e reduz custos operacionais pois substitui o PDV convencional. Emite NFC-e, e possui um sistema de retaguarda em nuvem para gestão de vendas e controle em diversos dispositivos.\n\nPrincipais recursos: Cadastro de produtos, Controle de vendas, NFC-e, Fichas, Senhas e dashboards para gestão de vendas.\n\nTelefone: (27) 3062-5275" },
-            { title: "MC SISTEMAS", logo: logo("logo-mcsistemas"), description: "O MC Pag é um App que integra de forma rápida e fácil o PDV com seu SmartPOS. Uma solução que integra as vendas do PDV com o SmartPOS gerando maior segurança para o operador de caixa e garantindo o cumprimento da instrução normativa 108/2022 do estado do Rio Grande do Sul e em conformidade com a decreto 56.670. Uma solução completa para estabelecimentos menores.\n\nPrincipais recursos: Pagamentos via crédito, débito e Pix, Vinculação dos meios de pagamentos com a NFC-e.\n\nTelefone: (51) 3671-6121" },
-            { title: "Menu Integrado", logo: logo("logo-menuintegrado"), description: "Plataforma completa para restaurantes e negócios de delivery, centralizando pedidos, oferecendo cardápio digital, gestão de motoboys, integrações com marketplaces e ferramentas de controle e automação.\n\nTelefone: (11) 97348-1235, (41) 99837-5356\nEmail: contato@menuintegrado.com.br" },
-            { title: "Metanet Pay", logo: logo("logo-metanet"), description: "O Metanet Pay proporciona mobilidade dentro da sua empresa, facilitando o recebimento dos clientes com dinheiro, cartão e a prazo.\n\nTelefone: (81) 98203-6450, (43) 9184-8004\nEmail: adson.nasser@metanetsistemas.com.br" },
-            { title: "Mobi PDV e Mobi Comanda", logo: logo("logo-pdvmobi-comandamobi"), description: "Mobi PDV e Mobi Comanda, são pontos de venda móvel que facilita sua operação e reduz custos. Dispensa todos os equipamentos do seu ponto de venda, emite Fichas, Pedidos ou NFC-e. Gera relatórios e gráficos online das suas vendas. A solução ideal para sua loja.\n\nTelefone: (11) 4858-9558, (71) 3599-0958" },
-            { title: "Mobility", logo: logo("logo-mobility"), description: "A solução da Mobility é para a frente de caixa. Ideal para lojistas que precisam de uma ferramenta rápida e simples para registrar as suas vendas. O software da Mobility, conhecido como \"Droid PDV\" possui menus, botões e telas intuitivas para o fluxo de venda. Com o App da Mobility, o seu negócio estará conectado a um SAT Fiscal (Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos) podendo emitir cupons fiscais de acordo com a legislação vigente.\n\nTelefone: (11) 97655-1650" },
-            { title: "MobPay", logo: logo("logo-raffinato"), description: "O App MobPay permite efetuar o pagamento de contas geradas no Raffinato, tanto pedidos realizados no App Raffinato Mobile (Garçom), como no PDV desktop. Este App funciona de forma integrada ao Raffinato Gestor e depende da contratação do Gestor para o seu funcionamento. Além do pagamento é possível realizar a emissão do documento fiscal (CF-e ou NFC-e) e imprimir o comprovante (DANFE).\n\nTelefone: (49) 98429-1148\nEmail: analise@raffinato.inf.br" },
-            { title: "mPm+", logo: logo("logo-mpm"), description: "O App mPm+ é uma ferramenta de vendas móveis que permite: Gerenciar vendas, Emitir NFC-e (Nota Fiscal do Consumidor Eletrônica), Gerar Pix (sistema de pagamento instantâneo), Fazer transações com cartões de débito e crédito, além de oferecer uma variedade de outras funcionalidades para facilitar o processo de vendas.\n\nTelefone: (87) 99988-2627\nEmail: adriano@bravilsistemas.com" },
-            { title: "MR PDV", logo: logo("logo-rpinfo"), description: "O App MR PDV, da RP Info, é um sistema robusto e confiável, para registro de vendas no seu PDV. Com ele, é possível gerenciar de forma centralizada todos os caixas e ECFs de lojas individuais ou redes, além de integrar promoções, pack virtual e módulo \"atacarejo\".\n\nTelefone: (46) 3226-8000, (41) 99781-9422" },
-            { title: "MToll", logo: logo("logo-mtoll"), description: "O MTOLL é um aplicativo de arrecadação e operação móvel para praças de pedágio, desenvolvido pela COMPSIS Computadores e Sistemas Indústria e Comércio LTDA. A solução permite que operadores realizem cobrança de pedágio de forma móvel, diretamente em Smart POS, eliminando a necessidade de estruturas fixas adicionais nas pistas. O MTOLL é totalmente integrado aos sistemas centrais de controle (CCA) das concessionárias, atuando como um \"papa-fila digital\", agilizando o atendimento aos usuários, reduzindo filas e melhorando o fluxo de tráfego, especialmente em horários de pico.\n\nTelefone: (35) 99185-9475\nEmail: heloan.marinho@compsis.com.br" },
-            { title: "NCR", logo: logo("logo-ncr"), description: "Sistema para gerenciamento de pedidos e vendas no seu restaurante com gerenciamento de mesas, fichas, comandas individuais e Fast Food, lançamento de produtos, recebimento de contas e emissão de documento fiscal, função papa-fila, impressão de pedidos e muito mais.\n\nTelefone: (11) 2167-6755\nEmail: flavio.silva@ncrvoyix.com" },
-            { title: "OmniPDV", logo: logo("logo-omni"), description: "Com a plataforma Nexaas.Omni você terá gestão e controle do seu negócio com facilidade e mobilidade. App para sistema de PDV e caixa de loja 100% móvel, funciona de qualquer lugar, levando seu negócio onde você estiver. Os vendedores podem ser os próprios caixas com o Nexaas.Omni, é possível fazer gestão de seus clientes, vendas com diversas formas de pagamento, inclusão de descontos e gestão das vendas.\n\nTelefone: (11) 98283-3210\nEmail: rodrigo.santos@nexaas.com, roberto.leite@nexaas.com" },
-            { title: "ONPDV", logo: logo("logo-onpdv"), description: "O ONPDV é um sistema de gestão para varejo e food service. Controle estoques, vendas e finanças em tempo real, otimize pedidos e personalize promoções. Integração com PDVs, relatórios detalhados e suporte especializado. Segurança garantida e atualizações constantes para manter seu negócio competitivo.\n\nTelefone: (12) 3152-9360, (12) 99739-5144\nEmail: jonathan@mbd.com.br, mbd@mbd.com.br" },
-            { title: "Origam", logo: logo("logo-origam"), description: "Controle de mesas e comandas para clientes que utilizam o Godino.\n\nTelefone: (11) 94136-2315, (11) 4712-3935\nEmail: je@origam.com.br, marco@origam.com.br" },
-            { title: "PagZilla", logo: logo("logo-pagzilla"), description: "Com o Pagzilla você passa o cartão e imediatamente emite sua NFC-e. Integre o pagamento com o cartão de débito ou crédito com seu dispositivo junto ao SAT (Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos). Tenha o controle da entrada e saída de produtos do seu estabelecimento em tempo real. A experiência de compra de seus clientes torna-se mais fluida, gerando satisfação e maior fluxo no seu estabelecimento.\n\nTelefone: (51) 99533-6398" },
-            { title: "PDV Legal", logo: logo("logo-pdvlegal"), description: "O PDV Legal é o sistema de vendas ideal para você que busca agilidade e facilidade no seu processo de vendas. Com telas de fácil navegação você pode emitir documentos fiscais, controlar seu estoque e gerenciar todas as suas vendas utilizando apenas a sua maquininha. Essa é a solução ideal para acelerar as vendas do seu negócio, seja um restaurante, lanchonete, food truck, sorveteria, quiosque ou uma loja de conveniência. Com tudo centralizado na sua maquininha, sua equipe ganha mais agilidade no atendimento e seu comércio se torna mais lucrativo. Além da aplicação que irá rodar na sua maquininha, o PDV Legal também possui uma retaguarda, este será o portal onde você irá consultar todos os relatórios de vendas, produtos mais vendidos, vendas por horário, controlar comissão de garçom e muito mais!\n\nTelefone: (19) 99131-6371\nEmail: luis.garbelini@tabletcloud.com.br, rogerio@tabletcloud.com.br" },
-            { title: "PDV POS", logo: logo("logo-pdvpos"), description: "Faça vendas, emita notas fiscais e controle toda a sua empresa, do estoque ao financeiro, tudo online e muito fácil de usar.\n\n*Vendas | Frente de Caixa (PDV)*\n\nCom um caixa móvel em sua mão, faça e controle vendas, cadastre clientes, operadores ou vendedores para controle de comissão. Emita nota fiscal eletrônica (NFC-e) e nota fiscal de serviços eletrônica (NFS-e) pela própria maquininha, ou seja, tudo em um único lugar.\n\nTelefone: (61) 99271-3302\nEmail: ricardo@pdvpos.com.br" },
-            { title: "PDV Team17", logo: logo("logo-team17"), description: "O App PDV Team17 possui um sistema completo com as seguintes funcionalidades: ERP, PDV Frente de caixa, emissor de tickets, cashless, caixa móvel, emissor NFCe.\n\nTelefone: (41) 99185-5876" },
-            { title: "Pixei Pagamentos", logo: logo("logo-pixei"), description: "Realize vendas e pedidos, finalize e reserve comandas, integrado ao NooChef - Alimentação, desenvolvido pela Nootech Sistemas.\n\nTelefone: (46) 9918-6986\nEmail: flares@nootech.com.br" },
-            { title: "PlinPag", logo: logo("logo-plimpag"), description: "Consulta, impressão e pagamento de faturas de água de concessionárias parceiras e tributos municipais.\n\nTelefone: (67) 9294-4372\nEmail: arthur@plimpag.com.br" },
-            { title: "POS Controle", logo: logo("logo-poscontrole"), description: "O POS Controle é um PDV móvel que facilita a sua operação e reduz custos. Dispensa todos os equipamentos do seu ponto de venda, emite fichas, pedidos ou NFC-e. Além disso, gera relatórios e gráficos online das suas vendas, sendo a solução ideal para seu estabelecimento.\n\nTelefone: (11) 4858-9558, (71) 3599-0958\nEmail: comercial@poscontrole.com.br" },
-            { title: "Posto Gestor", logo: logo("logo-postogestor"), description: "O Posto Gestor é um sistema de gestão completo e especializado para o varejo de combustíveis, conveniências, troca de óleo e serviços. Além disso, o Posto Gestor inclui um módulo especialmente desenvolvido para empresas TRR (Transportador-Revendedor-Retalhista), garantindo uma gestão integrada e eficaz de todas as operações.\n\nTelefone: (48) 3198-0982, (48) 3521-5390" },
-            { title: "PrátikaPDV", logo: logo("logo-pratika"), description: "O PrátikaPDV é um App de gerenciamento de vendas que funciona diretamente no smartphone, SmartPOS ou computador (PC), permitindo que vários ramos possam utilizar a aplicação.\n\nPrincipais funcionalidades: Emissão de Notas Fiscais e Cupons Fiscais, Cadastro de clientes e produtos, Contas a pagar e receber, Gerenciamento de vendas, Fechamento de Caixa, Versão para Auto Atendimento com TEF, Versão para Evento com emissão de Fichas ou Vouchers, Comandas, Delivery.\n\nTelefone: (49) 99922-7119" },
-            { title: "Prioriza", logo: logo("logo-prioriza"), description: "App de restaurantes / evento, para auxiliar na venda de itens e impressão de ticket, contando com um meio de pagamento direto.\n\nTelefone: (51) 3500-7287, (51) 99318-1184\nEmail: erp@priorizatec.com.br" },
-            { title: "PSinf Pay", logo: logo("logo-infosolucoes"), description: "O PSinf Pay é uma solução que visa a integração dos meios de pagamento TEF com o sistema ERP da PSInf, proporcionando a automação dos processos de pagamento, com vinculação aos documentos fiscais. Essa integração é especialmente relevante para atender às novas normativas governamentais, que tornam obrigatório o vínculo do comprovante de pagamento na NFC-e (Nota Fiscal de Consumidor Eletrônica).\n\nTelefone: (51) 99995-7147\nEmail: paulo@psinf.com.br" },
-            { title: "Puma Sistemas", logo: logo("logo-puma"), description: "O Módulo PDV é recomendado para lojas e diversos tipos de comércio que costumam lidar com um grande fluxo diário de clientes e precisam realizar uma venda rápida e ágil. Em instantes você registra quais foram os produtos e/ou serviços vendidos e a forma de pagamento que o cliente deseja utilizar. Todas as operações realizadas no Módulo PDV são integradas com outras áreas de sua empresa, desta forma, a gestão do seu negócio será otimizada e você poderá ter um controle completo das atividades de sua empresa. Além disso, você poderá instalar em quantos computadores quiser, lembrando que o Módulo PDV também funciona em modo offline, ou seja, não depende de internet durante o uso, você poderá continuar vendendo normalmente, deixando os documentos fiscais para serem transmitidos após o restabelecimento da internet. O Módulo PDV é uma ferramenta completa para a automação da rotina de vendas do comércio e de prestadores de serviços. Permite integração com PAF-ECF, TEF, SAT, balanças eletrônicas, impressoras fiscais, terminal de consulta de preço, emissão de carnê, cupom fiscal, NF-e e NFC-e, controle de orçamentos, comissões, estatísticas de venda e rentabilidade, relatórios e gráficos.\n\nTelefone: (65) 99981-1334\nEmail: temi@pumasistemas.com.br" },
-            { title: "Queóps Bares & Restaurantes", logo: logo("logo-queops"), description: "Bares & Restaurantes tenha mais controle, mais automação, mais pedidos, mais eficiência e mais integração. O sistema Queóps Bares & Restaurantes é desenvolvido para aprimorar a gestão do seu negócio com soluções personalizadas, criadas especialmente para atender às necessidades do seu negócio.\n\nTelefone: (51) 3378-5300\nEmail: mpaulo@lexsis.com.br, rudi@lexsis.com.br" },
-            { title: "RANFCe", logo: logo("logo-RANFCe"), description: "NFC-e Nota de Consumidor em Tablet, Smartphone, Terminal G800, Cielo LIO e REDE com GPOS700 e L400. Pré-Atendimento/Orçamento para Tablet e Smartphone; Restaurante: Cardápio, pedido e fechamento em Smartphone.\n\nTelefone: (82) 3142-8224\nEmail: diretoria@rasistemas.com.br" },
-            { title: "Rei das Fichas", logo: logo("logo-reidasfichas"), description: "Sistema para emissão de fichas/tickets e controle de consumo em eventos, bares e operações que usam vendas rápidas.\n\nEmail: rudineilasta@reidasfichas.com.br" },
-            { title: "Relt Informática", logo: logo("logo-relt"), description: "App de força de vendas e emissor de notas fiscais do ERP SiG.\n\nTelefone: (51) 98448-9100\nEmail: relt@relt.com.br" },
-            { title: "RMS Mobile", logo: logo("logo-resultmais"), description: "Aplicativo desenvolvido para terminais POS, voltado ao processamento de transações de pagamento via cartão (crédito/débito) e Pix. Com interface simples e intuitiva, permite a realização rápida e segura de vendas, integrando-se diretamente ao sistema de frente de caixa. Ideal para estabelecimentos que buscam agilidade no atendimento e confiabilidade nas transações financeiras.\n\nTelefone: (51) 3902-1525\nEmail: adriano@resultmais.com, willian@resultmais.com" },
-            { title: "Santa Ficha", logo: logo("logo-santaficha"), description: "Sistema de gestão para emissão de fichas e cartão de consumo para eventos.\n\nTelefone: (19) 97168-9943\nEmail: rafael@santaficha.com.br, rafaellima@abcsinformatica.com.br" },
-            { title: "Serbet", logo: logo("logo-serbet"), description: "Sistema de fiscalização e vendas de estacionamento rotativo (zona azul) das cidades operadas pelo Estacionamento Digital. Emissão de ticket de estacionamento, venda de créditos de estacionamento e regularização de avisos de irregularidade. Operado pelos Postos de Vendas e agentes de fiscalização.\n\nTelefone: (47) 99961-9670\nEmail: fabricio@serbet.com.br, luan.meneghelli@serbet.com.br" },
-            { title: "SEUPOS Food", logo: logo("logo-seupos"), description: "Aplicativo de ponto de venda (POS) para bares, restaurantes, pizzarias e cafés, permitindo gestão de pedidos, mesas, cardápio digital, vendas e controle financeiro em tempo real.\n\nEmail: contato@avantejuntos.com.br" },
-            { title: "SG Pay", logo: logo("logo-sgbr"), description: "O SG Pay é uma solução de pagamentos que possibilita a realização do processo de pagamento de forma integrada com sistema SG Master.\n\nTelefone: (49) 98890-9021\nEmail: matteo_vanzo@hotmail.com" },
-            { title: "Sismec", logo: logo("logo-sismec"), description: "App para automação de cobranças realizadas através do Sismec Mobile. Tenha total controle das receitas e despesas de sua empresa, além de muitas outras ferramentas desenvolvidas para organizar e descomplicar o seu dia-a-dia.\n\nTelefone: (54) 99112-3844\nEmail: marcus@sismec.com.br" },
-            { title: "SISMOV2B", logo: logo("logo-opcaovirtual"), description: "Sistema para vendas de produtos e serviços em Feiras e Eventos, da bilheteria à gastronomia com realização do cadastro on-line dos produtos e serviços por atividades e segmentos, gestão financeira e estoque em tempo real, relatório de prestação de contas, suporte e aplicação imediata.\n\nTelefone: (55) 99622-4681\nEmail: eltonjosespohr@gmail.com" },
-            { title: "Sistema Pallas", logo: logo("logo-resultmais"), description: "Controle as vendas, estoque e as finanças.\n\nTelefone: (12) 98141-7823\nEmail: hugofialho@sistemapallas.com.br" },
-            { title: "Smart POS", logo: logo("logo-poscontrole"), description: "O Smart POS da NetPOS é um App para varejo geral que permite uma gestão integrada dos PDVs com controle de estoque e vendas.\n\nTelefone: (11) 2391-7028\nEmail: comercial@smartpos.net.br" },
-            { title: "Softcom Smart", logo: logo("logo-softcom"), description: "O Softcom Smart é a solução ideal para empresas que buscam modernizar e otimizar suas operações. Com o Softcom Smart, você pode vender mais, aceitar cartões de crédito e emitir cupons fiscais (NFC-e) com facilidade. É perfeito para foodtrucks, lanchonetes, cafeterias, quiosques, lojas em shoppings populares, vendas externas e para quem está iniciando na automação. Se é completo, fácil e moderno, então é Softcom.\n\nTelefone: (83) 3133-3600\nEmail: pesquisa@softcomtecnologia.com.br, lab@softcomtecnologia.com.br" },
-            { title: "Softplus", logo: logo("logo-softplus"), description: "O App Softplus é um Ponto de Venda para Postos de combustível. Atende a venda (abastecimentos) por meio de uma solução completa com pagamento em dinheiro, cartão, Pix e venda a prazo. O App é integrado com os sistemas da Softplus, emite NFC-e na impressora da SmartPOS, possui seleção e controle de caixa, clientes e veículos, envio de e-mail com os dados da nota, descontos nos itens e muito mais.\n\nTelefone: (51) 3041-2131, (51) 3041-0115" },
-            { title: "SOS Soluções", logo: logo("logo-sos"), description: "O NextMobile é o App complementar aos ERP Next360 que contempla no App as funções integradas com TEF com FastFicha - Emissão de Fichas Pré-Pagas para consumo em eventos, Força de Vendas - Vendas de produtos, Controle de Mesas - Módulo de Lançamento e Fechamento de Comandas, PapaFila - Baixa de Abastecimento diretamente pelo aplicativo com recebimentos em TEF.\n\nTelefone: (43) 99112-8068\nEmail: anderson@sossolucoes.com.br" },
-            { title: "SousaVenda", logo: logo("logo-sousavendas"), description: "O App SousaVenda é desenvolvido para as diferentes empresas do ramo do comércio com faturamento até R$ 50 mil reais por mês.\n\nTelefone: (18) 99148-8082" },
-            { title: "SUIT EXPRESS POS", logo: logo("logo-suitablev3"), description: "Aplicativo para motoboys, permitindo controle completo de entregas, rota, comunicação com cliente e atualização de status em tempo real.\n\nTelefone: (51) 9913-2606" },
-            { title: "Suit POS", logo: logo("logo-suitpos"), description: "O SuitPOS é de uso exclusivo de clientes Suitable. Sua função é servir como integração de pagamentos de pedidos de forma automatizada, gerando comprovante e Nota Fiscal.\n\nTelefone: (51) 9913-2606\nEmail: financeiro@suitable.com.br, lucasrodrigues2606@gmail.com, kaiov@mx2.unisc.br" },
-            { title: "SUIT WAITER POS", logo: logo("logo-suitablev4"), description: "Aplicativo de garçom / comanda eletrônica, permitindo lançar pedidos na mesa, enviar à cozinha, gerir comandas e realizar pagamento direto na mesa por smartphones e maquininhas.\n\nTelefone: (51) 9913-2606" },
-            { title: "Super PDV", logo: logo("logo-superpdv"), description: "Aplicativo PDV Mobile da BM Informática para realização de pedidos, comandas e vendas.\n\nTelefone: (81) 3126-2050\nEmail: bm@bminformatica.com.br" },
-            { title: "Suporte PDV Mobile", logo: logo("logo-suporte"), description: "O Suporte PDV Mobile é um App de Ponto de Venda móvel para postos de combustível.\n\nTelefone: (53) 3026-6000, (53) 99981-1275" },
-            { title: "Tacto Sistemas", logo: logo("logo-tacto"), description: "Módulo de venda mais completo do mercado, utilizado para atender bares, restaurantes, sorveterias, lanchonetes e até boates. Existem várias maneiras de trabalhar a venda neste módulo: Venda Balcão, Mesa, Cartão de consumação e tele-entrega. As telas são intuitivas de modo que qualquer um possa operar com relatórios gerenciais, controle de comissão, lucratividade, auditoria, etc. Lembrando que este módulo é totalmente integrado com o financeiro e estoque. Controle de convênio para restaurantes. Outras vantagens: Lançamento através de tela Touch e Tablets.\n\nTelefone: (65) 98113-1905\nEmail: evandro@tacto.com.br" },
-            { title: "Tech Posto", logo: logo("logo-techposto"), description: "Tech Posto - PDV em suas mãos, com o App permite-se: Dar baixa nos abastecimentos realizados na pista, baixa com negociações como cartões (débito, crédito, crédito parcelado, etc), Pix (direto da adquirente, ou pelo TECH PAY), requisição, dinheiro, chamada ADM para adquirente, para operações como cancelamento e reimpressão, documentos fiscais, como impressão e reimpressão, NFe (identificado) e NFC-e, relatórios rápidos de funcionários.\n\nTelefone: (64) 99279-4668\nEmail: f.jaime@tsi.inf.br" },
-            { title: "THR Softwares", logo: logo("logo-thr"), description: "App voltado para vendas de produtos e ingressos em parques aquáticos.\n\nTelefone: (15) 99846-7209\nEmail: joaoshinkai@thrsolucoes.com.br" },
-            { title: "Ticket PDV", logo: logo("logo-ticketpdv"), description: "Sistema simples e rápido de PDV para eventos, festas e bares, permitindo emissão de tickets, controle básico de estoque, fechamento de caixa e vendas à vista (dinheiro, cartão e PIX).\n\nTelefone: (48) 99617-1542" },
-            { title: "Trade System", logo: logo("logo-tradesystem"), description: "O App Trade System tem os seguintes objetivos: Gerir lojas de diferentes setores, dentro das especificidades de cada segmento, aumentar a competitividade empresarial com foco no aumento na rentabilidade do seu negócio, auxiliar por meio de ferramentas na melhor utilização dos recursos financeiros, identificar necessidades e inovações no varejo e propor soluções objetivando a prosperidade do negócio, administrar recursos visando à continuidade financeira saudável do seu negócio, criar e aplicar estratégias com o objetivo de realizar maior venda e de conquistar a fidelização junto aos seus clientes, dar a segurança fiscal e contábil em face aos novos desafios dessas áreas mantendo sempre informados as novas legislações, gerenciar a equipe de modo a gerar satisfação dos colaboradores e clientes.\n\nTelefone: (53) 99971-4418\nEmail: tradesystem@tradesystem.com.br" },
-            { title: "UNIO", logo: logo("logo-unio"), description: "O UNIO PDV Mobile é um sistema que contempla Pré Venda, Controle de Fabricação, Baixa rápida de cupom, alteração de preços de bomba, carta frete, vale motorista, cheques recebidos e cheques troco.\n\nTelefone: (14) 3432-1963, (14) 99810-6121" },
-            { title: "Uniplus", logo: logo("logo-uniplus"), description: "O sistema Uniplus possui funcionalidades e integrações específicas para o segmento Food Service, feitas especialmente para agilizar o dia a dia do seu cliente. Com o Uniplus é possível atender de forma completa todos os tamanhos de negócios, desde pequenas lanchonetes a grandes restaurantes.\n\nTelefone: (47) 99612-6905\nEmail: whillian.pereira@intelidata.inf.br" },
-            { title: "Unypax", logo: logo("logo-unypax"), description: "App de recebimento integrado com o ERP Unypax.\n\nTelefone: (62) 99981-6939, (62) 98148-6032\nEmail: felipe@unymos.com" },
-            { title: "Vedas Sistemas", logo: logo("logo-vedas"), description: "App com integração com nosso App de garçom, pagamentos avulsos, recebimentos na mesa e pagamento PDV integrado.\n\nTelefone: (66) 98415-7380\nEmail: gabrielkothe@gmail.com" },
-            { title: "Veloce Smart", logo: logo("logo-velocetech"), description: "Automação comercial integrada à máquina de pagamentos, ideal para todos os segmentos. Desenvolvida para otimizar suas vendas e oferecer uma gestão completa do negócio, com controle de caixa, estoque, emissão de cupons fiscais e notas de serviço. Com o Veloce Smart, sua marca une os canais físicos e digitais, transformando a experiência de compra dos clientes e garantindo que seu negócio esteja sempre presente.\n\nTelefone: (51) 99382-5981\nEmail: projetos@veloce.techn, proenca@veloce.tech" },
-            { title: "VucaPOS", logo: logo("logo-vuca"), description: "VucaPOS é uma solução de ponto de venda (PDV) integrada ao ERP Vuca Solution, projetada para simplificar e agilizar as operações de frente de caixa. O VucaPOS é um aplicativo de ponto de venda (PDV) desenvolvido pela VUCA Solution Tecnologia LTDA, integrante do ecossistema VUCA, um ERP completo e integrado para restaurantes e bares. O aplicativo atua como o frente de loja da plataforma, permitindo o registro de vendas e pedidos diretamente no ponto de atendimento, com integração em tempo real aos módulos de financeiro, estoque, produção, delivery e relatórios da retaguarda VUCA.\n\nTelefone: (62) 98119-1635\nEmail: lucas.graciano@vucasolution.com.br, devs.vucasolution@gmail.com" },
-            { title: "WebPosto", logo: logo("logo-webposto"), description: "O webPosto Pay é um App focado no setor de postos de combustível. Integrado às bombas de abastecimento, permite ao frentista realizar a venda, receber nas diversas formas de pagamento (cartão, QR Code, Pix, etc.) e emitir o cupom de venda diretamente no POS - tudo sem a necessidade do cliente sair do veículo. Também é possível integrá-lo em sua loja de conveniência e realizar a abertura de mesas, controle de comandas, lançamentos de itens e fazer disparos de pedidos diretamente para a cozinha.\n\nTelefone: (27) 3062-5275" },
-            { title: "WebyAPP", logo: logo("logo-webyapp"), description: "O WebyAPP é a solução para pontos de venda com emissão de NFC-e, faz emissão e controle de acesso de ingressos com QR Code e emissão de tickets para eventos.\n\nTelefone: (47) 99756-1501\nEmail: maicon@testosistemas.com.br" },
-            { title: "Wesa SmartPDV", logo: logo("logo-wesa"), description: "O App SmartPDV possibilita muito mais do que passar cartão no seu ponto de venda móvel, ele é um sistema de vendas completo para postos de combustíveis. O App centraliza toda operação de venda em uma única máquina, somando muitas vantagens: Registro de vendas, passa cartão de crédito e débito, leitura de código de barras de produtos, impressão de NFC-e direto no SmartPDV, uso de cartão NFC para identificação de clientes e frentistas.\n\nTelefone: (51) 4040-4191\nEmail: suporte@wesa.com.br" },
-            { title: "Windel POS", logo: logo("logo-windel"), description: "O Windel POS é um App integrado ao sistema Windel que facilita o processamento de pagamentos de vendas em estabelecimentos comerciais. Responsável pela comunicação direta entre a Windel e a Fiserv.\n\nTelefone: (54) 3025-2540\nEmail: adilson@windel.com.br" },
-            { title: "Xmenu", logo: logo("logo-menuintegrado"), description: "Aplicativo completo para gestão de PDV para restaurantes, com controle de mesa, balcão e delivery.\n\nTelefone: (16) 3514-0550\nEmail: developer@netcontroll.com.br, adm@netcontroll.com.br" },
-            { title: "Yolo PDV", logo: logo("logo-yolo"), description: "A Yolo Pass é a solução completa de cashless para organizadores de eventos, oferecendo uma plataforma que integra controle de acesso, venda e validação de ingressos digitais, recarga de saldo, consumo via pulseiras ou cartões RFID, e relatórios em tempo real sobre vendas e movimentações financeiras. Com ele, você elimina filas, reduz fraudes, centraliza a gestão do evento e melhora significativamente a experiência do público.\n\nTelefone: (16) 99254-5889\nEmail: kentaro@yolopass.com.br" },
-            { title: "Youzoom", logo: logo("logo-youzoom"), description: "App de PDV para venda de ingressos e produtos com emissão de voucher com QR Code! Entre os principais recursos, destacam-se: venda de ingressos físicos e digitais, venda de fichas de produtos, venda de produtos com senha para retirada, venda de créditos cashless, controle para cobrança de taxa de serviço, controle de fluxo de caixa, relatórios de vendas, histórico de vendas e cancelamento de vendas com devolução do pagamento.\n\nTelefone: (67) 99142-2440, (67) 98412-8311\nEmail: comercial@youzoom.com.br, desenvolvimento@youzoom.com.br, fabio@youzoom.com.br" },
-            { title: "Zenitech", logo: logo("logo-zenitech"), description: "Aplicação da Zenitech para operação em terminais AXIUM DX8000, usados como SmartPOS Android para automação comercial e pagamentos.\n\nTelefone: (84) 99611-6068" },
-            { title: "zerofila", logo: logo("logo-new-choice"), description: "Controle total e pagamentos simplificados: A POS Multiloja com Split de Pagamento que facilita suas vendas e garante a divisão automática de receitas entre as lojas.\n\nTelefone: (54) 99615-0606\nEmail: matheus@zerofila.com.br, samuel@zerofila.com.br" },
-            { title: "Zetta Pay", logo: logo("logo-zetta"), description: "Ajudar empresas com alto volume de cobranças mensais a automatizar e agilizar seus recebimentos através de um sistema de gestão de cobranças.\n\nTelefone: (49) 3366-1011\nEmail: cleiton@zettabrasil.com.br, darlei@zettabrasil.com.br" },
-            { title: "ZPOS", logo: logo("logo-zpos"), description: "O App ZPOS faz vínculo entre o serviço de transação ofertado pelo parceiro, recebendo as informações dos sistemas Zucchetti (ClippPro, ClippService, ClippCheff, ClippFácil, Clipp360, Zetaweb, SmallCommerce) para que seja efetuado a transação no SmartPOS do parceiro e assim, retornando ao sistema a confirmação da operação de Crédito/Débito/Pix juntamente com o envio da impressão do documento fiscal (NFC-e) para o SmartPOS.\n\nTelefone: (49) 3442-2970, (49) 99971-5125" },
-        ],
-    },
-    { label: "Atacado", items: [] },
-    { label: "Auto Elétricas, Auto Peças e Mecânicas", items: [] },
-    { label: "Bar", items: [] },
-    { label: "Comércio", items: [] },
-    { label: "Delivery", items: [] },
-    { label: "Direito", items: [] },
-    { label: "Distribuidores de Produtos", items: [] },
-    { label: "Estacionamentos", items: [] },
-    { label: "Eventos, Feiras e Shows", items: [] },
-    { label: "Ferragem", items: [] },
-    { label: "Fidelidade e Convênios", items: [] },
-    { label: "Food Service e Food Truck", items: [] },
-    { label: "Gestão de Pedidos", items: [] },
-    { label: "Gestão Empresarial", items: [] },
-    { label: "Hotéis", items: [] },
-    { label: "Indústrias", items: [] },
-    { label: "Ingressos", items: [] },
-    { label: "Lanchonetes e Restaurantes", items: [] },
-    { label: "Lojas de Confecção, Calçados e Vestuário", items: [] },
-    { label: "Lojas de Conveniência", items: [] },
-    { label: "Materiais de Construção", items: [] },
-    { label: "Padarias", items: [] },
-    { label: "Pedágio", items: [] },
-    { label: "Postos de Combustível", items: [] },
-    { label: "Religioso", items: [] },
-    { label: "Salão de Beleza", items: [] },
-    { label: "Saúde", items: [] },
-    { label: "Serviços", items: [] },
-    { label: "Sorveterias", items: [] },
-    { label: "Supermercados", items: [] },
-    { label: "Transporte", items: [] },
-    { label: "Varejo em Geral", items: [] },
-    { label: "Venda de Seguros", items: [] },
+const appsData: CardItem[] = [
+  {
+    title: "A00s",
+    logo: "logo-a00s.png",
+    description:
+      "O App A00s funciona como PDV móvel, mas também como check out remoto, tanto para comércio, como para bares e restaurantes. Atende pequenos comércios, que pode usar apenas o terminal, como o médio e grande que pode trabalhar interligado com outras soluções.\n\nTelefone: (54) 3242-7901\nEmail: suporte@a00s.com",
+    category: [],
+  },
+  {
+    title: "A2D Ticket",
+    logo: "logo-a2d-ticket.png",
+    description:
+      "O A2D Ticket é um aplicativo de venda e gestão de ingressos digitais, desenvolvido pela A2D Soluções LTDA. A solução oferece uma plataforma completa para eventos, permitindo a criação, venda, acompanhamento e validação de ingressos de forma digital, com controle em tempo real das vendas e dos repasses financeiros.\n\nTelefone: (35) 99251-2002",
+    category: [],
+  },
+  {
+    title: "Alpino",
+    logo: "logo-alpino.png",
+    description:
+      "O Alpino Smart é uma solução completa oferecida pela Alpino Comércio de Hardware e Serviços LTDA para auxiliar pequenas e médias empresas na emissão de NFC-e (Nota Fiscal de Consumidor Eletrônica). Com total conformidade com as normativas vigentes, o Alpino Smart já realiza a vinculação obrigatória do comprovante de pagamento à NFC-e. Oferecemos uma solução pronta para uso, com todos os produtos já cadastrados, e proporcionamos suporte multi-canais 24 horas, todos os dias da semana. Você também terá acesso a um ambiente web completo, onde poderá visualizar todas as notas emitidas.\n\nTelefone: (54) 98116-5431\nEmail: fabio@alpinotecnologia.com.br",
+    category: [],
+  },
+  {
+    title: "Anota Ai Smart PDV",
+    logo: "logo-new-choice.png",
+    description:
+      "A gestão de frente de loja ficará mais simples e rápida. Utilizando o dinamismo e praticidade de um POS DIGITAL será possível ter acesso às principais funções de um estabelecimento como compra, venda, controle de estoque, relatórios, identificação dos clientes e funcionários, impressão por setor, e muito mais! Além de todas as operações disponíveis, o SMART PDV conta com um sistema de retaguarda próprio, 100% na nuvem, que tornará possível acompanhar o dia a dia do estabelecimento, em tempo real, a partir de qualquer equipamento conectado à internet.\n\nTelefone: (21) 2430-3005\nEmail: hilario@newchoice.com.br, rodrigo@newchoice.com.br",
+    category: [],
+  },
+  {
+    title: "Apliper Pagoo",
+    logo: "logo-apliper.png",
+    description:
+      "O Apliper Pagoo é um App para capturar o pagamento emitido pela automação desktop. Ao emitir uma NFC-e, o PDV gera uma requisição de pagamento e o App recebe esta requisição, processa o pagamento e retorna para o PDV (aprovada ou negada). O foco do App é atender as empresas que necessitam se adequar à legislação (obrigatoriedade de vincular o pagamento via cartão à NFC-e), além de novos clientes prospectados.\n\nTelefone: (54) 98129-1616",
+    category: [],
+  },
+  {
+    title: "APOS Skytef",
+    logo: "logo-skytef.png",
+    description:
+      "O APOS Skytef é um navegador Web para POS que realiza vendas por meio de diversas formas de pagamento. Com o APOS Skytef você pode customizar sua solução de pagamento (logomarca, cores, mensagens, etc.). A solução possui uma versão Multi PV (múltiplos pontos de venda) para clientes que necessitam cobrar valores em vários estabelecimentos (MultiEC), creditando suas vendas para cada um dos estabelecimentos cadastrados, cada qual em sua conta. Tudo isso em uma única maquininha!\n\nTelefone: (11) 2175-9500, (11) 4550-1450",
+    category: [],
+  },
+  {
+    title: "Argo Sistemas",
+    logo: "logo-argo.png",
+    description:
+      "A solução Argo cobre todas as áreas vitais na operação de postos de gasolina. Os módulos do sistema foram pensados de forma inteligente, com a finalidade de integrar os dados, otimizando tempo e gerando informações essenciais para tomadas de decisão assertivas.\n\nTelefone: (54) 3771-3300\nEmail: tef@argosistemas.com",
+    category: [],
+  },
+  {
+    title: "Arpag",
+    logo: "logo-arpag.png",
+    description:
+      "Você sofre com erros de digitação na hora da venda e acaba perdendo dinheiro? Precisa de mais agilidade nos pagamentos recebidos via Pix? E o seu TEF, está ficando pesado no bolso? A Arpa já tem uma solução para essas e outras situações do seu negócio - conheça o App Arpag, o integrador de PDV e SMART POS que facilita sua rotina, garante cobranças corretas e te deixa dentro das normas fiscais!\n\nTelefone: (49) 99960-6336",
+    category: [],
+  },
+  {
+    title: "B2 Sistemas",
+    logo: "logo-b2.png",
+    description:
+      "Integração com sistema Queen para recebimento integrado na maquininha.\n\nTelefone: (65) 3326-2299, (65) 99983-6549\nEmail: suporte@b2sistemas.com.br, desenvolvimento@b2sistemas.com.br, heli@b2sistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Bar Fácil",
+    logo: "logo-barfacil.png",
+    description:
+      "O Bar Fácil é um App voltado para bares e eventos que atua como uma solução de ponto de venda (POS) Android, facilitando o gerenciamento de transações e operações de vendas.\n\nTelefone: (48) 99813-0006\nEmail: luan.correa@agpsolucoes.com.br",
+    category: [],
+  },
+  {
+    title: "BitBar",
+    logo: "logo-bitbar.png",
+    description:
+      "O Bit Bar é um sistema de gestão focado em Bares e Restaurantes.\n\nFuncionalidades: Cadastro de produtos, Cardápio digital, Delivery, Comanda, Controle financeiro, Integração com balança, Controle de estoque, Integração com iFood.\n\nTelefone: (51) 99400-7054",
+    category: [],
+  },
+  {
+    title: "Bitbyte",
+    logo: "logo-bitbyte.png",
+    description:
+      "A receita para o crescimento do seu negócio! Agilize o atendimento de seus clientes, reduza custos, evite desperdícios, melhore a lucratividade do seu negócio e automatize a apuração de informações estratégicas.\n\nTelefone: (11) 94177-4424\nEmail: seliu@bitbyte.com.br",
+    category: [],
+  },
+  {
+    title: "Brajan Sistemas",
+    logo: "logo-brajan.png",
+    description:
+      "App para atendimento de restaurante com controle de mesa e loja em geral.\n\nTelefone: (27) 3383-7100\nEmail: rodrigozr@brajan.com.br",
+    category: [],
+  },
+  {
+    title: "Cash Driver",
+    logo: "logo-idez.png",
+    description:
+      'O Cash Driver é uma ferramenta que utiliza a tecnologia móvel (smartphone ou tablet) para acompanhar e otimizar o processo logístico de entrega. Seu ciclo tem início pela conferência dos produtos carregados (saída), prestação de contas "ponto a ponto" e conferência de entrada, tornando o processo mais ágil, prático e seguro. Além disso, o sistema memoriza a rota feita pelo motorista e também alerta para paradas extras programadas (almoço, depósitos bancários e descanso obrigatório) e não programadas (abastecimento, troca de pneu, acidentes e outros).\n\nTelefone: (11) 99981-2505, (11) 2959-5011\nEmail: douglas@linkedby.com.br, marcelo.zorub@linkedby.com.br',
+    category: [],
+  },
+  {
+    title: "CH Sistemas",
+    logo: "logo-chsistemas.png",
+    description:
+      "Simplifique as suas operações de vendas com emissão de documentos fiscais, TEF (Transferência Eletrônica de Fundos), controle de abertura e fechamento de caixa e Pix (QR Code) para receber pagamentos diretamente no App, eliminando a necessidade de conferir o extrato bancário para confirmar as transações. Simples, prático e ágil, com uma interface amigável!\n\nTelefone: (49) 98847-0587, (49) 99975-3863\nEmail: desenvolvimento@chsistemas.com.br, comercial@chsistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Chef Mio",
+    logo: "logo-chefmio.png",
+    description:
+      "Atendimento presencial rápido e eficiente com App de garçom, cardápio digital para mesas através de QR Code, sistema de caixa rápido, mesas e comandas individuais. Automatize o atendimento de delivery e potencialize suas vendas com pedidos delivery por telefone, cardápio digital sem taxas de comissão e integração com WhatsApp. Gestão completa com controle de caixa, financeiro e estoque além de módulo fiscal.\n\nTelefone: (28) 99992-1882\nEmail: renan@chefmio.com.br",
+    category: [],
+  },
+  {
+    title: "CISS",
+    logo: "logo-ciss.png",
+    description:
+      "Com o App CISS é possível consultar informações sobre os produtos, emitir pedidos, gerar comandas, finalizar a venda e imprimir o documento fiscal de qualquer lugar da loja, ou até mesmo fora dela.\n\nTelefone: (46) 99127-4596",
+    category: [],
+  },
+  {
+    title: "Closmaq",
+    logo: "logo-losmaq.png",
+    description:
+      "Software para gestão de mesa, balcão, entrega, ingressos, fichas e vendas no geral.\n\nTelefone: (32) 98852-5146\nEmail: david@closmaq.com.br",
+    category: [],
+  },
+  {
+    title: "Código UP",
+    logo: "logo-codigoup.png",
+    description:
+      "O Código UP é uma ferramenta completa com vários módulos: Cadastro Completo de Produtos, Controle Completo de Estoque, Emissão de NF-e, NFC-e, MDF-e, CT-e, Controle de Ordens de Serviço com emissão de NF-e dos produtos e NFS-e dos serviços, Controle financeiro completo, Controle de Boletos e muito mais.\n\nTelefone: (32) 98803-0537",
+    category: [],
+  },
+  {
+    title: "Comanda Alterdata",
+    logo: "logo-comanda-alterdata.png",
+    description:
+      "O Comanda Alterdata é um aplicativo de lançamento de pedidos e vendas desenvolvido pela ALTERDATA Tecnologia em Informática LTDA. Ele é um aplicativo complementar e dependente do Alterdata SPICE, suíte completa de gestão voltada para restaurantes, bares, lanchonetes, cafeterias e estabelecimentos de food service. O app permite que garçons e atendentes registrem pedidos diretamente pelo dispositivo móvel, com integração em tempo real ao sistema SPICE, trazendo mais agilidade no atendimento e maior controle operacional.\n\nTelefone: (21) 99253-1415\nEmail: adm@alterdata.com.br",
+    category: [],
+  },
+  {
+    title: "COMPSIS",
+    logo: "logo-compsis.png",
+    description:
+      "App que faz o controle operacional e de cobranças em praças de pedágio.\n\nTelefone: (12) 99789-4721\nEmail: jessilin.rodrigues@compsisnet.com.br, carlos.doria@compsis.com.br",
+    category: [],
+  },
+  {
+    title: "Compu Forte Sistemas",
+    logo: "logo-compuforte.png",
+    description:
+      "App para venda de fichas em eventos, bares e restaurantes.\n\n*Lembrando que para rodar o App precisa do retaguarda da Compu Forte Sistemas.\n\nTelefone: (31) 99201-1599, (31) 2555-6970\nEmail: gustavohpr@gmail.com",
+    category: [],
+  },
+  {
+    title: "Compumate Pay",
+    logo: "logo-compumate.png",
+    description:
+      "O sistema Compumate Pay é uma ferramenta que ajuda na realização das vendas com simplicidade e agilidade, tendo tudo na máquina de cartão. A POS Smart é uma maquininha que realizará a transação eletrônica com os cartões e no mesmo equipamento sairá a impressão do Cupom Fiscal (NFC-e) junto com o comprovante de pagamento. Essa tecnologia que avançou dentro do conceito de ponto de venda contribui para o seu negócio de diversas maneiras.\n\nTelefone: (51) 98608-0294\nEmail: fernando@compumate.com.br, ricardo@compumate.com.br",
+    category: [],
+  },
+  {
+    title: "Compusoft",
+    logo: "logo-compusoft.png",
+    description:
+      "App integrado ao sistema de gestão de postos de combustíveis Posto Forte, o App permite que seja faturado os abastecimentos realizados nas bombas do posto, além de venda de produtos e controle da loja de conveniência.\n\nTelefone: (18) 3271-1057\nEmail: yudi@pratikapdv.com",
+    category: [],
+  },
+  {
+    title: "Connect Posto - POS",
+    logo: "logo-techposto.png",
+    description:
+      "O Connect Posto - POS é um App de vendas de combustíveis do Connect Posto.\n\nTelefone: (66) 3439-5931\nEmail: marcosdi@opcaovirtual.com.br, luciangela@opcaovirtual.com.br",
+    category: [],
+  },
+  {
+    title: "Consfor",
+    logo: "logo-consfor.png",
+    description:
+      "App para venda de tickets de estacionamento em eventos.\n\nTelefone: (14) 99152-7385\nEmail: consforsistemas2@gmail.com, aroldo@consfor.com.br",
+    category: [],
+  },
+  {
+    title: "Datamais Garçom",
+    logo: "logo-datamais.png",
+    description:
+      "O App Datamais Garçom é destinado à automação da força de vendas em eventos, bares, restaurantes, cafeterias, pizzarias e similares. O App é parte de uma solução para gestão de estabelecimentos comerciais do segmento de refeição fora de casa e entretenimento. O App é capaz de imprimir tickets ou comandar pedidos para preparação, bem como efetuar a cobrança em cartões e Pix.\n\nTelefone: (47) 99176-2109\nEmail: marcelo@datamais.com.br, hugoeyng@datamais.com.br",
+    category: [],
+  },
+  {
+    title: "Datanis Sistemas",
+    logo: "logo-datanis.png",
+    description:
+      "Apps para gerenciamento de vendas externas, controle de estoque, Smart POS (Terminal TEF integrado ao sistema).\n\nTelefone: (49) 99960-6336",
+    category: [],
+  },
+  {
+    title: "DigiSat",
+    logo: "logo-digisat.png",
+    description:
+      "O App PDV Mobile 2.0 permite registrar vendas de produtos para consumidor final, com emissão de NFC-e, CF-e SAT ou Registro de Venda para empresas MEI.\n\nTelefone: (49) 99922-7119",
+    category: [],
+  },
+  {
+    title: "DribionPay",
+    logo: "logo-dribion.png",
+    description:
+      "App totalmente integrado com nosso sistema para impulsionar vendas.\n\nTelefone: (43) 99126-9471, (43) 3524-3344\nEmail: bruno@dribion.com, marco.antonio@dribion.com",
+    category: [],
+  },
+  {
+    title: "Droid PDV",
+    logo: "logo-droidpdv.png",
+    description:
+      "Droid PDV é uma solução de frente de caixa, para lojistas que precisam de uma ferramenta rápida e simples para registrar as suas vendas. O Droid PDV possui menus, botões e telas intuitivas para o fluxo de venda. Conectado a um SAT Fiscal ou configurado para cupom NFCe, o Droid PDV emite cupons fiscais de acordo com a legislação vigente, capturando CPF do cliente e, gerando automaticamente os arquivos da Nota Fiscal Paulista.\n\nTelefone: (11) 97655-1650",
+    category: [],
+  },
+  {
+    title: "EAPOS",
+    logo: "logo-easy.png",
+    description:
+      "O EAPOS é um App para dispositivos móveis que veio para revolucionar o atendimento e o controle no segmento de food service, oferecendo funcionalidades como Comandas, Mapa de contas, Pagamentos, Comprovante de venda e Cupom fiscal.\n\nEmail: claudio@easyassist.com.br",
+    category: [],
+  },
+  {
+    title: "easy",
+    logo: "logo-easy.png",
+    description:
+      "Facilite suas transações comerciais com o EASY, o App de integração de TEF que garante segurança, agilidade e eficiência nas suas operações de pagamento eletrônico. Com ele você terá integração com os módulos de venda dos sistemas Easy Cloud e Easy 3.\n\nTelefone: (51) 99186-9950\nEmail: rafael@3rsistemas.com.br",
+    category: [],
+  },
+  {
+    title: "ElPay",
+    logo: "logo-elpay.png",
+    description:
+      "Projetado para tornar o processo de receber pagamentos uma experiência sem complicações, o App ELPay oferece uma interface intuitiva e fácil de usar. Desenvolvido para máquinas de cartões Android, você pode aceitar pagamentos com cartões de crédito, débito e Pix de forma rápida e segura. Com uma integração rápida e simples, o ELPay garante uma experiência de transação fluida, com menor custo. Transforme sua operação de caixa com o ELPay. Simplifique o processo de pagamentos para você e seus clientes.\n\nTelefone: (54) 99971-2433, (54) 3364-1588\nEmail: vendas@elinfo.com.br",
+    category: [],
+  },
+  {
+    title: "EPOC",
+    logo: "logo-epoc.png",
+    description:
+      "O EPOC é um PDV completo para restaurantes, com frente de caixa, gestão de pedidos e controle de vendas e estoque. Suporta operações por mesas, comanda, autoatendimento e PDV móvel. Integração com NFC-e, SAT, impressoras e KDS, garantindo eficiência no atendimento. Funciona offline para mais segurança e confiabilidade.\n\nTelefone: (11) 3892-8272\nEmail: elisson.osorio@epoc.tech",
+    category: [],
+  },
+  {
+    title: "EQuatro Pay",
+    logo: "logo-e4quattropay.png",
+    description:
+      "APP para gestão empresarial, com Consulta de produtos, faturamento, recebimento, dashboard e acompanhamento de vendas.\n\nTelefone: (11) 98492-5057\nEmail: ribeiro@e4sistemas.com.br",
+    category: [],
+  },
+  {
+    title: "ErgonPDV",
+    logo: "logo-ergon.png",
+    description:
+      "App desenvolvido para auxiliar as equipes de vendas de um comércio ou distribuidora melhorar a sua eficiência e aumentar a produtividade, permite aos vendedores realizar orçamentos, pedidos e recebimento diretamente da SmartPOS.\n\nTelefone: (11) 93297-9032\nEmail: elbes@ergontech.com.br, william@ergontech.com.br, adevaldo@ergontech.com.br",
+    category: [],
+  },
+  {
+    title: "eVogar",
+    logo: "logo-vogar.png",
+    description:
+      "Emitir notas fiscais, cupons e gerenciamento financeiro.\n\nTelefone: (51) 3051-1015, (51) 99514-8906\nEmail: suporte2@vogar.com.br",
+    category: [],
+  },
+  {
+    title: "Eyemobile",
+    logo: "logo-eyemobile.png",
+    description:
+      "Sistema PDV direcionado para a jornada de venda em estabelecimentos, além do controle de estoque e de caixa. Todas as funcionalidades estão inclusas em um App compatível com as principais POS Digitais do mercado. O software é aderente à estabelecimentos que desejam ter agilidade nos atendimentos, reduzir suas filas, ter mobilidade e otimizar a experiência de venda, como, por exemplo, restaurantes, bares, casas noturnas e show e festivais de modo geral.\n\nTelefone: (48) 99698-2609\nEmail: fabiano.alvarenga@eyemobile.com.br",
+    category: [],
+  },
+  {
+    title: "Fire Sistemas",
+    logo: "logo-firesistemas.png",
+    description:
+      "O App Fire Vendas proporciona agilidade e eficiência para Restaurantes. Os garçons podem abrir mesas, lançar pedidos, solicitar contas e emitir cupons fiscais diretamente de seus dispositivos móveis.\n\nTelefone: (65) 3223-2000, (65) 99989-1555",
+    category: [],
+  },
+  {
+    title: "Gdoor Zucchetti",
+    logo: "logo-gdoor.png",
+    description:
+      "O PDV Móvel é um App que visa mobilidade e permite a emissão de NFC-e através do seu dispositivo mobile. Ele se conecta diretamente ao sistema retaguarda (necessário para funcionamento) e sincroniza as vendas emitidas instantaneamente. Com esse sistema você consegue: Emitir NFC-e, Pagar via integração com o ZPOS, Selecionar e cadastrar clientes, Visualizar a listagem das vendas feitas pelo dispositivo, Aplicar descontos nos itens e no total, Ler de código de barras do produto pela câmera do dispositivo e Trabalhar com produto pesado.\n\n*Obs: É necessário o uso de um sistema retaguarda da Gdoor Zucchetti para o funcionamento do App.\n\nTelefone: (49) 99992-2766\nEmail: luis.lima@gdoor.com.br",
+    category: [],
+  },
+  {
+    title: "GFood",
+    logo: "logo-gfood.png",
+    description:
+      "Sistema de gestão para bares e restaurantes que integra atendimento presencial, delivery, comandas, mesas, cardápio digital, autoatendimento e gestão operacional completa.\n\nTelefone: (49) 3441-3105",
+    category: [],
+  },
+  {
+    title: "Idez",
+    logo: "logo-idez.png",
+    description:
+      "Somos uma plataforma de soluções financeiras B2B para você plugar ao seu negócio e gerar novas fontes de receita.\n\nIntegração com PDV, Emissão e impressão de NFC-e, Fluxo de venda e pagamento.\n\nTelefone: (51) 98414-1318\nEmail: analise@idezsistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Infinite POS",
+    logo: "logo-infinite.png",
+    description:
+      "O Infinite POS é um PDV (Ponto de venda) móvel que traz uma nova forma de vendas para postos de combustíveis. Com o Infinite POS você será capaz de efetuar a venda de abastecimentos, produtos e emitir NFC-e diretamente da máquina de cartão, isso entre muitas outras funcionalidades já disponíveis que trará grande agilidade e comodidade para seus clientes.\n\nTelefone: (38) 99977-2886\nEmail: matheus@infinitetecnologia.com.br, patrick@infinitetecnologia.com.br",
+    category: [],
+  },
+  {
+    title: "Infosoft",
+    logo: "logo-infosoft.png",
+    description:
+      "O infosoft - ipay é um App que permite o recebimento de valores via cartão de crédito, débito ou Pix. Clientes que utilizam os produtos infosoft como imedic, ijury, ilife ou icommerce podem usufruir desta facilidade o que deixa o processo de vendas integrado e mais seguro.\n\nTelefone: (51) 98182-4661",
+    category: [],
+  },
+  {
+    title: "JF System",
+    logo: "logo-jfsystem.png",
+    description:
+      "App de integração com softwares do Grupo JF System.\n\nTelefone: (53) 99995-4466\nEmail: juliana@jfsystem.com.br",
+    category: [],
+  },
+  {
+    title: "JR Restaurante",
+    logo: "logo-jrsistemas.png",
+    description:
+      "Aplicativo para uso do garçom: Permite fazer lançamentos de produtos em mesas, Efetuar pagamento e fechamento da mesa, Transferência de produtos entre mesas e etc.\n\nTelefone: (47) 99944-2415\nEmail: anderson@jrpdv.com.br, nathan@jrpdv.com.br",
+    category: [],
+  },
+  {
+    title: "Jump Serviços",
+    logo: "logo-jump.png",
+    description:
+      "Gerencie a distância, opere pelo App e tenha seu estacionamento ou lava-rápido na palma da mão! Atendemos perfeitamente tanto estacionamento, valet quanto lava-rápido ou estéticas automotivas. Uma ferramenta completa para controlar a entrada e saída dos seus clientes do estacionamento e lava-rápido sem necessidade de Internet! O App operacional foi desenvolvido para smartphone ou tablet (Android), trabalha com cartões QR Code, impressora portável bluetooth, além de ter outros recursos que possibilitam maior eficiência e agilidade no controle dos clientes. O sistema permite que você controle as faturas dos mensalistas em dia e atrasados ou da gestão de convênios pós-pago tanto do seu estacionamento ou lava-rápido.\n\nEmail: rafael.haeusler@jumptecnologia.com, gustavo.cabral@jumptecnologia.com",
+    category: [],
+  },
+  {
+    title: "Lion Pay",
+    logo: "logo-lion.png",
+    description:
+      "O Lion Pay é uma solução de automação comercial desenvolvida para atender às necessidades do comércio no estado de Mato Grosso. Com ele, você pode gerenciar vendas e operações de forma integrada, otimizando processos e garantindo eficiência no atendimento, tudo adaptado às demandas locais e às particularidades do mercado regional.\n\nTelefone: (66) 99639-8290\nEmail: joabe@liontecnologia.com.br",
+    category: [],
+  },
+  {
+    title: "Maistre",
+    logo: "logo-maistre.png",
+    description:
+      "App para recebimento de doações via cartão.\n\nTelefone: (51) 99226-8522, (51) 3029-6747\nEmail: domingos@maistre.com.br, vinycio@maistre.com.br",
+    category: [],
+  },
+  {
+    title: "Master Key",
+    logo: "logo-masterkeyfull.png",
+    description:
+      "Master Key Smart TEF é uma solução que trabalha de forma Integrada ao Master Key, sistema de gestão e automação comercial. Foi desenvolvido para potencializar a gestão e o resultado das empresas de forma simples e segura. O Master Key é um sistema completo que permite realizar vendas, controlar estoque, financeiro, lucratividade, fazer a emissão de boletos, Notas Fiscais, NECe/SAT e etc. Principais Recursos: Controle de Vendas, Emissão de Notas Fiscais, NFC-e/SAT se adequando a legislação do TEF. Homologado em todos os estados do Brasil.\n\nTelefone: (51) 3748-1792, (51) 98281-5151",
+    category: [],
+  },
+  {
+    title: "Master Key Smart PDV",
+    logo: "logo-masterkeyfull.png",
+    description:
+      "A solução Smart PDV Master Key transforma seu terminal em um PDV móvel. O Smart PDV Master Key facilita a operação e reduz custos operacionais pois substitui o PDV convencional. Emite NFC-e, e possui um sistema de retaguarda em nuvem para gestão de vendas e controle em diversos dispositivos.\n\nPrincipais recursos: Cadastro de produtos, Controle de vendas, NFC-e, Fichas, Senhas e dashboards para gestão de vendas.\n\nTelefone: (27) 3062-5275",
+    category: [],
+  },
+  {
+    title: "MC SISTEMAS",
+    logo: "logo-mcsistemas.png",
+    description:
+      "O MC Pag é um App que integra de forma rápida e fácil o PDV com seu SmartPOS. Uma solução que integra as vendas do PDV com o SmartPOS gerando maior segurança para o operador de caixa e garantindo o cumprimento da instrução normativa 108/2022 do estado do Rio Grande do Sul e em conformidade com a decreto 56.670. Uma solução completa para estabelecimentos menores.\n\nPrincipais recursos: Pagamentos via crédito, débito e Pix, Vinculação dos meios de pagamentos com a NFC-e.\n\nTelefone: (51) 3671-6121",
+    category: [],
+  },
+  {
+    title: "Menu Integrado",
+    logo: "logo-menuintegrado.png",
+    description:
+      "Plataforma completa para restaurantes e negócios de delivery, centralizando pedidos, oferecendo cardápio digital, gestão de motoboys, integrações com marketplaces e ferramentas de controle e automação.\n\nTelefone: (11) 97348-1235, (41) 99837-5356\nEmail: contato@menuintegrado.com.br",
+    category: [],
+  },
+  {
+    title: "Metanet Pay",
+    logo: "logo-metanet.png",
+    description:
+      "O Metanet Pay proporciona mobilidade dentro da sua empresa, facilitando o recebimento dos clientes com dinheiro, cartão e a prazo.\n\nTelefone: (81) 98203-6450, (43) 9184-8004\nEmail: adson.nasser@metanetsistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Mobi PDV e Mobi Comanda",
+    logo: "logo-pdvmobi-comandamobi.png",
+    description:
+      "Mobi PDV e Mobi Comanda, são pontos de venda móvel que facilita sua operação e reduz custos. Dispensa todos os equipamentos do seu ponto de venda, emite Fichas, Pedidos ou NFC-e. Gera relatórios e gráficos online das suas vendas. A solução ideal para sua loja.\n\nTelefone: (11) 4858-9558, (71) 3599-0958",
+    category: [],
+  },
+  {
+    title: "Mobility",
+    logo: "logo-mobility.png",
+    description:
+      'A solução da Mobility é para a frente de caixa. Ideal para lojistas que precisam de uma ferramenta rápida e simples para registrar as suas vendas. O software da Mobility, conhecido como "Droid PDV" possui menus, botões e telas intuitivas para o fluxo de venda. Com o App da Mobility, o seu negócio estará conectado a um SAT Fiscal (Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos) podendo emitir cupons fiscais de acordo com a legislação vigente.\n\nTelefone: (11) 97655-1650',
+    category: [],
+  },
+  {
+    title: "MobPay",
+    logo: "logo-raffinato.png",
+    description:
+      "O App MobPay permite efetuar o pagamento de contas geradas no Raffinato, tanto pedidos realizados no App Raffinato Mobile (Garçom), como no PDV desktop. Este App funciona de forma integrada ao Raffinato Gestor e depende da contratação do Gestor para o seu funcionamento. Além do pagamento é possível realizar a emissão do documento fiscal (CF-e ou NFC-e) e imprimir o comprovante (DANFE).\n\nTelefone: (49) 98429-1148\nEmail: analise@raffinato.inf.br",
+    category: [],
+  },
+  {
+    title: "mPm+",
+    logo: "logo-mpm.png",
+    description:
+      "O App mPm+ é uma ferramenta de vendas móveis que permite: Gerenciar vendas, Emitir NFC-e (Nota Fiscal do Consumidor Eletrônica), Gerar Pix (sistema de pagamento instantâneo), Fazer transações com cartões de débito e crédito, além de oferecer uma variedade de outras funcionalidades para facilitar o processo de vendas.\n\nTelefone: (87) 99988-2627\nEmail: adriano@bravilsistemas.com",
+    category: [],
+  },
+  {
+    title: "MR PDV",
+    logo: "logo-rpinfo.png",
+    description:
+      'O App MR PDV, da RP Info, é um sistema robusto e confiável, para registro de vendas no seu PDV. Com ele, é possível gerenciar de forma centralizada todos os caixas e ECFs de lojas individuais ou redes, além de integrar promoções, pack virtual e módulo "atacarejo".\n\nTelefone: (46) 3226-8000, (41) 99781-9422',
+    category: [],
+  },
+  {
+    title: "MToll",
+    logo: "logo-mtoll.png",
+    description:
+      'O MTOLL é um aplicativo de arrecadação e operação móvel para praças de pedágio, desenvolvido pela COMPSIS Computadores e Sistemas Indústria e Comércio LTDA. A solução permite que operadores realizem cobrança de pedágio de forma móvel, diretamente em Smart POS, eliminando a necessidade de estruturas fixas adicionais nas pistas. O MTOLL é totalmente integrado aos sistemas centrais de controle (CCA) das concessionárias, atuando como um "papa-fila digital", agilizando o atendimento aos usuários, reduzindo filas e melhorando o fluxo de tráfego, especialmente em horários de pico.\n\nTelefone: (35) 99185-9475\nEmail: heloan.marinho@compsis.com.br',
+    category: [],
+  },
+  {
+    title: "NCR",
+    logo: "logo-ncr.png",
+    description:
+      "Sistema para gerenciamento de pedidos e vendas no seu restaurante com gerenciamento de mesas, fichas, comandas individuais e Fast Food, lançamento de produtos, recebimento de contas e emissão de documento fiscal, função papa-fila, impressão de pedidos e muito mais.\n\nTelefone: (11) 2167-6755\nEmail: flavio.silva@ncrvoyix.com",
+    category: [],
+  },
+  {
+    title: "OmniPDV",
+    logo: "logo-omni.png",
+    description:
+      "Com a plataforma Nexaas.Omni você terá gestão e controle do seu negócio com facilidade e mobilidade. App para sistema de PDV e caixa de loja 100% móvel, funciona de qualquer lugar, levando seu negócio onde você estiver. Os vendedores podem ser os próprios caixas com o Nexaas.Omni, é possível fazer gestão de seus clientes, vendas com diversas formas de pagamento, inclusão de descontos e gestão das vendas.\n\nTelefone: (11) 98283-3210\nEmail: rodrigo.santos@nexaas.com, roberto.leite@nexaas.com",
+    category: [],
+  },
+  {
+    title: "ONPDV",
+    logo: "logo-onpdv.png",
+    description:
+      "O ONPDV é um sistema de gestão para varejo e food service. Controle estoques, vendas e finanças em tempo real, otimize pedidos e personalize promoções. Integração com PDVs, relatórios detalhados e suporte especializado. Segurança garantida e atualizações constantes para manter seu negócio competitivo.\n\nTelefone: (12) 3152-9360, (12) 99739-5144\nEmail: jonathan@mbd.com.br, mbd@mbd.com.br",
+    category: [],
+  },
+  {
+    title: "Origam",
+    logo: "logo-origam.png",
+    description:
+      "Controle de mesas e comandas para clientes que utilizam o Godino.\n\nTelefone: (11) 94136-2315, (11) 4712-3935\nEmail: je@origam.com.br, marco@origam.com.br",
+    category: [],
+  },
+  {
+    title: "PagZilla",
+    logo: "logo-pagzilla.png",
+    description:
+      "Com o Pagzilla você passa o cartão e imediatamente emite sua NFC-e. Integre o pagamento com o cartão de débito ou crédito com seu dispositivo junto ao SAT (Sistema Autenticador e Transmissor de Cupons Fiscais Eletrônicos). Tenha o controle da entrada e saída de produtos do seu estabelecimento em tempo real. A experiência de compra de seus clientes torna-se mais fluida, gerando satisfação e maior fluxo no seu estabelecimento.\n\nTelefone: (51) 99533-6398",
+    category: [],
+  },
+  {
+    title: "PDV Legal",
+    logo: "logo-pdvlegal.png",
+    description:
+      "O PDV Legal é o sistema de vendas ideal para você que busca agilidade e facilidade no seu processo de vendas. Com telas de fácil navegação você pode emitir documentos fiscais, controlar seu estoque e gerenciar todas as suas vendas utilizando apenas a sua maquininha. Essa é a solução ideal para acelerar as vendas do seu negócio, seja um restaurante, lanchonete, food truck, sorveteria, quiosque ou uma loja de conveniência. Com tudo centralizado na sua maquininha, sua equipe ganha mais agilidade no atendimento e seu comércio se torna mais lucrativo. Além da aplicação que irá rodar na sua maquininha, o PDV Legal também possui uma retaguarda, este será o portal onde você irá consultar todos os relatórios de vendas, produtos mais vendidos, vendas por horário, controlar comissão de garçom e muito mais!\n\nTelefone: (19) 99131-6371\nEmail: luis.garbelini@tabletcloud.com.br, rogerio@tabletcloud.com.br",
+    category: [],
+  },
+  {
+    title: "PDV POS",
+    logo: "logo-pdvpos.png",
+    description:
+      "Faça vendas, emita notas fiscais e controle toda a sua empresa, do estoque ao financeiro, tudo online e muito fácil de usar.\n\n*Vendas | Frente de Caixa (PDV)*\n\nCom um caixa móvel em sua mão, faça e controle vendas, cadastre clientes, operadores ou vendedores para controle de comissão. Emita nota fiscal eletrônica (NFC-e) e nota fiscal de serviços eletrônica (NFS-e) pela própria maquininha, ou seja, tudo em um único lugar.\n\nTelefone: (61) 99271-3302\nEmail: ricardo@pdvpos.com.br",
+    category: [],
+  },
+  {
+    title: "PDV Team17",
+    logo: "logo-team17.png",
+    description:
+      "O App PDV Team17 possui um sistema completo com as seguintes funcionalidades: ERP, PDV Frente de caixa, emissor de tickets, cashless, caixa móvel, emissor NFCe.\n\nTelefone: (41) 99185-5876",
+    category: [],
+  },
+  {
+    title: "Pixei Pagamentos",
+    logo: "logo-pixei.png",
+    description:
+      "Realize vendas e pedidos, finalize e reserve comandas, integrado ao NooChef - Alimentação, desenvolvido pela Nootech Sistemas.\n\nTelefone: (46) 9918-6986\nEmail: flares@nootech.com.br",
+    category: [],
+  },
+  {
+    title: "PlinPag",
+    logo: "logo-plimpag.png",
+    description:
+      "Consulta, impressão e pagamento de faturas de água de concessionárias parceiras e tributos municipais.\n\nTelefone: (67) 9294-4372\nEmail: arthur@plimpag.com.br",
+    category: [],
+  },
+  {
+    title: "POS Controle",
+    logo: "logo-poscontrole.png",
+    description:
+      "O POS Controle é um PDV móvel que facilita a sua operação e reduz custos. Dispensa todos os equipamentos do seu ponto de venda, emite fichas, pedidos ou NFC-e. Além disso, gera relatórios e gráficos online das suas vendas, sendo a solução ideal para seu estabelecimento.\n\nTelefone: (11) 4858-9558, (71) 3599-0958\nEmail: comercial@poscontrole.com.br",
+    category: [],
+  },
+  {
+    title: "Posto Gestor",
+    logo: "logo-postogestor.png",
+    description:
+      "O Posto Gestor é um sistema de gestão completo e especializado para o varejo de combustíveis, conveniências, troca de óleo e serviços. Além disso, o Posto Gestor inclui um módulo especialmente desenvolvido para empresas TRR (Transportador-Revendedor-Retalhista), garantindo uma gestão integrada e eficaz de todas as operações.\n\nTelefone: (48) 3198-0982, (48) 3521-5390",
+    category: [],
+  },
+  {
+    title: "PrátikaPDV",
+    logo: "logo-pratika.png",
+    description:
+      "O PrátikaPDV é um App de gerenciamento de vendas que funciona diretamente no smartphone, SmartPOS ou computador (PC), permitindo que vários ramos possam utilizar a aplicação.\n\nPrincipais funcionalidades: Emissão de Notas Fiscais e Cupons Fiscais, Cadastro de clientes e produtos, Contas a pagar e receber, Gerenciamento de vendas, Fechamento de Caixa, Versão para Auto Atendimento com TEF, Versão para Evento com emissão de Fichas ou Vouchers, Comandas, Delivery.\n\nTelefone: (49) 99922-7119",
+    category: [],
+  },
+  {
+    title: "Prioriza",
+    logo: "logo-prioriza.png",
+    description:
+      "App de restaurantes / evento, para auxiliar na venda de itens e impressão de ticket, contando com um meio de pagamento direto.\n\nTelefone: (51) 3500-7287, (51) 99318-1184\nEmail: erp@priorizatec.com.br",
+    category: [],
+  },
+  {
+    title: "PSinf Pay",
+    logo: "logo-infosolucoes.png",
+    description:
+      "O PSinf Pay é uma solução que visa a integração dos meios de pagamento TEF com o sistema ERP da PSInf, proporcionando a automação dos processos de pagamento, com vinculação aos documentos fiscais. Essa integração é especialmente relevante para atender às novas normativas governamentais, que tornam obrigatório o vínculo do comprovante de pagamento na NFC-e (Nota Fiscal de Consumidor Eletrônica).\n\nTelefone: (51) 99995-7147\nEmail: paulo@psinf.com.br",
+    category: [],
+  },
+  {
+    title: "Puma Sistemas",
+    logo: "logo-puma.png",
+    description:
+      "O Módulo PDV é recomendado para lojas e diversos tipos de comércio que costumam lidar com um grande fluxo diário de clientes e precisam realizar uma venda rápida e ágil. Em instantes você registra quais foram os produtos e/ou serviços vendidos e a forma de pagamento que o cliente deseja utilizar. Todas as operações realizadas no Módulo PDV são integradas com outras áreas de sua empresa, desta forma, a gestão do seu negócio será otimizada e você poderá ter um controle completo das atividades de sua empresa. Além disso, você poderá instalar em quantos computadores quiser, lembrando que o Módulo PDV também funciona em modo offline, ou seja, não depende de internet durante o uso, você poderá continuar vendendo normalmente, deixando os documentos fiscais para serem transmitidos após o restabelecimento da internet. O Módulo PDV é uma ferramenta completa para a automação da rotina de vendas do comércio e de prestadores de serviços. Permite integração com PAF-ECF, TEF, SAT, balanças eletrônicas, impressoras fiscais, terminal de consulta de preço, emissão de carnê, cupom fiscal, NF-e e NFC-e, controle de orçamentos, comissões, estatísticas de venda e rentabilidade, relatórios e gráficos.\n\nTelefone: (65) 99981-1334\nEmail: temi@pumasistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Queóps Bares & Restaurantes",
+    logo: "logo-queops.png",
+    description:
+      "Bares & Restaurantes tenha mais controle, mais automação, mais pedidos, mais eficiência e mais integração. O sistema Queóps Bares & Restaurantes é desenvolvido para aprimorar a gestão do seu negócio com soluções personalizadas, criadas especialmente para atender às necessidades do seu negócio.\n\nTelefone: (51) 3378-5300\nEmail: mpaulo@lexsis.com.br, rudi@lexsis.com.br",
+    category: [],
+  },
+  {
+    title: "RANFCe",
+    logo: "logo-RANFCe.png",
+    description:
+      "NFC-e Nota de Consumidor em Tablet, Smartphone, Terminal G800, Cielo LIO e REDE com GPOS700 e L400. Pré-Atendimento/Orçamento para Tablet e Smartphone; Restaurante: Cardápio, pedido e fechamento em Smartphone.\n\nTelefone: (82) 3142-8224\nEmail: diretoria@rasistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Rei das Fichas",
+    logo: "logo-reidasfichas.png",
+    description:
+      "Sistema para emissão de fichas/tickets e controle de consumo em eventos, bares e operações que usam vendas rápidas.\n\nEmail: rudineilasta@reidasfichas.com.br",
+    category: [],
+  },
+  {
+    title: "Relt Informática",
+    logo: "logo-relt.png",
+    description:
+      "App de força de vendas e emissor de notas fiscais do ERP SiG.\n\nTelefone: (51) 98448-9100\nEmail: relt@relt.com.br",
+    category: [],
+  },
+  {
+    title: "RMS Mobile",
+    logo: "logo-resultmais.png",
+    description:
+      "Aplicativo desenvolvido para terminais POS, voltado ao processamento de transações de pagamento via cartão (crédito/débito) e Pix. Com interface simples e intuitiva, permite a realização rápida e segura de vendas, integrando-se diretamente ao sistema de frente de caixa. Ideal para estabelecimentos que buscam agilidade no atendimento e confiabilidade nas transações financeiras.\n\nTelefone: (51) 3902-1525\nEmail: adriano@resultmais.com, willian@resultmais.com",
+    category: [],
+  },
+  {
+    title: "Santa Ficha",
+    logo: "logo-santaficha.png",
+    description:
+      "Sistema de gestão para emissão de fichas e cartão de consumo para eventos.\n\nTelefone: (19) 97168-9943\nEmail: rafael@santaficha.com.br, rafaellima@abcsinformatica.com.br",
+    category: [],
+  },
+  {
+    title: "Serbet",
+    logo: "logo-serbet.png",
+    description:
+      "Sistema de fiscalização e vendas de estacionamento rotativo (zona azul) das cidades operadas pelo Estacionamento Digital. Emissão de ticket de estacionamento, venda de créditos de estacionamento e regularização de avisos de irregularidade. Operado pelos Postos de Vendas e agentes de fiscalização.\n\nTelefone: (47) 99961-9670\nEmail: fabricio@serbet.com.br, luan.meneghelli@serbet.com.br",
+    category: [],
+  },
+  {
+    title: "SEUPOS Food",
+    logo: "logo-seupos.png",
+    description:
+      "Aplicativo de ponto de venda (POS) para bares, restaurantes, pizzarias e cafés, permitindo gestão de pedidos, mesas, cardápio digital, vendas e controle financeiro em tempo real.\n\nEmail: contato@avantejuntos.com.br",
+    category: [],
+  },
+  {
+    title: "SG Pay",
+    logo: "logo-sgbr.png",
+    description:
+      "O SG Pay é uma solução de pagamentos que possibilita a realização do processo de pagamento de forma integrada com sistema SG Master.\n\nTelefone: (49) 98890-9021\nEmail: matteo_vanzo@hotmail.com",
+    category: [],
+  },
+  {
+    title: "Sismec",
+    logo: "logo-sismec.png",
+    description:
+      "App para automação de cobranças realizadas através do Sismec Mobile. Tenha total controle das receitas e despesas de sua empresa, além de muitas outras ferramentas desenvolvidas para organizar e descomplicar o seu dia-a-dia.\n\nTelefone: (54) 99112-3844\nEmail: marcus@sismec.com.br",
+    category: [],
+  },
+  {
+    title: "SISMOV2B",
+    logo: "logo-opcaovirtual.png",
+    description:
+      "Sistema para vendas de produtos e serviços em Feiras e Eventos, da bilheteria à gastronomia com realização do cadastro on-line dos produtos e serviços por atividades e segmentos, gestão financeira e estoque em tempo real, relatório de prestação de contas, suporte e aplicação imediata.\n\nTelefone: (55) 99622-4681\nEmail: eltonjosespohr@gmail.com",
+    category: [],
+  },
+  {
+    title: "Sistema Pallas",
+    logo: "logo-resultmais.png",
+    description:
+      "Controle as vendas, estoque e as finanças.\n\nTelefone: (12) 98141-7823\nEmail: hugofialho@sistemapallas.com.br",
+    category: [],
+  },
+  {
+    title: "Smart POS",
+    logo: "logo-poscontrole.png",
+    description:
+      "O Smart POS da NetPOS é um App para varejo geral que permite uma gestão integrada dos PDVs com controle de estoque e vendas.\n\nTelefone: (11) 2391-7028\nEmail: comercial@smartpos.net.br",
+    category: [],
+  },
+  {
+    title: "Softcom Smart",
+    logo: "logo-softcom.png",
+    description:
+      "O Softcom Smart é a solução ideal para empresas que buscam modernizar e otimizar suas operações. Com o Softcom Smart, você pode vender mais, aceitar cartões de crédito e emitir cupons fiscais (NFC-e) com facilidade. É perfeito para foodtrucks, lanchonetes, cafeterias, quiosques, lojas em shoppings populares, vendas externas e para quem está iniciando na automação. Se é completo, fácil e moderno, então é Softcom.\n\nTelefone: (83) 3133-3600\nEmail: pesquisa@softcomtecnologia.com.br, lab@softcomtecnologia.com.br",
+    category: [],
+  },
+  {
+    title: "Softplus",
+    logo: "logo-softplus.png",
+    description:
+      "O App Softplus é um Ponto de Venda para Postos de combustível. Atende a venda (abastecimentos) por meio de uma solução completa com pagamento em dinheiro, cartão, Pix e venda a prazo. O App é integrado com os sistemas da Softplus, emite NFC-e na impressora da SmartPOS, possui seleção e controle de caixa, clientes e veículos, envio de e-mail com os dados da nota, descontos nos itens e muito mais.\n\nTelefone: (51) 3041-2131, (51) 3041-0115",
+    category: [],
+  },
+  {
+    title: "SOS Soluções",
+    logo: "logo-sos.png",
+    description:
+      "O NextMobile é o App complementar aos ERP Next360 que contempla no App as funções integradas com TEF com FastFicha - Emissão de Fichas Pré-Pagas para consumo em eventos, Força de Vendas - Vendas de produtos, Controle de Mesas - Módulo de Lançamento e Fechamento de Comandas, PapaFila - Baixa de Abastecimento diretamente pelo aplicativo com recebimentos em TEF.\n\nTelefone: (43) 99112-8068\nEmail: anderson@sossolucoes.com.br",
+    category: [],
+  },
+  {
+    title: "SousaVenda",
+    logo: "logo-sousavendas.png",
+    description:
+      "O App SousaVenda é desenvolvido para as diferentes empresas do ramo do comércio com faturamento até R$ 50 mil reais por mês.\n\nTelefone: (18) 99148-8082",
+    category: [],
+  },
+  {
+    title: "SUIT EXPRESS POS",
+    logo: "logo-suitablev3.png",
+    description:
+      "Aplicativo para motoboys, permitindo controle completo de entregas, rota, comunicação com cliente e atualização de status em tempo real.\n\nTelefone: (51) 9913-2606",
+    category: [],
+  },
+  {
+    title: "Suit POS",
+    logo: "logo-suitpos.png",
+    description:
+      "O SuitPOS é de uso exclusivo de clientes Suitable. Sua função é servir como integração de pagamentos de pedidos de forma automatizada, gerando comprovante e Nota Fiscal.\n\nTelefone: (51) 9913-2606\nEmail: financeiro@suitable.com.br, lucasrodrigues2606@gmail.com, kaiov@mx2.unisc.br",
+    category: [],
+  },
+  {
+    title: "SUIT WAITER POS",
+    logo: "logo-suitablev4.png",
+    description:
+      "Aplicativo de garçom / comanda eletrônica, permitindo lançar pedidos na mesa, enviar à cozinha, gerir comandas e realizar pagamento direto na mesa por smartphones e maquininhas.\n\nTelefone: (51) 9913-2606",
+    category: [],
+  },
+  {
+    title: "Super PDV",
+    logo: "logo-superpdv.png",
+    description:
+      "Aplicativo PDV Mobile da BM Informática para realização de pedidos, comandas e vendas.\n\nTelefone: (81) 3126-2050\nEmail: bm@bminformatica.com.br",
+    category: [],
+  },
+  {
+    title: "Suporte PDV Mobile",
+    logo: "logo-suporte.png",
+    description:
+      "O Suporte PDV Mobile é um App de Ponto de Venda móvel para postos de combustível.\n\nTelefone: (53) 3026-6000, (53) 99981-1275",
+    category: [],
+  },
+  {
+    title: "Tacto Sistemas",
+    logo: "logo-tacto.png",
+    description:
+      "Módulo de venda mais completo do mercado, utilizado para atender bares, restaurantes, sorveterias, lanchonetes e até boates. Existem várias maneiras de trabalhar a venda neste módulo: Venda Balcão, Mesa, Cartão de consumação e tele-entrega. As telas são intuitivas de modo que qualquer um possa operar com relatórios gerenciais, controle de comissão, lucratividade, auditoria, etc. Lembrando que este módulo é totalmente integrado com o financeiro e estoque. Controle de convênio para restaurantes. Outras vantagens: Lançamento através de tela Touch e Tablets.\n\nTelefone: (65) 98113-1905\nEmail: evandro@tacto.com.br",
+    category: [],
+  },
+  {
+    title: "Tech Posto",
+    logo: "logo-techposto.png",
+    description:
+      "Tech Posto - PDV em suas mãos, com o App permite-se: Dar baixa nos abastecimentos realizados na pista, baixa com negociações como cartões (débito, crédito, crédito parcelado, etc), Pix (direto da adquirente, ou pelo TECH PAY), requisição, dinheiro, chamada ADM para adquirente, para operações como cancelamento e reimpressão, documentos fiscais, como impressão e reimpressão, NFe (identificado) e NFC-e, relatórios rápidos de funcionários.\n\nTelefone: (64) 99279-4668\nEmail: f.jaime@tsi.inf.br",
+    category: [],
+  },
+  {
+    title: "THR Softwares",
+    logo: "logo-thr.png",
+    description:
+      "App voltado para vendas de produtos e ingressos em parques aquáticos.\n\nTelefone: (15) 99846-7209\nEmail: joaoshinkai@thrsolucoes.com.br",
+    category: [],
+  },
+  {
+    title: "Ticket PDV",
+    logo: "logo-ticketpdv.png",
+    description:
+      "Sistema simples e rápido de PDV para eventos, festas e bares, permitindo emissão de tickets, controle básico de estoque, fechamento de caixa e vendas à vista (dinheiro, cartão e PIX).\n\nTelefone: (48) 99617-1542",
+    category: [],
+  },
+  {
+    title: "Trade System",
+    logo: "logo-tradesystem.png",
+    description:
+      "O App Trade System tem os seguintes objetivos: Gerir lojas de diferentes setores, dentro das especificidades de cada segmento, aumentar a competitividade empresarial com foco no aumento na rentabilidade do seu negócio, auxiliar por meio de ferramentas na melhor utilização dos recursos financeiros, identificar necessidades e inovações no varejo e propor soluções objetivando a prosperidade do negócio, administrar recursos visando à continuidade financeira saudável do seu negócio, criar e aplicar estratégias com o objetivo de realizar maior venda e de conquistar a fidelização junto aos seus clientes, dar a segurança fiscal e contábil em face aos novos desafios dessas áreas mantendo sempre informados as novas legislações, gerenciar a equipe de modo a gerar satisfação dos colaboradores e clientes.\n\nTelefone: (53) 99971-4418\nEmail: tradesystem@tradesystem.com.br",
+    category: [],
+  },
+  {
+    title: "UNIO",
+    logo: "logo-unio.png",
+    description:
+      "O UNIO PDV Mobile é um sistema que contempla Pré Venda, Controle de Fabricação, Baixa rápida de cupom, alteração de preços de bomba, carta frete, vale motorista, cheques recebidos e cheques troco.\n\nTelefone: (14) 3432-1963, (14) 99810-6121",
+    category: [],
+  },
+  {
+    title: "Uniplus",
+    logo: "logo-uniplus.png",
+    description:
+      "O sistema Uniplus possui funcionalidades e integrações específicas para o segmento Food Service, feitas especialmente para agilizar o dia a dia do seu cliente. Com o Uniplus é possível atender de forma completa todos os tamanhos de negócios, desde pequenas lanchonetes a grandes restaurantes.\n\nTelefone: (47) 99612-6905\nEmail: whillian.pereira@intelidata.inf.br",
+    category: [],
+  },
+  {
+    title: "Unypax",
+    logo: "logo-unypax.png",
+    description:
+      "App de recebimento integrado com o ERP Unypax.\n\nTelefone: (62) 99981-6939, (62) 98148-6032\nEmail: felipe@unymos.com",
+    category: [],
+  },
+  {
+    title: "Vedas Sistemas",
+    logo: "logo-vedas.png",
+    description:
+      "App com integração com nosso App de garçom, pagamentos avulsos, recebimentos na mesa e pagamento PDV integrado.\n\nTelefone: (66) 98415-7380\nEmail: gabrielkothe@gmail.com",
+    category: [],
+  },
+  {
+    title: "Veloce Smart",
+    logo: "logo-velocetech.png",
+    description:
+      "Automação comercial integrada à máquina de pagamentos, ideal para todos os segmentos. Desenvolvida para otimizar suas vendas e oferecer uma gestão completa do negócio, com controle de caixa, estoque, emissão de cupons fiscais e notas de serviço. Com o Veloce Smart, sua marca une os canais físicos e digitais, transformando a experiência de compra dos clientes e garantindo que seu negócio esteja sempre presente.\n\nTelefone: (51) 99382-5981\nEmail: projetos@veloce.techn, proenca@veloce.tech",
+    category: [],
+  },
+  {
+    title: "VucaPOS",
+    logo: "logo-vuca.png",
+    description:
+      "VucaPOS é uma solução de ponto de venda (PDV) integrada ao ERP Vuca Solution, projetada para simplificar e agilizar as operações de frente de caixa. O VucaPOS é um aplicativo de ponto de venda (PDV) desenvolvido pela VUCA Solution Tecnologia LTDA, integrante do ecossistema VUCA, um ERP completo e integrado para restaurantes e bares. O aplicativo atua como o frente de loja da plataforma, permitindo o registro de vendas e pedidos diretamente no ponto de atendimento, com integração em tempo real aos módulos de financeiro, estoque, produção, delivery e relatórios da retaguarda VUCA.\n\nTelefone: (62) 98119-1635\nEmail: lucas.graciano@vucasolution.com.br, devs.vucasolution@gmail.com",
+    category: [],
+  },
+  {
+    title: "WebPosto",
+    logo: "logo-webposto.png",
+    description:
+      "O webPosto Pay é um App focado no setor de postos de combustível. Integrado às bombas de abastecimento, permite ao frentista realizar a venda, receber nas diversas formas de pagamento (cartão, QR Code, Pix, etc.) e emitir o cupom de venda diretamente no POS - tudo sem a necessidade do cliente sair do veículo. Também é possível integrá-lo em sua loja de conveniência e realizar a abertura de mesas, controle de comandas, lançamentos de itens e fazer disparos de pedidos diretamente para a cozinha.\n\nTelefone: (27) 3062-5275",
+    category: [],
+  },
+  {
+    title: "WebyAPP",
+    logo: "logo-webyapp.png",
+    description:
+      "O WebyAPP é a solução para pontos de venda com emissão de NFC-e, faz emissão e controle de acesso de ingressos com QR Code e emissão de tickets para eventos.\n\nTelefone: (47) 99756-1501\nEmail: maicon@testosistemas.com.br",
+    category: [],
+  },
+  {
+    title: "Wesa SmartPDV",
+    logo: "logo-wesa.png",
+    description:
+      "O App SmartPDV possibilita muito mais do que passar cartão no seu ponto de venda móvel, ele é um sistema de vendas completo para postos de combustíveis. O App centraliza toda operação de venda em uma única máquina, somando muitas vantagens: Registro de vendas, passa cartão de crédito e débito, leitura de código de barras de produtos, impressão de NFC-e direto no SmartPDV, uso de cartão NFC para identificação de clientes e frentistas.\n\nTelefone: (51) 4040-4191\nEmail: suporte@wesa.com.br",
+    category: [],
+  },
+  {
+    title: "Windel POS",
+    logo: "logo-windel.png",
+    description:
+      "O Windel POS é um App integrado ao sistema Windel que facilita o processamento de pagamentos de vendas em estabelecimentos comerciais. Responsável pela comunicação direta entre a Windel e a Fiserv.\n\nTelefone: (54) 3025-2540\nEmail: adilson@windel.com.br",
+    category: [],
+  },
+  {
+    title: "Xmenu",
+    logo: "logo-menuintegrado.png",
+    description:
+      "Aplicativo completo para gestão de PDV para restaurantes, com controle de mesa, balcão e delivery.\n\nTelefone: (16) 3514-0550\nEmail: developer@netcontroll.com.br, adm@netcontroll.com.br",
+    category: [],
+  },
+  {
+    title: "Yolo PDV",
+    logo: "logo-yolo.png",
+    description:
+      "A Yolo Pass é a solução completa de cashless para organizadores de eventos, oferecendo uma plataforma que integra controle de acesso, venda e validação de ingressos digitais, recarga de saldo, consumo via pulseiras ou cartões RFID, e relatórios em tempo real sobre vendas e movimentações financeiras. Com ele, você elimina filas, reduz fraudes, centraliza a gestão do evento e melhora significativamente a experiência do público.\n\nTelefone: (16) 99254-5889\nEmail: kentaro@yolopass.com.br",
+    category: [],
+  },
+  {
+    title: "Youzoom",
+    logo: "logo-youzoom.png",
+    description:
+      "App de PDV para venda de ingressos e produtos com emissão de voucher com QR Code! Entre os principais recursos, destacam-se: venda de ingressos físicos e digitais, venda de fichas de produtos, venda de produtos com senha para retirada, venda de créditos cashless, controle para cobrança de taxa de serviço, controle de fluxo de caixa, relatórios de vendas, histórico de vendas e cancelamento de vendas com devolução do pagamento.\n\nTelefone: (67) 99142-2440, (67) 98412-8311\nEmail: comercial@youzoom.com.br, desenvolvimento@youzoom.com.br, fabio@youzoom.com.br",
+    category: [],
+  },
+  {
+    title: "Zenitech",
+    logo: "logo-zenitech.png",
+    description:
+      "Aplicação da Zenitech para operação em terminais AXIUM DX8000, usados como SmartPOS Android para automação comercial e pagamentos.\n\nTelefone: (84) 99611-6068",
+    category: [],
+  },
+  {
+    title: "zerofila",
+    logo: "logo-new-choice.png",
+    description:
+      "Controle total e pagamentos simplificados: A POS Multiloja com Split de Pagamento que facilita suas vendas e garante a divisão automática de receitas entre as lojas.\n\nTelefone: (54) 99615-0606\nEmail: matheus@zerofila.com.br, samuel@zerofila.com.br",
+    category: [],
+  },
+  {
+    title: "Zetta Pay",
+    logo: "logo-zetta.png",
+    description:
+      "Ajudar empresas com alto volume de cobranças mensais a automatizar e agilizar seus recebimentos através de um sistema de gestão de cobranças.\n\nTelefone: (49) 3366-1011\nEmail: cleiton@zettabrasil.com.br, darlei@zettabrasil.com.br",
+    category: [],
+  },
+  {
+    title: "ZPOS",
+    logo: "logo-zpos.png",
+    description:
+      "O App ZPOS faz vínculo entre o serviço de transação ofertado pelo parceiro, recebendo as informações dos sistemas Zucchetti (ClippPro, ClippService, ClippCheff, ClippFácil, Clipp360, Zetaweb, SmallCommerce) para que seja efetuado a transação no SmartPOS do parceiro e assim, retornando ao sistema a confirmação da operação de Crédito/Débito/Pix juntamente com o envio da impressão do documento fiscal (NFC-e) para o SmartPOS.\n\nTelefone: (49) 3442-2970, (49) 99971-5125",
+    category: [],
+  },
 ];
 
 export default appsData;

@@ -268,9 +268,7 @@ export default function FormSection() {
               </a>{" "}
               e na{" "}
               <a
-                href="https://azulzinhadacaixa.com.br/politica-de-privacidade"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/politica-de-privacidade"
                 className="underline"
               >
                 Política de Privacidade Fiserv

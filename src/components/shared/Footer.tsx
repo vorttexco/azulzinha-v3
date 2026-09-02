@@ -47,7 +47,7 @@ const linkGroups2: { title: string; links: FooterLink[] }[] = [
       { label: "Contrato de Credenciamento CAIXA Tem", href: "https://azulzinhadacaixa.com.br/midias/termo-condicoes-complementares-CAIXA_Tem.pdf" },
       { label: "Política de Privacidade", href: "/politica-de-privacidade" },
       { label: "Política de Cookies", href: "/aviso-de-cookies" },
-      { label: "LGPD", href: "/lgpd" },
+      { label: "LGPD", href: "/termo-lgpd" },
     ],
   },
 ];

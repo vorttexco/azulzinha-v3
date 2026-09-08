@@ -52,9 +52,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Para solicitar a manutenção da sua maquininha, acesse o Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    . Menu Solicitações &gt; Preencher os dados&gt; clicar em &apos;Criar caso&apos; &gt; selecionar Motivo: &apos;Equipamento&apos; &gt; Submotivo &apos;selecionar a opção que o equipamento está apresentado o problema&apos; &gt; Sintoma: &apos;selecionar de acordo com a solicitação que precisa ser atendida&apos; &gt; clicar em &apos;Salvar&apos;.
+                                    Para solicitar a manutenção da sua maquininha, acesse o Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>. Menu Solicitações &gt; Preencher os dados&gt; clicar em &apos;Criar caso&apos; &gt; selecionar Motivo: &apos;Equipamento&apos; &gt; Submotivo &apos;selecionar a opção que o equipamento está apresentado o problema&apos; &gt; Sintoma: &apos;selecionar de acordo com a solicitação que precisa ser atendida&apos; &gt; clicar em &apos;Salvar&apos;.
                                 </p>
                                 <p>
                                     Pelo App da azulzinha, basta acessar: “Atendimento” &gt; “Solicitar” &gt; “Manutenção”, escolher o produto que deseja manutenção, preencher as informações &gt; selecionar o problema apresentado e o motivo.
@@ -72,8 +70,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Basta solicitar a reposição pelo Portal da azulzinha, App da azulzinha, Central de Atendimento ou atendimento virtual
-                                    <a href="https://firstdata.virtualinteractions.com.br/pt_BR/avi-caixapagamentos.html?id=106&source=41&target=1&channel=2&ms=1657039161130#forward" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://firstdata.virtualinteractions.com.br/pt_BR/avi-caixapagamentos.html id=106&amp;source=41&amp;target=1&amp;channel=2&amp;ms=1659624645314#forward</a>
+                                    Basta solicitar a reposição pelo Portal da azulzinha, App da azulzinha, Central de Atendimento ou atendimento virtual <a href="https://firstdata.virtualinteractions.com.br/pt_BR/avi-caixapagamentos.html?id=106&source=41&target=1&channel=2&ms=1657039161130#forward" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://firstdata.virtualinteractions.com.br/pt_BR/avi-caixapagamentos.html id=106&amp;source=41&amp;target=1&amp;channel=2&amp;ms=1659624645314#forward</a>
                                 </p>
                                 <p>
                                     A azulzinha conta ainda com o envio automático de bobinas que é realizado de 15 em 15 dias. Novos kits serão enviados com base nos itens abaixo:
@@ -133,10 +130,7 @@ const faqData: FaqCategory[] = [
                         question: "A azulzinha aceita pagamentos com Pix?",
                         answer: (
                             <div className="space-y-2">
-                                Sim. Para mais informações
-                                <a href="/pix-azulzinha" className="text-azul underline">clique aqui</a>
-                                .
-                            </div>
+                                Sim. Para mais informações <a href="/pix-azulzinha" className="text-azul underline">clique aqui</a>. </div>
                         ),
                     },
                     {
@@ -166,12 +160,10 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    <strong>Aberto: </strong>
-                                    Cartões emitidos por emissores com bandeiras Visa, Mastercard e Elo; captura, processamento e liquidação feitos pela Fiserv.
+                                    <strong>Aberto: </strong> Cartões emitidos por emissores com bandeiras Visa, Mastercard e Elo; captura, processamento e liquidação feitos pela Fiserv.
                                 </p>
                                 <p>
-                                    <strong>Fechado: </strong>
-                                    Cartões emitidos por empresas como Alelo, Ticket, VR e Pluxee; processamento e liquidação feitos pelas próprias bandeiras.
+                                    <strong>Fechado: </strong> Cartões emitidos por empresas como Alelo, Ticket, VR e Pluxee; processamento e liquidação feitos pelas próprias bandeiras.
                                 </p>
                             </div>
                         ),
@@ -210,9 +202,7 @@ const faqData: FaqCategory[] = [
                         question: "Como funcionam as transações no POS?",
                         answer: (
                             <div className="space-y-2">
-                                Na Clover ou azulzinha smart, utilize a opção
-                                <strong>Voucher</strong>
-                                no menu.
+                                Na Clover ou azulzinha smart, utilize a opção <strong>Voucher</strong> no menu.
                             </div>
                         ),
                     },
@@ -236,23 +226,11 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>Para habilitar a Alelo na sua azulzinha você deverá: </p>
                                 <p>
-                                    1. Realizar o credenciamento na Alelo. Caso ainda não esteja credenciado
-                                    <strong>acesse o site da Alelo</strong>
-                                    <a href="https://credenciamento.alelo.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://credenciamento.alelo.com.br/</a>
-                                    , clique em “Habilitar Aceitação” no final da página e informe os dados solicitados, ou entre em contato com a Alelo pelos telefones:
-                                    <a href="tel:40025011" className="text-azul underline">4002 5011</a>
-                                    (Capitais e Regiões Metropolitanas) e
-                                    <a href="tel:08005705011" className="text-azul underline">0800 570 5011</a>
-                                    (Demais Localidades).
+                                    1. Realizar o credenciamento na Alelo. Caso ainda não esteja credenciado <strong>acesse o site da Alelo</strong> <a href="https://credenciamento.alelo.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://credenciamento.alelo.com.br/</a>, clique em “Habilitar Aceitação” no final da página e informe os dados solicitados, ou entre em contato com a Alelo pelos telefones:
+                                    <a href="tel:40025011" className="text-azul underline">4002 5011</a> (Capitais e Regiões Metropolitanas) e <a href="tel:08005705011" className="text-azul underline">0800 570 5011</a> (Demais Localidades).
                                 </p>
                                 <p>
-                                    2. Preencher as informações solicitadas no
-                                    <strong>site</strong>
-                                    <a href="https://alelo.portalfd.com.br/caixa" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://alelo.portalfd.com.br/caixa</a>
-                                    ou no
-                                    <a href="" className="text-azul underline">App da azulzinha</a>
-                                    .
-                                </p>
+                                    2. Preencher as informações solicitadas no <strong>site</strong> <a href="https://alelo.portalfd.com.br/caixa" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://alelo.portalfd.com.br/caixa</a> ou no <a href="" className="text-azul underline">App da azulzinha</a>. </p>
                                 <p>
                                     3. Após a solicitação, a Alelo retornará com a aprovação ou rejeição da sua solicitação, e a lista de produtos disponibilizados de acordo com o MCC* do seu estabelecimento.
                                 </p>
@@ -272,10 +250,7 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>Caso precise falar com a Alelo, entre em contato pelos telefones:</p>
                                 <p>
-                                    <a href="tel:40025011" className="text-azul underline">4002 5011</a>
-                                    (Capitais e Regiões Metropolitanas) e
-                                    <a href="tel:0800 570 5011" className="text-azul underline">0800 570 5011</a>
-                                    (Demais Localidades).
+                                    <a href="tel:40025011" className="text-azul underline">4002 5011</a> (Capitais e Regiões Metropolitanas) e <a href="tel:0800 570 5011" className="text-azul underline">0800 570 5011</a> (Demais Localidades).
                                 </p>
                             </div>
                         ),
@@ -290,15 +265,9 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Para realizar o credenciamento na pluxee, você deverá
-                                    <strong>acessar o site da pluxee</strong>
-                                    (
+                                    Para realizar o credenciamento na pluxee, você deverá <strong>acessar o site da pluxee</strong> (
                                     <a href="https://sodexocredenciamento.com.br/login" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://sodexocredenciamento.com.br/login</a>
-                                    ) e criar o seu cadastro, ou se preferir, poderá entrar em contato com a Central de Atendimento pelos telefones
-                                    <a href="tel:30035083" className="text-azul underline">3003 5083</a>
-                                    (Capitais e Regiões Metropolitanas) ou
-                                    <a href="tel:08007285083" className="text-azul underline">0800 728 5083</a>
-                                    (Demais Localidades) ou por mensagens via WhatsApp:
+                                    ) e criar o seu cadastro, ou se preferir, poderá entrar em contato com a Central de Atendimento pelos telefones <a href="tel:30035083" className="text-azul underline">3003 5083</a> (Capitais e Regiões Metropolitanas) ou <a href="tel:08007285083" className="text-azul underline">0800 728 5083</a> (Demais Localidades) ou por mensagens via WhatsApp:
                                     <a href="https://api.whatsapp.com/send/?phone=551126620580&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="text-azul underline">(11) 2662 0580</a>
                                 </p>
                                 <p>
@@ -328,9 +297,7 @@ const faqData: FaqCategory[] = [
                                 <p><a href="tel:08007285083" className="text-azul underline">0800 728 5083</a> (Demais Localidades).</p>
                                 <p>
                                     Para mensagens via WhatsApp:
-                                    <a href="https://api.whatsapp.com/send/?phone=551126620580&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="text-azul underline">(11) 2662 0580</a>
-                                    .
-                                </p>
+                                    <a href="https://api.whatsapp.com/send/?phone=551126620580&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="text-azul underline">(11) 2662 0580</a>. </p>
                                 <p>
                                     <a href="https://www.sodexobeneficios.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://www.sodexobeneficios.com.br/</a>
                                 </p>
@@ -349,8 +316,7 @@ const faqData: FaqCategory[] = [
                                 <p>Para habilitar a Ticket na azulzinha você precisa primeiro realizar o credenciamento.</p>
                                 <p>
                                     • Caso ainda não esteja credenciado,
-                                    <strong>acesse o site da Ticket</strong>
-                                    (
+                                    <strong>acesse o site da Ticket</strong> (
                                     <a href="https://www.ticket.com.br/portal-estabelecimento/credenciar" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://www.ticket.com.br/portal-estabelecimento/credenciar</a>
                                     ) e informe o seu CNPJ, clique no botão “Começar” e siga o preenchimento dos dados solicitados.
                                 </p>
@@ -385,20 +351,14 @@ const faqData: FaqCategory[] = [
                                 <p>Para habilitar a VR na azulzinha você precisa primeiro realizar o credenciamento.</p>
                                 <p>
                                     Para realizar o credenciamento,
-                                    <strong>acesse o site da VR</strong>
-                                    (
+                                    <strong>acesse o site da VR</strong> (
                                     <a href="https://portal.vr.com.br/portal/portal-vr/area-publica/credenciamento-contato/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://portal.vr.com.br/portal/portal-vr/area-publica/credenciamento-contato/</a>
-                                    ) ou entre em contato com a Central de Atendimento pelos telefones
-                                    <a href="tel:40044938" className="text-azul underline">4004 4938</a>
-                                    (Capitais e Regiões Metropolitanas) e
+                                    ) ou entre em contato com a Central de Atendimento pelos telefones <a href="tel:40044938" className="text-azul underline">4004 4938</a> (Capitais e Regiões Metropolitanas) e
                                     <br />
-                                    <a href="tel:08005963838" className="text-azul underline">0800 596 3838</a>
-                                    (Demais Localidades).
+                                    <a href="tel:08005963838" className="text-azul underline">0800 596 3838</a> (Demais Localidades).
                                 </p>
                                 <p>
-                                    Se você já aceita VR, acesse o
-                                    <strong>site</strong>
-                                    (
+                                    Se você já aceita VR, acesse o <strong>site</strong> (
                                     <a href="https://portal.vr.com.br/portal/portal-vr/login/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://portal.vr.com.br/portal/portal-vr/login/</a>
                                     ) com o seu login e senha cadastrados junto à VR.
                                 </p>
@@ -592,10 +552,7 @@ const faqData: FaqCategory[] = [
                         question: "Como faço para pedir a minha Clover?",
                         answer: (
                             <p>
-                                Peça a sua Clover, da azulzinha, clicando
-                                <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">aqui</a>
-                                .
-                            </p>
+                                Peça a sua Clover, da azulzinha, clicando <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">aqui</a>. </p>
                         ),
                     },
                     {
@@ -643,8 +600,7 @@ const faqData: FaqCategory[] = [
                                     As taxas são personalizadas para o seu negócio, levando em consideração o seu faturamento atual ou projetado e o valor médio das suas transações. Isso significa que você terá condições sob medida, que se ajustam às suas necessidades.
                                 </p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para pedir a sua Clover e saber taxas e diferenciais para o seu negócio.
+                                    <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para pedir a sua Clover e saber taxas e diferenciais para o seu negócio.
                                 </p>
                             </div>
                         ),
@@ -655,13 +611,11 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>Os pagamentos serão liquidados da seguinte forma:</p>
                                 <p>
-                                    <strong>Débito:</strong>
-                                    valor total da venda no próximo dia útil seguinte à efetivação da transação. Vendas aos sábados e domingos são processadas no próximo dia útil.
+                                    <strong>Débito:</strong> valor total da venda no próximo dia útil seguinte à efetivação da transação. Vendas aos sábados e domingos são processadas no próximo dia útil.
                                 </p>
                                 <p><strong>Crédito:</strong> valor total da venda em 30 dias corridos.</p>
                                 <p>
-                                    <strong>Parcelamento sem juros:</strong>
-                                    recebimento da primeira parcela após 31 dias do processamento da venda, e as posteriores, a cada 31 dias subsequentes.
+                                    <strong>Parcelamento sem juros:</strong> recebimento da primeira parcela após 31 dias do processamento da venda, e as posteriores, a cada 31 dias subsequentes.
                                 </p>
                                 <p><strong>Parcelamento com juros:</strong> valor total da venda em 31 dias corridos.</p>
                                 <p>Caso você tenha algum plano de antecipação de recebíveis, você poderá receber no mesmo dia ou em até 1 dia útil.</p>
@@ -672,9 +626,7 @@ const faqData: FaqCategory[] = [
                         question: "Posso antecipar meus recebíveis?",
                         answer: (
                             <p>
-                                Sim! Temos planos de antecipação que se adaptam ao seu negócio, permitindo que você receba os valores em até um dia útil. Para conferir os planos disponíveis, acesse o aplicativo
-                                <strong>Finanças +</strong>
-                                pelo seu dispositivo Clover.
+                                Sim! Temos planos de antecipação que se adaptam ao seu negócio, permitindo que você receba os valores em até um dia útil. Para conferir os planos disponíveis, acesse o aplicativo <strong>Finanças +</strong> pelo seu dispositivo Clover.
                             </p>
                         ),
                     },
@@ -687,19 +639,14 @@ const faqData: FaqCategory[] = [
                         question: "Como posso solicitar dispositivos adicionais?",
                         answer: (
                             <p>
-                                Ajudar seu negócio a crescer é importante para nós. Para solicitar novos dispositivos, entre em contato
-                                <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">clicando aqui</a>
-                                .
-                            </p>
+                                Ajudar seu negócio a crescer é importante para nós. Para solicitar novos dispositivos, entre em contato <a href="https://azulzinhadacaixa.com.br/peca-azulzinha" target="_blank" rel="noopener noreferrer" className="text-azul underline">clicando aqui</a>. </p>
                         ),
                     },
                     {
                         question: "A Clover vem com chip para rede móvel?",
                         answer: (
                             <p>
-                                Sim, os dispositivos Clover vêm com um
-                                <strong>chip multioperadora</strong>
-                                , que permite a conexão com a operadora que possui o melhor sinal da região. Assim, seu dispositivo estará sempre conectado, evitando problemas nas suas vendas.
+                                Sim, os dispositivos Clover vêm com um <strong>chip multioperadora</strong>, que permite a conexão com a operadora que possui o melhor sinal da região. Assim, seu dispositivo estará sempre conectado, evitando problemas nas suas vendas.
                             </p>
                         ),
                     },
@@ -750,8 +697,7 @@ const faqData: FaqCategory[] = [
                                     A Clover Flex é um dispositivo de pagamento portátil que permite aceitar pagamentos em qualquer lugar. Com um design atraente, alta performance e rapidez nas transações, ele possui um chip multioperadora, garantindo conectividade confiável. É ideal para comerciantes que buscam mobilidade e praticidade nas transações.
                                 </p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre a Clover Flex
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre a Clover Flex
                                 </p>
                             </div>
                         ),
@@ -791,8 +737,7 @@ const faqData: FaqCategory[] = [
                                     A Mini facilita a gestão das vendas em um único lugar e pode se conectar a outros dispositivos Clover, permitindo integrações e automações conforme necessário.
                                 </p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre a Clover Mini
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre a Clover Mini
                                 </p>
                             </div>
                         ),
@@ -801,9 +746,7 @@ const faqData: FaqCategory[] = [
                         question: "A Mini funciona via chip para rede móvel?",
                         answer: (
                             <p>
-                                Sim, a Mini vem com um
-                                <strong>chip multioperadora</strong>
-                                , que permite a conexão com a operadora que possui o melhor sinal da região. Além do chip, ela pode ser conectada à internet via Wi-Fi e cabo Ethernet.
+                                Sim, a Mini vem com um <strong>chip multioperadora</strong>, que permite a conexão com a operadora que possui o melhor sinal da região. Além do chip, ela pode ser conectada à internet via Wi-Fi e cabo Ethernet.
                             </p>
                         ),
                     },
@@ -945,9 +888,7 @@ const faqData: FaqCategory[] = [
                         question: "Meu cliente recebe comprovante?",
                         answer: (
                             <p>
-                                Sim. Após a conclusão do pagamento, seu cliente recebe um
-                                <strong>comprovante digital</strong>
-                                com os detalhes da transação. Basta cadastrar o email no final da operação de pagamento.
+                                Sim. Após a conclusão do pagamento, seu cliente recebe um <strong>comprovante digital</strong> com os detalhes da transação. Basta cadastrar o email no final da operação de pagamento.
                             </p>
                         ),
                     },
@@ -968,10 +909,7 @@ const faqData: FaqCategory[] = [
                         question: "O Link de Pagamento tem prazo de validade?",
                         answer: (
                             <p>
-                                Sim. O Link de Pagamento permanece disponível para pagamento por
-                                <strong>até 48 horas após a sua geração e tem uso único</strong>
-                                .
-                            </p>
+                                Sim. O Link de Pagamento permanece disponível para pagamento por <strong>até 48 horas após a sua geração e tem uso único</strong>. </p>
                         ),
                     },
                     {
@@ -988,9 +926,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <ul className="list-disc pl-5 space-y-1">
                                 <li>
-                                    No
-                                    <strong>App Link da Pagamento na Clover da azulzinha</strong>
-                                    , com visão de links gerados, pagos, estornados e cancelados
+                                    No <strong>App Link da Pagamento na Clover da azulzinha</strong>, com visão de links gerados, pagos, estornados e cancelados
                                 </li>
                                 <li>No <strong>Portal da azulzinha</strong>, com funcionalidades completas de gestão</li>
                             </ul>
@@ -1022,8 +958,7 @@ const faqData: FaqCategory[] = [
                                     <li>Direcionar para os canais internos adequados, quando aplicável</li>
                                 </ol>
                                 <p>
-                                    <strong>Importante:</strong>
-                                    não existe habilitação manual imediata pelo gerente; o papel é de validação e correto direcionamento para que a central solicite a criação do Cartão Não Presente e habilitação do Link de Pagamento na Clover da azulzinha.
+                                    <strong>Importante:</strong> não existe habilitação manual imediata pelo gerente; o papel é de validação e correto direcionamento para que a central solicite a criação do Cartão Não Presente e habilitação do Link de Pagamento na Clover da azulzinha.
                                 </p>
                             </div>
                         ),
@@ -1147,10 +1082,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <ol className="list-decimal pl-5 space-y-1">
                                 <li>
-                                    Se o status da transação for
-                                    <strong>“Pago”</strong>
-                                    :
-                                    <ul className="list-disc pl-5 space-y-1">
+                                    Se o status da transação for <strong>“Pago”</strong>: <ul className="list-disc pl-5 space-y-1">
                                         <li>Realize o estorno pelo App Link de Pagamento na Clover, desde que a venda tenha ocorrido no mesmo dia (até 23h59)</li>
                                         <li>Para casos após este prazo, você deve entrar em contato com a Central de Atendimento para solicitar o cancelamento</li>
                                         <li>O comprovante de estorno ficará disponível quando aplicável</li>
@@ -1203,8 +1135,7 @@ const faqData: FaqCategory[] = [
                                 <p>- Notas (para exibir avisos na tela dos dispositivos).</p>
                                 <p>- App Market (loja de aplicativos homologados).</p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre os aplicativos Clover.
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre os aplicativos Clover.
                                 </p>
                             </div>
                         ),
@@ -1228,8 +1159,7 @@ const faqData: FaqCategory[] = [
                                     Além disso, todas as vendas realizadas por cada funcionário são registradas no relatório de vendas, facilitando o acompanhamento e a gestão do desempenho da equipe.
                                 </p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre os aplicativos Clover.
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre os aplicativos Clover.
                                 </p>
                             </div>
                         ),
@@ -1263,8 +1193,7 @@ const faqData: FaqCategory[] = [
                                     Com o Finanças +, você pode contratar e antecipar o recebimento de suas vendas de maneira simples, aproveitando as melhores condições para garantir um fluxo de caixa ideal para o seu negócio.
                                 </p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre os aplicativos Clover.
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre os aplicativos Clover.
                                 </p>
                             </div>
                         ),
@@ -1284,8 +1213,7 @@ const faqData: FaqCategory[] = [
                                 <p>2.Toque no botão &apos;Nova Venda&apos; localizado no canto inferior direito.</p>
                                 <p>3.Você será redirecionado para o aplicativo Vendas, onde a venda será registrada para o cliente selecionado.</p>
                                 <p>
-                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a>
-                                    para saber mais sobre os aplicativos Clover.
+                                    <a href="https://azulzinhadacaixa.com.br/clover" target="_blank" rel="noopener noreferrer" className="text-azul underline">Clique aqui</a> para saber mais sobre os aplicativos Clover.
                                 </p>
                             </div>
                         ),
@@ -1363,15 +1291,11 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>Confira a pasta de spam ou lixo eletrônico da sua caixa postal</p>
                                 <p>
-                                    Verifique se você solicitou pelo portal Clover América Latina no endereço
-                                    <a href="la.clover.com" target="_blank" rel="noopener noreferrer" className="text-azul underline" />
+                                    Verifique se você solicitou pelo portal Clover América Latina no endereço <a href="la.clover.com" target="_blank" rel="noopener noreferrer" className="text-azul underline" />
                                     la.clover.com.
                                 </p>
                                 <p>
-                                    <strong>Atenção</strong>
-                                    : o seu acesso
-                                    <strong>não funcionará</strong>
-                                    no site global (
+                                    <strong>Atenção</strong>: o seu acesso <strong>não funcionará</strong> no site global (
                                     <a href="https://www.clover.com" target="_blank" rel="noopener noreferrer" className="text-azul underline">www.clover.com</a>
                                     )
                                 </p>
@@ -1398,10 +1322,7 @@ const faqData: FaqCategory[] = [
                         question: "Minha bobina de impressão de comprovantes acabou. O que devo fazer?",
                         answer: (
                             <p>
-                                O kit de bobinas é enviado automaticamente com base na quantidade de transações realizadas. Se você ainda não o recebeu, solicite pelo aplicativo ou portal da instituição que forneceu a Clover para você, ou entre em contato com o
-                                <a href="https://br.clover.com/fale-conosco/" target="_blank" rel="noopener noreferrer" className="text-azul underline">nosso suporte</a>
-                                .
-                            </p>
+                                O kit de bobinas é enviado automaticamente com base na quantidade de transações realizadas. Se você ainda não o recebeu, solicite pelo aplicativo ou portal da instituição que forneceu a Clover para você, ou entre em contato com o <a href="https://br.clover.com/fale-conosco/" target="_blank" rel="noopener noreferrer" className="text-azul underline">nosso suporte</a>. </p>
                         ),
                     },
                     {
@@ -1419,9 +1340,7 @@ const faqData: FaqCategory[] = [
                         question: "Como altero o tempo da tela de bloqueio?",
                         answer: (
                             <p>
-                                É possível alterar o tempo que seu dispositivo irá bloquear para um mínimo de 15 segundos e um máximo de 30 minutos. Acesse o app
-                                <strong>Ajustes dispositivo</strong>
-                                e toque na opção Tela. Lá, você poderá definir o tempo de bloqueio que deseja. Por motivos de segurança, não é possível remover a tela de bloqueio.
+                                É possível alterar o tempo que seu dispositivo irá bloquear para um mínimo de 15 segundos e um máximo de 30 minutos. Acesse o app <strong>Ajustes dispositivo</strong> e toque na opção Tela. Lá, você poderá definir o tempo de bloqueio que deseja. Por motivos de segurança, não é possível remover a tela de bloqueio.
                             </p>
                         ),
                     },
@@ -1469,9 +1388,7 @@ const faqData: FaqCategory[] = [
                                     Se você é proprietário ou administrador da conta, pode visualizar a senha administrativa pelo Portal Clover. Siga os passos abaixo:
                                 </p>
                                 <p>
-                                    1.Acesse o portal em
-                                    <a href="https://la.clover.com" target="_blank" rel="noopener noreferrer" className="text-azul underline">la.clover.com</a>
-                                    utilizando seu login e senha.
+                                    1.Acesse o portal em <a href="https://la.clover.com" target="_blank" rel="noopener noreferrer" className="text-azul underline">la.clover.com</a> utilizando seu login e senha.
                                 </p>
                                 <p>2.No menu lateral esquerdo, clique em &apos;Funcionários&apos;.</p>
                                 <p>3.Selecione seu usuário proprietário para visualizar a senha administrativa em &apos;Código de acesso&apos;.</p>
@@ -1734,25 +1651,20 @@ const faqData: FaqCategory[] = [
                                 </p>
                                 <ul className="list-disc pl-5 space-y-1">
                                     <li>
-                                        <strong>Registre e monitore suas vendas:</strong>
-                                        analise se o cliente possui ou faz muitas compras seguidas em um curto período;
+                                        <strong>Registre e monitore suas vendas:</strong> analise se o cliente possui ou faz muitas compras seguidas em um curto período;
                                     </li>
                                     <li>
-                                        <strong>Atenção a pedidos urgentes:</strong>
-                                        os fraudadores têm pressa em receber os produtos comprados e não se preocupam com o valor que estão pagando;
+                                        <strong>Atenção a pedidos urgentes:</strong> os fraudadores têm pressa em receber os produtos comprados e não se preocupam com o valor que estão pagando;
                                     </li>
                                     <li>
-                                        <strong>Observe a forma de pagamento:</strong>
-                                        analise se o mesmo cliente faz várias compras utilizando cartões de crédito diferentes, sem apresentar preocupação;
+                                        <strong>Observe a forma de pagamento:</strong> analise se o mesmo cliente faz várias compras utilizando cartões de crédito diferentes, sem apresentar preocupação;
                                     </li>
                                     <li><strong>Volume de produtos:</strong> fique atento na solicitação de quantidades elevadas do mesmo produto;</li>
                                     <li>
-                                        <strong>Endereço de entrega:</strong>
-                                        fique de olho em pedidos diferentes e de altos valores para entrega no mesmo endereço e também em vários pedidos efetuados no mesmo dia, pela mesma pessoa, com entregas em diversos endereços;
+                                        <strong>Endereço de entrega:</strong> fique de olho em pedidos diferentes e de altos valores para entrega no mesmo endereço e também em vários pedidos efetuados no mesmo dia, pela mesma pessoa, com entregas em diversos endereços;
                                     </li>
                                     <li>
-                                        <strong>Crie um controle:</strong>
-                                        defina, se possível, um encarregado no comércio pela gestão e geração do Link de Pagamento.
+                                        <strong>Crie um controle:</strong> defina, se possível, um encarregado no comércio pela gestão e geração do Link de Pagamento.
                                     </li>
                                 </ul>
                             </div>
@@ -1801,9 +1713,7 @@ const faqData: FaqCategory[] = [
                         question: "Como acessar o App da azulzinha?",
                         answer: (
                             <div className="space-y-2">
-                                Para utilizar o App da azulzinha
-                                <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                , o cliente deve acessar a loja de Apps do seu celular, procurar por “azulzinha da CAIXA” e baixá-lo de forma totalmente gratuita. Feito isso, o cliente deve clicar em “Primeiro acesso”, informar seu CPF ou CNPJ e configurar sua primeira senha. Pronto, agora é só desfrutar dos benefícios do App da azulzinha.
+                                Para utilizar o App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>, o cliente deve acessar a loja de Apps do seu celular, procurar por “azulzinha da CAIXA” e baixá-lo de forma totalmente gratuita. Feito isso, o cliente deve clicar em “Primeiro acesso”, informar seu CPF ou CNPJ e configurar sua primeira senha. Pronto, agora é só desfrutar dos benefícios do App da azulzinha.
                             </div>
                         ),
                     },
@@ -1982,11 +1892,7 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>A azulzinha oferece aos seus estabelecimentos comerciais as seguintes vantagens para melhor gestão do fluxo de vendas:</p>
                                 <p>
-                                    - Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    e App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    . Estas ferramentas são gratuitas e permitem a consulta de dados contratuais, cadastrais e agenda financeira.
+                                    - Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a> e App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>. Estas ferramentas são gratuitas e permitem a consulta de dados contratuais, cadastrais e agenda financeira.
                                 </p>
                                 <p>
                                     - Extrato Eletrônico: é enviado em formato de arquivo de texto por meio de uma conexão EDI (Electronic Data Interchange ou “troca eletrônica de dados”)
@@ -2037,9 +1943,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Deve entrar no Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    e acessar: “Meu negócio” &gt; “Usuários” &gt; “Criar usuário” &gt; preencher todas as informações solicitadas no formulário &gt; “Adicionar usuário”.
+                                    Deve entrar no Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a> e acessar: “Meu negócio” &gt; “Usuários” &gt; “Criar usuário” &gt; preencher todas as informações solicitadas no formulário &gt; “Adicionar usuário”.
                                 </p>
                                 <p>
                                     É possível cadastrar até 10 usuários. Após a realização do cadastro, os funcionários receberão uma mensagem via SMS contendo a senha de acesso e um e-mail (no endereço eletrônico cadastrado) com as orientações para acesso ao Portal. Em caso de dúvidas, entre em contato com a Central de Relacionamento azulzinha da CAIXA pelos telefones: 3003 5365 (capitais) e 0800 729 5365 (demais localidades). De Segunda a Domingo: das 8h às 22h, exceto feriados nacionais.
@@ -2056,9 +1960,7 @@ const faqData: FaqCategory[] = [
                         question: "O que o cliente deve fazer se esquecer a senha do Portal da azulzinha?",
                         answer: (
                             <div className="space-y-2">
-                                Deve acessar o Portal da azulzinha
-                                <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                e clicar em “Esqueceu sua senha?”. Será enviado um guia de redefinição de senha para o endereço de e-mail cadastrado. Basta seguir as orientações para alteração de senha.
+                                Deve acessar o Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a> e clicar em “Esqueceu sua senha?”. Será enviado um guia de redefinição de senha para o endereço de e-mail cadastrado. Basta seguir as orientações para alteração de senha.
                             </div>
                         ),
                     },
@@ -2066,9 +1968,7 @@ const faqData: FaqCategory[] = [
                         question: "O que o cliente deve fazer se esquecer o usuário do Portal da azulzinha?",
                         answer: (
                             <div className="space-y-2">
-                                Deve acessar o Portal da azulzinha
-                                <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                e clicar em “Esqueceu sua senha?”. Será enviado um guia de redefinição de senha para o endereço de e-mail cadastrado. Basta seguir as orientações para alteração de senha.
+                                Deve acessar o Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a> e clicar em “Esqueceu sua senha?”. Será enviado um guia de redefinição de senha para o endereço de e-mail cadastrado. Basta seguir as orientações para alteração de senha.
                             </div>
                         ),
                     },
@@ -2132,12 +2032,10 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    <strong>Aberto: </strong>
-                                    Cartões emitidos por emissores com bandeiras Visa, Mastercard e Elo; captura, processamento e liquidação feitos pela Fiserv.
+                                    <strong>Aberto: </strong> Cartões emitidos por emissores com bandeiras Visa, Mastercard e Elo; captura, processamento e liquidação feitos pela Fiserv.
                                 </p>
                                 <p>
-                                    <strong>Fechado: </strong>
-                                    Cartões emitidos por empresas como Alelo, Ticket, VR e Pluxee; processamento e liquidação feitos pelas próprias bandeiras.
+                                    <strong>Fechado: </strong> Cartões emitidos por empresas como Alelo, Ticket, VR e Pluxee; processamento e liquidação feitos pelas próprias bandeiras.
                                 </p>
                             </div>
                         ),
@@ -2176,9 +2074,7 @@ const faqData: FaqCategory[] = [
                         question: "Como funcionam as transações no POS?",
                         answer: (
                             <div className="space-y-2">
-                                Na Clover ou azulzinha smart, utilize a opção
-                                <strong>Voucher</strong>
-                                no menu.
+                                Na Clover ou azulzinha smart, utilize a opção <strong>Voucher</strong> no menu.
                             </div>
                         ),
                     },
@@ -2615,13 +2511,7 @@ const faqData: FaqCategory[] = [
                         question: "Já sou cliente azulzinha. Como posso habilitar a função para aceitar o Programa?",
                         answer: (
                             <div className="space-y-2">
-                                Se você já tem uma
-                                <strong>azulzinha smart</strong>
-                                ,
-                                <strong>azulzinha pro</strong>
-                                ou
-                                <strong>azulzinha aproxima</strong>
-                                , a função Gás do Povo estará disponível para uso após a sua adesão ao Programa.
+                                Se você já tem uma <strong>azulzinha smart</strong>, <strong>azulzinha pro</strong> ou <strong>azulzinha aproxima</strong>, a função Gás do Povo estará disponível para uso após a sua adesão ao Programa.
                                 <br />
                                 <br />
                                 Se o seu equipamento for outra tecnologia (como Clover ou TEF), será necessário solicitar um novo terminal pelo atendimento: 3003 5365 (Capitais e Grande SP) ou 0800 729 5365 (outras localidades) — também disponível via WhatsApp: (11) 94147-3336.
@@ -2632,9 +2522,7 @@ const faqData: FaqCategory[] = [
                         question: "O revendedor paga alguma taxa para participar do Programa?",
                         answer: (
                             <div className="space-y-2">
-                                Com a
-                                <strong>azulzinha aproxima</strong>
-                                , não há custo de aluguel nem taxas sobre transações feitas pelo Gás do Povo.
+                                Com a <strong>azulzinha aproxima</strong>, não há custo de aluguel nem taxas sobre transações feitas pelo Gás do Povo.
                                 <br />
                                 <br />
                                 Se você optar por outro equipamento, poderá haver cobrança de aluguel de acordo com a oferta vigente.
@@ -2648,10 +2536,7 @@ const faqData: FaqCategory[] = [
                         question: "Qual o prazo para crédito dos valores transacionados pelo Programa Gás do Povo?",
                         answer: (
                             <div className="space-y-2">
-                                Após a efetivação da transação pela modalidade Gás do Povo, o valor será creditado na conta indicada em até
-                                <strong>2 dias úteis</strong>
-                                .
-                            </div>
+                                Após a efetivação da transação pela modalidade Gás do Povo, o valor será creditado na conta indicada em até <strong>2 dias úteis</strong>. </div>
                         ),
                     },
                 ],
@@ -2670,11 +2555,7 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>A azulzinha oferece aos seus estabelecimentos comerciais as seguintes vantagens para melhor gestão do fluxo de vendas:</p>
                                 <p>
-                                    - Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    e App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    . Estas ferramentas são gratuitas e permitem a consulta de dados contratuais, cadastrais e agenda financeira.
+                                    - Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a> e App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>. Estas ferramentas são gratuitas e permitem a consulta de dados contratuais, cadastrais e agenda financeira.
                                 </p>
                                 <p>
                                     - Extrato Eletrônico: é enviado em formato de arquivo de texto por meio de uma conexão EDI (Electronic Data Interchange ou “troca eletrônica de dados”)
@@ -2690,9 +2571,7 @@ const faqData: FaqCategory[] = [
                                     Pelo Portal da azulzinha, no menu “Minhas vendas”, selecione a opção “Pagamentos Futuro” para visualizar as informações sobre valores por período e bandeiras.
                                 </p>
                                 <p>
-                                    Pelo App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    , selecione o menu “Vendas” &gt; “Futuro” e você encontrará as transações conforme seleção de período definido.
+                                    Pelo App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>, selecione o menu “Vendas” &gt; “Futuro” e você encontrará as transações conforme seleção de período definido.
                                 </p>
                             </div>
                         ),
@@ -2727,9 +2606,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Você cliente, pode ter acesso ao extrato via o Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    , no qual é possível consultar as vendas, pagamentos e fluxo de caixa. Confira o passo a passo:
+                                    Você cliente, pode ter acesso ao extrato via o Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>, no qual é possível consultar as vendas, pagamentos e fluxo de caixa. Confira o passo a passo:
                                 </p>
                                 <p>
                                     No menu “Relatórios”, você customiza a visualização das informações e programa os dados que deseja receber. Para receber relatórios de forma automática, vá na aba “Agendamento” e clique em “+Relatório”.
@@ -2738,9 +2615,7 @@ const faqData: FaqCategory[] = [
                                     Na sequência, escolha o tipo de relatório entre pagamento, autorização ou transações e em seguida escolha a frequência que você deseja receber seus relatórios: diário, semanal ou mensal. Para baixar o arquivo, basta clicar na seta ao lado do relatório que desejar.
                                 </p>
                                 <p>
-                                    No App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    , acessar o menu “Vendas” para visualizar as transações realizadas no dia de hoje, valores pagos e pagamentos futuros.
+                                    No App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>, acessar o menu “Vendas” para visualizar as transações realizadas no dia de hoje, valores pagos e pagamentos futuros.
                                 </p>
                             </div>
                         ),
@@ -2756,14 +2631,10 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>A operação de Antecipação de Recebíveis (antecipação automática e eventual) pode ser realizada de diversas formas:</p>
                                 <p>
-                                    -No Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    , vá em “Minhas Vendas” e acesse a aba “Antecipação”, você pode fazer antecipações automáticas ou eventuais.
+                                    -No Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>, vá em “Minhas Vendas” e acesse a aba “Antecipação”, você pode fazer antecipações automáticas ou eventuais.
                                 </p>
                                 <p>
-                                    -Pelo App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    , acessar o menu “Antecipar”, selecionar “automática” ou “eventual”, seguir o passo a passo para realizar a simulação e optar pela contratação da antecipação.
+                                    -Pelo App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>, acessar o menu “Antecipar”, selecionar “automática” ou “eventual”, seguir o passo a passo para realizar a simulação e optar pela contratação da antecipação.
                                 </p>
                                 <p>-Diretamente a partir do terminal (POS), opções “Menu” e “Antecipação”.</p>
                                 <p>
@@ -2783,14 +2654,10 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>Para visualizar as taxas de desconto cobradas pelas vendas, acesse:</p>
                                 <p>
-                                    Portal da azulzinha
-                                    <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
-                                    , opção “Meu negócio” &gt; “Meus dados” &gt; “Taxas e tarifas”.
+                                    Portal da azulzinha <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>, opção “Meu negócio” &gt; “Meus dados” &gt; “Taxas e tarifas”.
                                 </p>
                                 <p>
-                                    App da azulzinha
-                                    <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>
-                                    , menu “Atendimento” &gt; Consultar: “Taxas e Tarifas&apos;&apos;.
+                                    App da azulzinha <a href="https://azulzinhadacaixa.com.br/app" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/app</a>, menu “Atendimento” &gt; Consultar: “Taxas e Tarifas&apos;&apos;.
                                 </p>
                             </div>
                         ),
@@ -2835,9 +2702,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <div className="space-y-2">
                                 <p>
-                                    Caso a venda tenha sido realizada no mesmo dia, o cancelamento pode ser feito no terminal, desde que o portador esteja presente com o cartão em mãos. Se a venda é de uma data anterior, deve ser aberto um chamado para cancelamento de venda no
-                                    <a href="https://portal.azulzinhadacaixa.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">Portal da azulzinha</a>
-                                    , ou pelo App da azulzinha. Este tipo de cancelamento é válido somente para vendas da modalidade crédito (à vista ou parcelado).
+                                    Caso a venda tenha sido realizada no mesmo dia, o cancelamento pode ser feito no terminal, desde que o portador esteja presente com o cartão em mãos. Se a venda é de uma data anterior, deve ser aberto um chamado para cancelamento de venda no <a href="https://portal.azulzinhadacaixa.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">Portal da azulzinha</a>, ou pelo App da azulzinha. Este tipo de cancelamento é válido somente para vendas da modalidade crédito (à vista ou parcelado).
                                 </p>
                                 <p>Veja o passo a passo:</p>
                                 <strong>Cancelamento pelo <a href="https://portal.azulzinhadacaixa.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">Portal da azulzinha</a>:</strong>
@@ -2946,8 +2811,7 @@ const faqData: FaqCategory[] = [
                         question: "Débito",
                         answer: (
                             <div className="space-y-2">
-                                A partir de
-                                <strong>0,81%</strong>
+                                A partir de <strong>0,81%</strong>
                             </div>
                         ),
                     },

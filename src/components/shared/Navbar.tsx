@@ -60,7 +60,6 @@ const empresaColumns: DropdownColumn[] = [
     titleColor: "azul",
     items: [
       { label: "Link de Pagamento", href: "/link-pagamento" },
-      { label: "Pagamento por WhatsApp", href: "/pagamentos-whatsapp" },
     ],
     footerLink: { label: "Todas as soluções", href: "/vendas-online" },
   },

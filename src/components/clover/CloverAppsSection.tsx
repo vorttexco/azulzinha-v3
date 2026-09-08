@@ -171,7 +171,32 @@ const tabs: Tab[] = [
               imageClassName: "w-[385px] h-[368px] rounded-lg",
             },
           },
-          { name: "Link de pagamentos", comingSoon: true },
+          {
+            name: "Link de pagamento",
+            modal: {
+              title: "Link de pagamento",
+              description:
+                "Crie links de pagamento em poucos segundos direto na Clover.",
+              benefits: [
+                {
+                  label: "Venda à distância",
+                  text: "Gere links e faça o envio por SMS, e-mail ou QR Code;",
+                },
+                {
+                  label: "Agilidade",
+                  text: "Ofereça uma experiência de compra mais rápida;",
+                },
+                {
+                  label: "Controle",
+                  text: "Acompanhe o status do link – emitido, em pagamento, aprovado ou negado - em tempo real no Portal Clover;",
+                },
+                {
+                  label: "Mais formas de pagamento",
+                  text: "Débito, crédito (à vista ou parcelado) e Pix.",
+                },
+              ],
+            },
+          },
           { name: "Centraliza", comingSoon: true },
           { name: "Conecta fácil", comingSoon: true },
         ],

@@ -2,7 +2,6 @@ import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import SimplifiqueSection from "@/components/azulzinha-smart/SimplifiqueSection";
 import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
-import IntegradorasSection from "@/components/azulzinha-smart/IntegradorasSection";
 import FuncoesSection from "@/components/azulzinha-smart/FuncoesSection";
 import VantagensSmartSection from "@/components/azulzinha-smart/VantagensSmartSection";
 import ImprevistoSection from "@/components/azulzinha-smart/ImprevistoSection";
@@ -43,7 +42,6 @@ export default function AzulzinhaSmartPage() {
         description="Assista ao vídeo para conhecer as vantagens da azulzinha smart e começar a centralizar suas vendas e gerenciar seu negócio de forma mais simples e inteligente que nunca!"
         thumbnail="/images/azulzinha-smart/video-thumbnail-1.png"
       />
-      <IntegradorasSection />
       <FuncoesSection />
       {/* Blue CTA */}
       <BlueCta

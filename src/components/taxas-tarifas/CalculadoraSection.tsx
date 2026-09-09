@@ -140,7 +140,7 @@ export default function CalculadoraSection() {
                 R$ {valorRecebido.toFixed(2).replace(".", ",")}
               </p>
             </div>
-            <a href="#" className="btn-laranja self-start mt-6">
+            <a href="/peca-azulzinha" className="btn-laranja self-start mt-6">
               Negocie suas taxas
             </a>
           </div>

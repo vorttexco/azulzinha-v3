@@ -21,6 +21,7 @@ export default function Lotericas() {
                 description="Agora as Lotéricas aceitam os cartões Elo, Mastercard e Visa de todos os bancos."
                 checkItems={[]}
                 buttonText="Saiba mais"
+                buttonHref="#loterica"
                 backgroundImage="/images/hero-backgrounds/lotericas.png"
                 mobileBackgroundImage="/images/hero-backgrounds/lotericas.png"
                 mobileImageClassName="object-[60%_20%]"
@@ -28,7 +29,7 @@ export default function Lotericas() {
                 logoWidth={196}
                 logoHeight={51}
             />
-            <section className="bg-white">
+            <section className="bg-white" id="loterica">
                 <div className="max-w-360 mx-auto px-7.5 lg:px-25 pt-20 flex justify-center">
                     <div className="flex flex-wrap justify-center gap-20.25">
                         {bandeiras.map((b) => (
@@ -107,7 +108,7 @@ export default function Lotericas() {
                     <h2 className="section-title text-azul text-center">
                         É cliente da Lotérica e precisa de atendimento?
                     </h2>
-                    <a href="#" className="btn-laranja">Ligue para 3003-4655</a>
+                    <a href="tel:+551130034655" className="btn-laranja">Ligue para 3003-4655</a>
                 </div>
             </section>
 
@@ -115,6 +116,8 @@ export default function Lotericas() {
                 title="Encontre uma Lotérica"
                 description="Localize o ponto de atendimento mais próximo de você."
                 buttonText="Localizar"
+                buttonHref="https://www.caixa.gov.br/atendimento/Paginas/encontre-a-caixa.aspx"
+                buttonTarget="_blank"
             />
 
             {/* Disclaimer */}

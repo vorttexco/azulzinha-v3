@@ -32,7 +32,8 @@ export default function AntecipacaoDeVendas() {
         title="Antecipação de Vendas"
         description="Com a azulzinha da CAIXA você antecipa as vendas feitas com cartão e equilibra o fluxo de caixa."
         checkItems={[]}
-        buttonText="Conheça"
+        buttonText="Saiba como"
+        buttonHref="#dobra"
         backgroundImage="/images/antecipacao-de-vendas/hero-bg.png"
       />
       <ModosSection />

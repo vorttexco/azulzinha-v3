@@ -87,7 +87,8 @@ export default function HelpCtaSection() {
                             Tire suas dúvidas direto no chatbot do aplicativo.
                         </p>
                         <a
-                            href="#"
+                            href="https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR&pli=1"
+                            target="_blank"
                             className="inline-flex items-center justify-center px-[17px] py-[10px] rounded-[6px] bg-[linear-gradient(179deg,#EDAC39_2%,#FC8F01_98%)] text-white text-[15.8px] leading-[24px] text-center"
                         >
                             Baixe aqui

@@ -18,7 +18,7 @@ const modos = [
 
 export default function ModosSection() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white" id="dobra">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 lg:pb-[110px]">
         <div className="flex flex-col gap-[30px] lg:gap-[78px]">
           {/* Text block */}
@@ -32,9 +32,6 @@ export default function ModosSection() {
               parcelado). São duas as modalidades de antecipação de recebíveis,
               que você escolhe de acordo com sua conveniência:
             </p>
-            <a href="#" className="btn-laranja">
-              Saiba mais
-            </a>
           </div>
 
           {/* Cards */}

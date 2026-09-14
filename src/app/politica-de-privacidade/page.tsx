@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import PrivacyPolicyContent from "@/components/politica-de-privacidade/PrivacyPolicyContent";
 import Footer from "@/components/shared/Footer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Política de Privacidade | azulzinha da CAIXA",
   description:
-    "Confira a política de privacidade quanto à coleta, utilização, compartilhamento e segurança de seus dados pessoais ao visitar o nosso site.",
-};
+    "Confira a política de privacidade quanto à coleta,  utilização, compartilhamento e segurança de seus dados pessoais ao visitar o nosso site.",
+  path: "/politica-de-privacidade",
+});
 
 export default function PoliticaDePrivacidadePage() {
   return (

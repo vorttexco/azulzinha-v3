@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import CookieNoticeContent from "@/components/aviso-de-cookies/CookieNoticeContent";
 import Footer from "@/components/shared/Footer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Aviso de Cookies | azulzinha da CAIXA",
   description:
     "Saiba como usamos cookies para melhorar o site, medir a audiência, melhorar sua experiência e fornecer conteúdo e publicidade adequados aos seus interesses.",
-};
+  path: "/aviso-de-cookies",
+});
 
 export default function AvisoDeCookiesPage() {
   return (

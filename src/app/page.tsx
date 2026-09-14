@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import CardsCarouselSection from "@/components/shared/CardsCarouselSection";
@@ -10,6 +12,13 @@ import PortalAppSection from "@/components/home/PortalAppSection";
 import TestimonialsSection from "@/components/shared/TestimonialsSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Home | azulzinha da CAIXA",
+  description:
+    "A azulzinha da CAIXA tem a solução ideal para você vender mais no presencial, na internet e gerenciar seu negócio com agilidade e segurança. Descubra aqui!",
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -31,7 +40,6 @@ export default function Home() {
         cardClassName="flex items-center gap-3 rounded-[12px] bg-white p-4 shadow-[0_4px_10px_rgba(0,0,0,0.08)] h-[92px]"
         cardsGridClassName="lg:-mt-[60px] grid grid-cols-1 lg:grid-cols-3 gap-4 relative z-10"
         contentClassName="w-full lg:w-1/2 flex flex-col justify-center lg:pb-[60px]"
-
       />
       <BandeirasHomeSection />
       <ServicosHomeSection />

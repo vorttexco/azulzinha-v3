@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -7,6 +9,13 @@ import CalculadoraSection from "@/components/taxas-tarifas/CalculadoraSection";
 import ProdutosSection from "@/components/shared/ProdutosSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Taxas e tarifas | azulzinha da CAIXA",
+  description:
+    "Conheça as opções de aluguel e consulte aqui os valores das taxas de débito, crédito, aluguel e antecipação de recebíveis da azulzinha da CAIXA.",
+  path: "/maquinas-e-taxas",
+});
 
 export default function TaxasTarifasPage() {
   return (

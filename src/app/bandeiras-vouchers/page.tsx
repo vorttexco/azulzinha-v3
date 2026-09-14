@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import BandeirasSection from "@/components/shared/BandeirasSection";
@@ -7,6 +9,13 @@ import FaqBandeirasSection from "@/components/bandeiras-vouchers/FaqBandeirasSec
 import SuaMaquininhaSection from "@/components/bandeiras-vouchers/SuaMaquininhaSection";
 import MaquininhasSection from "@/components/bandeiras-vouchers/MaquininhasSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Bandeiras e vouchers | azulzinha da CAIXA",
+  description:
+    "Sua azulzinha já vem com as principais bandeiras nacionais, regionais e internacionais habilitadas! Confira a rede de aceitação e saiba como habilitar os vouchers de benefícios.",
+  path: "/bandeiras-vouchers",
+});
 
 export default function BandeirasVouchers() {
   return (

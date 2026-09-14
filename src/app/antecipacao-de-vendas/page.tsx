@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import ModosSection from "@/components/antecipacao-de-vendas/ModosSection";
@@ -23,6 +25,13 @@ const vantagensCards = [
     text: "O processo de antecipação é feito em segundos, seja pela maquininha, App da azulzinha ou Portal da azulzinha.",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Antecipação de vendas | azulzinha da CAIXA",
+  description:
+    "É simples, rápido e flexível: com a azulzinha da CAIXA você faz antecipação automática ou eventual das vendas feitas no crédito à vista ou parcelado.",
+  path: "/antecipacao-de-vendas",
+});
 
 export default function AntecipacaoDeVendas() {
   return (

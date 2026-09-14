@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
@@ -218,6 +220,13 @@ const faqItems = [
     ),
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "CAIXA Tem | azulzinha da CAIXA",
+  description:
+    "Empreendedores MEIs que possuem a conta CAIXA Tem podem começar a vender com a azulzinha, a maquininha de cartões da CAIXA. Aproveite essa oportunidade!",
+  path: "/azulzinha-caixa-tem",
+});
 
 export default function ParaSuaMei() {
   return (

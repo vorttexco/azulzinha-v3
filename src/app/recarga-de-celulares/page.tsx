@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -5,6 +7,13 @@ import BlueCta from "@/components/shared/BlueCta";
 import Footer from "@/components/shared/Footer";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Recarga de telefonia | azulzinha da CAIXA",
+  description:
+    "Sabia que a azulzinha da CAIXA permite que você ofereça o serviço de recarga de telefonia para seus clientes? E o melhor disso tudo: sem qualquer custo, basta habilitar!",
+  path: "/recarga-de-celulares",
+});
 
 export default function RecargaTelefone() {
   return (

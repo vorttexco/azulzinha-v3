@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Gestão do seu negócio | azulzinha da CAIXA",
+  description:
+    "Conheça as funcionalidades do App e do Portal da azulzinha para você fazer a gestão do seu negócio, controlar suas vendas, antecipar recebíveis e muito mais, em tempo real.",
+  path: "/gestao",
+});
 
 export default function GestaoVendasPage() {
   return (

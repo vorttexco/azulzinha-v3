@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Suspense } from "react";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import BlogRouteSwitch from "@/components/blog/BlogRouteSwitch";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Blog da azulzinha | azulzinha da CAIXA",
+  description:
+    "Fique por dentro das dicas, tutoriais, tendências de mercado e novidades da azulzinha, a maquininha de cartões da CAIXA. Acesse agora e saiba mais.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

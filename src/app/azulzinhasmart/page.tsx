@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import SimplifiqueSection from "@/components/azulzinha-smart/SimplifiqueSection";
@@ -14,6 +16,13 @@ import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
 import BlueCta from "@/components/shared/BlueCta";
 import EMaisSection from "@/components/azulzinha-smart/EMaisSection";
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha smart | azulzinha da CAIXA",
+  description:
+    "Inteligente é simplificar a gestão com azulzinha smart. A maquininha da CAIXA que é compatível com as principais integradoras de aplicativos, centraliza as suas vendas, e ainda é à prova de imprevistos. Conheça!",
+  path: "/azulzinhasmart",
+});
 
 export default function AzulzinhaSmartPage() {
   return (

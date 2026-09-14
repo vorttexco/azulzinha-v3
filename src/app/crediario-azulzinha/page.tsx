@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -107,6 +109,13 @@ const highlightCards: CarouselCard[] = [
     href: "/blog",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Crediário azulzinha: amplie suas vendas | azulzinha da CAIXA",
+  description:
+    "Com a azulzinha da CAIXA, seus clientes têm crediário fácil via cartão de crédito em até 48x. Venda a prazo, receba à vista e aumente seu faturamento. Clique e confira agora!",
+  path: "/crediario-azulzinha",
+});
 
 export default function CrediarioAzulzinha() {
   return (

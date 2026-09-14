@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import BandeirasSection from "@/components/shared/BandeirasSection";
@@ -88,6 +90,13 @@ const faqItems = [
     ),
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Link de Pagamento | azulzinha da CAIXA",
+  description:
+    "Crie links seguros e ilimitados pelo App da azulzinha e venda muito mais pela internet, redes sociais e aplicativos de mensagem sem precisar de site.",
+  path: "/link-pagamento",
+});
 
 export default function LinkPagamento() {
   return (

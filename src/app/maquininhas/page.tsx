@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import TodasMaquinasSection from "@/components/maquininhas/TodasMaquinasSection";
@@ -37,6 +39,13 @@ const faqItems = [
     ),
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Maquininhas | azulzinha da CAIXA",
+  description:
+    "Descubra a azulzinha ideal para o seu negócio! Reunimos aqui todas as opções de aluguel de maquininha da CAIXA para te ajudar a vender mais.",
+  path: "/maquininhas",
+});
 
 export default function MaquininhasPage() {
   return (

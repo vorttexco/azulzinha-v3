@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import VantagensParciaisSection from "@/components/pagamento-parcial/VantagensParciaisSection";
@@ -77,6 +79,13 @@ const habilitarSteps = [
     description: "Aguarda a emissão do comprovante de confirmação e boas vendas!",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Pagamento parcial | azulzinha da CAIXA",
+  description:
+    "Clientes com cartão Visa ou Elo já podem pagar parte da compra com azulzinha e acertar a diferença com outro meio. Saiba como habilitar na azulzinha!",
+  path: "/pagamento-parcial",
+});
 
 export default function PagamentoParcial() {
   return (

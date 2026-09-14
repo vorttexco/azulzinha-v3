@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import Image from "next/image";
@@ -11,6 +13,13 @@ const bandeiras = [
     { src: "/images/bandeiras-vouchers/mastercard.png", alt: "Mastercard", w: "w-[61px]", h: "h-[39px]" },
     { src: "/images/bandeiras-vouchers/visa.png", alt: "Visa", w: "w-23.25", h: "h-7.5" },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Clientes Lotérica | azulzinha da CAIXA",
+  description:
+    "A azulzinha da CAIXA tem a solução ideal para você vender mais no presencial, na internet e gerenciar seu negócio com agilidade e segurança. Descubra aqui!",
+  path: "/cliente-loterica",
+});
 
 export default function Lotericas() {
     return (

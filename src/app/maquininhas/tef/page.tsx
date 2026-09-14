@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import TefSection from "@/components/maquininhas-tef/TefSection";
@@ -31,6 +33,13 @@ const vantagensTef = [
     text: "Fácil integração com automações comerciais",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha TEF | azulzinha da CAIXA",
+  description:
+    "Para negócios com grande volume de transações e automação comercial, azulzinha TEF é a solução ideal e mais utilizada pelo varejo. Facilite a conciliação e ganhe agilidade no atendimento.",
+  path: "/maquininhas/tef",
+});
 
 export default function MaquininhasTefPage() {
   return (

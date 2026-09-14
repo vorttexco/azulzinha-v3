@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import HighlightsSection from "@/components/programa-gas-do-povo/HighlightsSection";
@@ -58,6 +60,13 @@ const modelosGasDoPovo: ProdutosSectionCard[] = [
     href: "/maquininhas/pro",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Programa Gás do Povo | azulzinha da CAIXA",
+  description:
+    "Peça sua azulzinha com aluguel zero e taxas especiais para o seu ramo de atividade. Aproveite a promoção por tempo limitado! Clique e saiba mais.",
+  path: "/programa-gas-do-povo",
+});
 
 export default function ProgramaGasDoPovoPage() {
   return (

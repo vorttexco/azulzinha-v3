@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
@@ -35,6 +37,13 @@ const azulzinhaLotericaCards = [
     title: "Praticidade para a sua operação",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha para Lotéricas | azulzinha da CAIXA",
+  description:
+    "A azulzinha da sua lotérica já vem preparada para receber pagamentos com cartões de débito e crédito, de qualquer banco, diretamente no TFL. Saiba mais aqui.",
+  path: "/lotericas",
+});
 
 export default function ClienteLoterica() {
   return (

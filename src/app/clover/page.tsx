@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import CloverDiscoverSection from "@/components/clover/CloverDiscoverSection";
@@ -32,6 +34,13 @@ const cloverVideos = [
     videoSrc: "https://azulzinhadacaixa.com.br/midias/video-Funcionarios.mp4",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha apresenta Clover | azulzinha da CAIXA",
+  description:
+    "Transforme sua operação e encante seus clientes com a praticidade e tecnologia de ponta dos dispositivos Clover. Clique e descubra!",
+  path: "/clover",
+});
 
 export default function CloverPage() {
   return (

@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
-export const metadata: Metadata = {
-  title: "Obrigado | azulzinha",
+export const metadata: Metadata = pageMetadata({
+  title: "Obrigado | azulzinha da CAIXA",
   description:
     "Obrigado por entrar em contato com a azulzinha, a maquininha da CAIXA.",
-};
+  path: "/obrigado",
+});
 
 export default function ObrigadoPage() {
   return (

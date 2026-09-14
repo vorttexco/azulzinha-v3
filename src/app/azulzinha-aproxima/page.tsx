@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import AproximaSection from "@/components/azulzinha-aproxima/AproximaSection";
@@ -40,6 +42,13 @@ const faqItems = [
     ),
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha aproxima | azulzinha da CAIXA",
+  description:
+    "Para transformar um celular ou tablet em maquininha, conte com azulzinha aproxima. Instale o App em até 5 aparelhos e receba pro aproximação, Pix e carteiras digitais.",
+  path: "/azulzinha-aproxima",
+});
 
 export default function AzulzinhaAproximaPage() {
   return (

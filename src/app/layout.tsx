@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { OG_IMAGE_ALT, OG_IMAGE_URL, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const caixaFont = localFont({
@@ -13,9 +14,20 @@ const caixaFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "azulzinha - Maquininha de Cartão da CAIXA",
-  description:
-    "Gestão simplificada, segurança, mais vendas e pagamentos rápidos com a azulzinha. Maquininha de cartão CAIXA com as melhores taxas.",
+  metadataBase: new URL(SITE_URL),
+  title: "azulzinha da CAIXA",
+  description: OG_IMAGE_ALT,
+  openGraph: {
+    type: "website",
+    images: [{ url: OG_IMAGE_URL, alt: OG_IMAGE_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [{ url: OG_IMAGE_URL, alt: OG_IMAGE_ALT }],
+  },
+  other: {
+    image: OG_IMAGE_URL,
+  },
 };
 
 export default function RootLayout({

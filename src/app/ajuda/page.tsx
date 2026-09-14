@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -8,37 +10,44 @@ import HelpCtaSection from "@/components/help/HelpCtaSection";
 import faqData from "@/app/ajuda/faqData";
 import regulatoryFaqData from "@/app/ajuda/regulatoryFaqData";
 
+export const metadata: Metadata = pageMetadata({
+  title: "Ajuda | azulzinha da CAIXA",
+  description:
+    "Assista aos tutoriais em vídeo e confira as dúvidas mais frequentes para você aproveitar ao máximo tudo que a azulzinha tem a oferecer.",
+  path: "/ajuda",
+});
+
 export default function AjudaPage() {
-    return (
-        <main>
-            <Navbar />
-            <HeroSection
-                title="Ajuda"
-                description="Vídeos tutoriais e respostas às principais dúvidas."
-                checkItems={[]}
-                buttonText=""
-                backgroundImage="/images/hero-backgrounds/ajuda-hero.png"
-            />
-            <FeatureSection
-                title="Quer saber mais sobre a azulzinha?"
-                paragraphs={[
-                    "Aqui você poderá sanar suas principais dúvidas. Reunimos as perguntas mais frequentes para facilitar o seu entendimento sobre o que a azulzinha da CAIXA tem a oferecer.",
-                    "Vamos juntos?",
-                ]}
-                cardWidth="605px"
-                cardHeight="398px"
-                image="/images/aplicativo_da_caixa.png"
-                imageAlt="Aplicativo da CAIXA"
-                imageBorderRadius="rounded-[30px]"
-                hideCard
-            />
-            <div id="videos">
-                <AjudaVideoSection />
-            </div>
-            <HelpFaqSection faqData={faqData} />
-            <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />
-            <HelpCtaSection />
-            <Footer />
-        </main>
-    );
+  return (
+    <main>
+      <Navbar />
+      <HeroSection
+        title="Ajuda"
+        description="Vídeos tutoriais e respostas às principais dúvidas."
+        checkItems={[]}
+        buttonText=""
+        backgroundImage="/images/hero-backgrounds/ajuda-hero.png"
+      />
+      <FeatureSection
+        title="Quer saber mais sobre a azulzinha?"
+        paragraphs={[
+          "Aqui você poderá sanar suas principais dúvidas. Reunimos as perguntas mais frequentes para facilitar o seu entendimento sobre o que a azulzinha da CAIXA tem a oferecer.",
+          "Vamos juntos?",
+        ]}
+        cardWidth="605px"
+        cardHeight="398px"
+        image="/images/aplicativo_da_caixa.png"
+        imageAlt="Aplicativo da CAIXA"
+        imageBorderRadius="rounded-[30px]"
+        hideCard
+      />
+      <div id="videos">
+        <AjudaVideoSection />
+      </div>
+      <HelpFaqSection faqData={faqData} />
+      <HelpFaqSection faqData={regulatoryFaqData} title="Assuntos regulatórios" />
+      <HelpCtaSection />
+      <Footer />
+    </main>
+  );
 }

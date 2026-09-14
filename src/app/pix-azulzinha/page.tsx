@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -279,6 +281,13 @@ const faqItems = [
     ),
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Habilite o Pix | azulzinha da CAIXA",
+  description:
+    "Saiba como habilitar o Pix na azulzinha e comece a aceitar pagamentos instantâneos, 24 horas por dia, com o jeito preferido de pagar do consumidor brasileiro.",
+  path: "/pix-azulzinha",
+});
 
 export default function PixAzulzinha() {
   return (

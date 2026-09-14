@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import AutonomiaSection from "@/components/maquininhas-pro/AutonomiaSection";
@@ -6,6 +8,13 @@ import ModelosSection from "@/components/maquininhas-pro/ModelosSection";
 import VideoSection from "@/components/shared/VideoSection";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
+
+export const metadata: Metadata = pageMetadata({
+  title: "azulzinha pro | azulzinha da CAIXA",
+  description:
+    "azulzinha pro é a famosa maquininha sem fio da CAIXA, ideal para quem precisa levar o terminal até o cliente e agilizar o atendimento em horários de pico.",
+  path: "/maquininhas/pro",
+});
 
 export default function MaquininhasProPage() {
   return (

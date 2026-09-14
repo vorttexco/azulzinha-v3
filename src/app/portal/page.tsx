@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -6,6 +8,13 @@ import Footer from "@/components/shared/Footer";
 import BlueCta from "@/components/shared/BlueCta";
 import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 import PortalFaqSection from "@/components/gestao-portal/PortalFaqSection";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Portal da azulzinha | azulzinha da CAIXA",
+  description:
+    "No Portal da azulzinha você consegue administrar suas vendas, antecipar recebíveis, consultar recebimentos futuros e muito mais com um simples acesso. Conheça!",
+  path: "/portal",
+});
 
 export default function PortalPage() {
     return (

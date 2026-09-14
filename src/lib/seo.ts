@@ -11,33 +11,62 @@ interface PageMetadataInput {
   title: string;
   description: string;
   path: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  tags?: string[];
 }
 
-function canonicalUrl(path: string): string {
+export function pageUrl(path: string): string {
   if (path === "/") return `${SITE_URL}/`;
   return `${SITE_URL}${path}`;
 }
 
-export function pageMetadata({ title, description, path }: PageMetadataInput): Metadata {
-  const url = canonicalUrl(path);
+export function pageMetadata({
+  title,
+  description,
+  path,
+  imageUrl = OG_IMAGE_URL,
+  imageAlt = OG_IMAGE_ALT,
+  type = "website",
+  publishedTime,
+  tags,
+}: PageMetadataInput): Metadata {
+  const url = pageUrl(path);
   const image = {
-    url: OG_IMAGE_URL,
-    alt: OG_IMAGE_ALT,
+    url: imageUrl,
+    alt: imageAlt,
   };
 
   return {
     title,
     description,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical: url,
     },
-    openGraph: {
-      title,
-      description,
-      url,
-      type: "website",
-      images: [image],
-    },
+    openGraph:
+      type === "article"
+        ? {
+            title,
+            description,
+            url,
+            type: "article",
+            publishedTime,
+            tags,
+            images: [image],
+          }
+        : {
+            title,
+            description,
+            url,
+            type: "website",
+            images: [image],
+          },
     twitter: {
       card: "summary_large_image",
       title,
@@ -45,7 +74,7 @@ export function pageMetadata({ title, description, path }: PageMetadataInput): M
       images: [image],
     },
     other: {
-      image: OG_IMAGE_URL,
+      image: imageUrl,
     },
   };
 }

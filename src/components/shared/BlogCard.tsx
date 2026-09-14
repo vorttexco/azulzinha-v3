@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { blogMediaUrl } from "@/lib/blog";
 import { useState } from "react";
 
@@ -61,7 +62,7 @@ interface BlogCardLargeProps {
 
 export function BlogCardLarge({ post }: BlogCardLargeProps) {
   return (
-    <a href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
+    <Link href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
       <div className="relative w-full h-[192px] lg:h-[510px] rounded-[30px] overflow-hidden">
         <BlogImage
           src={getPostImage(post)}
@@ -77,7 +78,7 @@ export function BlogCardLarge({ post }: BlogCardLargeProps) {
         {post.description}
       </p>
       <span className="btn-laranja self-start">{post.cta || "Leia mais"}</span>
-    </a>
+    </Link>
   );
 }
 
@@ -87,7 +88,7 @@ interface BlogCardSmallProps {
 
 export function BlogCardSmall({ post }: BlogCardSmallProps) {
   return (
-    <a href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
+    <Link href={`/blog/${post.postId}`} className="flex flex-col gap-4 group">
       <div className="relative w-full h-[192px] lg:h-[237px] rounded-[30px] overflow-hidden">
         <BlogImage
           src={getPostImage(post)}
@@ -100,6 +101,6 @@ export function BlogCardSmall({ post }: BlogCardSmallProps) {
         {post.title}
       </h3>
       <span className="text-[18px] leading-[1.33] text-laranja">Leia mais</span>
-    </a>
+    </Link>
   );
 }

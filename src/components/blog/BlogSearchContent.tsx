@@ -9,22 +9,19 @@ import CategoryFilterModal from "@/components/shared/CategoryFilterModal";
 import { categoryMatches, getCategoriesFromPosts } from "@/lib/categories";
 
 interface BlogSearchContentProps {
+  posts: BlogPost[];
   q: string;
   category: string;
 }
 
-export default function BlogSearchContent({ q, category }: BlogSearchContentProps) {
+export default function BlogSearchContent({
+  posts,
+  q,
+  category,
+}: BlogSearchContentProps) {
   const router = useRouter();
-  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState(q);
   const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    fetch("/assets/post.json")
-      .then((res) => res.json())
-      .then((data: BlogPost[]) => setPosts(data))
-      .catch(() => setPosts([]));
-  }, []);
 
   useEffect(() => {
     setSearchQuery(q);

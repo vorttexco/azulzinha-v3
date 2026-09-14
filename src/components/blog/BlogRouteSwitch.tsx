@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import type { BlogPost } from "@/components/shared/BlogCard";
 import BlogContent from "./BlogContent";
 import BlogSearchContent from "./BlogSearchContent";
 
-export default function BlogRouteSwitch() {
+interface BlogRouteSwitchProps {
+  posts: BlogPost[];
+}
+
+export default function BlogRouteSwitch({ posts }: BlogRouteSwitchProps) {
   const params = useSearchParams();
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +19,7 @@ export default function BlogRouteSwitch() {
   }, []);
 
   if (!mounted) {
-    return <BlogContent />;
+    return <BlogContent posts={posts} />;
   }
 
   const q = params.get("q");
@@ -22,8 +27,14 @@ export default function BlogRouteSwitch() {
   const isSearchMode = q !== null || category !== null;
 
   if (isSearchMode) {
-    return <BlogSearchContent q={q ?? ""} category={category ?? ""} />;
+    return (
+      <BlogSearchContent
+        posts={posts}
+        q={q ?? ""}
+        category={category ?? ""}
+      />
+    );
   }
 
-  return <BlogContent />;
+  return <BlogContent posts={posts} />;
 }

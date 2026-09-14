@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { BlogPost } from "@/components/shared/BlogCard";
 import SearchBarSection from "@/components/shared/SearchBarSection";
@@ -10,19 +10,15 @@ import BlogUltimasSection from "@/components/shared/BlogUltimasSection";
 import CategoryFilterModal from "@/components/shared/CategoryFilterModal";
 import { getCategoriesFromPosts } from "@/lib/categories";
 
-export default function BlogContent() {
+interface BlogContentProps {
+  posts: BlogPost[];
+}
+
+export default function BlogContent({ posts }: BlogContentProps) {
   const router = useRouter();
-  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("Gestão financeira");
   const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    fetch("/assets/post.json")
-      .then((res) => res.json())
-      .then((data: BlogPost[]) => setPosts(data))
-      .catch(() => setPosts([]));
-  }, []);
 
   const destaques = useMemo(
     () => posts.filter((p) => p.type === "destaque"),

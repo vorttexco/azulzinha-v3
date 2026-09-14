@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { JsonLd } from "@/components/shared/JsonLd";
 import { OG_IMAGE_ALT, OG_IMAGE_URL, SITE_URL } from "@/lib/seo";
+import { SOCIAL_LINKS } from "@/lib/social";
 import "./globals.css";
 
 const caixaFont = localFont({
@@ -17,6 +19,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "azulzinha da CAIXA",
   description: OG_IMAGE_ALT,
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     images: [{ url: OG_IMAGE_URL, alt: OG_IMAGE_ALT }],
@@ -37,7 +43,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`scroll-smooth ${caixaFont.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "azulzinha da CAIXA",
+                url: SITE_URL,
+                logo: OG_IMAGE_URL,
+                sameAs: [
+                  SOCIAL_LINKS.instagram,
+                  SOCIAL_LINKS.facebook,
+                  SOCIAL_LINKS.linkedin,
+                  SOCIAL_LINKS.youtube,
+                ],
+              },
+              {
+                "@type": "WebSite",
+                name: "azulzinha da CAIXA",
+                url: SITE_URL,
+              },
+            ],
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

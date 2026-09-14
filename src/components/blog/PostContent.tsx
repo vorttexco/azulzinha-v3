@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { blogMediaUrl } from "@/lib/blog";
+import { blogMediaUrl, parsePostDate } from "@/lib/blog";
 import { useState } from "react";
 import { BlogPost } from "@/components/shared/BlogCard";
 
@@ -48,18 +48,31 @@ interface PostContentProps {
 export default function PostContent({ post }: PostContentProps) {
   const banner = getPostBanner(post);
   const html = getPostHtml(post);
+  const published = parsePostDate(post.date);
   const [imgError, setImgError] = useState(false);
 
   return (
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pt-14 lg:pt-20 pb-14 lg:pb-[110px]">
-        <div className="max-w-[900px] mx-auto flex flex-col items-center gap-8 lg:gap-[43px]">
-          {/* Title */}
-          <h1 className="text-[24px] lg:text-[36px] font-bold leading-[1.3] text-azul text-center max-w-[600px]">
-            {post.title}
-          </h1>
+        <article className="max-w-[900px] mx-auto flex flex-col items-center gap-8 lg:gap-[43px]">
+          <header className="flex flex-col items-center gap-3 max-w-[600px]">
+            <h1 className="text-[24px] lg:text-[36px] font-bold leading-[1.3] text-azul text-center">
+              {post.title}
+            </h1>
+            {published ? (
+              <time
+                dateTime={published}
+                className="text-[16px] lg:text-[18px] leading-[1.4] text-[#666666]"
+              >
+                {post.date}
+              </time>
+            ) : (
+              <span className="text-[16px] lg:text-[18px] leading-[1.4] text-[#666666]">
+                {post.date}
+              </span>
+            )}
+          </header>
 
-          {/* Banner image */}
           <div className="relative w-full h-[200px] lg:h-[423px] rounded-[30px] overflow-hidden">
             {imgError ? (
               <ImagePlaceholder />
@@ -68,20 +81,21 @@ export default function PostContent({ post }: PostContentProps) {
                 src={banner.src}
                 alt={banner.alt}
                 fill
+                priority
+                sizes="(min-width: 1024px) 900px, 100vw"
                 className="object-cover"
                 onError={() => setImgError(true)}
               />
             )}
           </div>
 
-          {/* HTML content */}
           {html && (
             <div
               className="w-full"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           )}
-        </div>
+        </article>
       </div>
     </section>
   );

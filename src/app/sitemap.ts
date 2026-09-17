@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getBlogPosts, parseBlogPostDate } from "@/lib/posts";
 import { pageUrl } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
 const STATIC_PATHS = [
   "/",
   "/ajuda",

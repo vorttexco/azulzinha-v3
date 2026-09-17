@@ -4,6 +4,7 @@ import { getBlogPosts, parseBlogPostDate } from "@/lib/posts";
 import { Suspense } from "react";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
+import BlogContent from "@/components/blog/BlogContent";
 import BlogRouteSwitch from "@/components/blog/BlogRouteSwitch";
 import CtaSection from "@/components/shared/CtaSection";
 import Footer from "@/components/shared/Footer";
@@ -44,7 +45,7 @@ export default function BlogPage() {
         buttonHref="#blog-destaques"
         backgroundImage="/images/blog/hero-bg.png"
       />
-      <Suspense fallback={<BlogRouteSwitch posts={posts} />}>
+      <Suspense fallback={<BlogContent posts={posts} />}>
         <BlogRouteSwitch posts={posts} />
       </Suspense>
       <CtaSection

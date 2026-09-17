@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import CookieBanner from "@/components/shared/CookieBanner";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { OG_IMAGE_ALT, OG_IMAGE_URL, SITE_URL } from "@/lib/seo";
 import { SOCIAL_LINKS } from "@/lib/social";
@@ -69,6 +70,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

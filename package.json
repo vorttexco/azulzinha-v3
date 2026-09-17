@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:static": "STATIC_EXPORT=true next build",
-    "build:prod": "STATIC_EXPORT_PROD=true next build && rm -rf dist && mv out dist",
+    "build:static": "node scripts/build-export.mjs static",
+    "build:prod": "node scripts/build-export.mjs prod",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",

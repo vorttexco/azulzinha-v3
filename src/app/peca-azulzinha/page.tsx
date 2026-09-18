@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
-import FormSection from "@/components/suaazulzinha/FormSection";
+import FormSection from "@/components/shared/FormSection";
 import Footer from "@/components/shared/Footer";
 
 export const metadata: Metadata = pageMetadata({

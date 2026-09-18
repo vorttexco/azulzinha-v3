@@ -86,7 +86,12 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function FormSection() {
+interface FormSectionProps {
+  id?: string;
+  title?: string;
+}
+
+export default function FormSection({ id, title }: FormSectionProps = {}) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
@@ -145,9 +150,10 @@ export default function FormSection() {
   };
 
   return (
-    <section className="bg-white py-14 lg:py-20">
+    <section id={id} className="bg-white py-14 lg:py-20">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
         <div className="w-full max-w-[809px] mx-auto flex flex-col gap-6">
+          {title && <h2 className="section-title text-azul">{title}</h2>}
           <p className="text-[18px] leading-[1.5] text-black text-center">
             Preencha o formulário abaixo com os seus dados e em breve um gerente
             da CAIXA entrará em contato para apresentar taxas personalizadas para

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://www.azulzinhadacaixa.com.br";
 
-export const OG_IMAGE_URL = "https://azulzinhadacaixa.com.br/assets/img/group-maquinas.png";
+export const OG_IMAGE_URL = `${SITE_URL}/assets/img/group-maquinas.png`;
 
 export const OG_IMAGE_ALT =
   "A azulzinha da CAIXA tem a solução ideal para você vender mais no presencial, na internet e gerenciar seu negócio com agilidade e segurança. Descubra aqui!";

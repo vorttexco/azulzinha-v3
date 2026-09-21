@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { NAV_GTM_LABELS, pushNavGtm } from "@/lib/analytics";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
 type DropdownItem = { label: string; href: string; external?: boolean };
@@ -231,7 +232,20 @@ function DropdownItemLink({
   );
 }
 
-function DropdownColumnView({ column }: { column: DropdownColumn }) {
+function trackNavClick(label: string, after?: () => void) {
+  return () => {
+    pushNavGtm(label);
+    after?.();
+  };
+}
+
+function DropdownColumnView({
+  column,
+  onItemClick,
+}: {
+  column: DropdownColumn;
+  onItemClick?: (label: string) => void;
+}) {
   const titleColorClass =
     column.titleColor === "azul" ? "text-azul" : "text-laranja";
   return (
@@ -248,6 +262,7 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
             <DropdownItemLink
               item={item}
               className="text-[14px] leading-[1.4] text-black hover:text-azul transition-colors"
+              onClick={() => onItemClick?.(item.label)}
             >
               {item.label}
             </DropdownItemLink>
@@ -258,6 +273,7 @@ function DropdownColumnView({ column }: { column: DropdownColumn }) {
         <DropdownItemLink
           item={column.footerLink}
           className="flex items-center gap-[10px] mt-[14px] text-[14px] leading-[1.4] text-azul hover:opacity-80 transition-opacity"
+          onClick={() => onItemClick?.(column.footerLink!.label)}
         >
           {column.footerLink.label}
           <ArrowIcon width={12} height={9} color="#006CAD" />
@@ -360,6 +376,11 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         className="flex items-center text-[16px] text-white text-center hover:opacity-80 transition-opacity h-full"
+                        onClick={
+                          link.hasDropdown
+                            ? undefined
+                            : trackNavClick(link.label)
+                        }
                       >
                         {link.label}
                       </Link>
@@ -380,6 +401,7 @@ export default function Navbar() {
                                   <DropdownColumnView
                                     key={col.title}
                                     column={col}
+                                    onItemClick={pushNavGtm}
                                   />
                                 ))}
                               </div>
@@ -391,6 +413,7 @@ export default function Navbar() {
                                   <DropdownColumnView
                                     key={col.title}
                                     column={col}
+                                    onItemClick={pushNavGtm}
                                   />
                                 ))}
                               </div>
@@ -447,6 +470,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[14px] text-white hover:opacity-80 transition-opacity"
+              onClick={trackNavClick(NAV_GTM_LABELS.portal)}
             >
               <PortalIcon />
               Portal de Acesso
@@ -456,6 +480,7 @@ export default function Navbar() {
             <a
               href="/peca-azulzinha"
               className="btn-laranja"
+              onClick={trackNavClick(NAV_GTM_LABELS.cta)}
             >
               Peça já sua azulzinha
             </a>
@@ -532,7 +557,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <Link
               href="/peca-azulzinha"
-              onClick={closeMobileMenu}
+              onClick={trackNavClick(NAV_GTM_LABELS.cta, closeMobileMenu)}
               className="btn-laranja text-center"
             >
               Peça sua azulzinha
@@ -544,6 +569,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-[8px] rounded-[6px] py-[10px] text-[14px] text-azul bg-linear-to-b from-white to-[#E3E3E3]"
+              onClick={trackNavClick(NAV_GTM_LABELS.portal, closeMobileMenu)}
             >
               <PortalIconMobile />
               Acesse o Portal
@@ -557,7 +583,7 @@ export default function Navbar() {
                     <Link
                       key={link.label}
                       href={link.href}
-                      onClick={closeMobileMenu}
+                      onClick={trackNavClick(link.label, closeMobileMenu)}
                       className="flex items-center justify-between py-[16px] border-b border-white text-[18px] text-white"
                     >
                       {link.label}
@@ -624,7 +650,7 @@ export default function Navbar() {
                                     <DropdownItemLink
                                       key={item.label}
                                       item={item}
-                                      onClick={closeMobileMenu}
+                                      onClick={trackNavClick(item.label, closeMobileMenu)}
                                       className="block pl-[24px] py-[8px] text-[14px] text-white"
                                     >
                                       {item.label}
@@ -633,7 +659,10 @@ export default function Navbar() {
                                   {col.footerLink && (
                                     <DropdownItemLink
                                       item={col.footerLink}
-                                      onClick={closeMobileMenu}
+                                      onClick={trackNavClick(
+                                        col.footerLink.label,
+                                        closeMobileMenu
+                                      )}
                                       className="block pl-[24px] py-[8px] text-[14px] text-laranja"
                                     >
                                       {col.footerLink.label}

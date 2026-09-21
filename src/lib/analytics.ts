@@ -26,6 +26,36 @@ export function buildPageViewEvent(pageName: string): GtmEvent {
   };
 }
 
+/** Matches Angular header onNavigation label slug (NFD, strip accents, spaces → hyphens). */
+export function slugifyNavLabel(label: string): string {
+  return label
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+}
+
+/** Canonical header labels so GTM triggers stay aligned with Angular event names. */
+export const NAV_GTM_LABELS = {
+  portal: "Acesse o Portal",
+  cta: "Peça já a azulzinha",
+} as const;
+
+export function buildNavGtmEvent(label: string): GtmEvent | null {
+  if (!label) return null;
+  return {
+    event: `clicou-em-${slugifyNavLabel(label)}`,
+    name: label,
+    transactionId: GTM_TRANSACTION_ID,
+  };
+}
+
+export function pushNavGtm(label: string): void {
+  const payload = buildNavGtmEvent(label);
+  if (!payload) return;
+  pushGtm(payload);
+}
+
 export const FORM_GTM_EVENTS = {
   "gtm-mei-s": { event: "clicou_MEI_SIM", name: "MEI" },
   "gtm-mei-n": { event: "clicou_MEI_NAO", name: "MEI" },

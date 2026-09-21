@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
-export default function HelpCtaSection() {
+interface HelpCtaSectionProps {
+  showCaixaTem?: boolean;
+}
+
+export default function HelpCtaSection({
+  showCaixaTem = true,
+}: HelpCtaSectionProps) {
     return (
         <section className="bg-linear-to-b from-white to-[#f7f7f7] py-14 lg:py-20">
             <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px]">
@@ -79,6 +85,7 @@ export default function HelpCtaSection() {
                     </div>
 
                     {/* CAIXA Tem Column */}
+                    {showCaixaTem && (
                     <div className="flex-1">
                         <h3 className="text-laranja text-[22px] leading-[1.3] mb-4">
                             Cliente App CAIXA Tem
@@ -89,11 +96,13 @@ export default function HelpCtaSection() {
                         <a
                             href="https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR&pli=1"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center justify-center px-[17px] py-[10px] rounded-[6px] bg-[linear-gradient(179deg,#EDAC39_2%,#FC8F01_98%)] text-white text-[15.8px] leading-[24px] text-center"
                         >
                             Baixe aqui
                         </a>
                     </div>
+                    )}
                 </div>
             </div>
         </section>

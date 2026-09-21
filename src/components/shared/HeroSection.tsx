@@ -66,6 +66,7 @@ interface HeroSectionProps {
   buttonLogoImage?: string;
   buttonLogoWidth?: number;
   buttonLogoHeight?: number;
+  buttonClassName?: string;
 }
 
 export default function HeroSection({
@@ -91,6 +92,7 @@ export default function HeroSection({
   buttonLogoImage,
   buttonLogoWidth = 196,
   buttonLogoHeight = 51,
+  buttonClassName = "",
 }: HeroSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
   const pathname = usePathname();
@@ -205,7 +207,7 @@ export default function HeroSection({
                 fallback={
                   <Link
                     href={`${pathname}${buttonHref}`}
-                    className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
+                    className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
                     scroll
                   >
                     {buttonText}
@@ -216,13 +218,13 @@ export default function HeroSection({
                   pathname={pathname}
                   buttonHref={buttonHref}
                   buttonText={buttonText}
-                  className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
+                  className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
                 />
               </Suspense>
             ) : (
               <a
                 href={buttonHref}
-                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"}`}
+                className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
               >
                 {buttonText}
               </a>

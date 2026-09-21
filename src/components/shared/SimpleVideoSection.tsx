@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { asset } from "@/lib/assets";
+import { gtmTagForVideoTitle, pushVideoGtm } from "@/lib/analytics";
+import TrackedVideo from "@/components/shared/TrackedVideo";
 
 function PlayIcon() {
   return (
@@ -27,6 +29,8 @@ interface SimpleVideoSectionProps {
   thumbnail: string;
   videoSrc?: string;
   className?: string;
+  gtmTag?: string;
+  gtmTitle?: string;
 }
 
 export default function SimpleVideoSection({
@@ -35,8 +39,17 @@ export default function SimpleVideoSection({
   thumbnail,
   videoSrc,
   className = "bg-white",
+  gtmTag,
+  gtmTitle,
 }: SimpleVideoSectionProps) {
   const [playing, setPlaying] = useState(false);
+  const resolvedTitle = gtmTitle || title;
+  const resolvedTag = gtmTagForVideoTitle(resolvedTitle, gtmTag);
+
+  function handlePlayClick() {
+    pushVideoGtm("clicou", resolvedTag, resolvedTitle);
+    if (videoSrc) setPlaying(true);
+  }
 
   return (
     <section className={`w-full ${className}`}>
@@ -51,16 +64,16 @@ export default function SimpleVideoSection({
 
           <div className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden">
             {playing && videoSrc ? (
-              <video
+              <TrackedVideo
                 src={videoSrc}
-                controls
-                autoPlay
+                gtmTag={resolvedTag}
+                gtmTitle={resolvedTitle}
                 className="w-full h-full object-cover"
               />
             ) : (
               <div
                 className="w-full h-full cursor-pointer group"
-                onClick={() => videoSrc && setPlaying(true)}
+                onClick={handlePlayClick}
               >
                 <Image
                   src={asset(thumbnail)}

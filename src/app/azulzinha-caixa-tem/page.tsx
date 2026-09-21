@@ -254,6 +254,8 @@ export default function ParaSuaMei() {
           </>}
           thumbnail="/images/mei/tudo-100-main.png"
           videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
+          gtmTag="Agora-tem-azulzinha-no-App-CAIXA-Tem!"
+          gtmTitle="Agora tem azulzinha no App CAIXA Tem!"
         />
       </div>
 

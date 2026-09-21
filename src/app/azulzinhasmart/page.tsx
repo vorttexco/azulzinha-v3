@@ -50,6 +50,8 @@ export default function AzulzinhaSmartPage() {
         title="Tudo o que você precisa saber antes de ter a sua"
         description="Assista ao vídeo para conhecer as vantagens da azulzinha smart e começar a centralizar suas vendas e gerenciar seu negócio de forma mais simples e inteligente que nunca!"
         thumbnail="/images/azulzinha-smart/video-thumbnail-1.png"
+        gtmTag="azulzinha-smart"
+        gtmTitle="azulzinha smart"
       />
       <FuncoesSection />
       {/* Blue CTA */}

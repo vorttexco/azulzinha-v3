@@ -82,6 +82,8 @@ export default function PortalPage() {
                 title=""
                 description=""
                 thumbnail="/images/portal-azulzinha/bg-portal.png"
+                gtmTag="primeiro-acesso-portal"
+                gtmTitle="Primeiro acesso no Portal da azulzinha"
             />
 
             <PortalFaqSection />

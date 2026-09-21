@@ -280,6 +280,8 @@ export default function GestaoAppPage() {
         title="Explore todas as novidades da nova versão"
         description="Preparamos um vídeo para você aproveitar ao máximo as novidades em privacidade, personalização, segurança e navegação da mais nova versão disponível na loja de aplicativos do seu celular."
         thumbnail="/images/app-azulzinha/video-thumbnail.png"
+        gtmTag="azulzinha-app"
+        gtmTitle="azulzinha app"
       />
 
       {/* Avaliações de usuários */}

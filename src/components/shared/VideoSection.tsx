@@ -4,11 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
+import { gtmTagForVideoTitle, pushVideoGtm } from "@/lib/analytics";
+import TrackedVideo from "@/components/shared/TrackedVideo";
 
 interface VideoItem {
   title: string;
   thumbnail?: string;
   videoSrc?: string;
+  gtm?: string;
 }
 
 interface VideoSectionProps {
@@ -94,7 +97,17 @@ export default function VideoSection({
   mainVideoSrc = "https://azulzinhadacaixa.com.br/midias/Fiserv_azulzinha_Automacao_Comercial_V3.mp4",
 }: VideoSectionProps) {
   const hasThumbnails = videos.some((v) => v.thumbnail);
-  const [activeVideo, setActiveVideo] = useState<{ src: string; title: string } | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{
+    src: string;
+    title: string;
+    gtm: string;
+  } | null>(null);
+
+  function startVideo(src: string, title: string, gtm?: string) {
+    const tag = gtmTagForVideoTitle(title, gtm);
+    pushVideoGtm("clicou", tag, title);
+    setActiveVideo({ src, title, gtm: tag });
+  }
 
   return (
     <section className={backgroundColor}>
@@ -107,11 +120,10 @@ export default function VideoSection({
           {/* Main video */}
           <div className="relative w-full lg:flex-1 h-[250px] lg:h-[480px] rounded-[16px] overflow-hidden cursor-pointer group">
             {activeVideo ? (
-              <video
-                key={activeVideo.src}
+              <TrackedVideo
                 src={activeVideo.src}
-                controls
-                autoPlay
+                gtmTag={activeVideo.gtm}
+                gtmTitle={activeVideo.title}
                 className="w-full h-full object-cover"
               />
             ) : (
@@ -127,7 +139,7 @@ export default function VideoSection({
                 <div className="absolute inset-0 bg-[linear-gradient(359.87deg,#00275E_20.33%,rgba(1,61,145,0)_53.44%),linear-gradient(0deg,rgba(0,41,97,0.2),rgba(0,41,97,0.2))] z-10" />
                 <div
                   className="absolute inset-0 z-20 flex items-center justify-center"
-                  onClick={() => setActiveVideo({ src: mainVideoSrc, title: mainVideoTitle })}
+                  onClick={() => startVideo(mainVideoSrc, mainVideoTitle)}
                 >
                   <PlayIcon />
                 </div>
@@ -148,7 +160,9 @@ export default function VideoSection({
               {videos.map((video, index) => (
                 <div
                   key={`${video.title}-${index}`}
-                  onClick={() => video.videoSrc && setActiveVideo({ src: video.videoSrc, title: video.title })}
+                  onClick={() =>
+                    video.videoSrc && startVideo(video.videoSrc, video.title, video.gtm)
+                  }
                   className="group/card lg:w-[380px] flex items-center gap-4 bg-white rounded-[12px] p-3 lg:p-4 cursor-pointer duration-200 flex-1 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-[linear-gradient(102.11deg,#006CAD_7.09%,#012B71_99.16%)]"
                 >
                   {hasThumbnails && video.thumbnail ? (

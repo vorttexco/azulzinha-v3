@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { gtmTagForVideoTitle, pushVideoGtm } from "@/lib/analytics";
+import TrackedVideo from "@/components/shared/TrackedVideo";
 
 interface VideoItem {
   title: string;
@@ -200,7 +202,11 @@ function MainVideoPlaceholder({ title }: { title: string }) {
 export default function AjudaVideoSection() {
   const [selectedCategoryId, setSelectedCategoryId] = useState("todos");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [activeVideo, setActiveVideo] = useState<{ src: string; title: string } | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{
+    src: string;
+    title: string;
+    gtm: string;
+  } | null>(null);
   const [mainVideoIndex, setMainVideoIndex] = useState(0);
 
   const selectedCategory = categories.find((c) => c.id === selectedCategoryId)!;
@@ -216,17 +222,20 @@ export default function AjudaVideoSection() {
 
   function handleVideoSelect(video: VideoItem, index: number) {
     setMainVideoIndex(index);
+    const tag = gtmTagForVideoTitle(video.title);
+    pushVideoGtm("clicou", tag, video.title);
     if (video.videoSrc) {
-      setActiveVideo({ src: video.videoSrc, title: video.title });
+      setActiveVideo({ src: video.videoSrc, title: video.title, gtm: tag });
     } else {
       setActiveVideo(null);
     }
   }
 
   function handleMainVideoPlay() {
-    if (mainVideo?.videoSrc) {
-      setActiveVideo({ src: mainVideo.videoSrc, title: mainVideo.title });
-    }
+    if (!mainVideo?.videoSrc) return;
+    const tag = gtmTagForVideoTitle(mainVideo.title);
+    pushVideoGtm("clicou", tag, mainVideo.title);
+    setActiveVideo({ src: mainVideo.videoSrc, title: mainVideo.title, gtm: tag });
   }
 
   return (
@@ -240,11 +249,10 @@ export default function AjudaVideoSection() {
           {/* Main video */}
           <div className="relative w-full lg:flex-1 h-[250px] lg:h-[480px] rounded-[16px] overflow-hidden cursor-pointer">
             {activeVideo ? (
-              <video
-                key={activeVideo.src}
+              <TrackedVideo
                 src={activeVideo.src}
-                controls
-                autoPlay
+                gtmTag={activeVideo.gtm}
+                gtmTitle={activeVideo.title}
                 className="w-full h-full object-cover"
               />
             ) : (

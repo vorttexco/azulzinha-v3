@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import { pushVideoGtm } from "@/lib/analytics";
 
 function PlayIcon() {
   return (
@@ -27,7 +30,10 @@ export default function HabilitarSection() {
           </div>
 
           {/* Video thumbnail */}
-          <div className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden cursor-pointer group">
+          <div
+            className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden cursor-pointer group"
+            onClick={() => pushVideoGtm("clicou", "azulzinha-aproxima", "azulzinha aproxima")}
+          >
             <div className="absolute inset-0 z-0">
               <Image
                 src={asset("/images/azulzinha-aproxima/video-habilitar.png")}

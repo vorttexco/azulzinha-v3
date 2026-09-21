@@ -17,6 +17,7 @@ import {
   submitLead,
 } from "@/lib/leads";
 import { formatCnpj, isValidCnpj } from "@/lib/cnpj";
+import { pushFormGtm, type FormGtmTag } from "@/lib/analytics";
 
 const inputClass =
   "w-full border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-black placeholder-[#999] outline-none focus:border-azul disabled:opacity-60";
@@ -86,11 +87,19 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function FormSection() {
+interface FormSectionProps {
+  sufixo?: string;
+}
+
+export default function FormSection({ sufixo = "" }: FormSectionProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
   const [isErrorOpen, setIsErrorOpen] = useState(false);
+
+  function track(tag: FormGtmTag) {
+    pushFormGtm(tag, sufixo);
+  }
 
   const {
     register,
@@ -121,6 +130,8 @@ export default function FormSection() {
   };
 
   const onSubmit = async (data: FormData) => {
+    track("gtm-enviar");
+
     if (isBlockedCnae(data.cnae)) {
       setErrorMessages([BLOCKED_CNAE_MESSAGE]);
       setIsErrorOpen(true);
@@ -135,11 +146,13 @@ export default function FormSection() {
     setIsSubmitting(false);
 
     if (result.ok) {
+      track("gtm-success");
       reset();
       router.push("/obrigado");
       return;
     }
 
+    track("gtm-error");
     setErrorMessages(result.messages);
     setIsErrorOpen(true);
   };
@@ -167,6 +180,7 @@ export default function FormSection() {
                   className={inputClass}
                   maxLength={18}
                   disabled={isSubmitting}
+                  onClick={() => track("gtm-cnpj")}
                 />
                 {errors.cnpj && (
                   <p className="text-laranja text-[14px] mt-2">
@@ -182,6 +196,7 @@ export default function FormSection() {
                   className={inputClass}
                   maxLength={7}
                   disabled={isSubmitting}
+                  onClick={() => track("gtm-cnae")}
                 />
                 {errors.cnae && (
                   <p className="text-laranja text-[14px] mt-2">
@@ -198,6 +213,7 @@ export default function FormSection() {
                 placeholder="Nome de contato"
                 className={inputClass}
                 disabled={isSubmitting}
+                onClick={() => track("gtm-nome-contato")}
               />
               {errors.nome && (
                 <p className="text-laranja text-[14px] mt-2">
@@ -213,6 +229,7 @@ export default function FormSection() {
                 placeholder="E-mail"
                 className={inputClass}
                 disabled={isSubmitting}
+                onClick={() => track("gtm-email")}
               />
               {errors.email && (
                 <p className="text-laranja text-[14px] mt-2">
@@ -229,6 +246,7 @@ export default function FormSection() {
                 className={inputClass}
                 maxLength={15}
                 disabled={isSubmitting}
+                onClick={() => track("gtm-cel-contato")}
               />
               {errors.celular && (
                 <p className="text-laranja text-[14px] mt-2">
@@ -245,6 +263,7 @@ export default function FormSection() {
                 className={inputClass}
                 maxLength={9}
                 disabled={isSubmitting}
+                onClick={() => track("gtm-cep")}
               />
               {errors.cep && (
                 <p className="text-laranja text-[14px] mt-2">
@@ -259,6 +278,7 @@ export default function FormSection() {
                   {...register("faturamento")}
                   defaultValue=""
                   disabled={isSubmitting}
+                  onClick={() => track("gtm-fatu")}
                   className="w-full appearance-none border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-[#999] outline-none focus:border-azul bg-white disabled:opacity-60"
                 >
                   <option value="" disabled>
@@ -294,6 +314,7 @@ export default function FormSection() {
                 type="checkbox"
                 {...register("cbtermo")}
                 disabled={isSubmitting}
+                onClick={() => track("gtm-check")}
                 className="mt-[2px] accent-azul shrink-0"
               />
               <span className="text-[14px] leading-[1.5] text-black">
@@ -318,6 +339,7 @@ export default function FormSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
+                onClick={() => track("gtm-caixa")}
               >
                 Aviso de Privacidade CAIXA
               </a>
@@ -327,11 +349,16 @@ export default function FormSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
+                onClick={() => track("gtm-caixa-cartoes")}
               >
                 Aviso de Privacidade CAIXA Cartões
               </a>{" "}
               e na{" "}
-              <a href="/politica-de-privacidade" className="underline">
+              <a
+                href="/politica-de-privacidade"
+                className="underline"
+                onClick={() => track("gtm-fiserv")}
+              >
                 Política de Privacidade Fiserv
               </a>
               .

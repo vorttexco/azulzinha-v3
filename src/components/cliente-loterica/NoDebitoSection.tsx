@@ -50,6 +50,8 @@ export default function NoDebitoSection() {
             thumbnail="/images/cliente-loterica/no-debito-main.png"
             videoSrc="/midias/Loterica-Avare_v07.mp4"
             className="bg-white py-0"
+            gtmTag="azulzinha-loterica"
+            gtmTitle="Serviço de conveniência"
           />
         </div>
 

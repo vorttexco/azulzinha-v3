@@ -65,6 +65,8 @@ export default function MaquininhasPage() {
         description="Ela é azulzinha porque é da CAIXA! Conheça as vantagens que só a maquininha da CAIXA pode oferecer para você. Assista ao vídeo:"
         thumbnail="/images/maquininhas/video-thumbnail.png"
         className="bg-[#F4F4F4] lg:bg-white"
+        gtmTag="azulzinha-maquininha-caixa"
+        gtmTitle="azulzinha maquininha da CAIXA"
       />
       <AzulzinhaIdealSection />
       <MaquininhaIdealSection />

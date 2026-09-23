@@ -34,7 +34,10 @@ export default function Home() {
         description={<>Conheça as nossas opções de aluguel!</>}
       />
       <CardsCarouselSection />
-      <PossibilitiesSection />
+      <PossibilitiesSection
+        buttonText="Solicite sua azulzinha"
+        buttonHref="/peca-azulzinha"
+      />
       <ProductsSection />
       <BenefitsShowcaseSection
         cardClassName="flex items-center gap-3 rounded-[12px] bg-white p-4 shadow-[0_4px_10px_rgba(0,0,0,0.08)] h-[92px]"

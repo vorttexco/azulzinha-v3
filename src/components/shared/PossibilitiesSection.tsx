@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { asset } from "@/lib/assets";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState, ReactNode } from "react";
@@ -61,6 +62,8 @@ interface PossibilitiesSectionProps {
   imageAlt?: string;
   cards?: PossibilityCard[];
   bgColor?: string;
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 function Card({ icon, title, description }: PossibilityCard) {
@@ -93,6 +96,8 @@ export default function PossibilitiesSection({
   imageAlt = "Possibilidades com azulzinha",
   cards = defaultCards,
   bgColor = "bg-[#F5F5F5]",
+  buttonText,
+  buttonHref,
 }: PossibilitiesSectionProps = {}) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
@@ -126,6 +131,12 @@ export default function PossibilitiesSection({
             <p className="font-normal text-[18px] leading-[140%] tracking-normal text-black">
               {description}
             </p>
+
+            {buttonText && buttonHref && (
+              <Link href={buttonHref} className="btn-laranja self-start">
+                {buttonText}
+              </Link>
+            )}
           </div>
 
           {/* Right side - Image */}

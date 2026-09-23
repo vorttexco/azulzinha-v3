@@ -36,7 +36,7 @@ const defaultCards: PossibilityCard[] = [
 
 const defaultTitle = (
   <>
-    Com azulzinha você{" "}
+    Com a azulzinha você{" "}
     <br className="hidden lg:block" />
     tem mais possibilidades{" "}
     <br className="hidden lg:block" />

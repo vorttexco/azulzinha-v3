@@ -29,7 +29,7 @@ interface CtaSectionProps {
 
 export default function CtaSection({
   eyebrow,
-  title = "Com azulzinha da CAIXA você pode muito mais!",
+  title = "Com a azulzinha da CAIXA, você pode muito mais!",
   description = "Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.",
   buttonText = "Peça já a sua",
   buttonHref = "#",

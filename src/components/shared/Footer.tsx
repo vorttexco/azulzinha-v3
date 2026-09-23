@@ -315,8 +315,8 @@ export default function Footer() {
           <Image
             src={asset("/images/footer-caixa-logo.png")}
             alt="CAIXA Cartões"
-            width={120}
-            height={40}
+            width={220}
+            height={32}
             className="object-contain shrink-0"
           />
 

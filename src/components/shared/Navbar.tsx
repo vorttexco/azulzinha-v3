@@ -91,6 +91,18 @@ const navLinks = [
   { label: "Ajuda", hasDropdown: false, href: "/ajuda" },
 ];
 
+function CaixaCartoesMark({ className }: { className?: string }) {
+  return (
+    <Image
+      src={asset("/images/logo-caixa-cartoes.png")}
+      alt="CAIXA Cartões"
+      width={155}
+      height={18}
+      className={className}
+    />
+  );
+}
+
 function NavSeparator() {
   return (
     <div
@@ -345,10 +357,10 @@ export default function Navbar() {
     <nav className="w-full bg-[#006CAD] relative z-30">
       {/* Desktop */}
       <div className="hidden lg:block">
-        <div className="max-w-[1440px] mx-auto h-[79px] flex items-center justify-between px-[40px]">
+        <div className="max-w-[1440px] mx-auto h-[108px] flex items-center justify-between px-[40px]">
           {/* Left side */}
           <div className="flex items-center gap-12 h-full">
-            <Link href="/">
+            <Link href="/" className="shrink-0">
               <Image
                 src={asset("/images/logo-azulzinha.png")}
                 alt="Azulzinha"
@@ -440,7 +452,9 @@ export default function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col items-end gap-3">
+            <CaixaCartoesMark className="h-[18px] w-auto" />
+            <div className="flex items-center gap-6">
             {/* Search */}
             <form
               onSubmit={handleSearchSubmit}
@@ -484,13 +498,14 @@ export default function Navbar() {
             >
               Peça já sua azulzinha
             </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Mobile header bar */}
       <div className="flex lg:hidden h-[79px] items-center justify-between px-[30px]">
-        <Link href="/">
+        <Link href="/" className="shrink-0">
           <Image
             src={asset("/images/logo-azulzinha.png")}
             alt="Azulzinha"
@@ -500,20 +515,23 @@ export default function Navbar() {
           />
         </Link>
 
-        <button
-          onClick={toggleMobileMenu}
-          className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
-          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-        >
-          {mobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
-        </button>
+        <div className="flex items-center gap-3 shrink-0">
+          <CaixaCartoesMark className="h-[12px] w-auto" />
+          <button
+            onClick={toggleMobileMenu}
+            className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+          >
+            {mobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-[#006CAD] flex flex-col">
           <div className="flex h-[79px] items-center justify-between px-[30px] shrink-0">
-            <Link href="/" onClick={closeMobileMenu}>
+            <Link href="/" onClick={closeMobileMenu} className="shrink-0">
               <Image
                 src={asset("/images/logo-azulzinha.png")}
                 alt="Azulzinha"
@@ -522,13 +540,16 @@ export default function Navbar() {
                 priority
               />
             </Link>
-            <button
-              onClick={closeMobileMenu}
-              className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
-              aria-label="Fechar menu"
-            >
-              <CloseIcon />
-            </button>
+            <div className="flex items-center gap-3 shrink-0">
+              <CaixaCartoesMark className="h-[12px] w-auto" />
+              <button
+                onClick={closeMobileMenu}
+                className="flex items-center justify-center w-[51px] h-[51px] rounded-full bg-linear-to-b from-laranja-claro to-laranja"
+                aria-label="Fechar menu"
+              >
+                <CloseIcon />
+              </button>
+            </div>
           </div>
           <div className="flex-1 overflow-y-auto overscroll-contain flex flex-col px-[24px] pt-[24px] pb-[40px] gap-[12px]">
             {/* Search */}

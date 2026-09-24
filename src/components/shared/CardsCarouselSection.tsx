@@ -12,14 +12,41 @@ type CardVariant = "default" | "variant2" | "variant3";
 
 export interface CarouselCard {
   title: ReactNode;
-  description: string;
+  description: ReactNode;
   image: string;
+  imageClassName?: string;
   variant: CardVariant;
   href?: string;
   ctaText?: string;
+  openInNewTab?: boolean;
 }
 
 const defaultCards: CarouselCard[] = [
+  {
+    title: "Prêmio RA 2026",
+    description: (
+      <>
+        Fomos indicados à categoria <span className="text-laranja">Meios de pagamento!</span><br />Com{" "}
+        <span className="text-laranja">seu voto</span> a azulzinha pode muito mais!
+      </>
+    ),
+    image: "/images/card-premio-ra-2026.png",
+    variant: "variant2",
+    ctaText: "Vote na azulzinha",
+    href: "https://www.reclameaqui.com.br/premio/votacao/empresa/azulzinha/",
+    openInNewTab: true,
+  },
+  {
+    title: "Aniversário da azulzinha",
+    description: (
+      <>
+        Celebramos <span className="font-bold">5 anos de azulzinha</span> e agradecemos a cada gerente que faz parte dessa história. Parabéns por essa trajetória e por mostrarem, todos os dias, que <span className="font-bold">juntos podemos muito mais!</span>
+      </>
+    ),
+    image: "/images/card-aniversario-azulzinha.png",
+    imageClassName: "object-[center_30%]",
+    variant: "default",
+  },
   {
     title: "Gás do Povo",
     description: "Com a azulzinha, eu posso fazer parte do programa Gás do Povo!",
@@ -156,7 +183,7 @@ export default function CardsCarouselSection({
                     <Image
                       src={asset(card.image)}
                       alt=""
-                      className="object-cover"
+                      className={`object-cover ${card.imageClassName ?? ""}`}
                       fill
                     />
                   </div>
@@ -165,13 +192,19 @@ export default function CardsCarouselSection({
                       <h3 className={`card-title ${s.title}`}>{card.title}</h3>
                       <p className={`card-text ${s.text}`}>{card.description}</p>
                     </div>
-                    <a href={card.href || "#"} className={`card-link inline-flex items-center gap-2 hover:opacity-80 transition-opacity ${s.link}`}>
-                      {card.ctaText || "Saiba mais"}
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4.16667 10H15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M10 4.16667L15.8333 10L10 15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </a>
+                    {card.ctaText || card.href ? (
+                      <a
+                        href={card.href || "#"}
+                        className={`card-link inline-flex items-center gap-2 hover:opacity-80 transition-opacity ${s.link}`}
+                        {...(card.openInNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {card.ctaText || "Saiba mais"}
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M4.16667 10H15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M10 4.16667L15.8333 10L10 15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               );

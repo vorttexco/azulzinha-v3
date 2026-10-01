@@ -37,17 +37,6 @@ const defaultCards: CarouselCard[] = [
     openInNewTab: true,
   },
   {
-    title: "Aniversário da azulzinha",
-    description: (
-      <>
-        Celebramos <span className="font-bold">5 anos de azulzinha</span> e agradecemos a cada gerente que faz parte dessa história. Parabéns por essa trajetória e por mostrarem, todos os dias, que <span className="font-bold">juntos podemos muito mais!</span>
-      </>
-    ),
-    image: "/images/card-aniversario-azulzinha.png",
-    imageClassName: "object-[center_30%]",
-    variant: "default",
-  },
-  {
     title: "Gás do Povo",
     description: "Com a azulzinha, eu posso fazer parte do programa Gás do Povo!",
     image: "/images/home-carousel.png",

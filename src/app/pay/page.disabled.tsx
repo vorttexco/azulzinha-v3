@@ -39,7 +39,7 @@ const faqItems = [
     title: "Como consultar meus débitos veiculares?",
     content: (
       <div className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-black flex flex-col gap-2">
-        <p>Ao acessar o portal da Azulzinha Pay, siga as etapas para consultar as informações do seu veículo.</p>
+        <p>Ao acessar o portal da azulzinha Pay, siga as etapas para consultar as informações do seu veículo.</p>
         <p>1. No campo &ldquo;Digite sua Placa&rdquo;, insira a placa completa do veículo e clique no botão &ldquo;Consultar&rdquo;.</p>
         <p>2. Em seguida, forneça os quatros últimos dígitos do seu RENAVAN, e o estado em que o veículo está registrado. Dependendo do Detran, pode ser necessário informar o RENAVAM completo, e o CPF do proprietário para concluir a consulta.</p>
         <p>3. O número do REVAVAN (Registro Nacional de Veículos Automotores) pode ser encontrado no documento do veículo, na nota fiscal, no site ou aplicativo do Detran de seu estado ou no recibo de pagamento de débitos.</p>
@@ -140,7 +140,7 @@ export default function AzulzinhaPay() {
         cpfMask
         buttonText="Cadastrar"
         image="/images/pay/cta-market.png"
-        imageAlt="Azulzinha Pay"
+        imageAlt="azulzinha Pay"
       />
 
       <FaqSection title="Perguntas frequentes" items={faqItems} />

@@ -122,7 +122,7 @@ export default function PagamentoParcial() {
 
       <FullImageSection
         image="/images/pagamento-parcial/banner-full.png"
-        imageAlt="Azulzinha - Maquininha de Cartão da CAIXA"
+        imageAlt="azulzinha - Maquininha de Cartão da CAIXA"
         heightMobile="h-[250px]"
         heightDesktop="lg:h-[604px]"
       />

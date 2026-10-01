@@ -75,7 +75,7 @@ export default function AzulzinhaSmartPage() {
         buttonText="Peça já sua azulzinha"
         buttonHref="/peca-azulzinha"
         image="/images/azulzinha-smart/cta-market-bg.png"
-        imageAlt="Azulzinha Smart CTA"
+        imageAlt="azulzinha Smart CTA"
       />
       <Footer />
     </main>

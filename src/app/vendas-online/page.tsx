@@ -292,7 +292,7 @@ export default function GestaoVendasPage() {
         title={
           "Habilite o Link de Pagamento na sua\nazulzinha através do aplicativo"
         }
-        buttonText="App da Azulzinha"
+        buttonText="App da azulzinha"
         buttonHref="/app"
         sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
       />

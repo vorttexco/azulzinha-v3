@@ -12,7 +12,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
 const phoneScreens = [
-  { image: "/images/app-azulzinha/screen-1.png", label: "Home da Azulzinha" },
+  { image: "/images/app-azulzinha/screen-1.png", label: "Home da azulzinha" },
   { image: "/images/app-azulzinha/screen-2.png", label: "Seus recebimentos" },
   { image: "/images/app-azulzinha/screen-3.png", label: "Extrato detalhado" },
   { image: "/images/app-azulzinha/screen-4.png", label: "Link de pagamento" },

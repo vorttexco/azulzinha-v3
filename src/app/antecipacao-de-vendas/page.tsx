@@ -66,7 +66,7 @@ export default function AntecipacaoDeVendas() {
         title="Contrate agora mesmo pelo App ou Portal da azulzinha"
         description=""
         buttonText="App da azulzinha"
-        button2Text="Portal da Azulzinha"
+        button2Text="Portal da azulzinha"
         buttonHref="/app"
         button2Href="/portal"
         image="/images/antecipacao-de-vendas/cta-photo.png"

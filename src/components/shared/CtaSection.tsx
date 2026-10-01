@@ -37,7 +37,7 @@ export default function CtaSection({
   button2Text,
   button2Href = "#",
   image = "/images/cta-photo.png",
-  imageAlt = "Azulzinha CTA",
+  imageAlt = "azulzinha CTA",
   inputPlaceholder,
   cpfMask = false,
 }: CtaSectionProps = {}) {

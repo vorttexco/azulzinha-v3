@@ -33,7 +33,7 @@ export default function RecargaTelefone() {
       {/* Feature + Cards no mesmo bloco com gradiente */}
       <div className="bg-linear-to-t from-[#F2F2F2] to-white">
         <FeatureSection
-          title="A Azulzinha da Caixa oferece mais uma modalidade de negócios para você"
+          title="A azulzinha da Caixa oferece mais uma modalidade de negócios para você"
           paragraphs={[
             "Além de facilitar as vendas no seu estabelecimento, a maquininha permite que você ofereça o serviço de recarga de telefonia para seus clientes. E o melhor disso tudo: sem qualquer custo adicional. Basta habilitar o serviço direto nela e começar a vender.",
           ]}

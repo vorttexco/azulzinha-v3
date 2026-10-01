@@ -13,7 +13,7 @@ interface Testimonial {
 const defaultTestimonials: Testimonial[] = [
   {
     quote:
-      "O suporte da Azulzinha é excelente, sempre fui muito bem atendida. A maquininha é rápida, funciona bem com o sinal e nunca me deixou na mão. Já recomendei para vários clientes porque confio de verdade no serviço.",
+      "O suporte da azulzinha é excelente, sempre fui muito bem atendida. A maquininha é rápida, funciona bem com o sinal e nunca me deixou na mão. Já recomendei para vários clientes porque confio de verdade no serviço.",
     author: "Maria Betânia T Dantas",
     business: "Loja 2 Irmãos",
   },

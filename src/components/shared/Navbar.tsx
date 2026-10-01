@@ -363,7 +363,7 @@ export default function Navbar() {
             <Link href="/" className="shrink-0">
               <Image
                 src={asset("/images/logo-azulzinha.png")}
-                alt="Azulzinha"
+                alt="azulzinha"
                 width={127}
                 height={55}
                 priority
@@ -508,7 +508,7 @@ export default function Navbar() {
         <Link href="/" className="shrink-0">
           <Image
             src={asset("/images/logo-azulzinha.png")}
-            alt="Azulzinha"
+            alt="azulzinha"
             width={127}
             height={55}
             priority
@@ -534,7 +534,7 @@ export default function Navbar() {
             <Link href="/" onClick={closeMobileMenu} className="shrink-0">
               <Image
                 src={asset("/images/logo-azulzinha.png")}
-                alt="Azulzinha"
+                alt="azulzinha"
                 width={127}
                 height={55}
                 priority

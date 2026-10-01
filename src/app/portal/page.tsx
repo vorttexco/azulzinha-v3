@@ -38,7 +38,7 @@ export default function PortalPage() {
                     "Gerencie o seu negócio com um simples acesso",
                 ]}
                 image="/images/portal-azulzinha/bg-portal.png"
-                imageAlt="Aplicativo da Azulzinha"
+                imageAlt="Aplicativo da azulzinha"
                 imageWidth="911px"
                 imageHeight="471px"
                 buttonText="Assista ao vídeo"
@@ -49,7 +49,7 @@ export default function PortalPage() {
                     "No nosso novo Portal você encontra diversas informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento.",
                 ]}
                 image="/images/portal-azulzinha/mockup-desktop.png"
-                imageAlt="Portal da Azulzinha"
+                imageAlt="Portal da azulzinha"
                 imageWidth="736px"
                 imageHeight="532px"
                 cardWidth="605px"

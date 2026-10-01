@@ -81,7 +81,7 @@ export default function AproximaSection() {
           <div className="relative w-full lg:w-[676px] h-[256px] lg:h-[426px] rounded-[20px] lg:rounded-l-[20px] lg:rounded-r-none overflow-hidden">
             <Image
               src={asset("/images/azulzinha-aproxima/aproxima-photo.png")}
-              alt="Azulzinha aproxima"
+              alt="azulzinha aproxima"
               fill
               className="object-cover"
             />

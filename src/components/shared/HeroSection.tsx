@@ -240,7 +240,7 @@ export default function HeroSection({
             <div className="mt-4 lg:mt-6">
               <Image
                 src={asset(productImage)}
-                alt="Produtos Azulzinha"
+                alt="Produtos azulzinha"
                 width={539}
                 height={207}
                 className="object-contain"

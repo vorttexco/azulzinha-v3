@@ -12,7 +12,7 @@ import SolucoesSection from "@/components/shared/SolucoesSection";
 import Footer from "@/components/shared/Footer";
 
 const beneficios = [
-  { icon: "/images/link-pagamento/icon-1.png", title: "Crie links no app Azulzinha", description: "" },
+  { icon: "/images/link-pagamento/icon-1.png", title: "Crie links no app azulzinha", description: "" },
   { icon: "/images/link-pagamento/icon-2.png", title: "Use sem taxas escondidas", description: "" },
   { icon: "/images/link-pagamento/icon-3.png", title: "Divulgue em qualquer lugar", description: "" },
   { icon: "/images/link-pagamento/icon-4.png", title: "Gere links 24 horas", description: "" },

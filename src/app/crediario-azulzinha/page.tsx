@@ -102,7 +102,7 @@ const highlightCards: CarouselCard[] = [
     href: "/ajuda",
   },
   {
-    title: "Blog Azulzinha",
+    title: "Blog azulzinha",
     description: "Conteúdos úteis para impulsionar sua estratégia de vendas. Blog da azulzinha",
     image: "/images/crediario-azulzinha/highlight-blog.png",
     variant: "default",

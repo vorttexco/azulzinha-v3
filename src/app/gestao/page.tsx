@@ -28,7 +28,7 @@ export default function GestaoVendasPage() {
       />
       <div id="dobra" />
       <FeatureSection
-        title="Aplicativo da Azulzinha"
+        title="Aplicativo da azulzinha"
         paragraphs={[
           "O App da azulzinha é um canal online que oferece informações para você realizar a gestão do seu negócio quando e onde quiser.",
           <span key="destaque" className="text-laranja font-bold">
@@ -36,7 +36,7 @@ export default function GestaoVendasPage() {
           </span>,
         ]}
         image="/images/gestao-de-vendas/celular-3.png"
-        imageAlt="Aplicativo da Azulzinha"
+        imageAlt="Aplicativo da azulzinha"
         imageWidth="333px"
         imageHeight="592px"
         imageWidthMobile="240px"
@@ -45,7 +45,7 @@ export default function GestaoVendasPage() {
         buttonHref="/app"
       />
       <FeatureSection
-        title="Portal da Azulzinha"
+        title="Portal da azulzinha"
         paragraphs={[
           "O Portal da azulzinha promove informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento sobre as operações efetuadas com cartões.",
           <span key="destaque" className="text-laranja font-bold">
@@ -53,7 +53,7 @@ export default function GestaoVendasPage() {
           </span>,
         ]}
         image="/images/gestao-de-vendas/laptop_azulzinha1.png"
-        imageAlt="Portal da Azulzinha"
+        imageAlt="Portal da azulzinha"
         imageWidth="702px"
         imageHeight="438px"
         cardWidth="605px"

@@ -61,7 +61,7 @@ export default function BeneficiosGridSection({
   title,
   subtitle,
   beneficios = defaultBeneficios,
-  buttonText = "Peça sua Azulzinha",
+  buttonText = "Peça sua azulzinha",
   buttonHref = "#",
   buttonCaption,
   bgColor = "bg-white",

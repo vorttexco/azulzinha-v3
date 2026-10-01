@@ -80,7 +80,7 @@ export default function MaquininhasPage() {
         buttonText="Peça já a sua azulzinha"
         buttonHref="/peca-azulzinha"
         image="/images/maquininhas/cta-bg.png"
-        imageAlt="Azulzinha maquininhas CTA"
+        imageAlt="azulzinha maquininhas CTA"
       />
       <Footer />
     </main>

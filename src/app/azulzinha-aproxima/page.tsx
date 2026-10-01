@@ -74,7 +74,7 @@ export default function AzulzinhaAproximaPage() {
         buttonHref="https://azulzinhadacaixa.com.br/midias/manual_azulzinha_aproxima.pdf"
         buttonTarget="_blank"
         image="/images/azulzinha-aproxima/cta-photo.png"
-        imageAlt="Azulzinha aproxima CTA"
+        imageAlt="azulzinha aproxima CTA"
       />
       <FaqSection items={faqItems} />
       <Footer />

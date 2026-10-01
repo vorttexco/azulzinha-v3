@@ -10,10 +10,15 @@ import {
 } from "@/components/ui/dialog";
 import { asset } from "@/lib/assets";
 
+interface AppBenefit {
+  label?: string;
+  text: string;
+}
+
 interface AppModal {
   title: string;
   description: string;
-  benefits: { label: string; text: string }[];
+  benefits: AppBenefit[];
   image?: string;
   imageClassName?: string;
   imageWidth?: number;
@@ -194,6 +199,21 @@ const tabs: Tab[] = [
                   label: "Mais formas de pagamento",
                   text: "Débito, crédito (à vista ou parcelado) e Pix.",
                 },
+              ],
+            },
+          },
+          {
+            name: "Recarga de Celular",
+            modal: {
+              title: "Recarga de Celular",
+              description:
+                "Venda recargas de celular diretamente pela Clover e ofereça mais conveniência aos seus clientes a partir de uma operação simples, que pode ser uma nova oportunidade de receita para o seu negócio.",
+              benefits: [
+                { text: "Receita adicional com as recargas realizadas;" },
+                { text: "Mais fluxo de clientes no estabelecimento;" },
+                { text: "Oportunidade de vendas complementares;" },
+                { text: "Operação rápida e fácil de usar;" },
+                { text: "Relatórios para acompanhar as transações." },
               ],
             },
           },
@@ -514,9 +534,15 @@ export default function CloverAppsSection() {
               <p className="text-[14px] font-normal text-[#666666]">Benefícios</p>
               <ul className="flex flex-col gap-1">
                 {selectedModal?.benefits.map((b) => (
-                  <li key={b.label} className="text-[14px] text-[#666666] leading-normal">
-                    <span className="font-normal text-[#666666]">• {b.label}: </span>
-                    {b.text}
+                  <li key={b.label ?? b.text} className="text-[14px] text-[#666666] leading-normal">
+                    {b.label ? (
+                      <>
+                        <span className="font-normal text-[#666666]">• {b.label}: </span>
+                        {b.text}
+                      </>
+                    ) : (
+                      <>• {b.text}</>
+                    )}
                   </li>
                 ))}
               </ul>

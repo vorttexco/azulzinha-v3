@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 import { asset } from "@/lib/assets";
+import { isWhatsappHref, pushBannerGtm, pushWhatsappGtm } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/social";
 
 type CardVariant = "default" | "variant2" | "variant3";
@@ -18,12 +21,14 @@ export interface CarouselCard {
   variant: CardVariant;
   href?: string;
   ctaText?: string;
+  gtmName?: string;
   openInNewTab?: boolean;
 }
 
 const defaultCards: CarouselCard[] = [
   {
     title: "Prêmio RA 2026",
+    gtmName: "Prêmio RA 2026",
     description: (
       <>
         Fomos indicados à categoria <span className="text-laranja">Meios de pagamento!</span><br />Com{" "}
@@ -38,6 +43,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Gás do Povo",
+    gtmName: "Gás do Povo",
     description: "Com a azulzinha, eu posso fazer parte do programa Gás do Povo!",
     image: "/images/home-carousel.png",
     variant: "variant2",
@@ -46,14 +52,16 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Pix aprovado?",
+    gtmName: "Pix aprovado?",
     description: "A impressão é a confirmação! A venda só é considerada válida quando o comprovante é impresso",
     image: "/images/card-link-pagamento.png",
     variant: "variant3",
     ctaText: "Tire suas dúvidas",
-    href: "https://azulzinhadacaixa.com.br/pix-azulzinha",
+    href: "/pix-azulzinha",
   },
   {
     title: <>Olá, eu sou a <span className="text-laranja">Zuli</span>!</>,
+    gtmName: "Zuli",
     description: "Estou aqui para resolver o que você precisar no seu negócio. Tire dúvidas, faça solicitações e receba suporte.",
     image: "/images/card-zuli.png",
     variant: "variant2",
@@ -62,22 +70,25 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Clover da azulzinha",
+    gtmName: "Clover da azulzinha",
     description: "Gestão simplificada e experiência de compra que encanta — com menos custo e mais agilidade..",
     image: "/images/card-app-aproxima.png",
     variant: "default",
     ctaText: "Confira a novidade",
-    href: "https://azulzinhadacaixa.com.br/clover",
+    href: "/clover",
   },
   {
     title: "Pix por aproximação",
+    gtmName: "Pix por aproximação",
     description: "Com o Pix por aproximação na azulzinha, agora é só aproximar e pagar via carteira digital ou pelo App do seu banco!.",
     image: "/images/card-pix-aproximacao.png",
     variant: "variant2",
     ctaText: "Habilite já",
-    href: "https://azulzinhadacaixa.com.br/pix-azulzinha",
+    href: "/pix-azulzinha",
   },
   {
     title: "IPVA, licenciamento e multas",
+    gtmName: "IPVA, licenciamento e multas",
     description: "Parcele seus débitos veiculares em até 12x no cartão de qualquer banco, tudo em um só portal.",
     image: "/images/card-ipva.png",
     variant: "variant3",
@@ -86,29 +97,92 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "azulzinha Lotérica pro",
+    gtmName: "azulzinha Lotérica pro",
     description: "Ofereça o serviço de conveniência do TFL com mais agilidade, mobilidade e praticidade.",
     image: "/images/card-pagamento-parcial.png",
     variant: "default",
     ctaText: "Confira a novidade",
-    href: "https://azulzinhadacaixa.com.br/lotericas",
+    href: "/lotericas",
   },
   {
     title: "Aceite débito e crédito",
+    gtmName: "Aceite débito e crédito",
     description: "Ofereça o serviço de conveniência e receba jogos, boletos e contas com os cartões Elo, Visa e Mastercard de qualquer banco.",
     image: "/images/card-loterica-pro.png",
     variant: "variant2",
     ctaText: "Saiba mais",
-    href: "https://azulzinhadacaixa.com.br/lotericas#videoId",
+    href: "/lotericas#videoId",
   },
   {
     title: "Crédito em 1 dia útil!",
+    gtmName: "Crédito em 1 dia útil!",
     description: "Faça a antecipação pelo App ou portal da azulzinha de forma prática, em poucos segundos.",
     image: "/images/card-recarga-telefonia.png",
     variant: "default",
     ctaText: "Saiba mais",
-    href: "https://azulzinhadacaixa.com.br/antecipacao-de-vendas",
+    href: "/antecipacao-de-vendas",
   },
 ];
+
+function cardEventName(card: CarouselCard) {
+  if (card.gtmName) return card.gtmName;
+  if (typeof card.title === "string") return card.title;
+  return card.ctaText ?? "banner";
+}
+
+function CardLink({
+  card,
+  className,
+  pageName,
+}: {
+  card: CarouselCard;
+  className: string;
+  pageName: string;
+}) {
+  const href = card.href || "#";
+  const linkClass = `card-link inline-flex items-center gap-2 hover:opacity-80 transition-opacity ${className}`;
+  const content = (
+    <>
+      {card.ctaText || "Saiba mais"}
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4.16667 10H15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 4.16667L15.8333 10L10 15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </>
+  );
+
+  function track() {
+    if (isWhatsappHref(href)) {
+      pushWhatsappGtm({ location: "home-carousel", href, pageName });
+      return;
+    }
+    pushBannerGtm({
+      name: cardEventName(card),
+      location: "home-carousel",
+      href,
+      pageName,
+    });
+  }
+
+  const externalProps = card.openInNewTab
+    ? { target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+
+  if (isInternal) {
+    return (
+      <Link href={href} className={linkClass} onClick={track}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} className={linkClass} onClick={track} {...externalProps}>
+      {content}
+    </a>
+  );
+}
 
 const variantStyles: Record<CardVariant, { bg: string; title: string; text: string; link: string }> = {
   default: { bg: "bg-white", title: "text-[#006CAD]", text: "text-[#333333]", link: "text-[#006CAD]" },
@@ -127,6 +201,7 @@ export default function CardsCarouselSection({
   cards = defaultCards,
   sectionClassName = "bg-white py-14 lg:py-20 overflow-hidden",
 }: CardsCarouselSectionProps) {
+  const pageName = usePathname();
   const autoplay = useRef(Autoplay({ delay: 1500, stopOnInteraction: true, stopOnMouseEnter: true }));
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { align: "center", dragFree: true },
@@ -182,17 +257,7 @@ export default function CardsCarouselSection({
                       <p className={`card-text ${s.text}`}>{card.description}</p>
                     </div>
                     {card.ctaText || card.href ? (
-                      <a
-                        href={card.href || "#"}
-                        className={`card-link inline-flex items-center gap-2 hover:opacity-80 transition-opacity ${s.link}`}
-                        {...(card.openInNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      >
-                        {card.ctaText || "Saiba mais"}
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M4.16667 10H15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          <path d="M10 4.16667L15.8333 10L10 15.8333" stroke="#FC8F01" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </a>
+                      <CardLink card={card} className={s.link} pageName={pageName} />
                     ) : null}
                   </div>
                 </div>

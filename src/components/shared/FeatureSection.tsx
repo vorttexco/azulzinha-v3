@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 interface StoreBadge {
   image: string;
@@ -111,9 +112,15 @@ export default function FeatureSection({
           )}
 
           {buttonText && (
-            <a href={buttonHref} className="btn-laranja self-start hidden lg:inline-flex">
+            <TrackedAnchor
+              href={buttonHref}
+              kind="cta"
+              name={buttonText}
+              location="feature"
+              className="btn-laranja self-start hidden lg:inline-flex"
+            >
               {buttonText}
-            </a>
+            </TrackedAnchor>
           )}
         </div>
 
@@ -177,9 +184,15 @@ export default function FeatureSection({
           </div>
 
           {buttonText && (
-            <a href={buttonHref} className="btn-laranja self-center lg:hidden">
+            <TrackedAnchor
+              href={buttonHref}
+              kind="cta"
+              name={buttonText}
+              location="feature"
+              className="btn-laranja self-center lg:hidden"
+            >
               {buttonText}
-            </a>
+            </TrackedAnchor>
           )}
         </div>
       </div>

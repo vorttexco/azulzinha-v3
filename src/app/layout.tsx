@@ -4,6 +4,8 @@ import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import CookieBanner from "@/components/shared/CookieBanner";
 import GtmPageView from "@/components/shared/GtmPageView";
+import ScrollDepthTracker from "@/components/shared/ScrollDepthTracker";
+import WebVitalsReporter from "@/components/shared/WebVitalsReporter";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { GTM_ID, META_PIXEL_ID } from "@/lib/analytics";
 import { OG_IMAGE_ALT, OG_IMAGE_URL, SITE_URL } from "@/lib/seo";
@@ -77,6 +79,8 @@ export default function RootLayout({
         {children}
         <CookieBanner />
         <GtmPageView />
+        <ScrollDepthTracker />
+        <WebVitalsReporter />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s){

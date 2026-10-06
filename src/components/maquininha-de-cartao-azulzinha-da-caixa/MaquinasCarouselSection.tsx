@@ -5,7 +5,9 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { useCallback, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { pushCtaGtm } from "@/lib/analytics";
 
 interface MachineCard {
   name: string;
@@ -105,6 +107,8 @@ const machines: MachineCard[] = [
 ];
 
 function Card({ machine }: { machine: MachineCard }) {
+  const pathname = usePathname();
+
   return (
     <div className="h-full bg-white rounded-[12px] shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)] p-6 lg:p-8 flex flex-col justify-between gap-6">
       <div className="flex flex-col gap-4">
@@ -134,12 +138,28 @@ function Card({ machine }: { machine: MachineCard }) {
         <Link
           href={machine.moreHref}
           className={`inline-flex items-center justify-center rounded-[6px] px-[17px] py-[10px] text-[16px] border border-[#333333] text-[#333333] hover:opacity-80 ${machine.moreClassName}`}
+          onClick={() =>
+            pushCtaGtm({
+              name: "Saiba mais",
+              location: "cta-section",
+              href: machine.moreHref,
+              pageName: pathname,
+            })
+          }
         >
           Saiba mais
         </Link>
         <a
           href="#form"
           className={`btn-laranja ${machine.orderClassName}`}
+          onClick={() =>
+            pushCtaGtm({
+              name: "Peça a sua",
+              location: "cta-section",
+              href: "#form",
+              pageName: pathname,
+            })
+          }
         >
           Peça a sua
         </a>

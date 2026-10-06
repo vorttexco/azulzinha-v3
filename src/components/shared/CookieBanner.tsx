@@ -1,19 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { pushCookieGtm } from "@/lib/analytics";
 import { acceptCookieConsent, hasCookieConsent } from "@/lib/cookies";
 
 const linkClass = "text-azul underline";
 
 export default function CookieBanner() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
+  const hasTrackedView = useRef(false);
 
   useEffect(() => {
-    if (!hasCookieConsent()) setIsVisible(true);
-  }, []);
+    if (hasTrackedView.current || hasCookieConsent()) return;
+    hasTrackedView.current = true;
+    setIsVisible(true);
+    pushCookieGtm({ action: "view", pageName: pathname });
+  }, [pathname]);
 
   function handleAccept() {
+    pushCookieGtm({ action: "accept", pageName: pathname });
     acceptCookieConsent();
     setIsVisible(false);
   }

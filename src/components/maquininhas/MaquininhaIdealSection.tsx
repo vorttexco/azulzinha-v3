@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 interface Product {
   name: string;
@@ -140,18 +141,20 @@ export default function MaquininhaIdealSection() {
                   </ul>
 
                   <div className="flex flex-col sm:flex-row gap-4 items-start">
-                    <a href={product.href} className="btn-laranja">
+                    <TrackedAnchor href={product.href} kind="cta" name="Saiba mais" location="cta-section" className="btn-laranja">
                       Saiba mais
-                    </a>
+                    </TrackedAnchor>
                     {product.manualHref && (
-                      <a
+                      <TrackedAnchor
                         href={product.manualHref}
-                        target={product.manualHref.startsWith("http") ? "_blank" : undefined}
-                        rel={product.manualHref.startsWith("http") ? "noopener noreferrer" : undefined}
+                        kind="cta"
+                        name="Baixe o manual"
+                        location="cta-section"
+                        newTab={product.manualHref.startsWith("http")}
                         className="btn-laranja"
                       >
                         Baixe o manual
-                      </a>
+                      </TrackedAnchor>
                     )}
                   </div>
                 </div>

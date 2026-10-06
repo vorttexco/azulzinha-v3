@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = "https://www.azulzinhadacaixa.com.br";
+export const PORTAL_URL = "https://portal.azulzinhadacaixa.com.br";
 
 export const OG_IMAGE_URL = `${SITE_URL}/assets/img/group-maquinas.png`;
 

@@ -17,7 +17,7 @@ import {
   submitLead,
 } from "@/lib/leads";
 import { formatCnpj, isValidCnpj } from "@/lib/cnpj";
-import { pushFormGtm, type FormGtmTag } from "@/lib/analytics";
+import { pushFormGtm, trackFormSuccess, type FormGtmTag } from "@/lib/analytics";
 
 const inputClass =
   "w-full border border-[#D9D9D9] rounded-[6px] px-4 py-3 text-[16px] text-black placeholder-[#999] outline-none focus:border-azul disabled:opacity-60";
@@ -154,7 +154,7 @@ export default function FormSection({
     setIsSubmitting(false);
 
     if (result.ok) {
-      track("gtm-success");
+      trackFormSuccess(() => track("gtm-success"));
       reset();
       router.push("/obrigado");
       return;

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 const sidebarVideos = [
   { title: "Como funciona a automação comercial?" },
@@ -109,10 +110,12 @@ export default function CloverVideoSection() {
           <p className="text-[16px] lg:text-[18px] font-normal leading-[1.4] text-azul text-center">
             Se inscreva no nosso canal do Youtube
           </p>
-          <a
+          <TrackedAnchor
             href={SOCIAL_LINKS.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
+            kind="social"
+            name="youtube"
+            network="youtube"
+            location="video-section"
             className="btn-laranja inline-flex items-center gap-2"
           >
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
@@ -123,7 +126,7 @@ export default function CloverVideoSection() {
               <path d="M8 10.121V4.047l5.25 3.037L8 10.121z" fill="#FC8F01" />
             </svg>
             Youtube
-          </a>
+          </TrackedAnchor>
         </div>
       </div>
     </section>

@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { pushCtaGtm } from "@/lib/analytics";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState, ReactNode } from "react";
 
@@ -99,6 +101,7 @@ export default function PossibilitiesSection({
   buttonText,
   buttonHref,
 }: PossibilitiesSectionProps = {}) {
+  const pathname = usePathname();
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", containScroll: "trimSnaps" });
   const [activeDot, setActiveDot] = useState(0);
 
@@ -133,7 +136,18 @@ export default function PossibilitiesSection({
             </p>
 
             {buttonText && buttonHref && (
-              <Link href={buttonHref} className="btn-laranja self-start">
+              <Link
+                href={buttonHref}
+                className="btn-laranja self-start"
+                onClick={() =>
+                  pushCtaGtm({
+                    name: buttonText,
+                    location: "possibilities",
+                    href: buttonHref,
+                    pageName: pathname,
+                  })
+                }
+              >
                 {buttonText}
               </Link>
             )}

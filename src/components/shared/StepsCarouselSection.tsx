@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { pushCtaGtm } from "@/lib/analytics";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
@@ -60,6 +62,7 @@ export default function StepsCarouselSection({
   imageTopOffset = "-top-10",
   carouselPaddingTop = "pt-16",
 }: StepsCarouselSectionProps) {
+  const pathname = usePathname();
   const wheelGestures = useRef(WheelGesturesPlugin());
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { align: "center", containScroll: "keepSnaps" },
@@ -156,7 +159,18 @@ export default function StepsCarouselSection({
               <h2 className="section-title text-azul">{bottomTitle}</h2>
             )}
             {bottomButtonText && (
-              <a href={bottomButtonHref} className="btn-laranja">
+              <a
+                href={bottomButtonHref}
+                className="btn-laranja"
+                onClick={() =>
+                  pushCtaGtm({
+                    name: bottomButtonText,
+                    location: "cta-section",
+                    href: bottomButtonHref,
+                    pageName: pathname,
+                  })
+                }
+              >
                 {bottomButtonText}
               </a>
             )}

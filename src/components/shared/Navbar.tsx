@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { asset } from "@/lib/assets";
 import { NAV_GTM_LABELS, pushNavGtm } from "@/lib/analytics";
+import { PORTAL_URL } from "@/lib/seo";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
 type DropdownItem = { label: string; href: string; external?: boolean };
@@ -480,7 +481,7 @@ export default function Navbar() {
 
             {/* Portal de Acesso */}
             <a
-              href="https://portal.azulzinhadacaixa.com.br"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[14px] text-white hover:opacity-80 transition-opacity"
@@ -586,7 +587,7 @@ export default function Navbar() {
 
             {/* Portal de Acesso */}
             <a
-              href="https://portal.azulzinhadacaixa.com.br"
+              href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-[8px] rounded-[6px] py-[10px] text-[14px] text-azul bg-linear-to-b from-white to-[#E3E3E3]"

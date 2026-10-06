@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 const listItems = [
   "Tenha visão estratégica das vendas e pagamentos.",
@@ -37,12 +38,15 @@ export default function PortalAppSection() {
           </ul>
 
           {/* Button — desktop only (inside content column) */}
-          <a
+          <TrackedAnchor
             href="/gestao"
+            kind="cta"
+            name="Saiba mais"
+            location="portal-app"
             className="hidden lg:inline-flex self-start items-center justify-center px-[17px] py-[10px] rounded-[6px] bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)] text-white text-[16px] font-normal hover:opacity-90 transition-opacity"
           >
             Saiba mais
-          </a>
+          </TrackedAnchor>
         </div>
 
         {/* Image — order-2 mobile (below content), order-1 desktop (left) */}
@@ -60,12 +64,15 @@ export default function PortalAppSection() {
 
         {/* Button — mobile only (below image) */}
         <div className="order-3 lg:hidden w-full flex justify-center">
-          <a
+          <TrackedAnchor
             href="/gestao"
+            kind="cta"
+            name="Saiba mais"
+            location="portal-app"
             className="inline-flex items-center justify-center px-[17px] py-[10px] rounded-[6px] bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)] text-white text-[16px] font-normal hover:opacity-90 transition-opacity"
           >
             Saiba mais
-          </a>
+          </TrackedAnchor>
         </div>
 
       </div>

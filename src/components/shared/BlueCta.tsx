@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 interface StoreBadge {
   image: string;
@@ -42,7 +43,6 @@ export default function BlueCta({
   storeBadges,
   reverseOnMobile = false,
 }: BlueCtaProps) {
-  const buttonRel = buttonTarget === "_blank" ? "noopener noreferrer" : undefined;
   const hasFeatureLayout = !!featureImage;
   const isCenteredBadges = !featureImage && !!storeBadges?.length;
 
@@ -82,9 +82,16 @@ export default function BlueCta({
                   </div>
                 )}
                 {buttonText && (
-                  <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja self-start">
+                  <TrackedAnchor
+                    href={buttonHref}
+                    kind="cta"
+                    name={buttonText}
+                    location="blue-cta"
+                    newTab={buttonTarget === "_blank"}
+                    className="btn-laranja self-start"
+                  >
                     {buttonText}
-                  </a>
+                  </TrackedAnchor>
                 )}
               </div>
               {featureImage && (
@@ -128,9 +135,16 @@ export default function BlueCta({
                 ))}
               </div>
               {buttonText && (
-                <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja">
+                <TrackedAnchor
+                  href={buttonHref}
+                  kind="cta"
+                  name={buttonText}
+                  location="blue-cta"
+                  newTab={buttonTarget === "_blank"}
+                  className="btn-laranja"
+                >
                   {buttonText}
-                </a>
+                </TrackedAnchor>
               )}
             </>
           ) : (
@@ -149,9 +163,16 @@ export default function BlueCta({
                 )}
               </div>
               {buttonText && (
-                <a href={buttonHref} target={buttonTarget} rel={buttonRel} className="btn-laranja">
+                <TrackedAnchor
+                  href={buttonHref}
+                  kind="cta"
+                  name={buttonText}
+                  location="blue-cta"
+                  newTab={buttonTarget === "_blank"}
+                  className="btn-laranja"
+                >
                   {buttonText}
-                </a>
+                </TrackedAnchor>
               )}
             </>
           )}

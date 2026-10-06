@@ -1,7 +1,10 @@
 "use client";
 
 import { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import Accordion from "@/components/shared/Accordion";
+import { pushPortalGtm } from "@/lib/analytics";
+import { PORTAL_URL } from "@/lib/seo";
 
 const linkClass =
   "text-azul underline decoration-solid underline-offset-auto";
@@ -10,12 +13,29 @@ const P = ({ children }: { children: ReactNode }) => (
   <p className="text-[18px] font-normal leading-[1.4] text-black">{children}</p>
 );
 
+function PortalLink() {
+  const pathname = usePathname();
+  return (
+    <a
+      href={PORTAL_URL}
+      className={linkClass}
+      onClick={() =>
+        pushPortalGtm({
+          location: "portal-faq",
+          href: PORTAL_URL,
+          pageName: pathname,
+        })
+      }
+    >
+      portal.azulzinhadacaixa.com.br
+    </a>
+  );
+}
+
 const answerComoAcessar = (
   <P>
     Acesse{" "}
-    <a href="https://portal.azulzinhadacaixa.com.br" className={linkClass}>
-      portal.azulzinhadacaixa.com.br
-    </a>{" "}
+    <PortalLink />{" "}
     e digite as informações de acesso solicitadas (CPF ou CNPJ) que você recebeu
     via e-mail de boas-vindas. Caso não tenha recebido o e-mail, acesse o
     portal, inclua os dados de CPF ou CNPJ e clique em &apos;Primeira vez no

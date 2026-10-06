@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 type FooterLink = { label: string; href: string };
 
@@ -123,10 +124,10 @@ export default function Footer() {
                 <span className="text-sm font-normal text-azul">
                   Fale com a Zuli pelo WhatsApp
                 </span>
-                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
+                <TrackedAnchor href={SOCIAL_LINKS.whatsapp} kind="whatsapp" name="whatsapp" location="footer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
                   <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} className="shrink-0" unoptimized />
                   <span className="text-sm text-[#717171]">{SOCIAL_LINKS.whatsappPhone}</span>
-                </a>
+                </TrackedAnchor>
               </div>
             </div>
 
@@ -135,13 +136,13 @@ export default function Footer() {
               <h4 className="text-sm lg:text-base font-normal text-azul">
                 CENTRAL DE RELACIONAMENTO
               </h4>
-              <a href="tel:3003-5365" className="text-sm text-[#717171] font-normal hover:underline">3003 5365</a>
+              <TrackedAnchor href="tel:3003-5365" kind="phone" name="30035365" phone="30035365" location="footer" className="text-sm text-[#717171] font-normal hover:underline">3003 5365</TrackedAnchor>
               <p className="text-sm text-[#717171]">
                 Capital e Grande São Paulo
               </p>
-              <a href="tel:0800-729-5365" className="text-sm pt-6 text-[#717171] font-normal hover:underline">
+              <TrackedAnchor href="tel:0800-729-5365" kind="phone" name="08007295365" phone="08007295365" location="footer" className="text-sm pt-6 text-[#717171] font-normal hover:underline">
                 0800 729 5365
-              </a>
+              </TrackedAnchor>
               <p className="text-sm text-[#717171]">Demais localidades</p>
               <p className="text-sm text-[#B9B9B9] mt-1">
                 Segunda a Domingo das 08h00 às 22h00 (exceto feriados)
@@ -163,9 +164,9 @@ export default function Footer() {
               <h4 className="text-sm lg:text-base font-normal text-[#006CAD]">
                 OUVIDORIA
               </h4>
-              <a href="tel:0800-727-4655" className="text-sm lg:text-base text-[#717171] font-normal hover:underline">
+              <TrackedAnchor href="tel:0800-727-4655" kind="phone" name="08007274655" phone="08007274655" location="footer" className="text-sm lg:text-base text-[#717171] font-normal hover:underline">
                 0800 727 4655
-              </a>
+              </TrackedAnchor>
               <p className="text-sm text-[#B9B9B9]">
                 Segunda a Sexta das 09h00 às 18h00 (exceto feriados)
               </p>
@@ -173,18 +174,18 @@ export default function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <TrackedAnchor href={SOCIAL_LINKS.instagram} kind="social" name="instagram" network="instagram" location="footer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/instagram-icon.png")} alt="Instagram" width={20} height={20} unoptimized />
-              </a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              </TrackedAnchor>
+              <TrackedAnchor href={SOCIAL_LINKS.facebook} kind="social" name="facebook" network="facebook" location="footer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/facebook-icon.png")} alt="Facebook" width={20} height={20} unoptimized />
-              </a>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              </TrackedAnchor>
+              <TrackedAnchor href={SOCIAL_LINKS.linkedin} kind="social" name="linkedin" network="linkedin" location="footer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/linkedin-icon.png")} alt="LinkedIn" width={20} height={20} unoptimized />
-              </a>
-              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              </TrackedAnchor>
+              <TrackedAnchor href={SOCIAL_LINKS.youtube} kind="social" name="youtube" network="youtube" location="footer" className="hover:opacity-70 transition-opacity">
                 <Image src={asset("/images/youtube-icon.png")} alt="YouTube" width={20} height={20} unoptimized />
-              </a>
+              </TrackedAnchor>
             </div>
           </div>
         </div>
@@ -257,7 +258,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 ml-[52px]">
                 <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} unoptimized />
-                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm text-[#717171] hover:underline">{SOCIAL_LINKS.whatsappPhone}</a>
+                <TrackedAnchor href={SOCIAL_LINKS.whatsapp} kind="whatsapp" name="whatsapp" location="footer" className="text-sm text-[#717171] hover:underline">{SOCIAL_LINKS.whatsappPhone}</TrackedAnchor>
               </div>
             </div>
 
@@ -266,13 +267,13 @@ export default function Footer() {
               <h4 className="text-sm font-normal text-[#006CAD]">
                 CENTRAL DE RELACIONAMENTO
               </h4>
-              <a href="tel:3003-5365" className="text-sm text-[#717171] font-normal hover:underline">3003 5365</a>
+              <TrackedAnchor href="tel:3003-5365" kind="phone" name="30035365" phone="30035365" location="footer" className="text-sm text-[#717171] font-normal hover:underline">3003 5365</TrackedAnchor>
               <p className="text-sm text-[#717171]">
                 Capital e Grande São Paulo
               </p>
-              <a href="tel:0800-729-5365" className="text-sm text-[#717171] font-normal hover:underline">
+              <TrackedAnchor href="tel:0800-729-5365" kind="phone" name="08007295365" phone="08007295365" location="footer" className="text-sm text-[#717171] font-normal hover:underline">
                 0800 729 5365
-              </a>
+              </TrackedAnchor>
               <p className="text-sm text-[#717171]">Demais localidades</p>
               <p className="text-xs text-[#717171] mt-1">
                 Segunda a Domingo das 08h00 às 22h00 (exceto feriados)
@@ -294,9 +295,9 @@ export default function Footer() {
               <h4 className="text-sm font-normal text-[#006CAD]">
                 OUVIDORIA
               </h4>
-              <a href="tel:0800-727-4655" className="text-sm text-[#717171] font-normal hover:underline">
+              <TrackedAnchor href="tel:0800-727-4655" kind="phone" name="08007274655" phone="08007274655" location="footer" className="text-sm text-[#717171] font-normal hover:underline">
                 0800 727 4655
-              </a>
+              </TrackedAnchor>
               <p className="text-xs text-[#717171]">
                 Segunda a Sexta das 09h00 às 18h00 (exceto feriados)
               </p>
@@ -337,10 +338,11 @@ export default function Footer() {
             />
 
             {/* Dúvidas button */}
-            <a
+            <TrackedAnchor
               href={SOCIAL_LINKS.whatsappApi}
-              target="_blank"
-              rel="noopener noreferrer"
+              kind="whatsapp"
+              name="whatsapp"
+              location="footer-duvidas"
               className="flex items-center gap-2 border border-azul text-azul rounded-full px-4 py-2 text-sm font-medium hover:bg-azul/5 transition-colors shrink-0"
             >
               <Image
@@ -351,7 +353,7 @@ export default function Footer() {
                 className="rounded-full"
               />
               Dúvidas?
-            </a>
+            </TrackedAnchor>
           </div>
         </div>
       </div>

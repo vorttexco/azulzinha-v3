@@ -11,6 +11,10 @@ RewriteBase /
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Apex → www. Homolog and other hosts are left alone.
+RewriteCond %{HTTP_HOST} =azulzinhadacaixa.com.br [NC]
+RewriteRule ^ https://www.azulzinhadacaixa.com.br%{REQUEST_URI} [L,R=301]
+
 # Adiciona barra final em URLs que batem com pastas reais
 # (Next.js export com trailingSlash: true gera /rota/index.html)
 RewriteCond %{REQUEST_FILENAME} -d

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { pushCtaGtm } from "@/lib/analytics";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
 function HeroAnchorLink({
@@ -12,17 +13,19 @@ function HeroAnchorLink({
   buttonHref,
   buttonText,
   className,
+  onClick,
 }: {
   pathname: string;
   buttonHref: string;
   buttonText: string;
   className: string;
+  onClick?: () => void;
 }) {
   const searchParams = useSearchParams();
   const queryString = searchParams.toString();
   const queryPrefix = queryString ? `?${queryString}` : "";
   return (
-    <Link href={`${pathname}${queryPrefix}${buttonHref}`} className={className} scroll>
+    <Link href={`${pathname}${queryPrefix}${buttonHref}`} className={className} scroll onClick={onClick}>
       {buttonText}
     </Link>
   );
@@ -98,6 +101,15 @@ export default function HeroSection({
   const pathname = usePathname();
   const isInPageAnchor =
     buttonHref.startsWith("#") && buttonHref.length > 1;
+
+  function trackHeroClick() {
+    pushCtaGtm({
+      name: buttonText,
+      location: "hero",
+      href: buttonHref,
+      pageName: pathname,
+    });
+  }
 
   return (
     <section className="relative w-full min-h-[491px] lg:h-[581px] overflow-hidden">
@@ -209,6 +221,7 @@ export default function HeroSection({
                     href={`${pathname}${buttonHref}`}
                     className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
                     scroll
+                    onClick={trackHeroClick}
                   >
                     {buttonText}
                   </Link>
@@ -219,12 +232,14 @@ export default function HeroSection({
                   buttonHref={buttonHref}
                   buttonText={buttonText}
                   className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
+                  onClick={trackHeroClick}
                 />
               </Suspense>
             ) : (
               <a
                 href={buttonHref}
                 className={`btn-laranja self-start ${inputPlaceholder ? "mt-2 lg:mt-6" : buttonLogoImage ? "mt-3" : "lg:mt-12"} ${buttonClassName}`}
+                onClick={trackHeroClick}
               >
                 {buttonText}
               </a>

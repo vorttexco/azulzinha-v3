@@ -9,13 +9,239 @@ export interface GtmEvent {
   pageName?: string;
   transactionId?: number;
   data?: string;
+  location?: string;
+  href?: string;
+}
+
+export type AnalyticsLocation =
+  | "hero"
+  | "cta-section"
+  | "blue-cta"
+  | "possibilities"
+  | "feature"
+  | "beneficios"
+  | "faq"
+  | "portal-app"
+  | "home-carousel"
+  | "home-products"
+  | "footer"
+  | "footer-duvidas"
+  | "ajuda"
+  | "portal-faq"
+  | "navbar"
+  | "video-section";
+
+export type SocialNetwork = "instagram" | "facebook" | "linkedin" | "youtube";
+
+export type ScrollDepthPercent = 25 | 50 | 75 | 90;
+
+declare global {
+  interface Window {
+    dataLayer?: GtmEvent[];
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+interface JourneyFields {
+  location: AnalyticsLocation;
+  pageName: string;
+  href?: string;
+}
+
+function withTransaction(
+  payload: GtmEvent,
+): GtmEvent {
+  return { ...payload, transactionId: GTM_TRANSACTION_ID };
 }
 
 export function pushGtm(payload: GtmEvent): void {
   if (typeof window === "undefined") return;
-  const w = window as Window & { dataLayer?: Record<string, unknown>[] };
-  w.dataLayer ??= [];
-  w.dataLayer.push(payload);
+  window.dataLayer ??= [];
+  window.dataLayer.push(payload);
+}
+
+export function trackMeta(event: "PageView" | "Lead"): void {
+  if (typeof window === "undefined") return;
+  window.fbq?.("track", event);
+}
+
+export function trackFormSuccess(trackForm: () => void): void {
+  trackForm();
+  trackMeta("Lead");
+}
+
+export function buildCtaGtmEvent(input: JourneyFields & { name: string }): GtmEvent {
+  return withTransaction({
+    event: "cta_click",
+    name: input.name,
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushCtaGtm(input: JourneyFields & { name: string }): void {
+  pushGtm(buildCtaGtmEvent(input));
+}
+
+export function buildBannerGtmEvent(input: JourneyFields & { name: string }): GtmEvent {
+  return withTransaction({
+    event: "banner_click",
+    name: input.name,
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushBannerGtm(input: JourneyFields & { name: string }): void {
+  pushGtm(buildBannerGtmEvent(input));
+}
+
+export function buildProductGtmEvent(input: JourneyFields & { name: string }): GtmEvent {
+  return withTransaction({
+    event: "product_click",
+    name: input.name,
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushProductGtm(input: JourneyFields & { name: string }): void {
+  pushGtm(buildProductGtmEvent(input));
+}
+
+export function buildWhatsappGtmEvent(input: JourneyFields): GtmEvent {
+  return withTransaction({
+    event: "whatsapp_click",
+    name: "whatsapp",
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushWhatsappGtm(input: JourneyFields): void {
+  pushGtm(buildWhatsappGtmEvent(input));
+}
+
+export function buildPhoneGtmEvent(input: {
+  phone: string;
+  location: AnalyticsLocation;
+  pageName: string;
+}): GtmEvent {
+  return withTransaction({
+    event: "phone_click",
+    name: input.phone,
+    location: input.location,
+    pageName: input.pageName,
+  });
+}
+
+export function pushPhoneGtm(input: {
+  phone: string;
+  location: AnalyticsLocation;
+  pageName: string;
+}): void {
+  pushGtm(buildPhoneGtmEvent(input));
+}
+
+export function buildSocialGtmEvent(input: JourneyFields & { network: SocialNetwork }): GtmEvent {
+  return withTransaction({
+    event: "social_click",
+    name: input.network,
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushSocialGtm(input: JourneyFields & { network: SocialNetwork }): void {
+  pushGtm(buildSocialGtmEvent(input));
+}
+
+export function buildPortalGtmEvent(input: JourneyFields): GtmEvent {
+  return withTransaction({
+    event: "portal_click",
+    name: "portal",
+    location: input.location,
+    href: input.href,
+    pageName: input.pageName,
+  });
+}
+
+export function pushPortalGtm(input: JourneyFields): void {
+  pushGtm(buildPortalGtmEvent(input));
+}
+
+export function buildScrollDepthGtmEvent(input: {
+  percent: ScrollDepthPercent;
+  pageName: string;
+}): GtmEvent {
+  return withTransaction({
+    event: "scroll_depth",
+    name: String(input.percent),
+    pageName: input.pageName,
+  });
+}
+
+export function pushScrollDepthGtm(input: {
+  percent: ScrollDepthPercent;
+  pageName: string;
+}): void {
+  pushGtm(buildScrollDepthGtmEvent(input));
+}
+
+export function buildWebVitalGtmEvent(input: {
+  metric: string;
+  value: number;
+  pageName: string;
+}): GtmEvent {
+  const data =
+    input.metric === "CLS" ? input.value.toFixed(4) : String(Math.round(input.value));
+  return withTransaction({
+    event: "web_vitals",
+    name: input.metric,
+    data,
+    pageName: input.pageName,
+  });
+}
+
+export function pushWebVitalGtm(input: {
+  metric: string;
+  value: number;
+  pageName: string;
+}): void {
+  pushGtm(buildWebVitalGtmEvent(input));
+}
+
+export function buildCookieGtmEvent(input: {
+  action: "view" | "accept";
+  pageName: string;
+}): GtmEvent {
+  if (input.action === "view") {
+    return withTransaction({
+      event: "cookie_banner_view",
+      pageName: input.pageName,
+    });
+  }
+  return withTransaction({
+    event: "cookie_consent",
+    name: "accept",
+    pageName: input.pageName,
+  });
+}
+
+export function pushCookieGtm(input: {
+  action: "view" | "accept";
+  pageName: string;
+}): void {
+  pushGtm(buildCookieGtmEvent(input));
+}
+
+export function isWhatsappHref(href: string): boolean {
+  return href.includes("wa.me") || href.includes("api.whatsapp.com");
 }
 
 export function buildPageViewEvent(pageName: string): GtmEvent {

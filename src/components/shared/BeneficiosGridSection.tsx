@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 interface BeneficioItem {
   icon?: string;
@@ -132,9 +133,9 @@ export default function BeneficiosGridSection({
                 {buttonCaption}
               </p>
             )}
-            <a href={buttonHref} className="btn-laranja">
+            <TrackedAnchor href={buttonHref} kind="cta" name={buttonText} location="beneficios" className="btn-laranja">
               {buttonText}
-            </a>
+            </TrackedAnchor>
           </div>
         )}
       </div>

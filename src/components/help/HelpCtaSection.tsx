@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import { SOCIAL_LINKS } from "@/lib/social";
+import TrackedAnchor from "@/components/shared/TrackedAnchor";
 
 interface HelpCtaSectionProps {
   showCaixaTem?: boolean;
@@ -32,7 +34,13 @@ export default function HelpCtaSection({
                         <h3 className="text-laranja text-[22px] leading-[1.3] mb-4">
                             Fale com a Zuli pelo WhatsApp
                         </h3>
-                        <div className="flex items-center gap-2 mb-4">
+                        <TrackedAnchor
+                            href={SOCIAL_LINKS.whatsapp}
+                            kind="whatsapp"
+                            name="whatsapp"
+                            location="ajuda"
+                            className="flex items-center gap-2 mb-4 w-fit"
+                        >
                             <Image
                                 src={asset("/images/icon-whatsapp.svg")}
                                 alt="WhatsApp"
@@ -40,9 +48,9 @@ export default function HelpCtaSection({
                                 height={20}
                             />
                             <span className="text-white text-[18px] leading-[1.3]">
-                                (11) 94147-3336
+                                {SOCIAL_LINKS.whatsappPhone}
                             </span>
-                        </div>
+                        </TrackedAnchor>
                         <p className="text-laranja text-[18px] leading-[1.3] mb-2">
                             Horário de atendimento:
                         </p>
@@ -63,15 +71,29 @@ export default function HelpCtaSection({
                         <p className="text-[#f4f4f4] text-[16px] leading-[1.3]">
                             Capital e Grande São Paulo
                         </p>
-                        <p className="text-white text-[18px] leading-[1.3] mb-4">
+                        <TrackedAnchor
+                            href="tel:3003-5365"
+                            kind="phone"
+                            name="30035365"
+                            phone="30035365"
+                            location="ajuda"
+                            className="block text-white text-[18px] leading-[1.3] mb-4 w-fit"
+                        >
                             3003 5365
-                        </p>
+                        </TrackedAnchor>
                         <p className="text-[#f4f4f4] text-[16px] leading-[1.3]">
                             Demais localidades
                         </p>
-                        <p className="text-white text-[18px] leading-[1.3] mb-4">
+                        <TrackedAnchor
+                            href="tel:0800-729-5365"
+                            kind="phone"
+                            name="08007295365"
+                            phone="08007295365"
+                            location="ajuda"
+                            className="block text-white text-[18px] leading-[1.3] mb-4 w-fit"
+                        >
                             0800 729 5365
-                        </p>
+                        </TrackedAnchor>
                         <p className="text-laranja text-[18px] leading-[1.3] mb-2">
                             Horário de atendimento:
                         </p>

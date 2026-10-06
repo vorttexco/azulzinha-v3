@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { asset } from "@/lib/assets";
+import { pushCtaGtm } from "@/lib/analytics";
 
 const formatCPF = (value: string) =>
   value
@@ -42,6 +44,16 @@ export default function CtaSection({
   cpfMask = false,
 }: CtaSectionProps = {}) {
   const [cpfValue, setCpfValue] = useState("");
+  const pathname = usePathname();
+
+  function trackCta(name: string, href: string) {
+    pushCtaGtm({
+      name,
+      location: "cta-section",
+      href,
+      pageName: pathname,
+    });
+  }
 
   return (
     <section
@@ -93,6 +105,7 @@ export default function CtaSection({
                 target={buttonTarget}
                 rel={buttonTarget === "_blank" ? "noopener noreferrer" : undefined}
                 className="btn-laranja text-center"
+                onClick={() => trackCta(buttonText, buttonHref)}
               >
                 {buttonText}
               </a>
@@ -100,6 +113,7 @@ export default function CtaSection({
                 <a
                   href={button2Href}
                   className="bg-[linear-gradient(180deg,#FFF_0%,#D7E4E7_100%)] text-azul rounded-[6px] px-[17px] py-[10px] text-[16px] font-normal text-center cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => trackCta(button2Text, button2Href)}
                 >
                   {button2Text}
                 </a>

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Accordion, { AccordionItem } from "@/components/shared/Accordion";
+import { pushCtaGtm } from "@/lib/analytics";
 
 const defaultFaqItems: AccordionItem[] = [
   {
@@ -45,6 +47,7 @@ export default function FaqSection({
   buttonHref = "#",
   initialCount,
 }: FaqSectionProps = {}) {
+  const pathname = usePathname();
   const [showAll, setShowAll] = useState(false);
   const isCollapsible = initialCount !== undefined && items.length > initialCount;
   const visibleItems = isCollapsible && !showAll ? items.slice(0, initialCount) : items;
@@ -76,7 +79,18 @@ export default function FaqSection({
                 {showAll ? "Ver menos perguntas" : buttonText ?? "Ver todas perguntas"}
               </button>
             ) : (
-              <a href={buttonHref} className="btn-laranja">
+              <a
+                href={buttonHref}
+                className="btn-laranja"
+                onClick={() =>
+                  pushCtaGtm({
+                    name: buttonText ?? "",
+                    location: "faq",
+                    href: buttonHref,
+                    pageName: pathname,
+                  })
+                }
+              >
                 {buttonText}
               </a>
             )}

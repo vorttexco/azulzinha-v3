@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import HighlightsSection from "@/components/programa-gas-do-povo/HighlightsSection";
-import VantagensSection from "@/components/programa-gas-do-povo/VantagensSection";
+import CircularFeaturesSection from "@/components/shared/CircularFeaturesSection";
 import BlueCta from "@/components/shared/BlueCta";
 import CtaSection from "@/components/shared/CtaSection";
 import ProdutosSection, { ProdutosSectionCard } from "@/components/shared/ProdutosSection";
@@ -88,7 +88,29 @@ export default function ProgramaGasDoPovoPage() {
 
       <HighlightsSection />
 
-      <VantagensSection />
+      <CircularFeaturesSection
+        title="Com a azulzinha, sua revendedora de gás pode muito mais."
+        subtitle="Conheça as vantagens que só a maquininha da CAIXA pode oferecer para você"
+        features={[
+          {
+            icon: "/images/programa-gas-do-povo/icon-nfc.svg",
+            text: "Venda com aproximação (NFC), QR Code, chip e tarja magnética",
+          },
+          {
+            icon: "/images/programa-gas-do-povo/icon-cartao.svg",
+            text: "Aceite mais de 40 bandeiras de cartão, vouchers, carteiras digitais e Pix *",
+          },
+          {
+            icon: "/images/programa-gas-do-povo/icon-seguranca.svg",
+            text: "Transacione com proteção antifraude e segurança garantida",
+          },
+          {
+            icon: "/images/programa-gas-do-povo/icon-suporte.svg",
+            text: "Conte com nosso suporte técnico disponível 24 horas por dia",
+          },
+        ]}
+        disclaimer="*Algumas revendedoras de gás poderão ter a azulzinha com acesso exclusivo apenas à funcionalidade Gás do Povo."
+      />
 
       <BlueCta
         title="azulzinha aproxima é alternativa sem aluguel, direto no seu celular ou tablet"

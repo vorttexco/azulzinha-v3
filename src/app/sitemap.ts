@@ -28,6 +28,7 @@ const STATIC_PATHS = [
   "/maquininhas",
   "/maquininhas/pro",
   "/maquininhas/tef",
+  "/oferta-especial-azulzinha-da-caixa",
   "/pagamento-parcial",
   "/peca-azulzinha",
   "/pix-azulzinha",

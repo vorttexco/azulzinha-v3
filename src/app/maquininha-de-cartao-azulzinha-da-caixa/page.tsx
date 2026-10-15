@@ -7,7 +7,7 @@ import MaquinasCarouselSection from "@/components/maquininha-de-cartao-azulzinha
 import IconCardsSection from "@/components/maquininha-de-cartao-azulzinha-da-caixa/IconCardsSection";
 import BandeirasSection from "@/components/shared/BandeirasSection";
 import GestaoSection from "@/components/maquininha-de-cartao-azulzinha-da-caixa/GestaoSection";
-import FormSection from "@/components/suaazulzinha/FormSection";
+import FormSection from "@/components/shared/FormSection";
 import Footer from "@/components/shared/Footer";
 
 export const metadata: Metadata = pageMetadata({

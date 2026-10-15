@@ -37,12 +37,12 @@ const faqBrands: FaqBrand[] = [
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Capitais e Regiões Metropolitanas
               <br />
-              <span className="font-bold">4002-5011</span>
+              <a href="tel:40025011" className="font-bold">4002-5011</a>
             </p>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Demais localidades
               <br />
-              <span className="font-bold">0800-570 5011</span>
+              <a href="tel:08005705011" className="font-bold">0800-570 5011</a>
             </p>
           </div>
         ),
@@ -100,7 +100,7 @@ const faqBrands: FaqBrand[] = [
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Capitais e Regiões Metropolitanas
               <br />
-              <a href="tel:40042233" className="font-bold">4004 2233</a>
+              <a href="tel:4004 2233" className="font-bold">4004 2233</a>
             </p>
           </div>
         ),
@@ -145,7 +145,7 @@ const faqBrands: FaqBrand[] = [
     logoH: 24,
     name: "pluxee",
     buttonText: "Quero aceitar pluxee",
-    buttonHref: "https://www.pluxee.com.br/credenciamento-aceitar-pluxee/",
+    buttonHref: "https://www.sodexobeneficios.com.br/estabelecimentos/quero-aceitar-sodexo.htm",
     columns: [
       {
         icon: "/images/bandeiras-vouchers/icone-telefone.svg",
@@ -155,12 +155,12 @@ const faqBrands: FaqBrand[] = [
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Capitais e Regiões Metropolitanas
               <br />
-              <a href="tel:30035083" className="font-bold">3003 5083</a>
+              <a href="tel:3003 5083" className="font-bold">3003 5083</a>
             </p>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Demais localidades
               <br />
-              <a href="tel:08007285083" className="font-bold">0800 728 5083</a>
+              <a href="tel:0800 728 5083" className="font-bold">0800 728 5083</a>
             </p>
           </div>
         ),
@@ -207,7 +207,7 @@ const faqBrands: FaqBrand[] = [
     logoH: 61,
     name: "VR",
     buttonText: "Quero aceitar VR",
-    buttonHref: "https://estabelecimentos.vr.com.br/cadastro#/dados-iniciais",
+    buttonHref: "https://portal.vr.com.br/portal/portal-vr/area-publica/credenciamento-contato/",
     columns: [
       {
         icon: "/images/bandeiras-vouchers/icone-telefone.svg",
@@ -222,7 +222,7 @@ const faqBrands: FaqBrand[] = [
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Demais localidades
               <br />
-              <a href="tel:08005963838" className="font-bold">0800 596 3838</a>
+              <a href="tel:0800 596 3838" className="font-bold">0800 596 3838</a>
             </p>
           </div>
         ),

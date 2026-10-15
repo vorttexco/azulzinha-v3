@@ -35,7 +35,7 @@ export default function HelpCtaSection({
                             Fale com a Zuli pelo WhatsApp
                         </h3>
                         <TrackedAnchor
-                            href={SOCIAL_LINKS.whatsapp}
+                            href={SOCIAL_LINKS.whatsappApi}
                             kind="whatsapp"
                             name="whatsapp"
                             location="ajuda"
@@ -72,7 +72,7 @@ export default function HelpCtaSection({
                             Capital e Grande São Paulo
                         </p>
                         <TrackedAnchor
-                            href="tel:3003-5365"
+                            href="tel:+551130035365"
                             kind="phone"
                             name="30035365"
                             phone="30035365"
@@ -85,7 +85,7 @@ export default function HelpCtaSection({
                             Demais localidades
                         </p>
                         <TrackedAnchor
-                            href="tel:0800-729-5365"
+                            href="tel:08007295365"
                             kind="phone"
                             name="08007295365"
                             phone="08007295365"

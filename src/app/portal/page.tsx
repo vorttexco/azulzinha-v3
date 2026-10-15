@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, PORTAL_URL } from "@/lib/seo";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/shared/HeroSection";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -71,10 +71,11 @@ export default function PortalPage() {
                 ]}
             />
             <BlueCta
-                title="Sua azulzinha smart acabou de chegar?"
-                buttonText="Leia o manual"
-                icon="/images/azulzinha-smart/book-icon.png"
-                iconAlt="Manual"
+                title="Primeiro acesso no Portal da azulzinha?"
+                description="Usufrua de ferramentas e serviços para a gestão do seu negócio"
+                buttonText="Fazer login"
+                buttonHref={PORTAL_URL}
+                buttonTarget="_blank"
                 sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
             />
             <div id="video-portal" />

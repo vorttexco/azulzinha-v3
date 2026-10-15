@@ -20,7 +20,8 @@ export default function SuaAzulzinhaPage() {
                 title="Peça Já!"
                 description="Com azulzinha você pode mais!"
                 checkItems={[]}
-                buttonText=""
+                buttonText="Clique aqui e saiba como!"
+                buttonHref="#form"
                 backgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
                 mobileBackgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
                 mobileImageClassName="object-[70%_25%]"

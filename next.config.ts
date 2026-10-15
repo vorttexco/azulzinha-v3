@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
   ...(isProd
     ? {
         output: "export" as const,
-        trailingSlash: true,
+        trailingSlash: false,
       }
     : {}),
   images: {

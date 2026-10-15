@@ -32,8 +32,8 @@ export default function BandeirasVouchers() {
       <BandeirasSection />
       <BlueCta
         title="Novidade! Você sabia que já pode receber pagamentos com VR Benefícios na sua azulzinha?"
-        buttonText="Saiba como"
-        buttonHref="#saiba-sobre-bandeiras"
+        buttonText="Saiba Como"
+        buttonHref="/bandeiras-vouchers/qr-code"
         icon="/images/bandeiras-vouchers/logo-vr.png"
         iconAlt="VR Benefícios"
         sectionClassName="bg-[#FAFAFA]"

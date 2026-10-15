@@ -75,10 +75,10 @@ export default function ServicosHomeSection() {
         </div>
 
         <a
-          href="/maquininhas"
-          className="inline-flex items-center justify-center gap-[10px] w-[206px] h-[44px] rounded-[6px] bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)] text-white text-[16px] font-normal hover:opacity-90 transition-opacity"
+          href="/peca-azulzinha"
+          className="inline-flex items-center justify-center gap-[10px] h-[44px] px-4 rounded-[6px] bg-[linear-gradient(177.34deg,#EDAC39_2.43%,#FC8F01_98%)] text-white text-[16px] font-normal hover:opacity-90 transition-opacity"
         >
-          Solicite sua azulzinha
+          Solicite a sua azulzinha
         </a>
       </div>
     </section>

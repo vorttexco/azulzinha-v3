@@ -382,7 +382,7 @@ export const VIDEO_GTM_BY_TITLE: Record<string, string> = {
   "Como cancelar uma venda no App da azulzinha":
     "Como-cancelar-uma-venda-no-App-da-azulzinha",
   "Como fazer uma antecipação de recebíveis no App da azulzinha?":
-    "Como-fazer-uma-antecipação-de-recebíveis-no-App-da-azulzinha?",
+    "Como-fazer-uma-antecipação-de-recebíveis-pelo-aplicativo-da-azulzinha",
   "Como solicitar bobinas pelo App da azulzinha":
     "Como-solicitar-bobinas-pelo-App-da-azulzinha",
   "Como consultar o histórico de recargas pelo App da azulzinha":
@@ -420,9 +420,9 @@ export const VIDEO_GTM_BY_TITLE: Record<string, string> = {
   "Como gerar link de pagamento com o App da azulzinha?":
     "gtm-Como-gerar-link-de-pagamento-com-o-App-da-azulzinha?",
   "Como ver o histórico de links de pagamento gerados no App da azulzinha?":
-    "gtm-Como-ver-o-histórico-de-links-de-pagamento-gerados-no-App-da-azulzinha?",
+    "Como-ver-o-histórico-de-links-de-pagamento-gerados-no-App-da-azulzinha?",
   "Como acessar o Portal do Cliente da azulzinha":
-    "Como-acessar-o-Portal-azulzinha",
+    "Como-acessar-o-Portal-do-Cliente-da-azulzinha",
   "Serviço de Conveniência": "Servico-de-Conveniencia",
   "Como funciona a automação comercial?": "como-funciona-automacao-comercial",
   "Como aproveitar o Portal Clover?": "como-aproveitar-o-painel-clover",

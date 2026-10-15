@@ -8,6 +8,7 @@ interface StoreBadge {
   alt: string;
   width?: number;
   height?: number;
+  className?: string;
 }
 
 interface BlueCtaProps {
@@ -69,13 +70,13 @@ export default function BlueCta({
                 {storeBadges && storeBadges.length > 0 && (
                   <div className="flex flex-wrap items-center gap-4">
                     {storeBadges.map((badge, i) => (
-                      <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer">
+                      <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer" className={badge.className}>
                         <Image
                           src={asset(badge.image)}
                           alt={badge.alt}
                           width={188}
                           height={56}
-                          className="h-14 w-auto"
+                          className={`h-14 w-auto ${badge.className ?? ""}`}
                         />
                       </a>
                     ))}
@@ -123,13 +124,13 @@ export default function BlueCta({
               </div>
               <div className="flex flex-row items-center gap-4">
                 {storeBadges!.map((badge, i) => (
-                  <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer" className="block">
+                  <a key={i} href={badge.href} target="_blank" rel="noopener noreferrer" className={`block ${badge.className ?? ""}`}>
                     <Image
                       src={asset(badge.image)}
                       alt={badge.alt}
                       width={badge.width ?? 235}
                       height={badge.height ?? 70}
-                      className="w-[188px] h-auto"
+                      className={`w-[188px] h-auto ${badge.className ?? ""}`}
                     />
                   </a>
                 ))}

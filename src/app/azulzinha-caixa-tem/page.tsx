@@ -325,8 +325,8 @@ export default function ParaSuaMei() {
         description={"Não se esqueça: para ter a azulzinha,\nvocê precisa ter a Conta Digital MEI"}
         sectionClassName="bg-white"
         storeBadges={[
-          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR", alt: "Google Play", width: 235, height: 91 },
-          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/caixa-tem/id1485424267", alt: "App Store", width: 235, height: 70 },
+          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR", alt: "Google Play", width: 235, height: 91, className: "lp-azulzinha-caixa-tem-google-play" },
+          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/caixa-tem/id1485424267", alt: "App Store", width: 235, height: 70, className: "lp-azulzinha-caixa-tem-app-store" },
         ]}
       />
 

@@ -42,7 +42,7 @@ const empresaColumns: DropdownColumn[] = [
   {
     title: "Para sua Lotérica",
     titleColor: "laranja",
-    items: [{ label: "Serviços de Conveniência", href: "/lotericas" }],
+    items: [{ label: "Serviço de Conveniência", href: "/lotericas" }],
   },
   {
     title: "Serviços",
@@ -60,9 +60,7 @@ const empresaColumns: DropdownColumn[] = [
   {
     title: "Vendas Online",
     titleColor: "azul",
-    items: [
-      { label: "Link de Pagamento", href: "/link-pagamento" },
-    ],
+    items: [{ label: "Link de Pagamento", href: "/link-pagamento" }],
     footerLink: { label: "Todas as soluções", href: "/vendas-online" },
   },
   {
@@ -81,7 +79,7 @@ const voceColumns: DropdownColumn[] = [
   {
     title: "Lotéricas",
     titleColor: "azul",
-    items: [{ label: "Serviços de Conveniência", href: "/cliente-loterica" }],
+    items: [{ label: "Serviço de Conveniência", href: "/cliente-loterica" }],
   },
 ];
 
@@ -497,7 +495,7 @@ export default function Navbar() {
               className="btn-laranja"
               onClick={trackNavClick(NAV_GTM_LABELS.cta)}
             >
-              Peça já sua azulzinha
+              Peça já a azulzinha
             </a>
             </div>
           </div>
@@ -582,7 +580,7 @@ export default function Navbar() {
               onClick={trackNavClick(NAV_GTM_LABELS.cta, closeMobileMenu)}
               className="btn-laranja text-center"
             >
-              Peça sua azulzinha
+              Peça já a azulzinha
             </Link>
 
             {/* Portal de Acesso */}

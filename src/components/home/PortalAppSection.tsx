@@ -39,7 +39,7 @@ export default function PortalAppSection() {
 
           {/* Button — desktop only (inside content column) */}
           <TrackedAnchor
-            href="/gestao"
+            href="/portal"
             kind="cta"
             name="Saiba mais"
             location="portal-app"
@@ -65,7 +65,7 @@ export default function PortalAppSection() {
         {/* Button — mobile only (below image) */}
         <div className="order-3 lg:hidden w-full flex justify-center">
           <TrackedAnchor
-            href="/gestao"
+            href="/portal"
             kind="cta"
             name="Saiba mais"
             location="portal-app"

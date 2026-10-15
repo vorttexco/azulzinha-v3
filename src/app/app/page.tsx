@@ -221,12 +221,12 @@ export default function GestaoAppPage() {
         storeBadges={[
           {
             image: "/images/android.png",
-            href: "https://play.google.com",
+            href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa",
             alt: "Disponível no Google Play",
           },
           {
             image: "/images/apple.png",
-            href: "https://apps.apple.com",
+            href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624",
             alt: "Disponível na App Store",
           },
         ]}
@@ -342,12 +342,12 @@ export default function GestaoAppPage() {
         storeBadges={[
           {
             image: "/images/android.png",
-            href: "https://play.google.com",
+            href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US",
             alt: "Disponível no Google Play",
           },
           {
             image: "/images/apple.png",
-            href: "https://apps.apple.com",
+            href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624",
             alt: "Disponível na App Store",
           },
         ]}

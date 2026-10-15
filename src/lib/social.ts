@@ -4,6 +4,7 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/azulzinhadacaixa",
   youtube: "https://www.youtube.com/@azulzinhadaCAIXA",
   whatsapp: "https://wa.me/5511941473336",
+  whatsappMessage: "https://wa.me/message/WHX3YUMWZVC3P1",
   whatsappApi: "https://api.whatsapp.com/send/?phone=5511941473336",
   whatsappPhone: "(11) 94147-3336",
 } as const;

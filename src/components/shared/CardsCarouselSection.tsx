@@ -65,7 +65,7 @@ const defaultCards: CarouselCard[] = [
     description: "Estou aqui para resolver o que você precisar no seu negócio. Tire dúvidas, faça solicitações e receba suporte.",
     image: "/images/card-zuli.png",
     variant: "variant2",
-    ctaText: "Fale comigo",
+    ctaText: "Me adicione no WhatsApp!",
     href: SOCIAL_LINKS.whatsappApi,
   },
   {

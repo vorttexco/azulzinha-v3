@@ -14,6 +14,7 @@ const STATIC_PATHS = [
   "/azulzinha-caixa-tem",
   "/azulzinhasmart",
   "/bandeiras-vouchers",
+  "/bandeiras-vouchers/qr-code",
   "/bem-vindo-a-clover",
   "/blog",
   "/cliente-loterica",

@@ -120,6 +120,13 @@ export default function OfertaEspecialPage() {
         products={modelosOfertaEspecial}
       />
 
+      <div className="bg-white pt-14 lg:pt-20">
+        <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] flex justify-center">
+          <a href="#formulario" className="btn-laranja">
+            Peça já a sua!
+          </a>
+        </div>
+      </div>
       <FormSection
         id="formulario"
         title="Solicite agora a sua azulzinha da CAIXA"

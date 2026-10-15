@@ -113,18 +113,20 @@ export default function Footer() {
           <div className="flex flex-col gap-10 flex-1">
             {/* WhatsApp */}
             <div className="w-[307px] h-[64px] flex items-center gap-3">
-              <Image
-                src={asset("/images/footer-zuli.png")}
-                alt="Zuli"
-                width={64}
-                height={64}
-                className="rounded-full shrink-0"
-              />
+              <a href={SOCIAL_LINKS.whatsappApi} className="shrink-0">
+                <Image
+                  src={asset("/images/footer-zuli.png")}
+                  alt="Zuli"
+                  width={64}
+                  height={64}
+                  className="rounded-full"
+                />
+              </a>
               <div className="flex flex-col gap-1">
                 <span className="text-sm font-normal text-azul">
                   Fale com a Zuli pelo WhatsApp
                 </span>
-                <TrackedAnchor href={SOCIAL_LINKS.whatsapp} kind="whatsapp" name="whatsapp" location="footer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
+                <TrackedAnchor href={SOCIAL_LINKS.whatsappApi} kind="whatsapp" name="whatsapp" location="footer" className="flex items-center gap-1 hover:opacity-80 transition-opacity w-fit">
                   <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} className="shrink-0" unoptimized />
                   <span className="text-sm text-[#717171]">{SOCIAL_LINKS.whatsappPhone}</span>
                 </TrackedAnchor>
@@ -245,20 +247,22 @@ export default function Footer() {
             {/* WhatsApp */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-3">
-                <Image
-                  src={asset("/images/footer-zuli.png")}
-                  alt="Zuli"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
+                <a href={SOCIAL_LINKS.whatsappApi} className="shrink-0">
+                  <Image
+                    src={asset("/images/footer-zuli.png")}
+                    alt="Zuli"
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                </a>
                 <span className="text-sm text-[#717171]">
                   Fale com a Zuli pelo WhatsApp
                 </span>
               </div>
               <div className="flex items-center gap-2 ml-[52px]">
                 <Image src={asset("/images/icon-whatsapp.svg")} alt="WhatsApp" width={20} height={20} unoptimized />
-                <TrackedAnchor href={SOCIAL_LINKS.whatsapp} kind="whatsapp" name="whatsapp" location="footer" className="text-sm text-[#717171] hover:underline">{SOCIAL_LINKS.whatsappPhone}</TrackedAnchor>
+                <TrackedAnchor href={SOCIAL_LINKS.whatsappApi} kind="whatsapp" name="whatsapp" location="footer" className="text-sm text-[#717171] hover:underline">{SOCIAL_LINKS.whatsappPhone}</TrackedAnchor>
               </div>
             </div>
 
@@ -352,7 +356,7 @@ export default function Footer() {
                 height={24}
                 className="rounded-full"
               />
-              Dúvidas?
+              Dúvidas? Fale com a Zuli
             </TrackedAnchor>
           </div>
         </div>

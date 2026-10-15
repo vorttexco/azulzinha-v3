@@ -8,7 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 import { asset } from "@/lib/assets";
-import { isWhatsappHref, pushBannerGtm, pushWhatsappGtm } from "@/lib/analytics";
+import { HOME_BANNER_GTM_EVENTS, isWhatsappHref, pushBannerGtm, pushWhatsappGtm } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/social";
 
 type CardVariant = "default" | "variant2" | "variant3";
@@ -22,13 +22,14 @@ export interface CarouselCard {
   href?: string;
   ctaText?: string;
   gtmName?: string;
+  gtmEvent?: string;
   openInNewTab?: boolean;
 }
 
 const defaultCards: CarouselCard[] = [
   {
     title: "Prêmio RA 2026",
-    gtmName: "Prêmio RA 2026",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.premioRa2026,
     description: (
       <>
         Fomos indicados à categoria <span className="text-laranja">Meios de pagamento!</span><br />Com{" "}
@@ -43,7 +44,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Gás do Povo",
-    gtmName: "Gás do Povo",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.gasDoPovo,
     description: "Com a azulzinha, eu posso fazer parte do programa Gás do Povo!",
     image: "/images/home-carousel.png",
     variant: "variant2",
@@ -52,7 +53,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Pix aprovado?",
-    gtmName: "Pix aprovado?",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.pixAprovado,
     description: "A impressão é a confirmação! A venda só é considerada válida quando o comprovante é impresso",
     image: "/images/card-link-pagamento.png",
     variant: "variant3",
@@ -61,7 +62,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: <>Olá, eu sou a <span className="text-laranja">Zuli</span>!</>,
-    gtmName: "Zuli",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.zuli,
     description: "Estou aqui para resolver o que você precisar no seu negócio. Tire dúvidas, faça solicitações e receba suporte.",
     image: "/images/card-zuli.png",
     variant: "variant2",
@@ -70,7 +71,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Clover da azulzinha",
-    gtmName: "Clover da azulzinha",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.clover,
     description: "Gestão simplificada e experiência de compra que encanta — com menos custo e mais agilidade..",
     image: "/images/card-app-aproxima.png",
     variant: "default",
@@ -79,7 +80,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Pix por aproximação",
-    gtmName: "Pix por aproximação",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.pixAproximacao,
     description: "Com o Pix por aproximação na azulzinha, agora é só aproximar e pagar via carteira digital ou pelo App do seu banco!.",
     image: "/images/card-pix-aproximacao.png",
     variant: "variant2",
@@ -88,7 +89,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "IPVA, licenciamento e multas",
-    gtmName: "IPVA, licenciamento e multas",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.ipva,
     description: "Parcele seus débitos veiculares em até 12x no cartão de qualquer banco, tudo em um só portal.",
     image: "/images/card-ipva.png",
     variant: "variant3",
@@ -97,7 +98,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "azulzinha Lotérica pro",
-    gtmName: "azulzinha Lotérica pro",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.lotericaPro,
     description: "Ofereça o serviço de conveniência do TFL com mais agilidade, mobilidade e praticidade.",
     image: "/images/card-pagamento-parcial.png",
     variant: "default",
@@ -106,7 +107,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Aceite débito e crédito",
-    gtmName: "Aceite débito e crédito",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.debitoCredito,
     description: "Ofereça o serviço de conveniência e receba jogos, boletos e contas com os cartões Elo, Visa e Mastercard de qualquer banco.",
     image: "/images/card-loterica-pro.png",
     variant: "variant2",
@@ -115,7 +116,7 @@ const defaultCards: CarouselCard[] = [
   },
   {
     title: "Crédito em 1 dia útil!",
-    gtmName: "Crédito em 1 dia útil!",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.creditoUmDia,
     description: "Faça a antecipação pelo App ou portal da azulzinha de forma prática, em poucos segundos.",
     image: "/images/card-recarga-telefonia.png",
     variant: "default",
@@ -152,16 +153,17 @@ function CardLink({
   );
 
   function track() {
-    if (isWhatsappHref(href)) {
-      pushWhatsappGtm({ location: "home-carousel", href, pageName });
-      return;
-    }
+    const eventName = card.gtmEvent;
     pushBannerGtm({
-      name: cardEventName(card),
+      eventName,
+      name: eventName ?? cardEventName(card),
       location: "home-carousel",
       href,
       pageName,
     });
+    if (isWhatsappHref(href)) {
+      pushWhatsappGtm({ location: "home-carousel", href, pageName });
+    }
   }
 
   const externalProps = card.openInNewTab

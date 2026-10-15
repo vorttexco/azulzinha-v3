@@ -84,9 +84,31 @@ export function pushCtaGtm(input: JourneyFields & { name: string }): void {
   pushGtm(buildCtaGtmEvent(input));
 }
 
-export function buildBannerGtmEvent(input: JourneyFields & { name: string }): GtmEvent {
+/**
+ * Home carousel events. Distinct from the container link triggers
+ * TRIGGER_banner_azulzinhapay, TRIGGER_banner_clover(home),
+ * TRIGGER_banner_pix-azulzinha(home), TRIGGER_banner_caixa-tem(home),
+ * TRIGGER_banner_loterico(home), TRIGGER_banner_antecipacao-de-vendas(home)
+ * and TRIGGER_banner_zuli.
+ */
+export const HOME_BANNER_GTM_EVENTS = {
+  premioRa2026: "clicou-home-premio-ra-2026",
+  gasDoPovo: "clicou-home-programa-gas-do-povo",
+  pixAprovado: "clicou-home-pix-comprovante",
+  zuli: "clicou-home-zuli-whatsapp",
+  clover: "clicou-home-clover-azulzinha",
+  pixAproximacao: "clicou-home-pix-aproximacao",
+  ipva: "clicou-home-ipva-licenciamento",
+  lotericaPro: "clicou-home-loterica-pro",
+  debitoCredito: "clicou-home-debito-credito-lotericas",
+  creditoUmDia: "clicou-home-antecipacao-1-dia",
+} as const;
+
+export function buildBannerGtmEvent(
+  input: JourneyFields & { name: string; eventName?: string },
+): GtmEvent {
   return withTransaction({
-    event: "banner_click",
+    event: input.eventName ?? "banner_click",
     name: input.name,
     location: input.location,
     href: input.href,
@@ -94,7 +116,9 @@ export function buildBannerGtmEvent(input: JourneyFields & { name: string }): Gt
   });
 }
 
-export function pushBannerGtm(input: JourneyFields & { name: string }): void {
+export function pushBannerGtm(
+  input: JourneyFields & { name: string; eventName?: string },
+): void {
   pushGtm(buildBannerGtmEvent(input));
 }
 

@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   GTM_TRANSACTION_ID,
   buildBannerGtmEvent,
+  HOME_BANNER_GTM_EVENTS,
   buildCookieGtmEvent,
   buildCtaGtmEvent,
   buildPhoneGtmEvent,
@@ -17,6 +18,28 @@ import {
 } from "@/lib/analytics";
 
 const pageName = "/peca-azulzinha";
+
+const EXISTING_BANNER_TRIGGER_NAMES = [
+  "TRIGGER_banner_azulzinhapay",
+  "TRIGGER_banner_clover(home)",
+  "TRIGGER_banner_pix-azulzinha(home)",
+  "TRIGGER_banner_caixa-tem(home)",
+  "TRIGGER_banner_loterico(home)",
+  "TRIGGER_banner_antecipacao-de-vendas(home)",
+  "TRIGGER_banner_zuli",
+  "banner_click",
+];
+
+describe("home banner events", () => {
+  it("gives every home banner its own event name, distinct from the container triggers", () => {
+    const names = Object.values(HOME_BANNER_GTM_EVENTS);
+    expect(new Set(names).size).toBe(names.length);
+    expect(names).toHaveLength(10);
+    for (const name of names) {
+      expect(EXISTING_BANNER_TRIGGER_NAMES).not.toContain(name);
+    }
+  });
+});
 
 describe("journey gtm payloads", () => {
   it("builds cta_click with label, location, page and href", () => {
@@ -51,6 +74,19 @@ describe("journey gtm payloads", () => {
       location: "home-carousel",
       href: "/clover",
       pageName: "/",
+    });
+
+    expect(
+      buildBannerGtmEvent({
+        eventName: HOME_BANNER_GTM_EVENTS.clover,
+        name: HOME_BANNER_GTM_EVENTS.clover,
+        location: "home-carousel",
+        href: "/clover",
+        pageName: "/",
+      }),
+    ).toMatchObject({
+      event: "clicou-home-clover-azulzinha",
+      name: "clicou-home-clover-azulzinha",
     });
 
     expect(

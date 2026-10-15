@@ -95,7 +95,7 @@ const faqData: FaqCategory[] = [
                             <div className="space-y-2">
                                 <p>A azulzinha aceita mais de 40 bandeiras nacionais, internacionais, regionais e vouchers.</p>
                                 <p>
-                                    <a href="https://www.azulzinhadacaixa.com.br/maquininhas" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://www.azulzinhadacaixa.com.br/maquininhas</a>
+                                    <a href="https://azulzinhadacaixa.com.br/maquininhas" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/maquininhas</a>
                                 </p>
                             </div>
                         ),
@@ -1735,7 +1735,7 @@ const faqData: FaqCategory[] = [
                         answer: (
                             <p>
                                 Pelo site da azulzinha (
-                                <a href="https://www.azulzinhadacaixa.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://www.azulzinhadacaixa.com.br/</a>
+                                <a href="https://azulzinhadacaixa.com.br/" target="_blank" rel="noopener noreferrer" className="text-azul underline">https://azulzinhadacaixa.com.br/</a>
                                 ) vá no menu e clique em “Portal” (
                                 <a href="https://portal.azulzinhadacaixa.com.br" target="_blank" rel="noopener noreferrer" className="text-azul underline">portal.azulzinhadacaixa.com.br</a>
                                 ). Insira seu usuário e senha cadastrados e comece a ter acesso a diversas informações sobre o seu negócio, de um jeito simples, rápido e seguro!

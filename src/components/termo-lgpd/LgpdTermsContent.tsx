@@ -84,11 +84,11 @@ export default function LgpdTermsContent() {
               Pagamento (“Contrato”) está disponível no site{" "}
               <a
                 className="text-laranja underline"
-                href="https://www.azulzinhadacaixa.com.br/"
+                href="https://azulzinhadacaixa.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://www.azulzinhadacaixa.com.br/
+                https://azulzinhadacaixa.com.br/
               </a>
               , ao qual me submeto e aceito integralmente, em conjunto com a
               aprovação da presente solicitação de credenciamento, sendo que fico

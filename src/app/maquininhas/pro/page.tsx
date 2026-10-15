@@ -42,14 +42,17 @@ export default function MaquininhasProPage() {
           {
             title: "Como fazer vendas no débito e crédito",
             thumbnail: "/images/maquininhas-pro/video-thumb-1.png",
+            videoSrc: "https://azulzinhadacaixa.com.br/midias/vendas-debito-credito.mp4",
           },
           {
             title: "Como fazer vendas parceladas",
             thumbnail: "/images/maquininhas-pro/video-thumb-2.png",
+            videoSrc: "https://azulzinhadacaixa.com.br/midias/vendas-parceladas.mp4",
           },
           {
             title: "Como conectar sua azulzinha pro no Wi-fi",
             thumbnail: "/images/maquininhas-pro/video-thumb-3.png",
+            videoSrc: "https://azulzinhadacaixa.com.br/midias/conectar-wifi.mp4",
           },
         ]}
       />

@@ -85,6 +85,7 @@ export default function PortalPage() {
                 thumbnail="/images/portal-azulzinha/bg-portal.png"
                 gtmTag="primeiro-acesso-portal"
                 gtmTitle="Primeiro acesso no Portal da azulzinha"
+                videoSrc="https://azulzinhadacaixa.com.br/midias/novo-app-azulzinha.mp4"
             />
 
             <PortalFaqSection />

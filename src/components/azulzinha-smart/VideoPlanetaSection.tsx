@@ -8,6 +8,7 @@ export default function VideoPlanetaSection() {
       thumbnail="/images/azulzinha-smart/video-thumbnail-2.png"
       gtmTag="azulzinha-smart-depoimentos"
       gtmTitle="azulzinha smart depoimentos"
+      videoSrc="https://azulzinhadacaixa.com.br/midias/azulzinha_smart_Planeta_Cafe.mp4"
     />
   );
 }

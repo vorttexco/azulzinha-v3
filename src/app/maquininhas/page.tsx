@@ -67,6 +67,7 @@ export default function MaquininhasPage() {
         className="bg-[#F4F4F4] lg:bg-white"
         gtmTag="azulzinha-maquininha-caixa"
         gtmTitle="azulzinha maquininha da CAIXA"
+        videoSrc="https://azulzinhadacaixa.com.br/midias/chegou-azulzinha.mp4"
       />
       <AzulzinhaIdealSection />
       <MaquininhaIdealSection />

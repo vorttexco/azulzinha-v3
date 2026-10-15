@@ -282,6 +282,7 @@ export default function GestaoAppPage() {
         thumbnail="/images/app-azulzinha/video-thumbnail.png"
         gtmTag="azulzinha-app"
         gtmTitle="azulzinha app"
+        videoSrc="https://azulzinhadacaixa.com.br/midias/vantagens-aplicativo.mp4"
       />
 
       {/* Avaliações de usuários */}

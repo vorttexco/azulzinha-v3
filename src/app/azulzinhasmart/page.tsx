@@ -52,6 +52,7 @@ export default function AzulzinhaSmartPage() {
         thumbnail="/images/azulzinha-smart/video-thumbnail-1.png"
         gtmTag="azulzinha-smart"
         gtmTitle="azulzinha smart"
+        videoSrc="https://azulzinhadacaixa.com.br/midias/azulzinha-smart.mp4"
       />
       <FuncoesSection />
       {/* Blue CTA */}

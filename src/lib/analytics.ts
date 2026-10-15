@@ -385,20 +385,19 @@ export const VIDEO_GTM_BY_TITLE: Record<string, string> = {
   "Conheça a azulzinha, a maquininha da CAIXA":
     "Chegou-azulzinha,-a-maquininha-da-CAIXA",
   "Como fazer vendas no débito e crédito na azulzinha":
-    "Como-fazer-vendas-no-débito-e-crédito-na-azulzinha",
+    "Como-fazer-vendas-no-débito-e-crédito",
   "Como fazer vendas no débito e crédito":
-    "Como-fazer-vendas-no-débito-e-crédito-na-azulzinha",
+    "Como-fazer-vendas-no-débito-e-crédito",
   "Como fazer vendas parceladas na azulzinha":
-    "Como-fazer-vendas-parceladas-na-azulzinha",
-  "Como fazer vendas parceladas": "Como-fazer-vendas-parceladas-na-azulzinha",
+    "Como-fazer-vendas-parceladas",
+  "Como fazer vendas parceladas": "Como-fazer-vendas-parceladas",
   "Como conectar sua azulzinha pro no Wi-fi":
     "Como-conectar-sua-azulzinha-no-Wi-fi",
-  "Como cuidar da bateria da sua azulzinha":
-    "Como-cuidar-da-bateria-da-sua-azulzinha",
+  "Como cuidar da bateria da sua azulzinha": "Como-cuidar-da-bateria",
   "Como funciona o App da azulzinha": "Como-funciona-o-App-da-azulzinha",
-  "Primeiro acesso no App da azulzinha": "Primeiro-acesso-no-App-da-azulzinha",
+  "Primeiro acesso no App da azulzinha": "Primeiro-acesso-no-App",
   "Como usar a Agenda Financeira no App da azulzinha?":
-    "Como-usar-a-Agenda-Financeira-no-App-da-azulzinha?",
+    "Como-usar-a-Agenda-Financeira-no-App-da-azulzinha",
   "Dicas para usar a azulzinha da CAIXA com segurança":
     "Dicas-para-usar-a-azulzinha-da-CAIXA-com-segurança",
   "Como consultar o extrato no App da azulzinha":

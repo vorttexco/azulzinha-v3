@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 interface VantagemItem {
   icon: string;
-  text: string;
+  text?: string;
+  title?: string;
 }
 
 const defaultVantagens: VantagemItem[] = [
@@ -33,17 +35,45 @@ const defaultVantagens: VantagemItem[] = [
   },
 ];
 
+function VantagemCard({ icon, text, title }: VantagemItem) {
+  return (
+    <div className={`flex gap-8 bg-white rounded-[12px] p-6 shadow-[0_4px_10px_rgba(0,0,0,0.08)] lg:w-[393px] ${title && text ? "items-start" : "items-center"}`}>
+      <Image
+        src={asset(icon)}
+        alt=""
+        width={30}
+        height={30}
+        className="shrink-0"
+      />
+      {title && text ? (
+        <div className="flex flex-col gap-1">
+          <p className="text-[16px] leading-[1.4] text-azul">{title}</p>
+          <p className="text-[16px] font-normal leading-[1.4] text-black">{text}</p>
+        </div>
+      ) : (
+        <p className={`text-[16px] font-normal leading-[1.4] ${title ? "text-azul" : "text-black"}`}>
+          {title || text}
+        </p>
+      )}
+    </div>
+  );
+}
+
 interface VantagensSectionProps {
   title?: string;
   vantagens?: VantagemItem[];
+  footnote?: ReactNode;
+  sectionClassName?: string;
 }
 
 export default function VantagensSection({
   title = "Quais são as vantagens?",
   vantagens = defaultVantagens,
+  footnote,
+  sectionClassName = "bg-[linear-gradient(180deg,#FFFFFF_50%,#F7F7F7_100%)]",
 }: VantagensSectionProps = {}) {
   return (
-    <section className="bg-[linear-gradient(180deg,#FFFFFF_50%,#F7F7F7_100%)]">
+    <section className={sectionClassName}>
       <div className="max-w-[1440px] mx-auto pb-14 lg:pb-[110px] px-[30px] lg:px-[100px]">
         <h2 className="section-title text-azul lg:text-[32px] mb-6 lg:mb-14">
           {title}
@@ -53,44 +83,22 @@ export default function VantagensSection({
           {/* Row 1 */}
           <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
             {vantagens.slice(0, 3).map((item) => (
-              <div
-                key={item.text}
-                className="flex items-center gap-8 bg-white rounded-[12px] p-6 shadow-[0_4px_10px_rgba(0,0,0,0.08)] lg:w-[393px]"
-              >
-                <Image
-                  src={asset(item.icon)}
-                  alt=""
-                  width={30}
-                  height={30}
-                  className="shrink-0"
-                />
-                <p className="text-[16px] font-normal leading-[1.4] text-black">
-                  {item.text}
-                </p>
-              </div>
+              <VantagemCard key={item.title || item.text} {...item} />
             ))}
           </div>
           {/* Row 2 */}
           <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
             {vantagens.slice(3, 6).map((item) => (
-              <div
-                key={item.text}
-                className="flex items-center gap-8 bg-white rounded-[12px] p-6 shadow-[0_4px_10px_rgba(0,0,0,0.08)] lg:w-[393px]"
-              >
-                <Image
-                  src={asset(item.icon)}
-                  alt=""
-                  width={30}
-                  height={30}
-                  className="shrink-0"
-                />
-                <p className="text-[16px] font-normal leading-[1.4] text-black">
-                  {item.text}
-                </p>
-              </div>
+              <VantagemCard key={item.title || item.text} {...item} />
             ))}
           </div>
         </div>
+
+        {footnote ? (
+          <p className="mt-10 lg:mt-16 text-[14px] leading-[1.4] text-[#666666]">
+            {footnote}
+          </p>
+        ) : null}
       </div>
     </section>
   );

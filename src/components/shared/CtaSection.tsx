@@ -15,6 +15,7 @@ const formatCPF = (value: string) =>
     .slice(0, 14);
 
 interface CtaSectionProps {
+  id?: string;
   eyebrow?: string;
   title?: string;
   description?: string;
@@ -30,6 +31,7 @@ interface CtaSectionProps {
 }
 
 export default function CtaSection({
+  id,
   eyebrow,
   title = "Com a azulzinha da CAIXA, você pode muito mais!",
   description = "Conte com as melhores taxas e condições para crescer, gerir e prosperar com seu negócio.",
@@ -57,6 +59,7 @@ export default function CtaSection({
 
   return (
     <section
+      id={id}
       className="w-full py-14 lg:py-20 bg-linear-to-b from-white from-50% to-[#F7F7F7]"
     >
       <div className="max-w-[1440px] mx-auto px-[28px] lg:px-[100px]">

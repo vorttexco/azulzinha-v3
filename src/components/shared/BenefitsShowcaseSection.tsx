@@ -48,6 +48,7 @@ interface CardItem {
 }
 
 interface BenefitsSectionProps {
+  id?: string;
   title?: ReactNode;
   description?: string;
   image?: string;
@@ -56,6 +57,7 @@ interface BenefitsSectionProps {
   showBrandLogos?: boolean;
   showLink?: boolean;
   linkText?: string;
+  linkHref?: string;
   bgColor?: string;
   cardClassName?: string;
   iconClassName?: string;
@@ -91,6 +93,7 @@ function SmallCard({ icon, text, title, cardClassName, iconClassName }: CardItem
 }
 
 export default function BenefitsShowcaseSection({
+  id,
   title = defaultTitle,
   description,
   image = "/images/benefits-bg.png",
@@ -98,6 +101,7 @@ export default function BenefitsShowcaseSection({
   cards = defaultCards,
   showLink = true,
   linkText = "Peça a sua azulzinha",
+  linkHref = "/maquininhas",
   bgColor = "bg-[#F5F5F5]",
   cardClassName,
   iconClassName,
@@ -107,7 +111,7 @@ export default function BenefitsShowcaseSection({
   titleClassName = "text-[26px] lg:text-[32px] font-normal leading-[1.3] text-left text-azul",
 }: BenefitsSectionProps) {
   return (
-    <section className={`w-full overflow-hidden ${bgColor} ${sectionClassName || ''}`}>
+    <section id={id} className={`w-full overflow-hidden ${bgColor} ${sectionClassName || ''}`}>
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-16">
         {/* Top row: Text left + Image right */}
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10">
@@ -147,7 +151,7 @@ export default function BenefitsShowcaseSection({
         {showLink && (
           <div className="mt-6 flex justify-center">
             <a
-              href="/maquininhas"
+              href={linkHref}
               className="inline-flex items-center gap-2 rounded-[6px]
                px-[17px] py-[10px] text-[16px] text-[#006CAD] cursor-pointer hover:bg-[#006CAD]/5 transition-colors"
             >

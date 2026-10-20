@@ -6,35 +6,30 @@ const modos = [
     icon: "/images/antecipacao-de-vendas/icon-antecipacao-automatica.svg",
     title: "Antecipação automática",
     description:
-      "Nessa modalidade, você pré-define com que frequência deseja receber seu saldo disponível (diariamente, quinzenalmente, semanalmente ou mensalmente). A partir daí, os recebíveis do cartão de crédito são antecipados e creditados na conta da sua empresa, tudo isso a partir de uma única taxa fixa. É a forma mais simples e prática para gerenciar o seu fluxo de caixa.",
+      "Você pré-define com que frequência deseja receber seu saldo disponível: diariamente, quinzenalmente, semanalmente ou mensalmente. A partir daí, os recebíveis são creditados na sua conta com uma taxa fixa.",
   },
   {
     icon: "/images/antecipacao-de-vendas/icon-antecipacao-eventual.svg",
     title: "Antecipação eventual",
     description:
-      "Com a antecipação eventual, é possível negociar o adiantamento do seu saldo atual disponível, através de uma determinada taxa de desconto. Nessa modalidade, você pode negociar todos os seus recebíveis pelo App da azulzinha, Portal da azulzinha ou na própria azulzinha da CAIXA.",
+      "Você negocia o adiantamento do seu saldo atual disponível por meio de uma determinada taxa de desconto. A negociação pode ser feita pelo App da azulzinha, pelo Portal ou direto na azulzinha.",
   },
 ];
 
 export default function ModosSection() {
   return (
-    <section className="w-full bg-white" id="dobra">
-      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 lg:pb-[110px]">
+    <section className="w-full bg-white">
+      <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20">
         <div className="flex flex-col gap-[30px] lg:gap-[78px]">
-          {/* Text block */}
           <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-6 lg:max-w-[820px]">
             <h2 className="section-title text-azul text-center lg:text-left">
-              Simples, rápida e flexível
+              Escolha a modalidade que mais se encaixa
             </h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center lg:text-left">
-              A antecipação de recebíveis permite que você adiante o recebimento
-              de todas as suas vendas feitas a prazo (crédito à vista ou
-              parcelado). São duas as modalidades de antecipação de recebíveis,
-              que você escolhe de acordo com sua conveniência:
+              São duas as modalidades de antecipação de recebíveis, que você escolhe de acordo com sua conveniência:
             </p>
           </div>
 
-          {/* Cards */}
           <div className="flex flex-col lg:flex-row gap-6">
             {modos.map((modo) => (
               <div

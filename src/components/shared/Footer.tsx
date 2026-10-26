@@ -3,6 +3,7 @@ import Link from "next/link";
 import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
 import TrackedAnchor from "@/components/shared/TrackedAnchor";
+import CurrentYear from "@/components/shared/CurrentYear";
 
 type FooterLink = { label: string; href: string };
 
@@ -327,7 +328,7 @@ export default function Footer() {
 
           {/* Copyright text */}
           <p className="text-xs lg:text-sm text-[#717171] flex-1 text-center">
-            © 2024 Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
+            © <CurrentYear /> Fiserv do Brasil Instituição de Pagamento Ltda. Todos os
             direitos reservados.<br />SAC Fiserv (24h): 0800 770 6207
           </p>
 

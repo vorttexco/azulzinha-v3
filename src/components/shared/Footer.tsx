@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { asset } from "@/lib/assets";
 import { SOCIAL_LINKS } from "@/lib/social";
 import TrackedAnchor from "@/components/shared/TrackedAnchor";
@@ -180,20 +181,31 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <TrackedAnchor href={SOCIAL_LINKS.instagram} kind="social" name="instagram" network="instagram" location="footer" className="hover:opacity-70 transition-opacity">
-                <Image src={asset("/images/instagram-icon.png")} alt="Instagram" width={20} height={20} unoptimized />
-              </TrackedAnchor>
-              <TrackedAnchor href={SOCIAL_LINKS.facebook} kind="social" name="facebook" network="facebook" location="footer" className="hover:opacity-70 transition-opacity">
-                <Image src={asset("/images/facebook-icon.png")} alt="Facebook" width={20} height={20} unoptimized />
-              </TrackedAnchor>
-              <TrackedAnchor href={SOCIAL_LINKS.linkedin} kind="social" name="linkedin" network="linkedin" location="footer" className="hover:opacity-70 transition-opacity">
-                <Image src={asset("/images/linkedin-icon.png")} alt="LinkedIn" width={20} height={20} unoptimized />
-              </TrackedAnchor>
-              <TrackedAnchor href={SOCIAL_LINKS.youtube} kind="social" name="youtube" network="youtube" location="footer" className="hover:opacity-70 transition-opacity">
-                <Image src={asset("/images/youtube-icon.png")} alt="YouTube" width={20} height={20} unoptimized />
-              </TrackedAnchor>
+            <div className="flex w-full items-center justify-between gap-4">
+              <div id="ra-verified-seal" className="min-h-[33px] shrink-0">
+                <Script
+                  id="ra-embed-verified-seal"
+                  src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js"
+                  strategy="afterInteractive"
+                  data-id="MTc5NzkxNjphenVsemluaGE="
+                  data-target="ra-verified-seal"
+                  data-model="horizontal_2"
+                />
+              </div>
+              <div className="flex items-center gap-4">
+                <TrackedAnchor href={SOCIAL_LINKS.instagram} kind="social" name="instagram" network="instagram" location="footer" className="hover:opacity-70 transition-opacity">
+                  <Image src={asset("/images/instagram-icon.png")} alt="Instagram" width={20} height={20} unoptimized />
+                </TrackedAnchor>
+                <TrackedAnchor href={SOCIAL_LINKS.facebook} kind="social" name="facebook" network="facebook" location="footer" className="hover:opacity-70 transition-opacity">
+                  <Image src={asset("/images/facebook-icon.png")} alt="Facebook" width={20} height={20} unoptimized />
+                </TrackedAnchor>
+                <TrackedAnchor href={SOCIAL_LINKS.linkedin} kind="social" name="linkedin" network="linkedin" location="footer" className="hover:opacity-70 transition-opacity">
+                  <Image src={asset("/images/linkedin-icon.png")} alt="LinkedIn" width={20} height={20} unoptimized />
+                </TrackedAnchor>
+                <TrackedAnchor href={SOCIAL_LINKS.youtube} kind="social" name="youtube" network="youtube" location="footer" className="hover:opacity-70 transition-opacity">
+                  <Image src={asset("/images/youtube-icon.png")} alt="YouTube" width={20} height={20} unoptimized />
+                </TrackedAnchor>
+              </div>
             </div>
           </div>
         </div>

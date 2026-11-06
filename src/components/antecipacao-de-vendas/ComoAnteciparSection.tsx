@@ -5,7 +5,7 @@ const linkClass = "text-azul underline";
 const steps = [
   {
     number: "1",
-    title: "Abra o canal",
+    title: "Abra a tela de antecipação",
     text: (
       <>
         <span className="block">
@@ -30,27 +30,27 @@ const steps = [
   },
   {
     number: "2",
-    title: "Escolha a modalidade",
+    title: "Escolha automática ou eventual",
     text: "Selecione antecipação automática ou eventual, de acordo com a frequência ou com o saldo que você quer adiantar.",
   },
   {
     number: "3",
     title: "Simule valor e taxa",
-    text: "A simulação mostra montantes e taxas para você escolher a melhor opção antes de contratar.",
+    text: "A simulação mostra valor e taxa para você conferir antes de contratar.",
   },
   {
     number: "4",
     title: "Confirme a contratação",
-    text: "Confirme a operação. Os recebíveis são creditados na sua conta.",
+    text: "O valor é creditado na conta da sua empresa.",
   },
 ];
 
 export default function ComoAnteciparSection() {
   return (
-    <section className="w-full bg-[#F4F4F4]">
+    <section id="como-antecipar" className="w-full bg-[#F4F4F4]">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20">
         <div className="flex flex-col items-center gap-4 text-center">
-          <h2 className="section-title text-azul">Como antecipar?</h2>
+          <h2 className="section-title text-azul">Como antecipar suas vendas?</h2>
           <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black max-w-[802px]">
             Veja como é fácil antecipar seus recebíveis com a azulzinha.
           </p>

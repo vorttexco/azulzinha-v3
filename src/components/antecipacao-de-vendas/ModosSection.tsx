@@ -23,7 +23,7 @@ export default function ModosSection() {
         <div className="flex flex-col gap-[30px] lg:gap-[78px]">
           <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-6 lg:max-w-[820px]">
             <h2 className="section-title text-azul text-center lg:text-left">
-              Escolha a modalidade que mais se encaixa
+              Escolha como receber as vendas no crédito
             </h2>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black text-center lg:text-left">
               São duas as modalidades de antecipação de recebíveis, que você escolhe de acordo com sua conveniência:

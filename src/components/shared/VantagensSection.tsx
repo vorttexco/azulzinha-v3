@@ -61,6 +61,7 @@ function VantagemCard({ icon, text, title }: VantagemItem) {
 
 interface VantagensSectionProps {
   title?: string;
+  description?: string;
   vantagens?: VantagemItem[];
   footnote?: ReactNode;
   sectionClassName?: string;
@@ -68,6 +69,7 @@ interface VantagensSectionProps {
 
 export default function VantagensSection({
   title = "Quais são as vantagens?",
+  description,
   vantagens = defaultVantagens,
   footnote,
   sectionClassName = "bg-[linear-gradient(180deg,#FFFFFF_50%,#F7F7F7_100%)]",
@@ -75,9 +77,14 @@ export default function VantagensSection({
   return (
     <section className={sectionClassName}>
       <div className="max-w-[1440px] mx-auto pb-14 lg:pb-[110px] px-[30px] lg:px-[100px]">
-        <h2 className="section-title text-azul lg:text-[32px] mb-6 lg:mb-14">
+        <h2 className={`section-title text-azul lg:text-[32px] ${description ? "mb-4" : "mb-6 lg:mb-14"}`}>
           {title}
         </h2>
+        {description ? (
+          <p className="mx-auto mb-6 lg:mb-14 max-w-[802px] text-center text-[16px] lg:text-[18px] leading-[1.4] text-black">
+            {description}
+          </p>
+        ) : null}
 
         <div className="flex flex-col gap-6 lg:gap-[60px]">
           {/* Row 1 */}

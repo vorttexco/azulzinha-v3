@@ -32,27 +32,27 @@ const vantagensCards = [
 const resumoVantagens = [
   {
     icon: "/images/antecipacao-de-vendas/icon-simplicidade.svg",
-    title: "Receba no mesmo dia*",
+    title: "Receba o valor no mesmo dia*",
   },
   {
     icon: "/images/antecipacao-de-vendas/icon-flexibilidade.svg",
-    title: "Melhora no fluxo de caixa",
+    title: "Controle o fluxo de caixa",
   },
   {
-    icon: "/images/antecipacao-de-vendas/icon-transparencia.svg",
-    title: "Maior previsibilidade e transparência",
+    icon: "/images/antecipacao-de-vendas/icon-data-recebimento.svg",
+    title: "Acompanhe a data do recebimento",
   },
   {
     icon: "/images/icon-small-celular.svg",
-    title: "Praticidade e frequência pré-definida",
+    title: "Escolha com que frequência receber",
   },
   {
     icon: "/images/icon-small-receba.svg",
-    title: "Negociação para melhores taxas",
+    title: "Simule a taxa antes de contratar",
   },
   {
     icon: "/images/clover/icon-rapida.svg",
-    title: "Processo simples e rápido",
+    title: "Faça o pedido em segundos",
   },
 ];
 
@@ -128,7 +128,8 @@ const faqItems = [
 export const metadata: Metadata = pageMetadata({
   title: "Antecipação de vendas | azulzinha da CAIXA",
   description:
-    "É simples, rápido e flexível: com a azulzinha da CAIXA você faz antecipação automática ou eventual das vendas feitas no crédito à vista ou parcelado.",
+    "Antecipação de vendas no crédito com a azulzinha da CAIXA. Escolha a modalidade automática ou eventual e veja o passo a passo.",
+  imageAlt: "Antecipação de vendas no crédito com a azulzinha da CAIXA.",
   path: "/antecipacao-de-vendas",
 });
 
@@ -138,14 +139,16 @@ export default function AntecipacaoDeVendas() {
       <Navbar />
       <HeroSection
         title="Antecipação de Vendas"
-        description="Com a azulzinha da CAIXA você antecipa as vendas feitas com cartão e equilibra o fluxo de caixa."
+        description="Com a azulzinha você antecipa as vendas feitas no crédito, à vista ou parcelado."
         checkItems={[]}
-        buttonText="Saiba como"
-        buttonHref="#dobra"
+        buttonText="Saiba mais"
+        buttonHref="#como-antecipar"
         backgroundImage="/images/antecipacao-de-vendas/hero-bg.png"
       />
-      <div className="bg-white pt-14 lg:pt-20 [&_h2]:hidden">
+      <div className="bg-white pt-14 lg:pt-20">
         <VantagensSection
+          title="Por que antecipar as vendas no crédito?"
+          description="Veja o que muda no dia a dia do seu estabelecimento."
           sectionClassName="bg-white"
           vantagens={resumoVantagens}
           footnote={
@@ -158,13 +161,13 @@ export default function AntecipacaoDeVendas() {
       <BenefitsShowcaseSection
         id="dobra"
         title={<span>Com a antecipação<br />você pode mais</span>}
-        description="Com a solução de antecipação da CAIXA, você tem flexibilidade para escolher quando receber, total transparência nas taxas e agilidade para manter o caixa do seu negócio sempre saudável."
+        description="Tenha flexibilidade para escolher quando receber, total transparência nas taxas e agilidade para manter o caixa do seu negócio sempre saudável."
         image="/images/antecipacao-de-vendas/vantagens-bg.png"
-        imageAlt="Com a antecipação você pode mais"
+        imageAlt="Adiante o recebimento das vendas no crédito"
         cards={vantagensCards}
         showBrandLogos={false}
         showLink
-        linkText="Antecipe agora"
+        linkText="Quero antecipar"
         linkHref="#antecipe"
         bgColor="bg-[#F4F4F4]"
         cardClassName="flex flex-col items-start gap-[24px] rounded-[12px] bg-white pt-[32px] pr-[40px] pl-[32px] pb-[32px] w-full lg:h-[244px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]"
@@ -178,14 +181,14 @@ export default function AntecipacaoDeVendas() {
       <ComoAnteciparSection />
       <CtaSection
         id="antecipe"
-        title="Antecipe agora mesmo pelo App, Portal ou direto na sua azulzinha"
+        title="Comece a antecipar agora mesmo com a azulzinha"
         description=""
         buttonText="App da azulzinha"
         button2Text="Portal da azulzinha"
         buttonHref="/app"
         button2Href="/portal"
         image="/images/antecipacao-de-vendas/cta-photo.png"
-        imageAlt="CTA Antecipação de Vendas"
+        imageAlt="Contrate a antecipação pelo App ou pelo Portal da azulzinha"
       />
       <FaqSection
         title="Tire suas dúvidas sobre antecipação de vendas com a azulzinha"

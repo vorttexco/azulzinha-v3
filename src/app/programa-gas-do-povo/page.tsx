@@ -80,8 +80,10 @@ export default function ProgramaGasDoPovoPage() {
         buttonText="Saiba mais"
         buttonHref="#highlights"
         buttonSubtext="Funcionalidade disponível na azulzinha smart, azulzinha pro e no App azulzinha aproxima"
-        backgroundImage="/images/programa-gas-do-povo/hero-art.png"
-        mobileBackgroundImage="/images/programa-gas-do-povo/hero-art-mobile.png"
+        backgroundImage="/images/programa-gas-do-povo/hero-bg.jpg"
+        mobileBackgroundImage="/images/programa-gas-do-povo/hero-bg-mobile.jpg"
+        imagePositionClassName="object-right"
+        mobileImageClassName="object-center"
         textColor="text-azul"
         overlayColor="white"
       />

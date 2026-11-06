@@ -73,7 +73,7 @@ export default function HighlightsSection() {
 
         {/* Disclaimer longo */}
         <p className="text-[12px] lg:text-[14px] leading-[1.5] text-[#666666] text-center max-w-[1200px] mx-auto">
-          * Condições de isenção de aluguel para clientes credenciados na campanha Gás do Povo no período de 22/10/25 a 31/10/26: Para CNAEs Principal de Revenda de Gás com Antecipação: 1 máquina Smart ou POS com 2 meses de aluguel R$0, para faturamento nas modalidades crédito e débito acima de R$ 1.000,00/mês com antecipação automática contratada ou acima de R$ 10.000,00/mês sem antecipação. Ofertas válidas para novos credenciamentos até 31/10/2026.
+          * Condições de isenção de aluguel para clientes credenciados na campanha Gás do Povo no período de 22/10/25 a 31/12/26: Para CNAEs Principal de Revenda de Gás com Antecipação: 1 máquina Smart ou POS com 2 meses de aluguel R$0, para faturamento nas modalidades crédito e débito acima de R$ 1.000,00/mês com antecipação automática contratada ou acima de R$ 10.000,00/mês sem antecipação. Ofertas válidas para novos credenciamentos até 31/12/2026.
           <br />
           <br />
           ** A taxa de débito e de crédito variam conforme o faturamento. Consulte as condições com seu gerente PJ Caixa.

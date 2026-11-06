@@ -21,6 +21,7 @@ const STATIC_PATHS = [
   "/clover",
   "/contrate-a-azulzinha",
   "/crediario-azulzinha",
+  "/deposito-judicial",
   "/gestao",
   "/link-pagamento",
   "/lotericas",

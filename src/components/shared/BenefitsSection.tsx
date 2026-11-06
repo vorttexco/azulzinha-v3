@@ -8,6 +8,7 @@ interface BenefitItem {
 
 interface BenefitsSectionProps {
   title: string | React.ReactNode;
+  subtitle?: string;
   items: BenefitItem[];
   textColor?: string;
   bgColor?: string;
@@ -16,6 +17,7 @@ interface BenefitsSectionProps {
 
 export default function BenefitsSection({
   title,
+  subtitle,
   items,
   textColor = "text-black",
   bgColor = "bg-white",
@@ -27,9 +29,16 @@ export default function BenefitsSection({
   return (
     <section className={bgColor}>
       <div className="max-w-360 mx-auto py-14 lg:pb-27.5 px-7.5 lg:px-25">
-        <h2 className="section-title text-azul text-center lg:text-center mb-6 lg:mb-14">
-          {title}
-        </h2>
+        <div className="mb-6 flex w-full flex-col items-center gap-4 lg:mb-14">
+          <h2 className="section-title w-full text-azul text-center">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="w-full max-w-[740px] text-center text-[16px] leading-[1.4] text-black lg:text-[18px]">
+              {subtitle}
+            </p>
+          )}
+        </div>
 
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${gridClass}`}>
           {items.map((item) => (

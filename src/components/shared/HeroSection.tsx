@@ -66,6 +66,7 @@ interface HeroSectionProps {
   showOverlay?: boolean;
   overlayColor?: "blue" | "white";
   mobileImageClassName?: string;
+  imagePositionClassName?: string;
   buttonLogoImage?: string;
   buttonLogoWidth?: number;
   buttonLogoHeight?: number;
@@ -92,6 +93,7 @@ export default function HeroSection({
   showOverlay = true,
   overlayColor = "blue",
   mobileImageClassName = "object-right",
+  imagePositionClassName = "object-[center_25%]",
   buttonLogoImage,
   buttonLogoWidth = 196,
   buttonLogoHeight = 51,
@@ -123,7 +125,7 @@ export default function HeroSection({
         src={asset(backgroundImage)}
         alt=""
         fill
-        className={`object-cover object-[center_25%] ${mobileBackgroundImage ? "hidden lg:block" : ""}`}
+        className={`object-cover ${imagePositionClassName} ${mobileBackgroundImage ? "hidden lg:block" : ""}`}
         priority
       />
 

@@ -83,12 +83,27 @@ const voceColumns: DropdownColumn[] = [
   },
 ];
 
+const setorPublicoColumns: DropdownColumn[] = [
+  {
+    title: "Serviços",
+    titleColor: "azul",
+    items: [{ label: "Depósito judicial", href: "/deposito-judicial" }],
+  },
+];
+
 const navLinks = [
   { label: "Para sua empresa", hasDropdown: true, href: "#" },
   { label: "Para você", hasDropdown: true, href: "#" },
+  { label: "Setor público", hasDropdown: true, href: "#" },
   { label: "Blog", hasDropdown: false, href: "/blog" },
   { label: "Ajuda", hasDropdown: false, href: "/ajuda" },
 ];
+
+function columnsFor(label: string): DropdownColumn[] {
+  if (label === "Para sua empresa") return empresaColumns;
+  if (label === "Setor público") return setorPublicoColumns;
+  return voceColumns;
+}
 
 function CaixaCartoesMark({ className }: { className?: string }) {
   return (
@@ -420,7 +435,7 @@ export default function Navbar() {
                           ) : (
                             <div className="bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.15)] w-[300px] px-[54px] pt-[32px] pb-[36px]">
                               <div className="flex flex-col gap-[40px]">
-                                {voceColumns.map((col) => (
+                                {columnsFor(link.label).map((col) => (
                                   <DropdownColumnView
                                     key={col.title}
                                     column={col}
@@ -611,10 +626,7 @@ export default function Navbar() {
                   );
                 }
 
-                const columns =
-                  link.label === "Para sua empresa"
-                    ? empresaColumns
-                    : voceColumns;
+                const columns = columnsFor(link.label);
                 const isExpanded = expandedItems.has(link.label);
 
                 return (

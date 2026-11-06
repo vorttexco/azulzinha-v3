@@ -6,8 +6,9 @@ import TrackedAnchor from "@/components/shared/TrackedAnchor";
 import CurrentYear from "@/components/shared/CurrentYear";
 
 type FooterLink = { label: string; href: string };
+type FooterGroup = { title: string; links: FooterLink[] };
 
-const linkGroups1: { title: string; links: FooterLink[] }[] = [
+const linkGroups1: FooterGroup[] = [
   {
     title: "Para sua Empresa",
     links: [
@@ -28,9 +29,13 @@ const linkGroups1: { title: string; links: FooterLink[] }[] = [
     title: "Para Você",
     links: [{ label: "Serviço de Conveniência", href: "/cliente-loterica" }],
   },
+  {
+    title: "Setor público",
+    links: [{ label: "Depósito judicial", href: "/deposito-judicial" }],
+  },
 ];
 
-const linkGroups2: { title: string; links: FooterLink[] }[] = [
+const linkGroups2: FooterGroup[] = [
   {
     title: "Conteúdo",
     links: [{ label: "Blog da azulzinha", href: "/blog" }],

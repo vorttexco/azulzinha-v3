@@ -217,8 +217,21 @@ const tabs: Tab[] = [
               ],
             },
           },
+          {
+            name: "Conecta fácil",
+            modal: {
+              title: "Conecta fácil",
+              description:
+                "Receba Pix e contrate a Conta Pix da CAIXA em poucos minutos direto na sua Clover",
+              benefits: [
+                { text: "Cadastro 100% online direto na Clover;" },
+                { text: "Após aprovação, você já pode começar a vender;" },
+                { text: "Recebimento do Pix integrado à Clover;" },
+                { text: "Mais controle sobre suas vendas." },
+              ],
+            },
+          },
           { name: "Centraliza", comingSoon: true },
-          { name: "Conecta fácil", comingSoon: true },
         ],
       },
       {

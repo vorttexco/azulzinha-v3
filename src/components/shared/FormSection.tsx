@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,6 +31,18 @@ const FATURAMENTO_OPTIONS = [
   "Acima de R$250.000",
 ] as const;
 
+const MEI_OPTIONS = [
+  { value: "sim", label: "Sim", tag: "gtm-mei-s" },
+  { value: "nao", label: "Não", tag: "gtm-mei-n" },
+] as const;
+
+const MAIS_INFORMACOES = [
+  "A azulzinha é um produto CAIXA Cartões em parceria com a Fiserv, líder global em soluções de pagamentos e serviços financeiros.",
+  "Para utilizar a azulzinha, é necessário que você tenha uma conta na CAIXA. Portanto, ao preencher o formulário e clicar em “enviar”, caso você já seja cliente da CAIXA, sua solicitação será encaminhada para sua agência, e um representante irá contatá-lo para tratar dos próximos passos.",
+  "Caso você ainda não seja cliente da CAIXA, sua solicitação será encaminhada para a agência mais próxima de você, e um representante irá contatá-lo para a abertura da conta na CAIXA e para tratar dos próximos passos.",
+  "A Fiserv é quem realiza as atividades de credenciamento e fornece o terminal (maquininha). Portanto, seus dados também serão tratados pela Fiserv, CAIXA Cartões e CAIXA para as atividades relacionadas ao credenciamento.",
+] as const;
+
 const BLOCKED_CNAE_MESSAGE =
   "A azulzinha agradece seu interesse!<br>Fale com seu Gerente PJ Caixa e veja as oportunidades que temos para você!";
 
@@ -53,6 +66,9 @@ const formatCNAE = (value: string) => {
 };
 
 const formSchema = z.object({
+  mei: z.string().refine((value): boolean => value === "nao", {
+    message: "Informe se você é MEI",
+  }),
   cnpj: z
     .string()
     .refine(isValidCnpj, {
@@ -104,6 +120,8 @@ export default function FormSection({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
   const [isErrorOpen, setIsErrorOpen] = useState(false);
+  const [isMeiOpen, setIsMeiOpen] = useState(false);
+  const [showMaisInformacoes, setShowMaisInformacoes] = useState(false);
 
   function track(tag: FormGtmTag) {
     pushFormGtm(tag, sufixo);
@@ -117,6 +135,7 @@ export default function FormSection({
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      mei: "",
       faturamento: "",
       cbtermo: false,
     },
@@ -136,6 +155,22 @@ export default function FormSection({
       },
     };
   };
+
+  function handleMeiClick(option: (typeof MEI_OPTIONS)[number]) {
+    track(option.tag);
+    if (option.value === "sim") setIsMeiOpen(true);
+  }
+
+  /** Same as the legacy form: leaving the MEI notice clears the form. */
+  function handleMeiOpenChange(open: boolean) {
+    setIsMeiOpen(open);
+    if (!open) reset();
+  }
+
+  function toggleMaisInformacoes() {
+    track(showMaisInformacoes ? "gtm-menos" : "gtm-mais");
+    setShowMaisInformacoes((current) => !current);
+  }
 
   const onSubmit = async (data: FormData) => {
     track("gtm-enviar");
@@ -180,6 +215,34 @@ export default function FormSection({
             className="flex flex-col gap-6 pt-10"
             onSubmit={handleSubmit(onSubmit)}
           >
+            <fieldset disabled={isSubmitting}>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <legend className="float-left text-[16px] leading-[1.5] text-black">
+                  Você é MEI?
+                </legend>
+                {MEI_OPTIONS.map((option) => (
+                  <label
+                    key={option.value}
+                    className="flex items-center gap-2 text-[16px] leading-[1.5] text-black cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      value={option.value}
+                      {...register("mei")}
+                      onClick={() => handleMeiClick(option)}
+                      className="accent-azul shrink-0"
+                    />
+                    {option.label}
+                  </label>
+                ))}
+              </div>
+              {errors.mei && (
+                <p className="text-laranja text-[14px] mt-2">
+                  {errors.mei.message}
+                </p>
+              )}
+            </fieldset>
+
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="w-full lg:flex-1">
                 <input
@@ -332,9 +395,31 @@ export default function FormSection({
                 &quot;enviar&quot;, autorizo o compartilhamento dos dados da
                 empresa e do representante legal com a Fiserv e seus parceiros,
                 bem como o recebimento de contato em razão do meu interesse em
-                saber mais sobre a azulzinha
+                saber mais sobre a{" "}
+                <button
+                  type="button"
+                  aria-expanded={showMaisInformacoes}
+                  aria-controls={`${id}-mais-informacoes`}
+                  onClick={toggleMaisInformacoes}
+                  className="inline-flex items-baseline gap-1 cursor-pointer"
+                >
+                  <span className="underline">azulzinha</span>
+                  <span aria-hidden="true" className="font-bold">
+                    {showMaisInformacoes ? "−" : "+"}
+                  </span>
+                </button>
               </span>
             </label>
+            {showMaisInformacoes && (
+              <div
+                id={`${id}-mais-informacoes`}
+                className="flex flex-col gap-3 -mt-2 pl-6 text-[14px] leading-[1.5] text-cinza"
+              >
+                {MAIS_INFORMACOES.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            )}
             {errors.cbtermo && (
               <p className="text-laranja text-[14px] -mt-4 pl-6">
                 {errors.cbtermo.message}
@@ -395,6 +480,25 @@ export default function FormSection({
           </p>
         </div>
       )}
+
+      <Dialog open={isMeiOpen} onOpenChange={handleMeiOpenChange}>
+        <DialogContent className="w-full max-w-[480px] rounded-[12px] p-8 gap-4 flex flex-col">
+          <DialogHeader>
+            <DialogTitle className="text-[22px] font-normal text-azul leading-[1.3]">
+              Você é MEI?
+            </DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 text-[16px] leading-[1.5] text-black">
+            <p>
+              Você que é MEI já pode ter sua azulzinha direto pelo App CAIXA
+              Tem!
+            </p>
+            <Link href="/azulzinha-caixa-tem" className="text-azul underline w-fit">
+              Clique aqui e saiba como!
+            </Link>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={isErrorOpen} onOpenChange={setIsErrorOpen}>
         <DialogContent className="w-full max-w-[480px] rounded-[12px] p-8 gap-4 flex flex-col">

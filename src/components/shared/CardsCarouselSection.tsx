@@ -123,6 +123,15 @@ const defaultCards: CarouselCard[] = [
     ctaText: "Saiba mais",
     href: "/antecipacao-de-vendas",
   },
+  {
+    title: "azulzinha no App CAIXA Tem",
+    gtmEvent: HOME_BANNER_GTM_EVENTS.caixaTem,
+    description: "Transforme seu celular em maquininha e comece a vender com a azulzinha, de forma simples e 100% digital.",
+    image: "/images/mei/hero.png",
+    variant: "variant3",
+    ctaText: "Confira a novidade",
+    href: "/azulzinha-caixa-tem",
+  },
 ];
 
 function cardEventName(card: CarouselCard) {

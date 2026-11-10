@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="flex flex-col gap-10 flex-1">
             {/* WhatsApp */}
             <div className="w-[307px] h-[64px] flex items-center gap-3">
-              <a href={SOCIAL_LINKS.whatsappApi} className="shrink-0">
+              <a href={SOCIAL_LINKS.whatsapp} className="shrink-0">
                 <Image
                   src={asset("/images/footer-zuli.png")}
                   alt="Zuli"
@@ -265,7 +265,7 @@ export default function Footer() {
             {/* WhatsApp */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-3">
-                <a href={SOCIAL_LINKS.whatsappApi} className="shrink-0">
+                <a href={SOCIAL_LINKS.whatsapp} className="shrink-0">
                   <Image
                     src={asset("/images/footer-zuli.png")}
                     alt="Zuli"

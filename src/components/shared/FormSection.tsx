@@ -234,6 +234,7 @@ export default function FormSection({
             <div>
               <input
                 {...register("email")}
+                id="email"
                 type="email"
                 placeholder="E-mail"
                 className={inputClass}

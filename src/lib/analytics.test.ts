@@ -34,7 +34,7 @@ describe("home banner events", () => {
   it("gives every home banner its own event name, distinct from the container triggers", () => {
     const names = Object.values(HOME_BANNER_GTM_EVENTS);
     expect(new Set(names).size).toBe(names.length);
-    expect(names).toHaveLength(10);
+    expect(names).toHaveLength(11);
     for (const name of names) {
       expect(EXISTING_BANNER_TRIGGER_NAMES).not.toContain(name);
     }

@@ -3,6 +3,7 @@
 import { useState, ReactNode } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
+import { VR_CADASTRO_URL } from "@/lib/vr";
 
 interface ContactColumn {
   icon: string;
@@ -87,7 +88,7 @@ const faqBrands: FaqBrand[] = [
     logoH: 62,
     name: "Ticket",
     buttonText: "Quero aceitar Ticket",
-    buttonHref: "https://www.ticket.com.br/portal-estabelecimento/credenciar",
+    buttonHref: "https://credenciamento.ticket.com.br/#/",
     columns: [
       {
         icon: "/images/bandeiras-vouchers/icone-telefone.svg",
@@ -111,7 +112,7 @@ const faqBrands: FaqBrand[] = [
         content: (
           <div className="flex flex-col gap-4">
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
-              <a href="https://www.ticket.com.br/portal-estabelecimento/credenciar" target="_blank" rel="noopener noreferrer" className="text-azul underline">No site da Ticket</a>, se ainda não estiver credenciado, informe o seu CNPJ, clique no botão &quot;Começar&quot; e siga o preenchimento dos dados solicitados.
+              <a href="https://credenciamento.ticket.com.br/#/" target="_blank" rel="noopener noreferrer" className="text-azul underline">No site da Ticket</a>, se ainda não estiver credenciado, informe o seu CNPJ, clique no botão &quot;Começar&quot; e siga o preenchimento dos dados solicitados.
             </p>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               Caso já esteja credenciado, clique no botão &quot;Já sou credenciado&quot; e em seguida preencha o CNPJ e senha cadastrados junto à bandeira Ticket.
@@ -145,7 +146,7 @@ const faqBrands: FaqBrand[] = [
     logoH: 24,
     name: "pluxee",
     buttonText: "Quero aceitar pluxee",
-    buttonHref: "https://www.sodexobeneficios.com.br/estabelecimentos/quero-aceitar-sodexo.htm",
+    buttonHref: "https://www.sodexobeneficios.com.br/estabelecimentos/",
     columns: [
       {
         icon: "/images/bandeiras-vouchers/icone-telefone.svg",
@@ -172,7 +173,7 @@ const faqBrands: FaqBrand[] = [
           <div className="flex flex-col gap-4">
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
               No{" "}
-              <a href="https://www.sodexobeneficios.com.br/estabelecimentos/quero-aceitar-sodexo.htm" target="_blank" rel="noopener noreferrer" className="text-azul underline">site da pluxee</a>
+              <a href="https://www.sodexobeneficios.com.br/estabelecimentos/" target="_blank" rel="noopener noreferrer" className="text-azul underline">site da pluxee</a>
               , se ainda não estiver credenciado, primeiro crie o seu cadastro.
             </p>
             <p className="text-[16px] lg:text-[18px] leading-[1.4] text-black">
@@ -207,7 +208,7 @@ const faqBrands: FaqBrand[] = [
     logoH: 61,
     name: "VR",
     buttonText: "Quero aceitar VR",
-    buttonHref: "https://portal.vr.com.br/portal/portal-vr/area-publica/credenciamento-contato/",
+    buttonHref: VR_CADASTRO_URL,
     columns: [
       {
         icon: "/images/bandeiras-vouchers/icone-telefone.svg",

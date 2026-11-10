@@ -102,6 +102,7 @@ export const HOME_BANNER_GTM_EVENTS = {
   lotericaPro: "clicou-home-loterica-pro",
   debitoCredito: "clicou-home-debito-credito-lotericas",
   creditoUmDia: "clicou-home-antecipacao-1-dia",
+  caixaTem: "clicou-home-app-caixa-tem",
 } as const;
 
 export function buildBannerGtmEvent(

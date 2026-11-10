@@ -35,7 +35,7 @@ export default function HelpCtaSection({
                             Fale com a Zuli pelo WhatsApp
                         </h3>
                         <TrackedAnchor
-                            href={SOCIAL_LINKS.whatsappApi}
+                            href={SOCIAL_LINKS.whatsappMessage}
                             kind="whatsapp"
                             name="whatsapp"
                             location="ajuda"

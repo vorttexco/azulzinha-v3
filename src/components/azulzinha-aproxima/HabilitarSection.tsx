@@ -1,8 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import { pushVideoGtm } from "@/lib/analytics";
+import TrackedVideo from "@/components/shared/TrackedVideo";
+
+const VIDEO_SRC = "https://azulzinhadacaixa.com.br/midias/azulzinha_aproxima.mp4";
+const VIDEO_GTM_TAG = "azulzinha-aproxima";
+const VIDEO_GTM_TITLE = "azulzinha aproxima";
 
 function PlayIcon() {
   return (
@@ -15,6 +21,13 @@ function PlayIcon() {
 }
 
 export default function HabilitarSection() {
+  const [playing, setPlaying] = useState(false);
+
+  function handlePlayClick() {
+    pushVideoGtm("clicou", VIDEO_GTM_TAG, VIDEO_GTM_TITLE);
+    setPlaying(true);
+  }
+
   return (
     <section className="bg-white">
       <div className="max-w-[1440px] mx-auto pb-14 lg:pb-20 px-[30px] lg:px-[100px]">
@@ -29,23 +42,31 @@ export default function HabilitarSection() {
             </p>
           </div>
 
-          {/* Video thumbnail */}
-          <div
-            className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden cursor-pointer group"
-            onClick={() => pushVideoGtm("clicou", "azulzinha-aproxima", "azulzinha aproxima")}
-          >
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={asset("/images/azulzinha-aproxima/video-habilitar.png")}
-                alt="Como habilitar azulzinha aproxima"
-                fill
-                className="object-cover"
+          {/* Video */}
+          <div className="relative w-full max-w-[1070px] h-[202px] lg:h-[547px] rounded-[16px] lg:rounded-[30px] overflow-hidden">
+            {playing ? (
+              <TrackedVideo
+                src={VIDEO_SRC}
+                gtmTag={VIDEO_GTM_TAG}
+                gtmTitle={VIDEO_GTM_TITLE}
+                className="w-full h-full object-cover"
               />
-            </div>
-            <div className="absolute inset-0 bg-[#01367B]/20 z-10" />
-            <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <PlayIcon />
-            </div>
+            ) : (
+              <div className="w-full h-full cursor-pointer group" onClick={handlePlayClick}>
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={asset("/images/azulzinha-aproxima/video-habilitar.png")}
+                    alt="Como habilitar azulzinha aproxima"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-[#01367B]/20 z-10" />
+                <div className="absolute inset-0 z-20 flex items-center justify-center">
+                  <PlayIcon />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

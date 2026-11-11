@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { BlogPost, BlogCardSmall } from "./BlogCard";
 
 interface BlogUltimasSectionProps {
@@ -10,6 +10,9 @@ interface BlogUltimasSectionProps {
   pageSize?: number;
   loadMoreLabel?: string;
   resetKey?: string;
+  id?: string;
+  /** Rendered below the cards, e.g. pagination links. */
+  footer?: ReactNode;
 }
 
 export default function BlogUltimasSection({
@@ -19,6 +22,8 @@ export default function BlogUltimasSection({
   pageSize = 3,
   loadMoreLabel = "Ver mais",
   resetKey,
+  id,
+  footer,
 }: BlogUltimasSectionProps) {
   const [visibleCount, setVisibleCount] = useState(pageSize);
 
@@ -30,7 +35,7 @@ export default function BlogUltimasSection({
   const hasMore = showLoadMore && visibleCount < posts.length;
 
   return (
-    <section className="bg-white">
+    <section id={id} className="bg-white scroll-mt-24">
       <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pb-14 lg:pb-20">
         <h2 className="text-[26px] lg:text-[38px] leading-[1.2] lg:leading-[1.3] text-laranja mb-6">
           {title}
@@ -52,6 +57,8 @@ export default function BlogUltimasSection({
             </button>
           </div>
         )}
+
+        {footer}
       </div>
     </section>
   );

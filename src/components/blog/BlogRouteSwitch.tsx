@@ -7,9 +7,10 @@ import BlogSearchContent from "./BlogSearchContent";
 
 interface BlogRouteSwitchProps {
   posts: BlogPost[];
+  page?: number;
 }
 
-export default function BlogRouteSwitch({ posts }: BlogRouteSwitchProps) {
+export default function BlogRouteSwitch({ posts, page = 1 }: BlogRouteSwitchProps) {
   const params = useSearchParams();
   const q = params.get("q");
   const category = params.get("category");
@@ -25,5 +26,5 @@ export default function BlogRouteSwitch({ posts }: BlogRouteSwitchProps) {
     );
   }
 
-  return <BlogContent posts={posts} />;
+  return <BlogContent posts={posts} page={page} />;
 }

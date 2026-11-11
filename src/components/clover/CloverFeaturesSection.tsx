@@ -73,7 +73,7 @@ export default function CloverFeaturesSection() {
         {/* Left - Image */}
         <div className="relative w-full lg:w-[605px] h-[300px] lg:h-[426px] rounded-[12px] overflow-hidden shrink-0">
           <Image
-            src={asset("/images/clover/features-photo.png")}
+            src={asset("/images/clover/features-photo.webp")}
             alt="Clover em uso"
             fill
             className="object-cover"

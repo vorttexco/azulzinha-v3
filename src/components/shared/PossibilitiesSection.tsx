@@ -94,7 +94,7 @@ function Card({ icon, title, description }: PossibilityCard) {
 export default function PossibilitiesSection({
   title = defaultTitle,
   description = defaultDescription,
-  image = "/images/hero-banner-3.png",
+  image = "/images/hero-banner-3.webp",
   imageAlt = "Possibilidades com azulzinha",
   cards = defaultCards,
   bgColor = "bg-[#F5F5F5]",

@@ -3,23 +3,23 @@ import { asset } from "@/lib/assets";
 
 const features = [
   {
-    icon: "/images/azulzinha-smart/icon-sim.png",
+    icon: "/images/azulzinha-smart/icon-sim.webp",
     text: "Pagamento portátil Chip & PIN",
   },
   {
-    icon: "/images/azulzinha-smart/icon-wifi.png",
+    icon: "/images/azulzinha-smart/icon-wifi.webp",
     text: "GSM/GPRS/4G Quad Band",
   },
   {
-    icon: "/images/azulzinha-smart/icon-bluetooth.png",
+    icon: "/images/azulzinha-smart/icon-bluetooth.webp",
     text: "Wi-Fi & Bluetooth",
   },
   {
-    icon: "/images/azulzinha-smart/icon-android.png",
+    icon: "/images/azulzinha-smart/icon-android.webp",
     text: "Usa a plataforma Android aliada à tecnologia altamente segura da Ingenico",
   },
   {
-    icon: "/images/azulzinha-smart/icon-batery.png",
+    icon: "/images/azulzinha-smart/icon-batery.webp",
     text: "Terminal de alta performance com longa duração de bateria",
   },
 ];
@@ -43,7 +43,7 @@ export default function FuncoesSection() {
               </h3>
               <div className="relative w-full max-w-[559px] h-[186px] lg:h-[385px]">
                 <Image
-                  src={asset("/images/azulzinha-smart/maquina-c-texto.png")}
+                  src={asset("/images/azulzinha-smart/maquina-c-texto.webp")}
                   alt="Funcionalidades azulzinha smart"
                   fill
                   className="object-contain"

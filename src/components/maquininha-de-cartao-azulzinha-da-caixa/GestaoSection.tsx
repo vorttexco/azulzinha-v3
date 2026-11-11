@@ -3,11 +3,11 @@ import { asset } from "@/lib/assets";
 
 const items = [
   {
-    icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-relatorios.png",
+    icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-relatorios.webp",
     text: "Automatize relatórios personalizados;",
   },
   {
-    icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-servicos.png",
+    icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-servicos.webp",
     text: "Solicite bobinas e habilite mais serviços.",
   },
 ];
@@ -52,7 +52,7 @@ export default function GestaoSection() {
           <div className="relative w-full lg:w-1/2 h-[240px] lg:h-[420px]">
             <Image
               src={asset(
-                "/images/maquininha-de-cartao-azulzinha-da-caixa/portal.png"
+                "/images/maquininha-de-cartao-azulzinha-da-caixa/portal.webp"
               )}
               alt="Portal e App da azulzinha"
               fill

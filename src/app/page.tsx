@@ -27,8 +27,8 @@ export default function Home() {
       <HeroSection
         buttonHref="/peca-azulzinha"
         checkItems={[]}
-        backgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
-        mobileBackgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
+        backgroundImage="/images/hero-backgrounds/gestao-de-vendas.webp"
+        mobileBackgroundImage="/images/hero-backgrounds/gestao-de-vendas.webp"
         mobileImageClassName="object-[40%_25%]"
         title="Com a azulzinha, maquininha da CAIXA, você pode muito mais!"
         description={<>Conheça as nossas opções de aluguel!</>}

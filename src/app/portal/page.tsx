@@ -26,7 +26,7 @@ export default function PortalPage() {
                 checkItems={[]}
                 buttonText="Saiba mais"
                 buttonHref="#dobraportal"
-                backgroundImage="/images/hero-backgrounds/portal-azulzinha.png"
+                backgroundImage="/images/hero-backgrounds/portal-azulzinha.webp"
             />
             <div id="dobraportal" />
             <FeatureSection
@@ -37,7 +37,7 @@ export default function PortalPage() {
                     "Receba suas vendas de forma antecipada",
                     "Gerencie o seu negócio com um simples acesso",
                 ]}
-                image="/images/portal-azulzinha/bg-portal.png"
+                image="/images/portal-azulzinha/bg-portal.webp"
                 imageAlt="Aplicativo da azulzinha"
                 imageWidth="911px"
                 imageHeight="471px"
@@ -48,7 +48,7 @@ export default function PortalPage() {
                 paragraphs={[
                     "No nosso novo Portal você encontra diversas informações, ferramentas e serviços para o gerenciamento e controle do seu estabelecimento.",
                 ]}
-                image="/images/portal-azulzinha/mockup-desktop.png"
+                image="/images/portal-azulzinha/mockup-desktop.webp"
                 imageAlt="Portal da azulzinha"
                 imageWidth="736px"
                 imageHeight="532px"
@@ -63,11 +63,11 @@ export default function PortalPage() {
                 textColor="text-azul"
                 centerLastRow
                 items={[
-                    { icon: "/images/portal-azulzinha/portal1.png", text: "Administre todas as suas vendas" },
-                    { icon: "/images/portal-azulzinha/portal2.png", text: "Consulte taxas e tarifas" },
-                    { icon: "/images/portal-azulzinha/portal3.png", text: "Antecipe recebíveis" },
-                    { icon: "/images/portal-azulzinha/portal4.png", text: "Consulte seus recebimentos futuros" },
-                    { icon: "/images/portal-azulzinha/portal5.png", text: "Abra e acompanhe solicitações" },
+                    { icon: "/images/portal-azulzinha/portal1.webp", text: "Administre todas as suas vendas" },
+                    { icon: "/images/portal-azulzinha/portal2.webp", text: "Consulte taxas e tarifas" },
+                    { icon: "/images/portal-azulzinha/portal3.webp", text: "Antecipe recebíveis" },
+                    { icon: "/images/portal-azulzinha/portal4.webp", text: "Consulte seus recebimentos futuros" },
+                    { icon: "/images/portal-azulzinha/portal5.webp", text: "Abra e acompanhe solicitações" },
                 ]}
             />
             <BlueCta
@@ -82,7 +82,7 @@ export default function PortalPage() {
             <SimpleVideoSection
                 title=""
                 description=""
-                thumbnail="/images/portal-azulzinha/bg-portal.png"
+                thumbnail="/images/portal-azulzinha/bg-portal.webp"
                 gtmTag="primeiro-acesso-portal"
                 gtmTitle="Primeiro acesso no Portal da azulzinha"
                 videoSrc="https://azulzinhadacaixa.com.br/midias/novo-app-azulzinha.mp4"

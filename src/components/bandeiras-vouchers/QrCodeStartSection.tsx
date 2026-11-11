@@ -13,7 +13,7 @@ interface StartCard {
 
 const contactCards: StartCard[] = [
   {
-    icon: "/images/bandeiras-vouchers/icone-telefone.png",
+    icon: "/images/bandeiras-vouchers/icone-telefone.webp",
     title: "Por telefone",
     body: (
       <div className="flex flex-col gap-4">
@@ -28,7 +28,7 @@ const contactCards: StartCard[] = [
     ),
   },
   {
-    icon: "/images/bandeiras-vouchers/icone-note-live.png",
+    icon: "/images/bandeiras-vouchers/icone-note-live.webp",
     title: "Pelo site",
     body: (
       <div className="flex flex-col gap-4">
@@ -51,7 +51,7 @@ const contactCards: StartCard[] = [
     ),
   },
   {
-    icon: "/images/bandeiras-vouchers/icone-agenda-live.png",
+    icon: "/images/bandeiras-vouchers/icone-agenda-live.webp",
     title: "Prazos",
     body: (
       <div className="flex flex-col gap-4">
@@ -99,7 +99,7 @@ export default function QrCodeStartSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-[980px] mx-auto mt-12">
           <Card
-            icon="/images/bandeiras-vouchers/circle-row.png"
+            icon="/images/bandeiras-vouchers/circle-row.webp"
             title="Habilitação automática"
             body={
               <div className="flex flex-col gap-4">
@@ -111,7 +111,7 @@ export default function QrCodeStartSection() {
             }
           />
           <Card
-            icon="/images/bandeiras-vouchers/mobile-app.png"
+            icon="/images/bandeiras-vouchers/mobile-app.webp"
             title="App da azulzinha*"
             body={
               <div className="flex flex-col gap-4">

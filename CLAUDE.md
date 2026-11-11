@@ -23,6 +23,7 @@
 - Estrutura padrão: `<main>` > `<Navbar />` > Seções > `<Footer />`
 - Componentes da página ficam em `src/components/[nome-da-pagina]/`
 - Imagens da página ficam em `public/images/[nome-da-pagina]/` e devem ser referenciadas via helper `asset()` de `@/lib/assets`
+- Imagens raster em `public/images/` são sempre **WebP**. Ao adicionar PNG/JPG, rodar `npm run images:optimize` (converte, apaga o original e atualiza as referências em `src/`). `npm run images:check` confere se toda referência existe. SVG e `public/assets/` (imagem Open Graph) ficam como estão.
 
 ## Layout e Espaçamento
 

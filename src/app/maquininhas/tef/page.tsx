@@ -51,7 +51,7 @@ export default function MaquininhasTefPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#manual-section"
-        backgroundImage="/images/maquininhas-tef/hero-bg.png"
+        backgroundImage="/images/maquininhas-tef/hero-bg.webp"
       />
       <TefSection />
       <VantagensSection vantagens={vantagensTef} />
@@ -60,7 +60,7 @@ export default function MaquininhasTefPage() {
         description="Acesse nossa página de ajuda para obter mais informações sobre a azulzinha"
         buttonText="Clique aqui"
         buttonHref="/ajuda"
-        image="/images/maquininhas-tef/cta-photo.png"
+        image="/images/maquininhas-tef/cta-photo.webp"
         imageAlt="Dúvidas azulzinha TEF"
       />
       <Footer />

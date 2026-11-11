@@ -41,31 +41,31 @@ const steps = [
     number: 1,
     title: "Acesse o portal da CAIXA",
     description: "Informe o número do processo e preencha os dados solicitados.",
-    image: "/images/deposito-judicial/step-1.png",
+    image: "/images/deposito-judicial/step-1.webp",
   },
   {
     number: 2,
     title: "Escolha a forma de pagamento",
     description: "Após a validação dos dados, selecione a opção Cartão de Crédito.",
-    image: "/images/deposito-judicial/step-2.png",
+    image: "/images/deposito-judicial/step-2.webp",
   },
   {
     number: 3,
     title: "Selecione o parcelamento",
     description: "Visualize as condições disponíveis e escolha a quantidade de parcelas desejada.",
-    image: "/images/deposito-judicial/step-3.png",
+    image: "/images/deposito-judicial/step-3.webp",
   },
   {
     number: 4,
     title: "Informe os dados do cartão",
     description: "Preencha as informações do cartão de crédito e confirme a operação.",
-    image: "/images/deposito-judicial/step-4.png",
+    image: "/images/deposito-judicial/step-4.webp",
   },
   {
     number: 5,
     title: "Conclua o pagamento",
     description: "Após a aprovação, você poderá visualizar e salvar o comprovante.",
-    image: "/images/deposito-judicial/step-5.png",
+    image: "/images/deposito-judicial/step-5.webp",
   },
 ];
 
@@ -127,7 +127,7 @@ export default function DepositoJudicial() {
         checkItems={[]}
         buttonText="Saiba mais"
         buttonHref="#dobra"
-        backgroundImage="/images/deposito-judicial/hero-bg.jpg"
+        backgroundImage="/images/deposito-judicial/hero-bg.webp"
         imagePositionClassName="object-[center_60%]"
       />
 
@@ -138,7 +138,7 @@ export default function DepositoJudicial() {
           "Agora, depósitos judiciais e taxas vinculadas a processos podem ser pagos com cartão de crédito, oferecendo mais flexibilidade e conveniência para quem precisa realizar o pagamento.",
           "A solução da azulzinha permite pagamento de forma simples, segura e com a possibilidade de parcelamento.",
         ]}
-        image="/images/deposito-judicial/pagamento.jpg"
+        image="/images/deposito-judicial/pagamento.webp"
         imageAlt="Pessoa pagando um depósito judicial com cartão de crédito no notebook"
         cardWidth="605px"
         cardHeight="398px"
@@ -174,7 +174,7 @@ export default function DepositoJudicial() {
         buttonText="Ir para o Portal da CAIXA"
         buttonHref={CAIXA_DEPOSITO_URL}
         buttonTarget="_blank"
-        image="/images/azulzinha-aproxima/cta-photo.png"
+        image="/images/azulzinha-aproxima/cta-photo.webp"
         imageAlt="Pessoa segurando um cartão de crédito e um celular"
       />
 

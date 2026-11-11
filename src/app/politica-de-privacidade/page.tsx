@@ -21,7 +21,7 @@ export default function PoliticaDePrivacidadePage() {
         description="Confira a política de privacidade quanto à coleta, utilização, compartilhamento e segurança de seus dados pessoais ao visitar o nosso site."
         checkItems={[]}
         buttonText=""
-        backgroundImage="/images/politica-de-privacidade/hero.png"
+        backgroundImage="/images/politica-de-privacidade/hero.webp"
       />
       <PrivacyPolicyContent />
       <Footer />

@@ -108,7 +108,7 @@ function columnsFor(label: string): DropdownColumn[] {
 function CaixaCartoesMark({ className }: { className?: string }) {
   return (
     <Image
-      src={asset("/images/logo-caixa-cartoes.png")}
+      src={asset("/images/logo-caixa-cartoes.webp")}
       alt="CAIXA Cartões"
       width={155}
       height={18}
@@ -376,7 +376,7 @@ export default function Navbar() {
           <div className="flex items-center gap-12 h-full">
             <Link href="/" className="shrink-0">
               <Image
-                src={asset("/images/logo-azulzinha.png")}
+                src={asset("/images/logo-azulzinha.webp")}
                 alt="azulzinha"
                 width={127}
                 height={55}
@@ -521,7 +521,7 @@ export default function Navbar() {
       <div className="flex lg:hidden h-[79px] items-center justify-between px-[30px]">
         <Link href="/" className="shrink-0">
           <Image
-            src={asset("/images/logo-azulzinha.png")}
+            src={asset("/images/logo-azulzinha.webp")}
             alt="azulzinha"
             width={127}
             height={55}
@@ -547,7 +547,7 @@ export default function Navbar() {
           <div className="flex h-[79px] items-center justify-between px-[30px] shrink-0">
             <Link href="/" onClick={closeMobileMenu} className="shrink-0">
               <Image
-                src={asset("/images/logo-azulzinha.png")}
+                src={asset("/images/logo-azulzinha.webp")}
                 alt="azulzinha"
                 width={127}
                 height={55}

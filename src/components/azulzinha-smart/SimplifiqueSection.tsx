@@ -22,7 +22,7 @@ export default function SimplifiqueSection() {
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-full max-w-[711px] h-[208px] lg:h-[448px] bg-white rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] overflow-hidden">
               <Image
-                src={asset("/images/azulzinha-smart/maquininha-smart.png")}
+                src={asset("/images/azulzinha-smart/maquininha-smart.webp")}
                 alt="Maquininha azulzinha smart"
                 fill
                 className="object-contain"

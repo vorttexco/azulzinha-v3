@@ -3,37 +3,37 @@ import { asset } from "@/lib/assets";
 
 const services = [
   {
-    icon: "/images/icone-antecipa 1.png",
+    icon: "/images/icone-antecipa 1.webp",
     text: "Antecipação de Vendas",
     iconW: 36, iconH: 27,
     iconClass: "w-[36px] h-[27px]",
   },
   {
-    icon: "/images/icone-pix 1.png",
+    icon: "/images/icone-pix 1.webp",
     text: "Pix",
     iconW: 33, iconH: 33,
     iconClass: "w-[33px] h-[33px]",
   },
   {
-    icon: "/images/icone-cel-home 1.png",
+    icon: "/images/icone-cel-home 1.webp",
     text: "Recarga de Telefonia",
     iconW: 25, iconH: 30,
     iconClass: "w-[25px] h-[30px]",
   },
   {
-    icon: "/images/icon-app 1.png",
+    icon: "/images/icon-app 1.webp",
     text: "App azulzinha aproxima",
     iconW: 31, iconH: 31,
     iconClass: "w-[31px] h-[31px]",
   },
   {
-    icon: "/images/icon-link.png",
+    icon: "/images/icon-link.webp",
     text: "Link de pagamento",
     iconW: 24, iconH: 24,
     iconClass: "w-[24px] h-[24px]",
   },
   {
-    icon: "/images/icon-money 3.png",
+    icon: "/images/icon-money 3.webp",
     text: "Pagamento Parcial",
     iconW: 34, iconH: 20,
     iconClass: "w-[34px] h-[20px]",

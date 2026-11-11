@@ -10,7 +10,7 @@ export default function ImprevistoSection() {
           {/* Image */}
           <div className="relative w-full h-[256px] lg:h-[604px] rounded-[12px] lg:rounded-none overflow-hidden">
             <Image
-              src={asset("/images/azulzinha-smart/imprevistos-composite.png")}
+              src={asset("/images/azulzinha-smart/imprevistos-composite.webp")}
               alt="azulzinha smart à prova de imprevistos"
               fill
               className="object-cover object-center"

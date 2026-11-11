@@ -58,7 +58,7 @@ export default function CloverDiscoverSection() {
         <div className="relative w-full lg:w-[621px] h-[269px] lg:h-[508px]">
           <div className="relative w-full h-full bg-white rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)] overflow-visible">
             <Image
-              src={asset("/images/clover/clover-machines.png")}
+              src={asset("/images/clover/clover-machines.webp")}
               alt="Clover Flex e Clover Mini"
               fill
               className="object-contain translate-x-4 p-1"

@@ -14,7 +14,7 @@ export default function BandeirasSection() {
           <div className="hidden lg:flex flex-col items-center gap-4 w-full">
             <div className="relative w-full max-w-[1046px] h-[236px]">
               <Image
-                src={asset("/images/azulzinha-smart/bandeiras-1.png")}
+                src={asset("/images/azulzinha-smart/bandeiras-1.webp")}
                 alt="Bandeiras aceitas - linha 1"
                 fill
                 className="object-contain"
@@ -22,7 +22,7 @@ export default function BandeirasSection() {
             </div>
             <div className="relative w-full max-w-[1058px] h-[238px]">
               <Image
-                src={asset("/images/azulzinha-smart/bandeiras-2.png")}
+                src={asset("/images/azulzinha-smart/bandeiras-2.webp")}
                 alt="Bandeiras aceitas - linha 2"
                 fill
                 className="object-contain"
@@ -30,7 +30,7 @@ export default function BandeirasSection() {
             </div>
             <div className="relative w-full max-w-[1052px] h-[117px]">
               <Image
-                src={asset("/images/azulzinha-smart/bandeiras-3.png")}
+                src={asset("/images/azulzinha-smart/bandeiras-3.webp")}
                 alt="Bandeiras aceitas - linha 3"
                 fill
                 className="object-contain"
@@ -41,7 +41,7 @@ export default function BandeirasSection() {
           {/* Mobile - single composite */}
           <div className="lg:hidden relative w-full h-[216px]">
             <Image
-              src={asset("/images/azulzinha-smart/bandeiras-1.png")}
+              src={asset("/images/azulzinha-smart/bandeiras-1.webp")}
               alt="Bandeiras aceitas"
               fill
               className="object-contain"

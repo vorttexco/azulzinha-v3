@@ -27,14 +27,14 @@ export default function BandeirasVouchers() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#bandeiras"
-        backgroundImage="/images/hero-backgrounds/bandeiras-vouchers.png"
+        backgroundImage="/images/hero-backgrounds/bandeiras-vouchers.webp"
       />
       <BandeirasSection />
       <BlueCta
         title="Novidade! Você sabia que já pode receber pagamentos com VR Benefícios na sua azulzinha?"
         buttonText="Saiba Como"
         buttonHref="/bandeiras-vouchers/qr-code"
-        icon="/images/bandeiras-vouchers/logo-vr.png"
+        icon="/images/bandeiras-vouchers/logo-vr.webp"
         iconAlt="VR Benefícios"
         sectionClassName="bg-[#FAFAFA]"
       />
@@ -46,7 +46,7 @@ export default function BandeirasVouchers() {
           "Basta credenciar seu estabelecimento diretamente com cada bandeira que você quer aceitar.",
           <strong key="bold-vouchers">Selecione abaixo as bandeiras que você pode habilitar na azulzinha e siga o passo a passo de cada uma para fazer a solicitação.</strong>,
         ]}
-        image="/images/bandeiras-vouchers/maquina-24d507.png"
+        image="/images/bandeiras-vouchers/maquina-24d507.webp"
         imageAlt="Ilustração como aceitar vouchers"
         imageWidth="723px"
         imageHeight="489px"

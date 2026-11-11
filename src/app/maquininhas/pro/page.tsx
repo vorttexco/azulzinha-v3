@@ -26,8 +26,8 @@ export default function MaquininhasProPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#autonomia-pro"
-        backgroundImage="/images/crediario-azulzinha/hero-bg.png"
-        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        backgroundImage="/images/crediario-azulzinha/hero-bg.webp"
+        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.webp"
         mobileImageClassName="object-[70%_25%]"
       />
       <AutonomiaSection />
@@ -35,23 +35,23 @@ export default function MaquininhasProPage() {
       <ModelosSection />
       <VideoSection
         title="Assista aos vídeos sobre o funcionamento da azulzinha pro"
-        mainVideoImage="/images/maquininhas-pro/video-main.png"
+        mainVideoImage="/images/maquininhas-pro/video-main.webp"
         mainVideoTitle="Como fazer vendas no débito e crédito"
         backgroundColor="bg-[#F7F7F7]"
         videos={[
           {
             title: "Como fazer vendas no débito e crédito",
-            thumbnail: "/images/maquininhas-pro/video-thumb-1.png",
+            thumbnail: "/images/maquininhas-pro/video-thumb-1.webp",
             videoSrc: "https://azulzinhadacaixa.com.br/midias/vendas-debito-credito.mp4",
           },
           {
             title: "Como fazer vendas parceladas",
-            thumbnail: "/images/maquininhas-pro/video-thumb-2.png",
+            thumbnail: "/images/maquininhas-pro/video-thumb-2.webp",
             videoSrc: "https://azulzinhadacaixa.com.br/midias/vendas-parceladas.mp4",
           },
           {
             title: "Como conectar sua azulzinha pro no Wi-fi",
-            thumbnail: "/images/maquininhas-pro/video-thumb-3.png",
+            thumbnail: "/images/maquininhas-pro/video-thumb-3.webp",
             videoSrc: "https://azulzinhadacaixa.com.br/midias/conectar-wifi.mp4",
           },
         ]}
@@ -61,7 +61,7 @@ export default function MaquininhasProPage() {
         description="Acesse nossa página de ajuda para obter mais informações sobre a azulzinha"
         buttonText="Clique aqui"
         buttonHref="/ajuda"
-        image="/images/maquininhas-pro/cta-photo.png"
+        image="/images/maquininhas-pro/cta-photo.webp"
         imageAlt="Dúvidas azulzinha"
       />
       <Footer />

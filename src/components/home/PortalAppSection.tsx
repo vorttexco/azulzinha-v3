@@ -54,7 +54,7 @@ export default function PortalAppSection() {
           <div className="absolute right-0 bottom-0 w-[87%] h-[99%] rounded-[10px] bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.08)]" />
           <div className="absolute left-0 top-0 z-10 w-full h-full">
             <Image
-              src={asset("/images/img-portal 1.png")}
+              src={asset("/images/img-portal 1.webp")}
               alt="Portal azulzinha"
               fill
               className="object-contain object-center lg:object-left-top"

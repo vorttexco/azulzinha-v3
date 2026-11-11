@@ -27,7 +27,7 @@ export default function TaxasTarifasPage() {
         description="Conheça as condições da azulzinha e peça já a sua."
         checkItems={[]}
         buttonText="Saiba mais"
-        backgroundImage="/images/taxas-tarifas/hero-bg.png"
+        backgroundImage="/images/taxas-tarifas/hero-bg.webp"
       />
 
       <FeatureSection
@@ -37,7 +37,7 @@ export default function TaxasTarifasPage() {
           "Se você já é cliente azulzinha, descubra no vídeo como gerenciar suas taxas e tarifas de maneira prática e rápida.",
           "Vamos juntos?",
         ]}
-        image="/images/taxas-tarifas/feature-image.png"
+        image="/images/taxas-tarifas/feature-image.webp"
         imageAlt="Casal empreendedor"
         hideCard
         cardWidth="608px"
@@ -142,7 +142,7 @@ export default function TaxasTarifasPage() {
         description="Receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/taxas-tarifas/cta-image.png"
+        image="/images/taxas-tarifas/cta-image.webp"
         imageAlt="Mulher empreendedora com azulzinha"
       />
 

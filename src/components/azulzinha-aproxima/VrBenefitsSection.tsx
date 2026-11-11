@@ -21,10 +21,10 @@ function PlayIcon() {
 }
 
 const categories = [
-  { icon: "/images/azulzinha-aproxima/icon-alimentacao.png", label: "Alimentação" },
-  { icon: "/images/azulzinha-aproxima/icon-homeoffice.png", label: "Home office" },
-  { icon: "/images/azulzinha-aproxima/icon-refeicao.png", label: "Refeição" },
-  { icon: "/images/azulzinha-aproxima/icon-mobilidade.png", label: "Mobilidade" },
+  { icon: "/images/azulzinha-aproxima/icon-alimentacao.webp", label: "Alimentação" },
+  { icon: "/images/azulzinha-aproxima/icon-homeoffice.webp", label: "Home office" },
+  { icon: "/images/azulzinha-aproxima/icon-refeicao.webp", label: "Refeição" },
+  { icon: "/images/azulzinha-aproxima/icon-mobilidade.webp", label: "Mobilidade" },
 ];
 
 export default function VrBenefitsSection() {
@@ -62,7 +62,7 @@ export default function VrBenefitsSection() {
               <div className="w-full h-full cursor-pointer group" onClick={handlePlayClick}>
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src={asset("/images/azulzinha-aproxima/vr-video.png")}
+                    src={asset("/images/azulzinha-aproxima/vr-video.webp")}
                     alt="Vídeo VR"
                     fill
                     className="object-cover"

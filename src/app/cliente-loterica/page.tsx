@@ -9,9 +9,9 @@ import BlueCta from "@/components/shared/BlueCta";
 import Footer from "@/components/shared/Footer";
 
 const bandeiras = [
-    { src: "/images/bandeiras-vouchers/elo.png", alt: "Elo", w: "w-23.25", h: "h-7.5" },
-    { src: "/images/bandeiras-vouchers/mastercard.png", alt: "Mastercard", w: "w-[61px]", h: "h-[39px]" },
-    { src: "/images/bandeiras-vouchers/visa.png", alt: "Visa", w: "w-23.25", h: "h-7.5" },
+    { src: "/images/bandeiras-vouchers/elo.webp", alt: "Elo", w: "w-23.25", h: "h-7.5" },
+    { src: "/images/bandeiras-vouchers/mastercard.webp", alt: "Mastercard", w: "w-[61px]", h: "h-[39px]" },
+    { src: "/images/bandeiras-vouchers/visa.webp", alt: "Visa", w: "w-23.25", h: "h-7.5" },
 ];
 
 export const metadata: Metadata = pageMetadata({
@@ -31,10 +31,10 @@ export default function Lotericas() {
                 checkItems={[]}
                 buttonText="Saiba mais"
                 buttonHref="#loterica"
-                backgroundImage="/images/hero-backgrounds/lotericas.png"
-                mobileBackgroundImage="/images/hero-backgrounds/lotericas.png"
+                backgroundImage="/images/hero-backgrounds/lotericas.webp"
+                mobileBackgroundImage="/images/hero-backgrounds/lotericas.webp"
                 mobileImageClassName="object-[60%_20%]"
-                logoImage="/images/conveniencia/lotericalogo.png"
+                logoImage="/images/conveniencia/lotericalogo.webp"
                 logoWidth={196}
                 logoHeight={51}
             />
@@ -55,7 +55,7 @@ export default function Lotericas() {
                     "No débito ou no crédito, seja qual for o seu banco, agora você já pode usar seu cartão para apostar nas Loterias CAIXA e resolver todos os compromissos do mês num único lugar.",
                     "Com o novo Serviço de Conveniência*, os cartões das bandeiras Elo, Mastercard e Visa agora são aceitos em toda a rede Lotérica do Brasil.",
                 ]}
-                image="/images/conveniencia/lotericas-feature.png"
+                image="/images/conveniencia/lotericas-feature.webp"
                 imageAlt="Serviço de Conveniência Lotéricas"
                 cardWidth="605px"
                 cardHeight="398px"
@@ -77,7 +77,7 @@ export default function Lotericas() {
                     "Demais convênios",
                     "Boletos variados*",
                 ]}
-                image="/images/conveniencia/lotericas-feature2.png"
+                image="/images/conveniencia/lotericas-feature2.webp"
                 imageAlt="Concentre as contas do mês na Lotérica"
                 cardWidth="605px"
                 cardHeight="398px"
@@ -94,10 +94,10 @@ export default function Lotericas() {
                     <h2 className="section-title text-azul text-center">Benefícios do Serviço de Conveniência</h2>
                     <div className="flex flex-wrap justify-center gap-7.5">
                         {[
-                            { icon: "/images/conveniencia/1.png", title: "Comodidade", desc: "Aproveite que sempre tem uma Lotérica por perto que aceita seu cartão" },
-                            { icon: "/images/conveniencia/2.png", title: "Segurança", desc: "Você não precisa mais levar dinheiro em espécie, só o cartão" },
-                            { icon: "/images/conveniencia/3.png", title: "Agilidade", desc: "Ganhe tempo pagando tudo que você precisa de uma só vez" },
-                            { icon: "/images/conveniencia/4.png", title: "Praticidade", desc: "Simplifique a organização financeira concentrando os pagamentos no crédito" },
+                            { icon: "/images/conveniencia/1.webp", title: "Comodidade", desc: "Aproveite que sempre tem uma Lotérica por perto que aceita seu cartão" },
+                            { icon: "/images/conveniencia/2.webp", title: "Segurança", desc: "Você não precisa mais levar dinheiro em espécie, só o cartão" },
+                            { icon: "/images/conveniencia/3.webp", title: "Agilidade", desc: "Ganhe tempo pagando tudo que você precisa de uma só vez" },
+                            { icon: "/images/conveniencia/4.webp", title: "Praticidade", desc: "Simplifique a organização financeira concentrando os pagamentos no crédito" },
                         ].map((card) => (
                             <div key={card.title} className="flex flex-col items-center justify-center gap-4 p-6 border border-[#F1F1F1] rounded-[30px] shadow-[0px_4px_10px_0px_#00000014] w-71.75 h-71.75 shrink-0">
                                 <div className="relative w-12 h-12 shrink-0">

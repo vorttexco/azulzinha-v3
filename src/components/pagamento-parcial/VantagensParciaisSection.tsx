@@ -3,7 +3,7 @@ import { asset } from "@/lib/assets";
 
 const vantagens = [
   {
-    icon: "/images/pagamento-parcial/icon-experiencia.png",
+    icon: "/images/pagamento-parcial/icon-experiencia.webp",
     title: "Experiência de compra",
     items: [
       "Filas menores com menos retentativas",
@@ -12,7 +12,7 @@ const vantagens = [
     ],
   },
   {
-    icon: "/images/pagamento-parcial/icon-receitas.png",
+    icon: "/images/pagamento-parcial/icon-receitas.webp",
     title: "Incremente as receitas",
     items: [
       "Reduzindo as negativas, você tem mais vendas aprovadas",

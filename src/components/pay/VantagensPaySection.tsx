@@ -3,15 +3,15 @@ import { asset } from "@/lib/assets";
 
 const vantagens = [
   {
-    image: "/images/pay/vantagem-1.png",
+    image: "/images/pay/vantagem-1.webp",
     text: "Parcelamento em até 12 vezes\ncom as menores taxas*",
   },
   {
-    image: "/images/pay/vantagem-2.png",
+    image: "/images/pay/vantagem-2.webp",
     text: "Aceito em todo o Brasil",
   },
   {
-    image: "/images/pay/vantagem-3.png",
+    image: "/images/pay/vantagem-3.webp",
     text: "Rápido, seguro e sem burocracia",
   },
 ];

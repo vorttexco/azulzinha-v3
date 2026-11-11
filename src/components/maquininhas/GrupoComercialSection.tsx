@@ -3,18 +3,18 @@ import { asset } from "@/lib/assets";
 
 const benefits = [
   {
-    icon: "/images/maquininhas/icon-graphico.png",
+    icon: "/images/maquininhas/icon-graphico.webp",
     title: "Taxas iguais e mais vantajosas",
     description:
       "Taxas mais atrativas e iguais para todos os estabelecimentos comerciais pertencentes ao Grupo",
   },
   {
-    icon: "/images/maquininhas/icon-maq-cartao.png",
+    icon: "/images/maquininhas/icon-maq-cartao.webp",
     title: "Isenção de custos com maquininha",
     description: "Isenção da taxa de maquininha quando aplicável*",
   },
   {
-    icon: "/images/maquininhas/icon-peoples.png",
+    icon: "/images/maquininhas/icon-peoples.webp",
     title: "Condições exclusivas por segmento",
     description:
       "Todos os estabelecimentos comerciais participantes devem ter o mesmo ramo de atividade",

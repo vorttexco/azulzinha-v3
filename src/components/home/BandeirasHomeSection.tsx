@@ -3,14 +3,14 @@ import { asset } from "@/lib/assets";
 import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const brandLogos = [
-  { src: "/images/bandeiras-vouchers/elo.png", alt: "ELO" },
-  { src: "/images/bandeiras-vouchers/mastercard.png", alt: "Mastercard" },
-  { src: "/images/bandeiras-vouchers/visa.png", alt: "Visa" },
-  { src: "/images/bandeiras-vouchers/hipercard.png", alt: "Hipercard" },
-  { src: "/images/bandeiras-vouchers/logo-04.png", alt: "American Express" },
-  { src: "/images/bandeiras-vouchers/hiper.png", alt: "Hiper" },
-  { src: "/images/bandeiras-vouchers/logo-06.png", alt: "Bandeira" },
-  { src: "/images/bandeiras-vouchers/logo-09.png", alt: "Alelo" },
+  { src: "/images/bandeiras-vouchers/elo.webp", alt: "ELO" },
+  { src: "/images/bandeiras-vouchers/mastercard.webp", alt: "Mastercard" },
+  { src: "/images/bandeiras-vouchers/visa.webp", alt: "Visa" },
+  { src: "/images/bandeiras-vouchers/hipercard.webp", alt: "Hipercard" },
+  { src: "/images/bandeiras-vouchers/logo-04.webp", alt: "American Express" },
+  { src: "/images/bandeiras-vouchers/hiper.webp", alt: "Hiper" },
+  { src: "/images/bandeiras-vouchers/logo-06.webp", alt: "Bandeira" },
+  { src: "/images/bandeiras-vouchers/logo-09.webp", alt: "Alelo" },
 ];
 
 export default function BandeirasHomeSection() {

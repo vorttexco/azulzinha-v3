@@ -9,16 +9,16 @@ interface BancoItem {
 }
 
 const defaultBancos: BancoItem[] = [
-  { logo: "/images/pix-azulzinha/logo-caixa.png", alt: "Caixa Econômica Federal", width: 84, height: 19 },
-  { logo: "/images/pix-azulzinha/logo-ailos.png", alt: "Ailos", width: 106, height: 36 },
-  { logo: "/images/pix-azulzinha/logo-banco-do-brasil.png", alt: "Banco do Brasil", width: 145, height: 20 },
-  { logo: "/images/pix-azulzinha/logo-banco-original.png", alt: "Banco Original", width: 111, height: 42 },
-  { logo: "/images/pix-azulzinha/logo-bradesco.png", alt: "Bradesco", width: 146, height: 48 },
-  { logo: "/images/pix-azulzinha/logo-itau.png", alt: "Itaú Unibanco", width: 55, height: 55 },
-  { logo: "/images/pix-azulzinha/logo-mercadopago.png", alt: "Mercado Pago", width: 50, height: 50 },
-  { logo: "/images/pix-azulzinha/logo-santander.png", alt: "Santander", width: 125, height: 22 },
-  { logo: "/images/pix-azulzinha/logo-senff.png", alt: "Senff", width: 95, height: 52 },
-  { logo: "/images/pix-azulzinha/logo-auto-site.png", alt: "Auto Site", width: 110, height: 26 },
+  { logo: "/images/pix-azulzinha/logo-caixa.webp", alt: "Caixa Econômica Federal", width: 84, height: 19 },
+  { logo: "/images/pix-azulzinha/logo-ailos.webp", alt: "Ailos", width: 106, height: 36 },
+  { logo: "/images/pix-azulzinha/logo-banco-do-brasil.webp", alt: "Banco do Brasil", width: 145, height: 20 },
+  { logo: "/images/pix-azulzinha/logo-banco-original.webp", alt: "Banco Original", width: 111, height: 42 },
+  { logo: "/images/pix-azulzinha/logo-bradesco.webp", alt: "Bradesco", width: 146, height: 48 },
+  { logo: "/images/pix-azulzinha/logo-itau.webp", alt: "Itaú Unibanco", width: 55, height: 55 },
+  { logo: "/images/pix-azulzinha/logo-mercadopago.webp", alt: "Mercado Pago", width: 50, height: 50 },
+  { logo: "/images/pix-azulzinha/logo-santander.webp", alt: "Santander", width: 125, height: 22 },
+  { logo: "/images/pix-azulzinha/logo-senff.webp", alt: "Senff", width: 95, height: 52 },
+  { logo: "/images/pix-azulzinha/logo-auto-site.webp", alt: "Auto Site", width: 110, height: 26 },
 ];
 
 interface BancosSectionProps {

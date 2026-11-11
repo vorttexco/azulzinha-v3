@@ -28,8 +28,8 @@ export default function MaquininhaDeCartaoPage() {
         buttonText="Escolha a sua"
         buttonHref="#dobra"
         buttonClassName="LP-clicou-maquininha-de-cartao-azulzinha-da-caixa-banner"
-        backgroundImage="/images/maquininha-de-cartao-azulzinha-da-caixa/hero-bg.png"
-        mobileBackgroundImage="/images/maquininha-de-cartao-azulzinha-da-caixa/hero-bg.png"
+        backgroundImage="/images/maquininha-de-cartao-azulzinha-da-caixa/hero-bg.webp"
+        mobileBackgroundImage="/images/maquininha-de-cartao-azulzinha-da-caixa/hero-bg.webp"
         mobileImageClassName="object-[70%_30%]"
       />
       <VantagensListSection />
@@ -39,15 +39,15 @@ export default function MaquininhaDeCartaoPage() {
         description="A azulzinha da CAIXA tem tudo para você lucrar na internet, redes sociais e aplicativos de mensagem."
         cards={[
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-link.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-link.webp",
             label: "Link de Pagamento",
           },
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-ecommerce.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-ecommerce.webp",
             label: "E-commerce",
           },
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-whatsapp.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-whatsapp.webp",
             label: "Pagamentos por WhatsApp",
           },
         ]}
@@ -62,19 +62,19 @@ export default function MaquininhaDeCartaoPage() {
         columns={4}
         cards={[
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-antecipacao.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-antecipacao.webp",
             label: "Antecipação de Vendas",
           },
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-recarga.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-recarga.webp",
             label: "Recarga de Telefonia",
           },
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-pix.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-pix.webp",
             label: "Pix",
           },
           {
-            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-pagamento-parcial.png",
+            icon: "/images/maquininha-de-cartao-azulzinha-da-caixa/icon-pagamento-parcial.webp",
             label: "Pagamento Parcial",
           },
         ]}

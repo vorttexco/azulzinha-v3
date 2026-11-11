@@ -43,7 +43,7 @@ export default function TefSection() {
             <div className="absolute bottom-0 left-0 right-0 h-[270px] lg:h-[398px] bg-white rounded-[5px] lg:rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.08)]" />
             {/* Product image */}
             <Image
-              src={asset("/images/maquininhas-tef/product-tef.png")}
+              src={asset("/images/maquininhas-tef/product-tef.webp")}
               alt="azulzinha TEF"
               width={240}
               height={466}

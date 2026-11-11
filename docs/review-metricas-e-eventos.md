@@ -6,6 +6,8 @@ Escopo: código-fonte do `azulzinha-v3` (Next.js 15, App Router, `output: "expor
 Método original: leitura estática do código e do HTML em `dist/index.html`, sem alterar código.
 Método da revisão 2: releitura do código instrumentado. O status original de cada item foi mantido. O status atual usa a mesma legenda.
 
+Revisão 3: 11/11/2026, depois de conferir o export do container (`GTM-WR66X47`, workspace 61) e de fechar as lacunas de código. **A seção 0 é o estado atual.** As seções 1 a 6 são o histórico das revisões 1 e 2 e têm trechos superados (por exemplo, o host canônico hoje é `https://azulzinhadacaixa.com.br`, sem `www`).
+
 Quando o site passa a emitir um evento novo (`cta_click`, `scroll_depth`, etc.), o status atual é **Atendido (código) / Externo (GTM)**: o `dataLayer` já tem o dado, mas o container `GTM-WR66X47` ainda precisa de um gatilho Custom Event para o GA4 enxergar. Isso não foi configurado neste repositório.
 
 Legenda de status:
@@ -16,6 +18,77 @@ Legenda de status:
 - **Externo** — não depende de código do site; depende de configuração em GTM, GA4, Search Console ou nas plataformas de mídia. O site só precisa fornecer a base (tag presente, URLs rastreáveis etc.).
 
 Observação importante: o container GTM (`GTM-WR66X47`) e a propriedade GA4 não fazem parte do repositório. Tudo que estiver marcado como **Externo** foi avaliado apenas quanto ao que o site precisa expor; a configuração em si não pôde ser verificada.
+
+---
+
+## 0. Estado atual (revisão 3 — 11/11/2026)
+
+### 0.1 Situação por item do slide
+
+"GTM existente" = já há trigger e tag GA4 no container (ver `docs/gtm-checkpoint-workspace61.md`). "Importar" = o site envia o evento, mas o container só passa a ler depois de importar `docs/gtm-import-metricas.json`.
+
+| Categoria | Requisito | Site | GTM / plataforma |
+|-----------|-----------|------|------------------|
+| Aquisição | Tráfego orgânico e pago por canal | OK: GTM em todas as páginas, UTM/`gclid`/`fbclid` preservados | GA4 `G-F2MNXV11HD` no container. Leitura no GA4 |
+| Aquisição | Impressões e cliques por palavra-chave | OK: `robots.ts`, `sitemap.ts`, canonical | Search Console e Google Ads |
+| Aquisição | CTR dos anúncios (Facebook, LinkedIn, Google) | OK: Meta Pixel no código | Google Ads, 2 LinkedIn Insight, 2 pixels Meta e DV360 no container. CTR é lido em cada plataforma |
+| Comportamento | Taxa de rejeição e tempo médio por página | OK | Automático no GA4 |
+| Comportamento | Scroll depth | OK: `scroll_depth` (25/50/75/90) | **Importar** |
+| Comportamento | Cliques nos CTAs principais | OK: `cta_click` + textos/hrefs que batem nos triggers de clique | GTM existente para header, home, LPs. **Importar** para `cta_click` (todas as páginas, com `location`) |
+| Comportamento | Cliques no WhatsApp da Zuli | OK: `whatsapp_click` | GTM existente (banner, rodapé, "Dúvidas?", ajuda). **Importar** para `whatsapp_click` |
+| Comportamento | Interações com banners e produtos | OK: `clicou-home-*`, `product_click` | GTM existente para 7 banners da home. **Importar** para os demais banners e produtos |
+| Conversão | Taxa de conversão do CTA de solicitação | OK | `Form_Sucesso` / cliques de CTA no GA4 |
+| Conversão | Leads gerados | OK: `Form_Sucesso`, `fbq Lead` | GTM existente (GA4, Google Ads, LinkedIn, Meta) |
+| Conversão | Acessos ao portal | OK: header, rodapé, `/portal` e, desde esta revisão, links nas respostas do FAQ (`portal_click`, `location: "faq"`) | GTM existente para header/rodapé/`/portal`. **Importar** para `portal_click` |
+| Conversão | Conversas iniciadas no WhatsApp | Clique medido | A conversa em si é dado do WhatsApp Business |
+| Conversão | Ligações geradas pelo rodapé | OK: `phone_click` com `location: "footer"` | **Importar** (o container só tinha `tel:` de `/ajuda` e `/bandeiras-vouchers`) |
+| Canais | Engajamento nas redes sociais | Clique de saída medido | GTM existente (rodapé). Engajamento é dado de cada rede |
+| Canais | Acesso mobile vs desktop | OK | Automático no GA4 |
+| Performance | Core Web Vitals (LCP, CLS, INP) | OK: `web_vitals` | **Importar** |
+| Performance | Velocidade de carregamento | Imagens em WebP, cache e compressão no `.htaccess` (0.3) | PageSpeed Insights / `web_vitals` |
+| Performance | Indexação no Google Search Console | Base OK | Verificar a propriedade e enviar o sitemap (ação humana) |
+| Performance | Taxa de aceite de cookies | OK: `cookie_banner_view`, `cookie_consent` | **Importar**. Taxa = `cookie_consent / cookie_banner_view` |
+
+### 0.2 Importar `docs/gtm-import-metricas.json`
+
+O arquivo tem 11 triggers de evento personalizado (`TRIGGER_metricas_*`), 11 tags GA4 Event (`TAG_metricas_*`, destino `G-F2MNXV11HD`) e as variáveis de dataLayer que as tags usam. Não altera nada que já existe.
+
+1. GTM → Administrador → Importar contêiner → escolher o arquivo.
+2. Espaço de trabalho: um novo. Opção: **Mesclar** → **Substituir tags, acionadores e variáveis conflitantes**. Os únicos nomes que já existem são as variáveis `pageName` e `DL - data`, com definição idêntica.
+3. Conferir no Preview: rolar uma página (`scroll_depth`), aceitar o banner (`cookie_consent`), clicar num telefone do rodapé (`phone_click`), aguardar `web_vitals`.
+4. Publicar.
+5. No GA4, registrar como dimensões personalizadas de evento: `location`, `name`, `page_name`, `metric_name`, `percent_scrolled`, `phone`, `network`, `banner_event`. Registrar `metric_value` como métrica personalizada.
+
+| Evento no dataLayer | Evento GA4 | Parâmetros |
+|---------------------|-----------|------------|
+| `scroll_depth` | `scroll_depth` | `percent_scrolled`, `page_name` |
+| `web_vitals` | `web_vitals` | `metric_name` (LCP, CLS, INP, FCP, TTFB), `metric_value` (ms; CLS com 4 casas), `page_name` |
+| `cookie_banner_view` | `cookie_banner_view` | `page_name` |
+| `cookie_consent` | `cookie_consent` | `name` (`accept`), `page_name` |
+| `phone_click` | `phone_click` | `phone`, `location`, `page_name` |
+| `cta_click` | `cta_click` | `name`, `location`, `href`, `page_name` |
+| `portal_click` | `portal_click` | `location`, `href`, `page_name` |
+| `whatsapp_click` | `whatsapp_click` | `location`, `href`, `page_name` |
+| `social_click` | `social_click` | `network`, `location`, `href`, `page_name` |
+| `product_click` | `product_click` | `name`, `location`, `href`, `page_name` |
+| `banner_click` e `clicou-home-*` | `banner_click` | `name`, `location`, `href`, `page_name`, `banner_event` |
+
+O arquivo foi validado só quanto à estrutura (JSON, referências entre tags, triggers e variáveis). A importação e o Preview não foram executados: não há acesso ao GTM a partir deste repositório. O container não tinha nenhuma tag GA4 Event com parâmetros para servir de modelo, então vale conferir os parâmetros de uma tag logo após importar.
+
+Cliques que já têm trigger de clique no container (WhatsApp, redes sociais, portal do header) passam a gerar também o evento genérico. São eventos GA4 com nomes diferentes, então não há contagem dupla dentro de um mesmo evento.
+
+### 0.3 Mudanças de código desta revisão
+
+- **FAQ:** `CategorizedFaqSection` emite `portal_click`, `whatsapp_click` ou `phone_click` (`location: "faq"`) quando o usuário clica num link de resposta. Helper `buildContentLinkGtmEvent` em `src/lib/analytics.ts`, com testes.
+- **Imagens:** 839 PNG/JPG de `public/images/` convertidos para WebP (193 MB → 19 MB), largura máxima 2560 px. Script `scripts/optimize-images.mjs` (`npm run images:optimize`, `npm run images:check`). Removidos os 8 `figma-*` e `programa-gas-do-povo/hero-bg.png`, sem uso no código. `public/assets/` (imagem Open Graph) não foi alterado.
+- **`.htaccess`:** compressão (brotli/deflate) e cache (`/_next/static/` por 1 ano com `immutable`; imagens, fontes e vídeo por 30 dias; HTML sem cache). Tudo dentro de `<IfModule>`; só tem efeito se o host tiver os módulos. Conferir os cabeçalhos em produção depois do deploy.
+
+### 0.4 Continua em aberto
+
+- Consent Mode v2 e botão de recusar: as tags carregam antes do aceite. Decisão jurídica.
+- Verificação da propriedade no Search Console.
+- Os 6 triggers com erro no GTM listados em `docs/gtm-checkpoint-workspace61.md`.
+- Três pixels Meta ativos ao mesmo tempo (um no código, dois no container): `PageView` e `Lead` chegam a todos.
 
 ---
 

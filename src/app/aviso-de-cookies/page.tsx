@@ -21,7 +21,7 @@ export default function AvisoDeCookiesPage() {
         description="Saiba como usamos cookies para melhorar o site, medir a audiência, melhorar sua experiência e fornecer conteúdo e publicidade adequados aos seus interesses."
         checkItems={[]}
         buttonText=""
-        backgroundImage="/images/aviso-de-cookies/hero.png"
+        backgroundImage="/images/aviso-de-cookies/hero.webp"
       />
       <CookieNoticeContent />
       <Footer />

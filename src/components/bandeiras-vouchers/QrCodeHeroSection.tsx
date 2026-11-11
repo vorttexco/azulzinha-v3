@@ -13,7 +13,7 @@ export default function QrCodeHeroSection() {
             </p>
             <div className="flex items-center gap-4 border border-azul rounded-[4px] px-4 py-2.5">
               <Image
-                src={asset("/images/bandeiras-vouchers/logo-vr-qr.png")}
+                src={asset("/images/bandeiras-vouchers/logo-vr-qr.webp")}
                 alt="VR"
                 width={155}
                 height={120}
@@ -39,7 +39,7 @@ export default function QrCodeHeroSection() {
           </div>
           <div className="flex justify-center lg:justify-end lg:w-[180px] shrink-0">
             <Image
-              src={asset("/images/bandeiras-vouchers/maquina-qrcode.png")}
+              src={asset("/images/bandeiras-vouchers/maquina-qrcode.webp")}
               alt="Maquininha azulzinha exibindo o QR Code da VR"
               width={274}
               height={620}

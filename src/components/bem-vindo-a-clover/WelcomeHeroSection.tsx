@@ -28,14 +28,14 @@ export default function WelcomeHeroSection() {
   return (
     <section className="relative w-full min-h-[560px] lg:min-h-[650px] overflow-hidden">
       <Image
-        src={asset("/images/bem-vindo-a-clover/hero-bg.jpg")}
+        src={asset("/images/bem-vindo-a-clover/hero-bg.webp")}
         alt=""
         fill
         className="object-cover object-center hidden lg:block"
         priority
       />
       <Image
-        src={asset("/images/bem-vindo-a-clover/hero-bg-mobile.png")}
+        src={asset("/images/bem-vindo-a-clover/hero-bg-mobile.webp")}
         alt=""
         fill
         className="object-cover object-top lg:hidden"

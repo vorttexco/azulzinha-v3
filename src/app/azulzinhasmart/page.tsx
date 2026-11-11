@@ -34,8 +34,8 @@ export default function AzulzinhaSmartPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#conteudo"
-        backgroundImage="/images/azulzinha-smart/hero-bg.png"
-        mobileBackgroundImage="/images/azulzinha-smart/hero-bg.png"
+        backgroundImage="/images/azulzinha-smart/hero-bg.webp"
+        mobileBackgroundImage="/images/azulzinha-smart/hero-bg.webp"
         mobileImageClassName="object-[70%_25%]"
       />
       <SimplifiqueSection />
@@ -49,7 +49,7 @@ export default function AzulzinhaSmartPage() {
       <SimpleVideoSection
         title="Tudo o que você precisa saber antes de ter a sua"
         description="Assista ao vídeo para conhecer as vantagens da azulzinha smart e começar a centralizar suas vendas e gerenciar seu negócio de forma mais simples e inteligente que nunca!"
-        thumbnail="/images/azulzinha-smart/video-thumbnail-1.png"
+        thumbnail="/images/azulzinha-smart/video-thumbnail-1.webp"
         gtmTag="azulzinha-smart"
         gtmTitle="azulzinha smart"
         videoSrc="https://azulzinhadacaixa.com.br/midias/azulzinha-smart.mp4"
@@ -61,7 +61,7 @@ export default function AzulzinhaSmartPage() {
         buttonText="Leia o manual"
         buttonHref="https://azulzinhadacaixa.com.br/midias/azulzinhasmart.pdf"
         buttonTarget="_blank"
-        icon="/images/azulzinha-smart/book-icon.png"
+        icon="/images/azulzinha-smart/book-icon.webp"
         iconAlt="Manual"
       />
       <VantagensSmartSection />
@@ -75,7 +75,7 @@ export default function AzulzinhaSmartPage() {
         description=""
         buttonText="Peça já sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/azulzinha-smart/cta-market-bg.png"
+        image="/images/azulzinha-smart/cta-market-bg.webp"
         imageAlt="azulzinha Smart CTA"
       />
       <Footer />

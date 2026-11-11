@@ -20,7 +20,7 @@ const machines: Machine[] = [
     name: "azulzinha smart",
     description:
       "A maquininha de cartão para centralizar e simplificar a gestão financeira",
-    image: "/images/maquininhas/product-azulzinha-smart.png",
+    image: "/images/maquininhas/product-azulzinha-smart.webp",
     href: "/azulzinhasmart",
     features: [
       "Compatível com Apps de PDV móvel;",
@@ -36,7 +36,7 @@ const machines: Machine[] = [
   {
     name: "azulzinha TEF",
     description: "A azulzinha da CAIXA para movimentar grandes volumes",
-    image: "/images/maquininhas/product-azulzinha-tef.png",
+    image: "/images/maquininhas/product-azulzinha-tef.webp",
     href: "/maquininhas/tef",
     features: [
       "Transferência eletrônica de fundos (TEF);",
@@ -49,7 +49,7 @@ const machines: Machine[] = [
   {
     name: "azulzinha pro",
     description: "Para levar a maquininha de cartão até o seu cliente",
-    image: "/images/maquininhas/product-azulzinha-pro.png",
+    image: "/images/maquininhas/product-azulzinha-pro.webp",
     href: "/maquininhas/pro",
     features: [
       "Terminal sem fio projetado para a mobilidade;",

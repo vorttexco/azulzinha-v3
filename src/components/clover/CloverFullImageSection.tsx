@@ -5,7 +5,7 @@ export default function CloverFullImageSection() {
   return (
     <section className="relative w-full h-[250px] lg:h-[594px] overflow-hidden">
       <Image
-        src={asset("/images/clover/full-image-5e4c46.png")}
+        src={asset("/images/clover/full-image-5e4c46.webp")}
         alt="Clover em uso"
         fill
         className="object-cover"

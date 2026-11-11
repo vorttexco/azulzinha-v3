@@ -2,12 +2,12 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 const bandeiras = [
-  { name: "Visa", logo: "/images/crediario-azulzinha/logo-visa.png", width: 92, height: 29 },
-  { name: "Mastercard", logo: "/images/crediario-azulzinha/logo-mastercard.png", width: 76, height: 47 },
-  { name: "Elo", logo: "/images/crediario-azulzinha/logo-elo.png", width: 95, height: 31 },
-  { name: "Hipercard", logo: "/images/crediario-azulzinha/logo-hipercard.png", width: 93, height: 41 },
-  { name: "Amex", logo: "/images/crediario-azulzinha/logo-amex.png", width: 71, height: 71 },
-  { name: "Hiper", logo: "/images/crediario-azulzinha/logo-hiper.png", width: 72, height: 58 },
+  { name: "Visa", logo: "/images/crediario-azulzinha/logo-visa.webp", width: 92, height: 29 },
+  { name: "Mastercard", logo: "/images/crediario-azulzinha/logo-mastercard.webp", width: 76, height: 47 },
+  { name: "Elo", logo: "/images/crediario-azulzinha/logo-elo.webp", width: 95, height: 31 },
+  { name: "Hipercard", logo: "/images/crediario-azulzinha/logo-hipercard.webp", width: 93, height: 41 },
+  { name: "Amex", logo: "/images/crediario-azulzinha/logo-amex.webp", width: 71, height: 71 },
+  { name: "Hiper", logo: "/images/crediario-azulzinha/logo-hiper.webp", width: 72, height: 58 },
 ];
 
 export default function BandeirasCrediarioSection() {

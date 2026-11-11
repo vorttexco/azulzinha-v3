@@ -22,10 +22,10 @@ export default function SuaAzulzinhaPage() {
                 checkItems={[]}
                 buttonText="Clique aqui e saiba como!"
                 buttonHref="#form"
-                backgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
-                mobileBackgroundImage="/images/hero-backgrounds/sua-azulzinha.png"
+                backgroundImage="/images/hero-backgrounds/sua-azulzinha.webp"
+                mobileBackgroundImage="/images/hero-backgrounds/sua-azulzinha.webp"
                 mobileImageClassName="object-[70%_25%]"
-                productImage="/images/produtos.png"
+                productImage="/images/produtos.webp"
             />
             <FormSection />
             <Footer />

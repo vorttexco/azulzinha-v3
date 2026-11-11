@@ -7,22 +7,22 @@ import React, { useCallback, useEffect, useState } from "react";
 
 const cards = [
   {
-    icon: "/images/azulzinha-aproxima/icon-nfc.png",
+    icon: "/images/azulzinha-aproxima/icon-nfc.webp",
     title: "Em todo lugar",
     description: <>Venda mais e onde quiser com tudo pelo App <strong>azulzinha aproxima</strong>.</>,
   },
   {
-    icon: "/images/azulzinha-aproxima/icon-zero-aluguel.png",
+    icon: "/images/azulzinha-aproxima/icon-zero-aluguel.webp",
     title: "Zero aluguel",
     description: "Aceite cartões por aproximação e carteiras digitais sem pagar nada.",
   },
   {
-    icon: "/images/azulzinha-aproxima/icon-celular.png",
+    icon: "/images/azulzinha-aproxima/icon-celular.webp",
     title: "No celular ou tablet",
     description: "Basta ter tecnologia de aproximação e Android versão 12 ou superior.",
   },
   {
-    icon: "/images/azulzinha-aproxima/icon-vendas.png",
+    icon: "/images/azulzinha-aproxima/icon-vendas.webp",
     title: "Não perca vendas",
     description: "Aceita vendas do débito, crédito à vista e parcelado.",
   },
@@ -80,7 +80,7 @@ export default function AproximaSection() {
           {/* Right: Image */}
           <div className="relative w-full lg:w-[676px] h-[256px] lg:h-[426px] rounded-[20px] lg:rounded-l-[20px] lg:rounded-r-none overflow-hidden">
             <Image
-              src={asset("/images/azulzinha-aproxima/aproxima-photo.png")}
+              src={asset("/images/azulzinha-aproxima/aproxima-photo.webp")}
               alt="azulzinha aproxima"
               fill
               className="object-cover"

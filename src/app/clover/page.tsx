@@ -52,8 +52,8 @@ export default function CloverPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#dobra"
-        backgroundImage="/images/clover/hero-bg-1f8314.png"
-        mobileBackgroundImage="/images/clover/hero-bg-1f8314.png"
+        backgroundImage="/images/clover/hero-bg-1f8314.webp"
+        mobileBackgroundImage="/images/clover/hero-bg-1f8314.webp"
         mobileImageClassName="object-[60%_25%]"
       />
       <CloverDiscoverSection />
@@ -70,7 +70,7 @@ export default function CloverPage() {
         description="Preencha o formulário e receba uma oferta sob medida com as soluções da Clover e as condições exclusivas que só a CAIXA tem para o seu negócio."
         buttonText="Peça a sua Clover"
         buttonHref="/peca-azulzinha"
-        image="/images/clover/cta-photo.png"
+        image="/images/clover/cta-photo.webp"
         imageAlt="Clover CTA"
       />
       <Footer />

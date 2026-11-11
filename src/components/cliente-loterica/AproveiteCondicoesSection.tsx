@@ -3,11 +3,11 @@ import { asset } from "@/lib/assets";
 
 const cards = [
   {
-    icon: "/images/cliente-loterica/icon-recarga.png",
+    icon: "/images/cliente-loterica/icon-recarga.webp",
     text: "Trabalhe com as mesmas taxas do serviço de conveniência do TFL",
   },
   {
-    icon: "/images/cliente-loterica/icon-bandeiras-parcial.png",
+    icon: "/images/cliente-loterica/icon-bandeiras-parcial.webp",
     text: "Solicite a sua maquininha com aluguel mensal de apenas R$29,90",
   },
   {

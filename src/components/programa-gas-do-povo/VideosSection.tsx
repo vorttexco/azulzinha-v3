@@ -23,12 +23,12 @@ function PlayIcon() {
 const videos = [
   {
     title: "Como aceitar o Programa Gás do Povo com a azulzinha aproxima",
-    thumbnail: "/images/programa-gas-do-povo/video-1-thumb.png",
+    thumbnail: "/images/programa-gas-do-povo/video-1-thumb.webp",
     videoSrc: "https://azulzinhadacaixa.com.br/midias/aproxima-gas-do-povo.mp4",
   },
   {
     title: "Como aceitar o Programa Gás do Povo com a azulzinha",
-    thumbnail: "/images/programa-gas-do-povo/video-2-thumb.png",
+    thumbnail: "/images/programa-gas-do-povo/video-2-thumb.webp",
     videoSrc: "https://azulzinhadacaixa.com.br/midias/azulzinha-smart-gas-do-povo.mp4",
   },
 ];

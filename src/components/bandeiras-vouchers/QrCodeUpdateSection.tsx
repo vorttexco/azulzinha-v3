@@ -18,7 +18,7 @@ export default function QrCodeUpdateSection() {
             </p>
           </div>
           <Image
-            src={asset("/images/bandeiras-vouchers/maquina-pq.png")}
+            src={asset("/images/bandeiras-vouchers/maquina-pq.webp")}
             alt="Duas maquininhas azulzinha"
             width={2200}
             height={1238}

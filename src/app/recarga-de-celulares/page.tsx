@@ -25,7 +25,7 @@ export default function RecargaTelefone() {
         checkItems={[]}
         buttonText="Veja como"
         buttonHref="#dobra"
-        backgroundImage="/images/hero-backgrounds/recarga-telefone.png"
+        backgroundImage="/images/hero-backgrounds/recarga-telefone.webp"
       />
 
       <div id="dobra" />
@@ -37,7 +37,7 @@ export default function RecargaTelefone() {
           paragraphs={[
             "Além de facilitar as vendas no seu estabelecimento, a maquininha permite que você ofereça o serviço de recarga de telefonia para seus clientes. E o melhor disso tudo: sem qualquer custo adicional. Basta habilitar o serviço direto nela e começar a vender.",
           ]}
-          image="/images/recarga-telefone/featuretel.jpg"
+          image="/images/recarga-telefone/featuretel.webp"
           imageAlt="Recarga de telefonia azulzinha"
           cardWidth="814px"
           cardHeight="426px"
@@ -51,8 +51,8 @@ export default function RecargaTelefone() {
         {/* Cards */}
         <div className="relative z-10 -mt-20 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
           {[
-            { icon: "/images/recarga-telefone/1.png", text: "Sem custos adicionais" },
-            { icon: "/images/recarga-telefone/2.png", text: "Mais uma oportunidade de venda e aumento de receita" },
+            { icon: "/images/recarga-telefone/1.webp", text: "Sem custos adicionais" },
+            { icon: "/images/recarga-telefone/2.webp", text: "Mais uma oportunidade de venda e aumento de receita" },
           ].map((card) => (
             <div
               key={card.text}

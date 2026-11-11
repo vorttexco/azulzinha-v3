@@ -80,7 +80,7 @@ export default function HeroSection({
   buttonText = "Saiba mais",
   buttonHref = "#",
   buttonSubtext,
-  backgroundImage = "/images/hero-bg.png",
+  backgroundImage = "/images/hero-bg.webp",
   mobileBackgroundImage,
   highlightWord = "1 dia útil",
   productImage,

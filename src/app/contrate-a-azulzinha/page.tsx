@@ -33,8 +33,8 @@ export default function ContrateAAzulzinhaPage() {
           checkItems={[]}
           buttonText="Peça já a sua"
           buttonHref="#form"
-          backgroundImage="/images/contrate-a-azulzinha/hero-bg.png"
-          mobileBackgroundImage="/images/contrate-a-azulzinha/hero-bg.png"
+          backgroundImage="/images/contrate-a-azulzinha/hero-bg.webp"
+          mobileBackgroundImage="/images/contrate-a-azulzinha/hero-bg.webp"
           mobileImageClassName="object-[70%_25%]"
         />
         <FormSection
@@ -57,7 +57,7 @@ export default function ContrateAAzulzinhaPage() {
         description="Conecte-se a mundo de soluções que só a CAIXA pode oferecer para apoiar sua empresa."
         buttonText="Peça já a sua azulzinha"
         buttonHref="#form"
-        image="/images/maquininhas/cta-bg.png"
+        image="/images/maquininhas/cta-bg.webp"
         imageAlt="Peça já a sua azulzinha"
       />
       <Footer />

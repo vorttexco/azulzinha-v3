@@ -32,7 +32,7 @@ export default function AutonomiaSection() {
           {/* Right: Image */}
           <div className="relative w-full lg:w-[605px] h-[256px] lg:h-[426px] rounded-[12px] lg:rounded-[30px] overflow-hidden">
             <Image
-              src={asset("/images/maquininhas-pro/autonomia-photo.png")}
+              src={asset("/images/maquininhas-pro/autonomia-photo.webp")}
               alt="Autonomia com azulzinha pro"
               fill
               className="object-cover"

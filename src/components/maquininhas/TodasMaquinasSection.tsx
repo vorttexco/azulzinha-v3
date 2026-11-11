@@ -38,7 +38,7 @@ export default function TodasMaquinasSection() {
           {/* Product image - all machines */}
           <div className="relative w-[85%] h-full mx-auto lg:absolute lg:top-0 lg:left-[108px] lg:w-[841px] lg:h-[324px] lg:mx-0">
             <Image
-              src={asset("/images/maquininhas/todas-maquinas.png")}
+              src={asset("/images/maquininhas/todas-maquinas.webp")}
               alt="Todas as maquininhas azulzinha"
               fill
               className="object-contain"

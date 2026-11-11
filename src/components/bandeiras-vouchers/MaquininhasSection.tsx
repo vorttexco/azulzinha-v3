@@ -3,10 +3,10 @@ import Link from "next/link";
 import { asset } from "@/lib/assets";
 
 const machines = [
-  { src: "/images/bandeiras-vouchers/c680.png", w: 152, h: 308, alt: "C680" },
-  { src: "/images/bandeiras-vouchers/mov5000.png", w: 150, h: 311, alt: "MOV5000" },
-  { src: "/images/bandeiras-vouchers/sp930.png", w: 145, h: 306, alt: "SP930" },
-  { src: "/images/bandeiras-vouchers/lane_frontal2.png", w: 451, h: 922, alt: "Lane" },
+  { src: "/images/bandeiras-vouchers/c680.webp", w: 152, h: 308, alt: "C680" },
+  { src: "/images/bandeiras-vouchers/mov5000.webp", w: 150, h: 311, alt: "MOV5000" },
+  { src: "/images/bandeiras-vouchers/sp930.webp", w: 145, h: 306, alt: "SP930" },
+  { src: "/images/bandeiras-vouchers/lane_frontal2.webp", w: 451, h: 922, alt: "Lane" },
 ];
 
 export default function MaquininhasSection() {

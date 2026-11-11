@@ -57,13 +57,13 @@ export default function MaquininhasPage() {
         checkItems={[]}
         buttonText="Saiba mais"
         buttonHref="#dobra"
-        backgroundImage="/images/maquininhas/hero-bg.png"
+        backgroundImage="/images/maquininhas/hero-bg.webp"
       />
       <TodasMaquinasSection />
       <SimpleVideoSection
         title="Para ter uma solução móvel completa"
         description="Ela é azulzinha porque é da CAIXA! Conheça as vantagens que só a maquininha da CAIXA pode oferecer para você. Assista ao vídeo:"
-        thumbnail="/images/maquininhas/video-thumbnail.png"
+        thumbnail="/images/maquininhas/video-thumbnail.webp"
         className="bg-[#F4F4F4] lg:bg-white"
         gtmTag="azulzinha-maquininha-caixa"
         gtmTitle="azulzinha maquininha da CAIXA"
@@ -80,7 +80,7 @@ export default function MaquininhasPage() {
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça já a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/maquininhas/cta-bg.png"
+        image="/images/maquininhas/cta-bg.webp"
         imageAlt="azulzinha maquininhas CTA"
       />
       <Footer />

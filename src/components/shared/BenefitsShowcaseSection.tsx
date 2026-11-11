@@ -93,7 +93,7 @@ function SmallCard({ icon, text, title, cardClassName, iconClassName }: CardItem
 export default function BenefitsShowcaseSection({
   title = defaultTitle,
   description,
-  image = "/images/benefits-bg.png",
+  image = "/images/benefits-bg.webp",
   imageAlt = "Benefícios azulzinha",
   cards = defaultCards,
   showLink = true,

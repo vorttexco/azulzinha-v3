@@ -12,10 +12,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
 const phoneScreens = [
-  { image: "/images/app-azulzinha/screen-1.png", label: "Home da azulzinha" },
-  { image: "/images/app-azulzinha/screen-2.png", label: "Seus recebimentos" },
-  { image: "/images/app-azulzinha/screen-3.png", label: "Extrato detalhado" },
-  { image: "/images/app-azulzinha/screen-4.png", label: "Link de pagamento" },
+  { image: "/images/app-azulzinha/screen-1.webp", label: "Home da azulzinha" },
+  { image: "/images/app-azulzinha/screen-2.webp", label: "Seus recebimentos" },
+  { image: "/images/app-azulzinha/screen-3.webp", label: "Extrato detalhado" },
+  { image: "/images/app-azulzinha/screen-4.webp", label: "Link de pagamento" },
 ];
 
 function PhoneCarouselSection() {
@@ -145,7 +145,7 @@ function PhoneCarouselSection() {
 
 const motivosCards = [
   {
-    icon: "/images/app-azulzinha/icon-gestao.png",
+    icon: "/images/app-azulzinha/icon-gestao.webp",
     title: "Gestão de vendas",
     items: [
       "Extraia relatórios de venda",
@@ -156,7 +156,7 @@ const motivosCards = [
     ],
   },
   {
-    icon: "/images/app-azulzinha/icon-nav.png",
+    icon: "/images/app-azulzinha/icon-nav.webp",
     title: "Navegação fácil e segura",
     items: [
       "Alterne estabelecimentos",
@@ -167,7 +167,7 @@ const motivosCards = [
     ],
   },
   {
-    icon: "/images/app-azulzinha/icon-user.png",
+    icon: "/images/app-azulzinha/icon-user.webp",
     title: "Demandas do dia a dia",
     items: [
       "Agende manutenções",
@@ -202,7 +202,7 @@ export default function GestaoAppPage() {
         checkItems={[]}
         buttonText="Conheça o app"
         buttonHref="#dobra"
-        backgroundImage="/images/app-azulzinha/app-hero.png"
+        backgroundImage="/images/app-azulzinha/app-hero.webp"
       />
       <div id="dobra" />
       <FeatureSection
@@ -210,7 +210,7 @@ export default function GestaoAppPage() {
         paragraphs={[
           "Quando o assunto é cuidar das suas vendas em tempo real, conte com as facilidades do App da azulzinha da CAIXA.",
         ]}
-        image="/images/app-azulzinha/celular-app.png"
+        image="/images/app-azulzinha/celular-app.webp"
         imageAlt="App da azulzinha nos celulares"
         cardWidth="605px"
         cardHeight="398px"
@@ -220,12 +220,12 @@ export default function GestaoAppPage() {
         imageClassName="object-contain"
         storeBadges={[
           {
-            image: "/images/android.png",
+            image: "/images/android.webp",
             href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa",
             alt: "Disponível no Google Play",
           },
           {
-            image: "/images/apple.png",
+            image: "/images/apple.webp",
             href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624",
             alt: "Disponível na App Store",
           },
@@ -279,7 +279,7 @@ export default function GestaoAppPage() {
       <SimpleVideoSection
         title="Explore todas as novidades da nova versão"
         description="Preparamos um vídeo para você aproveitar ao máximo as novidades em privacidade, personalização, segurança e navegação da mais nova versão disponível na loja de aplicativos do seu celular."
-        thumbnail="/images/app-azulzinha/video-thumbnail.png"
+        thumbnail="/images/app-azulzinha/video-thumbnail.webp"
         gtmTag="azulzinha-app"
         gtmTitle="azulzinha app"
         videoSrc="https://azulzinhadacaixa.com.br/midias/vantagens-aplicativo.mp4"
@@ -302,7 +302,7 @@ export default function GestaoAppPage() {
               >
                 <div className="relative w-[166px] h-[29px]">
                   <Image
-                    src={asset("/images/app-azulzinha/estrelas.png")}
+                    src={asset("/images/app-azulzinha/estrelas.webp")}
                     alt="5 estrelas"
                     fill
                     className="object-contain"
@@ -337,17 +337,17 @@ export default function GestaoAppPage() {
       <BlueCta
         title="Baixe agora para começar a usar o App da azulzinha."
         sectionClassName="bg-linear-to-t from-[#F2F2F2] to-white"
-        featureImage="/images/app-azulzinha/celular-app.png"
+        featureImage="/images/app-azulzinha/celular-app.webp"
         featureImageAlt="App da azulzinha"
         reverseOnMobile
         storeBadges={[
           {
-            image: "/images/android.png",
+            image: "/images/android.webp",
             href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US",
             alt: "Disponível no Google Play",
           },
           {
-            image: "/images/apple.png",
+            image: "/images/apple.webp",
             href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624",
             alt: "Disponível na App Store",
           },

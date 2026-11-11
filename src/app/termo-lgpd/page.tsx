@@ -21,7 +21,7 @@ export default function TermoLgpdPage() {
         description="Leia a declaração de aceite aos termos e condições para uso de informações e dados pessoais e outras avenças deste site."
         checkItems={[]}
         buttonText=""
-        backgroundImage="/images/termo-lgpd/hero.png"
+        backgroundImage="/images/termo-lgpd/hero.webp"
       />
       <LgpdTermsContent />
       <Footer />

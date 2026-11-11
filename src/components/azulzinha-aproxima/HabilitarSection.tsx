@@ -55,7 +55,7 @@ export default function HabilitarSection() {
               <div className="w-full h-full cursor-pointer group" onClick={handlePlayClick}>
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src={asset("/images/azulzinha-aproxima/video-habilitar.png")}
+                    src={asset("/images/azulzinha-aproxima/video-habilitar.webp")}
                     alt="Como habilitar azulzinha aproxima"
                     fill
                     className="object-cover"

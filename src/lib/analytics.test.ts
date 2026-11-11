@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   GTM_TRANSACTION_ID,
   buildBannerGtmEvent,
+  buildContentLinkGtmEvent,
   HOME_BANNER_GTM_EVENTS,
   buildCookieGtmEvent,
   buildCtaGtmEvent,
@@ -250,5 +251,39 @@ describe("dataLayer and meta helpers", () => {
       order.push("gtm-success");
     });
     expect(order).toEqual(["gtm-success", "Lead"]);
+  });
+});
+
+describe("content link events", () => {
+  const base = { location: "faq" as const, pageName: "/ajuda" };
+
+  it("maps portal links to portal_click", () => {
+    const href = "https://portal.azulzinhadacaixa.com.br";
+    expect(buildContentLinkGtmEvent({ ...base, href })).toMatchObject({
+      event: "portal_click",
+      location: "faq",
+      href,
+      pageName: "/ajuda",
+    });
+  });
+
+  it("maps WhatsApp links to whatsapp_click", () => {
+    const href = "https://api.whatsapp.com/send/?phone=551126620580";
+    expect(buildContentLinkGtmEvent({ ...base, href })).toMatchObject({
+      event: "whatsapp_click",
+      href,
+    });
+  });
+
+  it("maps tel links to phone_click with digits only", () => {
+    expect(buildContentLinkGtmEvent({ ...base, href: "tel:0800 729 5365" })).toMatchObject({
+      event: "phone_click",
+      name: "08007295365",
+    });
+  });
+
+  it("ignores other links", () => {
+    expect(buildContentLinkGtmEvent({ ...base, href: "https://azulzinhadacaixa.com.br/app" })).toBeNull();
+    expect(buildContentLinkGtmEvent({ ...base, href: "/portal" })).toBeNull();
   });
 });

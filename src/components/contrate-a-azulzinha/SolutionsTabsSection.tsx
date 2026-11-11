@@ -27,19 +27,19 @@ const tabs: SolutionTab[] = [
       "Receba suas vendas com segurança, flexibilidade e gestão unificada",
     cards: [
       {
-        icon: "/images/contrate-a-azulzinha/icon-link.png",
+        icon: "/images/contrate-a-azulzinha/icon-link.webp",
         title: "Link de Pagamento",
         description:
           "Crie links seguros e ilimitados direto e compartilhe por SMS, WhatsApp, e-mail e outros canais. Disponível no App da azulzinha.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-whatsapp.png",
+        icon: "/images/contrate-a-azulzinha/icon-whatsapp.webp",
         title: "Pagamentos no WhatsApp",
         description:
           "Faça cobranças pelo aplicativo mais acessado do Brasil configurando a Fiserv como seu parceiro de pagamentos no WhatsApp Business.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-ecommerce.png",
+        icon: "/images/contrate-a-azulzinha/icon-ecommerce.webp",
         title: "E-commerce",
         description:
           "Aceite os principais meios de pagamento na sua loja online com a API da azulzinha, e venda com segurança antifraude e alta conversão.",
@@ -54,25 +54,25 @@ const tabs: SolutionTab[] = [
       "Potencialize seu fluxo de caixa e otimize a jornada do cliente",
     cards: [
       {
-        icon: "/images/contrate-a-azulzinha/icon-antecipacao.png",
+        icon: "/images/contrate-a-azulzinha/icon-antecipacao.webp",
         title: "Antecipação de vendas",
         description:
           "Receba antes as vendas no crédito de forma pontual ou programada. Solicite no App da azulzinha ou direto na máquina.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-pix.png",
+        icon: "/images/contrate-a-azulzinha/icon-pix.webp",
         title: "Pix",
         description:
           "Aceite Pix na sua azulzinha com segurança antifraude, estabilidade, liquidação automática, relatórios detalhados e suporte 24x7.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-recarga.png",
+        icon: "/images/contrate-a-azulzinha/icon-recarga.webp",
         title: "Recarga",
         description:
           "Ofereça o serviço de recarga de telefone para seus clientes direto na máquina, sem qualquer custo adicional.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-pagamento-parcial.png",
+        icon: "/images/contrate-a-azulzinha/icon-pagamento-parcial.webp",
         title: "Pagamento Parcial",
         description:
           "Ative o serviço para permitir que clientes Visa e Elo, selecionados pelo emissor, dividam o pagamento da compra entre o cartão e outro meio de pagamento.",
@@ -86,13 +86,13 @@ const tabs: SolutionTab[] = [
     description: "Administre seus recebimentos e solicite serviços diversos",
     cards: [
       {
-        icon: "/images/contrate-a-azulzinha/icon-app.png",
+        icon: "/images/contrate-a-azulzinha/icon-app.webp",
         title: "App da azulzinha",
         description:
           "Acompanhe suas vendas em tempo real, gere links de pagamento, antecipe recebíveis, solicite bobinas e muito mais no aplicativo.",
       },
       {
-        icon: "/images/contrate-a-azulzinha/icon-portal.png",
+        icon: "/images/contrate-a-azulzinha/icon-portal.webp",
         title: "Portal do Cliente",
         description:
           "Acesse pelo computador uma plataforma completa com gráficos detalhados, exportação de relatórios, serviços e muito mais.",

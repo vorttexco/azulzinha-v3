@@ -300,7 +300,7 @@ export default function PixAzulzinha() {
         checkItems={[]}
         buttonText="Habilite já"
         buttonHref="#habilita"
-        backgroundImage="/images/pix-azulzinha/hero-bg.png"
+        backgroundImage="/images/pix-azulzinha/hero-bg.webp"
       />
 
       <FeatureSection
@@ -310,7 +310,7 @@ export default function PixAzulzinha() {
           "Rápido e seguro, o Pix por aproximação está disponível em todas as maquininhas.",
           "Ainda não ativou o Pix na sua azulzinha?",
         ]}
-        image="/images/pix-azulzinha/cel-maq-icons.png"
+        image="/images/pix-azulzinha/cel-maq-icons.webp"
         imageAlt="Celular e maquininha com ícones de pagamento"
         cardWidth="605px"
         cardHeight="398px"
@@ -341,7 +341,7 @@ export default function PixAzulzinha() {
         buttonHref="#anchor-app"
         button2Text="Habilitar via Maquininha"
         button2Href="#anchor-maq"
-        image="/images/pix-azulzinha/cta-bg.png"
+        image="/images/pix-azulzinha/cta-bg.webp"
         imageAlt="Mercado com azulzinha"
       />
 
@@ -350,20 +350,20 @@ export default function PixAzulzinha() {
       <StepsTimelineSection
         title="Como habilitar o Pix no App da azulzinha"
         steps={stepsApp}
-        phoneImage="/images/pix-azulzinha/phone-mockup-1.png"
+        phoneImage="/images/pix-azulzinha/phone-mockup-1.webp"
         footnote={chaveCaixaFootnote}
         stepImages={[
-          "/images/pix-azulzinha/APP01.png",
-          "/images/pix-azulzinha/APP02.png",
-          "/images/pix-azulzinha/APP03.png",
-          "/images/pix-azulzinha/APP04.png",
-          "/images/pix-azulzinha/APP05.png",
-          "/images/pix-azulzinha/APP06.png",
-          "/images/pix-azulzinha/APP07.png",
-          "/images/pix-azulzinha/APP08.png",
-          "/images/pix-azulzinha/APP09.png",
-          "/images/pix-azulzinha/APP11.png",
-          "/images/pix-azulzinha/APP12.png",
+          "/images/pix-azulzinha/APP01.webp",
+          "/images/pix-azulzinha/APP02.webp",
+          "/images/pix-azulzinha/APP03.webp",
+          "/images/pix-azulzinha/APP04.webp",
+          "/images/pix-azulzinha/APP05.webp",
+          "/images/pix-azulzinha/APP06.webp",
+          "/images/pix-azulzinha/APP07.webp",
+          "/images/pix-azulzinha/APP08.webp",
+          "/images/pix-azulzinha/APP09.webp",
+          "/images/pix-azulzinha/APP11.webp",
+          "/images/pix-azulzinha/APP12.webp",
         ]}
       />
 
@@ -372,22 +372,22 @@ export default function PixAzulzinha() {
       <StepsTimelineSection
         title="Como habilitar o Pix na maquininha"
         steps={stepsMaquininha}
-        phoneImage="/images/pix-azulzinha/phone-mockup-2.png"
+        phoneImage="/images/pix-azulzinha/phone-mockup-2.webp"
         bgColor="bg-[#F4F4F4]"
         footnote={chaveCaixaFootnote}
         stepImages={[
-          "/images/pix-azulzinha/maquina1.png",
-          "/images/pix-azulzinha/maquina2.png",
-          "/images/pix-azulzinha/maquina3.png",
-          "/images/pix-azulzinha/maquina4.png",
-          "/images/pix-azulzinha/maquina5.png",
-          "/images/pix-azulzinha/maquina6.png",
-          "/images/pix-azulzinha/maquina7.png",
-          "/images/pix-azulzinha/maquina8.png",
-          "/images/pix-azulzinha/maquina9.png",
-          "/images/pix-azulzinha/maquina10.png",
-          "/images/pix-azulzinha/maquina11.png",
-          "/images/pix-azulzinha/maquina12.png",
+          "/images/pix-azulzinha/maquina1.webp",
+          "/images/pix-azulzinha/maquina2.webp",
+          "/images/pix-azulzinha/maquina3.webp",
+          "/images/pix-azulzinha/maquina4.webp",
+          "/images/pix-azulzinha/maquina5.webp",
+          "/images/pix-azulzinha/maquina6.webp",
+          "/images/pix-azulzinha/maquina7.webp",
+          "/images/pix-azulzinha/maquina8.webp",
+          "/images/pix-azulzinha/maquina9.webp",
+          "/images/pix-azulzinha/maquina10.webp",
+          "/images/pix-azulzinha/maquina11.webp",
+          "/images/pix-azulzinha/maquina12.webp",
         ]}
       />
 
@@ -395,14 +395,14 @@ export default function PixAzulzinha() {
         title="Faça a primeira transação com Pix na sua maquininha"
         subtitle="Depois de habilitar a função de pagamento por Pix via App da azulzinha ou maquininha, siga o passo a passo para fazer a primeira venda:"
         steps={stepsTransacao}
-        phoneImage="/images/pix-azulzinha/phone-mockup-3.png"
+        phoneImage="/images/pix-azulzinha/phone-mockup-3.webp"
         footnote="Se o comprovante não for impresso, ocorrerá a devolução dos valores - desfazimento da transação."
         stepImages={[
-          "/images/pix-azulzinha/maquinaTwo1.png",
-          "/images/pix-azulzinha/maquinaTwo2.png",
-          "/images/pix-azulzinha/maquinaTwo3.png",
-          "/images/pix-azulzinha/maquinaTwo4.png",
-          "/images/pix-azulzinha/maquinaTwo5.png",
+          "/images/pix-azulzinha/maquinaTwo1.webp",
+          "/images/pix-azulzinha/maquinaTwo2.webp",
+          "/images/pix-azulzinha/maquinaTwo3.webp",
+          "/images/pix-azulzinha/maquinaTwo4.webp",
+          "/images/pix-azulzinha/maquinaTwo5.webp",
         ]}
       />
 
@@ -411,7 +411,7 @@ export default function PixAzulzinha() {
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/pix-azulzinha/cta-bg.png"
+        image="/images/pix-azulzinha/cta-bg.webp"
         imageAlt="Mercado com azulzinha"
       />
 

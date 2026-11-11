@@ -63,7 +63,7 @@ export default function VantagensListSection() {
           <div className="relative w-full lg:w-1/2 h-[240px] lg:h-[420px]">
             <Image
               src={asset(
-                "/images/maquininha-de-cartao-azulzinha-da-caixa/group-maquinas.png"
+                "/images/maquininha-de-cartao-azulzinha-da-caixa/group-maquinas.webp"
               )}
               alt="Maquininhas azulzinha da CAIXA"
               fill

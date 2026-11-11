@@ -12,11 +12,11 @@ import AproveiteCondicoesSection from "@/components/cliente-loterica/AproveiteCo
 import { asset } from "@/lib/assets";
 
 const beneficiosItems = [
-  { icon: "/images/portal-azulzinha/portal1.png", text: "Não há cobrança de aluguel ou taxa para você, Lotérico" },
-  { icon: "/images/portal-azulzinha/portal2.png", text: "Gera mais oportunidade no fluxo e volume de transações" },
-  { icon: "/images/portal-azulzinha/portal3.png", text: "Mais segurança, eliminando a movimentação de dinheiro em espécie" },
-  { icon: "/images/portal-azulzinha/portal4.png", text: "Segurança e redução de despesa de numerário na sua unidade Lotérica" },
-  { icon: "/images/portal-azulzinha/portal5.png", text: "Comodidade e praticidade no dia a dia do cliente" },
+  { icon: "/images/portal-azulzinha/portal1.webp", text: "Não há cobrança de aluguel ou taxa para você, Lotérico" },
+  { icon: "/images/portal-azulzinha/portal2.webp", text: "Gera mais oportunidade no fluxo e volume de transações" },
+  { icon: "/images/portal-azulzinha/portal3.webp", text: "Mais segurança, eliminando a movimentação de dinheiro em espécie" },
+  { icon: "/images/portal-azulzinha/portal4.webp", text: "Segurança e redução de despesa de numerário na sua unidade Lotérica" },
+  { icon: "/images/portal-azulzinha/portal5.webp", text: "Comodidade e praticidade no dia a dia do cliente" },
 ];
 
 const azulzinhaLotericaCards = [
@@ -25,7 +25,7 @@ const azulzinhaLotericaCards = [
     title: "Agilidade para reduzir filas",
   },
   {
-    icon: "/images/cliente-loterica/icon-mobilidade.png",
+    icon: "/images/cliente-loterica/icon-mobilidade.webp",
     title: "Mobilidade para receber pagamentos em qualquer lugar",
   },
   {
@@ -56,7 +56,7 @@ export default function ClienteLoterica() {
         checkItems={[]}
         buttonText="Saiba mais"
         buttonHref="#dobra"
-        backgroundImage="/images/cliente-loterica/hero-bg.png"
+        backgroundImage="/images/cliente-loterica/hero-bg.webp"
       />
 
       <div id="dobra" />
@@ -71,7 +71,7 @@ export default function ClienteLoterica() {
       <PossibilitiesSection
         title="azulzinha Lotérica pro: o terminal móvel para você!"
         description="Tenha as facilidades do serviço de conveniência do TFL no terminal móvel. Saiba quais são as vantagens:"
-        image="/images/cliente-loterica/azulzinha-loterica-hero.png"
+        image="/images/cliente-loterica/azulzinha-loterica-hero.webp"
         imageAlt="azulzinha Lotérica pro"
         cards={azulzinhaLotericaCards}
         bgColor="bg-cinza-claro"
@@ -82,7 +82,7 @@ export default function ClienteLoterica() {
       <section className="bg-white">
         <div className="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] py-14 lg:py-20 flex flex-col items-center gap-[30px] lg:gap-[60px]">
           <Image
-            src={asset("/images/conveniencia/lotericalogo.png")}
+            src={asset("/images/conveniencia/lotericalogo.webp")}
             alt="azulzinha Lotérica"
             width={220}
             height={60}

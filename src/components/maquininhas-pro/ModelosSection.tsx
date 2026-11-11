@@ -9,21 +9,21 @@ import { useCallback, useEffect, useState } from "react";
 const modelos = [
   {
     name: "Ingenico Move 5000",
-    image: "/images/maquininhas-pro/ingenico-move-5000.png",
+    image: "/images/maquininhas-pro/ingenico-move-5000.webp",
     imageWidth: 277,
     imageHeight: 324,
     manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_Move_5000_24_Fev_2023_V6.pdf",
   },
   {
     name: "Newland SP 930",
-    image: "/images/maquininhas-pro/newland-sp930.png",
+    image: "/images/maquininhas-pro/newland-sp930.webp",
     imageWidth: 147,
     imageHeight: 295,
     manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_SP_930_18.03.24.pdf",
   },
   {
     name: "Verifone C680",
-    image: "/images/maquininhas-pro/verifone-c680.png",
+    image: "/images/maquininhas-pro/verifone-c680.webp",
     imageWidth: 149,
     imageHeight: 302,
     manualHref: "https://azulzinhadacaixa.com.br/midias/AF_Manual_Azulzinha_Pro_C680_24_Fev_2023_V5.pdf",

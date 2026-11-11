@@ -2,8 +2,8 @@ import Image from "next/image";
 import { asset } from "@/lib/assets";
 
 const certificados = [
-  { icon: "/images/pay/icon-ssl.png", label: "Certificado SSL" },
-  { icon: "/images/pay/icon-pci.png", label: "Certificado PCI" },
+  { icon: "/images/pay/icon-ssl.webp", label: "Certificado SSL" },
+  { icon: "/images/pay/icon-pci.webp", label: "Certificado PCI" },
 ];
 
 export default function SeguraConfiavelSection() {

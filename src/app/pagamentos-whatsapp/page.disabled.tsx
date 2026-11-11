@@ -10,52 +10,52 @@ import Footer from "@/components/shared/Footer";
 
 const beneficios = [
   {
-    icon: "/images/pagamentos-whatsapp/icon-praticidade.png",
+    icon: "/images/pagamentos-whatsapp/icon-praticidade.webp",
     title: "Praticidade",
     description: "Interaja, venda e atraia mais clientes à sua lista de contatos",
   },
   {
-    icon: "/images/pagamentos-whatsapp/icon-preferencia.png",
+    icon: "/images/pagamentos-whatsapp/icon-preferencia.webp",
     title: "Preferência",
     description: "Fidelize o cliente com a melhor experiência de pagamento",
   },
   {
-    icon: "/images/pagamentos-whatsapp/icon-seguranca.png",
+    icon: "/images/pagamentos-whatsapp/icon-seguranca.webp",
     title: "Segurança",
     description: "Receba pagamentos confiáveis com sistema antifraude",
   },
   {
-    icon: "/images/pagamentos-whatsapp/icon-app.png",
+    icon: "/images/pagamentos-whatsapp/icon-app.webp",
     title: "App da azulzinha",
     description: "Cuide das vendas e da saúde do seu caixa onde estiver",
   },
   {
-    icon: "/images/pagamentos-whatsapp/icon-oportunidade.png",
+    icon: "/images/pagamentos-whatsapp/icon-oportunidade.webp",
     title: "Oportunidade",
     description: "Tenha sua loja completa no aplicativo mais utilizado no Brasil",
   },
 ];
 
 const stepsAtivar: StepItem[] = [
-  { number: 1, text: "Abra o WhatsApp Business. Clique nos três pontinhos e selecione o item \"Cobrança\".", image: "/images/pagamentos-whatsapp/step1-screenshot-01.png" },
-  { number: 2, text: "Em seguida, clique no botão \"Começar\".", image: "/images/pagamentos-whatsapp/step1-screenshot-02.png" },
-  { number: 3, text: "Na tela \"Selecione um parceiro de pagamentos\", clique em Fiserv.", image: "/images/pagamentos-whatsapp/step1-screenshot-03.png" },
-  { number: 4, text: "Aceite os Termos de Serviço da plataforma.", image: "/images/pagamentos-whatsapp/step1-screenshot-04.png" },
-  { number: 5, text: "Conecte a sua conta Fiserv com seu CPF ou CNPJ.", image: "/images/pagamentos-whatsapp/step1-screenshot-05.png" },
-  { number: 6, text: "Para confirmar, insira o código enviado via SMS para o número de telefone cadastrado na azulzinha da CAIXA.", image: "/images/pagamentos-whatsapp/step1-screenshot-06.png" },
-  { number: 7, text: "Na sequência, confira seus dados na tela e clique em \"Conectar conta\".", image: "/images/pagamentos-whatsapp/step1-screenshot-07.png" },
-  { number: 8, text: "Pronto! A sua conta azulzinha está conectada aos pagamentos no WhatsApp. Aguarde o prazo indicado para ativação.", image: "/images/pagamentos-whatsapp/step1-screenshot-08.png" },
-  { number: 9, text: "Acompanhe o status da conexão no menu Pedidos, abaixo do Histórico, em \"Formas de Pagamento\".", image: "/images/pagamentos-whatsapp/step1-screenshot-09.png" },
-  { number: 10, text: "O status indicará quando a sua conta estiver ativa e pronta para vender!", image: "/images/pagamentos-whatsapp/step1-screenshot-10.png" },
+  { number: 1, text: "Abra o WhatsApp Business. Clique nos três pontinhos e selecione o item \"Cobrança\".", image: "/images/pagamentos-whatsapp/step1-screenshot-01.webp" },
+  { number: 2, text: "Em seguida, clique no botão \"Começar\".", image: "/images/pagamentos-whatsapp/step1-screenshot-02.webp" },
+  { number: 3, text: "Na tela \"Selecione um parceiro de pagamentos\", clique em Fiserv.", image: "/images/pagamentos-whatsapp/step1-screenshot-03.webp" },
+  { number: 4, text: "Aceite os Termos de Serviço da plataforma.", image: "/images/pagamentos-whatsapp/step1-screenshot-04.webp" },
+  { number: 5, text: "Conecte a sua conta Fiserv com seu CPF ou CNPJ.", image: "/images/pagamentos-whatsapp/step1-screenshot-05.webp" },
+  { number: 6, text: "Para confirmar, insira o código enviado via SMS para o número de telefone cadastrado na azulzinha da CAIXA.", image: "/images/pagamentos-whatsapp/step1-screenshot-06.webp" },
+  { number: 7, text: "Na sequência, confira seus dados na tela e clique em \"Conectar conta\".", image: "/images/pagamentos-whatsapp/step1-screenshot-07.webp" },
+  { number: 8, text: "Pronto! A sua conta azulzinha está conectada aos pagamentos no WhatsApp. Aguarde o prazo indicado para ativação.", image: "/images/pagamentos-whatsapp/step1-screenshot-08.webp" },
+  { number: 9, text: "Acompanhe o status da conexão no menu Pedidos, abaixo do Histórico, em \"Formas de Pagamento\".", image: "/images/pagamentos-whatsapp/step1-screenshot-09.webp" },
+  { number: 10, text: "O status indicará quando a sua conta estiver ativa e pronta para vender!", image: "/images/pagamentos-whatsapp/step1-screenshot-10.webp" },
 ];
 
 const stepsVender: StepItem[] = [
-  { number: 1, text: "No chat do WhatsApp, clique no clipe de papel e selecione \"Cobrar cliente\".", image: "/images/pagamentos-whatsapp/step2-screenshot-01.png" },
-  { number: 2, text: "Na tela de \"Cobrar cliente\", adicione os itens que você vai vender.", image: "/images/pagamentos-whatsapp/step2-screenshot-02.png" },
-  { number: 3, text: "Na tela \"Adicionar item\" descreva o nome, o preço e a quantidade.", image: "/images/pagamentos-whatsapp/step2-screenshot-03.png" },
-  { number: 4, text: "Confira as informações e clique no botão \"Adicionar item\".", image: "/images/pagamentos-whatsapp/step2-screenshot-04.png" },
-  { number: 5, text: "Depois de conferir a quantidade, preço e condições de parcelamento da venda, clique em \"Enviar cobrança\".", image: "/images/pagamentos-whatsapp/step2-screenshot-05.png" },
-  { number: 6, text: "Pronto! Seu cliente receberá a cobrança direto na conversa.", image: "/images/pagamentos-whatsapp/step2-screenshot-06.png" },
+  { number: 1, text: "No chat do WhatsApp, clique no clipe de papel e selecione \"Cobrar cliente\".", image: "/images/pagamentos-whatsapp/step2-screenshot-01.webp" },
+  { number: 2, text: "Na tela de \"Cobrar cliente\", adicione os itens que você vai vender.", image: "/images/pagamentos-whatsapp/step2-screenshot-02.webp" },
+  { number: 3, text: "Na tela \"Adicionar item\" descreva o nome, o preço e a quantidade.", image: "/images/pagamentos-whatsapp/step2-screenshot-03.webp" },
+  { number: 4, text: "Confira as informações e clique no botão \"Adicionar item\".", image: "/images/pagamentos-whatsapp/step2-screenshot-04.webp" },
+  { number: 5, text: "Depois de conferir a quantidade, preço e condições de parcelamento da venda, clique em \"Enviar cobrança\".", image: "/images/pagamentos-whatsapp/step2-screenshot-05.webp" },
+  { number: 6, text: "Pronto! Seu cliente receberá a cobrança direto na conversa.", image: "/images/pagamentos-whatsapp/step2-screenshot-06.webp" },
 ];
 
 const faqItems = [
@@ -157,7 +157,7 @@ export default function PagamentosWhatsApp() {
         checkItems={[]}
         buttonText="Saiba como"
         buttonHref="#dobrawpp1"
-        backgroundImage="/images/pagamentos-whatsapp/hero-bg.png"
+        backgroundImage="/images/pagamentos-whatsapp/hero-bg.webp"
       />
 
       <div id="dobrawpp1" />
@@ -168,7 +168,7 @@ export default function PagamentosWhatsApp() {
           "Os clientes da azulzinha já podem receber pagamentos pelo WhatsApp com a mesma agilidade e segurança da maquininha da CAIXA.",
           "Habilite hoje o envio de cobranças com o parceiro de pagamentos Fiserv e comece a faturar!",
         ]}
-        image="/images/pagamentos-whatsapp/intro-celphone.png"
+        image="/images/pagamentos-whatsapp/intro-celphone.webp"
         imageAlt="Celular com WhatsApp azulzinha"
         cardWidth="605px"
         cardHeight="334px"
@@ -229,7 +229,7 @@ export default function PagamentosWhatsApp() {
           "Aonde quer que esteja, você pode visualizar e controlar suas vendas de forma simples e eficiente, desfrutando de relatórios personalizados e serviços exclusivos.",
           "Baixe agora mesmo o App da azulzinha para Android e iOS e simplifique sua gestão hoje mesmo!",
         ]}
-        image="/images/pagamentos-whatsapp/app-celular.png"
+        image="/images/pagamentos-whatsapp/app-celular.webp"
         imageAlt="App da azulzinha"
         cardWidth="605px"
         cardHeight="398px"
@@ -239,8 +239,8 @@ export default function PagamentosWhatsApp() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/android.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
-          { image: "/images/apple.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
+          { image: "/images/android.webp", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
+          { image: "/images/apple.webp", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
         ]}
       />
 

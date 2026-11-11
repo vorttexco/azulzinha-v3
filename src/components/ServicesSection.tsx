@@ -10,14 +10,14 @@ import { asset } from "@/lib/assets";
 type CardVariant = "default" | "variant2" | "variant3";
 
 const cards = [
-  { title: "Link de Pagamento", description: "Lucre muito mais pela internet, redes sociais e aplicativos de mensagens com links seguros e ilimitados.", image: asset("/images/card-link-pagamento.png"), variant: "default" as CardVariant },
-  { title: "Pix por aproximação", description: "Agora é só aproximar e pagar via carteira digital ou pelo App do banco.", image: asset("/images/card-pix-aproximacao.png"), variant: "variant2" as CardVariant },
-  { title: "App azulzinha aproxima", description: "Controle suas vendas, antecipe recebíveis, crie links de pagamento e muito mais.", image: asset("/images/card-app-aproxima.png"), variant: "default" as CardVariant },
-  { title: "Recarga e telefonia", description: "Habilite o serviço sem custo na sua maquininha e tenha uma oportunidade extra de receita.", image: asset("/images/card-recarga-telefonia.png"), variant: "variant3" as CardVariant },
-  { title: "azulzinha Lotérica Pro", description: "Ofereça o serviço de conveniência e receba jogos, boletos e contas com os cartões Elo, Visa e Mastercard.", image: asset("/images/card-loterica-pro.png"), variant: "variant2" as CardVariant },
-  { title: "Pagamento Parcial", description: "Facilite para o cliente: aceite pagamentos em partes, com flexibilidade e controle total.", image: asset("/images/card-pagamento-parcial.png"), variant: "default" as CardVariant },
-  { title: "IPVA Licenciamento e multas", description: "Você pode consultar e parcelar licenciamento, multas, IPVA e muito mais em até 12 vezes.", image: asset("/images/card-ipva.png"), variant: "variant3" as CardVariant },
-  { title: "Fale com a Zuli!", description: "Da contratação ao suporte, a Zuli ajuda você a resolver tudo de forma rápida e sem complicação.", image: asset("/images/card-zuli.png"), variant: "variant2" as CardVariant },
+  { title: "Link de Pagamento", description: "Lucre muito mais pela internet, redes sociais e aplicativos de mensagens com links seguros e ilimitados.", image: asset("/images/card-link-pagamento.webp"), variant: "default" as CardVariant },
+  { title: "Pix por aproximação", description: "Agora é só aproximar e pagar via carteira digital ou pelo App do banco.", image: asset("/images/card-pix-aproximacao.webp"), variant: "variant2" as CardVariant },
+  { title: "App azulzinha aproxima", description: "Controle suas vendas, antecipe recebíveis, crie links de pagamento e muito mais.", image: asset("/images/card-app-aproxima.webp"), variant: "default" as CardVariant },
+  { title: "Recarga e telefonia", description: "Habilite o serviço sem custo na sua maquininha e tenha uma oportunidade extra de receita.", image: asset("/images/card-recarga-telefonia.webp"), variant: "variant3" as CardVariant },
+  { title: "azulzinha Lotérica Pro", description: "Ofereça o serviço de conveniência e receba jogos, boletos e contas com os cartões Elo, Visa e Mastercard.", image: asset("/images/card-loterica-pro.webp"), variant: "variant2" as CardVariant },
+  { title: "Pagamento Parcial", description: "Facilite para o cliente: aceite pagamentos em partes, com flexibilidade e controle total.", image: asset("/images/card-pagamento-parcial.webp"), variant: "default" as CardVariant },
+  { title: "IPVA Licenciamento e multas", description: "Você pode consultar e parcelar licenciamento, multas, IPVA e muito mais em até 12 vezes.", image: asset("/images/card-ipva.webp"), variant: "variant3" as CardVariant },
+  { title: "Fale com a Zuli!", description: "Da contratação ao suporte, a Zuli ajuda você a resolver tudo de forma rápida e sem complicação.", image: asset("/images/card-zuli.webp"), variant: "variant2" as CardVariant },
 ];
 
 const variantStyles: Record<CardVariant, { bg: string; title: string; text: string; link: string }> = {

@@ -22,9 +22,9 @@ export default function GestaoVendasPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#dobra"
-        mobileBackgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
+        mobileBackgroundImage="/images/hero-backgrounds/gestao-de-vendas.webp"
         mobileImageClassName="object-[40%_25%]"
-        backgroundImage="/images/hero-backgrounds/gestao-de-vendas.png"
+        backgroundImage="/images/hero-backgrounds/gestao-de-vendas.webp"
       />
       <div id="dobra" />
       <FeatureSection
@@ -35,7 +35,7 @@ export default function GestaoVendasPage() {
             Gestão das suas vendas de forma simples, rápida e segura.
           </span>,
         ]}
-        image="/images/gestao-de-vendas/celular-3.png"
+        image="/images/gestao-de-vendas/celular-3.webp"
         imageAlt="Aplicativo da azulzinha"
         imageWidth="333px"
         imageHeight="592px"
@@ -52,7 +52,7 @@ export default function GestaoVendasPage() {
             Controle suas vendas em um único lugar.
           </span>,
         ]}
-        image="/images/gestao-de-vendas/laptop_azulzinha1.png"
+        image="/images/gestao-de-vendas/laptop_azulzinha1.webp"
         imageAlt="Portal da azulzinha"
         imageWidth="702px"
         imageHeight="438px"

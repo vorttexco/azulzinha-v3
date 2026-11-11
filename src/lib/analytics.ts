@@ -269,6 +269,29 @@ export function isWhatsappHref(href: string): boolean {
   return href.includes("wa.me") || href.includes("api.whatsapp.com");
 }
 
+export function isPortalHref(href: string): boolean {
+  return /^https?:\/\/portal\.azulzinhadacaixa\.com\.br(\/|$)/i.test(href);
+}
+
+/**
+ * Event for a plain link inside rich content (FAQ answers), chosen by its href.
+ * Returns null for links that are not portal, WhatsApp or phone.
+ */
+export function buildContentLinkGtmEvent(input: JourneyFields & { href: string }): GtmEvent | null {
+  const { href, location, pageName } = input;
+  if (isPortalHref(href)) return buildPortalGtmEvent({ location, pageName, href });
+  if (isWhatsappHref(href)) return buildWhatsappGtmEvent({ location, pageName, href });
+  if (href.toLowerCase().startsWith("tel:")) {
+    return buildPhoneGtmEvent({ phone: href.slice(4).replace(/\D/g, ""), location, pageName });
+  }
+  return null;
+}
+
+export function pushContentLinkGtm(input: JourneyFields & { href: string }): void {
+  const payload = buildContentLinkGtmEvent(input);
+  if (payload) pushGtm(payload);
+}
+
 export function buildPageViewEvent(pageName: string): GtmEvent {
   return {
     event: "page",

@@ -12,29 +12,29 @@ import FaqSection from "@/components/shared/FaqSection";
 import Footer from "@/components/shared/Footer";
 
 const comAzulzinhaItems = [
-  { icon: "/images/mei/icon-link-pagamento.png", text: "Link de pagamento" },
-  { icon: "/images/mei/icon-qrcode.png", text: "QR Code" },
-  { icon: "/images/mei/icon-gestao.png", text: "Gestão facilitada" },
-  { icon: "/images/mei/icon-suporte.png", text: "Suporte 100% digital" },
-  { icon: "/images/mei/icon-aproximacao.png", text: "Pagamentos por aproximação" },
+  { icon: "/images/mei/icon-link-pagamento.webp", text: "Link de pagamento" },
+  { icon: "/images/mei/icon-qrcode.webp", text: "QR Code" },
+  { icon: "/images/mei/icon-gestao.webp", text: "Gestão facilitada" },
+  { icon: "/images/mei/icon-suporte.webp", text: "Suporte 100% digital" },
+  { icon: "/images/mei/icon-aproximacao.webp", text: "Pagamentos por aproximação" },
 ];
 
 const ativacaoSteps: StepItem[] = [
-  { number: 1, text: 'Na tela inicial do App CAIXA Tem, toque em "azulzinha". Importante: você precisa ter uma Conta Digital MEI para visualizar esta opção no menu "Produtos e Serviços".', image: "/images/mei/ativacao-1.png" },
-  { number: 2, text: 'Em seguida, você verá uma tela que explica os benefícios da azulzinha para o dia a dia do seu negócio. Toque em "próximo".', image: "/images/mei/ativacao-2.png" },
-  { number: 3, text: 'Na tela de escolha do seu plano de uso, você verá o "Plano Flex" sem mensalidade. Toque em "Aceitar plano" para prosseguir. E tocando em "ver mais detalhes" você visualiza suas taxas.', image: "/images/mei/ativacao-3.png" },
-  { number: 4, text: 'Clique em "Continuar" para prosseguir com a revisão dos seus dados cadastrais e a leitura dos termos e condições de uso da azulzinha.', image: "/images/mei/ativacao-4.png" },
-  { number: 5, text: "Verifique seus dados e corrija, se necessário. Antes de confirmar, leia e aceite os Termos e Condições.", image: "/images/mei/ativacao-5.png" },
-  { number: 6, text: 'Na tela de resumo, confira sua proposta, leia o Contrato de serviços e clique em "Confirmar". Agora é só aguardar a liberação da sua azulzinha!', image: "/images/mei/ativacao-6.png" },
+  { number: 1, text: 'Na tela inicial do App CAIXA Tem, toque em "azulzinha". Importante: você precisa ter uma Conta Digital MEI para visualizar esta opção no menu "Produtos e Serviços".', image: "/images/mei/ativacao-1.webp" },
+  { number: 2, text: 'Em seguida, você verá uma tela que explica os benefícios da azulzinha para o dia a dia do seu negócio. Toque em "próximo".', image: "/images/mei/ativacao-2.webp" },
+  { number: 3, text: 'Na tela de escolha do seu plano de uso, você verá o "Plano Flex" sem mensalidade. Toque em "Aceitar plano" para prosseguir. E tocando em "ver mais detalhes" você visualiza suas taxas.', image: "/images/mei/ativacao-3.webp" },
+  { number: 4, text: 'Clique em "Continuar" para prosseguir com a revisão dos seus dados cadastrais e a leitura dos termos e condições de uso da azulzinha.', image: "/images/mei/ativacao-4.webp" },
+  { number: 5, text: "Verifique seus dados e corrija, se necessário. Antes de confirmar, leia e aceite os Termos e Condições.", image: "/images/mei/ativacao-5.webp" },
+  { number: 6, text: 'Na tela de resumo, confira sua proposta, leia o Contrato de serviços e clique em "Confirmar". Agora é só aguardar a liberação da sua azulzinha!', image: "/images/mei/ativacao-6.webp" },
 ];
 
 const identificacaoSteps: StepItem[] = [
-  { number: 1, text: 'Selecione a azulzinha no menu "Serviços e Produtos" e clique em "Continuar".', image: "/images/mei/identificacao-1.png" },
-  { number: 2, text: "Digite o número do celular usado no seu cadastro e seu CPF para receber um SMS com o link de acesso, que é válido por 24 horas.", image: "/images/mei/identificacao-2.png" },
-  { number: 3, text: 'Clique no link de acesso e realize a confirmação da sua identificação. Basta conferir as indicações na tela e clicar em "Começar".', image: "/images/mei/identificacao-3.png" },
-  { number: 4, text: "Na tela de permissão do acesso, confira os termos de uso, marque a opção de aceite e clique em permitir.", image: "/images/mei/identificacao-4.png" },
-  { number: 5, text: "Tire uma foto do seu documento - CNH ou RG - e siga as orientações. Será preciso enviar a foto da frente e do verso do documento.", image: "/images/mei/identificacao-5.png" },
-  { number: 6, text: "Para concluir, tire e envie uma foto nítida do seu rosto e aguarde até 48 horas. Após a aprovação, você já poderá receber com a azulzinha!", image: "/images/mei/identificacao-6.png" },
+  { number: 1, text: 'Selecione a azulzinha no menu "Serviços e Produtos" e clique em "Continuar".', image: "/images/mei/identificacao-1.webp" },
+  { number: 2, text: "Digite o número do celular usado no seu cadastro e seu CPF para receber um SMS com o link de acesso, que é válido por 24 horas.", image: "/images/mei/identificacao-2.webp" },
+  { number: 3, text: 'Clique no link de acesso e realize a confirmação da sua identificação. Basta conferir as indicações na tela e clicar em "Começar".', image: "/images/mei/identificacao-3.webp" },
+  { number: 4, text: "Na tela de permissão do acesso, confira os termos de uso, marque a opção de aceite e clique em permitir.", image: "/images/mei/identificacao-4.webp" },
+  { number: 5, text: "Tire uma foto do seu documento - CNH ou RG - e siga as orientações. Será preciso enviar a foto da frente e do verso do documento.", image: "/images/mei/identificacao-5.webp" },
+  { number: 6, text: "Para concluir, tire e envie uma foto nítida do seu rosto e aguarde até 48 horas. Após a aprovação, você já poderá receber com a azulzinha!", image: "/images/mei/identificacao-6.webp" },
 ];
 
 const videos = [
@@ -239,8 +239,8 @@ export default function ParaSuaMei() {
         checkItems={[]}
         buttonText="Saiba como"
         buttonHref="#saiba-como"
-        backgroundImage="/images/mei/hero.png"
-        mobileBackgroundImage="/images/mei/hero.png"
+        backgroundImage="/images/mei/hero.webp"
+        mobileBackgroundImage="/images/mei/hero.webp"
         mobileImageClassName="object-[65%_25%]"
         buttonLogoImage="/images/mei/caixa-tem.svg"
         buttonLogoWidth={168}
@@ -252,7 +252,7 @@ export default function ParaSuaMei() {
           title="Tudo 100% digital para você vender mais"
           description={<>Você, que tem o App CAIXA Tem, pode transformar seu celular em maquininha e começar a vender com a azulzinha da CAIXA. Tudo de forma simples e prática com recebimento de suas vendas direto na conta digital MEI, disponível também pelo aplicativo.<br /> Assista ao vídeo e saiba como ter sua azulzinha!
           </>}
-          thumbnail="/images/mei/tudo-100-main.png"
+          thumbnail="/images/mei/tudo-100-main.webp"
           videoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
           gtmTag="Agora-tem-azulzinha-no-App-CAIXA-Tem!"
           gtmTitle="Agora tem azulzinha no App CAIXA Tem!"
@@ -325,14 +325,14 @@ export default function ParaSuaMei() {
         description={"Não se esqueça: para ter a azulzinha,\nvocê precisa ter a Conta Digital MEI"}
         sectionClassName="bg-white"
         storeBadges={[
-          { image: "/images/link-pagamento/google-play.png", href: "https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR", alt: "Google Play", width: 235, height: 91, className: "lp-azulzinha-caixa-tem-google-play" },
-          { image: "/images/link-pagamento/app-store.png", href: "https://apps.apple.com/br/app/caixa-tem/id1485424267", alt: "App Store", width: 235, height: 70, className: "lp-azulzinha-caixa-tem-app-store" },
+          { image: "/images/link-pagamento/google-play.webp", href: "https://play.google.com/store/apps/details?id=br.gov.caixa.tem&hl=pt_BR", alt: "Google Play", width: 235, height: 91, className: "lp-azulzinha-caixa-tem-google-play" },
+          { image: "/images/link-pagamento/app-store.webp", href: "https://apps.apple.com/br/app/caixa-tem/id1485424267", alt: "App Store", width: 235, height: 70, className: "lp-azulzinha-caixa-tem-app-store" },
         ]}
       />
 
       <VideoSection
         title="Assista aos nossos tutoriais"
-        mainVideoImage="/images/mei/video-main.png"
+        mainVideoImage="/images/mei/video-main.webp"
         mainVideoTitle="Agora tem azulzinha no App CAIXA Tem!"
         mainVideoSrc="/midias/azulzinha-CAIXATem-V3-Reduzido-primeiro-acesso.mp4"
         videos={videos}

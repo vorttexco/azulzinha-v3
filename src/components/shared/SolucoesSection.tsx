@@ -11,17 +11,17 @@ interface SolucaoCard {
 const defaultCards: SolucaoCard[] = [
   {
     title: "Venda com PIX",
-    image: "/images/pagamentos-whatsapp/solucao-pix.png",
+    image: "/images/pagamentos-whatsapp/solucao-pix.webp",
     href: "/pix-azulzinha",
   },
   {
     title: "Venda por aproximação",
-    image: "/images/pagamentos-whatsapp/solucao-aproximacao.png",
+    image: "/images/pagamentos-whatsapp/solucao-aproximacao.webp",
     href: "/azulzinha-aproxima",
   },
   {
     title: "Antecipe suas vendas",
-    image: "/images/pagamentos-whatsapp/solucao-antecipacao.png",
+    image: "/images/pagamentos-whatsapp/solucao-antecipacao.webp",
     href: "/antecipacao-de-vendas",
   },
 ];

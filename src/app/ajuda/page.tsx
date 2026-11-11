@@ -26,7 +26,7 @@ export default function AjudaPage() {
         description="Vídeos tutoriais e respostas às principais dúvidas."
         checkItems={[]}
         buttonText=""
-        backgroundImage="/images/hero-backgrounds/ajuda-hero.png"
+        backgroundImage="/images/hero-backgrounds/ajuda-hero.webp"
       />
       <FeatureSection
         title="Quer saber mais sobre a azulzinha?"
@@ -36,7 +36,7 @@ export default function AjudaPage() {
         ]}
         cardWidth="605px"
         cardHeight="398px"
-        image="/images/aplicativo_da_caixa.png"
+        image="/images/aplicativo_da_caixa.webp"
         imageAlt="Aplicativo da CAIXA"
         imageBorderRadius="rounded-[30px]"
         hideCard

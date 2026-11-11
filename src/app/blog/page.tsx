@@ -43,7 +43,7 @@ export default function BlogPage() {
         checkItems={[]}
         buttonText="Veja mais"
         buttonHref="#blog-destaques"
-        backgroundImage="/images/blog/hero-bg.png"
+        backgroundImage="/images/blog/hero-bg.webp"
       />
       <Suspense fallback={<BlogContent posts={posts} />}>
         <BlogRouteSwitch posts={posts} />

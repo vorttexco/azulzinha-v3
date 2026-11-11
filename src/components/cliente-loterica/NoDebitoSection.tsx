@@ -3,16 +3,16 @@ import { asset } from "@/lib/assets";
 import SimpleVideoSection from "@/components/shared/SimpleVideoSection";
 
 const bandeiras = [
-  { src: "/images/cliente-loterica/bandeira-elo.png", alt: "Elo", width: 96, height: 30 },
-  { src: "/images/cliente-loterica/bandeira-visa-229e0a.png", alt: "Visa", width: 61, height: 39 },
-  { src: "/images/cliente-loterica/bandeira-mastercard.png", alt: "Mastercard", width: 93, height: 30 },
+  { src: "/images/cliente-loterica/bandeira-elo.webp", alt: "Elo", width: 96, height: 30 },
+  { src: "/images/cliente-loterica/bandeira-visa-229e0a.webp", alt: "Visa", width: 61, height: 39 },
+  { src: "/images/cliente-loterica/bandeira-mastercard.webp", alt: "Mastercard", width: 93, height: 30 },
 ];
 
 const cards = [
-  { icon: "/images/cliente-loterica/icon-jogos.png", label: "Jogos" },
-  { icon: "/images/cliente-loterica/icon-agua.png", label: "Água" },
-  { icon: "/images/cliente-loterica/icon-luz-351133.png", label: "Luz" },
-  { icon: "/images/cliente-loterica/icon-telefone.png", label: "Telefone" },
+  { icon: "/images/cliente-loterica/icon-jogos.webp", label: "Jogos" },
+  { icon: "/images/cliente-loterica/icon-agua.webp", label: "Água" },
+  { icon: "/images/cliente-loterica/icon-luz-351133.webp", label: "Luz" },
+  { icon: "/images/cliente-loterica/icon-telefone.webp", label: "Telefone" },
 ];
 
 export default function NoDebitoSection() {
@@ -47,7 +47,7 @@ export default function NoDebitoSection() {
           <SimpleVideoSection
             title=""
             description={<> </>}
-            thumbnail="/images/cliente-loterica/no-debito-main.png"
+            thumbnail="/images/cliente-loterica/no-debito-main.webp"
             videoSrc="/midias/Loterica-Avare_v07.mp4"
             className="bg-white py-0"
             gtmTag="azulzinha-loterica"

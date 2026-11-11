@@ -3,19 +3,19 @@ import { asset } from "@/lib/assets";
 
 const cards = [
   {
-    icon: "/images/azulzinha-smart/icon-visao (2).png",
+    icon: "/images/azulzinha-smart/icon-visao (2).webp",
     title: "Visão consolidada",
     description:
       "Acompanhe os resultados das suas vendas tanto no ponto de venda quanto na maquininha",
   },
   {
-    icon: "/images/azulzinha-smart/icon-gestao.png",
+    icon: "/images/azulzinha-smart/icon-gestao.webp",
     title: "Gestão centralizada",
     description:
       "Apps para cuidar do caixa, do estoque, antecipar recebíveis e fazer conciliação diária",
   },
   {
-    icon: "/images/azulzinha-smart/icon-suporte.png",
+    icon: "/images/azulzinha-smart/icon-suporte.webp",
     title: "Suporte ao cliente",
     description:
       "Conte com nosso atendimento e conteúdos de ajuda exclusivos",

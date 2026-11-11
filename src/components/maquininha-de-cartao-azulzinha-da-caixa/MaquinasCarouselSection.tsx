@@ -24,7 +24,7 @@ const machines: MachineCard[] = [
     name: "azulzinha pro",
     description:
       "A maquininha sem fio da CAIXA, para levar até o cliente e agilizar o atendimento:",
-    image: "/images/maquininhas/product-azulzinha-pro.png",
+    image: "/images/maquininhas/product-azulzinha-pro.webp",
     moreHref: "/maquininhas/pro",
     moreClassName:
       "LP-clicou-maquininha-de-cartao-azulzinha-da-caixa-saiba-mais-pro",
@@ -46,7 +46,7 @@ const machines: MachineCard[] = [
     name: "azulzinha smart",
     description:
       "A maquininha inteligente da CAIXA, para centralizar e simplificar a gestão financeira:",
-    image: "/images/maquininhas/product-azulzinha-smart.png",
+    image: "/images/maquininhas/product-azulzinha-smart.webp",
     moreHref: "/azulzinhasmart",
     moreClassName:
       "LP-clicou-maquininha-de-cartao-azulzinha-da-caixa-saiba-mais-smart",
@@ -68,7 +68,7 @@ const machines: MachineCard[] = [
     name: "azulzinha TEF",
     description:
       "A maquininha da CAIXA sob medida para grandes negócios e volumes transacionais:",
-    image: "/images/maquininhas/product-azulzinha-tef.png",
+    image: "/images/maquininhas/product-azulzinha-tef.webp",
     moreHref: "/maquininhas/tef",
     moreClassName:
       "LP-clicou-maquininha-de-cartao-azulzinha-da-caixa-saiba-mais-tef",
@@ -89,7 +89,7 @@ const machines: MachineCard[] = [
     name: "azulzinha aproxima",
     description:
       "O aplicativo da azulzinha que transforma celular em maquininha da CAIXA:",
-    image: "/images/maquininhas/product-azulzinha-aproxima.png",
+    image: "/images/maquininhas/product-azulzinha-aproxima.webp",
     moreHref: "/azulzinha-aproxima",
     moreClassName:
       "LP-clicou-maquininha-de-cartao-azulzinha-da-caixa-saiba-mais-aproxima",

@@ -21,7 +21,7 @@ export default function HelpCtaSection({
                     {/* Zuli Image */}
                     <div className="w-[160px] lg:w-[246px] shrink-0 self-end lg:-mb-12 mx-auto lg:mx-0">
                         <Image
-                            src={asset("/images/ajuda/zuli.png")}
+                            src={asset("/images/ajuda/zuli.webp")}
                             alt="Zuli assistente virtual"
                             width={246}
                             height={445}

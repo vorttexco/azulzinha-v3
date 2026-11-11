@@ -76,35 +76,35 @@ const highlightCards: CarouselCard[] = [
   {
     title: "Venda online",
     description: "Soluções digitais para vender na internet. Link de pagamento, E-commerce, Pagamentos por WhatsApp",
-    image: "/images/crediario-azulzinha/highlight-venda-online.png",
+    image: "/images/crediario-azulzinha/highlight-venda-online.webp",
     variant: "default",
     href: "/vendas-online",
   },
   {
     title: "Serviços",
     description: "Soluções integradas. Antecipação de Vendas, Pix, Pagamento Parcial, Recarga de Telefonia",
-    image: "/images/crediario-azulzinha/highlight-servicos.png",
+    image: "/images/crediario-azulzinha/highlight-servicos.webp",
     variant: "variant2",
     href: "/antecipacao-de-vendas",
   },
   {
     title: "Gestão de venda",
     description: "Ferramentas da azulzinha. App da azulzinha, E-commerce, Portal da azulzinha",
-    image: "/images/crediario-azulzinha/highlight-gestao.png",
+    image: "/images/crediario-azulzinha/highlight-gestao.webp",
     variant: "default",
     href: "/gestao",
   },
   {
     title: "Suporte",
     description: "Canais de atendimento. WhatsApp, Central de Relacionamento, Página de Ajuda",
-    image: "/images/crediario-azulzinha/highlight-suporte.png",
+    image: "/images/crediario-azulzinha/highlight-suporte.webp",
     variant: "variant3",
     href: "/ajuda",
   },
   {
     title: "Blog azulzinha",
     description: "Conteúdos úteis para impulsionar sua estratégia de vendas. Blog da azulzinha",
-    image: "/images/crediario-azulzinha/highlight-blog.png",
+    image: "/images/crediario-azulzinha/highlight-blog.webp",
     variant: "default",
     href: "/blog",
   },
@@ -128,8 +128,8 @@ export default function CrediarioAzulzinha() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#conheça"
-        backgroundImage="/images/crediario-azulzinha/hero-bg.png"
-        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.png"
+        backgroundImage="/images/crediario-azulzinha/hero-bg.webp"
+        mobileBackgroundImage="/images/crediario-azulzinha/hero-bg.webp"
         mobileImageClassName="object-[70%_25%]"
       />
 
@@ -140,7 +140,7 @@ export default function CrediarioAzulzinha() {
         paragraphs={[
           "Com a azulzinha da CAIXA, você pode aceitar pagamentos em até 48 parcelas fixas* nos principais cartões de crédito do mercado, enquanto recebe tudo à vista, com uma única taxa.",
         ]}
-        image="/images/crediario-azulzinha/crediario-tela.png"
+        image="/images/crediario-azulzinha/crediario-tela.webp"
         imageAlt="Tela do crediário na azulzinha"
         buttonText="Siga o passo a passo"
         buttonHref="#beneficios-section"
@@ -175,7 +175,7 @@ export default function CrediarioAzulzinha() {
         description="Preencha o formulário e receba uma oferta personalizada para seu negócio, com as melhores taxas e condições que só a CAIXA pode oferecer para você."
         buttonText="Peça já a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/crediario-azulzinha/cta-photo.png"
+        image="/images/crediario-azulzinha/cta-photo.webp"
       />
 
       <FaqSection

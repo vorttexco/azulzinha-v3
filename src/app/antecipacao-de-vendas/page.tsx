@@ -43,13 +43,13 @@ export default function AntecipacaoDeVendas() {
         checkItems={[]}
         buttonText="Saiba como"
         buttonHref="#dobra"
-        backgroundImage="/images/antecipacao-de-vendas/hero-bg.png"
+        backgroundImage="/images/antecipacao-de-vendas/hero-bg.webp"
       />
       <ModosSection />
       <BenefitsShowcaseSection
         title={<span>Vantagens da <br /> antecipação Caixa</span>}
         description="Com a solução de antecipação da CAIXA, você tem flexibilidade para escolher quando receber, total transparência nas taxas e agilidade para manter o caixa do seu negócio sempre saudável."
-        image="/images/antecipacao-de-vendas/vantagens-bg.png"
+        image="/images/antecipacao-de-vendas/vantagens-bg.webp"
         imageAlt="Vantagens da antecipação"
         cards={vantagensCards}
         showBrandLogos={false}
@@ -69,7 +69,7 @@ export default function AntecipacaoDeVendas() {
         button2Text="Portal da azulzinha"
         buttonHref="/app"
         button2Href="/portal"
-        image="/images/antecipacao-de-vendas/cta-photo.png"
+        image="/images/antecipacao-de-vendas/cta-photo.webp"
         imageAlt="CTA Antecipação de Vendas"
       />
       <Footer />

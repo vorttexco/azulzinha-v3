@@ -75,7 +75,7 @@ const habilitarSteps = [
   },
   {
     type: "image" as const,
-    image: "/images/pagamento-parcial/logo-credenciada.png",
+    image: "/images/pagamento-parcial/logo-credenciada.webp",
     description: "Aguarda a emissão do comprovante de confirmação e boas vendas!",
   },
 ];
@@ -98,7 +98,7 @@ export default function PagamentoParcial() {
         checkItems={[]}
         buttonText="Saiba mais"
         buttonHref="#vantagens-parciais"
-        backgroundImage="/images/pagamento-parcial/hero-bg.png"
+        backgroundImage="/images/pagamento-parcial/hero-bg.webp"
       />
 
       <VantagensParciaisSection />
@@ -109,7 +109,7 @@ export default function PagamentoParcial() {
           "O Pagamento Parcial é um serviço que pode fazer toda a diferença na redução de negativas no pagamento presencial em seu negócio, pois permite ao cliente Visa ou Elo pagar uma parte da compra com o cartão e acertar a diferença com outro meio de pagamento.",
           "Ao passar pelo caixa, basta que o cliente confirme na própria azulzinha como deseja complementar o pagamento para o operador, que pode ser de diversas formas: em dinheiro, outro cartão de crédito ou débito e transferências bancárias.",
         ]}
-        image="/images/pagamento-parcial/maquina-parcial.png"
+        image="/images/pagamento-parcial/maquina-parcial.webp"
         imageAlt="Maquininhas com Pagamento Parcial"
         cardWidth="605px"
         cardHeight="398px"
@@ -121,7 +121,7 @@ export default function PagamentoParcial() {
       />
 
       <FullImageSection
-        image="/images/pagamento-parcial/banner-full.png"
+        image="/images/pagamento-parcial/banner-full.webp"
         imageAlt="azulzinha - Maquininha de Cartão da CAIXA"
         heightMobile="h-[250px]"
         heightDesktop="lg:h-[604px]"

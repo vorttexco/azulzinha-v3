@@ -22,7 +22,7 @@ export default function QrCodeStepsSection() {
 
         <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-12 mt-12">
           <Image
-            src={asset("/images/bandeiras-vouchers/celular-vr.png")}
+            src={asset("/images/bandeiras-vouchers/celular-vr.webp")}
             alt="Celular com o aplicativo VR aberto para pagar por QR Code"
             width={572}
             height={793}
@@ -36,8 +36,8 @@ export default function QrCodeStepsSection() {
                   <Image
                     src={asset(
                       isLast
-                        ? "/images/bandeiras-vouchers/check.png"
-                        : "/images/bandeiras-vouchers/seta-direita.png",
+                        ? "/images/bandeiras-vouchers/check.webp"
+                        : "/images/bandeiras-vouchers/seta-direita.webp",
                     )}
                     alt=""
                     width={33}

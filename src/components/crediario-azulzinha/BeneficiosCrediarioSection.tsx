@@ -8,42 +8,42 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 const beneficios = [
   {
-    icon: "/images/crediario-azulzinha/icon-recebimento.png",
+    icon: "/images/crediario-azulzinha/icon-recebimento.webp",
     iconW: 48,
     iconH: 30,
     title: "Recebimento garantido",
     description: "Conte com o valor total da compra, independente do número de parcelas que o cliente escolher",
   },
   {
-    icon: "/images/crediario-azulzinha/icon-vendas.png",
+    icon: "/images/crediario-azulzinha/icon-vendas.webp",
     iconW: 40,
     iconH: 24,
     title: "Vendas maiores",
     description: "Facilite compras de valor elevado com parcelas que cabem no bolso de qualquer cliente",
   },
   {
-    icon: "/images/crediario-azulzinha/icon-simulador.png",
+    icon: "/images/crediario-azulzinha/icon-simulador.webp",
     iconW: 40,
     iconH: 40,
     title: "Simulador na máquina",
     description: "Ajude seu cliente a escolher a melhor condição simulando antes os parcelamentos disponíveis",
   },
   {
-    icon: "/images/crediario-azulzinha/icon-inadimplencia.png",
+    icon: "/images/crediario-azulzinha/icon-inadimplencia.webp",
     iconW: 40,
     iconH: 40,
     title: "Inadimplência zero",
     description: "Venda sem complicação e sem análise de crédito: as parcelas são cobradas na fatura do cliente",
   },
   {
-    icon: "/images/crediario-azulzinha/icon-credito.png",
+    icon: "/images/crediario-azulzinha/icon-credito.webp",
     iconW: 45,
     iconH: 27,
     title: "Crédito para sua loja",
     description: "Impulsione o fluxo de caixa antecipando seus recebíveis em condições ainda melhores",
   },
   {
-    icon: "/images/crediario-azulzinha/icon-gestao.png",
+    icon: "/images/crediario-azulzinha/icon-gestao.webp",
     iconW: 40,
     iconH: 40,
     title: "Gestão centralizada",

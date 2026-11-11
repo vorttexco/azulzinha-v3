@@ -12,26 +12,26 @@ import SolucoesSection from "@/components/shared/SolucoesSection";
 import Footer from "@/components/shared/Footer";
 
 const beneficios = [
-  { icon: "/images/link-pagamento/icon-1.png", title: "Crie links no app azulzinha", description: "" },
-  { icon: "/images/link-pagamento/icon-2.png", title: "Use sem taxas escondidas", description: "" },
-  { icon: "/images/link-pagamento/icon-3.png", title: "Divulgue em qualquer lugar", description: "" },
-  { icon: "/images/link-pagamento/icon-4.png", title: "Gere links 24 horas", description: "" },
-  { icon: "/images/link-pagamento/icon-5.png", title: "Aceite débito e crédito", description: "" },
-  { icon: "/images/link-pagamento/icon-6.png", title: "Receba com segurança", description: "" },
-  { icon: "/images/link-pagamento/icon-7.png", title: "Gerencie tudo no app", description: "" },
-  { icon: "/images/link-pagamento/icon-8.png", title: "Receba em um dia", description: "" },
-  { icon: "/images/link-pagamento/icon-9.png", title: "Conquiste seu cliente", description: "" },
+  { icon: "/images/link-pagamento/icon-1.webp", title: "Crie links no app azulzinha", description: "" },
+  { icon: "/images/link-pagamento/icon-2.webp", title: "Use sem taxas escondidas", description: "" },
+  { icon: "/images/link-pagamento/icon-3.webp", title: "Divulgue em qualquer lugar", description: "" },
+  { icon: "/images/link-pagamento/icon-4.webp", title: "Gere links 24 horas", description: "" },
+  { icon: "/images/link-pagamento/icon-5.webp", title: "Aceite débito e crédito", description: "" },
+  { icon: "/images/link-pagamento/icon-6.webp", title: "Receba com segurança", description: "" },
+  { icon: "/images/link-pagamento/icon-7.webp", title: "Gerencie tudo no app", description: "" },
+  { icon: "/images/link-pagamento/icon-8.webp", title: "Receba em um dia", description: "" },
+  { icon: "/images/link-pagamento/icon-9.webp", title: "Conquiste seu cliente", description: "" },
 ];
 
 const steps: StepItem[] = [
-  { number: 1, text: "Toque em Link de Pagamento na tela inicial do App da azulzinha.", image: "/images/link-pagamento/step-1.png" },
-  { number: 2, text: "Clique em \"Gerar link de pagamento\".", image: "/images/link-pagamento/step-2.png" },
-  { number: 3, text: "Escreva uma descrição para o produto ou serviço.", image: "/images/link-pagamento/step-3.png" },
-  { number: 4, text: "Escolha o tipo de pagamento.", image: "/images/link-pagamento/step-4.png" },
-  { number: 5, text: "Digite o valor da venda.", image: "/images/link-pagamento/step-5.png" },
-  { number: 6, text: "Informe o número de parcelas, se a venda for a prazo, com ou sem juros.", image: "/images/link-pagamento/step-6.png" },
-  { number: 7, text: "Confira os dados no resumo da transação.", image: "/images/link-pagamento/step-7.png" },
-  { number: 8, text: "Compartilhe o comprovante com seu cliente.", image: "/images/link-pagamento/step-8.png" },
+  { number: 1, text: "Toque em Link de Pagamento na tela inicial do App da azulzinha.", image: "/images/link-pagamento/step-1.webp" },
+  { number: 2, text: "Clique em \"Gerar link de pagamento\".", image: "/images/link-pagamento/step-2.webp" },
+  { number: 3, text: "Escreva uma descrição para o produto ou serviço.", image: "/images/link-pagamento/step-3.webp" },
+  { number: 4, text: "Escolha o tipo de pagamento.", image: "/images/link-pagamento/step-4.webp" },
+  { number: 5, text: "Digite o valor da venda.", image: "/images/link-pagamento/step-5.webp" },
+  { number: 6, text: "Informe o número de parcelas, se a venda for a prazo, com ou sem juros.", image: "/images/link-pagamento/step-6.webp" },
+  { number: 7, text: "Confira os dados no resumo da transação.", image: "/images/link-pagamento/step-7.webp" },
+  { number: 8, text: "Compartilhe o comprovante com seu cliente.", image: "/images/link-pagamento/step-8.webp" },
 ];
 
 const faqItems = [
@@ -109,7 +109,7 @@ export default function LinkPagamento() {
         checkItems={[]}
         buttonText="Confira"
         buttonHref="#dobra"
-        backgroundImage="/images/link-pagamento/hero-bg.png"
+        backgroundImage="/images/link-pagamento/hero-bg.webp"
       />
 
       <BeneficiosGridSection
@@ -159,7 +159,7 @@ export default function LinkPagamento() {
           "Aonde quer que esteja, você pode visualizar e controlar suas vendas de forma simples e eficiente, desfrutando de relatórios personalizados e serviços exclusivos.",
           "Baixe agora mesmo o App da azulzinha para Android e iOS e simplifique sua gestão hoje mesmo!",
         ]}
-        image="/images/link-pagamento/phone-app.png"
+        image="/images/link-pagamento/phone-app.webp"
         imageAlt="App da azulzinha"
         cardWidth="605px"
         cardHeight="398px"
@@ -169,8 +169,8 @@ export default function LinkPagamento() {
         bgColor="bg-[#F4F4F4]"
         cardBorderRadius="rounded-[10px]"
         storeBadges={[
-          { image: "/images/android.png", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
-          { image: "/images/apple.png", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
+          { image: "/images/android.webp", href: "https://play.google.com/store/apps/details?id=com.fiserv.gestao.caixa&hl=pt_BR&gl=US", alt: "Google Play" },
+          { image: "/images/apple.webp", href: "https://apps.apple.com/br/app/app-da-azulzinha/id1570685624", alt: "App Store" },
         ]}
       />
 

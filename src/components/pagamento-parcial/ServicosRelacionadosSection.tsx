@@ -3,17 +3,17 @@ import { asset } from "@/lib/assets";
 
 const servicos = [
   {
-    icon: "/images/pagamento-parcial/icon-bandeiras.png",
+    icon: "/images/pagamento-parcial/icon-bandeiras.webp",
     title: "Bandeiras e Vouchers",
     href: "/bandeiras-vouchers",
   },
   {
-    icon: "/images/pagamento-parcial/icon-antecipacao.png",
+    icon: "/images/pagamento-parcial/icon-antecipacao.webp",
     title: "Antecipação de vendas",
     href: "/antecipacao-de-vendas",
   },
   {
-    icon: "/images/pagamento-parcial/icon-recargas.png",
+    icon: "/images/pagamento-parcial/icon-recargas.webp",
     title: "Recargas",
     href: "/recarga-de-celulares",
   },

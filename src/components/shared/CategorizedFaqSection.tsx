@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useMemo, type ReactNode } from "react";
+import { useState, useMemo, type MouseEvent, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { pushContentLinkGtm } from "@/lib/analytics";
 import CategorizedLayout from "@/components/shared/CategorizedLayout";
 
 export interface FaqItem {
@@ -44,6 +46,13 @@ function ToggleIcon({ open }: { open: boolean }) {
 
 function FaqItemAccordion({ item }: { item: FaqItem }) {
     const [open, setOpen] = useState(false);
+    const pageName = usePathname();
+
+    function trackAnswerLink(event: MouseEvent<HTMLDivElement>) {
+        const link = (event.target as HTMLElement).closest("a");
+        const href = link?.getAttribute("href");
+        if (href) pushContentLinkGtm({ href, location: "faq", pageName });
+    }
 
     return (
         <div className="rounded-xl overflow-hidden border border-[#F1F1F1] shadow-[0px_4px_10px_0px_#00000014]">
@@ -57,7 +66,7 @@ function FaqItemAccordion({ item }: { item: FaqItem }) {
                 <ToggleIcon open={open} />
             </button>
             {open && (
-                <div className="px-6 pb-4 pt-1 bg-white text-gray-600 text-[14px] font-normal leading-[140%] tracking-normal">
+                <div onClick={trackAnswerLink} className="px-6 pb-4 pt-1 bg-white text-gray-600 text-[14px] font-normal leading-[140%] tracking-normal">
                     {item.answer}
                 </div>
             )}

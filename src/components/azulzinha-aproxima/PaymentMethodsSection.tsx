@@ -8,14 +8,14 @@ import { useCallback, useEffect, useState } from "react";
 function CardNfc() {
   return (
     <div className="bg-white rounded-[30px] border border-[#F1F1F1] shadow-[0_4px_10px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-6 p-8 lg:p-10 flex-1 min-h-[478px]">
-      <Image src={asset("/images/azulzinha-aproxima/icon-cartao.png")} alt="" width={82} height={75} />
+      <Image src={asset("/images/azulzinha-aproxima/icon-cartao.webp")} alt="" width={82} height={75} />
       <h3 className="text-[22px] font-normal leading-[1.3] text-azul text-center">
         Receba por aproximação
       </h3>
       <div className="flex items-center gap-6">
-        <Image src={asset("/images/azulzinha-aproxima/logos-bandeiras.png")} alt="Visa" width={79} height={25} />
-        <Image src={asset("/images/azulzinha-aproxima/logo-mastercard.png")} alt="Mastercard" width={51} height={37} />
-        <Image src={asset("/images/azulzinha-aproxima/logo-elo.png")} alt="Elo" width={75} height={24} />
+        <Image src={asset("/images/azulzinha-aproxima/logos-bandeiras.webp")} alt="Visa" width={79} height={25} />
+        <Image src={asset("/images/azulzinha-aproxima/logo-mastercard.webp")} alt="Mastercard" width={51} height={37} />
+        <Image src={asset("/images/azulzinha-aproxima/logo-elo.webp")} alt="Elo" width={75} height={24} />
       </div>
     </div>
   );
@@ -24,7 +24,7 @@ function CardNfc() {
 function CardPix() {
   return (
     <div className="bg-white rounded-[30px] border border-[#F1F1F1] shadow-[0_4px_10px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-6 p-8 lg:p-10 flex-1 min-h-[478px]">
-      <Image src={asset("/images/azulzinha-aproxima/icon-pix.png")} alt="" width={71} height={67} />
+      <Image src={asset("/images/azulzinha-aproxima/icon-pix.webp")} alt="" width={71} height={67} />
       <h3 className="text-[22px] font-normal leading-[1.3] text-azul text-center">
         Receba por Pix
       </h3>
@@ -48,7 +48,7 @@ function CardCarteiras() {
         {carteiraLogos.map((n) => (
           <Image
             key={n}
-            src={asset(`/images/azulzinha-aproxima/logo ${n}.png`)}
+            src={asset(`/images/azulzinha-aproxima/logo ${n}.webp`)}
             alt={`Logo ${n}`}
             width={59}
             height={59}

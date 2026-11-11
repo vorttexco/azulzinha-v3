@@ -29,7 +29,7 @@ interface CloverProduct {
 const products: CloverProduct[] = [
   {
     name: "Clover Flex",
-    image: "/images/product-clover-flex.png",
+    image: "/images/product-clover-flex.webp",
     description:
       "No balcão, na mesa ou em qualquer lugar, atenda seus clientes com mais rapidez e conveniência com a Clover Flex, uma solução móvel completa de pagamentos com impressora integrada.",
     whyChooseTitle: "Por que escolher a Clover Flex?",
@@ -82,7 +82,7 @@ const products: CloverProduct[] = [
   },
   {
     name: "Clover Mini",
-    image: "/images/product-clover-mini.png",
+    image: "/images/product-clover-mini.webp",
     description:
       "Pequena no tamanho, gigante no desempenho, a Clover Mini é um PDV compacto que cabe em qualquer espaço, facilita a gestão do seu negócio e melhora a experiência dos seus clientes.",
     whyChooseTitle: "Por que escolher a Clover Mini?",

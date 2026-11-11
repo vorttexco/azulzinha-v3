@@ -24,7 +24,7 @@ const defaultProducts: ProdutosSectionCard[] = [
     name: "azulzinha smart",
     description:
       "A maquininha de cartão para centralizar e simplificar a gestão financeira",
-    image: "/images/taxas-tarifas/maquininha-smart.png",
+    image: "/images/taxas-tarifas/maquininha-smart.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-1.svg", text: "Compatível com Apps de PDV móvel;" },
       { icon: "/images/taxas-tarifas/icon-smart2.svg", text: "Controle de estoque;" },
@@ -40,7 +40,7 @@ const defaultProducts: ProdutosSectionCard[] = [
   {
     name: "azulzinha pro",
     description: "Para levar a maquininha de cartão até o seu cliente",
-    image: "/images/taxas-tarifas/maquininha-pro.png",
+    image: "/images/taxas-tarifas/maquininha-pro.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-8.svg", text: "Terminal sem fio projetado para a mobilidade;" },
       { icon: "/images/taxas-tarifas/icon-smart-5.svg", text: "Conexão Wi-Fi e 3G;" },
@@ -57,7 +57,7 @@ const defaultProducts: ProdutosSectionCard[] = [
     name: "azulzinha TEF",
     description:
       "A azulzinha da CAIXA para movimentar grandes volumes",
-    image: "/images/taxas-tarifas/maquininha-tef.png",
+    image: "/images/taxas-tarifas/maquininha-tef.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-3.svg", text: "Transferência eletrônica de fundos (TEF);" },
       { icon: "/images/taxas-tarifas/icon-smart-3.svg", text: "Fácil integração com automação comercial;" },

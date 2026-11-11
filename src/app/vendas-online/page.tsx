@@ -110,7 +110,7 @@ export default function GestaoVendasPage() {
         checkItems={[]}
         buttonText="Veja todas"
         buttonHref="#dobra"
-        backgroundImage="/images/vendas-online/hero-bg.png"
+        backgroundImage="/images/vendas-online/hero-bg.webp"
       />
 
       <div id="dobra" />
@@ -122,7 +122,7 @@ export default function GestaoVendasPage() {
           "As vendas online são uma ótima oportunidade para ampliar um negócio. Na CAIXA, você tem a oferta de soluções digitais seguras e ágeis para começar a vender na internet. E você nem precisa de um e-commerce para isso: é só optar pela solução de Link de Pagamentos, por exemplo.",
           "Agora, se você já tem um site ou aplicativo para divulgar sua loja, a solução de e-commerce da CAIXA é a escolha certa para a garantia de um alto desempenho na aprovação das vendas, além de segurança para pagamentos recorrentes.",
         ]}
-        image="/images/vendas-online/feature-1.png"
+        image="/images/vendas-online/feature-1.webp"
         imageAlt="Vendas Online"
         cardWidth="605px"
         cardHeight="398px"
@@ -137,7 +137,7 @@ export default function GestaoVendasPage() {
           paragraphs={[
             "Aceite os principais meios de pagamento por meio de soluções inovadoras que tornam o pagamento online cada vez mais simples e seguro.",
           ]}
-          image="/images/vendas-online/feature-2.png"
+          image="/images/vendas-online/feature-2.webp"
           imageAlt="Pagamentos Online"
           cardWidth="814px"
           cardHeight="426px"
@@ -152,12 +152,12 @@ export default function GestaoVendasPage() {
         <div className="relative z-10 -mt-20 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
           {[
             {
-              icon: "/images/vendas-online/icon-link-pagamento.png",
+              icon: "/images/vendas-online/icon-link-pagamento.webp",
               title: "Link de pagamento",
               text: "Comece a vender no mundo online de forma simples e rápida, sem necessidade de integração.",
             },
             {
-              icon: "/images/vendas-online/icon-metodos-pagamento.png",
+              icon: "/images/vendas-online/icon-metodos-pagamento.webp",
               title: "Maior aceitação de formas de pagamento do mercado",
               text: "+ de 100 bandeiras de cartões, wallets, auxilio emergencial, boleto e transferência bancária em uma plataforma multiadquirente.",
             },
@@ -191,23 +191,23 @@ export default function GestaoVendasPage() {
         textColor="text-azul"
         items={[
           {
-            icon: "/images/vendas-online/icon-vendas-online.png",
+            icon: "/images/vendas-online/icon-vendas-online.webp",
             text: "Digital - Você pode vender pela internet, e-mail ou redes sociais",
           },
           {
-            icon: "/images/vendas-online/icon-seguranca-online.png",
+            icon: "/images/vendas-online/icon-seguranca-online.webp",
             text: "É seguro - É 100% digital e seguro",
           },
           {
-            icon: "/images/vendas-online/icon-gestao.png",
+            icon: "/images/vendas-online/icon-gestao.webp",
             text: "Gestão inteligente - Faça a gestão de suas vendas pelo App da azulzinha ou Portal da azulzinha",
           },
           {
-            icon: "/images/vendas-online/icon-facil-usar.png",
+            icon: "/images/vendas-online/icon-facil-usar.webp",
             text: "Simples de utilizar - Envie quantos links quiser para seus clientes fazerem o pagamento pelo produto/serviço",
           },
           {
-            icon: "/images/vendas-online/icon-celular.png",
+            icon: "/images/vendas-online/icon-celular.webp",
             text: "Não precisa ter Site - Não é necessário ter um site ou e-commerce para começar a utilizar",
           },
         ]}
@@ -223,7 +223,7 @@ export default function GestaoVendasPage() {
           paragraphs={[
             "Aceite os principais meios de pagamento por meio de soluções inovadoras que tornam o pagamento online cada vez mais simples e seguro.",
           ]}
-          image="/images/vendas-online/feature-3.png"
+          image="/images/vendas-online/feature-3.webp"
           imageAlt="Pagamentos Online E-commerce"
           cardWidth="814px"
           cardHeight="426px"
@@ -238,7 +238,7 @@ export default function GestaoVendasPage() {
         <div className="relative z-10 lg:-mt-20 sm:mt-0 max-w-360 mx-auto px-7.5 lg:px-25 pb-14 lg:pb-20 flex flex-col lg:flex-row gap-5 lg:gap-7.5">
           {[
             {
-              icon: "/images/vendas-online/icon-link-pagamento.png",
+              icon: "/images/vendas-online/icon-link-pagamento.webp",
               title: "Alta conversão de vendas",
               items: [
                 "Venda mais facilitando a experiência do seu cliente;",
@@ -249,7 +249,7 @@ export default function GestaoVendasPage() {
               ],
             },
             {
-              icon: "/images/vendas-online/icon-metodos-pagamento.png",
+              icon: "/images/vendas-online/icon-metodos-pagamento.webp",
               title: "Segurança para vender",
               items: [
                 "Atendimento 24 horas por dia, 7 dias por semana;",

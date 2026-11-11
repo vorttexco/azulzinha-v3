@@ -10,7 +10,7 @@ import ArrowIcon from "@/components/shared/ArrowIcon";
 const slides = [
   {
     highlight: "Relatórios",
-    image: "/images/bem-vindo-a-clover/portal-relatorios.png",
+    image: "/images/bem-vindo-a-clover/portal-relatorios.webp",
     body: (
       <>
         Transforme dados em decisões estratégicas impulsionando o crescimento do
@@ -23,7 +23,7 @@ const slides = [
   },
   {
     highlight: "Gestão de equipes",
-    image: "/images/bem-vindo-a-clover/portal-equipes.png",
+    image: "/images/bem-vindo-a-clover/portal-equipes.webp",
     body: (
       <>
         Monitore em tempo real o registro de entradas e saídas de seus
@@ -35,7 +35,7 @@ const slides = [
   },
   {
     highlight: "Cadastro de clientes",
-    image: "/images/bem-vindo-a-clover/portal-clientes.png",
+    image: "/images/bem-vindo-a-clover/portal-clientes.webp",
     body: (
       <>
         Desenvolva estratégias eficazes de retenção e fidelização com base nos

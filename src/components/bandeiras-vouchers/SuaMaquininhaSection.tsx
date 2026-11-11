@@ -3,15 +3,15 @@ import { asset } from "@/lib/assets";
 
 const items = [
   {
-    icon: "/images/bandeiras-vouchers/wireless-payment-smartphone.png",
+    icon: "/images/bandeiras-vouchers/wireless-payment-smartphone.webp",
     text: "Passa débito, crédito, carteiras digitais, aproximação e QR Code.",
   },
   {
-    icon: "/images/bandeiras-vouchers/cash-payment-coin.png",
+    icon: "/images/bandeiras-vouchers/cash-payment-coin.webp",
     text: "Recebe suas vendas em até 2 dias úteis e antecipa valores.",
   },
   {
-    icon: "/images/bandeiras-vouchers/self-payment-touch.png",
+    icon: "/images/bandeiras-vouchers/self-payment-touch.webp",
     text: "Cuida do seu caixa e das suas vendas de forma simples e rápida.",
   },
 ];

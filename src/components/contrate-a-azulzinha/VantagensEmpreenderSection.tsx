@@ -5,19 +5,19 @@ import ArrowIcon from "@/components/shared/ArrowIcon";
 
 const vantagens = [
   {
-    icon: "/images/contrate-a-azulzinha/icon-nfc.png",
+    icon: "/images/contrate-a-azulzinha/icon-nfc.webp",
     text: "Venda com aproximação (NFC), QR Code, chip e tarja magnética",
   },
   {
-    icon: "/images/contrate-a-azulzinha/icon-bandeiras.png",
+    icon: "/images/contrate-a-azulzinha/icon-bandeiras.webp",
     text: "Aceite mais de 40 bandeiras de cartão, vouchers, carteiras digitais e Pix",
   },
   {
-    icon: "/images/contrate-a-azulzinha/icon-seguranca.png",
+    icon: "/images/contrate-a-azulzinha/icon-seguranca.webp",
     text: "Transacione com proteção antifraude e segurança garantida",
   },
   {
-    icon: "/images/contrate-a-azulzinha/icon-suporte.png",
+    icon: "/images/contrate-a-azulzinha/icon-suporte.webp",
     text: "Conte com nosso suporte técnico disponível 24 horas por dia",
   },
 ];

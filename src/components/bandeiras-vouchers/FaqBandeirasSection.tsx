@@ -23,7 +23,7 @@ interface FaqBrand {
 
 const faqBrands: FaqBrand[] = [
   {
-    logo: "/images/bandeiras-vouchers/alelo-logo.png",
+    logo: "/images/bandeiras-vouchers/alelo-logo.webp",
     logoW: 79,
     logoH: 51,
     name: "Alelo",
@@ -83,7 +83,7 @@ const faqBrands: FaqBrand[] = [
     ],
   },
   {
-    logo: "/images/bandeiras-vouchers/ticket-logo1.png",
+    logo: "/images/bandeiras-vouchers/ticket-logo1.webp",
     logoW: 62,
     logoH: 62,
     name: "Ticket",
@@ -141,7 +141,7 @@ const faqBrands: FaqBrand[] = [
     ],
   },
   {
-    logo: "/images/bandeiras-vouchers/icone-note.png",
+    logo: "/images/bandeiras-vouchers/icone-note.webp",
     logoW: 86,
     logoH: 24,
     name: "pluxee",
@@ -203,7 +203,7 @@ const faqBrands: FaqBrand[] = [
     ],
   },
   {
-    logo: "/images/bandeiras-vouchers/logo-vr.png",
+    logo: "/images/bandeiras-vouchers/logo-vr.webp",
     logoW: 61,
     logoH: 61,
     name: "VR",

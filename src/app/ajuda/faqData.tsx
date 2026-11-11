@@ -2315,7 +2315,7 @@ const faqData: FaqCategory[] = [
                         question: "App aproxima",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/celular-aproxima.png")} alt="App aproxima" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/celular-aproxima.webp")} alt="App aproxima" width={80} height={80} className="object-contain shrink-0" />
                                 <div className="space-y-2">
                                     <p>Disponível na Google Play:</p>
                                     <p><a href="https://play.google.com/store/apps/details?id=com.fiserv.hlscaixa" target="_blank" rel="noopener noreferrer" className="text-azul underline">Baixar na Google Play</a></p>
@@ -2328,7 +2328,7 @@ const faqData: FaqCategory[] = [
                         question: "Ingenico Move 5000",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/ingenico.png")} alt="Ingenico Move 5000" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/ingenico.webp")} alt="Ingenico Move 5000" width={80} height={80} className="object-contain shrink-0" />
                                 <p><a href="https://azulzinhadacaixa.com.br/manual?variavel=2" target="_blank" rel="noopener noreferrer" className="text-azul underline">Saiba mais</a></p>
                             </div>
                         ),
@@ -2337,7 +2337,7 @@ const faqData: FaqCategory[] = [
                         question: "Lane 3000",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/lane_frontal.png")} alt="Lane 3000" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/lane_frontal.webp")} alt="Lane 3000" width={80} height={80} className="object-contain shrink-0" />
                                 <p><a href="https://azulzinhadacaixa.com.br/manual?variavel=4" target="_blank" rel="noopener noreferrer" className="text-azul underline">Saiba mais</a></p>
                             </div>
                         ),
@@ -2346,7 +2346,7 @@ const faqData: FaqCategory[] = [
                         question: "Newland SP 930",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/newland.png")} alt="Newland SP 930" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/newland.webp")} alt="Newland SP 930" width={80} height={80} className="object-contain shrink-0" />
                                 <p><a href="https://azulzinhadacaixa.com.br/manual?variavel=3" target="_blank" rel="noopener noreferrer" className="text-azul underline">Saiba mais</a></p>
                             </div>
                         ),
@@ -2355,7 +2355,7 @@ const faqData: FaqCategory[] = [
                         question: "smart DX8000",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/azulzinha-smart.png")} alt="smart DX8000" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/azulzinha-smart.webp")} alt="smart DX8000" width={80} height={80} className="object-contain shrink-0" />
                                 <p><a href="https://azulzinhadacaixa.com.br/manual?variavel=5" target="_blank" rel="noopener noreferrer" className="text-azul underline">Saiba mais</a></p>
                             </div>
                         ),
@@ -2364,7 +2364,7 @@ const faqData: FaqCategory[] = [
                         question: "Verifone C680",
                         answer: (
                             <div className="flex items-center gap-6">
-                                <Image src={asset("/images/ajuda/verifone.png")} alt="Verifone C680" width={80} height={80} className="object-contain shrink-0" />
+                                <Image src={asset("/images/ajuda/verifone.webp")} alt="Verifone C680" width={80} height={80} className="object-contain shrink-0" />
                                 <p><a href="https://azulzinhadacaixa.com.br/manual?variavel=1" target="_blank" rel="noopener noreferrer" className="text-azul underline">Saiba mais</a></p>
                             </div>
                         ),

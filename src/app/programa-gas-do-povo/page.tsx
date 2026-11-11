@@ -15,7 +15,7 @@ const modelosGasDoPovo: ProdutosSectionCard[] = [
     name: "azulzinha smart",
     description:
       "A maquininha de cartão para centralizar e simplificar a gestão financeira",
-    image: "/images/programa-gas-do-povo/produto-smart.png",
+    image: "/images/programa-gas-do-povo/produto-smart.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-1.svg", text: "Compatível com Apps de PDV móvel;" },
       { icon: "/images/taxas-tarifas/icon-smart2.svg", text: "Controle de estoque;" },
@@ -32,7 +32,7 @@ const modelosGasDoPovo: ProdutosSectionCard[] = [
     name: "azulzinha aproxima",
     description:
       "Transforme o seu celular ou tablet em maquininha com o App da azulzinha",
-    image: "/images/programa-gas-do-povo/produto-aproxima.png",
+    image: "/images/programa-gas-do-povo/produto-aproxima.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-4.svg", text: "Disponível para Android versão 12 ou superior;" },
       { icon: "/images/taxas-tarifas/icon-smart-4.svg", text: "Pagamento por aproximação (NFC);" },
@@ -46,7 +46,7 @@ const modelosGasDoPovo: ProdutosSectionCard[] = [
   {
     name: "azulzinha pro",
     description: "Para levar a maquininha de cartão até o seu cliente",
-    image: "/images/programa-gas-do-povo/produto-pro.png",
+    image: "/images/programa-gas-do-povo/produto-pro.webp",
     features: [
       { icon: "/images/taxas-tarifas/icon-smart-8.svg", text: "Terminal sem fio projetado para a mobilidade;" },
       { icon: "/images/taxas-tarifas/icon-smart-5.svg", text: "Conexão Wi-Fi e 3G;" },
@@ -80,8 +80,8 @@ export default function ProgramaGasDoPovoPage() {
         buttonText="Saiba mais"
         buttonHref="#highlights"
         buttonSubtext="Funcionalidade disponível na azulzinha smart, azulzinha pro e no App azulzinha aproxima"
-        backgroundImage="/images/programa-gas-do-povo/hero-bg.jpg"
-        mobileBackgroundImage="/images/programa-gas-do-povo/hero-bg-mobile.jpg"
+        backgroundImage="/images/programa-gas-do-povo/hero-bg.webp"
+        mobileBackgroundImage="/images/programa-gas-do-povo/hero-bg-mobile.webp"
         imagePositionClassName="object-right"
         mobileImageClassName="object-center"
         textColor="text-azul"
@@ -136,7 +136,7 @@ export default function ProgramaGasDoPovoPage() {
         description="Fale com seu Gerente PJ CAIXA ou preencha o formulário para receber uma oferta para seu negócio."
         buttonText="Peça já a sua azulzinha"
         buttonHref="/peca-azulzinha"
-        image="/images/programa-gas-do-povo/cta-formulario.png"
+        image="/images/programa-gas-do-povo/cta-formulario.webp"
         imageAlt="Maquininha azulzinha sobre bancada"
       />
 

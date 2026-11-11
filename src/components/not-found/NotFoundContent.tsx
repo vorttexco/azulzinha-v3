@@ -7,7 +7,7 @@ export default function NotFoundContent() {
     <section className="relative w-full bg-white">
       <div className="relative w-full">
         <Image
-          src={asset("/images/not-found/tomada.png")}
+          src={asset("/images/not-found/tomada.webp")}
           alt=""
           width={1920}
           height={1002}
@@ -31,7 +31,7 @@ export default function NotFoundContent() {
 
       <div className="pointer-events-none -mb-[75px] flex justify-center px-[30px] lg:px-0">
         <Image
-          src={asset("/images/not-found/404.png")}
+          src={asset("/images/not-found/404.webp")}
           alt=""
           width={1168}
           height={389}

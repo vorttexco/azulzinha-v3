@@ -67,7 +67,7 @@ export default function CloverVideoSection() {
             {/* Background image */}
             <div className="absolute inset-0 z-0">
               <Image
-                src={asset("/images/clover/video-main.png")}
+                src={asset("/images/clover/video-main.webp")}
                 alt="Como funciona a automação comercial?"
                 fill
                 className="object-cover"

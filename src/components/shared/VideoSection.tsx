@@ -88,7 +88,7 @@ const defaultVideos: VideoItem[] = [
 
 export default function VideoSection({
   title = "Assista aos nossos tutoriais",
-  mainVideoImage = "/images/clover/video-main.png",
+  mainVideoImage = "/images/clover/video-main.webp",
   mainVideoTitle = "Como funciona a automação comercial?",
   videos = defaultVideos,
   youtubeText = "Se inscreva no nosso canal do Youtube",

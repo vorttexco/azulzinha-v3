@@ -9,7 +9,7 @@ interface FullImageSectionProps {
 }
 
 export default function FullImageSection({
-  image = "/images/clover/full-image-5e4c46.png",
+  image = "/images/clover/full-image-5e4c46.webp",
   imageAlt = "Clover em uso",
   heightMobile = "h-[250px]",
   heightDesktop = "lg:h-[594px]",

@@ -28,10 +28,10 @@ const oQueVocePaga = [
 ];
 
 const passoSteps: StepItem[] = [
-  { number: 1, text: "Após acessar a conta, digite a placa no campo de busca", image: "/images/pay/passo-1.png" },
-  { number: 2, text: "Confira os débitos pendentes e escolha quais deseja regularizar", image: "/images/pay/passo-2.png" },
-  { number: 3, text: "Selecione a quantidade de parcelas e finalize o pagamento usando o seu cartão de crédito", image: "/images/pay/passo-3.png" },
-  { number: 4, text: "Pronto! Sua conta foi paga e será processada em até 2 dias", image: "/images/pay/passo-4.png" },
+  { number: 1, text: "Após acessar a conta, digite a placa no campo de busca", image: "/images/pay/passo-1.webp" },
+  { number: 2, text: "Confira os débitos pendentes e escolha quais deseja regularizar", image: "/images/pay/passo-2.webp" },
+  { number: 3, text: "Selecione a quantidade de parcelas e finalize o pagamento usando o seu cartão de crédito", image: "/images/pay/passo-3.webp" },
+  { number: 4, text: "Pronto! Sua conta foi paga e será processada em até 2 dias", image: "/images/pay/passo-4.webp" },
 ];
 
 const faqItems = [
@@ -94,7 +94,7 @@ export default function AzulzinhaPay() {
         inputPlaceholder="Digite seu CPF aqui"
         cpfMask
         buttonText="Cadastrar gratuitamente"
-        backgroundImage="/images/pagamentos-whatsapp/hero-bg.png"
+        backgroundImage="/images/pagamentos-whatsapp/hero-bg.webp"
       />
 
       <BeneficiosGridSection
@@ -119,7 +119,7 @@ export default function AzulzinhaPay() {
       <FeatureSection
         title="Parcelamento de IPVA, licenciamento e multas em até 12"
         paragraphs={["Abra sua conta e consulte gratuitamente os débitos do seu veículo"]}
-        image="/images/pay/parcelamento-ipva.png"
+        image="/images/pay/parcelamento-ipva.webp"
         imageAlt="Parcelamento de IPVA"
         cardWidth="605px"
         cardHeight="398px"
@@ -139,7 +139,7 @@ export default function AzulzinhaPay() {
         inputPlaceholder="Digite seu CPF aqui"
         cpfMask
         buttonText="Cadastrar"
-        image="/images/pay/cta-market.png"
+        image="/images/pay/cta-market.webp"
         imageAlt="azulzinha Pay"
       />
 

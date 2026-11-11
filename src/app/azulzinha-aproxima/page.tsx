@@ -60,7 +60,7 @@ export default function AzulzinhaAproximaPage() {
         checkItems={[]}
         buttonText="Conheça"
         buttonHref="#aproxima"
-        backgroundImage="/images/azulzinha-aproxima/hero-bg.png"
+        backgroundImage="/images/azulzinha-aproxima/hero-bg.webp"
       />
       <AproximaSection />
       <PaymentMethodsSection />
@@ -73,7 +73,7 @@ export default function AzulzinhaAproximaPage() {
         buttonText="Leia o manual"
         buttonHref="https://azulzinhadacaixa.com.br/midias/manual_azulzinha_aproxima.pdf"
         buttonTarget="_blank"
-        image="/images/azulzinha-aproxima/cta-photo.png"
+        image="/images/azulzinha-aproxima/cta-photo.webp"
         imageAlt="azulzinha aproxima CTA"
       />
       <FaqSection items={faqItems} />

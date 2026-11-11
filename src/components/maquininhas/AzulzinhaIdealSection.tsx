@@ -7,33 +7,33 @@ import { useCallback, useEffect, useState } from "react";
 
 const features = [
   {
-    icon: "/images/maquininhas/icon-cartao.png",
+    icon: "/images/maquininhas/icon-cartao.webp",
     label: "Taxas competitivas",
   },
   {
-    icon: "/images/maquininhas/icon-wireless.png",
+    icon: "/images/maquininhas/icon-wireless.webp",
     label: "Venda no crediário",
   },
   {
-    icon: "/images/maquininhas/icon-qr-code.png",
+    icon: "/images/maquininhas/icon-qr-code.webp",
     label: "Aceita a modalidade Pix",
   },
   {
-    icon: "/images/maquininhas/icon-pix.png",
+    icon: "/images/maquininhas/icon-pix.webp",
     label: "Gestão de vendas no aplicativo",
   },
 ];
 
 const flags = [
-  { src: "/images/maquininhas/flag-elo.png", alt: "Elo" },
-  { src: "/images/maquininhas/flag-mastercard.png", alt: "Mastercard" },
-  { src: "/images/maquininhas/flag-visa.png", alt: "Visa" },
-  { src: "/images/maquininhas/flag-ticket.png", alt: "Ticket" },
-  { src: "/images/maquininhas/flag-alelo.png", alt: "Alelo" },
-  { src: "/images/maquininhas/flag-amex.png", alt: "Amex" },
-  { src: "/images/maquininhas/flag-hiper.png", alt: "Hiper" },
-  { src: "/images/maquininhas/flag-pluxee.png", alt: "Pluxee" },
-  { src: "/images/maquininhas/flag-vr.png", alt: "VR" },
+  { src: "/images/maquininhas/flag-elo.webp", alt: "Elo" },
+  { src: "/images/maquininhas/flag-mastercard.webp", alt: "Mastercard" },
+  { src: "/images/maquininhas/flag-visa.webp", alt: "Visa" },
+  { src: "/images/maquininhas/flag-ticket.webp", alt: "Ticket" },
+  { src: "/images/maquininhas/flag-alelo.webp", alt: "Alelo" },
+  { src: "/images/maquininhas/flag-amex.webp", alt: "Amex" },
+  { src: "/images/maquininhas/flag-hiper.webp", alt: "Hiper" },
+  { src: "/images/maquininhas/flag-pluxee.webp", alt: "Pluxee" },
+  { src: "/images/maquininhas/flag-vr.webp", alt: "VR" },
 ];
 
 // Group flags into pages of 6 (3x2 grid per slide)
@@ -195,21 +195,21 @@ export default function AzulzinhaIdealSection() {
             {/* Desktop: static images */}
             <div className="hidden lg:flex flex-col items-center gap-4 w-full max-w-[1070px]">
               <Image
-                src={asset("/images/maquininhas/bandeiras-1.png")}
+                src={asset("/images/maquininhas/bandeiras-1.webp")}
                 alt="Bandeiras aceitas linha 1"
                 width={1305}
                 height={294}
                 className="w-full h-auto object-contain"
               />
               <Image
-                src={asset("/images/maquininhas/bandeiras-2.png")}
+                src={asset("/images/maquininhas/bandeiras-2.webp")}
                 alt="Bandeiras aceitas linha 2"
                 width={1318}
                 height={297}
                 className="w-full h-auto object-contain"
               />
               <Image
-                src={asset("/images/maquininhas/bandeiras-3.png")}
+                src={asset("/images/maquininhas/bandeiras-3.webp")}
                 alt="Bandeiras aceitas linha 3"
                 width={1310}
                 height={146}

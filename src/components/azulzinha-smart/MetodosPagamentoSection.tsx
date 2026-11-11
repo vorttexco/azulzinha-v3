@@ -3,19 +3,19 @@ import { asset } from "@/lib/assets";
 
 const methods = [
   {
-    icon: "/images/azulzinha-smart/icon-visao.png",
+    icon: "/images/azulzinha-smart/icon-visao.webp",
     title: "Cartão",
   },
   {
-    icon: "/images/azulzinha-smart/icon-aproximacao.png",
+    icon: "/images/azulzinha-smart/icon-aproximacao.webp",
     title: "Aproximação",
   },
   {
-    icon: "/images/azulzinha-smart/icon-qr-code.png",
+    icon: "/images/azulzinha-smart/icon-qr-code.webp",
     title: "QR Code",
   },
   {
-    icon: "/images/azulzinha-smart/icon-pix.png",
+    icon: "/images/azulzinha-smart/icon-pix.webp",
     title: "Pix",
   },
 ];

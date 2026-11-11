@@ -6,7 +6,7 @@ const manuals = [
     name: "Clover Flex",
     description:
       "A sua Clover Flex possibilita a venda com mais eficiência e em qualquer lugar – no balcão, na mesa ou na rua. Clover Flex é uma solução móvel e completa.",
-    image: "/images/bem-vindo-a-clover/clover-flex.jpg",
+    image: "/images/bem-vindo-a-clover/clover-flex.webp",
     href: "https://azulzinhadacaixa.com.br/midias/azulzinha-Clover-Flex.pdf",
     buttonText: "Baixe o manual da Clover Flex",
   },
@@ -14,7 +14,7 @@ const manuals = [
     name: "Clover Mini",
     description:
       "Inove e transforme seu balcão com o mini PDV. Todas as suas necessidades em um único equipamento.",
-    image: "/images/bem-vindo-a-clover/clover-mini.jpg",
+    image: "/images/bem-vindo-a-clover/clover-mini.webp",
     href: "https://azulzinhadacaixa.com.br/midias/azulzinha-Clover-Mini.pdf",
     buttonText: "Baixe o manual da Clover Mini",
   },

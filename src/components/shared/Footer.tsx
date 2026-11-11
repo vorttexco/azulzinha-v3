@@ -122,7 +122,7 @@ export default function Footer() {
             <div className="w-[307px] h-[64px] flex items-center gap-3">
               <a href={SOCIAL_LINKS.whatsapp} className="shrink-0">
                 <Image
-                  src={asset("/images/footer-zuli.png")}
+                  src={asset("/images/footer-zuli.webp")}
                   alt="Zuli"
                   width={64}
                   height={64}
@@ -194,16 +194,16 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-4">
                 <TrackedAnchor href={SOCIAL_LINKS.instagram} kind="social" name="instagram" network="instagram" location="footer" className="hover:opacity-70 transition-opacity">
-                  <Image src={asset("/images/instagram-icon.png")} alt="Instagram" width={20} height={20} unoptimized />
+                  <Image src={asset("/images/instagram-icon.webp")} alt="Instagram" width={20} height={20} unoptimized />
                 </TrackedAnchor>
                 <TrackedAnchor href={SOCIAL_LINKS.facebook} kind="social" name="facebook" network="facebook" location="footer" className="hover:opacity-70 transition-opacity">
-                  <Image src={asset("/images/facebook-icon.png")} alt="Facebook" width={20} height={20} unoptimized />
+                  <Image src={asset("/images/facebook-icon.webp")} alt="Facebook" width={20} height={20} unoptimized />
                 </TrackedAnchor>
                 <TrackedAnchor href={SOCIAL_LINKS.linkedin} kind="social" name="linkedin" network="linkedin" location="footer" className="hover:opacity-70 transition-opacity">
-                  <Image src={asset("/images/linkedin-icon.png")} alt="LinkedIn" width={20} height={20} unoptimized />
+                  <Image src={asset("/images/linkedin-icon.webp")} alt="LinkedIn" width={20} height={20} unoptimized />
                 </TrackedAnchor>
                 <TrackedAnchor href={SOCIAL_LINKS.youtube} kind="social" name="youtube" network="youtube" location="footer" className="hover:opacity-70 transition-opacity">
-                  <Image src={asset("/images/youtube-icon.png")} alt="YouTube" width={20} height={20} unoptimized />
+                  <Image src={asset("/images/youtube-icon.webp")} alt="YouTube" width={20} height={20} unoptimized />
                 </TrackedAnchor>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <a href={SOCIAL_LINKS.whatsapp} className="shrink-0">
                   <Image
-                    src={asset("/images/footer-zuli.png")}
+                    src={asset("/images/footer-zuli.webp")}
                     alt="Zuli"
                     width={40}
                     height={40}
@@ -336,7 +336,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
           {/* Caixa Cartoes logo */}
           <Image
-            src={asset("/images/footer-caixa-logo.png")}
+            src={asset("/images/footer-caixa-logo.webp")}
             alt="CAIXA Cartões"
             width={220}
             height={32}
@@ -352,7 +352,7 @@ export default function Footer() {
           {/* Fiserv logo + Dúvidas */}
           <div className="flex items-center gap-4 lg:gap-6">
             <Image
-              src={asset("/images/footer-fiserv-logo.png")}
+              src={asset("/images/footer-fiserv-logo.webp")}
               alt="Fiserv"
               width={100}
               height={32}
@@ -368,7 +368,7 @@ export default function Footer() {
               className="flex items-center gap-2 border border-azul text-azul rounded-full px-4 py-2 text-sm font-medium hover:bg-azul/5 transition-colors shrink-0"
             >
               <Image
-                src={asset("/images/footer-zuli.png")}
+                src={asset("/images/footer-zuli.webp")}
                 alt="Zuli"
                 width={24}
                 height={24}
